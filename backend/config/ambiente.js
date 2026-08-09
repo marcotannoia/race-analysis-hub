@@ -67,7 +67,7 @@ const ambiente = Object.freeze({
   ),
   limiteRichieste: leggiIntero(
     primaVariabileDisponibile("RATE_LIMIT_MAX"),
-    300,
+    1000,
     10,
     10000,
   ),

@@ -1,16 +1,28 @@
-# React + Vite
+# Frontend Race Analysis Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Interfaccia React/Vite del progetto. Consuma esclusivamente l'API pubblica v1
+del backend e visualizza analisi editoriali, classifiche e grafici Chart.js.
 
-Currently, two official plugins are available:
+## Avvio locale
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm ci
+npm run dev
+```
 
-## React Compiler
+In assenza di configurazione il frontend usa il backend locale su
+`http://127.0.0.1:5002`. Per indicare un'altra istanza, creare `.env` da
+`.env.example` e impostare `VITE_API_URL`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Controlli
 
-## Expanding the Oxlint configuration
+```bash
+npm run lint
+npm run build
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Le posizioni quantitative visualizzate nei grafici arrivano dal backend e
+derivano dallo snapshot F1DB indicato nel `NOTICE.md` principale. Chart.js si
+occupa soltanto della rappresentazione grafica ed è distribuito con licenza
+MIT. Per contratto API, deployment, fonti e condizioni di riutilizzo consultare
+il `README.md`, il `NOTICE.md` e la documentazione Swagger del progetto.

@@ -11,7 +11,8 @@ Il progetto comprende:
 - grafici Chart.js delle posizioni di qualifica e gara derivate da F1DB.
 
 Le API v1 sono pubbliche, anonime e di sola lettura. Non richiedono
-autenticazione e accettano esclusivamente `GET`, `HEAD` e `OPTIONS`.
+autenticazione e accettano esclusivamente `GET`, `HEAD` e `OPTIONS`. Il limite
+configurato è di 1.000 richieste ogni 15 minuti per indirizzo IP.
 
 ## Documentazione API
 
@@ -37,6 +38,12 @@ https://f1-stats-5v93.onrender.com/api/v1/openapi.json
 Il contratto pubblico corrente è `v1`; la versione applicativa documentata è
 `1.2.0`. Il referente tecnico è Marco Tannoia
 (`marco.tannoia@gmail.com`).
+
+Guide operative incluse nel repository:
+
+- [`DEPLOYMENT.md`](DEPLOYMENT.md): configurazione e pubblicazione;
+- [`post-gp.md`](post-gp.md): aggiornamento successivo a un Gran Premio;
+- [`fix-frontend.md`](fix-frontend.md): gestione dei contenuti editoriali.
 
 ## Origine dei grafici
 
