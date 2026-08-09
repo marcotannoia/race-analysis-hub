@@ -917,10 +917,10 @@ main {
   }
 
   .marchio {
-    align-items: stretch;
-    flex-direction: column;
-    gap: 14px;
-    font-size: clamp(2.15rem, 10vw, 3.25rem);
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    font-size: clamp(1.55rem, 7vw, 2.1rem);
   }
 
   .marchio-compatto {
@@ -931,18 +931,7 @@ main {
   }
 
   .marchio:not(.marchio-compatto) .marchio-collaborazione {
-    align-self: center;
-    padding-top: 10px;
-    padding-left: 0;
-  }
-
-  .marchio:not(.marchio-compatto) .marchio-collaborazione::before {
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: 0;
-    width: auto;
-    height: 1px;
+    padding-left: 10px;
   }
 
   .introduzione-home h1 {

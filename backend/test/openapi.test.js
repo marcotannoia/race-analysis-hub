@@ -25,7 +25,7 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
   assert.deepEqual(documentoOpenApi.security, []);
   assert.equal(documentoOpenApi.components.securitySchemes, undefined);
   assert.deepEqual(documentoOpenApi.info.contact, {
-    name: "Marco Tannoi",
+    name: "Marco Tannoia",
     email: "marco.tannoia@gmail.com",
   });
   assert.ok(
