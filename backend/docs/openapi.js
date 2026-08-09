@@ -37,7 +37,7 @@ const documentoOpenApi = {
       "Il riutilizzo dei dati F1DB, anche commerciale, deve mantenere l'attribuzione " +
       "e le indicazioni richieste dalla CC BY 4.0. " +
       "In produzione si applicano una cache pubblica di 60 secondi e un limite di " +
-      "300 richieste ogni 15 minuti per indirizzo IP.",
+      "1000 richieste ogni 15 minuti per indirizzo IP.",
     contact: {
       name: "Marco Tannoia",
       email: "marco.tannoia@gmail.com",

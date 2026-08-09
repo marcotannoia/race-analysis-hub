@@ -10,6 +10,3 @@ coverage/
 *.p12
 .DS_Store
 .codex_work/
-DEPLOYMENT.md
-post-gp.md
-fix-frontend.md
