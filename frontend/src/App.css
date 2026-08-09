@@ -326,11 +326,12 @@ main {
   min-width: 86px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-self: end;
   padding: 11px 14px;
   border: 1px solid var(--bordo-evidente);
   border-radius: 7px;
+  text-align: center;
 }
 
 .numero-profilo small {
@@ -341,10 +342,13 @@ main {
 }
 
 .numero-profilo strong {
+  width: 100%;
   color: #fff;
   font-family: var(--font-racing);
   font-size: 1.45rem;
   font-weight: 400;
+  line-height: 1;
+  text-align: center;
 }
 
 .identita-dettaglio {
