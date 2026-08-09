@@ -36,7 +36,7 @@ const documentoOpenApi = {
       "In produzione si applicano una cache pubblica di 60 secondi e un limite di " +
       "300 richieste ogni 15 minuti per indirizzo IP.",
     contact: {
-      name: "Marco Tannoi",
+      name: "Marco Tannoia",
       email: "marco.tannoia@gmail.com",
     },
     license: {
