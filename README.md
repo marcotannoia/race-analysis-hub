@@ -35,7 +35,7 @@ https://f1-stats-5v93.onrender.com/api/v1/openapi.json
 ```
 
 Il contratto pubblico corrente è `v1`; la versione applicativa documentata è
-`1.2.0`. Il referente tecnico è Marco Tannoi
+`1.2.0`. Il referente tecnico è Marco Tannoia
 (`marco.tannoia@gmail.com`).
 
 ## Origine dei grafici
