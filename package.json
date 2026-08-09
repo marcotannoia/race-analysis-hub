@@ -10,6 +10,7 @@
     "set-current": "npm --prefix backend run set-current --",
     "verify-db": "npm --prefix backend run verify-db",
     "build": "npm --prefix frontend run build",
+    "build:cloudfront": "VITE_API_URL=https://f1-stats-5v93.onrender.com npm --prefix frontend run build",
     "lint": "npm --prefix frontend run lint",
     "lint:api": "npm --prefix backend run lint:api",
     "test": "npm --prefix backend test"
