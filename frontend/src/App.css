@@ -34,29 +34,38 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 26px;
   color: #fff;
   font-family: var(--font-racing);
-  font-size: clamp(3.6rem, 8vw, 6.8rem);
+  font-size: clamp(2.7rem, 6vw, 5.2rem);
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 0.9;
 }
 
-.marchio i {
-  position: relative;
-  align-self: stretch;
+.marchio-nome {
   display: flex;
-  align-items: center;
-  margin: 0 24px;
-  padding-left: 24px;
-  color: #8e8e8e;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
+  align-items: baseline;
+  gap: 0.2em;
+  white-space: nowrap;
 }
 
-.marchio i::before {
+.marchio-nome strong {
+  color: var(--rosso);
+  font-weight: 400;
+}
+
+.marchio-collaborazione {
+  position: relative;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  gap: 7px;
+  padding-left: 26px;
+  white-space: nowrap;
+}
+
+.marchio-collaborazione::before {
   position: absolute;
   top: -5%;
   bottom: -5%;
@@ -66,19 +75,32 @@ main {
   content: "";
 }
 
-.marchio strong {
-  color: var(--rosso);
+.marchio-collaborazione small {
+  color: #777;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.58rem;
+  font-style: italic;
+  letter-spacing: 0.08em;
+}
+
+.marchio-collaborazione strong {
+  color: #fff;
+  font-size: 0.42em;
   font-weight: 400;
+  letter-spacing: 0.08em;
 }
 
 .marchio-compatto {
-  font-size: 2.15rem;
+  gap: 12px;
+  font-size: 1.65rem;
 }
 
-.marchio-compatto i {
-  margin: 0 12px;
+.marchio-compatto .marchio-collaborazione {
   padding-left: 12px;
-  font-size: 0.48rem;
+}
+
+.marchio-compatto .marchio-collaborazione small {
+  font-size: 0.42rem;
 }
 
 /* Home */
@@ -802,8 +824,11 @@ main {
     margin-top: 60px;
   }
 
-  .marchio i {
-    margin: 0 15px;
+  .marchio {
+    gap: 15px;
+  }
+
+  .marchio-collaborazione {
     padding-left: 15px;
   }
 
@@ -892,11 +917,32 @@ main {
   }
 
   .marchio {
-    font-size: clamp(3rem, 18vw, 4.3rem);
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+    font-size: clamp(2.15rem, 10vw, 3.25rem);
   }
 
   .marchio-compatto {
-    font-size: 2rem;
+    align-items: center;
+    flex-direction: row;
+    gap: 9px;
+    font-size: clamp(1.15rem, 5vw, 1.55rem);
+  }
+
+  .marchio:not(.marchio-compatto) .marchio-collaborazione {
+    align-self: center;
+    padding-top: 10px;
+    padding-left: 0;
+  }
+
+  .marchio:not(.marchio-compatto) .marchio-collaborazione::before {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: auto;
+    height: 1px;
   }
 
   .introduzione-home h1 {

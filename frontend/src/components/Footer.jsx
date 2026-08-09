@@ -4,7 +4,7 @@ function Footer() {
       <div className="contenitore footer-contenuto">
         <span>Race <i>Analysis</i> <strong>Hub</strong></span>
         <div className="footer-note">
-          <p>Progetto indipendente di Marco Tannoi.</p>
+          <p>Progetto indipendente di Marco Tannoia.</p>
           <p lang="en">
             This website is unofficial and is not associated in any way with
             the Formula 1 companies. F1, FORMULA ONE, FORMULA 1, FIA FORMULA
