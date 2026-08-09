@@ -2,120 +2,99 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const creaAndamentoAnnuale = require("../services/andamentoAnnuale");
 
-function analisiGara({
-  slug,
-  ordineAnalisi,
-  storicoEdizioni = [],
-  posizioniStoriche = "2025: P8",
-  qualificheStoriche = "2025: Q6",
-  updatedAt,
-}) {
-  return {
-    gara: {
-      slug,
-      circuito: slug,
-      ordineAnalisi,
-      stagione: 2026,
-    },
-    storicoEdizioni,
-    posizioniStoriche,
-    qualificheStoriche,
-    updatedAt,
-  };
-}
+const snapshot = {
+  metadati: {
+    fonte: "F1DB",
+    releaseUrl: "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+    licenza: "CC BY 4.0",
+    licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
+    versione: "v2026.11.0",
+    trasformazioni: "Dati filtrati e normalizzati.",
+  },
+  andamento2026: {
+    stagione: 2026,
+    aggiornatoIl: "2026-07-26T21:00:55.000Z",
+    eventi: [
+      {
+        etichetta: "Australia",
+        piloti: {
+          leclerc: { codice: "LEC", gara: 3, qualifica: 2 },
+        },
+        scuderie: {
+          ferrari: {
+            gara: { LEC: 3, HAM: 4 },
+            qualifica: { LEC: 2, HAM: 5 },
+          },
+        },
+      },
+      {
+        etichetta: "Cina",
+        piloti: {
+          leclerc: { codice: "LEC", gara: null, qualifica: 5 },
+        },
+        scuderie: {
+          ferrari: {
+            gara: { LEC: null, HAM: 3 },
+            qualifica: { LEC: 5, HAM: 1 },
+          },
+        },
+      },
+    ],
+  },
+};
 
-test("mostra soltanto i GP registrati della stagione corrente", () => {
+test("crea il grafico pilota dai risultati F1DB", () => {
   const andamento = creaAndamentoAnnuale({
     stagione: 2026,
-    codicePilota: "LEC",
-    analisi: [
-      analisiGara({ slug: "olanda-zandvoort", ordineAnalisi: 1 }),
-      analisiGara({
-        slug: "italia-monza",
-        ordineAnalisi: 2,
-        storicoEdizioni: [
-          {
-            stagione: 2026,
-            posizioneGara: "P4",
-            posizioneQualifica: "Q2",
-          },
-        ],
-      }),
-      analisiGara({ slug: "azerbaigian-baku", ordineAnalisi: 3 }),
-    ],
+    pilotaSlug: "leclerc",
+    snapshot,
   });
 
-  assert.equal(andamento.stagione, 2026);
-  assert.deepEqual(andamento.etichette, ["Monza"]);
+  assert.deepEqual(andamento.etichette, ["Australia", "Cina"]);
   assert.deepEqual(andamento.qualifica, [
-    { nome: "LEC", valori: [2] },
+    { nome: "LEC", valori: [2, 5] },
   ]);
-  assert.deepEqual(andamento.gara, [{ nome: "LEC", valori: [4] }]);
+  assert.deepEqual(andamento.gara, [
+    { nome: "LEC", valori: [3, null] },
+  ]);
   assert.deepEqual(andamento.fonte, {
-    nome: "Archivio manuale Race Analysis Hub",
-    url: null,
+    nome: "F1DB",
+    url: "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+    licenza: "CC BY 4.0",
+    licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
+    versione: "v2026.11.0",
+    modifiche: "Dati filtrati e normalizzati.",
   });
+  assert.equal(andamento.aggiornatoIl, "2026-07-26T21:00:55.000Z");
+});
+
+test("crea le serie di tutti i piloti della scuderia", () => {
+  const andamento = creaAndamentoAnnuale({
+    stagione: 2026,
+    scuderiaSlug: "ferrari",
+    snapshot,
+  });
+
+  assert.deepEqual(andamento.qualifica, [
+    { nome: "LEC", valori: [2, 5] },
+    { nome: "HAM", valori: [5, 1] },
+  ]);
+  assert.deepEqual(andamento.gara, [
+    { nome: "LEC", valori: [3, null] },
+    { nome: "HAM", valori: [4, 3] },
+  ]);
+});
+
+test("non usa lo snapshot per una stagione diversa", () => {
+  const andamento = creaAndamentoAnnuale({
+    stagione: 2025,
+    pilotaSlug: "leclerc",
+    snapshot,
+  });
+
+  assert.deepEqual(andamento.etichette, []);
+  assert.deepEqual(andamento.qualifica, []);
+  assert.deepEqual(andamento.gara, []);
+  assert.equal(andamento.fonte, null);
   assert.equal(andamento.aggiornatoIl, null);
-});
-
-test("espone la data dell'ultimo aggiornamento manuale", () => {
-  const andamento = creaAndamentoAnnuale({
-    stagione: 2026,
-    codicePilota: "LEC",
-    analisi: [
-      analisiGara({
-        slug: "olanda-zandvoort",
-        ordineAnalisi: 1,
-        updatedAt: new Date("2026-08-01T12:00:00.000Z"),
-        storicoEdizioni: [
-          {
-            stagione: 2026,
-            posizioneGara: "P4",
-            posizioneQualifica: "Q2",
-          },
-        ],
-      }),
-      analisiGara({
-        slug: "italia-monza",
-        ordineAnalisi: 2,
-        updatedAt: new Date("2026-08-08T12:00:00.000Z"),
-        storicoEdizioni: [
-          {
-            stagione: 2026,
-            posizioneGara: "P3",
-            posizioneQualifica: "Q1",
-          },
-        ],
-      }),
-    ],
-  });
-
-  assert.equal(
-    andamento.aggiornatoIl.toISOString(),
-    "2026-08-08T12:00:00.000Z",
-  );
-});
-
-test("mantiene il GP se esiste la qualifica ma la gara termina con DNF", () => {
-  const andamento = creaAndamentoAnnuale({
-    stagione: 2026,
-    codicePilota: "LEC",
-    analisi: [
-      analisiGara({
-        slug: "olanda-zandvoort",
-        ordineAnalisi: 1,
-        storicoEdizioni: [
-          {
-            stagione: 2026,
-            posizioneGara: "DNF",
-            posizioneQualifica: "Q5",
-          },
-        ],
-      }),
-    ],
-  });
-
-  assert.deepEqual(andamento.etichette, ["Zandvoort"]);
-  assert.deepEqual(andamento.qualifica[0].valori, [5]);
-  assert.deepEqual(andamento.gara[0].valori, [null]);
 });

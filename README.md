@@ -8,7 +8,7 @@ Il progetto comprende:
 - un frontend React/Vite;
 - un backend REST Node.js/Express;
 - un database MongoDB con piloti, scuderie, gare, classifiche e analisi;
-- grafici Chart.js delle posizioni di qualifica e gara registrate manualmente.
+- grafici Chart.js delle posizioni di qualifica e gara derivate da F1DB.
 
 Le API v1 sono pubbliche, anonime e di sola lettura. Non richiedono
 autenticazione e accettano esclusivamente `GET`, `HEAD` e `OPTIONS`.
@@ -41,11 +41,20 @@ Il contratto pubblico corrente è `v1`; la versione applicativa documentata è
 ## Origine dei grafici
 
 Il frontend non interroga provider esterni per costruire i grafici. Le
-posizioni di gara e qualifica vengono registrate nel database tramite
-`backend/data/aggiornamento-gp.json`; il backend prepara le serie numeriche e
-Chart.js le visualizza nelle pagine di piloti e scuderie.
+posizioni di gara e qualifica provengono dallo snapshot locale derivato da
+F1DB; il backend prepara le serie numeriche e Chart.js le visualizza nelle
+pagine di piloti e scuderie. Versione, hash dell'archivio, licenza e
+trasformazioni sono registrati nello snapshot e nelle risposte API.
 
-Dopo ogni gara:
+Quando F1DB pubblica una nuova release, scaricare e decomprimere
+`f1db-json-splitted.zip`, quindi rigenerare e verificare lo snapshot:
+
+```bash
+npm run sync-f1db -- /percorso/alla/distribuzione-f1db
+npm run verify-data
+```
+
+Il flusso post-GP rimane separato e serve ad aggiornare i testi editoriali:
 
 1. compilare `risultatiPiloti` con `posizioneGara` e
    `posizioneQualifica`;
@@ -58,9 +67,8 @@ npm run gp -- --controlla
 npm run gp
 ```
 
-I valori non disponibili possono essere espressi come `DNF`, `DNS`, `DSQ` o
-`NC`; nel grafico vengono mantenuti come punti mancanti senza inventare una
-posizione numerica.
+I risultati F1DB `DNF`, `DNS`, `DSQ` o `NC` vengono mantenuti come punti
+mancanti nei grafici, senza trasformarli in posizioni numeriche inventate.
 
 ## Avvio locale
 
@@ -94,6 +102,7 @@ npm test
 npm run lint
 npm run build
 npm run lint:api
+npm run verify-data
 npm run verify-db
 ```
 
@@ -136,6 +145,15 @@ o database di terzi. Prima di un utilizzo commerciale, il titolare del progetto
 deve verificare di avere i diritti necessari per ciascun dato e contenuto
 pubblicato. Vedere anche `NOTICE.md`.
 
-Il codice e i contenuti originali sono distribuiti con tutti i diritti
-riservati; l'accesso pubblico alle API non costituisce una licenza sui marchi o
-sui contenuti di terzi.
+Le classifiche 2026, i risultati di gara e qualifica 2023-2025 e i grafici
+quantitativi 2026 provengono dallo snapshot locale derivato da
+[F1DB v2026.11.0](https://github.com/f1db/f1db/releases/tag/v2026.11.0).
+F1DB è distribuito con licenza
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), che consente anche
+l'uso commerciale con attribuzione. Race Analysis Hub filtra, rinomina e
+normalizza il sottoinsieme utilizzato; i dettagli sono in `NOTICE.md`.
+
+Il codice e i contenuti editoriali originali sono distribuiti con tutti i
+diritti riservati. Il sottoinsieme di dati derivato da F1DB resta soggetto alla
+CC BY 4.0; i marchi e gli altri contenuti di terzi restano soggetti ai diritti
+dei rispettivi titolari.

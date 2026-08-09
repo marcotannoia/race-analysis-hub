@@ -422,6 +422,24 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
               ) : (
                 andamentoStagioneCorrente.fonte.nome
               )}
+              {andamentoStagioneCorrente.fonte.versione &&
+                ` ${andamentoStagioneCorrente.fonte.versione}`}
+              {andamentoStagioneCorrente.fonte.licenza && (
+                <>
+                  {' — '}
+                  {andamentoStagioneCorrente.fonte.licenzaUrl ? (
+                    <a
+                      href={andamentoStagioneCorrente.fonte.licenzaUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {andamentoStagioneCorrente.fonte.licenza}
+                    </a>
+                  ) : (
+                    andamentoStagioneCorrente.fonte.licenza
+                  )}
+                </>
+              )}
             </p>
           )}
 

@@ -141,15 +141,23 @@ test("l'andamento espone la provenienza dei risultati", () => {
     qualifica: [{ nome: "LEC", valori: [3] }],
     gara: [{ nome: "LEC", valori: [2] }],
     fonte: {
-      nome: "Archivio manuale Race Analysis Hub",
-      url: null,
+      nome: "F1DB",
+      url: "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+      licenza: "CC BY 4.0",
+      licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
+      versione: "v2026.11.0",
+      modifiche: "Dati filtrati e normalizzati.",
     },
     aggiornatoIl: "2026-08-06T12:00:00.000Z",
   });
 
   assert.deepEqual(andamento.fonte, {
-    nome: "Archivio manuale Race Analysis Hub",
-    url: null,
+    nome: "F1DB",
+    url: "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+    licenza: "CC BY 4.0",
+    licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
+    versione: "v2026.11.0",
+    modifiche: "Dati filtrati e normalizzati.",
   });
   assert.equal(andamento.aggiornatoIl, "2026-08-06T12:00:00.000Z");
 });

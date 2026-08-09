@@ -212,6 +212,22 @@ function presentaAndamento(andamento) {
       ? {
           nome: andamento.fonte.nome,
           url: normalizzaUrlHttps(andamento.fonte.url),
+          ...(andamento.fonte.licenza
+            ? { licenza: andamento.fonte.licenza }
+            : {}),
+          ...(andamento.fonte.licenzaUrl
+            ? {
+                licenzaUrl: normalizzaUrlHttps(
+                  andamento.fonte.licenzaUrl,
+                ),
+              }
+            : {}),
+          ...(andamento.fonte.versione
+            ? { versione: andamento.fonte.versione }
+            : {}),
+          ...(andamento.fonte.modifiche
+            ? { modifiche: andamento.fonte.modifiche }
+            : {}),
         }
       : null,
     aggiornatoIl: dataIso(andamento.aggiornatoIl),
