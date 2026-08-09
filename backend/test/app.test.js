@@ -31,6 +31,15 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
     assert.equal(corpo.nome, "Race Analysis Hub API");
     assert.equal(corpo.versione, "1.2.0");
     assert.equal(corpo.documentazione, "/api/docs");
+    assert.deepEqual(corpo.attribuzioneDati, {
+      nome: "F1DB",
+      url: "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+      licenza: "CC BY 4.0",
+      licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
+      versione: "v2026.11.0",
+      modifiche:
+        "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato.",
+    });
     assert.equal(risposta.headers.get("access-control-allow-origin"), "*");
     assert.match(risposta.headers.get("x-request-id"), /^[0-9a-f-]{36}$/);
     assert.equal(risposta.headers.get("x-content-type-options"), "nosniff");

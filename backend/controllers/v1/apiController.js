@@ -17,36 +17,31 @@ const {
   presentaScuderia,
   presentaScuderiaBreve,
 } = require("../../presenters/apiV1");
+const { metadati: metadatiF1db } = require("../../data/f1db-v2026.11.0-derivato.json");
+
+const attribuzioneF1db = {
+  nome: metadatiF1db.fonte,
+  url: metadatiF1db.releaseUrl,
+  licenza: metadatiF1db.licenza,
+  licenzaUrl: metadatiF1db.licenzaUrl,
+  versione: metadatiF1db.versione,
+  modifiche: metadatiF1db.trasformazioni,
+};
 
 async function recuperaAndamentoPilota(pilota, garaAttuale) {
-  const analisi = await AnalisiGara.find({ pilota: pilota._id })
-    .select(
-      "gara posizioniStoriche qualificheStoriche storicoEdizioni updatedAt",
-    )
-    .populate("gara", "slug circuito ordineAnalisi stagione stato")
-    .lean();
-
   return presentaAndamento(
     creaAndamentoAnnuale({
-      analisi,
       stagione: garaAttuale.stagione,
-      codicePilota: pilota.codice,
+      pilotaSlug: pilota.slug,
     }),
   );
 }
 
 async function recuperaAndamentoScuderia(scuderia, garaAttuale) {
-  const analisi = await AnalisiScuderia.find({ scuderia: scuderia._id })
-    .select(
-      "gara posizioniStoriche qualificheStoriche storicoEdizioni updatedAt",
-    )
-    .populate("gara", "slug circuito ordineAnalisi stagione stato")
-    .lean();
-
   return presentaAndamento(
     creaAndamentoAnnuale({
-      analisi,
       stagione: garaAttuale.stagione,
+      scuderiaSlug: scuderia.slug,
     }),
   );
 }
@@ -90,6 +85,7 @@ function descrizioneApi(richiesta, risposta) {
       "API pubblica di sola lettura per il Gran Premio attuale, i piloti e le scuderie",
     documentazione: "/api/docs",
     specificaOpenApi: "/api/v1/openapi.json",
+    attribuzioneDati: attribuzioneF1db,
     endpoint: {
       home: "/api/v1/home",
       piloti: "/api/v1/piloti",

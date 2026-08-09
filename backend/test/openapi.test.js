@@ -36,7 +36,11 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
   assert.equal(documentoOpenApi.info.title, "Race Analysis Hub API");
   assert.match(
     documentoOpenApi.components.schemas.Andamento.description,
-    /registrate manualmente/,
+    /snapshot F1DB/,
+  );
+  assert.deepEqual(
+    documentoOpenApi.components.schemas.FonteAndamento.required,
+    ["nome", "url", "licenza", "licenzaUrl", "versione", "modifiche"],
   );
 });
 

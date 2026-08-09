@@ -1,0 +1,5513 @@
+{
+  "metadati": {
+    "fonte": "F1DB",
+    "versione": "v2026.11.0",
+    "pubblicatoIl": "2026-07-26T21:00:55.000Z",
+    "derivatoIl": "2026-08-10",
+    "releaseUrl": "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+    "archivio": "f1db-json-splitted.zip",
+    "archivioUrl": "https://github.com/f1db/f1db/releases/download/v2026.11.0/f1db-json-splitted.zip",
+    "archivioSha256": "7da222e8c2cafe223e4be2c1fb22fd67fb529779075f224c00eebac0acdecdeb",
+    "licenza": "CC BY 4.0",
+    "licenzaUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "trasformazioni": "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato."
+  },
+  "classifiche2026": {
+    "piloti": [
+      {
+        "slug": "antonelli",
+        "classifica2026": {
+          "posizione": 1,
+          "punti": 219,
+          "vittorie": 6
+        }
+      },
+      {
+        "slug": "hamilton",
+        "classifica2026": {
+          "posizione": 2,
+          "punti": 169,
+          "vittorie": 1
+        }
+      },
+      {
+        "slug": "russell",
+        "classifica2026": {
+          "posizione": 3,
+          "punti": 160,
+          "vittorie": 2
+        }
+      },
+      {
+        "slug": "leclerc",
+        "classifica2026": {
+          "posizione": 4,
+          "punti": 138,
+          "vittorie": 1
+        }
+      },
+      {
+        "slug": "norris",
+        "classifica2026": {
+          "posizione": 5,
+          "punti": 128,
+          "vittorie": 1
+        }
+      },
+      {
+        "slug": "max_verstappen",
+        "classifica2026": {
+          "posizione": 6,
+          "punti": 109,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "piastri",
+        "classifica2026": {
+          "posizione": 7,
+          "punti": 92,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "hadjar",
+        "classifica2026": {
+          "posizione": 8,
+          "punti": 68,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "lawson",
+        "classifica2026": {
+          "posizione": 9,
+          "punti": 43,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "gasly",
+        "classifica2026": {
+          "posizione": 10,
+          "punti": 42,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "arvid_lindblad",
+        "classifica2026": {
+          "posizione": 11,
+          "punti": 23,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "colapinto",
+        "classifica2026": {
+          "posizione": 12,
+          "punti": 19,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "bearman",
+        "classifica2026": {
+          "posizione": 13,
+          "punti": 18,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "bortoleto",
+        "classifica2026": {
+          "posizione": 14,
+          "punti": 10,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "sainz",
+        "classifica2026": {
+          "posizione": 15,
+          "punti": 6,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "albon",
+        "classifica2026": {
+          "posizione": 16,
+          "punti": 5,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "ocon",
+        "classifica2026": {
+          "posizione": 17,
+          "punti": 3,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "hulkenberg",
+        "classifica2026": {
+          "posizione": 18,
+          "punti": 2,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "alonso",
+        "classifica2026": {
+          "posizione": 19,
+          "punti": 1,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "stroll",
+        "classifica2026": {
+          "posizione": 20,
+          "punti": 0,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "bottas",
+        "classifica2026": {
+          "posizione": 21,
+          "punti": 0,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "perez",
+        "classifica2026": {
+          "posizione": 22,
+          "punti": 0,
+          "vittorie": 0
+        }
+      }
+    ],
+    "scuderie": [
+      {
+        "slug": "mercedes",
+        "classifica2026": {
+          "posizione": 1,
+          "punti": 379,
+          "vittorie": 8
+        }
+      },
+      {
+        "slug": "ferrari",
+        "classifica2026": {
+          "posizione": 2,
+          "punti": 307,
+          "vittorie": 2
+        }
+      },
+      {
+        "slug": "mclaren",
+        "classifica2026": {
+          "posizione": 3,
+          "punti": 220,
+          "vittorie": 1
+        }
+      },
+      {
+        "slug": "red_bull",
+        "classifica2026": {
+          "posizione": 4,
+          "punti": 177,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "rb",
+        "classifica2026": {
+          "posizione": 5,
+          "punti": 66,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "alpine",
+        "classifica2026": {
+          "posizione": 6,
+          "punti": 61,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "haas",
+        "classifica2026": {
+          "posizione": 7,
+          "punti": 21,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "audi",
+        "classifica2026": {
+          "posizione": 8,
+          "punti": 12,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "williams",
+        "classifica2026": {
+          "posizione": 9,
+          "punti": 11,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "aston_martin",
+        "classifica2026": {
+          "posizione": 10,
+          "punti": 1,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "cadillac",
+        "classifica2026": {
+          "posizione": 11,
+          "punti": 0,
+          "vittorie": 0
+        }
+      }
+    ]
+  },
+  "andamento2026": {
+    "stagione": 2026,
+    "aggiornatoIl": "2026-07-26T21:00:55.000Z",
+    "eventi": [
+      {
+        "raceId": 1150,
+        "round": 1,
+        "data": "2026-03-08",
+        "grandPrixId": "australia",
+        "circuitoId": "melbourne",
+        "etichetta": "Australia",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 2,
+            "qualifica": 2
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 4,
+            "qualifica": 7
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": 1,
+            "qualifica": 1
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 3,
+            "qualifica": 4
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": 5,
+            "qualifica": 6
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": 6,
+            "qualifica": null
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": null,
+            "qualifica": 5
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": null,
+            "qualifica": 3
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 13,
+            "qualifica": 8
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": 10,
+            "qualifica": 14
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 8,
+            "qualifica": 9
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 14,
+            "qualifica": 16
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": 7,
+            "qualifica": 12
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 9,
+            "qualifica": 10
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 15,
+            "qualifica": null
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": 12,
+            "qualifica": 15
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 11,
+            "qualifica": 13
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": null,
+            "qualifica": 11
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": null,
+            "qualifica": 17
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": null,
+            "qualifica": null
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": null,
+            "qualifica": 19
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": 16,
+            "qualifica": 18
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "RUS": 1,
+              "ANT": 2
+            },
+            "qualifica": {
+              "RUS": 1,
+              "ANT": 2
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "LEC": 3,
+              "HAM": 4
+            },
+            "qualifica": {
+              "LEC": 4,
+              "HAM": 7
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "NOR": 5,
+              "PIA": null
+            },
+            "qualifica": {
+              "NOR": 6,
+              "PIA": 5
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "VER": 6,
+              "HAD": null
+            },
+            "qualifica": {
+              "VER": null,
+              "HAD": 3
+            }
+          },
+          "rb": {
+            "gara": {
+              "LIN": 8,
+              "LAW": 13
+            },
+            "qualifica": {
+              "LIN": 9,
+              "LAW": 8
+            }
+          },
+          "alpine": {
+            "gara": {
+              "GAS": 10,
+              "COL": 14
+            },
+            "qualifica": {
+              "GAS": 14,
+              "COL": 16
+            }
+          },
+          "haas": {
+            "gara": {
+              "BEA": 7,
+              "OCO": 11
+            },
+            "qualifica": {
+              "BEA": 12,
+              "OCO": 13
+            }
+          },
+          "audi": {
+            "gara": {
+              "BOR": 9,
+              "HUL": null
+            },
+            "qualifica": {
+              "BOR": 10,
+              "HUL": 11
+            }
+          },
+          "williams": {
+            "gara": {
+              "ALB": 12,
+              "SAI": 15
+            },
+            "qualifica": {
+              "ALB": 15,
+              "SAI": null
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "STR": null,
+              "ALO": null
+            },
+            "qualifica": {
+              "STR": null,
+              "ALO": 17
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "PER": 16,
+              "BOT": null
+            },
+            "qualifica": {
+              "PER": 18,
+              "BOT": 19
+            }
+          }
+        }
+      },
+      {
+        "raceId": 1151,
+        "round": 2,
+        "data": "2026-03-15",
+        "grandPrixId": "china",
+        "circuitoId": "shanghai",
+        "etichetta": "Cina",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 1,
+            "qualifica": 1
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 3,
+            "qualifica": 3
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": 2,
+            "qualifica": 2
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 4,
+            "qualifica": 4
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": null,
+            "qualifica": 6
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": null,
+            "qualifica": 8
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": null,
+            "qualifica": 5
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": 8,
+            "qualifica": 9
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 7,
+            "qualifica": 14
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": 6,
+            "qualifica": 7
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 12,
+            "qualifica": 15
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 10,
+            "qualifica": 12
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": 5,
+            "qualifica": 10
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": null,
+            "qualifica": 16
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 9,
+            "qualifica": 17
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": null,
+            "qualifica": 18
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 14,
+            "qualifica": 13
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": 11,
+            "qualifica": 11
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": null,
+            "qualifica": 19
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": null,
+            "qualifica": 21
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": 13,
+            "qualifica": 20
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": 15,
+            "qualifica": 22
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "ANT": 1,
+              "RUS": 2
+            },
+            "qualifica": {
+              "ANT": 1,
+              "RUS": 2
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "HAM": 3,
+              "LEC": 4
+            },
+            "qualifica": {
+              "HAM": 3,
+              "LEC": 4
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "PIA": null,
+              "NOR": null
+            },
+            "qualifica": {
+              "PIA": 5,
+              "NOR": 6
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "HAD": 8,
+              "VER": null
+            },
+            "qualifica": {
+              "HAD": 9,
+              "VER": 8
+            }
+          },
+          "rb": {
+            "gara": {
+              "LAW": 7,
+              "LIN": 12
+            },
+            "qualifica": {
+              "LAW": 14,
+              "LIN": 15
+            }
+          },
+          "alpine": {
+            "gara": {
+              "GAS": 6,
+              "COL": 10
+            },
+            "qualifica": {
+              "GAS": 7,
+              "COL": 12
+            }
+          },
+          "haas": {
+            "gara": {
+              "BEA": 5,
+              "OCO": 14
+            },
+            "qualifica": {
+              "BEA": 10,
+              "OCO": 13
+            }
+          },
+          "audi": {
+            "gara": {
+              "HUL": 11,
+              "BOR": null
+            },
+            "qualifica": {
+              "HUL": 11,
+              "BOR": 16
+            }
+          },
+          "williams": {
+            "gara": {
+              "SAI": 9,
+              "ALB": null
+            },
+            "qualifica": {
+              "SAI": 17,
+              "ALB": 18
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "ALO": null,
+              "STR": null
+            },
+            "qualifica": {
+              "ALO": 19,
+              "STR": 21
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "BOT": 13,
+              "PER": 15
+            },
+            "qualifica": {
+              "BOT": 20,
+              "PER": 22
+            }
+          }
+        }
+      },
+      {
+        "raceId": 1152,
+        "round": 3,
+        "data": "2026-03-29",
+        "grandPrixId": "japan",
+        "circuitoId": "suzuka",
+        "etichetta": "Giappone",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 1,
+            "qualifica": 1
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 6,
+            "qualifica": 6
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": 4,
+            "qualifica": 2
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 3,
+            "qualifica": 4
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": 5,
+            "qualifica": 5
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": 8,
+            "qualifica": 11
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": 2,
+            "qualifica": 3
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": 12,
+            "qualifica": 8
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 9,
+            "qualifica": 14
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": 7,
+            "qualifica": 7
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 14,
+            "qualifica": 10
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 16,
+            "qualifica": 15
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": null,
+            "qualifica": 18
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 13,
+            "qualifica": 9
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 15,
+            "qualifica": 16
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": 20,
+            "qualifica": 17
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 10,
+            "qualifica": 12
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": 11,
+            "qualifica": 13
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": 18,
+            "qualifica": 21
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": null,
+            "qualifica": 22
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": 19,
+            "qualifica": 20
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": 17,
+            "qualifica": 19
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "ANT": 1,
+              "RUS": 4
+            },
+            "qualifica": {
+              "ANT": 1,
+              "RUS": 2
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "LEC": 3,
+              "HAM": 6
+            },
+            "qualifica": {
+              "LEC": 4,
+              "HAM": 6
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "PIA": 2,
+              "NOR": 5
+            },
+            "qualifica": {
+              "PIA": 3,
+              "NOR": 5
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "VER": 8,
+              "HAD": 12
+            },
+            "qualifica": {
+              "VER": 11,
+              "HAD": 8
+            }
+          },
+          "rb": {
+            "gara": {
+              "LAW": 9,
+              "LIN": 14
+            },
+            "qualifica": {
+              "LAW": 14,
+              "LIN": 10
+            }
+          },
+          "alpine": {
+            "gara": {
+              "GAS": 7,
+              "COL": 16
+            },
+            "qualifica": {
+              "GAS": 7,
+              "COL": 15
+            }
+          },
+          "haas": {
+            "gara": {
+              "OCO": 10,
+              "BEA": null
+            },
+            "qualifica": {
+              "OCO": 12,
+              "BEA": 18
+            }
+          },
+          "audi": {
+            "gara": {
+              "HUL": 11,
+              "BOR": 13
+            },
+            "qualifica": {
+              "HUL": 13,
+              "BOR": 9
+            }
+          },
+          "williams": {
+            "gara": {
+              "SAI": 15,
+              "ALB": 20
+            },
+            "qualifica": {
+              "SAI": 16,
+              "ALB": 17
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "ALO": 18,
+              "STR": null
+            },
+            "qualifica": {
+              "ALO": 21,
+              "STR": 22
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "PER": 17,
+              "BOT": 19
+            },
+            "qualifica": {
+              "PER": 19,
+              "BOT": 20
+            }
+          }
+        }
+      },
+      {
+        "raceId": 1153,
+        "round": 4,
+        "data": "2026-05-03",
+        "grandPrixId": "miami",
+        "circuitoId": "miami",
+        "etichetta": "Miami",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 1,
+            "qualifica": 1
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 6,
+            "qualifica": 6
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": 4,
+            "qualifica": 5
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 8,
+            "qualifica": 3
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": 2,
+            "qualifica": 4
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": 5,
+            "qualifica": 2
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": 3,
+            "qualifica": 7
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": null,
+            "qualifica": null
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": null,
+            "qualifica": 11
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": null,
+            "qualifica": 9
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 14,
+            "qualifica": 16
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 7,
+            "qualifica": 8
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": 11,
+            "qualifica": 12
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 12,
+            "qualifica": 21
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 9,
+            "qualifica": 13
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": 10,
+            "qualifica": 15
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 13,
+            "qualifica": 14
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": null,
+            "qualifica": 10
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": 15,
+            "qualifica": 17
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": 17,
+            "qualifica": 18
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": 18,
+            "qualifica": 19
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": 16,
+            "qualifica": 20
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "ANT": 1,
+              "RUS": 4
+            },
+            "qualifica": {
+              "ANT": 1,
+              "RUS": 5
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "HAM": 6,
+              "LEC": 8
+            },
+            "qualifica": {
+              "HAM": 6,
+              "LEC": 3
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "NOR": 2,
+              "PIA": 3
+            },
+            "qualifica": {
+              "NOR": 4,
+              "PIA": 7
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "VER": 5,
+              "HAD": null
+            },
+            "qualifica": {
+              "VER": 2,
+              "HAD": null
+            }
+          },
+          "rb": {
+            "gara": {
+              "LIN": 14,
+              "LAW": null
+            },
+            "qualifica": {
+              "LIN": 16,
+              "LAW": 11
+            }
+          },
+          "alpine": {
+            "gara": {
+              "COL": 7,
+              "GAS": null
+            },
+            "qualifica": {
+              "COL": 8,
+              "GAS": 9
+            }
+          },
+          "haas": {
+            "gara": {
+              "BEA": 11,
+              "OCO": 13
+            },
+            "qualifica": {
+              "BEA": 12,
+              "OCO": 14
+            }
+          },
+          "audi": {
+            "gara": {
+              "BOR": 12,
+              "HUL": null
+            },
+            "qualifica": {
+              "BOR": 21,
+              "HUL": 10
+            }
+          },
+          "williams": {
+            "gara": {
+              "SAI": 9,
+              "ALB": 10
+            },
+            "qualifica": {
+              "SAI": 13,
+              "ALB": 15
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "ALO": 15,
+              "STR": 17
+            },
+            "qualifica": {
+              "ALO": 17,
+              "STR": 18
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "PER": 16,
+              "BOT": 18
+            },
+            "qualifica": {
+              "PER": 20,
+              "BOT": 19
+            }
+          }
+        }
+      },
+      {
+        "raceId": 1154,
+        "round": 5,
+        "data": "2026-05-24",
+        "grandPrixId": "canada",
+        "circuitoId": "montreal",
+        "etichetta": "Canada",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 1,
+            "qualifica": 2
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 2,
+            "qualifica": 5
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": null,
+            "qualifica": 1
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 4,
+            "qualifica": 8
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": null,
+            "qualifica": 3
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": 3,
+            "qualifica": 6
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": 11,
+            "qualifica": 4
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": 5,
+            "qualifica": 7
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 7,
+            "qualifica": 12
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": 8,
+            "qualifica": 14
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": null,
+            "qualifica": 9
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 6,
+            "qualifica": 10
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": 10,
+            "qualifica": 16
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 13,
+            "qualifica": 13
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 9,
+            "qualifica": 15
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": null,
+            "qualifica": 18
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 14,
+            "qualifica": 17
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": 12,
+            "qualifica": 11
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": null,
+            "qualifica": 19
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": 15,
+            "qualifica": 21
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": 16,
+            "qualifica": 22
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": null,
+            "qualifica": 20
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "ANT": 1,
+              "RUS": null
+            },
+            "qualifica": {
+              "ANT": 2,
+              "RUS": 1
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "HAM": 2,
+              "LEC": 4
+            },
+            "qualifica": {
+              "HAM": 5,
+              "LEC": 8
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "PIA": 11,
+              "NOR": null
+            },
+            "qualifica": {
+              "PIA": 4,
+              "NOR": 3
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "VER": 3,
+              "HAD": 5
+            },
+            "qualifica": {
+              "VER": 6,
+              "HAD": 7
+            }
+          },
+          "rb": {
+            "gara": {
+              "LAW": 7,
+              "LIN": null
+            },
+            "qualifica": {
+              "LAW": 12,
+              "LIN": 9
+            }
+          },
+          "alpine": {
+            "gara": {
+              "COL": 6,
+              "GAS": 8
+            },
+            "qualifica": {
+              "COL": 10,
+              "GAS": 14
+            }
+          },
+          "haas": {
+            "gara": {
+              "BEA": 10,
+              "OCO": 14
+            },
+            "qualifica": {
+              "BEA": 16,
+              "OCO": 17
+            }
+          },
+          "audi": {
+            "gara": {
+              "HUL": 12,
+              "BOR": 13
+            },
+            "qualifica": {
+              "HUL": 11,
+              "BOR": 13
+            }
+          },
+          "williams": {
+            "gara": {
+              "SAI": 9,
+              "ALB": null
+            },
+            "qualifica": {
+              "SAI": 15,
+              "ALB": 18
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "STR": 15,
+              "ALO": null
+            },
+            "qualifica": {
+              "STR": 21,
+              "ALO": 19
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "BOT": 16,
+              "PER": null
+            },
+            "qualifica": {
+              "BOT": 22,
+              "PER": 20
+            }
+          }
+        }
+      },
+      {
+        "raceId": 1155,
+        "round": 6,
+        "data": "2026-06-07",
+        "grandPrixId": "monaco",
+        "circuitoId": "monaco",
+        "etichetta": "Monaco",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 1,
+            "qualifica": 1
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 2,
+            "qualifica": 3
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": 12,
+            "qualifica": 6
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": null,
+            "qualifica": 4
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": null,
+            "qualifica": 8
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": null,
+            "qualifica": 2
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": 5,
+            "qualifica": 7
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": 4,
+            "qualifica": 5
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 6,
+            "qualifica": 10
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": 3,
+            "qualifica": 9
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 7,
+            "qualifica": 15
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 14,
+            "qualifica": 14
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": null,
+            "qualifica": 19
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 11,
+            "qualifica": 16
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 16,
+            "qualifica": 12
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": 8,
+            "qualifica": 11
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 9,
+            "qualifica": 17
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": 13,
+            "qualifica": 13
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": 10,
+            "qualifica": 21
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": null,
+            "qualifica": 22
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": null,
+            "qualifica": 20
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": 15,
+            "qualifica": 18
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "ANT": 1,
+              "RUS": 12
+            },
+            "qualifica": {
+              "ANT": 1,
+              "RUS": 6
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "HAM": 2,
+              "LEC": null
+            },
+            "qualifica": {
+              "HAM": 3,
+              "LEC": 4
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "PIA": 5,
+              "NOR": null
+            },
+            "qualifica": {
+              "PIA": 7,
+              "NOR": 8
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "HAD": 4,
+              "VER": null
+            },
+            "qualifica": {
+              "HAD": 5,
+              "VER": 2
+            }
+          },
+          "rb": {
+            "gara": {
+              "LAW": 6,
+              "LIN": 7
+            },
+            "qualifica": {
+              "LAW": 10,
+              "LIN": 15
+            }
+          },
+          "alpine": {
+            "gara": {
+              "GAS": 3,
+              "COL": 14
+            },
+            "qualifica": {
+              "GAS": 9,
+              "COL": 14
+            }
+          },
+          "haas": {
+            "gara": {
+              "OCO": 9,
+              "BEA": null
+            },
+            "qualifica": {
+              "OCO": 17,
+              "BEA": 19
+            }
+          },
+          "audi": {
+            "gara": {
+              "BOR": 11,
+              "HUL": 13
+            },
+            "qualifica": {
+              "BOR": 16,
+              "HUL": 13
+            }
+          },
+          "williams": {
+            "gara": {
+              "ALB": 8,
+              "SAI": 16
+            },
+            "qualifica": {
+              "ALB": 11,
+              "SAI": 12
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "ALO": 10,
+              "STR": null
+            },
+            "qualifica": {
+              "ALO": 21,
+              "STR": 22
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "PER": 15,
+              "BOT": null
+            },
+            "qualifica": {
+              "PER": 18,
+              "BOT": 20
+            }
+          }
+        }
+      },
+      {
+        "raceId": 1156,
+        "round": 7,
+        "data": "2026-06-14",
+        "grandPrixId": "barcelona-catalunya",
+        "circuitoId": "catalunya",
+        "etichetta": "Barcellona",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 16,
+            "qualifica": 3
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 1,
+            "qualifica": 2
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": 2,
+            "qualifica": 1
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 15,
+            "qualifica": 10
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": 3,
+            "qualifica": 4
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": 4,
+            "qualifica": 5
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": 5,
+            "qualifica": 7
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": 6,
+            "qualifica": 6
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 8,
+            "qualifica": 8
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": 7,
+            "qualifica": 14
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 9,
+            "qualifica": 11
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 10,
+            "qualifica": 13
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": 17,
+            "qualifica": 15
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 11,
+            "qualifica": 12
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 12,
+            "qualifica": 16
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": null,
+            "qualifica": 18
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 13,
+            "qualifica": 17
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": null,
+            "qualifica": 9
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": null,
+            "qualifica": 22
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": null,
+            "qualifica": 21
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": null,
+            "qualifica": 20
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": 14,
+            "qualifica": 19
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "RUS": 2,
+              "ANT": 16
+            },
+            "qualifica": {
+              "RUS": 1,
+              "ANT": 3
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "HAM": 1,
+              "LEC": 15
+            },
+            "qualifica": {
+              "HAM": 2,
+              "LEC": 10
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "NOR": 3,
+              "PIA": 5
+            },
+            "qualifica": {
+              "NOR": 4,
+              "PIA": 7
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "VER": 4,
+              "HAD": 6
+            },
+            "qualifica": {
+              "VER": 5,
+              "HAD": 6
+            }
+          },
+          "rb": {
+            "gara": {
+              "LAW": 8,
+              "LIN": 9
+            },
+            "qualifica": {
+              "LAW": 8,
+              "LIN": 11
+            }
+          },
+          "alpine": {
+            "gara": {
+              "GAS": 7,
+              "COL": 10
+            },
+            "qualifica": {
+              "GAS": 14,
+              "COL": 13
+            }
+          },
+          "haas": {
+            "gara": {
+              "OCO": 13,
+              "BEA": 17
+            },
+            "qualifica": {
+              "OCO": 17,
+              "BEA": 15
+            }
+          },
+          "audi": {
+            "gara": {
+              "BOR": 11,
+              "HUL": null
+            },
+            "qualifica": {
+              "BOR": 12,
+              "HUL": 9
+            }
+          },
+          "williams": {
+            "gara": {
+              "SAI": 12,
+              "ALB": null
+            },
+            "qualifica": {
+              "SAI": 16,
+              "ALB": 18
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "ALO": null,
+              "STR": null
+            },
+            "qualifica": {
+              "ALO": 22,
+              "STR": 21
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "PER": 14,
+              "BOT": null
+            },
+            "qualifica": {
+              "PER": 19,
+              "BOT": 20
+            }
+          }
+        }
+      },
+      {
+        "raceId": 1157,
+        "round": 8,
+        "data": "2026-06-28",
+        "grandPrixId": "austria",
+        "circuitoId": "spielberg",
+        "etichetta": "Austria",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 3,
+            "qualifica": 4
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 5,
+            "qualifica": 3
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": 1,
+            "qualifica": 1
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 8,
+            "qualifica": 2
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": 7,
+            "qualifica": 6
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": 2,
+            "qualifica": 5
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": 4,
+            "qualifica": 7
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": 6,
+            "qualifica": 8
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 9,
+            "qualifica": 9
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": 13,
+            "qualifica": 11
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 10,
+            "qualifica": 10
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 15,
+            "qualifica": 16
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": 14,
+            "qualifica": 13
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 11,
+            "qualifica": 12
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": null,
+            "qualifica": 17
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": 17,
+            "qualifica": 18
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 16,
+            "qualifica": 15
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": 12,
+            "qualifica": 14
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": 18,
+            "qualifica": 21
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": null,
+            "qualifica": 22
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": null,
+            "qualifica": 20
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": null,
+            "qualifica": 19
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "RUS": 1,
+              "ANT": 3
+            },
+            "qualifica": {
+              "RUS": 1,
+              "ANT": 4
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "HAM": 5,
+              "LEC": 8
+            },
+            "qualifica": {
+              "HAM": 3,
+              "LEC": 2
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "PIA": 4,
+              "NOR": 7
+            },
+            "qualifica": {
+              "PIA": 7,
+              "NOR": 6
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "VER": 2,
+              "HAD": 6
+            },
+            "qualifica": {
+              "VER": 5,
+              "HAD": 8
+            }
+          },
+          "rb": {
+            "gara": {
+              "LAW": 9,
+              "LIN": 10
+            },
+            "qualifica": {
+              "LAW": 9,
+              "LIN": 10
+            }
+          },
+          "alpine": {
+            "gara": {
+              "GAS": 13,
+              "COL": 15
+            },
+            "qualifica": {
+              "GAS": 11,
+              "COL": 16
+            }
+          },
+          "haas": {
+            "gara": {
+              "BEA": 14,
+              "OCO": 16
+            },
+            "qualifica": {
+              "BEA": 13,
+              "OCO": 15
+            }
+          },
+          "audi": {
+            "gara": {
+              "BOR": 11,
+              "HUL": 12
+            },
+            "qualifica": {
+              "BOR": 12,
+              "HUL": 14
+            }
+          },
+          "williams": {
+            "gara": {
+              "ALB": 17,
+              "SAI": null
+            },
+            "qualifica": {
+              "ALB": 18,
+              "SAI": 17
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "ALO": 18,
+              "STR": null
+            },
+            "qualifica": {
+              "ALO": 21,
+              "STR": 22
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "PER": null,
+              "BOT": null
+            },
+            "qualifica": {
+              "PER": 19,
+              "BOT": 20
+            }
+          }
+        }
+      },
+      {
+        "raceId": 1158,
+        "round": 9,
+        "data": "2026-07-05",
+        "grandPrixId": "great-britain",
+        "circuitoId": "silverstone",
+        "etichetta": "Silverstone",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 15,
+            "qualifica": 1
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 3,
+            "qualifica": 3
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": 2,
+            "qualifica": 4
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 1,
+            "qualifica": 2
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": 4,
+            "qualifica": 6
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": 20,
+            "qualifica": 7
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": 11,
+            "qualifica": 8
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": 5,
+            "qualifica": 5
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 6,
+            "qualifica": 10
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": 10,
+            "qualifica": 12
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 7,
+            "qualifica": 9
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 9,
+            "qualifica": 19
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": 12,
+            "qualifica": 14
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 8,
+            "qualifica": 11
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 17,
+            "qualifica": 15
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": null,
+            "qualifica": 16
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 13,
+            "qualifica": 17
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": null,
+            "qualifica": 13
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": 18,
+            "qualifica": 22
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": 19,
+            "qualifica": 21
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": 16,
+            "qualifica": 18
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": 14,
+            "qualifica": 20
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "RUS": 2,
+              "ANT": 15
+            },
+            "qualifica": {
+              "RUS": 4,
+              "ANT": 1
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "LEC": 1,
+              "HAM": 3
+            },
+            "qualifica": {
+              "LEC": 2,
+              "HAM": 3
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "NOR": 4,
+              "PIA": 11
+            },
+            "qualifica": {
+              "NOR": 6,
+              "PIA": 8
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "HAD": 5,
+              "VER": 20
+            },
+            "qualifica": {
+              "HAD": 5,
+              "VER": 7
+            }
+          },
+          "rb": {
+            "gara": {
+              "LAW": 6,
+              "LIN": 7
+            },
+            "qualifica": {
+              "LAW": 10,
+              "LIN": 9
+            }
+          },
+          "alpine": {
+            "gara": {
+              "COL": 9,
+              "GAS": 10
+            },
+            "qualifica": {
+              "COL": 19,
+              "GAS": 12
+            }
+          },
+          "haas": {
+            "gara": {
+              "BEA": 12,
+              "OCO": 13
+            },
+            "qualifica": {
+              "BEA": 14,
+              "OCO": 17
+            }
+          },
+          "audi": {
+            "gara": {
+              "BOR": 8,
+              "HUL": null
+            },
+            "qualifica": {
+              "BOR": 11,
+              "HUL": 13
+            }
+          },
+          "williams": {
+            "gara": {
+              "SAI": 17,
+              "ALB": null
+            },
+            "qualifica": {
+              "SAI": 15,
+              "ALB": 16
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "ALO": 18,
+              "STR": 19
+            },
+            "qualifica": {
+              "ALO": 22,
+              "STR": 21
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "PER": 14,
+              "BOT": 16
+            },
+            "qualifica": {
+              "PER": 20,
+              "BOT": 18
+            }
+          }
+        }
+      },
+      {
+        "raceId": 1159,
+        "round": 10,
+        "data": "2026-07-19",
+        "grandPrixId": "belgium",
+        "circuitoId": "spa-francorchamps",
+        "etichetta": "Spa",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 1,
+            "qualifica": 1
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 4,
+            "qualifica": 6
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": null,
+            "qualifica": 4
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 2,
+            "qualifica": 5
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": 7,
+            "qualifica": 3
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": 3,
+            "qualifica": 2
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": 5,
+            "qualifica": 7
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": 6,
+            "qualifica": 10
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 12,
+            "qualifica": 11
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": 11,
+            "qualifica": 12
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 9,
+            "qualifica": 8
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 10,
+            "qualifica": 13
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": 14,
+            "qualifica": 16
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 8,
+            "qualifica": 9
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 16,
+            "qualifica": 15
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": 15,
+            "qualifica": 17
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 17,
+            "qualifica": 18
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": 13,
+            "qualifica": 14
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": 19,
+            "qualifica": 21
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": null,
+            "qualifica": 22
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": 18,
+            "qualifica": 19
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": null,
+            "qualifica": 20
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "ANT": 1,
+              "RUS": null
+            },
+            "qualifica": {
+              "ANT": 1,
+              "RUS": 4
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "LEC": 2,
+              "HAM": 4
+            },
+            "qualifica": {
+              "LEC": 5,
+              "HAM": 6
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "PIA": 5,
+              "NOR": 7
+            },
+            "qualifica": {
+              "PIA": 7,
+              "NOR": 3
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "VER": 3,
+              "HAD": 6
+            },
+            "qualifica": {
+              "VER": 2,
+              "HAD": 10
+            }
+          },
+          "rb": {
+            "gara": {
+              "LIN": 9,
+              "LAW": 12
+            },
+            "qualifica": {
+              "LIN": 8,
+              "LAW": 11
+            }
+          },
+          "alpine": {
+            "gara": {
+              "COL": 10,
+              "GAS": 11
+            },
+            "qualifica": {
+              "COL": 13,
+              "GAS": 12
+            }
+          },
+          "haas": {
+            "gara": {
+              "BEA": 14,
+              "OCO": 17
+            },
+            "qualifica": {
+              "BEA": 16,
+              "OCO": 18
+            }
+          },
+          "audi": {
+            "gara": {
+              "BOR": 8,
+              "HUL": 13
+            },
+            "qualifica": {
+              "BOR": 9,
+              "HUL": 14
+            }
+          },
+          "williams": {
+            "gara": {
+              "ALB": 15,
+              "SAI": 16
+            },
+            "qualifica": {
+              "ALB": 17,
+              "SAI": 15
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "ALO": 19,
+              "STR": null
+            },
+            "qualifica": {
+              "ALO": 21,
+              "STR": 22
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "BOT": 18,
+              "PER": null
+            },
+            "qualifica": {
+              "BOT": 19,
+              "PER": 20
+            }
+          }
+        }
+      },
+      {
+        "raceId": 1160,
+        "round": 11,
+        "data": "2026-07-26",
+        "grandPrixId": "hungary",
+        "circuitoId": "hungaroring",
+        "etichetta": "Ungheria",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 3,
+            "qualifica": 4
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 5,
+            "qualifica": 2
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": 7,
+            "qualifica": 7
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 4,
+            "qualifica": 3
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": 1,
+            "qualifica": 1
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": 2,
+            "qualifica": 6
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": null,
+            "qualifica": 5
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": 6,
+            "qualifica": 8
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 8,
+            "qualifica": 11
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": 12,
+            "qualifica": 12
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 10,
+            "qualifica": 9
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 15,
+            "qualifica": 13
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": 19,
+            "qualifica": 17
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 11,
+            "qualifica": 14
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 18,
+            "qualifica": 18
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": 17,
+            "qualifica": 19
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 16,
+            "qualifica": 15
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": 9,
+            "qualifica": 10
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": 14,
+            "qualifica": 16
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": 13,
+            "qualifica": 20
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": null,
+            "qualifica": 21
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": null,
+            "qualifica": 22
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "ANT": 3,
+              "RUS": 7
+            },
+            "qualifica": {
+              "ANT": 4,
+              "RUS": 7
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "LEC": 4,
+              "HAM": 5
+            },
+            "qualifica": {
+              "LEC": 3,
+              "HAM": 2
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "NOR": 1,
+              "PIA": null
+            },
+            "qualifica": {
+              "NOR": 1,
+              "PIA": 5
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "VER": 2,
+              "HAD": 6
+            },
+            "qualifica": {
+              "VER": 6,
+              "HAD": 8
+            }
+          },
+          "rb": {
+            "gara": {
+              "LAW": 8,
+              "LIN": 10
+            },
+            "qualifica": {
+              "LAW": 11,
+              "LIN": 9
+            }
+          },
+          "alpine": {
+            "gara": {
+              "GAS": 12,
+              "COL": 15
+            },
+            "qualifica": {
+              "GAS": 12,
+              "COL": 13
+            }
+          },
+          "haas": {
+            "gara": {
+              "OCO": 16,
+              "BEA": 19
+            },
+            "qualifica": {
+              "OCO": 15,
+              "BEA": 17
+            }
+          },
+          "audi": {
+            "gara": {
+              "HUL": 9,
+              "BOR": 11
+            },
+            "qualifica": {
+              "HUL": 10,
+              "BOR": 14
+            }
+          },
+          "williams": {
+            "gara": {
+              "ALB": 17,
+              "SAI": 18
+            },
+            "qualifica": {
+              "ALB": 19,
+              "SAI": 18
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "STR": 13,
+              "ALO": 14
+            },
+            "qualifica": {
+              "STR": 20,
+              "ALO": 16
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "PER": null,
+              "BOT": null
+            },
+            "qualifica": {
+              "PER": 22,
+              "BOT": 21
+            }
+          }
+        }
+      }
+    ]
+  },
+  "eventiStorici": [
+    {
+      "garaSlug": "olanda-zandvoort",
+      "anno": 2023,
+      "raceId": 1092,
+      "circuitoId": "zandvoort",
+      "data": "2023-08-27",
+      "disputata": true
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "anno": 2024,
+      "raceId": 1116,
+      "circuitoId": "zandvoort",
+      "data": "2024-08-25",
+      "disputata": true
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "anno": 2025,
+      "raceId": 1140,
+      "circuitoId": "zandvoort",
+      "data": "2025-08-31",
+      "disputata": true
+    },
+    {
+      "garaSlug": "italia-monza",
+      "anno": 2023,
+      "raceId": 1093,
+      "circuitoId": "monza",
+      "data": "2023-09-03",
+      "disputata": true
+    },
+    {
+      "garaSlug": "italia-monza",
+      "anno": 2024,
+      "raceId": 1117,
+      "circuitoId": "monza",
+      "data": "2024-09-01",
+      "disputata": true
+    },
+    {
+      "garaSlug": "italia-monza",
+      "anno": 2025,
+      "raceId": 1141,
+      "circuitoId": "monza",
+      "data": "2025-09-07",
+      "disputata": true
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "anno": 2023,
+      "raceId": null,
+      "circuitoId": "madring",
+      "data": null,
+      "disputata": false
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "anno": 2024,
+      "raceId": null,
+      "circuitoId": "madring",
+      "data": null,
+      "disputata": false
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "anno": 2025,
+      "raceId": null,
+      "circuitoId": "madring",
+      "data": null,
+      "disputata": false
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "anno": 2023,
+      "raceId": 1083,
+      "circuitoId": "baku",
+      "data": "2023-04-30",
+      "disputata": true
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "anno": 2024,
+      "raceId": 1118,
+      "circuitoId": "baku",
+      "data": "2024-09-15",
+      "disputata": true
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "anno": 2025,
+      "raceId": 1142,
+      "circuitoId": "baku",
+      "data": "2025-09-21",
+      "disputata": true
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "anno": 2023,
+      "raceId": null,
+      "circuitoId": "sepang",
+      "data": null,
+      "disputata": false
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "anno": 2024,
+      "raceId": null,
+      "circuitoId": "sepang",
+      "data": null,
+      "disputata": false
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "anno": 2025,
+      "raceId": null,
+      "circuitoId": "sepang",
+      "data": null,
+      "disputata": false
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "anno": 2023,
+      "raceId": 1094,
+      "circuitoId": "marina-bay",
+      "data": "2023-09-17",
+      "disputata": true
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "anno": 2024,
+      "raceId": 1119,
+      "circuitoId": "marina-bay",
+      "data": "2024-09-22",
+      "disputata": true
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "anno": 2025,
+      "raceId": 1143,
+      "circuitoId": "marina-bay",
+      "data": "2025-10-05",
+      "disputata": true
+    },
+    {
+      "garaSlug": "usa-austin",
+      "anno": 2023,
+      "raceId": 1097,
+      "circuitoId": "austin",
+      "data": "2023-10-22",
+      "disputata": true
+    },
+    {
+      "garaSlug": "usa-austin",
+      "anno": 2024,
+      "raceId": 1120,
+      "circuitoId": "austin",
+      "data": "2024-10-20",
+      "disputata": true
+    },
+    {
+      "garaSlug": "usa-austin",
+      "anno": 2025,
+      "raceId": 1144,
+      "circuitoId": "austin",
+      "data": "2025-10-19",
+      "disputata": true
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "anno": 2023,
+      "raceId": 1098,
+      "circuitoId": "mexico-city",
+      "data": "2023-10-29",
+      "disputata": true
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "anno": 2024,
+      "raceId": 1121,
+      "circuitoId": "mexico-city",
+      "data": "2024-10-27",
+      "disputata": true
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "anno": 2025,
+      "raceId": 1145,
+      "circuitoId": "mexico-city",
+      "data": "2025-10-26",
+      "disputata": true
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "anno": 2023,
+      "raceId": 1099,
+      "circuitoId": "interlagos",
+      "data": "2023-11-05",
+      "disputata": true
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "anno": 2024,
+      "raceId": 1122,
+      "circuitoId": "interlagos",
+      "data": "2024-11-03",
+      "disputata": true
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "anno": 2025,
+      "raceId": 1146,
+      "circuitoId": "interlagos",
+      "data": "2025-11-09",
+      "disputata": true
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "anno": 2023,
+      "raceId": 1100,
+      "circuitoId": "las-vegas",
+      "data": "2023-11-19",
+      "disputata": true
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "anno": 2024,
+      "raceId": 1123,
+      "circuitoId": "las-vegas",
+      "data": "2024-11-24",
+      "disputata": true
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "anno": 2025,
+      "raceId": 1147,
+      "circuitoId": "las-vegas",
+      "data": "2025-11-23",
+      "disputata": true
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "anno": 2023,
+      "raceId": 1096,
+      "circuitoId": "lusail",
+      "data": "2023-10-08",
+      "disputata": true
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "anno": 2024,
+      "raceId": 1124,
+      "circuitoId": "lusail",
+      "data": "2024-12-01",
+      "disputata": true
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "anno": 2025,
+      "raceId": 1148,
+      "circuitoId": "lusail",
+      "data": "2025-11-30",
+      "disputata": true
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "anno": 2023,
+      "raceId": 1101,
+      "circuitoId": "yas-marina",
+      "data": "2023-11-26",
+      "disputata": true
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "anno": 2024,
+      "raceId": 1125,
+      "circuitoId": "yas-marina",
+      "data": "2024-12-08",
+      "disputata": true
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "anno": 2025,
+      "raceId": 1149,
+      "circuitoId": "yas-marina",
+      "data": "2025-12-07",
+      "disputata": true
+    }
+  ],
+  "analisiGare": [
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P16 (Mercedes)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q11 (Mercedes)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: P6 (Mercedes)\n2024: P8 (Mercedes)\n2025: DNF (Ferrari)",
+      "risultatiQualifica": "2023: Q13 (Mercedes)\n2024: Q11 (Mercedes)\n2025: Q7 (Ferrari)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: P17 (Mercedes)\n2024: P7 (Mercedes)\n2025: P4 (Mercedes)",
+      "risultatiQualifica": "2023: Q3 (Mercedes)\n2024: Q4 (Mercedes)\n2025: Q5 (Mercedes)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: DNF (Ferrari)\n2024: P3 (Ferrari)\n2025: DNF (Ferrari)",
+      "risultatiQualifica": "2023: Q9 (Ferrari)\n2024: Q6 (Ferrari)\n2025: Q6 (Ferrari)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: P7 (McLaren)\n2024: P1 (McLaren)\n2025: P18 (McLaren)",
+      "risultatiQualifica": "2023: Q2 (McLaren)\n2024: Q1 (McLaren)\n2025: Q2 (McLaren)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: P1 (Red Bull)\n2024: P2 (Red Bull)\n2025: P2 (Red Bull)",
+      "risultatiQualifica": "2023: Q1 (Red Bull)\n2024: Q2 (Red Bull)\n2025: Q3 (Red Bull)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: P9 (McLaren)\n2024: P4 (McLaren)\n2025: P1 (McLaren)",
+      "risultatiQualifica": "2023: Q8 (McLaren)\n2024: Q3 (McLaren)\n2025: Q1 (McLaren)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P3 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q4 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: P13 (AlphaTauri)\n2024: NON CORSO IN F1\n2025: P12 (Racing Bulls)",
+      "risultatiQualifica": "2023: Q20 (AlphaTauri)\n2024: NON CORSO IN F1\n2025: Q8 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: P3 (Alpine)\n2024: P9 (Alpine)\n2025: P17 (Alpine)",
+      "risultatiQualifica": "2023: Q12 (Alpine)\n2024: Q9 (Alpine)\n2025: Q14 (Alpine)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P11 (Alpine)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q16 (Alpine)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P6 (Haas)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q19 (Haas)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P15 (Kick Sauber)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q13 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: P5 (Ferrari)\n2024: P5 (Ferrari)\n2025: P13 (Williams)",
+      "risultatiQualifica": "2023: Q6 (Ferrari)\n2024: Q10 (Ferrari)\n2025: Q9 (Williams)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: P8 (Williams)\n2024: P14 (Williams)\n2025: P5 (Williams)",
+      "risultatiQualifica": "2023: Q4 (Williams)\n2024: DSQ (Williams)\n2025: Q15 (Williams)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: P10 (Alpine)\n2024: P15 (Alpine)\n2025: P10 (Haas)",
+      "risultatiQualifica": "2023: Q17 (Alpine)\n2024: Q16 (Alpine)\n2025: Q18 (Haas)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: P12 (Haas)\n2024: P11 (Haas)\n2025: P14 (Kick Sauber)",
+      "risultatiQualifica": "2023: Q15 (Haas)\n2024: Q13 (Haas)\n2025: Q17 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: P2 (Aston Martin)\n2024: P10 (Aston Martin)\n2025: P8 (Aston Martin)",
+      "risultatiQualifica": "2023: Q5 (Aston Martin)\n2024: Q7 (Aston Martin)\n2025: Q10 (Aston Martin)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: P11 (Aston Martin)\n2024: P13 (Aston Martin)\n2025: P7 (Aston Martin)",
+      "risultatiQualifica": "2023: Q11 (Aston Martin)\n2024: Q8 (Aston Martin)\n2025: NC (Aston Martin)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: P14 (Alfa Romeo)\n2024: P19 (Kick Sauber)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q19 (Alfa Romeo)\n2024: Q17 (Kick Sauber)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: P4 (Red Bull)\n2024: P6 (Red Bull)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q7 (Red Bull)\n2024: Q5 (Red Bull)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P9 (Mercedes)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q7 (Mercedes)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: P6 (Mercedes)\n2024: P5 (Mercedes)\n2025: P6 (Ferrari)",
+      "risultatiQualifica": "2023: Q8 (Mercedes)\n2024: Q6 (Mercedes)\n2025: Q5 (Ferrari)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: P5 (Mercedes)\n2024: P7 (Mercedes)\n2025: P5 (Mercedes)",
+      "risultatiQualifica": "2023: Q4 (Mercedes)\n2024: Q3 (Mercedes)\n2025: Q6 (Mercedes)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: P4 (Ferrari)\n2024: P1 (Ferrari)\n2025: P4 (Ferrari)",
+      "risultatiQualifica": "2023: Q3 (Ferrari)\n2024: Q4 (Ferrari)\n2025: Q4 (Ferrari)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: P8 (McLaren)\n2024: P3 (McLaren)\n2025: P2 (McLaren)",
+      "risultatiQualifica": "2023: Q9 (McLaren)\n2024: Q1 (McLaren)\n2025: Q2 (McLaren)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: P1 (Red Bull)\n2024: P6 (Red Bull)\n2025: P1 (Red Bull)",
+      "risultatiQualifica": "2023: Q2 (Red Bull)\n2024: Q7 (Red Bull)\n2025: Q1 (Red Bull)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: P12 (McLaren)\n2024: P2 (McLaren)\n2025: P3 (McLaren)",
+      "risultatiQualifica": "2023: Q7 (McLaren)\n2024: Q2 (McLaren)\n2025: Q3 (McLaren)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P10 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q16 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: P11 (AlphaTauri)\n2024: NON CORSO IN F1\n2025: P14 (Racing Bulls)",
+      "risultatiQualifica": "2023: Q12 (AlphaTauri)\n2024: NON CORSO IN F1\n2025: Q20 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: P15 (Alpine)\n2024: P15 (Alpine)\n2025: P16 (Alpine)",
+      "risultatiQualifica": "2023: Q17 (Alpine)\n2024: Q14 (Alpine)\n2025: Q19 (Alpine)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P12 (Williams)\n2025: P17 (Alpine)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q18 (Williams)\n2025: Q18 (Alpine)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P12 (Haas)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q11 (Haas)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P8 (Kick Sauber)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q8 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: P3 (Ferrari)\n2024: P4 (Ferrari)\n2025: P11 (Williams)",
+      "risultatiQualifica": "2023: Q1 (Ferrari)\n2024: Q5 (Ferrari)\n2025: Q13 (Williams)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: P7 (Williams)\n2024: P9 (Williams)\n2025: P7 (Williams)",
+      "risultatiQualifica": "2023: Q6 (Williams)\n2024: Q9 (Williams)\n2025: Q14 (Williams)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: DNF (Alpine)\n2024: P14 (Alpine)\n2025: P15 (Haas)",
+      "risultatiQualifica": "2023: Q18 (Alpine)\n2024: Q15 (Alpine)\n2025: Q15 (Haas)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: P17 (Haas)\n2024: P17 (Haas)\n2025: DNS (Kick Sauber)",
+      "risultatiQualifica": "2023: Q13 (Haas)\n2024: Q10 (Haas)\n2025: Q12 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: P9 (Aston Martin)\n2024: P11 (Aston Martin)\n2025: DNF (Aston Martin)",
+      "risultatiQualifica": "2023: Q10 (Aston Martin)\n2024: Q11 (Aston Martin)\n2025: Q9 (Aston Martin)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: P16 (Aston Martin)\n2024: P19 (Aston Martin)\n2025: P18 (Aston Martin)",
+      "risultatiQualifica": "2023: Q20 (Aston Martin)\n2024: Q17 (Aston Martin)\n2025: Q17 (Aston Martin)"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: P10 (Alfa Romeo)\n2024: P16 (Kick Sauber)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q14 (Alfa Romeo)\n2024: Q19 (Kick Sauber)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: P2 (Red Bull)\n2024: P8 (Red Bull)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q5 (Red Bull)\n2024: Q8 (Red Bull)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P4 (Mercedes)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q4 (Mercedes)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: P6 (Mercedes)\n2024: P9 (Mercedes)\n2025: P8 (Ferrari)",
+      "risultatiQualifica": "2023: Q5 (Mercedes)\n2024: Q7 (Mercedes)\n2025: Q12 (Ferrari)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: P8 (Mercedes)\n2024: P3 (Mercedes)\n2025: P2 (Mercedes)",
+      "risultatiQualifica": "2023: Q11 (Mercedes)\n2024: Q5 (Mercedes)\n2025: Q5 (Mercedes)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: P3 (Ferrari)\n2024: P2 (Ferrari)\n2025: P9 (Ferrari)",
+      "risultatiQualifica": "2023: Q1 (Ferrari)\n2024: Q1 (Ferrari)\n2025: Q10 (Ferrari)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: P9 (McLaren)\n2024: P4 (McLaren)\n2025: P7 (McLaren)",
+      "risultatiQualifica": "2023: Q7 (McLaren)\n2024: Q16 (McLaren)\n2025: Q7 (McLaren)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: P2 (Red Bull)\n2024: P5 (Red Bull)\n2025: P1 (Red Bull)",
+      "risultatiQualifica": "2023: Q2 (Red Bull)\n2024: Q6 (Red Bull)\n2025: Q1 (Red Bull)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: P11 (McLaren)\n2024: P1 (McLaren)\n2025: DNF (McLaren)",
+      "risultatiQualifica": "2023: Q10 (McLaren)\n2024: Q2 (McLaren)\n2025: Q9 (McLaren)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P10 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q8 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P5 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q3 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: P14 (Alpine)\n2024: P12 (Alpine)\n2025: P18 (Alpine)",
+      "risultatiQualifica": "2023: Q19 (Alpine)\n2024: DSQ (Alpine)\n2025: Q18 (Alpine)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P8 (Williams)\n2025: P19 (Alpine)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q9 (Williams)\n2025: Q16 (Alpine)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P10 (Haas)\n2025: P12 (Haas)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q11 (Haas)\n2025: Q15 (Haas)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P11 (Kick Sauber)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q13 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: P5 (Ferrari)\n2024: P18 (Ferrari)\n2025: P3 (Williams)",
+      "risultatiQualifica": "2023: Q4 (Ferrari)\n2024: Q3 (Ferrari)\n2025: Q2 (Williams)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: P12 (Williams)\n2024: P7 (Williams)\n2025: P13 (Williams)",
+      "risultatiQualifica": "2023: Q13 (Williams)\n2024: Q10 (Williams)\n2025: Q19 (Williams)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: P15 (Alpine)\n2024: P15 (Alpine)\n2025: P14 (Haas)",
+      "risultatiQualifica": "2023: Q12 (Alpine)\n2024: Q19 (Alpine)\n2025: DSQ (Haas)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: P17 (Haas)\n2024: P11 (Haas)\n2025: P16 (Kick Sauber)",
+      "risultatiQualifica": "2023: Q17 (Haas)\n2024: Q13 (Haas)\n2025: Q17 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: P4 (Aston Martin)\n2024: P6 (Aston Martin)\n2025: P15 (Aston Martin)",
+      "risultatiQualifica": "2023: Q6 (Aston Martin)\n2024: Q8 (Aston Martin)\n2025: Q11 (Aston Martin)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: P7 (Aston Martin)\n2024: P19 (Aston Martin)\n2025: P17 (Aston Martin)",
+      "risultatiQualifica": "2023: Q9 (Aston Martin)\n2024: Q14 (Aston Martin)\n2025: Q14 (Aston Martin)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: P18 (Alfa Romeo)\n2024: P16 (Kick Sauber)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q14 (Alfa Romeo)\n2024: Q17 (Kick Sauber)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: P1 (Red Bull)\n2024: P17 (Red Bull)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q3 (Red Bull)\n2024: Q4 (Red Bull)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P5 (Mercedes)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q4 (Mercedes)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: P3 (Mercedes)\n2024: P6 (Mercedes)\n2025: P8 (Ferrari)",
+      "risultatiQualifica": "2023: Q5 (Mercedes)\n2024: Q3 (Mercedes)\n2025: Q6 (Ferrari)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: P16 (Mercedes)\n2024: P4 (Mercedes)\n2025: P1 (Mercedes)",
+      "risultatiQualifica": "2023: Q2 (Mercedes)\n2024: Q4 (Mercedes)\n2025: Q1 (Mercedes)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: P4 (Ferrari)\n2024: P5 (Ferrari)\n2025: P6 (Ferrari)",
+      "risultatiQualifica": "2023: Q3 (Ferrari)\n2024: Q9 (Ferrari)\n2025: Q7 (Ferrari)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: P2 (McLaren)\n2024: P1 (McLaren)\n2025: P3 (McLaren)",
+      "risultatiQualifica": "2023: Q4 (McLaren)\n2024: Q1 (McLaren)\n2025: Q5 (McLaren)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: P5 (Red Bull)\n2024: P2 (Red Bull)\n2025: P2 (Red Bull)",
+      "risultatiQualifica": "2023: Q11 (Red Bull)\n2024: Q2 (Red Bull)\n2025: Q2 (Red Bull)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: P7 (McLaren)\n2024: P3 (McLaren)\n2025: P4 (McLaren)",
+      "risultatiQualifica": "2023: Q17 (McLaren)\n2024: Q5 (McLaren)\n2025: Q3 (McLaren)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P11 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q8 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: P9 (AlphaTauri)\n2024: NON CORSO IN F1\n2025: P15 (Racing Bulls)",
+      "risultatiQualifica": "2023: Q10 (AlphaTauri)\n2024: NON CORSO IN F1\n2025: Q12 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: P6 (Alpine)\n2024: P17 (Alpine)\n2025: P19 (Alpine)",
+      "risultatiQualifica": "2023: Q12 (Alpine)\n2024: Q18 (Alpine)\n2025: Q18 (Alpine)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P11 (Williams)\n2025: P16 (Alpine)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q12 (Williams)\n2025: Q16 (Alpine)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P9 (Haas)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q9 (Haas)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P17 (Kick Sauber)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q14 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: P1 (Ferrari)\n2024: P7 (Ferrari)\n2025: P10 (Williams)",
+      "risultatiQualifica": "2023: Q1 (Ferrari)\n2024: Q10 (Ferrari)\n2025: DSQ (Williams)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: P11 (Williams)\n2024: DNF (Williams)\n2025: P14 (Williams)",
+      "risultatiQualifica": "2023: Q14 (Williams)\n2024: Q11 (Williams)\n2025: DSQ (Williams)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: DNF (Alpine)\n2024: P13 (Alpine)\n2025: P18 (Haas)",
+      "risultatiQualifica": "2023: Q8 (Alpine)\n2024: Q15 (Alpine)\n2025: Q17 (Haas)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: P13 (Haas)\n2024: P9 (Haas)\n2025: P20 (Kick Sauber)",
+      "risultatiQualifica": "2023: Q9 (Haas)\n2024: Q6 (Haas)\n2025: Q11 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: P15 (Aston Martin)\n2024: P8 (Aston Martin)\n2025: P7 (Aston Martin)",
+      "risultatiQualifica": "2023: Q7 (Aston Martin)\n2024: Q7 (Aston Martin)\n2025: Q10 (Aston Martin)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: DNS (Aston Martin)\n2024: P14 (Aston Martin)\n2025: P13 (Aston Martin)",
+      "risultatiQualifica": "2023: Q20 (Aston Martin)\n2024: Q17 (Aston Martin)\n2025: Q15 (Aston Martin)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: DNF (Alfa Romeo)\n2024: P16 (Kick Sauber)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q16 (Alfa Romeo)\n2024: Q19 (Kick Sauber)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: P8 (Red Bull)\n2024: P10 (Red Bull)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q13 (Red Bull)\n2024: Q13 (Red Bull)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P13 (Mercedes)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q7 (Mercedes)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: DSQ (Mercedes)\n2024: DNF (Mercedes)\n2025: P4 (Ferrari)",
+      "risultatiQualifica": "2023: Q3 (Mercedes)\n2024: Q19 (Mercedes)\n2025: Q5 (Ferrari)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: P5 (Mercedes)\n2024: P6 (Mercedes)\n2025: P6 (Mercedes)",
+      "risultatiQualifica": "2023: Q5 (Mercedes)\n2024: Q6 (Mercedes)\n2025: Q4 (Mercedes)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: DSQ (Ferrari)\n2024: P1 (Ferrari)\n2025: P3 (Ferrari)",
+      "risultatiQualifica": "2023: Q1 (Ferrari)\n2024: Q4 (Ferrari)\n2025: Q3 (Ferrari)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: P2 (McLaren)\n2024: P4 (McLaren)\n2025: P2 (McLaren)",
+      "risultatiQualifica": "2023: Q2 (McLaren)\n2024: Q1 (McLaren)\n2025: Q2 (McLaren)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: P1 (Red Bull)\n2024: P3 (Red Bull)\n2025: P1 (Red Bull)",
+      "risultatiQualifica": "2023: Q6 (Red Bull)\n2024: Q2 (Red Bull)\n2025: Q1 (Red Bull)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: DNF (McLaren)\n2024: P5 (McLaren)\n2025: P5 (McLaren)",
+      "risultatiQualifica": "2023: Q10 (McLaren)\n2024: Q5 (McLaren)\n2025: Q6 (McLaren)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P16 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NC (Racing Bulls)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P9 (RB)\n2025: P11 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q15 (RB)\n2025: Q12 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: P6 (Alpine)\n2024: P12 (Alpine)\n2025: P19 (Alpine)",
+      "risultatiQualifica": "2023: Q7 (Alpine)\n2024: Q7 (Alpine)\n2025: Q14 (Alpine)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P10 (Williams)\n2025: P17 (Alpine)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q17 (Williams)\n2025: Q15 (Alpine)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P9 (Haas)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q8 (Haas)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P18 (Kick Sauber)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q16 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: P3 (Ferrari)\n2024: P2 (Ferrari)\n2025: DNF (Williams)",
+      "risultatiQualifica": "2023: Q4 (Ferrari)\n2024: Q3 (Ferrari)\n2025: Q9 (Williams)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: P9 (Williams)\n2024: P16 (Williams)\n2025: P14 (Williams)",
+      "risultatiQualifica": "2023: Q18 (Williams)\n2024: Q16 (Williams)\n2025: Q19 (Williams)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: DNF (Alpine)\n2024: P18 (Alpine)\n2025: P15 (Haas)",
+      "risultatiQualifica": "2023: Q8 (Alpine)\n2024: Q13 (Alpine)\n2025: Q17 (Haas)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: P11 (Haas)\n2024: P8 (Haas)\n2025: P8 (Kick Sauber)",
+      "risultatiQualifica": "2023: Q16 (Haas)\n2024: Q12 (Haas)\n2025: Q11 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: DNF (Aston Martin)\n2024: P13 (Aston Martin)\n2025: P10 (Aston Martin)",
+      "risultatiQualifica": "2023: Q17 (Aston Martin)\n2024: Q8 (Aston Martin)\n2025: Q10 (Aston Martin)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: P7 (Aston Martin)\n2024: P15 (Aston Martin)\n2025: P12 (Aston Martin)",
+      "risultatiQualifica": "2023: Q19 (Aston Martin)\n2024: Q14 (Aston Martin)\n2025: Q18 (Aston Martin)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: P12 (Alfa Romeo)\n2024: P17 (Kick Sauber)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q13 (Alfa Romeo)\n2024: Q18 (Kick Sauber)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: P4 (Red Bull)\n2024: P7 (Red Bull)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q9 (Red Bull)\n2024: Q10 (Red Bull)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P6 (Mercedes)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q6 (Mercedes)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: P2 (Mercedes)\n2024: P4 (Mercedes)\n2025: P8 (Ferrari)",
+      "risultatiQualifica": "2023: Q6 (Mercedes)\n2024: Q6 (Mercedes)\n2025: Q3 (Ferrari)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: P6 (Mercedes)\n2024: P5 (Mercedes)\n2025: P7 (Mercedes)",
+      "risultatiQualifica": "2023: Q8 (Mercedes)\n2024: Q5 (Mercedes)\n2025: Q4 (Mercedes)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: P3 (Ferrari)\n2024: P3 (Ferrari)\n2025: P2 (Ferrari)",
+      "risultatiQualifica": "2023: Q1 (Ferrari)\n2024: Q4 (Ferrari)\n2025: Q2 (Ferrari)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: P5 (McLaren)\n2024: P2 (McLaren)\n2025: P1 (McLaren)",
+      "risultatiQualifica": "2023: Q19 (McLaren)\n2024: Q3 (McLaren)\n2025: Q1 (McLaren)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: P1 (Red Bull)\n2024: P6 (Red Bull)\n2025: P3 (Red Bull)",
+      "risultatiQualifica": "2023: Q3 (Red Bull)\n2024: Q2 (Red Bull)\n2025: Q5 (Red Bull)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: P8 (McLaren)\n2024: P8 (McLaren)\n2025: P5 (McLaren)",
+      "risultatiQualifica": "2023: Q7 (McLaren)\n2024: Q17 (McLaren)\n2025: Q8 (McLaren)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P13 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q9 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P16 (RB)\n2025: DNF (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q12 (RB)\n2025: Q15 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: P11 (Alpine)\n2024: P10 (Alpine)\n2025: P15 (Alpine)",
+      "risultatiQualifica": "2023: Q11 (Alpine)\n2024: Q8 (Alpine)\n2025: Q18 (Alpine)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P12 (Williams)\n2025: P16 (Alpine)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q16 (Williams)\n2025: Q20 (Alpine)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P4 (Haas)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q10 (Haas)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P10 (Kick Sauber)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q16 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: P4 (Ferrari)\n2024: P1 (Ferrari)\n2025: P17 (Williams)",
+      "risultatiQualifica": "2023: Q2 (Ferrari)\n2024: Q1 (Ferrari)\n2025: Q7 (Williams)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: P9 (Williams)\n2024: DNF (Williams)\n2025: P12 (Williams)",
+      "risultatiQualifica": "2023: Q14 (Williams)\n2024: Q9 (Williams)\n2025: Q17 (Williams)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: P10 (Alpine)\n2024: P13 (Alpine)\n2025: P9 (Haas)",
+      "risultatiQualifica": "2023: Q16 (Alpine)\n2024: Q19 (Alpine)\n2025: Q12 (Haas)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: P13 (Haas)\n2024: P9 (Haas)\n2025: DNF (Kick Sauber)",
+      "risultatiQualifica": "2023: Q12 (Haas)\n2024: Q10 (Haas)\n2025: Q13 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: DNF (Aston Martin)\n2024: DNF (Aston Martin)\n2025: DNF (Aston Martin)",
+      "risultatiQualifica": "2023: Q13 (Aston Martin)\n2024: Q13 (Aston Martin)\n2025: Q14 (Aston Martin)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: P17 (Aston Martin)\n2024: P11 (Aston Martin)\n2025: P14 (Aston Martin)",
+      "risultatiQualifica": "2023: Q18 (Aston Martin)\n2024: Q14 (Aston Martin)\n2025: Q19 (Aston Martin)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: P15 (Alfa Romeo)\n2024: P14 (Kick Sauber)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q9 (Alfa Romeo)\n2024: Q15 (Kick Sauber)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: DNF (Red Bull)\n2024: P17 (Red Bull)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q5 (Red Bull)\n2024: Q18 (Red Bull)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P2 (Mercedes)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q2 (Mercedes)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: P8 (Mercedes)\n2024: P10 (Mercedes)\n2025: DNF (Ferrari)",
+      "risultatiQualifica": "2023: Q5 (Mercedes)\n2024: Q16 (Mercedes)\n2025: Q13 (Ferrari)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: DNF (Mercedes)\n2024: P4 (Mercedes)\n2025: P4 (Mercedes)",
+      "risultatiQualifica": "2023: Q6 (Mercedes)\n2024: Q2 (Mercedes)\n2025: Q6 (Mercedes)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: DNS (Ferrari)\n2024: P5 (Ferrari)\n2025: DNF (Ferrari)",
+      "risultatiQualifica": "2023: Q2 (Ferrari)\n2024: Q6 (Ferrari)\n2025: Q3 (Ferrari)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: P2 (McLaren)\n2024: P6 (McLaren)\n2025: P1 (McLaren)",
+      "risultatiQualifica": "2023: Q7 (McLaren)\n2024: Q1 (McLaren)\n2025: Q1 (McLaren)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: P1 (Red Bull)\n2024: P1 (Red Bull)\n2025: P3 (Red Bull)",
+      "risultatiQualifica": "2023: Q1 (Red Bull)\n2024: Q12 (Red Bull)\n2025: Q16 (Red Bull)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: P14 (McLaren)\n2024: P8 (McLaren)\n2025: P5 (McLaren)",
+      "risultatiQualifica": "2023: Q10 (McLaren)\n2024: Q8 (McLaren)\n2025: Q4 (McLaren)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P8 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q5 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P9 (RB)\n2025: P7 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q5 (RB)\n2025: Q7 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: P7 (Alpine)\n2024: P3 (Alpine)\n2025: P10 (Alpine)",
+      "risultatiQualifica": "2023: Q13 (Alpine)\n2024: Q15 (Alpine)\n2025: Q9 (Alpine)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: DNF (Williams)\n2025: P15 (Alpine)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q18 (Williams)\n2025: Q18 (Alpine)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P12 (Haas)\n2025: P6 (Haas)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q17 (Haas)\n2025: Q8 (Haas)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: DNF (Kick Sauber)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: P6 (Ferrari)\n2024: DNF (Ferrari)\n2025: P13 (Williams)",
+      "risultatiQualifica": "2023: Q8 (Ferrari)\n2024: Q14 (Ferrari)\n2025: Q15 (Williams)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: DNF (Williams)\n2024: DNS (Williams)\n2025: P11 (Williams)",
+      "risultatiQualifica": "2023: Q15 (Williams)\n2024: Q7 (Williams)\n2025: Q12 (Williams)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: P10 (Alpine)\n2024: P2 (Alpine)\n2025: P12 (Haas)",
+      "risultatiQualifica": "2023: Q12 (Alpine)\n2024: Q4 (Alpine)\n2025: Q17 (Haas)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: P12 (Haas)\n2024: DSQ (Haas)\n2025: P9 (Kick Sauber)",
+      "risultatiQualifica": "2023: Q11 (Haas)\n2024: Q19 (Haas)\n2025: Q10 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: P3 (Aston Martin)\n2024: P14 (Aston Martin)\n2025: P14 (Aston Martin)",
+      "risultatiQualifica": "2023: Q4 (Aston Martin)\n2024: Q9 (Aston Martin)\n2025: Q11 (Aston Martin)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: P5 (Aston Martin)\n2024: DNS (Aston Martin)\n2025: P16 (Aston Martin)",
+      "risultatiQualifica": "2023: Q3 (Aston Martin)\n2024: Q10 (Aston Martin)\n2025: Q14 (Aston Martin)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: DNF (Alfa Romeo)\n2024: P13 (Kick Sauber)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q18 (Alfa Romeo)\n2024: Q11 (Kick Sauber)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: P4 (Red Bull)\n2024: P11 (Red Bull)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q9 (Red Bull)\n2024: Q13 (Red Bull)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P3 (Mercedes)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q17 (Mercedes)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: P7 (Mercedes)\n2024: P2 (Mercedes)\n2025: P8 (Ferrari)",
+      "risultatiQualifica": "2023: Q11 (Mercedes)\n2024: Q10 (Mercedes)\n2025: Q20 (Ferrari)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: P8 (Mercedes)\n2024: P1 (Mercedes)\n2025: P2 (Mercedes)",
+      "risultatiQualifica": "2023: Q4 (Mercedes)\n2024: Q1 (Mercedes)\n2025: Q4 (Mercedes)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: P2 (Ferrari)\n2024: P4 (Ferrari)\n2025: P4 (Ferrari)",
+      "risultatiQualifica": "2023: Q1 (Ferrari)\n2024: Q4 (Ferrari)\n2025: Q9 (Ferrari)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: DNF (McLaren)\n2024: P6 (McLaren)\n2025: DSQ (McLaren)",
+      "risultatiQualifica": "2023: Q16 (McLaren)\n2024: Q6 (McLaren)\n2025: Q1 (McLaren)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: P1 (Red Bull)\n2024: P5 (Red Bull)\n2025: P1 (Red Bull)",
+      "risultatiQualifica": "2023: Q3 (Red Bull)\n2024: Q5 (Red Bull)\n2025: Q2 (Red Bull)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: P10 (McLaren)\n2024: P7 (McLaren)\n2025: DSQ (McLaren)",
+      "risultatiQualifica": "2023: Q19 (McLaren)\n2024: Q8 (McLaren)\n2025: Q5 (McLaren)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P6 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q8 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P16 (RB)\n2025: P14 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q15 (RB)\n2025: Q6 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: P11 (Alpine)\n2024: DNF (Alpine)\n2025: P13 (Alpine)",
+      "risultatiQualifica": "2023: Q5 (Alpine)\n2024: Q3 (Alpine)\n2025: Q10 (Alpine)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P14 (Williams)\n2025: P15 (Alpine)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q14 (Williams)\n2025: Q15 (Alpine)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P10 (Haas)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q14 (Haas)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: DNF (Kick Sauber)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q18 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: P6 (Ferrari)\n2024: P3 (Ferrari)\n2025: P5 (Williams)",
+      "risultatiQualifica": "2023: Q2 (Ferrari)\n2024: Q2 (Ferrari)\n2025: Q3 (Williams)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: P12 (Williams)\n2024: DNF (Williams)\n2025: DNF (Williams)",
+      "risultatiQualifica": "2023: Q6 (Williams)\n2024: Q18 (Williams)\n2025: Q16 (Williams)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: P4 (Alpine)\n2024: P17 (Alpine)\n2025: P9 (Haas)",
+      "risultatiQualifica": "2023: Q17 (Alpine)\n2024: Q11 (Alpine)\n2025: Q13 (Haas)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: P19 (Haas)\n2024: P8 (Haas)\n2025: P7 (Kick Sauber)",
+      "risultatiQualifica": "2023: Q13 (Haas)\n2024: Q9 (Haas)\n2025: Q11 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: P9 (Aston Martin)\n2024: P11 (Aston Martin)\n2025: P11 (Aston Martin)",
+      "risultatiQualifica": "2023: Q10 (Aston Martin)\n2024: Q17 (Aston Martin)\n2025: Q7 (Aston Martin)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: P5 (Aston Martin)\n2024: P15 (Aston Martin)\n2025: DNF (Aston Martin)",
+      "risultatiQualifica": "2023: Q14 (Aston Martin)\n2024: Q20 (Aston Martin)\n2025: Q12 (Aston Martin)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: P17 (Alfa Romeo)\n2024: P18 (Kick Sauber)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q8 (Alfa Romeo)\n2024: Q19 (Kick Sauber)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: P3 (Red Bull)\n2024: P10 (Red Bull)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q12 (Red Bull)\n2024: Q16 (Red Bull)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P5 (Mercedes)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q5 (Mercedes)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: DNF (Mercedes)\n2024: P12 (Mercedes)\n2025: P12 (Ferrari)",
+      "risultatiQualifica": "2023: Q3 (Mercedes)\n2024: Q6 (Mercedes)\n2025: Q18 (Ferrari)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: P4 (Mercedes)\n2024: P4 (Mercedes)\n2025: P6 (Mercedes)",
+      "risultatiQualifica": "2023: Q2 (Mercedes)\n2024: Q2 (Mercedes)\n2025: Q4 (Mercedes)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: P5 (Ferrari)\n2024: P2 (Ferrari)\n2025: P8 (Ferrari)",
+      "risultatiQualifica": "2023: Q5 (Ferrari)\n2024: Q5 (Ferrari)\n2025: Q10 (Ferrari)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: P3 (McLaren)\n2024: P10 (McLaren)\n2025: P4 (McLaren)",
+      "risultatiQualifica": "2023: Q10 (McLaren)\n2024: Q3 (McLaren)\n2025: Q2 (McLaren)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: P1 (Red Bull)\n2024: P1 (Red Bull)\n2025: P1 (Red Bull)",
+      "risultatiQualifica": "2023: Q1 (Red Bull)\n2024: Q1 (Red Bull)\n2025: Q3 (Red Bull)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: P2 (McLaren)\n2024: P3 (McLaren)\n2025: P2 (McLaren)",
+      "risultatiQualifica": "2023: Q6 (McLaren)\n2024: Q4 (McLaren)\n2025: Q1 (McLaren)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P18 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q6 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: P17 (AlphaTauri)\n2024: P14 (RB)\n2025: P9 (Racing Bulls)",
+      "risultatiQualifica": "2023: Q18 (AlphaTauri)\n2024: Q17 (RB)\n2025: Q12 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: P12 (Alpine)\n2024: P5 (Alpine)\n2025: P16 (Alpine)",
+      "risultatiQualifica": "2023: Q7 (Alpine)\n2024: Q11 (Alpine)\n2025: Q9 (Alpine)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: DNF (Williams)\n2025: P14 (Alpine)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q19 (Williams)\n2025: Q20 (Alpine)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: DNF (Haas)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q13 (Haas)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P13 (Kick Sauber)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q14 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: DNS (Ferrari)\n2024: P6 (Ferrari)\n2025: P3 (Williams)",
+      "risultatiQualifica": "2023: Q12 (Ferrari)\n2024: Q7 (Ferrari)\n2025: Q7 (Williams)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: P13 (Williams)\n2024: P15 (Williams)\n2025: P11 (Williams)",
+      "risultatiQualifica": "2023: Q14 (Williams)\n2024: Q16 (Williams)\n2025: Q15 (Williams)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: P7 (Alpine)\n2024: DNF (Alpine)\n2025: P15 (Haas)",
+      "risultatiQualifica": "2023: Q8 (Alpine)\n2024: Q20 (Alpine)\n2025: Q17 (Haas)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: P16 (Haas)\n2024: DNF (Haas)\n2025: DNF (Kick Sauber)",
+      "risultatiQualifica": "2023: Q15 (Haas)\n2024: Q18 (Haas)\n2025: Q11 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: P6 (Aston Martin)\n2024: P7 (Aston Martin)\n2025: P7 (Aston Martin)",
+      "risultatiQualifica": "2023: Q4 (Aston Martin)\n2024: Q8 (Aston Martin)\n2025: Q8 (Aston Martin)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: P11 (Aston Martin)\n2024: DNF (Aston Martin)\n2025: P17 (Aston Martin)",
+      "risultatiQualifica": "2023: Q17 (Aston Martin)\n2024: Q15 (Aston Martin)\n2025: Q19 (Aston Martin)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: P8 (Alfa Romeo)\n2024: P11 (Kick Sauber)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q9 (Alfa Romeo)\n2024: Q13 (Kick Sauber)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: P10 (Red Bull)\n2024: DNF (Red Bull)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q13 (Red Bull)\n2024: Q9 (Red Bull)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "antonelli",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P15 (Mercedes)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q14 (Mercedes)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "hamilton",
+      "risultatiGara": "2023: P9 (Mercedes)\n2024: P4 (Mercedes)\n2025: P8 (Ferrari)",
+      "risultatiQualifica": "2023: Q11 (Mercedes)\n2024: Q18 (Mercedes)\n2025: Q16 (Ferrari)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "russell",
+      "risultatiGara": "2023: P3 (Mercedes)\n2024: P5 (Mercedes)\n2025: P5 (Mercedes)",
+      "risultatiQualifica": "2023: Q4 (Mercedes)\n2024: Q7 (Mercedes)\n2025: Q4 (Mercedes)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "leclerc",
+      "risultatiGara": "2023: P2 (Ferrari)\n2024: P3 (Ferrari)\n2025: P4 (Ferrari)",
+      "risultatiQualifica": "2023: Q2 (Ferrari)\n2024: Q14 (Ferrari)\n2025: Q5 (Ferrari)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "norris",
+      "risultatiGara": "2023: P5 (McLaren)\n2024: P1 (McLaren)\n2025: P3 (McLaren)",
+      "risultatiQualifica": "2023: Q5 (McLaren)\n2024: Q1 (McLaren)\n2025: Q2 (McLaren)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "max_verstappen",
+      "risultatiGara": "2023: P1 (Red Bull)\n2024: P6 (Red Bull)\n2025: P1 (Red Bull)",
+      "risultatiQualifica": "2023: Q1 (Red Bull)\n2024: Q5 (Red Bull)\n2025: Q1 (Red Bull)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "piastri",
+      "risultatiGara": "2023: P6 (McLaren)\n2024: P10 (McLaren)\n2025: P2 (McLaren)",
+      "risultatiQualifica": "2023: Q3 (McLaren)\n2024: Q2 (McLaren)\n2025: Q3 (McLaren)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "hadjar",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P17 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q9 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "lawson",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: P17 (RB)\n2025: P18 (Racing Bulls)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q12 (RB)\n2025: Q13 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "gasly",
+      "risultatiGara": "2023: P13 (Alpine)\n2024: P7 (Alpine)\n2025: P19 (Alpine)",
+      "risultatiQualifica": "2023: Q10 (Alpine)\n2024: Q6 (Alpine)\n2025: Q19 (Alpine)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "arvid_lindblad",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "colapinto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: DNF (Williams)\n2025: P20 (Alpine)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q19 (Williams)\n2025: Q20 (Alpine)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "bearman",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P12 (Haas)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q11 (Haas)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "bortoleto",
+      "risultatiGara": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: P11 (Kick Sauber)",
+      "risultatiQualifica": "2023: NON CORSO IN F1\n2024: NON CORSO IN F1\n2025: Q7 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "sainz",
+      "risultatiGara": "2023: P18 (Ferrari)\n2024: P2 (Ferrari)\n2025: P13 (Williams)",
+      "risultatiQualifica": "2023: Q16 (Ferrari)\n2024: Q3 (Ferrari)\n2025: Q12 (Williams)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "albon",
+      "risultatiGara": "2023: P14 (Williams)\n2024: P11 (Williams)\n2025: P16 (Williams)",
+      "risultatiQualifica": "2023: Q14 (Williams)\n2024: Q16 (Williams)\n2025: Q17 (Williams)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "ocon",
+      "risultatiGara": "2023: P12 (Alpine)\n2024: NON CORSO IN F1\n2025: P7 (Haas)",
+      "risultatiQualifica": "2023: Q12 (Alpine)\n2024: NON CORSO IN F1\n2025: Q8 (Haas)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "hulkenberg",
+      "risultatiGara": "2023: P15 (Haas)\n2024: P8 (Haas)\n2025: P9 (Kick Sauber)",
+      "risultatiQualifica": "2023: Q8 (Haas)\n2024: Q4 (Haas)\n2025: Q18 (Kick Sauber)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "alonso",
+      "risultatiGara": "2023: P7 (Aston Martin)\n2024: P9 (Aston Martin)\n2025: P6 (Aston Martin)",
+      "risultatiQualifica": "2023: Q7 (Aston Martin)\n2024: Q8 (Aston Martin)\n2025: Q6 (Aston Martin)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "stroll",
+      "risultatiGara": "2023: P10 (Aston Martin)\n2024: P14 (Aston Martin)\n2025: P10 (Aston Martin)",
+      "risultatiQualifica": "2023: Q13 (Aston Martin)\n2024: Q13 (Aston Martin)\n2025: Q15 (Aston Martin)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "bottas",
+      "risultatiGara": "2023: P19 (Alfa Romeo)\n2024: DNF (Kick Sauber)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q18 (Alfa Romeo)\n2024: Q9 (Kick Sauber)\n2025: NON CORSO IN F1"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "perez",
+      "risultatiGara": "2023: P4 (Red Bull)\n2024: DNF (Red Bull)\n2025: NON CORSO IN F1",
+      "risultatiQualifica": "2023: Q9 (Red Bull)\n2024: Q10 (Red Bull)\n2025: NON CORSO IN F1"
+    }
+  ],
+  "analisiScuderie": [
+    {
+      "garaSlug": "olanda-zandvoort",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: HAM P6 / RUS P17\n2024: RUS P7 / HAM P8\n2025: RUS P4 / ANT P16",
+      "risultatiQualifica": "2023: RUS Q3 / HAM Q13\n2024: RUS Q4 / HAM Q11\n2025: RUS Q5 / ANT Q11"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: SAI P5 / LEC DNF\n2024: LEC P3 / SAI P5\n2025: LEC DNF / HAM DNF",
+      "risultatiQualifica": "2023: SAI Q6 / LEC Q9\n2024: LEC Q6 / SAI Q10\n2025: LEC Q6 / HAM Q7"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: NOR P7 / PIA P9\n2024: NOR P1 / PIA P4\n2025: PIA P1 / NOR P18",
+      "risultatiQualifica": "2023: NOR Q2 / PIA Q8\n2024: NOR Q1 / PIA Q3\n2025: PIA Q1 / NOR Q2"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: VER P1 / PER P4\n2024: VER P2 / PER P6\n2025: VER P2 / TSU P9",
+      "risultatiQualifica": "2023: VER Q1 / PER Q7\n2024: VER Q2 / PER Q5\n2025: VER Q3 / TSU Q12"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: LAW P13 / TSU P15\n2024: RIC P12 / TSU P17\n2025: HAD P3 / LAW P12",
+      "risultatiQualifica": "2023: TSU Q14 / LAW Q20\n2024: TSU Q12 / RIC Q15\n2025: HAD Q4 / LAW Q8"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: GAS P3 / OCO P10\n2024: GAS P9 / OCO P15\n2025: COL P11 / GAS P17",
+      "risultatiQualifica": "2023: GAS Q12 / OCO Q17\n2024: GAS Q9 / OCO Q16\n2025: GAS Q14 / COL Q16"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: HUL P12 / MAG P16\n2024: HUL P11 / MAG P18\n2025: BEA P6 / OCO P10",
+      "risultatiQualifica": "2023: HUL Q15 / MAG Q18\n2024: HUL Q13 / MAG Q14\n2025: OCO Q18 / BEA Q19"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: BOT P14 / ZHO DNF\n2024: BOT P19 / ZHO P20\n2025: HUL P14 / BOR P15",
+      "risultatiQualifica": "2023: ZHO Q16 / BOT Q19\n2024: BOT Q17 / ZHO Q18\n2025: BOR Q13 / HUL Q17"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: ALB P8 / SAR DNF\n2024: ALB P14 / SAR P16\n2025: ALB P5 / SAI P13",
+      "risultatiQualifica": "2023: ALB Q4 / SAR Q10\n2024: ALB DSQ\n2025: SAI Q9 / ALB Q15"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: ALO P2 / STR P11\n2024: ALO P10 / STR P13\n2025: STR P7 / ALO P8",
+      "risultatiQualifica": "2023: ALO Q5 / STR Q11\n2024: ALO Q7 / STR Q8\n2025: ALO Q10 / STR NC"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1",
+      "risultatiQualifica": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: RUS P5 / HAM P6\n2024: HAM P5 / RUS P7\n2025: RUS P5 / ANT P9",
+      "risultatiQualifica": "2023: RUS Q4 / HAM Q8\n2024: RUS Q3 / HAM Q6\n2025: RUS Q6 / ANT Q7"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: SAI P3 / LEC P4\n2024: LEC P1 / SAI P4\n2025: LEC P4 / HAM P6",
+      "risultatiQualifica": "2023: SAI Q1 / LEC Q3\n2024: LEC Q4 / SAI Q5\n2025: LEC Q4 / HAM Q5"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: NOR P8 / PIA P12\n2024: PIA P2 / NOR P3\n2025: NOR P2 / PIA P3",
+      "risultatiQualifica": "2023: PIA Q7 / NOR Q9\n2024: NOR Q1 / PIA Q2\n2025: NOR Q2 / PIA Q3"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: VER P1 / PER P2\n2024: VER P6 / PER P8\n2025: VER P1 / TSU P13",
+      "risultatiQualifica": "2023: VER Q2 / PER Q5\n2024: VER Q7 / PER Q8\n2025: VER Q1 / TSU Q10"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: LAW P11 / TSU DNS\n2024: RIC P13 / TSU DNF\n2025: HAD P10 / LAW P14",
+      "risultatiQualifica": "2023: TSU Q11 / LAW Q12\n2024: RIC Q12 / TSU Q16\n2025: HAD Q16 / LAW Q20"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: GAS P15 / OCO DNF\n2024: OCO P14 / GAS P15\n2025: GAS P16 / COL P17",
+      "risultatiQualifica": "2023: GAS Q17 / OCO Q18\n2024: GAS Q14 / OCO Q15\n2025: COL Q18 / GAS Q19"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: HUL P17 / MAG P18\n2024: MAG P10 / HUL P17\n2025: BEA P12 / OCO P15",
+      "risultatiQualifica": "2023: HUL Q13 / MAG Q19\n2024: HUL Q10 / MAG Q13\n2025: BEA Q11 / OCO Q15"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: BOT P10 / ZHO P14\n2024: BOT P16 / ZHO P18\n2025: BOR P8 / HUL DNS",
+      "risultatiQualifica": "2023: BOT Q14 / ZHO Q16\n2024: BOT Q19 / ZHO Q20\n2025: BOR Q8 / HUL Q12"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: ALB P7 / SAR P13\n2024: ALB P9 / COL P12\n2025: ALB P7 / SAI P11",
+      "risultatiQualifica": "2023: ALB Q6 / SAR Q15\n2024: ALB Q9 / COL Q18\n2025: SAI Q13 / ALB Q14"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: ALO P9 / STR P16\n2024: ALO P11 / STR P19\n2025: STR P18 / ALO DNF",
+      "risultatiQualifica": "2023: ALO Q10 / STR Q20\n2024: ALO Q11 / STR Q17\n2025: ALO Q9 / STR Q17"
+    },
+    {
+      "garaSlug": "italia-monza",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1",
+      "risultatiQualifica": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: HAM P6 / RUS P8\n2024: RUS P3 / HAM P9\n2025: RUS P2 / ANT P4",
+      "risultatiQualifica": "2023: HAM Q5 / RUS Q11\n2024: RUS Q5 / HAM Q7\n2025: ANT Q4 / RUS Q5"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: LEC P3 / SAI P5\n2024: LEC P2 / SAI P18\n2025: HAM P8 / LEC P9",
+      "risultatiQualifica": "2023: LEC Q1 / SAI Q4\n2024: LEC Q1 / SAI Q3\n2025: LEC Q10 / HAM Q12"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: NOR P9 / PIA P11\n2024: PIA P1 / NOR P4\n2025: NOR P7 / PIA DNF",
+      "risultatiQualifica": "2023: NOR Q7 / PIA Q10\n2024: PIA Q2 / NOR Q16\n2025: NOR Q7 / PIA Q9"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: PER P1 / VER P2\n2024: VER P5 / PER P17\n2025: VER P1 / TSU P6",
+      "risultatiQualifica": "2023: VER Q2 / PER Q3\n2024: PER Q4 / VER Q6\n2025: VER Q1 / TSU Q6"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: TSU P10 / DEV DNF\n2024: RIC P13 / TSU DNF\n2025: LAW P5 / HAD P10",
+      "risultatiQualifica": "2023: TSU Q8 / DEV NC\n2024: TSU Q12 / RIC Q15\n2025: LAW Q3 / HAD Q8"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: GAS P14 / OCO P15\n2024: GAS P12 / OCO P15\n2025: GAS P18 / COL P19",
+      "risultatiQualifica": "2023: OCO Q12 / GAS Q19\n2024: OCO Q19 / GAS DSQ\n2025: COL Q16 / GAS Q18"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: MAG P13 / HUL P17\n2024: BEA P10 / HUL P11\n2025: BEA P12 / OCO P14",
+      "risultatiQualifica": "2023: HUL Q17 / MAG Q18\n2024: BEA Q11 / HUL Q13\n2025: BEA Q15 / OCO DSQ"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: BOT P18 / ZHO DNF\n2024: ZHO P14 / BOT P16\n2025: BOR P11 / HUL P16",
+      "risultatiQualifica": "2023: BOT Q14 / ZHO Q16\n2024: BOT Q17 / ZHO Q18\n2025: BOR Q13 / HUL Q17"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: ALB P12 / SAR P16\n2024: ALB P7 / COL P8\n2025: SAI P3 / ALB P13",
+      "risultatiQualifica": "2023: ALB Q13 / SAR Q15\n2024: COL Q9 / ALB Q10\n2025: SAI Q2 / ALB Q19"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: ALO P4 / STR P7\n2024: ALO P6 / STR P19\n2025: ALO P15 / STR P17",
+      "risultatiQualifica": "2023: ALO Q6 / STR Q9\n2024: ALO Q8 / STR Q14\n2025: ALO Q11 / STR Q14"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1",
+      "risultatiQualifica": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: HAM P3 / RUS P16\n2024: RUS P4 / HAM P6\n2025: RUS P1 / ANT P5",
+      "risultatiQualifica": "2023: RUS Q2 / HAM Q5\n2024: HAM Q3 / RUS Q4\n2025: RUS Q1 / ANT Q4"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: SAI P1 / LEC P4\n2024: LEC P5 / SAI P7\n2025: LEC P6 / HAM P8",
+      "risultatiQualifica": "2023: SAI Q1 / LEC Q3\n2024: LEC Q9 / SAI Q10\n2025: HAM Q6 / LEC Q7"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: NOR P2 / PIA P7\n2024: NOR P1 / PIA P3\n2025: NOR P3 / PIA P4",
+      "risultatiQualifica": "2023: NOR Q4 / PIA Q17\n2024: NOR Q1 / PIA Q5\n2025: PIA Q3 / NOR Q5"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: VER P5 / PER P8\n2024: VER P2 / PER P10\n2025: VER P2 / TSU P12",
+      "risultatiQualifica": "2023: VER Q11 / PER Q13\n2024: VER Q2 / PER Q13\n2025: VER Q2 / TSU Q13"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: LAW P9 / TSU DNF\n2024: TSU P12 / RIC P18\n2025: HAD P11 / LAW P15",
+      "risultatiQualifica": "2023: LAW Q10 / TSU Q15\n2024: TSU Q8 / RIC Q16\n2025: HAD Q8 / LAW Q12"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: GAS P6 / OCO DNF\n2024: OCO P13 / GAS P17\n2025: COL P16 / GAS P19",
+      "risultatiQualifica": "2023: OCO Q8 / GAS Q12\n2024: OCO Q15 / GAS Q18\n2025: COL Q16 / GAS Q18"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: MAG P10 / HUL P13\n2024: HUL P9 / MAG P19\n2025: BEA P9 / OCO P18",
+      "risultatiQualifica": "2023: MAG Q6 / HUL Q9\n2024: HUL Q6 / MAG Q14\n2025: BEA Q9 / OCO Q17"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: ZHO P12 / BOT DNF\n2024: ZHO P15 / BOT P16\n2025: BOR P17 / HUL P20",
+      "risultatiQualifica": "2023: BOT Q16 / ZHO Q19\n2024: BOT Q19 / ZHO Q20\n2025: HUL Q11 / BOR Q14"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: ALB P11 / SAR P14\n2024: COL P11 / ALB DNF\n2025: SAI P10 / ALB P14",
+      "risultatiQualifica": "2023: ALB Q14 / SAR Q18\n2024: ALB Q11 / COL Q12\n2025: ALB DSQ / SAI DSQ"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: ALO P15 / STR DNS\n2024: ALO P8 / STR P14\n2025: ALO P7 / STR P13",
+      "risultatiQualifica": "2023: ALO Q7 / STR Q20\n2024: ALO Q7 / STR Q17\n2025: ALO Q10 / STR Q15"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1",
+      "risultatiQualifica": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: RUS P5 / HAM DSQ\n2024: RUS P6 / HAM DNF\n2025: RUS P6 / ANT P13",
+      "risultatiQualifica": "2023: HAM Q3 / RUS Q5\n2024: RUS Q6 / HAM Q19\n2025: RUS Q4 / ANT Q7"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: SAI P3 / LEC DSQ\n2024: LEC P1 / SAI P2\n2025: LEC P3 / HAM P4",
+      "risultatiQualifica": "2023: LEC Q1 / SAI Q4\n2024: SAI Q3 / LEC Q4\n2025: LEC Q3 / HAM Q5"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: NOR P2 / PIA DNF\n2024: NOR P4 / PIA P5\n2025: NOR P2 / PIA P5",
+      "risultatiQualifica": "2023: NOR Q2 / PIA Q10\n2024: NOR Q1 / PIA Q5\n2025: NOR Q2 / PIA Q6"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: VER P1 / PER P4\n2024: VER P3 / PER P7\n2025: VER P1 / TSU P7",
+      "risultatiQualifica": "2023: VER Q6 / PER Q9\n2024: VER Q2 / PER Q10\n2025: VER Q1 / TSU Q13"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: TSU P8 / RIC P15\n2024: LAW P9 / TSU P14\n2025: LAW P11 / HAD P16",
+      "risultatiQualifica": "2023: TSU Q11 / RIC Q15\n2024: TSU Q11 / LAW Q15\n2025: LAW Q12 / HAD NC"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: GAS P6 / OCO DNF\n2024: GAS P12 / OCO P18\n2025: COL P17 / GAS P19",
+      "risultatiQualifica": "2023: GAS Q7 / OCO Q8\n2024: GAS Q7 / OCO Q13\n2025: GAS Q14 / COL Q15"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: HUL P11 / MAG P14\n2024: HUL P8 / MAG P11\n2025: BEA P9 / OCO P15",
+      "risultatiQualifica": "2023: MAG Q14 / HUL Q16\n2024: MAG Q9 / HUL Q12\n2025: BEA Q8 / OCO Q17"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: BOT P12 / ZHO P13\n2024: BOT P17 / ZHO P19\n2025: HUL P8 / BOR P18",
+      "risultatiQualifica": "2023: ZHO Q12 / BOT Q13\n2024: BOT Q18 / ZHO Q20\n2025: HUL Q11 / BOR Q16"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: ALB P9 / SAR P10\n2024: COL P10 / ALB P16\n2025: ALB P14 / SAI DNF",
+      "risultatiQualifica": "2023: ALB Q18 / SAR Q20\n2024: ALB Q16 / COL Q17\n2025: SAI Q9 / ALB Q19"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: STR P7 / ALO DNF\n2024: ALO P13 / STR P15\n2025: ALO P10 / STR P12",
+      "risultatiQualifica": "2023: ALO Q17 / STR Q19\n2024: ALO Q8 / STR Q14\n2025: ALO Q10 / STR Q18"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1",
+      "risultatiQualifica": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: HAM P2 / RUS P6\n2024: HAM P4 / RUS P5\n2025: ANT P6 / RUS P7",
+      "risultatiQualifica": "2023: HAM Q6 / RUS Q8\n2024: RUS Q5 / HAM Q6\n2025: RUS Q4 / ANT Q6"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: LEC P3 / SAI P4\n2024: SAI P1 / LEC P3\n2025: LEC P2 / HAM P8",
+      "risultatiQualifica": "2023: LEC Q1 / SAI Q2\n2024: SAI Q1 / LEC Q4\n2025: LEC Q2 / HAM Q3"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: NOR P5 / PIA P8\n2024: NOR P2 / PIA P8\n2025: NOR P1 / PIA P5",
+      "risultatiQualifica": "2023: PIA Q7 / NOR Q19\n2024: NOR Q3 / PIA Q17\n2025: NOR Q1 / PIA Q8"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: VER P1 / PER DNF\n2024: VER P6 / PER P17\n2025: VER P3 / TSU P11",
+      "risultatiQualifica": "2023: VER Q3 / PER Q5\n2024: VER Q2 / PER Q18\n2025: VER Q5 / TSU Q11"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: RIC P7 / TSU P12\n2024: LAW P16 / TSU DNF\n2025: HAD P13 / LAW DNF",
+      "risultatiQualifica": "2023: RIC Q4 / TSU Q15\n2024: TSU Q11 / LAW Q12\n2025: HAD Q9 / LAW Q15"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: OCO P10 / GAS P11\n2024: GAS P10 / OCO P13\n2025: GAS P15 / COL P16",
+      "risultatiQualifica": "2023: GAS Q11 / OCO Q16\n2024: GAS Q8 / OCO Q19\n2025: GAS Q18 / COL Q20"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: HUL P13 / MAG DNF\n2024: MAG P7 / HUL P9\n2025: BEA P4 / OCO P9",
+      "risultatiQualifica": "2023: HUL Q12 / MAG Q17\n2024: MAG Q7 / HUL Q10\n2025: BEA Q10 / OCO Q12"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: ZHO P14 / BOT P15\n2024: BOT P14 / ZHO P15\n2025: BOR P10 / HUL DNF",
+      "risultatiQualifica": "2023: BOT Q9 / ZHO Q10\n2024: BOT Q15 / ZHO Q20\n2025: HUL Q13 / BOR Q16"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: ALB P9 / SAR P16\n2024: COL P12 / ALB DNF\n2025: ALB P12 / SAI P17",
+      "risultatiQualifica": "2023: ALB Q14 / SAR NC\n2024: ALB Q9 / COL Q16\n2025: SAI Q7 / ALB Q17"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: STR P17 / ALO DNF\n2024: STR P11 / ALO DNF\n2025: STR P14 / ALO DNF",
+      "risultatiQualifica": "2023: ALO Q13 / STR Q18\n2024: ALO Q13 / STR Q14\n2025: ALO Q14 / STR Q19"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1",
+      "risultatiQualifica": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: HAM P8 / RUS DNF\n2024: RUS P4 / HAM P10\n2025: ANT P2 / RUS P4",
+      "risultatiQualifica": "2023: HAM Q5 / RUS Q6\n2024: RUS Q2 / HAM Q16\n2025: ANT Q2 / RUS Q6"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: SAI P6 / LEC DNS\n2024: LEC P5 / SAI DNF\n2025: HAM DNF / LEC DNF",
+      "risultatiQualifica": "2023: LEC Q2 / SAI Q8\n2024: LEC Q6 / SAI Q14\n2025: LEC Q3 / HAM Q13"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: NOR P2 / PIA P14\n2024: NOR P6 / PIA P8\n2025: NOR P1 / PIA P5",
+      "risultatiQualifica": "2023: NOR Q7 / PIA Q10\n2024: NOR Q1 / PIA Q8\n2025: NOR Q1 / PIA Q4"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: VER P1 / PER P4\n2024: VER P1 / PER P11\n2025: VER P3 / TSU P17",
+      "risultatiQualifica": "2023: VER Q1 / PER Q9\n2024: VER Q12 / PER Q13\n2025: VER Q16 / TSU Q19"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: TSU P9 / RIC P13\n2024: TSU P7 / LAW P9\n2025: LAW P7 / HAD P8",
+      "risultatiQualifica": "2023: TSU Q16 / RIC Q17\n2024: TSU Q3 / LAW Q5\n2025: HAD Q5 / LAW Q7"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: GAS P7 / OCO P10\n2024: OCO P2 / GAS P3\n2025: GAS P10 / COL P15",
+      "risultatiQualifica": "2023: OCO Q12 / GAS Q13\n2024: OCO Q4 / GAS Q15\n2025: GAS Q9 / COL Q18"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: HUL P12 / MAG DNF\n2024: BEA P12 / HUL DSQ\n2025: BEA P6 / OCO P12",
+      "risultatiQualifica": "2023: HUL Q11 / MAG Q14\n2024: BEA Q17 / HUL Q19\n2025: BEA Q8 / OCO Q17"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: BOT DNF / ZHO DNF\n2024: BOT P13 / ZHO P15\n2025: HUL P9 / BOR DNF",
+      "risultatiQualifica": "2023: BOT Q18 / ZHO Q20\n2024: BOT Q11 / ZHO Q20\n2025: HUL Q10"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: SAR P11 / ALB DNF\n2024: COL DNF / ALB DNS\n2025: ALB P11 / SAI P13",
+      "risultatiQualifica": "2023: ALB Q15 / SAR Q19\n2024: ALB Q7 / COL Q18\n2025: ALB Q12 / SAI Q15"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: ALO P3 / STR P5\n2024: ALO P14 / STR DNS\n2025: ALO P14 / STR P16",
+      "risultatiQualifica": "2023: STR Q3 / ALO Q4\n2024: ALO Q9 / STR Q10\n2025: ALO Q11 / STR Q14"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1",
+      "risultatiQualifica": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: HAM P7 / RUS P8\n2024: RUS P1 / HAM P2\n2025: RUS P2 / ANT P3",
+      "risultatiQualifica": "2023: RUS Q4 / HAM Q11\n2024: RUS Q1 / HAM Q10\n2025: RUS Q4 / ANT Q17"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: LEC P2 / SAI P6\n2024: SAI P3 / LEC P4\n2025: LEC P4 / HAM P8",
+      "risultatiQualifica": "2023: LEC Q1 / SAI Q2\n2024: SAI Q2 / LEC Q4\n2025: LEC Q9 / HAM Q20"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: PIA P10 / NOR DNF\n2024: NOR P6 / PIA P7\n2025: NOR DSQ / PIA DSQ",
+      "risultatiQualifica": "2023: NOR Q16 / PIA Q19\n2024: NOR Q6 / PIA Q8\n2025: NOR Q1 / PIA Q5"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: VER P1 / PER P3\n2024: VER P5 / PER P10\n2025: VER P1 / TSU P12",
+      "risultatiQualifica": "2023: VER Q3 / PER Q12\n2024: VER Q5 / PER Q16\n2025: VER Q2 / TSU Q19"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: RIC P14 / TSU P18\n2024: TSU P9 / LAW P16\n2025: HAD P6 / LAW P14",
+      "risultatiQualifica": "2023: RIC Q15 / TSU Q20\n2024: TSU Q7 / LAW Q15\n2025: LAW Q6 / HAD Q8"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: OCO P4 / GAS P11\n2024: OCO P17 / GAS DNF\n2025: GAS P13 / COL P15",
+      "risultatiQualifica": "2023: GAS Q5 / OCO Q17\n2024: GAS Q3 / OCO Q11\n2025: GAS Q10 / COL Q15"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: MAG P13 / HUL P19\n2024: HUL P8 / MAG P12\n2025: OCO P9 / BEA P10",
+      "risultatiQualifica": "2023: MAG Q9 / HUL Q13\n2024: HUL Q9 / MAG Q12\n2025: OCO Q13 / BEA Q14"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: ZHO P15 / BOT P17\n2024: ZHO P13 / BOT P18\n2025: HUL P7 / BOR DNF",
+      "risultatiQualifica": "2023: BOT Q8 / ZHO Q18\n2024: ZHO Q13 / BOT Q19\n2025: HUL Q11 / BOR Q18"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: ALB P12 / SAR P16\n2024: COL P14 / ALB DNF\n2025: SAI P5 / ALB DNF",
+      "risultatiQualifica": "2023: ALB Q6 / SAR Q7\n2024: COL Q14 / ALB Q18\n2025: SAI Q3 / ALB Q16"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: STR P5 / ALO P9\n2024: ALO P11 / STR P15\n2025: ALO P11 / STR DNF",
+      "risultatiQualifica": "2023: ALO Q10 / STR Q14\n2024: ALO Q17 / STR Q20\n2025: ALO Q7 / STR Q12"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1",
+      "risultatiQualifica": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: RUS P4 / HAM DNF\n2024: RUS P4 / HAM P12\n2025: ANT P5 / RUS P6",
+      "risultatiQualifica": "2023: RUS Q2 / HAM Q3\n2024: RUS Q2 / HAM Q6\n2025: RUS Q4 / ANT Q5"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: LEC P5 / SAI DNS\n2024: LEC P2 / SAI P6\n2025: LEC P8 / HAM P12",
+      "risultatiQualifica": "2023: LEC Q5 / SAI Q12\n2024: LEC Q5 / SAI Q7\n2025: LEC Q10 / HAM Q18"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: PIA P2 / NOR P3\n2024: PIA P3 / NOR P10\n2025: PIA P2 / NOR P4",
+      "risultatiQualifica": "2023: PIA Q6 / NOR Q10\n2024: NOR Q3 / PIA Q4\n2025: PIA Q1 / NOR Q2"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: VER P1 / PER P10\n2024: VER P1 / PER DNF\n2025: VER P1 / TSU P10",
+      "risultatiQualifica": "2023: VER Q1 / PER Q13\n2024: VER Q1 / PER Q9\n2025: VER Q3 / TSU Q16"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: TSU P15 / LAW P17\n2024: TSU P13 / LAW P14\n2025: LAW P9 / HAD P18",
+      "risultatiQualifica": "2023: TSU Q11 / LAW Q18\n2024: TSU Q14 / LAW Q17\n2025: HAD Q6 / LAW Q12"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: OCO P7 / GAS P12\n2024: GAS P5 / OCO DNF\n2025: COL P14 / GAS P16",
+      "risultatiQualifica": "2023: GAS Q7 / OCO Q8\n2024: GAS Q11 / OCO Q20\n2025: GAS Q9 / COL Q20"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: MAG P14 / HUL P16\n2024: MAG P9 / HUL DNF\n2025: OCO P15 / BEA DNF",
+      "risultatiQualifica": "2023: HUL Q15 / MAG Q19\n2024: MAG Q10 / HUL Q18\n2025: BEA Q13 / OCO Q17"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: BOT P8 / ZHO P9\n2024: ZHO P8 / BOT P11\n2025: BOR P13 / HUL DNF",
+      "risultatiQualifica": "2023: BOT Q9 / ZHO Q20\n2024: ZHO Q12 / BOT Q13\n2025: HUL Q11 / BOR Q14"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: ALB P13 / SAR DNF\n2024: ALB P15 / COL DNF\n2025: SAI P3 / ALB P11",
+      "risultatiQualifica": "2023: ALB Q14 / SAR Q16\n2024: ALB Q16 / COL Q19\n2025: SAI Q7 / ALB Q15"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: ALO P6 / STR P11\n2024: ALO P7 / STR DNF\n2025: ALO P7 / STR P17",
+      "risultatiQualifica": "2023: ALO Q4 / STR Q17\n2024: ALO Q8 / STR Q15\n2025: ALO Q8 / STR Q19"
+    },
+    {
+      "garaSlug": "qatar-lusail",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1",
+      "risultatiQualifica": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "scuderiaSlug": "mercedes",
+      "risultatiGara": "2023: RUS P3 / HAM P9\n2024: HAM P4 / RUS P5\n2025: RUS P5 / ANT P15",
+      "risultatiQualifica": "2023: RUS Q4 / HAM Q11\n2024: RUS Q7 / HAM Q18\n2025: RUS Q4 / ANT Q14"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "scuderiaSlug": "ferrari",
+      "risultatiGara": "2023: LEC P2 / SAI P18\n2024: SAI P2 / LEC P3\n2025: LEC P4 / HAM P8",
+      "risultatiQualifica": "2023: LEC Q2 / SAI Q16\n2024: SAI Q3 / LEC Q14\n2025: LEC Q5 / HAM Q16"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "scuderiaSlug": "mclaren",
+      "risultatiGara": "2023: NOR P5 / PIA P6\n2024: NOR P1 / PIA P10\n2025: PIA P2 / NOR P3",
+      "risultatiQualifica": "2023: PIA Q3 / NOR Q5\n2024: NOR Q1 / PIA Q2\n2025: NOR Q2 / PIA Q3"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "scuderiaSlug": "red_bull",
+      "risultatiGara": "2023: VER P1 / PER P4\n2024: VER P6 / PER DNF\n2025: VER P1 / TSU P14",
+      "risultatiQualifica": "2023: VER Q1 / PER Q9\n2024: VER Q5 / PER Q10\n2025: VER Q1 / TSU Q10"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "scuderiaSlug": "rb",
+      "risultatiGara": "2023: TSU P8 / RIC P11\n2024: TSU P12 / LAW P17\n2025: HAD P17 / LAW P18",
+      "risultatiQualifica": "2023: TSU Q6 / RIC Q15\n2024: TSU Q11 / LAW Q12\n2025: HAD Q9 / LAW Q13"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "scuderiaSlug": "alpine",
+      "risultatiGara": "2023: OCO P12 / GAS P13\n2024: GAS P7 / DOO P15\n2025: GAS P19 / COL P20",
+      "risultatiQualifica": "2023: GAS Q10 / OCO Q12\n2024: GAS Q6 / DOO Q20\n2025: GAS Q19 / COL Q20"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "scuderiaSlug": "haas",
+      "risultatiGara": "2023: HUL P15 / MAG P20\n2024: HUL P8 / MAG P16\n2025: OCO P7 / BEA P12",
+      "risultatiQualifica": "2023: HUL Q8 / MAG Q17\n2024: HUL Q4 / MAG Q15\n2025: OCO Q8 / BEA Q11"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "scuderiaSlug": "audi",
+      "risultatiGara": "2023: ZHO P17 / BOT P19\n2024: ZHO P13 / BOT DNF\n2025: HUL P9 / BOR P11",
+      "risultatiQualifica": "2023: BOT Q18 / ZHO Q19\n2024: BOT Q9 / ZHO Q17\n2025: BOR Q7 / HUL Q18"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "scuderiaSlug": "williams",
+      "risultatiGara": "2023: ALB P14 / SAR P16\n2024: ALB P11 / COL DNF\n2025: SAI P13 / ALB P16",
+      "risultatiQualifica": "2023: ALB Q14 / SAR NC\n2024: ALB Q16 / COL Q19\n2025: SAI Q12 / ALB Q17"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "scuderiaSlug": "aston_martin",
+      "risultatiGara": "2023: ALO P7 / STR P10\n2024: ALO P9 / STR P14\n2025: ALO P6 / STR P10",
+      "risultatiQualifica": "2023: ALO Q7 / STR Q13\n2024: ALO Q8 / STR Q13\n2025: ALO Q6 / STR Q15"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "scuderiaSlug": "cadillac",
+      "risultatiGara": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1",
+      "risultatiQualifica": "2023: NON PRESENTE IN F1\n2024: NON PRESENTE IN F1\n2025: NON PRESENTE IN F1"
+    }
+  ]
+}

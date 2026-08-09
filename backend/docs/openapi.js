@@ -31,8 +31,11 @@ const documentoOpenApi = {
       "API REST pubblica, anonima e di sola lettura. Non richiede autenticazione e " +
       "consente esclusivamente GET, HEAD e OPTIONS. Le analisi editoriali sono " +
       "pubblicate soltanto per il Gran Premio attuale; gare future e relative " +
-      "analisi non vengono esposte. Le posizioni di gara e qualifica sono registrate " +
-      "manualmente nell'archivio del progetto e visualizzate dal frontend con Chart.js. " +
+      "analisi non vengono esposte. Classifiche e risultati quantitativi provengono " +
+      "da uno snapshot locale derivato da F1DB v2026.11.0 (CC BY 4.0), senza " +
+      "chiamate esterne a runtime, e sono visualizzati con Chart.js. " +
+      "Il riutilizzo dei dati F1DB, anche commerciale, deve mantenere l'attribuzione " +
+      "e le indicazioni richieste dalla CC BY 4.0. " +
       "In produzione si applicano una cache pubblica di 60 secondi e un limite di " +
       "300 richieste ogni 15 minuti per indirizzo IP.",
     contact: {
@@ -40,8 +43,8 @@ const documentoOpenApi = {
       email: "marco.tannoia@gmail.com",
     },
     license: {
-      name: "Tutti i diritti riservati",
-      identifier: "LicenseRef-Race-Analysis-Hub-All-Rights-Reserved",
+      name: "Licenza mista: contenuti originali e dati di terzi",
+      url: "https://github.com/marcotannoia/race-analysis-hub/blob/master/NOTICE.md",
     },
   },
   externalDocs: {
@@ -507,6 +510,7 @@ const documentoOpenApi = {
           "descrizione",
           "documentazione",
           "specificaOpenApi",
+          "attribuzioneDati",
           "endpoint",
         ],
         properties: {
@@ -517,6 +521,9 @@ const documentoOpenApi = {
           specificaOpenApi: {
             type: "string",
             example: "/api/v1/openapi.json",
+          },
+          attribuzioneDati: {
+            $ref: "#/components/schemas/FonteAndamento",
           },
           endpoint: { $ref: "#/components/schemas/IndiceEndpoint" },
         },
@@ -871,19 +878,43 @@ const documentoOpenApi = {
       },
       FonteAndamento: {
         type: "object",
-        required: ["nome", "url"],
+        required: [
+          "nome",
+          "url",
+          "licenza",
+          "licenzaUrl",
+          "versione",
+          "modifiche",
+        ],
         properties: {
           nome: {
             type: "string",
-            example: "Archivio manuale Race Analysis Hub",
+            example: "F1DB",
           },
-          url: { type: ["string", "null"], format: "uri" },
+          url: {
+            type: "string",
+            format: "uri",
+            example:
+              "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+          },
+          licenza: { type: "string", example: "CC BY 4.0" },
+          licenzaUrl: {
+            type: "string",
+            format: "uri",
+            example: "https://creativecommons.org/licenses/by/4.0/",
+          },
+          versione: { type: "string", example: "v2026.11.0" },
+          modifiche: {
+            type: "string",
+            description:
+              "Trasformazioni applicate da Race Analysis Hub al dataset originale.",
+          },
         },
       },
       Andamento: {
         type: "object",
         description:
-          "Posizioni di gara e qualifica registrate manualmente per la stagione corrente fino all'ultimo Gran Premio disponibile.",
+          "Posizioni di gara e qualifica derivate dallo snapshot F1DB fino all'ultimo Gran Premio incluso nella release dichiarata.",
         required: [
           "stagione",
           "etichette",
