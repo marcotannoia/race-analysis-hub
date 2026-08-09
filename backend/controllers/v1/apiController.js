@@ -5,7 +5,6 @@ const AnalisiGara = require("../../models/AnalisiGara");
 const AnalisiScuderia = require("../../models/AnalisiScuderia");
 const trovaGaraAttuale = require("../../services/garaAttuale");
 const creaAndamentoAnnuale = require("../../services/andamentoAnnuale");
-const andamentoJolpica = require("../../services/andamentoJolpica");
 const { inviaErrore } = require("../../utils/rispostaApi");
 const {
   presentaAnalisiPilota,
@@ -19,10 +18,10 @@ const {
   presentaScuderiaBreve,
 } = require("../../presenters/apiV1");
 
-async function recuperaAndamentoPilotaDatabase(pilota, garaAttuale) {
+async function recuperaAndamentoPilota(pilota, garaAttuale) {
   const analisi = await AnalisiGara.find({ pilota: pilota._id })
     .select(
-      "gara posizioniStoriche qualificheStoriche storicoEdizioni",
+      "gara posizioniStoriche qualificheStoriche storicoEdizioni updatedAt",
     )
     .populate("gara", "slug circuito ordineAnalisi stagione stato")
     .lean();
@@ -36,24 +35,10 @@ async function recuperaAndamentoPilotaDatabase(pilota, garaAttuale) {
   );
 }
 
-async function recuperaAndamentoPilota(pilota, garaAttuale) {
-  try {
-    return presentaAndamento(
-      await andamentoJolpica.creaAndamentoPilota({
-        stagione: garaAttuale.stagione,
-        pilota,
-      }),
-    );
-  } catch (errore) {
-    console.warn(`Jolpica non disponibile per ${pilota.slug}: ${errore.message}`);
-    return recuperaAndamentoPilotaDatabase(pilota, garaAttuale);
-  }
-}
-
-async function recuperaAndamentoScuderiaDatabase(scuderia, garaAttuale) {
+async function recuperaAndamentoScuderia(scuderia, garaAttuale) {
   const analisi = await AnalisiScuderia.find({ scuderia: scuderia._id })
     .select(
-      "gara posizioniStoriche qualificheStoriche storicoEdizioni",
+      "gara posizioniStoriche qualificheStoriche storicoEdizioni updatedAt",
     )
     .populate("gara", "slug circuito ordineAnalisi stagione stato")
     .lean();
@@ -64,20 +49,6 @@ async function recuperaAndamentoScuderiaDatabase(scuderia, garaAttuale) {
       stagione: garaAttuale.stagione,
     }),
   );
-}
-
-async function recuperaAndamentoScuderia(scuderia, garaAttuale, piloti) {
-  try {
-    return presentaAndamento(
-      await andamentoJolpica.creaAndamentoScuderia({
-        stagione: garaAttuale.stagione,
-        piloti,
-      }),
-    );
-  } catch (errore) {
-    console.warn(`Jolpica non disponibile per ${scuderia.slug}: ${errore.message}`);
-    return recuperaAndamentoScuderiaDatabase(scuderia, garaAttuale);
-  }
 }
 
 async function recuperaAnalisiPilota(pilotaId, garaId) {
@@ -113,8 +84,8 @@ async function richiediGaraAttuale(risposta) {
 
 function descrizioneApi(richiesta, risposta) {
   risposta.json({
-    nome: "F1 Stats API",
-    versione: "1.1.1",
+    nome: "Race Analysis Hub API",
+    versione: "1.2.0",
     descrizione:
       "API pubblica di sola lettura per il Gran Premio attuale, i piloti e le scuderie",
     documentazione: "/api/docs",
@@ -145,8 +116,8 @@ function statoServizio(richiesta, risposta) {
     .set("Cache-Control", "no-store")
     .json({
       stato: databaseConnesso ? "ok" : "non_disponibile",
-      servizio: "f1-stats-api",
-      versione: "1.1.1",
+      servizio: "race-analysis-hub-api",
+      versione: "1.2.0",
       requestId: risposta.locals.requestId,
     });
 }
@@ -267,11 +238,7 @@ async function dettaglioScuderia(richiesta, risposta) {
       .lean(),
     recuperaAnalisiScuderia(scuderia._id, garaAttuale._id),
   ]);
-  const andamento = await recuperaAndamentoScuderia(
-    scuderia,
-    garaAttuale,
-    piloti,
-  );
+  const andamento = await recuperaAndamentoScuderia(scuderia, garaAttuale);
 
   risposta.json({
     scuderia: presentaScuderia(scuderia),

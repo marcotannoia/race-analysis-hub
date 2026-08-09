@@ -1,0 +1,7 @@
+<svg role="img" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <title>Race Analysis Hub</title>
+  <rect width="64" height="64" rx="12" fill="#090909"/>
+  <path d="M16 14v36" stroke="#f7f7f7" stroke-width="4" stroke-linecap="round"/>
+  <path d="M20 16h30l-8 10 8 10H20z" fill="#ef2b24"/>
+  <path d="M20 16h10v10H20zm20 0h10l-8 10h-2zM30 26h10v10H30z" fill="#f7f7f7"/>
+</svg>

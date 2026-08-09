@@ -141,15 +141,15 @@ test("l'andamento espone la provenienza dei risultati", () => {
     qualifica: [{ nome: "LEC", valori: [3] }],
     gara: [{ nome: "LEC", valori: [2] }],
     fonte: {
-      nome: "Jolpica F1 API",
-      url: "https://api.jolpi.ca/ergast/f1/",
+      nome: "Archivio manuale Race Analysis Hub",
+      url: null,
     },
     aggiornatoIl: "2026-08-06T12:00:00.000Z",
   });
 
   assert.deepEqual(andamento.fonte, {
-    nome: "Jolpica F1 API",
-    url: "https://api.jolpi.ca/ergast/f1/",
+    nome: "Archivio manuale Race Analysis Hub",
+    url: null,
   });
   assert.equal(andamento.aggiornatoIl, "2026-08-06T12:00:00.000Z");
 });

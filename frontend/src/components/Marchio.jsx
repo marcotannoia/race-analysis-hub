@@ -2,11 +2,11 @@ function Marchio({ compatto = false }) {
   return (
     <div
       className={compatto ? 'marchio marchio-compatto' : 'marchio'}
-      aria-label="MT feat. GPK"
+      aria-label="Race Analysis Hub"
     >
-      <span>MT</span>
-      <i>feat.</i>
-      <strong>GPK</strong>
+      <span>Race</span>
+      <i>Analysis</i>
+      <strong>Hub</strong>
     </div>
   )
 }

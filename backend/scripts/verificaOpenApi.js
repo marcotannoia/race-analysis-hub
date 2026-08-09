@@ -5,7 +5,7 @@ const { spawnSync } = require("child_process");
 const documentoOpenApi = require("../docs/openapi");
 
 const cartellaTemporanea = fs.mkdtempSync(
-  path.join(os.tmpdir(), "f1-stats-openapi-"),
+  path.join(os.tmpdir(), "race-analysis-hub-openapi-"),
 );
 const percorsoSpecifica = path.join(cartellaTemporanea, "openapi.json");
 

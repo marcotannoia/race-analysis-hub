@@ -25,31 +25,33 @@ const risposteComuni = {
 const documentoOpenApi = {
   openapi: "3.1.0",
   info: {
-    title: "F1 Stats API",
-    version: "1.1.1",
+    title: "Race Analysis Hub API",
+    version: "1.2.0",
     description:
       "API REST pubblica, anonima e di sola lettura. Non richiede autenticazione e " +
       "consente esclusivamente GET, HEAD e OPTIONS. Le analisi editoriali sono " +
       "pubblicate soltanto per il Gran Premio attuale; gare future e relative " +
-      "analisi non vengono esposte. In produzione si applicano una cache pubblica " +
-      "di 60 secondi e un limite di 300 richieste ogni 15 minuti per indirizzo IP.",
+      "analisi non vengono esposte. Le posizioni di gara e qualifica sono registrate " +
+      "manualmente nell'archivio del progetto e visualizzate dal frontend con Chart.js. " +
+      "In produzione si applicano una cache pubblica di 60 secondi e un limite di " +
+      "300 richieste ogni 15 minuti per indirizzo IP.",
     contact: {
       name: "Marco Tannoi",
       email: "marco.tannoia@gmail.com",
     },
     license: {
       name: "Tutti i diritti riservati",
-      identifier: "LicenseRef-F1-Stats-All-Rights-Reserved",
+      identifier: "LicenseRef-Race-Analysis-Hub-All-Rights-Reserved",
     },
   },
   externalDocs: {
-    description: "Repository e guida operativa di F1 Stats",
-    url: "https://github.com/marcotannoia/f1_stats",
+    description: "Repository e guida operativa di Race Analysis Hub",
+    url: "https://github.com/marcotannoia/race-analysis-hub",
   },
   servers: [
     {
-      url: "https://f1-stats-5v93.onrender.com/api/v1",
-      description: "Produzione",
+      url: "/api/v1",
+      description: "Host corrente della documentazione",
     },
   ],
   security: [],
@@ -109,8 +111,8 @@ const documentoOpenApi = {
             "#/components/schemas/StatoServizio",
             {
               stato: "ok",
-              servizio: "f1-stats-api",
-              versione: "1.1.1",
+              servizio: "race-analysis-hub-api",
+              versione: "1.2.0",
               requestId: "2f1c7e5f-7f55-4f16-a29c-45f3f667ae21",
             },
           ),
@@ -436,8 +438,8 @@ const documentoOpenApi = {
         "#/components/schemas/StatoServizio",
         {
           stato: "non_disponibile",
-          servizio: "f1-stats-api",
-          versione: "1.1.1",
+          servizio: "race-analysis-hub-api",
+          versione: "1.2.0",
           requestId: "2f1c7e5f-7f55-4f16-a29c-45f3f667ae21",
         },
       ),
@@ -508,8 +510,8 @@ const documentoOpenApi = {
           "endpoint",
         ],
         properties: {
-          nome: { type: "string", const: "F1 Stats API" },
-          versione: { type: "string", example: "1.1.1" },
+          nome: { type: "string", const: "Race Analysis Hub API" },
+          versione: { type: "string", example: "1.2.0" },
           descrizione: { type: "string" },
           documentazione: { type: "string", example: "/api/docs" },
           specificaOpenApi: {
@@ -527,8 +529,8 @@ const documentoOpenApi = {
             type: "string",
             enum: ["ok", "non_disponibile"],
           },
-          servizio: { type: "string", const: "f1-stats-api" },
-          versione: { type: "string", example: "1.1.1" },
+          servizio: { type: "string", const: "race-analysis-hub-api" },
+          versione: { type: "string", example: "1.2.0" },
           requestId: { type: "string", format: "uuid" },
         },
       },
@@ -871,14 +873,17 @@ const documentoOpenApi = {
         type: "object",
         required: ["nome", "url"],
         properties: {
-          nome: { type: "string", example: "Jolpica F1 API" },
+          nome: {
+            type: "string",
+            example: "Archivio manuale Race Analysis Hub",
+          },
           url: { type: ["string", "null"], format: "uri" },
         },
       },
       Andamento: {
         type: "object",
         description:
-          "Posizioni della stagione corrente fino all'ultimo GP disponibile. Jolpica è la fonte primaria; il database locale è usato come ripiego.",
+          "Posizioni di gara e qualifica registrate manualmente per la stagione corrente fino all'ultimo Gran Premio disponibile.",
         required: [
           "stagione",
           "etichette",

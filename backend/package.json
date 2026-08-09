@@ -1,7 +1,7 @@
 {
-  "name": "f1-stats-backend",
-  "version": "1.1.1",
-  "description": "API REST per il progetto F1 Stats",
+  "name": "race-analysis-hub-backend",
+  "version": "1.2.0",
+  "description": "API REST pubblica per Race Analysis Hub",
   "main": "server.js",
   "engines": {
     "node": ">=22.0.0"

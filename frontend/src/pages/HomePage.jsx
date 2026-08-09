@@ -55,7 +55,9 @@ function HomePage() {
       tipo: 'scuderia',
       slug: scuderia.slug,
       nome: scuderia.nome,
-      sigla: `P${scuderia.classifica2026.posizione}`,
+      sigla: scuderia.classifica?.posizione
+        ? `P${scuderia.classifica.posizione}`
+        : '—',
       descrizione: 'Scuderia',
     }))
 

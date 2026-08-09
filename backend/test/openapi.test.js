@@ -30,9 +30,13 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
   });
   assert.ok(
     documentoOpenApi.servers.some(
-      (server) =>
-        server.url === "https://f1-stats-5v93.onrender.com/api/v1",
+      (server) => server.url === "/api/v1",
     ),
+  );
+  assert.equal(documentoOpenApi.info.title, "Race Analysis Hub API");
+  assert.match(
+    documentoOpenApi.components.schemas.Andamento.description,
+    /registrate manualmente/,
   );
 });
 

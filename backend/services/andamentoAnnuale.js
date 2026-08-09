@@ -84,6 +84,7 @@ function creaEventiPilota(analisi, stagione, codice) {
       etichetta: nomiBreviCircuiti[elemento.gara.slug] || elemento.gara.circuito,
       gara: new Map([[codice, gara]]),
       qualifica: new Map([[codice, qualifica]]),
+      aggiornatoIl: elemento.updatedAt,
     };
   });
 }
@@ -107,6 +108,7 @@ function creaEventiScuderia(analisi, stagione) {
         : stagioneCorrente
           ? new Map()
           : posizioniPerCodice(elemento.qualificheStoriche, stagione, "Q"),
+      aggiornatoIl: elemento.updatedAt,
     };
   });
 }
@@ -116,6 +118,16 @@ function creaSerie(eventi, codici, tipo) {
     nome: codice,
     valori: eventi.map((evento) => evento[tipo].get(codice) ?? null),
   }));
+}
+
+function ultimaDataAggiornamento(eventi) {
+  const dateValide = eventi
+    .map((evento) => new Date(evento.aggiornatoIl || ""))
+    .filter((data) => !Number.isNaN(data.getTime()));
+
+  if (!dateValide.length) return null;
+
+  return new Date(Math.max(...dateValide.map((data) => data.getTime())));
 }
 
 function creaAndamentoAnnuale({ analisi, stagione, codicePilota = null }) {
@@ -148,10 +160,10 @@ function creaAndamentoAnnuale({ analisi, stagione, codicePilota = null }) {
     qualifica: creaSerie(eventi, codici, "qualifica"),
     gara: creaSerie(eventi, codici, "gara"),
     fonte: {
-      nome: "Database F1 Stats",
+      nome: "Archivio manuale Race Analysis Hub",
       url: null,
     },
-    aggiornatoIl: null,
+    aggiornatoIl: ultimaDataAggiornamento(eventi),
   };
 }
 

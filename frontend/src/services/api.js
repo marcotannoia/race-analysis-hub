@@ -1,6 +1,5 @@
 const URL_LOCALE = 'http://127.0.0.1:5002'
-const URL_PRODUZIONE = 'https://f1-stats-5v93.onrender.com'
-const URL_PREDEFINITO = import.meta.env.PROD ? URL_PRODUZIONE : URL_LOCALE
+const URL_PREDEFINITO = import.meta.env.PROD ? window.location.origin : URL_LOCALE
 const API_URL = (import.meta.env.VITE_API_URL || URL_PREDEFINITO).replace(
   /\/+$/,
   '',

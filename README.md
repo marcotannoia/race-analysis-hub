@@ -1,128 +1,141 @@
-# F1 Stats
+# Race Analysis Hub
 
-F1 Stats è un progetto web dedicato alla consultazione e all'analisi dei dati
-della Formula 1.
+Race Analysis Hub è un progetto indipendente per consultare dati e analisi
+editoriali sul campionato mondiale di Formula 1.
 
 Il progetto comprende:
 
-- un frontend sviluppato con React e Vite;
-- un backend REST sviluppato con Node.js ed Express;
-- un database MongoDB contenente piloti, scuderie, Gran Premi, risultati e
-  analisi editoriali.
+- un frontend React/Vite;
+- un backend REST Node.js/Express;
+- un database MongoDB con piloti, scuderie, gare, classifiche e analisi;
+- grafici Chart.js delle posizioni di qualifica e gara registrate manualmente.
 
-Le API pubbliche sono di sola lettura e permettono ad applicazioni esterne di
-utilizzare i dati di F1 Stats nel proprio frontend.
+Le API v1 sono pubbliche, anonime e di sola lettura. Non richiedono
+autenticazione e accettano esclusivamente `GET`, `HEAD` e `OPTIONS`.
 
-## Documentazione delle API
+## Documentazione API
 
-La documentazione ufficiale degli endpoint è disponibile tramite Swagger:
+Swagger è la documentazione ufficiale e interattiva:
 
 ```text
 http://localhost:5002/api/docs
 ```
 
-Da Swagger è possibile consultare gli endpoint, i parametri, le risposte e
-provare direttamente le richieste.
-
-La specifica OpenAPI in formato JSON è disponibile su:
+La specifica OpenAPI 3.1 in formato JSON è disponibile su:
 
 ```text
 http://localhost:5002/api/v1/openapi.json
 ```
 
-In produzione:
+Istanza attualmente pubblicata:
 
 ```text
 https://f1-stats-5v93.onrender.com/api/docs
 https://f1-stats-5v93.onrender.com/api/v1/openapi.json
 ```
 
-Dalla versione `1.1.1`, `datiPerAnno` espone i contenuti storici delle analisi
-come oggetti separati per stagione, con chiavi come `2023`, `2024` e `2025`.
-La chiave `generale` viene usata soltanto quando una sintesi non appartiene a un
-singolo anno. I precedenti campi testuali restano disponibili per compatibilità
-con i client già pubblicati.
-
-Le API sono pubbliche, anonime e di sola lettura: non richiedono autenticazione
-e accettano esclusivamente `GET`, `HEAD` e `OPTIONS`. In produzione il limite è
-di 300 richieste ogni 15 minuti per indirizzo IP e le risposte pubbliche possono
-essere mantenute in cache per 60 secondi. Il referente tecnico è Marco Tannoi
+Il contratto pubblico corrente è `v1`; la versione applicativa documentata è
+`1.2.0`. Il referente tecnico è Marco Tannoi
 (`marco.tannoia@gmail.com`).
 
-## Avvio del backend
+## Origine dei grafici
 
-Dalla cartella `backend`:
+Il frontend non interroga provider esterni per costruire i grafici. Le
+posizioni di gara e qualifica vengono registrate nel database tramite
+`backend/data/aggiornamento-gp.json`; il backend prepara le serie numeriche e
+Chart.js le visualizza nelle pagine di piloti e scuderie.
 
-```bash
-npm install
-npm run dev
-```
+Dopo ogni gara:
 
-Il server locale viene avviato su `http://localhost:5002`.
-
-## Comandi utili
-
-Eseguire i test del backend:
-
-```bash
-npm test
-```
-
-Validare la specifica OpenAPI con le regole raccomandate di Redocly:
-
-```bash
-npm run lint:api
-```
-
-Controllare i dati presenti nel database:
-
-```bash
-npm run verify-db
-```
-
-Importare o aggiornare nel database i contenuti di
-`data/dati-iniziali.json`:
-
-```bash
-npm run seed
-```
-
-Registrare definitivamente nel database i dati del file
-`data/aggiornamento-gp.json` dopo un Gran Premio:
+1. compilare `risultatiPiloti` con `posizioneGara` e
+   `posizioneQualifica`;
+2. controllare slug, stagione e annotazioni;
+3. impostare `pronto` a `true`;
+4. eseguire prima il controllo e poi la registrazione.
 
 ```bash
 npm run gp -- --controlla
 npm run gp
 ```
 
-Impostare il Gran Premio attualmente pubblicato dalle API:
+I valori non disponibili possono essere espressi come `DNF`, `DNS`, `DSQ` o
+`NC`; nel grafico vengono mantenuti come punti mancanti senza inventare una
+posizione numerica.
+
+## Avvio locale
+
+Installare le dipendenze:
 
 ```bash
+npm ci --prefix backend
+npm ci --prefix frontend
+```
+
+Avviare il backend dalla cartella `backend`:
+
+```bash
+npm run dev
+```
+
+In un secondo terminale, avviare il frontend dalla cartella `frontend`:
+
+```bash
+npm run dev
+```
+
+Il backend usa `http://localhost:5002`. Creare `backend/.env` partendo da
+`backend/.env.example`; le credenziali MongoDB non devono mai essere inserite
+nel repository.
+
+## Controlli prima del rilascio
+
+```bash
+npm test
+npm run lint
+npm run build
+npm run lint:api
+npm run verify-db
+```
+
+`verify-db` richiede un collegamento valido al database e deve confermare che
+esista una sola gara con stato `attuale`.
+
+Altri comandi amministrativi:
+
+```bash
+npm --prefix backend run seed
 npm run set-current -- slug-del-gran-premio
 ```
 
-Le impostazioni per il collegamento a MongoDB e per la porta del server si
-trovano nel file `.env`, da creare prendendo come riferimento `.env.example`.
-
 ## Pubblicazione su Render
 
-Il progetto è configurato per essere pubblicato come un solo Web Service:
-durante la build Render compila il frontend React, poi il backend Express serve
-sia le API sia i file presenti in `frontend/dist`.
+`render.yaml` configura un unico Web Service: Render compila il frontend e il
+backend Express serve sia l'applicazione sia le API. `MONGO_URL` deve essere
+impostata come variabile segreta nel pannello Render.
 
-1. Pubblicare il repository su GitHub, GitLab o Bitbucket.
-2. In Render selezionare **New → Blueprint** e collegare il repository.
-3. Render leggerà automaticamente il file `render.yaml`.
-4. Inserire `MONGO_URL` come variabile segreta usando la stringa di connessione
-   del database MongoDB Atlas.
-5. Avviare il deploy e controllare `/api/health` e `/api/docs` sull'indirizzo
-   assegnato da Render.
+L'istanza gratuita è adatta a sviluppo e dimostrazioni, non a una consegna con
+tempi di risposta prevedibili: dopo 15 minuti senza traffico viene sospesa e la
+prima richiesta successiva può impiegare circa un minuto per riattivarla. Per
+un'API consegnata a una società è raccomandata un'istanza di servizio a
+pagamento; il piano del workspace e il tipo di istanza sono impostazioni
+distinte su Render.
 
-Non bisogna inserire credenziali MongoDB nel repository. Render assegna
-automaticamente `PORT`, mentre in produzione il server usa `0.0.0.0` e serve il
-frontend compilato.
+## Marchi, fonti e responsabilità
 
-Docker non è necessario per questo deploy: il runtime Node nativo di Render è
-sufficiente e riduce i file e i passaggi da mantenere. Un Dockerfile avrebbe
-senso in seguito soltanto se servissero dipendenze di sistema particolari o la
-stessa immagine dovesse essere distribuita anche su altre piattaforme.
+Il nome del prodotto e della repository è intenzionalmente neutro. I termini
+“Formula 1”, “F1” e “Grand Prix” sono usati soltanto in modo descrittivo; il
+progetto non utilizza loghi ufficiali.
+
+> This website is unofficial and is not associated in any way with the Formula
+> 1 companies. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP,
+> GRAND PRIX and related marks are trade marks of Formula One Licensing B.V.
+
+Le fonti sono indicate per trasparenza editoriale. Una citazione, da sola, non
+attribuisce automaticamente il diritto di ripubblicare contenuti, statistiche
+o database di terzi. Prima di un utilizzo commerciale, il titolare del progetto
+deve verificare di avere i diritti necessari per ciascun dato e contenuto
+pubblicato. Vedere anche `NOTICE.md`.
+
+Il codice e i contenuti originali sono distribuiti con tutti i diritti
+riservati; l'accesso pubblico alle API non costituisce una licenza sui marchi o
+sui contenuti di terzi.

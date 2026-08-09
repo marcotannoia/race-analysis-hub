@@ -111,7 +111,7 @@ app.use(
   },
   swaggerUi.serve,
   swaggerUi.setup(documentoOpenApi, {
-    customSiteTitle: "F1 Stats API - Documentazione",
+    customSiteTitle: "Race Analysis Hub API - Documentazione",
     swaggerOptions: { tryItOutEnabled: true },
   }),
 );
@@ -126,7 +126,7 @@ app.use("/api/v1", apiV1Routes);
 
 app.get("/api", (richiesta, risposta) => {
   risposta.json({
-    nome: "F1 Stats API",
+    nome: "Race Analysis Hub API",
     descrizione: "Usare esclusivamente la versione pubblica v1",
     versioneAttuale: "/api/v1",
     documentazione: "/api/docs",
