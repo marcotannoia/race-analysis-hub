@@ -141,3 +141,16 @@ npm run verify-data
 
 L'attribuzione completa e le condizioni di riutilizzo sono riportate in
 `NOTICE.md` e nella documentazione Swagger.
+
+## Personalizzazione da parte di chi usa le API
+
+Le API pubbliche non consentono di modificare il database ufficiale. Un
+riutilizzatore può però salvare o trasformare la risposta nel proprio software
+e personalizzare campi come `aggiornamentiInArrivo`, `considerazioniFinali` o
+`passoGara`.
+
+Se il contenuto personalizzato viene mostrato o distribuito, devono essere
+mantenute le attribuzioni previste da `LICENSE.md` e `NOTICE.md` e deve essere
+indicato che il testo è stato modificato. Per conservare le modifiche in modo
+indipendente, il riutilizzatore deve usare il proprio backend o database: la sua
+personalizzazione non cambia le API ufficiali di Race Analysis Hub.

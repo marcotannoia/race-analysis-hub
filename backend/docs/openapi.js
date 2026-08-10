@@ -34,17 +34,23 @@ const documentoOpenApi = {
       "analisi non vengono esposte. Classifiche e risultati quantitativi provengono " +
       "da uno snapshot locale derivato da F1DB v2026.11.0 (CC BY 4.0), senza " +
       "chiamate esterne a runtime, e sono visualizzati con Chart.js. " +
-      "Il riutilizzo dei dati F1DB, anche commerciale, deve mantenere l'attribuzione " +
-      "e le indicazioni richieste dalla CC BY 4.0. " +
+      "Le risposte pubbliche possono essere copiate, mostrate e adattate nel software " +
+      "del riutilizzatore, anche per uso commerciale, secondo la CC BY 4.0. " +
+      "La personalizzazione di campi come aggiornamentiInArrivo modifica soltanto la " +
+      "copia del riutilizzatore e non il database ufficiale. Occorre attribuire " +
+      "Race Analysis Hub — Marco Tannoia, mantenere l'attribuzione a F1DB per i dati " +
+      "quantitativi e indicare le modifiche effettuate. " +
       "In produzione si applicano una cache pubblica di 60 secondi e un limite di " +
       "1000 richieste ogni 15 minuti per indirizzo IP.",
+    termsOfService:
+      "https://github.com/marcotannoia/race-analysis-hub/blob/master/LICENSE.md",
     contact: {
       name: "Marco Tannoia",
       email: "marco.tannoia@gmail.com",
     },
     license: {
-      name: "Licenza mista: contenuti originali e dati di terzi",
-      url: "https://github.com/marcotannoia/race-analysis-hub/blob/master/NOTICE.md",
+      name: "CC BY 4.0 per le risposte API; codice sorgente riservato",
+      url: "https://github.com/marcotannoia/race-analysis-hub/blob/master/LICENSE.md",
     },
   },
   externalDocs: {
@@ -816,7 +822,9 @@ const documentoOpenApi = {
           aggiornamentiInArrivo: {
             type: "string",
             description:
-              "Aggiornamenti tecnici confermati o stato delle informazioni disponibili.",
+              "Aggiornamenti tecnici confermati o stato delle informazioni disponibili. " +
+              "Il riutilizzatore può adattare questo testo nel proprio software secondo " +
+              "la licenza dichiarata, senza modificare il database ufficiale.",
           },
           storicoEdizioni: {
             type: "array",
