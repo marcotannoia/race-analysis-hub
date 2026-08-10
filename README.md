@@ -62,18 +62,25 @@ Per attribuzioni, marchi e condizioni di riutilizzo consultare
 
 ## Classifica previsionale
 
-L'indice dei favoriti va da 0 a 100 ed è restituito da `GET /api/v1/home`
-insieme alla scomposizione dei fattori. I pesi principali sono:
+L'indice dei favoriti va da 0 a 100 ed è isolato nell'endpoint dedicato
+`GET /api/v1/previsioni/piloti`, insieme alla scomposizione dei fattori. I pesi
+sono:
 
-- compatibilità vettura-circuito: 24%;
-- andamento del pilota nel 2026: 18%;
-- aggiornamenti tecnici pertinenti: 16%;
-- confidenza pilota-circuito e andamento della scuderia: 10% ciascuno;
+- andamento della scuderia nel 2026: 26%;
+- andamento del pilota nel 2026: 20%;
+- compatibilità vettura-circuito: 18%;
+- aggiornamenti tecnici pertinenti: 12%;
 - qualifica 2026: 8%;
-- storico personale: 5%;
-- passo gara recente: 4%;
-- gestione gomme: 3%;
+- confidenza pilota-circuito: 7%;
+- storico personale: 3%;
+- passo gara recente: 2%;
+- gestione gomme: 2%;
 - affidabilità e rischi: 2%.
+
+La compatibilità vettura-circuito combina l'affinità tecnica editoriale con la
+forza effettiva della scuderia nel 2026. Una vettura poco competitiva non può
+quindi risalire eccessivamente soltanto grazie allo storico sulla pista o a un
+aggiornamento promettente.
 
 Gli aggiornamenti non ricevono automaticamente un punteggio positivo. Il
 vantaggio viene ridotto se il pacchetto è soltanto annunciato, non è stato

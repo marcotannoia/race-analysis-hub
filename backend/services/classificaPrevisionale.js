@@ -1,15 +1,15 @@
 const snapshotF1db = require("../data/f1db-v2026.11.0-derivato.json");
 
 const PESI = Object.freeze({
-  andamento2026: 18,
-  compatibilitaVetturaCircuito: 24,
-  aggiornamentiTecnici: 16,
-  confidenzaPilotaCircuito: 10,
+  andamento2026: 20,
+  compatibilitaVetturaCircuito: 18,
+  aggiornamentiTecnici: 12,
+  confidenzaPilotaCircuito: 7,
   qualifica2026: 8,
-  scuderia2026: 10,
-  storicoPersonale: 5,
-  passoGaraRecente: 4,
-  gestioneGomme: 3,
+  scuderia2026: 26,
+  storicoPersonale: 3,
+  passoGaraRecente: 2,
+  gestioneGomme: 2,
   affidabilitaERischi: 2,
 });
 
@@ -120,6 +120,12 @@ function valutaEtichetta(testo) {
   if (valore.startsWith("outsider")) return 55;
   if (valore.startsWith("da valutare")) return 40;
   return 50;
+}
+
+function valutaCompatibilitaVettura(valoreScuderia, valutazioneCircuito) {
+  return arrotonda(
+    limita(valoreScuderia * 0.65 + valutazioneCircuito * 0.35),
+  );
 }
 
 function valutaTestoPrestazione(testi) {
@@ -324,6 +330,15 @@ function creaClassificaPrevisionale({
       analisiScuderia?.aggiornamentiInArrivo || analisiPilota?.aggiornamentiInArrivo,
     );
     const compatibilitaPilota = valutaEtichetta(analisiPilota?.considerazioni);
+    const andamentoScuderia = valutaClassifica(
+      scuderia?.classifica2026,
+      massimoPuntiScuderie,
+      massimoVittorieScuderie,
+      scuderie.length,
+    );
+    const valutazioneCircuitoScuderia = valutaEtichetta(
+      analisiScuderia?.considerazioni,
+    );
 
     const valutazioni = {
       andamento2026: valutaClassifica(
@@ -332,16 +347,14 @@ function creaClassificaPrevisionale({
         massimoVittoriePiloti,
         piloti.length,
       ),
-      compatibilitaVetturaCircuito: valutaEtichetta(analisiScuderia?.considerazioni),
+      compatibilitaVetturaCircuito: valutaCompatibilitaVettura(
+        andamentoScuderia,
+        valutazioneCircuitoScuderia,
+      ),
       aggiornamentiTecnici: aggiornamento.valore,
       confidenzaPilotaCircuito: compatibilitaPilota,
       qualifica2026: valutaRisultatiRecenti(qualifiche2026, 5),
-      scuderia2026: valutaClassifica(
-        scuderia?.classifica2026,
-        massimoPuntiScuderie,
-        massimoVittorieScuderie,
-        scuderie.length,
-      ),
+      scuderia2026: andamentoScuderia,
       storicoPersonale: storico.valore,
       passoGaraRecente: valutaRisultatiRecenti(gare2026, 3),
       gestioneGomme: valutaGestioneGomme(analisiPilota, analisiScuderia),
@@ -413,4 +426,5 @@ module.exports = {
   PESI,
   creaClassificaPrevisionale,
   valutaAggiornamento,
+  valutaCompatibilitaVettura,
 };

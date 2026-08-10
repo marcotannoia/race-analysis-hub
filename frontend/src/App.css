@@ -293,7 +293,7 @@ main {
 }
 
 .intestazione-previsioni {
-  max-width: 780px;
+  max-width: none;
 }
 
 .intestazione-previsioni h2 {
@@ -307,43 +307,29 @@ main {
   text-transform: uppercase;
 }
 
-.intestazione-previsioni p,
 .metodologia-previsioni p,
-.avvertenza-previsioni p,
 .fonte-previsioni {
   color: var(--testo-secondario);
   line-height: 1.65;
 }
 
-.intestazione-previsioni p {
-  margin: 0;
-}
-
-.avvertenza-previsioni {
+.contesto-previsioni {
   display: grid;
-  grid-template-columns: 190px minmax(0, 1fr);
-  gap: 24px;
-  margin-top: 38px;
-  padding: 22px 24px;
-  background: rgb(225 6 0 / 7%);
-  border: 1px solid rgb(225 6 0 / 45%);
-  border-radius: 8px;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 44px;
+  margin-top: 12px;
 }
 
-.avvertenza-previsioni strong {
-  color: #fff;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.avvertenza-previsioni p {
+.contesto-previsioni p {
   margin: 0;
-  font-size: 0.82rem;
+  color: var(--testo-secondario);
+  font-size: 0.78rem;
+  line-height: 1.65;
 }
 
 .metodologia-previsioni {
-  margin-top: 18px;
+  margin-top: 34px;
   padding: 20px 24px;
   background: #080808;
   border: 1px solid var(--bordo);
@@ -1284,11 +1270,15 @@ main {
     padding-top: 58px;
   }
 
-  .avvertenza-previsioni,
+  .contesto-previsioni,
   .riga-previsione,
   .fattori-previsione,
   .nota-aggiornamenti-previsione {
     grid-template-columns: 1fr;
+  }
+
+  .contesto-previsioni {
+    gap: 10px;
   }
 
   .riga-previsione {

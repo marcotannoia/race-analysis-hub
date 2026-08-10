@@ -46,7 +46,8 @@ snapshot sono documentate in `NOTICE.md`.
 
 La classifica della landing page viene generata dal backend per il GP marcato
 come `attuale`. Dopo `npm run gp` passa quindi automaticamente alla gara
-successiva e utilizza le nuove classifiche piloti e scuderie.
+successiva e utilizza le nuove classifiche piloti e scuderie. La risposta è
+isolata in `GET /api/v1/previsioni/piloti`.
 
 La forma recente e la qualifica 2026 dipendono anche dallo snapshot F1DB. Finché
 lo snapshot non viene rigenerato, quei fattori restano fermi all'ultima release

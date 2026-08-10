@@ -64,6 +64,8 @@ Il modello distingue quattro casi:
 Nel testo indicare sempre cosa è stato confermato, se il componente è già stato
 usato e quali caratteristiche del circuito può migliorare. Le ipotesi del tipo
 “sarebbe utile” non vengono trattate come componenti realmente disponibili.
+La compatibilità dichiarata viene inoltre corretta usando la competitività 2026
+della scuderia: un'etichetta positiva non può nascondere una vettura debole.
 
 ## Controllare che il JSON sia valido
 ```bash

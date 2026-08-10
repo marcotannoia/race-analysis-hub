@@ -28,7 +28,8 @@ occupa soltanto della rappresentazione grafica ed è distribuito con licenza
 MIT. Per contratto API, deployment, fonti e condizioni di riutilizzo consultare
 il `README.md`, il `NOTICE.md` e la documentazione Swagger del progetto.
 
-La landing page usa `GET /api/v1/home`. Per ogni pilota mostra indice,
-confidenza, scomposizione dei dieci fattori e trattamento degli aggiornamenti
-tecnici. L'avvertenza sulla natura fallibile della previsione deve restare
-visibile e non va rimossa nelle personalizzazioni grafiche.
+La landing page usa `GET /api/v1/home` per i contenuti generali e l'endpoint
+isolato `GET /api/v1/previsioni/piloti` per la classifica. Per ogni pilota mostra
+indice, confidenza, scomposizione dei dieci fattori e trattamento degli
+aggiornamenti tecnici. L'avvertenza sulla natura fallibile della previsione deve
+restare visibile e non va rimossa nelle personalizzazioni grafiche.

@@ -28,6 +28,11 @@ router.use(cachePubblica(60));
 router.get("/", senzaQuery, controller.descrizioneApi);
 router.get("/health", senzaQuery, controller.statoServizio);
 router.get("/home", senzaQuery, gestisciFunzioneAsincrona(controller.home));
+router.get(
+  "/previsioni/piloti",
+  senzaQuery,
+  gestisciFunzioneAsincrona(controller.classificaPrevisionale),
+);
 
 router.get(
   "/piloti",

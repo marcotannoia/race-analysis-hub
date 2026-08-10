@@ -4,6 +4,7 @@ const {
   PESI,
   creaClassificaPrevisionale,
   valutaAggiornamento,
+  valutaCompatibilitaVettura,
 } = require("../services/classificaPrevisionale");
 
 test("i pesi previsionali sommano a cento e privilegiano vettura e aggiornamenti", () => {
@@ -15,6 +16,14 @@ test("i pesi previsionali sommano a cento e privilegiano vettura e aggiornamenti
     PESI.compatibilitaVetturaCircuito > PESI.storicoPersonale,
   );
   assert.ok(PESI.aggiornamentiTecnici > PESI.passoGaraRecente);
+  assert.equal(PESI.scuderia2026, Math.max(...Object.values(PESI)));
+});
+
+test("una buona affinità con la pista non nasconde una scuderia debole", () => {
+  const compatibilita = valutaCompatibilitaVettura(10, 92);
+
+  assert.equal(compatibilita, 38.7);
+  assert.ok(compatibilita < 50);
 });
 
 test("gli aggiornamenti contano solo se reali e pertinenti al circuito", () => {

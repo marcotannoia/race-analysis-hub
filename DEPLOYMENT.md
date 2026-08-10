@@ -83,9 +83,9 @@ aws cloudfront create-invalidation \
 
 Prima del caricamento verificare con `aws sts get-caller-identity` l'account
 attivo e controllare che l'alias CloudFront corrisponda al dominio pubblico.
-La home richiede la risposta aggiornata di `GET /api/v1/home`: se il backend è
-distribuito automaticamente dal push, attendere che l'endpoint esponga
-`classificaPrevisionale` prima di aggiornare S3.
+La landing page richiede anche `GET /api/v1/previsioni/piloti`: se il backend è
+distribuito automaticamente dal push, attendere che l'endpoint restituisca il
+modello e la classifica completa prima di aggiornare S3.
 
 ## Controlli prima della pubblicazione
 

@@ -127,4 +127,28 @@ test("classifiche, andamento e metadati espongono schemi strutturati", () => {
     schemi.Home.properties.metadati.$ref,
     "#/components/schemas/MetadatiHome",
   );
+  assert.equal(schemi.Home.properties.classificaPrevisionale, undefined);
+  assert.equal(
+    documentoOpenApi.paths["/previsioni/piloti"].get.responses[200].content[
+      "application/json"
+    ].schema.$ref,
+    "#/components/schemas/ClassificaPrevisionale",
+  );
+});
+
+test("gli esempi Swagger della previsione sono matematicamente coerenti", () => {
+  const schemi = documentoOpenApi.components.schemas;
+  const pesi = schemi.ClassificaPrevisionale.properties.pesi.example;
+  const posizione = schemi.PosizionePrevisionale.properties;
+  const fattori = posizione.fattori.example;
+
+  assert.equal(
+    pesi.reduce((totale, peso) => totale + peso.pesoPercentuale, 0),
+    100,
+  );
+  assert.equal(fattori.length, 10);
+  assert.equal(
+    fattori.reduce((totale, fattore) => totale + fattore.contributo, 0),
+    posizione.indice.example,
+  );
 });

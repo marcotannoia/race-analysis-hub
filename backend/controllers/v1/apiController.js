@@ -83,7 +83,7 @@ async function richiediGaraAttuale(risposta) {
 function descrizioneApi(richiesta, risposta) {
   risposta.json({
     nome: "Race Analysis Hub API",
-    versione: "1.3.0",
+    versione: "1.4.0",
     descrizione:
       "API pubblica di sola lettura per il Gran Premio attuale, i piloti, " +
       "le scuderie e la classifica previsionale",
@@ -100,6 +100,7 @@ function descrizioneApi(richiesta, risposta) {
       dettaglioGaraAttuale: "/api/v1/gare/:garaSlug",
       classificaPiloti: "/api/v1/classifiche/piloti",
       classificaScuderie: "/api/v1/classifiche/scuderie",
+      classificaPrevisionale: "/api/v1/previsioni/piloti",
       analisiPilota:
         "/api/v1/gare/:garaSlug/piloti/:pilotaSlug/analisi",
       analisiScuderia:
@@ -117,12 +118,36 @@ function statoServizio(richiesta, risposta) {
     .json({
       stato: databaseConnesso ? "ok" : "non_disponibile",
       servizio: "race-analysis-hub-api",
-      versione: "1.3.0",
+      versione: "1.4.0",
       requestId: risposta.locals.requestId,
     });
 }
 
 async function home(richiesta, risposta) {
+  const garaAttuale = await richiediGaraAttuale(risposta);
+  if (!garaAttuale) return;
+
+  const [piloti, scuderie] = await Promise.all([
+    Pilota.find()
+      .populate("scuderia", "slug nome")
+      .sort("classifica2026.posizione")
+      .lean(),
+    Scuderia.find().sort("classifica2026.posizione").lean(),
+  ]);
+
+  risposta.json({
+    garaAttuale: presentaGaraBreve(garaAttuale),
+    piloti: piloti.map(presentaPilota),
+    scuderie: scuderie.map(presentaScuderia),
+    metadati: {
+      stagione: garaAttuale.stagione,
+      totalePiloti: piloti.length,
+      totaleScuderie: scuderie.length,
+    },
+  });
+}
+
+async function classificaPrevisionale(richiesta, risposta) {
   const garaAttuale = await richiediGaraAttuale(risposta);
   if (!garaAttuale) return;
 
@@ -141,25 +166,15 @@ async function home(richiesta, risposta) {
       .lean(),
   ]);
 
-  const classificaPrevisionale = creaClassificaPrevisionale({
-    gara: garaAttuale,
-    piloti,
-    scuderie,
-    analisiPiloti,
-    analisiScuderie,
-  });
-
-  risposta.json({
-    garaAttuale: presentaGaraBreve(garaAttuale),
-    piloti: piloti.map(presentaPilota),
-    scuderie: scuderie.map(presentaScuderia),
-    classificaPrevisionale,
-    metadati: {
-      stagione: garaAttuale.stagione,
-      totalePiloti: piloti.length,
-      totaleScuderie: scuderie.length,
-    },
-  });
+  risposta.json(
+    creaClassificaPrevisionale({
+      gara: garaAttuale,
+      piloti,
+      scuderie,
+      analisiPiloti,
+      analisiScuderie,
+    }),
+  );
 }
 
 async function elencaPiloti(richiesta, risposta) {
@@ -453,6 +468,7 @@ async function analisiScuderiaPerGara(richiesta, risposta) {
 module.exports = {
   analisiPilotaPerGara,
   analisiScuderiaPerGara,
+  classificaPrevisionale,
   classificaPiloti,
   classificaScuderie,
   descrizioneApi,

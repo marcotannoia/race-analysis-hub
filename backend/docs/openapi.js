@@ -2,6 +2,29 @@ const intestazioneRequestId = {
   "X-Request-ID": { $ref: "#/components/headers/RequestId" },
 };
 
+const esempioPesiPrevisionali = [
+  ["andamento2026", "Andamento 2026", 20],
+  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 18],
+  ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 12],
+  ["confidenzaPilotaCircuito", "Confidenza pilota-circuito", 7],
+  ["qualifica2026", "Qualifica 2026", 8],
+  ["scuderia2026", "Andamento scuderia 2026", 26],
+  ["storicoPersonale", "Storico personale", 3],
+  ["passoGaraRecente", "Passo gara recente", 2],
+  ["gestioneGomme", "Gestione gomme", 2],
+  ["affidabilitaERischi", "Affidabilità e rischi", 2],
+].map(([chiave, nome, pesoPercentuale]) => ({
+  chiave,
+  nome,
+  pesoPercentuale,
+}));
+
+const esempioFattoriPrevisionali = esempioPesiPrevisionali.map((peso) => ({
+  ...peso,
+  valutazione: 50,
+  contributo: peso.pesoPercentuale / 2,
+}));
+
 function rispostaJson(descrizione, riferimentoSchema, esempio) {
   const contenuto = {
     schema: { $ref: riferimentoSchema },
@@ -26,7 +49,7 @@ const documentoOpenApi = {
   openapi: "3.1.0",
   info: {
     title: "Race Analysis Hub API",
-    version: "1.3.0",
+    version: "1.4.0",
     description:
       "API REST pubblica, anonima e di sola lettura. Non richiede autenticazione e " +
       "consente esclusivamente GET, HEAD e OPTIONS. Le analisi editoriali sono " +
@@ -40,9 +63,9 @@ const documentoOpenApi = {
       "copia del riutilizzatore e non il database ufficiale. Occorre attribuire " +
       "Race Analysis Hub — Marco Tannoia, mantenere l'attribuzione a F1DB per i dati " +
       "quantitativi e indicare le modifiche effettuate. " +
-      "La home include una classifica previsionale statistico-editoriale per il " +
-      "solo Gran Premio attuale. L'indice e i singoli fattori sono stime soggette " +
-      "a errore e non rappresentano risultati sportivi certi. " +
+      "L'endpoint dedicato /previsioni/piloti espone la classifica previsionale " +
+      "del solo Gran Premio attuale. L'indice e i singoli fattori sono stime " +
+      "soggette a errore e non rappresentano risultati sportivi certi. " +
       "In produzione si applicano una cache pubblica di 60 secondi e un limite di " +
       "1000 richieste ogni 15 minuti per indirizzo IP.",
     termsOfService:
@@ -89,6 +112,10 @@ const documentoOpenApi = {
       description: "Classifiche piloti e scuderie della stagione attuale.",
     },
     {
+      name: "Previsioni",
+      description: "Classifica previsionale spiegabile del Gran Premio attuale.",
+    },
+    {
       name: "Analisi",
       description: "Analisi editoriali del Gran Premio attuale.",
     },
@@ -124,7 +151,7 @@ const documentoOpenApi = {
             {
               stato: "ok",
               servizio: "race-analysis-hub-api",
-              versione: "1.3.0",
+              versione: "1.4.0",
               requestId: "2f1c7e5f-7f55-4f16-a29c-45f3f667ae21",
             },
           ),
@@ -140,9 +167,26 @@ const documentoOpenApi = {
         tags: ["Servizio"],
         summary: "Dati aggregati per la home",
         description:
-          "Restituisce il Gran Premio attuale, piloti, scuderie e la classifica previsionale spiegabile.",
+          "Restituisce il Gran Premio attuale, i piloti e le scuderie. La previsione è isolata nel proprio endpoint.",
         responses: {
           200: rispostaJson("Contenuto della home", "#/components/schemas/Home"),
+          404: { $ref: "#/components/responses/RisorsaNonTrovata" },
+          ...risposteComuni,
+        },
+      },
+    },
+    "/previsioni/piloti": {
+      get: {
+        operationId: "recuperaClassificaPrevisionalePiloti",
+        tags: ["Previsioni"],
+        summary: "Classifica previsionale dei piloti",
+        description:
+          "Calcola la previsione spiegabile esclusivamente per il Gran Premio attuale.",
+        responses: {
+          200: rispostaJson(
+            "Classifica previsionale del Gran Premio attuale",
+            "#/components/schemas/ClassificaPrevisionale",
+          ),
           404: { $ref: "#/components/responses/RisorsaNonTrovata" },
           ...risposteComuni,
         },
@@ -451,7 +495,7 @@ const documentoOpenApi = {
         {
           stato: "non_disponibile",
           servizio: "race-analysis-hub-api",
-          versione: "1.3.0",
+          versione: "1.4.0",
           requestId: "2f1c7e5f-7f55-4f16-a29c-45f3f667ae21",
         },
       ),
@@ -469,6 +513,7 @@ const documentoOpenApi = {
           "dettaglioGaraAttuale",
           "classificaPiloti",
           "classificaScuderie",
+          "classificaPrevisionale",
           "analisiPilota",
           "analisiScuderia",
         ],
@@ -500,6 +545,10 @@ const documentoOpenApi = {
             type: "string",
             example: "/api/v1/classifiche/scuderie",
           },
+          classificaPrevisionale: {
+            type: "string",
+            example: "/api/v1/previsioni/piloti",
+          },
           analisiPilota: {
             type: "string",
             example: "/api/v1/gare/:garaSlug/piloti/:pilotaSlug/analisi",
@@ -524,7 +573,7 @@ const documentoOpenApi = {
         ],
         properties: {
           nome: { type: "string", const: "Race Analysis Hub API" },
-          versione: { type: "string", example: "1.3.0" },
+          versione: { type: "string", example: "1.4.0" },
           descrizione: { type: "string" },
           documentazione: { type: "string", example: "/api/docs" },
           specificaOpenApi: {
@@ -546,7 +595,7 @@ const documentoOpenApi = {
             enum: ["ok", "non_disponibile"],
           },
           servizio: { type: "string", const: "race-analysis-hub-api" },
-          versione: { type: "string", example: "1.3.0" },
+          versione: { type: "string", example: "1.4.0" },
           requestId: { type: "string", format: "uuid" },
         },
       },
@@ -1090,8 +1139,13 @@ const documentoOpenApi = {
           "aggiornamentiTecnici",
         ],
         properties: {
-          posizione: { type: "integer", minimum: 1 },
-          indice: { type: "number", minimum: 0, maximum: 100 },
+          posizione: { type: "integer", minimum: 1, example: 1 },
+          indice: {
+            type: "number",
+            minimum: 0,
+            maximum: 100,
+            example: 50,
+          },
           pilota: { $ref: "#/components/schemas/PilotaBreve" },
           scuderia: { $ref: "#/components/schemas/ScuderiaBreve" },
           confidenza: {
@@ -1104,6 +1158,7 @@ const documentoOpenApi = {
             minItems: 10,
             maxItems: 10,
             items: { $ref: "#/components/schemas/FattorePrevisionale" },
+            example: esempioFattoriPrevisionali,
           },
           aggiornamentiTecnici: {
             $ref: "#/components/schemas/AggiornamentoTecnicoPrevisionale",
@@ -1125,9 +1180,9 @@ const documentoOpenApi = {
             type: "object",
             required: ["slug", "nome", "circuito"],
             properties: {
-              slug: { type: "string" },
-              nome: { type: "string" },
-              circuito: { type: "string" },
+              slug: { type: "string", example: "olanda-zandvoort" },
+              nome: { type: "string", example: "Gran Premio d'Olanda" },
+              circuito: { type: "string", example: "Circuit Zandvoort" },
             },
           },
           modello: {
@@ -1138,12 +1193,15 @@ const documentoOpenApi = {
             type: "string",
             description:
               "Avverte che la previsione è soggetta a errore e può cambiare durante il weekend.",
+            example:
+              "Queste sono previsioni statistiche ed editoriali, non certezze sportive.",
           },
           pesi: {
             type: "array",
             minItems: 10,
             maxItems: 10,
             items: { $ref: "#/components/schemas/PesoPrevisionale" },
+            example: esempioPesiPrevisionali,
           },
           aggiornatoIl: { type: ["string", "null"], format: "date-time" },
           classifica: {
@@ -1163,13 +1221,7 @@ const documentoOpenApi = {
       },
       Home: {
         type: "object",
-        required: [
-          "garaAttuale",
-          "piloti",
-          "scuderie",
-          "classificaPrevisionale",
-          "metadati",
-        ],
+        required: ["garaAttuale", "piloti", "scuderie", "metadati"],
         properties: {
           garaAttuale: { $ref: "#/components/schemas/GaraBreve" },
           piloti: {
@@ -1179,9 +1231,6 @@ const documentoOpenApi = {
           scuderie: {
             type: "array",
             items: { $ref: "#/components/schemas/Scuderia" },
-          },
-          classificaPrevisionale: {
-            $ref: "#/components/schemas/ClassificaPrevisionale",
           },
           metadati: { $ref: "#/components/schemas/MetadatiHome" },
         },

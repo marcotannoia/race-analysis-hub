@@ -23,7 +23,7 @@ function ClassificaPrevisionale({ previsioni }) {
     return (
       <section className="sezione-previsioni" aria-labelledby="titolo-previsioni">
         <div className="intestazione-previsioni">
-          <span className="sovratitolo">Modello statistico-editoriale</span>
+          <span className="sovratitolo">Previsione per questo GP</span>
           <h2 id="titolo-previsioni">Classifica previsionale</h2>
           <p>La classifica del Gran Premio attuale è in aggiornamento.</p>
         </div>
@@ -38,25 +38,23 @@ function ClassificaPrevisionale({ previsioni }) {
   return (
     <section className="sezione-previsioni" aria-labelledby="titolo-previsioni">
       <div className="intestazione-previsioni">
-        <span className="sovratitolo">Modello statistico-editoriale</span>
+        <span className="sovratitolo">Previsione per questo GP</span>
         <h2 id="titolo-previsioni">Classifica previsionale</h2>
-        <p>
-          Favoriti per {previsioni.gara.nome} · {previsioni.gara.circuito}
-        </p>
-      </div>
-
-      <div className="avvertenza-previsioni" role="note">
-        <strong>Previsione soggetta a errore</strong>
-        <p>{previsioni.avvertenza}</p>
+        <div className="contesto-previsioni">
+          <p>
+            Favoriti per {previsioni.gara.nome} · {previsioni.gara.circuito}
+          </p>
+          <p>{previsioni.avvertenza}</p>
+        </div>
       </div>
 
       <details className="metodologia-previsioni">
         <summary>Come viene calcolato l’indice</summary>
         <p>
-          Ogni pilota riceve un indice da 0 a 100. Compatibilità tecnica e
-          aggiornamenti pertinenti hanno un peso maggiore; storico personale e
-          passo recente incidono meno perché provengono da piste e condizioni
-          differenti.
+          Ogni pilota riceve un indice da 0 a 100. La forza reale di pilota e
+          scuderia nel 2026 ha il peso maggiore. La compatibilità con la pista è
+          corretta usando la competitività attuale della vettura, mentre gli
+          aggiornamenti contano soltanto quando sono pertinenti e verificabili.
         </p>
         <div className="pesi-previsioni">
           {previsioni.pesi.map((fattore) => (
