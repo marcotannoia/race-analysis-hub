@@ -16,6 +16,9 @@ editoriali originali restituiti nei diversi campi, sono messe a disposizione da
 Race Analysis Hub — Marco Tannoia con licenza
 [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
 (CC BY 4.0), salvo dove sia indicata una fonte o una licenza differente.
+Questo comprende anche l'indice, i fattori e le spiegazioni della classifica
+previsionale restituita dalla home, fermo restando che si tratta di stime
+soggette a errore e non di risultati ufficiali.
 
 Questa licenza permette a chi utilizza le API di copiare, mostrare, distribuire
 e modificare le risposte nel proprio software, anche per finalità commerciali.

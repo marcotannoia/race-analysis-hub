@@ -115,16 +115,14 @@ function adattaAnalisi(analisi) {
   }
 }
 
-export function caricaHome() {
-  return Promise.all([
-    richiesta('/api/v1/piloti'),
-    richiesta('/api/v1/scuderie'),
-    richiesta('/api/v1/gare'),
-  ]).then(([piloti, scuderie, gare]) => [
-    { ...piloti, piloti: piloti.piloti.map(adattaPilota) },
-    { ...scuderie, scuderie: scuderie.scuderie.map(adattaScuderia) },
-    gare,
-  ])
+export async function caricaHome() {
+  const dati = await richiesta('/api/v1/home')
+
+  return {
+    ...dati,
+    piloti: dati.piloti.map(adattaPilota),
+    scuderie: dati.scuderie.map(adattaScuderia),
+  }
 }
 
 export async function caricaPilota(slug) {

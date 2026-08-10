@@ -27,6 +27,11 @@ backend/data/dati-iniziali.json
 | `aggiornamentiInArrivo` | Aggiornamenti in arrivo | Sì |
 | `fonti` | Fonti associate all'analisi | Sì |
 
+I campi `considerazioniFinali`, `passoGara`, `gestioneGomme`, `affidabilita`,
+`penalita` e `aggiornamentiInArrivo` alimentano anche la classifica previsionale
+della landing page. Le modifiche devono quindi descrivere evidenze reali e non
+vantaggi ipotetici presentati come certi.
+
 `andamentoPerAnno` è un campo particolare:
 
 - se contiene del testo, la pagina mostra esattamente il contenuto inserito;
@@ -44,6 +49,21 @@ Il frontend riconosce alcune etichette all'interno di `considerazioniFinali`:
 La prima frase viene mostrata come `Valutazione`. Le frasi che iniziano con
 `Forma 2026:`, `Fit pista:` e `Confidenza` vengono separate nelle rispettive
 righe. Il campo `affidabilita` genera la riga `Affidabilità`.
+
+## Aggiornamenti e indice previsionale
+
+Il modello distingue quattro casi:
+
+| Stato dell'aggiornamento | Trattamento |
+|---|---|
+| Nessun pacchetto confermato | Nessun vantaggio aggiuntivo |
+| Annunciato ma non verificato | Vantaggio ridotto |
+| Già introdotto o confermato | Valutato secondo la pertinenza con la pista |
+| Nessun miglioramento reale o scarsa pertinenza | Punteggio ridotto |
+
+Nel testo indicare sempre cosa è stato confermato, se il componente è già stato
+usato e quali caratteristiche del circuito può migliorare. Le ipotesi del tipo
+“sarebbe utile” non vengono trattate come componenti realmente disponibili.
 
 ## Controllare che il JSON sia valido
 ```bash

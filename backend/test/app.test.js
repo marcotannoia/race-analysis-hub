@@ -29,7 +29,7 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
 
     assert.equal(risposta.status, 200);
     assert.equal(corpo.nome, "Race Analysis Hub API");
-    assert.equal(corpo.versione, "1.2.0");
+    assert.equal(corpo.versione, "1.3.0");
     assert.equal(corpo.documentazione, "/api/docs");
     assert.deepEqual(corpo.attribuzioneDati, {
       nome: "F1DB",
@@ -90,8 +90,12 @@ test("specifica OpenAPI e documentazione Swagger sono pubbliche", async () => {
     const corpo = await specifica.json();
     assert.equal(specifica.status, 200);
     assert.equal(corpo.openapi, "3.1.0");
-    assert.equal(corpo.info.version, "1.2.0");
+    assert.equal(corpo.info.version, "1.3.0");
     assert.ok(corpo.paths["/gare/attuale"]);
+    assert.equal(
+      corpo.components.schemas.Home.properties.classificaPrevisionale.$ref,
+      "#/components/schemas/ClassificaPrevisionale",
+    );
     assert.equal(
       corpo.components.schemas.AnalisiBase.properties.datiPerAnno.$ref,
       "#/components/schemas/DatiAnalisiPerAnno",

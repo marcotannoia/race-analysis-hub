@@ -26,7 +26,7 @@ const documentoOpenApi = {
   openapi: "3.1.0",
   info: {
     title: "Race Analysis Hub API",
-    version: "1.2.0",
+    version: "1.3.0",
     description:
       "API REST pubblica, anonima e di sola lettura. Non richiede autenticazione e " +
       "consente esclusivamente GET, HEAD e OPTIONS. Le analisi editoriali sono " +
@@ -40,6 +40,9 @@ const documentoOpenApi = {
       "copia del riutilizzatore e non il database ufficiale. Occorre attribuire " +
       "Race Analysis Hub — Marco Tannoia, mantenere l'attribuzione a F1DB per i dati " +
       "quantitativi e indicare le modifiche effettuate. " +
+      "La home include una classifica previsionale statistico-editoriale per il " +
+      "solo Gran Premio attuale. L'indice e i singoli fattori sono stime soggette " +
+      "a errore e non rappresentano risultati sportivi certi. " +
       "In produzione si applicano una cache pubblica di 60 secondi e un limite di " +
       "1000 richieste ogni 15 minuti per indirizzo IP.",
     termsOfService:
@@ -121,7 +124,7 @@ const documentoOpenApi = {
             {
               stato: "ok",
               servizio: "race-analysis-hub-api",
-              versione: "1.2.0",
+              versione: "1.3.0",
               requestId: "2f1c7e5f-7f55-4f16-a29c-45f3f667ae21",
             },
           ),
@@ -137,7 +140,7 @@ const documentoOpenApi = {
         tags: ["Servizio"],
         summary: "Dati aggregati per la home",
         description:
-          "Restituisce il Gran Premio attuale, l'elenco dei piloti e l'elenco delle scuderie.",
+          "Restituisce il Gran Premio attuale, piloti, scuderie e la classifica previsionale spiegabile.",
         responses: {
           200: rispostaJson("Contenuto della home", "#/components/schemas/Home"),
           404: { $ref: "#/components/responses/RisorsaNonTrovata" },
@@ -448,7 +451,7 @@ const documentoOpenApi = {
         {
           stato: "non_disponibile",
           servizio: "race-analysis-hub-api",
-          versione: "1.2.0",
+          versione: "1.3.0",
           requestId: "2f1c7e5f-7f55-4f16-a29c-45f3f667ae21",
         },
       ),
@@ -521,7 +524,7 @@ const documentoOpenApi = {
         ],
         properties: {
           nome: { type: "string", const: "Race Analysis Hub API" },
-          versione: { type: "string", example: "1.2.0" },
+          versione: { type: "string", example: "1.3.0" },
           descrizione: { type: "string" },
           documentazione: { type: "string", example: "/api/docs" },
           specificaOpenApi: {
@@ -543,7 +546,7 @@ const documentoOpenApi = {
             enum: ["ok", "non_disponibile"],
           },
           servizio: { type: "string", const: "race-analysis-hub-api" },
-          versione: { type: "string", example: "1.2.0" },
+          versione: { type: "string", example: "1.3.0" },
           requestId: { type: "string", format: "uuid" },
         },
       },
@@ -1032,6 +1035,123 @@ const documentoOpenApi = {
           },
         },
       },
+      PesoPrevisionale: {
+        type: "object",
+        required: ["chiave", "nome", "pesoPercentuale"],
+        properties: {
+          chiave: { type: "string" },
+          nome: { type: "string" },
+          pesoPercentuale: {
+            type: "number",
+            minimum: 0,
+            maximum: 100,
+          },
+        },
+      },
+      FattorePrevisionale: {
+        allOf: [
+          { $ref: "#/components/schemas/PesoPrevisionale" },
+          {
+            type: "object",
+            required: ["valutazione", "contributo"],
+            properties: {
+              valutazione: { type: "number", minimum: 0, maximum: 100 },
+              contributo: { type: "number", minimum: 0, maximum: 100 },
+            },
+          },
+        ],
+      },
+      AggiornamentoTecnicoPrevisionale: {
+        type: "object",
+        required: ["stato", "nota"],
+        properties: {
+          stato: {
+            type: "string",
+            description:
+              "Livello di evidenza dell'aggiornamento e della sua pertinenza con il circuito.",
+          },
+          nota: {
+            type: "string",
+            description:
+              "Motivo per cui il beneficio viene conteggiato, ridotto o ignorato.",
+          },
+        },
+      },
+      PosizionePrevisionale: {
+        type: "object",
+        required: [
+          "posizione",
+          "indice",
+          "pilota",
+          "scuderia",
+          "confidenza",
+          "sintesi",
+          "fattori",
+          "aggiornamentiTecnici",
+        ],
+        properties: {
+          posizione: { type: "integer", minimum: 1 },
+          indice: { type: "number", minimum: 0, maximum: 100 },
+          pilota: { $ref: "#/components/schemas/PilotaBreve" },
+          scuderia: { $ref: "#/components/schemas/ScuderiaBreve" },
+          confidenza: {
+            type: "string",
+            enum: ["bassa", "media", "alta"],
+          },
+          sintesi: { type: "string" },
+          fattori: {
+            type: "array",
+            minItems: 10,
+            maxItems: 10,
+            items: { $ref: "#/components/schemas/FattorePrevisionale" },
+          },
+          aggiornamentiTecnici: {
+            $ref: "#/components/schemas/AggiornamentoTecnicoPrevisionale",
+          },
+        },
+      },
+      ClassificaPrevisionale: {
+        type: "object",
+        required: [
+          "gara",
+          "modello",
+          "avvertenza",
+          "pesi",
+          "aggiornatoIl",
+          "classifica",
+        ],
+        properties: {
+          gara: {
+            type: "object",
+            required: ["slug", "nome", "circuito"],
+            properties: {
+              slug: { type: "string" },
+              nome: { type: "string" },
+              circuito: { type: "string" },
+            },
+          },
+          modello: {
+            type: "string",
+            const: "statistico-editoriale-v1",
+          },
+          avvertenza: {
+            type: "string",
+            description:
+              "Avverte che la previsione è soggetta a errore e può cambiare durante il weekend.",
+          },
+          pesi: {
+            type: "array",
+            minItems: 10,
+            maxItems: 10,
+            items: { $ref: "#/components/schemas/PesoPrevisionale" },
+          },
+          aggiornatoIl: { type: ["string", "null"], format: "date-time" },
+          classifica: {
+            type: "array",
+            items: { $ref: "#/components/schemas/PosizionePrevisionale" },
+          },
+        },
+      },
       MetadatiHome: {
         type: "object",
         required: ["stagione", "totalePiloti", "totaleScuderie"],
@@ -1043,7 +1163,13 @@ const documentoOpenApi = {
       },
       Home: {
         type: "object",
-        required: ["garaAttuale", "piloti", "scuderie", "metadati"],
+        required: [
+          "garaAttuale",
+          "piloti",
+          "scuderie",
+          "classificaPrevisionale",
+          "metadati",
+        ],
         properties: {
           garaAttuale: { $ref: "#/components/schemas/GaraBreve" },
           piloti: {
@@ -1053,6 +1179,9 @@ const documentoOpenApi = {
           scuderie: {
             type: "array",
             items: { $ref: "#/components/schemas/Scuderia" },
+          },
+          classificaPrevisionale: {
+            $ref: "#/components/schemas/ClassificaPrevisionale",
           },
           metadati: { $ref: "#/components/schemas/MetadatiHome" },
         },

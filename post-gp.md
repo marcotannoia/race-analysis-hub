@@ -42,6 +42,23 @@ rigenerare lo snapshot da una release F1DB, eseguire `npm run verify-data` e
 pubblicare il codice aggiornato. Versione, licenza e trasformazioni dello
 snapshot sono documentate in `NOTICE.md`.
 
+## Effetto sulla classifica previsionale
+
+La classifica della landing page viene generata dal backend per il GP marcato
+come `attuale`. Dopo `npm run gp` passa quindi automaticamente alla gara
+successiva e utilizza le nuove classifiche piloti e scuderie.
+
+La forma recente e la qualifica 2026 dipendono anche dallo snapshot F1DB. Finché
+lo snapshot non viene rigenerato, quei fattori restano fermi all'ultima release
+documentata. Compatibilità con la pista, gestione gomme, affidabilità e
+aggiornamenti tecnici derivano invece dalle analisi editoriali della nuova gara.
+
+Prima della pubblicazione controllare in particolare
+`aggiornamentiInArrivo`: un pacchetto soltanto annunciato o non pertinente non
+deve essere descritto come un vantaggio verificato. La previsione riduce o
+annulla automaticamente il contributo quando il testo indica assenza di
+componenti confermati, mancati miglioramenti o scarsa pertinenza con il circuito.
+
 Per rigenerare volontariamente il modulo corrente:
 
 ```bash

@@ -26,6 +26,12 @@ autori di F1DB. La CC BY 4.0 permette anche l'uso commerciale, ma chi condivide
 o mostra i dati derivati deve mantenere un'attribuzione adeguata, il riferimento
 alla licenza e l'indicazione delle modifiche.
 
+La classifica previsionale non proviene da F1DB. È un'elaborazione originale di
+Race Analysis Hub che combina i risultati quantitativi attribuiti sopra con
+valutazioni editoriali su pista, vettura, gomme, affidabilità e aggiornamenti
+tecnici. L'indice è una stima soggetta a errore, non un risultato ufficiale né
+una garanzia sulla prestazione futura.
+
 Le risposte pubbliche di Race Analysis Hub, compresi i testi editoriali
 originali restituiti dalle API, sono riutilizzabili secondo la licenza descritta
 in `LICENSE.md`. Il riutilizzatore può adattarle nel proprio software, anche per

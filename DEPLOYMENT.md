@@ -52,6 +52,40 @@ mantenuti in cache per un anno; `index.html` e il favicon devono invece usare
 `no-cache`. Dopo il caricamento su S3 è necessario invalidare almeno `/*` sulla
 distribuzione CloudFront.
 
+Esempio completo, usando variabili dedicate per evitare di pubblicare sul
+bucket o sulla distribuzione sbagliati:
+
+```bash
+export RACE_HUB_S3_BUCKET="nome-bucket"
+export RACE_HUB_CLOUDFRONT_ID="ID_DISTRIBUZIONE"
+
+aws s3 sync frontend/dist "s3://${RACE_HUB_S3_BUCKET}" \
+  --delete \
+  --exclude "index.html" \
+  --exclude "favicon-race.svg" \
+  --cache-control "public,max-age=31536000,immutable"
+
+aws s3 cp frontend/dist/index.html \
+  "s3://${RACE_HUB_S3_BUCKET}/index.html" \
+  --content-type "text/html; charset=utf-8" \
+  --cache-control "no-cache"
+
+aws s3 cp frontend/dist/favicon-race.svg \
+  "s3://${RACE_HUB_S3_BUCKET}/favicon-race.svg" \
+  --content-type "image/svg+xml" \
+  --cache-control "no-cache"
+
+aws cloudfront create-invalidation \
+  --distribution-id "${RACE_HUB_CLOUDFRONT_ID}" \
+  --paths "/*"
+```
+
+Prima del caricamento verificare con `aws sts get-caller-identity` l'account
+attivo e controllare che l'alias CloudFront corrisponda al dominio pubblico.
+La home richiede la risposta aggiornata di `GET /api/v1/home`: se il backend è
+distribuito automaticamente dal push, attendere che l'endpoint esponga
+`classificaPrevisionale` prima di aggiornare S3.
+
 ## Controlli prima della pubblicazione
 
 - ruotare le credenziali usate durante lo sviluppo;

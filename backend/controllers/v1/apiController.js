@@ -5,6 +5,9 @@ const AnalisiGara = require("../../models/AnalisiGara");
 const AnalisiScuderia = require("../../models/AnalisiScuderia");
 const trovaGaraAttuale = require("../../services/garaAttuale");
 const creaAndamentoAnnuale = require("../../services/andamentoAnnuale");
+const {
+  creaClassificaPrevisionale,
+} = require("../../services/classificaPrevisionale");
 const { inviaErrore } = require("../../utils/rispostaApi");
 const {
   presentaAnalisiPilota,
@@ -80,9 +83,10 @@ async function richiediGaraAttuale(risposta) {
 function descrizioneApi(richiesta, risposta) {
   risposta.json({
     nome: "Race Analysis Hub API",
-    versione: "1.2.0",
+    versione: "1.3.0",
     descrizione:
-      "API pubblica di sola lettura per il Gran Premio attuale, i piloti e le scuderie",
+      "API pubblica di sola lettura per il Gran Premio attuale, i piloti, " +
+      "le scuderie e la classifica previsionale",
     documentazione: "/api/docs",
     specificaOpenApi: "/api/v1/openapi.json",
     attribuzioneDati: attribuzioneF1db,
@@ -113,7 +117,7 @@ function statoServizio(richiesta, risposta) {
     .json({
       stato: databaseConnesso ? "ok" : "non_disponibile",
       servizio: "race-analysis-hub-api",
-      versione: "1.2.0",
+      versione: "1.3.0",
       requestId: risposta.locals.requestId,
     });
 }
@@ -122,18 +126,34 @@ async function home(richiesta, risposta) {
   const garaAttuale = await richiediGaraAttuale(risposta);
   if (!garaAttuale) return;
 
-  const [piloti, scuderie] = await Promise.all([
+  const [piloti, scuderie, analisiPiloti, analisiScuderie] = await Promise.all([
     Pilota.find()
       .populate("scuderia", "slug nome")
       .sort("classifica2026.posizione")
       .lean(),
     Scuderia.find().sort("classifica2026.posizione").lean(),
+    AnalisiGara.find({ gara: garaAttuale._id })
+      .populate("pilota", "slug nome codice numero classifica2026")
+      .populate("scuderia", "slug nome")
+      .lean(),
+    AnalisiScuderia.find({ gara: garaAttuale._id })
+      .populate("scuderia", "slug nome classifica2026")
+      .lean(),
   ]);
+
+  const classificaPrevisionale = creaClassificaPrevisionale({
+    gara: garaAttuale,
+    piloti,
+    scuderie,
+    analisiPiloti,
+    analisiScuderie,
+  });
 
   risposta.json({
     garaAttuale: presentaGaraBreve(garaAttuale),
     piloti: piloti.map(presentaPilota),
     scuderie: scuderie.map(presentaScuderia),
+    classificaPrevisionale,
     metadati: {
       stagione: garaAttuale.stagione,
       totalePiloti: piloti.length,

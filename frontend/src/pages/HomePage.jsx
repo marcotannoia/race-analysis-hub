@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { caricaHome } from '../services/api.js'
 import Collegamento from '../components/Collegamento.jsx'
+import ClassificaPrevisionale from '../components/ClassificaPrevisionale.jsx'
 import Marchio from '../components/Marchio.jsx'
 import { Caricamento, ErrorePagina } from '../components/StatoPagina.jsx'
 
@@ -20,12 +21,13 @@ function HomePage() {
     let componenteAttivo = true
 
     caricaHome()
-      .then(([piloti, scuderie, gare]) => {
+      .then((home) => {
         if (componenteAttivo) {
           setDati({
-            piloti: piloti.piloti,
-            scuderie: scuderie.scuderie,
-            garaAttuale: gare.gare[0] || null,
+            piloti: home.piloti,
+            scuderie: home.scuderie,
+            garaAttuale: home.garaAttuale,
+            classificaPrevisionale: home.classificaPrevisionale,
           })
         }
       })
@@ -145,6 +147,8 @@ function HomePage() {
             </span>
           )}
         </div>
+
+        <ClassificaPrevisionale previsioni={dati.classificaPrevisionale} />
       </div>
     </section>
   )
