@@ -26,14 +26,25 @@ autori di F1DB. La CC BY 4.0 permette anche l'uso commerciale, ma chi condivide
 o mostra i dati derivati deve mantenere un'attribuzione adeguata, il riferimento
 alla licenza e l'indicazione delle modifiche.
 
+Le risposte pubbliche di Race Analysis Hub, compresi i testi editoriali
+originali restituiti dalle API, sono riutilizzabili secondo la licenza descritta
+in `LICENSE.md`. Il riutilizzatore può adattarle nel proprio software, anche per
+uso commerciale, senza ottenere accesso in scrittura al database ufficiale.
+Quando pubblica una versione modificata deve citare Race Analysis Hub, mantenere
+l'attribuzione a F1DB per i dati quantitativi e segnalare le modifiche.
+
+Attribuzione sintetica consigliata:
+
+> Contenuto adattato da Race Analysis Hub — dati quantitativi derivati da F1DB
+> v2026.11.0 — modifiche del riutilizzatore — CC BY 4.0.
+
 L'inserimento straordinario del Gran Premio del Bahrein a Sepang nel calendario
 2026 è documentato separatamente dalla comunicazione ufficiale di Formula 1 del
 26 luglio 2026, perché non era ancora incluso nella release F1DB utilizzata:
 https://www.formula1.com/en/latest/article/formula-1-and-fia-confirm-malaysia-will-join-2026-calendar-as-host-venue-for-bahrain-grand-prix.6lL7vjFEM2VVynRHvg1TCf
 
 Le API sono pubbliche e fornite senza garanzia di disponibilità continua o di
-assenza di errori. Prima dell'integrazione in un prodotto aziendale, il
-consumatore deve concordare separatamente eventuali requisiti di servizio,
-supporto, continuità e diritti d'uso.
+assenza di errori. Eventuali requisiti aggiuntivi di servizio, supporto,
+continuità o accesso devono essere concordati separatamente.
 
 Referente: Marco Tannoia, `marco.tannoia@gmail.com`.

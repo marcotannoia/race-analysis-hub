@@ -28,6 +28,19 @@ npm --prefix frontend run dev
 Il backend è disponibile su `http://localhost:5002` e il frontend su
 `http://localhost:5173`.
 
+## Riutilizzo delle API
+
+Le API ufficiali sono di sola lettura: chi le utilizza non può modificare il
+database di Race Analysis Hub. Le risposte ricevute possono però essere
+copiate, mostrate e personalizzate nel software del riutilizzatore, anche per
+finalità commerciali. È quindi possibile, per esempio, riscrivere localmente il
+campo `aggiornamentiInArrivo` senza alterare la fonte originale.
+
+Le risposte pubbliche sono distribuite con licenza CC BY 4.0. Occorre citare
+`Race Analysis Hub — Marco Tannoia`, mantenere l'attribuzione a F1DB per i dati
+quantitativi e indicare chiaramente le eventuali modifiche. Le condizioni
+complete sono riportate in [`LICENSE.md`](LICENSE.md) e [`NOTICE.md`](NOTICE.md).
+
 ## Dati e licenze
 
 Le classifiche 2026, i risultati di gara e qualifica 2023–2025 e i grafici
@@ -36,7 +49,8 @@ quantitativi 2026 derivano da
 distribuito con licenza
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). I dati vengono
 filtrati e normalizzati da Race Analysis Hub; i contenuti editoriali restano
-originali del progetto.
+originali del progetto e, quando restituiti dalle API pubbliche, sono anch'essi
+riutilizzabili secondo le condizioni indicate in `LICENSE.md`.
 
 Per attribuzioni, marchi e condizioni di riutilizzo consultare
 [`NOTICE.md`](NOTICE.md) e [`LICENSE.md`](LICENSE.md).
