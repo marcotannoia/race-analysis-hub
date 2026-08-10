@@ -63,6 +63,7 @@ aws s3 sync frontend/dist "s3://${RACE_HUB_S3_BUCKET}" \
   --delete \
   --exclude "index.html" \
   --exclude "favicon-race.svg" \
+  --exclude ".DS_Store" \
   --cache-control "public,max-age=31536000,immutable"
 
 aws s3 cp frontend/dist/index.html \
