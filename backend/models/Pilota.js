@@ -16,6 +16,20 @@ const pilotaSchema = new mongoose.Schema(
     codice: { type: String, required: true, unique: true, trim: true },
     numero: { type: String, required: true, trim: true },
     nazionalita: { type: String, required: true, trim: true },
+    nazionalitaIso2: {
+      type: String,
+      required: true,
+      trim: true,
+      uppercase: true,
+      match: /^[A-Z]{2}$/,
+    },
+    nazionalitaIso3: {
+      type: String,
+      required: true,
+      trim: true,
+      uppercase: true,
+      match: /^[A-Z]{3}$/,
+    },
     scuderia: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Scuderia",

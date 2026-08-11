@@ -94,6 +94,8 @@ async function importaDati() {
       codice: pilota.codice,
       numero: pilota.numero,
       nazionalita: pilota.nazionalita,
+      nazionalitaIso2: pilota.nazionalitaIso2,
+      nazionalitaIso3: pilota.nazionalitaIso3,
       scuderia: scuderiaPerSlug.get(pilota.scuderiaSlug)._id,
       classifica2026: pilota.classifica2026,
     }));

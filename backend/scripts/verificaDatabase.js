@@ -99,6 +99,8 @@ async function verificaCorrispondenzaSorgente() {
           codice: documento.codice,
           numero: documento.numero,
           nazionalita: documento.nazionalita,
+          nazionalitaIso2: documento.nazionalitaIso2,
+          nazionalitaIso3: documento.nazionalitaIso3,
           scuderiaSlug: documento.scuderia.slug,
           classifica2026: documento.classifica2026,
         }

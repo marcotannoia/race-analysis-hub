@@ -1,7 +1,7 @@
 {
   "metadati": {
     "origine": "Race Analysis Hub + F1DB v2026.11.0",
-    "aggiornamentoDati": "2026-08-10",
+    "aggiornamentoDati": "2026-08-11",
     "descrizione": "Classifiche 2026 e risultati F1 2023-2025 derivati da F1DB v2026.11.0; analisi descrittive e previsioni originali di Race Analysis Hub.",
     "f1db": {
       "fonte": "F1DB",
@@ -15,6 +15,17 @@
       "licenza": "CC BY 4.0",
       "licenzaUrl": "https://creativecommons.org/licenses/by/4.0/",
       "trasformazioni": "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato."
+    },
+    "formula1": {
+      "fonte": "Formula 1",
+      "url": "https://www.formula1.com/en/teams",
+      "verificatoIl": "2026-08-11",
+      "uso": "Colori identificativi delle scuderie 2026"
+    },
+    "iso3166": {
+      "standard": "ISO 3166-1",
+      "url": "https://www.iso.org/iso-3166-country-codes.html",
+      "uso": "Codici alpha-2 e alpha-3 delle nazionalità dei piloti"
     }
   },
   "piloti": [
@@ -24,6 +35,8 @@
       "codice": "ANT",
       "numero": "12",
       "nazionalita": "Italian",
+      "nazionalitaIso2": "IT",
+      "nazionalitaIso3": "ITA",
       "scuderiaSlug": "mercedes",
       "classifica2026": {
         "posizione": 1,
@@ -37,6 +50,8 @@
       "codice": "HAM",
       "numero": "44",
       "nazionalita": "British",
+      "nazionalitaIso2": "GB",
+      "nazionalitaIso3": "GBR",
       "scuderiaSlug": "ferrari",
       "classifica2026": {
         "posizione": 2,
@@ -50,6 +65,8 @@
       "codice": "RUS",
       "numero": "63",
       "nazionalita": "British",
+      "nazionalitaIso2": "GB",
+      "nazionalitaIso3": "GBR",
       "scuderiaSlug": "mercedes",
       "classifica2026": {
         "posizione": 3,
@@ -63,6 +80,8 @@
       "codice": "LEC",
       "numero": "16",
       "nazionalita": "Monegasque",
+      "nazionalitaIso2": "MC",
+      "nazionalitaIso3": "MCO",
       "scuderiaSlug": "ferrari",
       "classifica2026": {
         "posizione": 4,
@@ -76,6 +95,8 @@
       "codice": "NOR",
       "numero": "1",
       "nazionalita": "British",
+      "nazionalitaIso2": "GB",
+      "nazionalitaIso3": "GBR",
       "scuderiaSlug": "mclaren",
       "classifica2026": {
         "posizione": 5,
@@ -89,6 +110,8 @@
       "codice": "VER",
       "numero": "3",
       "nazionalita": "Dutch",
+      "nazionalitaIso2": "NL",
+      "nazionalitaIso3": "NLD",
       "scuderiaSlug": "red_bull",
       "classifica2026": {
         "posizione": 6,
@@ -102,6 +125,8 @@
       "codice": "PIA",
       "numero": "81",
       "nazionalita": "Australian",
+      "nazionalitaIso2": "AU",
+      "nazionalitaIso3": "AUS",
       "scuderiaSlug": "mclaren",
       "classifica2026": {
         "posizione": 7,
@@ -115,6 +140,8 @@
       "codice": "HAD",
       "numero": "6",
       "nazionalita": "French",
+      "nazionalitaIso2": "FR",
+      "nazionalitaIso3": "FRA",
       "scuderiaSlug": "red_bull",
       "classifica2026": {
         "posizione": 8,
@@ -128,6 +155,8 @@
       "codice": "LAW",
       "numero": "30",
       "nazionalita": "New Zealander",
+      "nazionalitaIso2": "NZ",
+      "nazionalitaIso3": "NZL",
       "scuderiaSlug": "rb",
       "classifica2026": {
         "posizione": 9,
@@ -141,6 +170,8 @@
       "codice": "GAS",
       "numero": "10",
       "nazionalita": "French",
+      "nazionalitaIso2": "FR",
+      "nazionalitaIso3": "FRA",
       "scuderiaSlug": "alpine",
       "classifica2026": {
         "posizione": 10,
@@ -154,6 +185,8 @@
       "codice": "LIN",
       "numero": "41",
       "nazionalita": "British",
+      "nazionalitaIso2": "GB",
+      "nazionalitaIso3": "GBR",
       "scuderiaSlug": "rb",
       "classifica2026": {
         "posizione": 11,
@@ -167,6 +200,8 @@
       "codice": "COL",
       "numero": "43",
       "nazionalita": "Argentine",
+      "nazionalitaIso2": "AR",
+      "nazionalitaIso3": "ARG",
       "scuderiaSlug": "alpine",
       "classifica2026": {
         "posizione": 12,
@@ -180,6 +215,8 @@
       "codice": "BEA",
       "numero": "87",
       "nazionalita": "British",
+      "nazionalitaIso2": "GB",
+      "nazionalitaIso3": "GBR",
       "scuderiaSlug": "haas",
       "classifica2026": {
         "posizione": 13,
@@ -193,6 +230,8 @@
       "codice": "BOR",
       "numero": "5",
       "nazionalita": "Brazilian",
+      "nazionalitaIso2": "BR",
+      "nazionalitaIso3": "BRA",
       "scuderiaSlug": "audi",
       "classifica2026": {
         "posizione": 14,
@@ -206,6 +245,8 @@
       "codice": "SAI",
       "numero": "55",
       "nazionalita": "Spanish",
+      "nazionalitaIso2": "ES",
+      "nazionalitaIso3": "ESP",
       "scuderiaSlug": "williams",
       "classifica2026": {
         "posizione": 15,
@@ -219,6 +260,8 @@
       "codice": "ALB",
       "numero": "23",
       "nazionalita": "Thai",
+      "nazionalitaIso2": "TH",
+      "nazionalitaIso3": "THA",
       "scuderiaSlug": "williams",
       "classifica2026": {
         "posizione": 16,
@@ -232,6 +275,8 @@
       "codice": "OCO",
       "numero": "31",
       "nazionalita": "French",
+      "nazionalitaIso2": "FR",
+      "nazionalitaIso3": "FRA",
       "scuderiaSlug": "haas",
       "classifica2026": {
         "posizione": 17,
@@ -245,6 +290,8 @@
       "codice": "HUL",
       "numero": "27",
       "nazionalita": "German",
+      "nazionalitaIso2": "DE",
+      "nazionalitaIso3": "DEU",
       "scuderiaSlug": "audi",
       "classifica2026": {
         "posizione": 18,
@@ -258,6 +305,8 @@
       "codice": "ALO",
       "numero": "14",
       "nazionalita": "Spanish",
+      "nazionalitaIso2": "ES",
+      "nazionalitaIso3": "ESP",
       "scuderiaSlug": "aston_martin",
       "classifica2026": {
         "posizione": 19,
@@ -271,6 +320,8 @@
       "codice": "STR",
       "numero": "18",
       "nazionalita": "Canadian",
+      "nazionalitaIso2": "CA",
+      "nazionalitaIso3": "CAN",
       "scuderiaSlug": "aston_martin",
       "classifica2026": {
         "posizione": 20,
@@ -284,6 +335,8 @@
       "codice": "BOT",
       "numero": "77",
       "nazionalita": "Finnish",
+      "nazionalitaIso2": "FI",
+      "nazionalitaIso3": "FIN",
       "scuderiaSlug": "cadillac",
       "classifica2026": {
         "posizione": 21,
@@ -297,6 +350,8 @@
       "codice": "PER",
       "numero": "11",
       "nazionalita": "Mexican",
+      "nazionalitaIso2": "MX",
+      "nazionalitaIso3": "MEX",
       "scuderiaSlug": "cadillac",
       "classifica2026": {
         "posizione": 22,
@@ -310,6 +365,8 @@
       "slug": "mercedes",
       "nome": "Mercedes",
       "nomeClassifica": "Mercedes",
+      "abbreviazione": "MER",
+      "colore": "#27F4D2",
       "nazionalita": "German",
       "denominazioniStoriche": {
         "2023": "Mercedes",
@@ -326,6 +383,8 @@
       "slug": "ferrari",
       "nome": "Ferrari",
       "nomeClassifica": "Ferrari",
+      "abbreviazione": "FER",
+      "colore": "#E8002D",
       "nazionalita": "Italian",
       "denominazioniStoriche": {
         "2023": "Ferrari",
@@ -342,6 +401,8 @@
       "slug": "mclaren",
       "nome": "McLaren",
       "nomeClassifica": "McLaren",
+      "abbreviazione": "MCL",
+      "colore": "#FF8000",
       "nazionalita": "British",
       "denominazioniStoriche": {
         "2023": "McLaren",
@@ -358,6 +419,8 @@
       "slug": "red_bull",
       "nome": "Red Bull Racing",
       "nomeClassifica": "Red Bull",
+      "abbreviazione": "RBR",
+      "colore": "#3671C6",
       "nazionalita": "Austrian",
       "denominazioniStoriche": {
         "2023": "Red Bull Racing",
@@ -374,6 +437,8 @@
       "slug": "rb",
       "nome": "Racing Bulls",
       "nomeClassifica": "Racing Bulls",
+      "abbreviazione": "RB",
+      "colore": "#6692FF",
       "nazionalita": "Italian",
       "denominazioniStoriche": {
         "2023": "AlphaTauri",
@@ -390,6 +455,8 @@
       "slug": "alpine",
       "nome": "Alpine",
       "nomeClassifica": "Alpine F1 Team",
+      "abbreviazione": "ALP",
+      "colore": "#00A1E8",
       "nazionalita": "French",
       "denominazioniStoriche": {
         "2023": "Alpine",
@@ -406,6 +473,8 @@
       "slug": "haas",
       "nome": "Haas",
       "nomeClassifica": "Haas F1 Team",
+      "abbreviazione": "HAS",
+      "colore": "#DEE1E2",
       "nazionalita": "American",
       "denominazioniStoriche": {
         "2023": "Haas",
@@ -422,6 +491,8 @@
       "slug": "audi",
       "nome": "Audi (linea Sauber)",
       "nomeClassifica": "Audi",
+      "abbreviazione": "AUD",
+      "colore": "#FF2D00",
       "nazionalita": "German",
       "denominazioniStoriche": {
         "2023": "Alfa Romeo",
@@ -438,6 +509,8 @@
       "slug": "williams",
       "nome": "Williams",
       "nomeClassifica": "Williams",
+      "abbreviazione": "WIL",
+      "colore": "#1868DB",
       "nazionalita": "British",
       "denominazioniStoriche": {
         "2023": "Williams",
@@ -454,6 +527,8 @@
       "slug": "aston_martin",
       "nome": "Aston Martin",
       "nomeClassifica": "Aston Martin",
+      "abbreviazione": "AMR",
+      "colore": "#229971",
       "nazionalita": "British",
       "denominazioniStoriche": {
         "2023": "Aston Martin",
@@ -470,6 +545,8 @@
       "slug": "cadillac",
       "nome": "Cadillac",
       "nomeClassifica": "Cadillac F1 Team",
+      "abbreviazione": "CAD",
+      "colore": "#AAAAAD",
       "nazionalita": "American",
       "denominazioniStoriche": {
         "2023": null,

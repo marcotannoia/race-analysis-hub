@@ -4,6 +4,12 @@ Interfaccia React/Vite del progetto. Consuma esclusivamente l'API pubblica v1
 del backend e visualizza analisi editoriali, classifiche, grafici Chart.js e la
 classifica previsionale spiegabile del Gran Premio attuale.
 
+La release `1.5.0` dell'API aggiunge ai piloti i codici ISO2/ISO3, il numero
+vettura e l'abbreviazione del nome; l'oggetto `scuderia` include inoltre
+abbreviazione e colore esadecimale. I precedenti campi `codice` e `numero`
+restano disponibili, quindi le viste esistenti continuano a funzionare senza
+modifiche.
+
 ## Avvio locale
 
 ```bash

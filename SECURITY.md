@@ -2,8 +2,9 @@
 
 ## Versione supportata
 
-È supportata esclusivamente l'API pubblica `/api/v1`. Gli endpoint sono anonimi,
-di sola lettura e soggetti a validazione, cache e limitazione delle richieste.
+È supportata esclusivamente l'API pubblica `/api/v1`, attualmente alla versione
+applicativa `1.5.0`. Gli endpoint sono anonimi, di sola lettura e soggetti a
+validazione, cache e limitazione delle richieste.
 
 ## Segnalazione responsabile
 

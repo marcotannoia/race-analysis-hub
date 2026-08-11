@@ -26,6 +26,30 @@ autori di F1DB. La CC BY 4.0 permette anche l'uso commerciale, ma chi condivide
 o mostra i dati derivati deve mantenere un'attribuzione adeguata, il riferimento
 alla licenza e l'indicazione delle modifiche.
 
+## Anagrafiche piloti e scuderie
+
+I numeri vettura, i codici sportivi e le nazionalità dei piloti sono mantenuti
+da Race Analysis Hub e verificati anche con la documentazione FIA della
+stagione 2026:
+
+- https://www.fia.com/sites/default/files/guide_media_2026_2_0.pdf
+
+I campi `nazionalitaIso2` e `nazionalitaIso3` sono una normalizzazione di Race
+Analysis Hub secondo ISO 3166-1 alpha-2 e alpha-3:
+
+- https://www.iso.org/iso-3166-country-codes.html
+
+I colori esadecimali delle scuderie corrispondono ai colori identificativi
+pubblicati nella pagina Formula 1 dedicata ai team, verificata l'11 agosto 2026:
+
+- https://www.formula1.com/en/teams
+
+Le abbreviazioni delle scuderie (`MER`, `FER`, `MCL` e analoghe) sono
+identificatori editoriali stabili definiti da Race Analysis Hub. Non vengono
+presentate come codici ufficiali di Formula 1, FIA o delle singole scuderie. I
+nomi, i colori e gli altri riferimenti alle squadre hanno esclusivamente
+funzione descrittiva e non implicano affiliazione o approvazione.
+
 La classifica previsionale non proviene da F1DB. È un'elaborazione originale di
 Race Analysis Hub che combina i risultati quantitativi attribuiti sopra con
 valutazioni editoriali su pista, vettura, gomme, affidabilità e aggiornamenti

@@ -65,6 +65,11 @@ const classificheScuderieF1db = new Map(
 for (const pilota of dati.piloti) {
   const f1db = classifichePilotiF1db.get(pilota.slug);
   richiedi(
+    /^[A-Z]{2}$/.test(pilota.nazionalitaIso2) &&
+      /^[A-Z]{3}$/.test(pilota.nazionalitaIso3),
+    `Codici ISO nazionalita non validi: ${pilota.slug}`,
+  );
+  richiedi(
     f1db && uguali(pilota.classifica2026, f1db.classifica2026),
     `Classifica pilota diversa da F1DB: ${pilota.slug}`,
   );
@@ -72,6 +77,14 @@ for (const pilota of dati.piloti) {
 
 for (const scuderia of dati.scuderie) {
   const f1db = classificheScuderieF1db.get(scuderia.slug);
+  richiedi(
+    /^[A-Z]{2,3}$/.test(scuderia.abbreviazione),
+    `Abbreviazione scuderia non valida: ${scuderia.slug}`,
+  );
+  richiedi(
+    /^#[0-9A-F]{6}$/.test(scuderia.colore),
+    `Colore scuderia non valido: ${scuderia.slug}`,
+  );
   richiedi(
     f1db && uguali(scuderia.classifica2026, f1db.classifica2026),
     `Classifica scuderia diversa da F1DB: ${scuderia.slug}`,

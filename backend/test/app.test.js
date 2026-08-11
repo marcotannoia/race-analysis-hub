@@ -29,7 +29,7 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
 
     assert.equal(risposta.status, 200);
     assert.equal(corpo.nome, "Race Analysis Hub API");
-    assert.equal(corpo.versione, "1.4.0");
+    assert.equal(corpo.versione, "1.5.0");
     assert.equal(
       corpo.endpoint.classificaPrevisionale,
       "/api/v1/previsioni/piloti",
@@ -94,7 +94,7 @@ test("specifica OpenAPI e documentazione Swagger sono pubbliche", async () => {
     const corpo = await specifica.json();
     assert.equal(specifica.status, 200);
     assert.equal(corpo.openapi, "3.1.0");
-    assert.equal(corpo.info.version, "1.4.0");
+    assert.equal(corpo.info.version, "1.5.0");
     assert.ok(corpo.paths["/gare/attuale"]);
     assert.ok(corpo.paths["/previsioni/piloti"]);
     assert.equal(

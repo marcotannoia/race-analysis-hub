@@ -1,3 +1,5 @@
+const { version: versioneApi } = require("../package.json");
+
 const intestazioneRequestId = {
   "X-Request-ID": { $ref: "#/components/headers/RequestId" },
 };
@@ -49,7 +51,7 @@ const documentoOpenApi = {
   openapi: "3.1.0",
   info: {
     title: "Race Analysis Hub API",
-    version: "1.4.0",
+    version: versioneApi,
     description:
       "API REST pubblica, anonima e di sola lettura. Non richiede autenticazione e " +
       "consente esclusivamente GET, HEAD e OPTIONS. Le analisi editoriali sono " +
@@ -63,6 +65,10 @@ const documentoOpenApi = {
       "copia del riutilizzatore e non il database ufficiale. Occorre attribuire " +
       "Race Analysis Hub — Marco Tannoia, mantenere l'attribuzione a F1DB per i dati " +
       "quantitativi e indicare le modifiche effettuate. " +
+      "Le anagrafiche dei piloti includono codici ISO 3166-1 alpha-2 e alpha-3, " +
+      "numero vettura, abbreviazione del nome, abbreviazione della scuderia e " +
+      "colore identificativo in formato esadecimale. I campi codice e numero " +
+      "restano disponibili per compatibilità con le integrazioni esistenti. " +
       "L'endpoint dedicato /previsioni/piloti espone la classifica previsionale " +
       "del solo Gran Premio attuale. L'indice e i singoli fattori sono stime " +
       "soggette a errore e non rappresentano risultati sportivi certi. " +
@@ -151,7 +157,7 @@ const documentoOpenApi = {
             {
               stato: "ok",
               servizio: "race-analysis-hub-api",
-              versione: "1.4.0",
+              versione: versioneApi,
               requestId: "2f1c7e5f-7f55-4f16-a29c-45f3f667ae21",
             },
           ),
@@ -495,7 +501,7 @@ const documentoOpenApi = {
         {
           stato: "non_disponibile",
           servizio: "race-analysis-hub-api",
-          versione: "1.4.0",
+          versione: versioneApi,
           requestId: "2f1c7e5f-7f55-4f16-a29c-45f3f667ae21",
         },
       ),
@@ -573,7 +579,7 @@ const documentoOpenApi = {
         ],
         properties: {
           nome: { type: "string", const: "Race Analysis Hub API" },
-          versione: { type: "string", example: "1.4.0" },
+          versione: { type: "string", example: versioneApi },
           descrizione: { type: "string" },
           documentazione: { type: "string", example: "/api/docs" },
           specificaOpenApi: {
@@ -595,7 +601,7 @@ const documentoOpenApi = {
             enum: ["ok", "non_disponibile"],
           },
           servizio: { type: "string", const: "race-analysis-hub-api" },
-          versione: { type: "string", example: "1.4.0" },
+          versione: { type: "string", example: versioneApi },
           requestId: { type: "string", format: "uuid" },
         },
       },
@@ -610,20 +616,79 @@ const documentoOpenApi = {
       },
       ScuderiaBreve: {
         type: "object",
-        required: ["slug", "nome"],
+        required: ["slug", "nome", "abbreviazione", "colore"],
         properties: {
           slug: { type: "string", example: "ferrari" },
           nome: { type: "string", example: "Ferrari" },
+          abbreviazione: {
+            type: "string",
+            pattern: "^[A-Z]{2,3}$",
+            example: "FER",
+            description:
+              "Codice breve e stabile della scuderia usato nelle integrazioni.",
+          },
+          colore: {
+            type: "string",
+            pattern: "^#[0-9A-F]{6}$",
+            example: "#E8002D",
+            description:
+              "Colore identificativo della scuderia in formato RGB esadecimale.",
+          },
         },
       },
       PilotaBreve: {
         type: "object",
-        required: ["slug", "nome", "codice", "numero"],
+        required: [
+          "slug",
+          "nome",
+          "codice",
+          "numero",
+          "abbreviazioneNome",
+          "numeroVettura",
+          "nazionalitaIso2",
+          "nazionalitaIso3",
+        ],
         properties: {
           slug: { type: "string", example: "leclerc" },
           nome: { type: "string", example: "Charles Leclerc" },
-          codice: { type: "string", example: "LEC" },
-          numero: { type: "string", example: "16" },
+          codice: {
+            type: "string",
+            pattern: "^[A-Z]{3}$",
+            example: "LEC",
+            description:
+              "Codice sportivo del pilota mantenuto per compatibilità.",
+          },
+          numero: {
+            type: "string",
+            pattern: "^[0-9]{1,2}$",
+            example: "16",
+            description:
+              "Numero della vettura mantenuto per compatibilità.",
+          },
+          abbreviazioneNome: {
+            type: "string",
+            pattern: "^[A-Z]{3}$",
+            example: "LEC",
+            description: "Abbreviazione sportiva del nome del pilota.",
+          },
+          numeroVettura: {
+            type: "string",
+            pattern: "^[0-9]{1,2}$",
+            example: "16",
+            description: "Numero ufficiale della vettura del pilota.",
+          },
+          nazionalitaIso2: {
+            type: "string",
+            pattern: "^[A-Z]{2}$",
+            example: "MC",
+            description: "Codice paese ISO 3166-1 alpha-2.",
+          },
+          nazionalitaIso3: {
+            type: "string",
+            pattern: "^[A-Z]{3}$",
+            example: "MCO",
+            description: "Codice paese ISO 3166-1 alpha-3.",
+          },
         },
       },
       Pilota: {
@@ -638,7 +703,7 @@ const documentoOpenApi = {
               "aggiornatoIl",
             ],
             properties: {
-              nazionalita: { type: "string", example: "Monegasca" },
+              nazionalita: { type: "string", example: "Monegasque" },
               scuderia: { $ref: "#/components/schemas/ScuderiaBreve" },
               classifica: { $ref: "#/components/schemas/Classifica" },
               aggiornatoIl: {
@@ -663,7 +728,7 @@ const documentoOpenApi = {
             ],
             properties: {
               nomeClassifica: { type: "string", example: "Ferrari" },
-              nazionalita: { type: "string", example: "Italiana" },
+              nazionalita: { type: "string", example: "Italian" },
               denominazioniStoriche: {
                 type: "object",
                 propertyNames: { pattern: "^\\d{4}$" },

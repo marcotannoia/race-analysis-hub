@@ -98,6 +98,15 @@ modello e la classifica completa prima di aggiornare S3.
   l'endpoint `/api/v1/health`;
 - usare uno store condiviso per il rate limit se il backend avrà più istanze.
 
+Per la release `1.5.0`, verificare inoltre che:
+
+- `GET /api/v1` restituisca `"versione": "1.5.0"`;
+- `GET /api/v1/piloti/leclerc` esponga ISO2, ISO3, numero vettura,
+  abbreviazione del nome, abbreviazione e colore della scuderia;
+- `/api/v1/openapi.json` dichiari gli stessi campi senza variazioni a rotte,
+  parametri o metodi HTTP;
+- `npm run verify-db` termini con `0 differenze`.
+
 ## Aggiornamento editoriale post-gara
 
 Il cambio del Gran Premio visibile non richiede una nuova build. Dalla cartella
