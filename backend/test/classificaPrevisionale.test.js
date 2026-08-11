@@ -51,11 +51,15 @@ test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
     {
       slug: "team-a",
       nome: "Team A",
+      abbreviazione: "TMA",
+      colore: "#112233",
       classifica2026: { posizione: 1, punti: 100, vittorie: 2 },
     },
     {
       slug: "team-b",
       nome: "Team B",
+      abbreviazione: "TMB",
+      colore: "#445566",
       classifica2026: { posizione: 2, punti: 80, vittorie: 1 },
     },
   ];
@@ -65,7 +69,9 @@ test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
       nome: "Pilota A",
       codice: "PIA",
       numero: "1",
-      scuderia: { slug: "team-a", nome: "Team A" },
+      nazionalitaIso2: "IT",
+      nazionalitaIso3: "ITA",
+      scuderia: scuderie[0],
       classifica2026: { posizione: 1, punti: 60, vittorie: 2 },
     },
     {
@@ -73,7 +79,9 @@ test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
       nome: "Pilota B",
       codice: "PIB",
       numero: "2",
-      scuderia: { slug: "team-b", nome: "Team B" },
+      nazionalitaIso2: "FR",
+      nazionalitaIso3: "FRA",
+      scuderia: scuderie[1],
       classifica2026: { posizione: 2, punti: 40, vittorie: 0 },
     },
   ];
@@ -127,6 +135,20 @@ test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
   assert.equal(risultato.classifica.length, 2);
   assert.equal(risultato.classifica[0].pilota.slug, "pilota-a");
   assert.equal(risultato.classifica[0].posizione, 1);
+  assert.equal(
+    risultato.classifica[0].pilota.abbreviazioneNome,
+    "PIA",
+  );
+  assert.equal(risultato.classifica[0].pilota.numeroVettura, "1");
+  assert.equal(
+    risultato.classifica[0].pilota.nazionalitaIso3,
+    "ITA",
+  );
+  assert.equal(
+    risultato.classifica[0].scuderia.abbreviazione,
+    "TMA",
+  );
+  assert.equal(risultato.classifica[0].scuderia.colore, "#112233");
   assert.equal(risultato.classifica[0].fattori.length, 10);
   assert.match(risultato.avvertenza, /possono contenere errori/i);
   assert.equal(risultato.aggiornatoIl, "2026-08-01T12:00:00.000Z");

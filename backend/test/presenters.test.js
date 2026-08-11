@@ -14,7 +14,15 @@ test("il presentatore del pilota non espone identificativi MongoDB", () => {
     codice: "LEC",
     numero: "16",
     nazionalita: "Monegasca",
-    scuderia: { _id: "interno", slug: "ferrari", nome: "Ferrari" },
+    nazionalitaIso2: "MC",
+    nazionalitaIso3: "MCO",
+    scuderia: {
+      _id: "interno",
+      slug: "ferrari",
+      nome: "Ferrari",
+      abbreviazione: "FER",
+      colore: "#E8002D",
+    },
     classifica2026: { posizione: 3, punti: 100, vittorie: 1 },
   });
 
@@ -23,6 +31,16 @@ test("il presentatore del pilota non espone identificativi MongoDB", () => {
     posizione: 3,
     punti: 100,
     vittorie: 1,
+  });
+  assert.equal(pilota.abbreviazioneNome, "LEC");
+  assert.equal(pilota.numeroVettura, "16");
+  assert.equal(pilota.nazionalitaIso2, "MC");
+  assert.equal(pilota.nazionalitaIso3, "MCO");
+  assert.deepEqual(pilota.scuderia, {
+    slug: "ferrari",
+    nome: "Ferrari",
+    abbreviazione: "FER",
+    colore: "#E8002D",
   });
   assert.equal(JSON.stringify(pilota).includes("_id"), false);
   assert.equal("classifica2026" in pilota, false);
@@ -57,8 +75,20 @@ test("la gara pubblica e sempre marcata come attuale", () => {
 
 test("l'analisi raggruppa le prestazioni senza perdere i contenuti", () => {
   const analisi = presentaAnalisiPilota({
-    pilota: { slug: "leclerc", nome: "Charles Leclerc", codice: "LEC", numero: "16" },
-    scuderia: { slug: "ferrari", nome: "Ferrari" },
+    pilota: {
+      slug: "leclerc",
+      nome: "Charles Leclerc",
+      codice: "LEC",
+      numero: "16",
+      nazionalitaIso2: "MC",
+      nazionalitaIso3: "MCO",
+    },
+    scuderia: {
+      slug: "ferrari",
+      nome: "Ferrari",
+      abbreviazione: "FER",
+      colore: "#E8002D",
+    },
     gara: {
       slug: "olanda-zandvoort",
       nome: "Gran Premio d'Olanda",
@@ -103,6 +133,8 @@ test("l'analisi raggruppa le prestazioni senza perdere i contenuti", () => {
   assert.equal(analisi.considerazioniFinali, "Favorito");
   assert.equal(analisi.penalita, "Nessuna penalita confermata.");
   assert.equal(analisi.gara.stato, "attuale");
+  assert.equal(analisi.pilota.nazionalitaIso3, "MCO");
+  assert.equal(analisi.scuderia.colore, "#E8002D");
 });
 
 test("la penalita appartiene solo all'analisi del pilota", () => {

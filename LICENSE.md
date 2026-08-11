@@ -51,6 +51,13 @@ attribuzioni riportate nello stesso avviso. Il riutilizzatore deve conservare
 anche l'attribuzione a F1DB, il collegamento alla licenza e l'indicazione delle
 trasformazioni o delle ulteriori modifiche effettuate.
 
+## Identificativi anagrafici e colori
+
+La provenienza e la natura dei codici ISO, dei numeri vettura, dei codici
+sportivi e dei colori identificativi delle scuderie sono descritte in
+`NOTICE.md`. La presente licenza non attribuisce diritti sui nomi, marchi o
+altri elementi appartenenti a Formula 1, FIA, scuderie, piloti o terzi.
+
 ## Esclusioni e assenza di garanzie
 
 Questa licenza non concede diritti sui marchi, sui loghi o sui contenuti di

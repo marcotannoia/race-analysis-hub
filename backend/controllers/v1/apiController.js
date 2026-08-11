@@ -21,6 +21,7 @@ const {
   presentaScuderiaBreve,
 } = require("../../presenters/apiV1");
 const { metadati: metadatiF1db } = require("../../data/f1db-v2026.11.0-derivato.json");
+const { version: VERSIONE_API } = require("../../package.json");
 
 const attribuzioneF1db = {
   nome: metadatiF1db.fonte,
@@ -30,6 +31,10 @@ const attribuzioneF1db = {
   versione: metadatiF1db.versione,
   modifiche: metadatiF1db.trasformazioni,
 };
+
+const CAMPI_PILOTA_BREVE =
+  "slug nome codice numero nazionalitaIso2 nazionalitaIso3";
+const CAMPI_SCUDERIA_BREVE = "slug nome abbreviazione colore";
 
 async function recuperaAndamentoPilota(pilota, garaAttuale) {
   return presentaAndamento(
@@ -51,15 +56,15 @@ async function recuperaAndamentoScuderia(scuderia, garaAttuale) {
 
 async function recuperaAnalisiPilota(pilotaId, garaId) {
   return AnalisiGara.findOne({ pilota: pilotaId, gara: garaId })
-    .populate("pilota", "slug nome codice numero")
-    .populate("scuderia", "slug nome")
+    .populate("pilota", CAMPI_PILOTA_BREVE)
+    .populate("scuderia", CAMPI_SCUDERIA_BREVE)
     .populate("gara", "slug nome circuito paese stagione ordineAnalisi stato")
     .lean();
 }
 
 async function recuperaAnalisiScuderia(scuderiaId, garaId) {
   return AnalisiScuderia.findOne({ scuderia: scuderiaId, gara: garaId })
-    .populate("scuderia", "slug nome")
+    .populate("scuderia", CAMPI_SCUDERIA_BREVE)
     .populate("gara", "slug nome circuito paese stagione ordineAnalisi stato")
     .lean();
 }
@@ -83,7 +88,7 @@ async function richiediGaraAttuale(risposta) {
 function descrizioneApi(richiesta, risposta) {
   risposta.json({
     nome: "Race Analysis Hub API",
-    versione: "1.4.0",
+    versione: VERSIONE_API,
     descrizione:
       "API pubblica di sola lettura per il Gran Premio attuale, i piloti, " +
       "le scuderie e la classifica previsionale",
@@ -118,7 +123,7 @@ function statoServizio(richiesta, risposta) {
     .json({
       stato: databaseConnesso ? "ok" : "non_disponibile",
       servizio: "race-analysis-hub-api",
-      versione: "1.4.0",
+      versione: VERSIONE_API,
       requestId: risposta.locals.requestId,
     });
 }
@@ -129,7 +134,7 @@ async function home(richiesta, risposta) {
 
   const [piloti, scuderie] = await Promise.all([
     Pilota.find()
-      .populate("scuderia", "slug nome")
+      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
       .sort("classifica2026.posizione")
       .lean(),
     Scuderia.find().sort("classifica2026.posizione").lean(),
@@ -153,16 +158,16 @@ async function classificaPrevisionale(richiesta, risposta) {
 
   const [piloti, scuderie, analisiPiloti, analisiScuderie] = await Promise.all([
     Pilota.find()
-      .populate("scuderia", "slug nome")
+      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
       .sort("classifica2026.posizione")
       .lean(),
     Scuderia.find().sort("classifica2026.posizione").lean(),
     AnalisiGara.find({ gara: garaAttuale._id })
-      .populate("pilota", "slug nome codice numero classifica2026")
-      .populate("scuderia", "slug nome")
+      .populate("pilota", `${CAMPI_PILOTA_BREVE} classifica2026`)
+      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
       .lean(),
     AnalisiScuderia.find({ gara: garaAttuale._id })
-      .populate("scuderia", "slug nome classifica2026")
+      .populate("scuderia", `${CAMPI_SCUDERIA_BREVE} classifica2026`)
       .lean(),
   ]);
 
@@ -179,7 +184,7 @@ async function classificaPrevisionale(richiesta, risposta) {
 
 async function elencaPiloti(richiesta, risposta) {
   const piloti = await Pilota.find()
-    .populate("scuderia", "slug nome")
+    .populate("scuderia", CAMPI_SCUDERIA_BREVE)
     .sort("classifica2026.posizione")
     .lean();
 
@@ -193,7 +198,7 @@ async function dettaglioPilota(richiesta, risposta) {
   const [garaAttuale, pilota] = await Promise.all([
     trovaGaraAttuale(),
     Pilota.findOne({ slug: richiesta.params.pilotaSlug })
-      .populate("scuderia", "slug nome")
+      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
       .lean(),
   ]);
 
@@ -264,7 +269,7 @@ async function dettaglioScuderia(richiesta, risposta) {
 
   const [piloti, analisi] = await Promise.all([
     Pilota.find({ scuderia: scuderia._id })
-      .populate("scuderia", "slug nome")
+      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
       .sort("classifica2026.posizione")
       .lean(),
     recuperaAnalisiScuderia(scuderia._id, garaAttuale._id),
@@ -311,12 +316,12 @@ async function dettaglioGara(richiesta, risposta) {
 
   const [analisiPiloti, analisiScuderie] = await Promise.all([
     AnalisiGara.find({ gara: gara._id })
-      .populate("pilota", "slug nome codice numero classifica2026")
-      .populate("scuderia", "slug nome")
+      .populate("pilota", `${CAMPI_PILOTA_BREVE} classifica2026`)
+      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
       .populate("gara", "slug nome circuito paese stagione ordineAnalisi stato")
       .lean(),
     AnalisiScuderia.find({ gara: gara._id })
-      .populate("scuderia", "slug nome classifica2026")
+      .populate("scuderia", `${CAMPI_SCUDERIA_BREVE} classifica2026`)
       .populate("gara", "slug nome circuito paese stagione ordineAnalisi stato")
       .lean(),
   ]);
@@ -344,7 +349,7 @@ async function classificaPiloti(richiesta, risposta) {
   if (!gara) return;
 
   const piloti = await Pilota.find()
-    .populate("scuderia", "slug nome")
+    .populate("scuderia", CAMPI_SCUDERIA_BREVE)
     .sort("classifica2026.posizione")
     .lean();
 

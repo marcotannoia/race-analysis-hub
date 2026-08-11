@@ -375,8 +375,17 @@ function creaClassificaPrevisionale({
         nome: pilota.nome,
         codice: pilota.codice,
         numero: pilota.numero,
+        abbreviazioneNome: pilota.codice,
+        numeroVettura: pilota.numero,
+        nazionalitaIso2: pilota.nazionalitaIso2,
+        nazionalitaIso3: pilota.nazionalitaIso3,
       },
-      scuderia: { slug: scuderia.slug, nome: scuderia.nome },
+      scuderia: {
+        slug: scuderia.slug,
+        nome: scuderia.nome,
+        abbreviazione: scuderia.abbreviazione,
+        colore: scuderia.colore,
+      },
       confidenza: livelloConfidenza(
         gara,
         storico,

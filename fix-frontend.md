@@ -32,6 +32,22 @@ I campi `considerazioniFinali`, `passoGara`, `gestioneGomme`, `affidabilita`,
 della landing page. Le modifiche devono quindi descrivere evidenze reali e non
 vantaggi ipotetici presentati come certi.
 
+## Anagrafiche esposte dalle API
+
+Le anagrafiche si trovano nelle sezioni `piloti` e `scuderie` di
+`backend/data/dati-iniziali.json`. Dalla versione `1.5.0` vengono esposti anche:
+
+| Campo JSON | Posizione nella risposta API | Regola |
+|---|---|---|
+| `nazionalitaIso2` | `pilota.nazionalitaIso2` | ISO 3166-1 alpha-2, due lettere maiuscole |
+| `nazionalitaIso3` | `pilota.nazionalitaIso3` | ISO 3166-1 alpha-3, tre lettere maiuscole |
+| `abbreviazione` della scuderia | `pilota.scuderia.abbreviazione` | identificatore editoriale stabile |
+| `colore` della scuderia | `pilota.scuderia.colore` | RGB esadecimale `#RRGGBB` |
+
+`abbreviazioneNome` e `numeroVettura` sono nomi pubblici espliciti derivati dai
+campi storici `codice` e `numero`. Non rimuovere questi ultimi: garantiscono la
+compatibilità con chi usa già l'API.
+
 `andamentoPerAnno` è un campo particolare:
 
 - se contiene del testo, la pagina mostra esattamente il contenuto inserito;

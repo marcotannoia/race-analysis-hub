@@ -41,6 +41,8 @@ function presentaScuderiaBreve(scuderia) {
   return {
     slug: scuderia.slug,
     nome: scuderia.nome,
+    abbreviazione: scuderia.abbreviazione,
+    colore: scuderia.colore,
   };
 }
 
@@ -52,6 +54,10 @@ function presentaPilotaBreve(pilota) {
     nome: pilota.nome,
     codice: pilota.codice,
     numero: pilota.numero,
+    abbreviazioneNome: pilota.codice,
+    numeroVettura: pilota.numero,
+    nazionalitaIso2: pilota.nazionalitaIso2,
+    nazionalitaIso3: pilota.nazionalitaIso3,
   };
 }
 
@@ -71,8 +77,7 @@ function presentaScuderia(scuderia) {
   if (!scuderia) return null;
 
   return {
-    slug: scuderia.slug,
-    nome: scuderia.nome,
+    ...presentaScuderiaBreve(scuderia),
     nomeClassifica: scuderia.nomeClassifica,
     nazionalita: scuderia.nazionalita,
     denominazioniStoriche: scuderia.denominazioniStoriche || {},

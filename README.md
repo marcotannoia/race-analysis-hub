@@ -7,6 +7,8 @@ Il progetto utilizza React e Vite per il frontend, Node.js ed Express per le
 API e MongoDB per la persistenza dei dati. Le API pubbliche sono anonime, di
 sola lettura e documentate con Swagger.
 
+La versione corrente del progetto e dell'API è `1.5.0`.
+
 La parte finale della landing page mostra una classifica previsionale dei
 piloti per il solo Gran Premio attuale. Il modello combina risultati 2026,
 compatibilità con la pista, valutazioni tecniche e contenuti editoriali già
@@ -17,6 +19,26 @@ presenti nel progetto.
 - [Sito pubblico](https://www.race-analysis-hub.it)
 - [Documentazione Swagger](https://f1-stats-5v93.onrender.com/api/docs)
 - [Specifica OpenAPI](https://f1-stats-5v93.onrender.com/api/v1/openapi.json)
+
+## Dati anagrafici dei piloti
+
+La release `1.5.0` arricchisce le risposte dei piloti senza modificare rotte,
+parametri o metodi HTTP. I campi `codice` e `numero` restano disponibili; sono
+stati aggiunti nomi più espliciti e dati utili alla localizzazione e alla
+grafica:
+
+| Campo | Contenuto | Esempio |
+|---|---|---|
+| `abbreviazioneNome` | codice sportivo del pilota | `LEC` |
+| `numeroVettura` | numero della vettura | `16` |
+| `nazionalitaIso2` | codice ISO 3166-1 alpha-2 | `MC` |
+| `nazionalitaIso3` | codice ISO 3166-1 alpha-3 | `MCO` |
+| `scuderia.abbreviazione` | codice breve della scuderia | `FER` |
+| `scuderia.colore` | colore RGB esadecimale | `#E8002D` |
+
+Gli stessi oggetti brevi sono riutilizzati nelle analisi, nelle classifiche e
+nella classifica previsionale, così il significato dei campi resta uniforme in
+tutta l'API.
 
 ## Avvio locale
 
@@ -60,6 +82,12 @@ riutilizzabili secondo le condizioni indicate in `LICENSE.md`.
 Per attribuzioni, marchi e condizioni di riutilizzo consultare
 [`NOTICE.md`](NOTICE.md) e [`LICENSE.md`](LICENSE.md).
 
+I colori delle scuderie sono verificati sulla pagina ufficiale
+[Formula 1 Teams](https://www.formula1.com/en/teams). I codici paese aggiunti
+alle nazionalità seguono lo standard
+[ISO 3166-1](https://www.iso.org/iso-3166-country-codes.html); le abbreviazioni
+delle scuderie sono identificatori editoriali stabili di Race Analysis Hub.
+
 ## Classifica previsionale
 
 L'indice dei favoriti va da 0 a 100 ed è isolato nell'endpoint dedicato
@@ -93,6 +121,7 @@ penalità, specifiche FIA o nuove informazioni tecniche.
 
 ## Guide operative
 
+- [Changelog](CHANGELOG.md)
 - [Deployment](DEPLOYMENT.md)
 - [Aggiornamento post-GP](post-gp.md)
 - [Contenuti editoriali](fix-frontend.md)

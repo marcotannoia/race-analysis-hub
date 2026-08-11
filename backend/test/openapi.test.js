@@ -34,6 +34,7 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
     ),
   );
   assert.equal(documentoOpenApi.info.title, "Race Analysis Hub API");
+  assert.equal(documentoOpenApi.info.version, "1.5.0");
   assert.match(documentoOpenApi.info.description, /adattate nel software/);
   assert.match(documentoOpenApi.info.description, /Race Analysis Hub/);
   assert.match(documentoOpenApi.info.license.name, /CC BY 4\.0/);
@@ -51,6 +52,31 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
     documentoOpenApi.components.schemas.FonteAndamento.required,
     ["nome", "url", "licenza", "licenzaUrl", "versione", "modifiche"],
   );
+});
+
+test("OpenAPI documenta i nuovi dati anagrafici senza cambiare le chiamate", () => {
+  const schemi = documentoOpenApi.components.schemas;
+
+  assert.deepEqual(schemi.ScuderiaBreve.required, [
+    "slug",
+    "nome",
+    "abbreviazione",
+    "colore",
+  ]);
+  assert.equal(
+    schemi.ScuderiaBreve.properties.colore.pattern,
+    "^#[0-9A-F]{6}$",
+  );
+  assert.ok(schemi.PilotaBreve.required.includes("abbreviazioneNome"));
+  assert.ok(schemi.PilotaBreve.required.includes("numeroVettura"));
+  assert.ok(schemi.PilotaBreve.required.includes("nazionalitaIso2"));
+  assert.ok(schemi.PilotaBreve.required.includes("nazionalitaIso3"));
+  assert.equal(
+    schemi.PilotaBreve.properties.nazionalitaIso3.pattern,
+    "^[A-Z]{3}$",
+  );
+  assert.ok(documentoOpenApi.paths["/piloti"]);
+  assert.ok(documentoOpenApi.paths["/piloti/{pilotaSlug}"]);
 });
 
 test("tutte le route GET v1 sono documentate una sola volta", () => {
