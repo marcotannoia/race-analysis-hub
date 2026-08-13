@@ -45,6 +45,7 @@ const scuderiaSchema = new mongoose.Schema(
       required: true,
     },
     classifica2026: { type: classificaSchema, required: true },
+    traduzioni: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
   },
   {
     timestamps: true,

@@ -10,6 +10,12 @@ const {
 } = require("../../services/classificaPrevisionale");
 const { inviaErrore } = require("../../utils/rispostaApi");
 const {
+  LINGUA_PREDEFINITA,
+  LINGUE_SUPPORTATE,
+  linguaRichiesta,
+  testiApi,
+} = require("../../i18n/lingue");
+const {
   presentaAnalisiPilota,
   presentaAnalisiScuderia,
   presentaAndamento,
@@ -35,22 +41,26 @@ const attribuzioneF1db = {
 const CAMPI_PILOTA_BREVE =
   "slug nome codice numero nazionalitaIso2 nazionalitaIso3";
 const CAMPI_SCUDERIA_BREVE = "slug nome abbreviazione colore";
+const CAMPI_GARA_BREVE =
+  "slug nome circuito paese stagione ordineAnalisi stato traduzioni";
 
-async function recuperaAndamentoPilota(pilota, garaAttuale) {
+async function recuperaAndamentoPilota(pilota, garaAttuale, lingua) {
   return presentaAndamento(
     creaAndamentoAnnuale({
       stagione: garaAttuale.stagione,
       pilotaSlug: pilota.slug,
     }),
+    lingua,
   );
 }
 
-async function recuperaAndamentoScuderia(scuderia, garaAttuale) {
+async function recuperaAndamentoScuderia(scuderia, garaAttuale, lingua) {
   return presentaAndamento(
     creaAndamentoAnnuale({
       stagione: garaAttuale.stagione,
       scuderiaSlug: scuderia.slug,
     }),
+    lingua,
   );
 }
 
@@ -58,14 +68,14 @@ async function recuperaAnalisiPilota(pilotaId, garaId) {
   return AnalisiGara.findOne({ pilota: pilotaId, gara: garaId })
     .populate("pilota", CAMPI_PILOTA_BREVE)
     .populate("scuderia", CAMPI_SCUDERIA_BREVE)
-    .populate("gara", "slug nome circuito paese stagione ordineAnalisi stato")
+    .populate("gara", CAMPI_GARA_BREVE)
     .lean();
 }
 
 async function recuperaAnalisiScuderia(scuderiaId, garaId) {
   return AnalisiScuderia.findOne({ scuderia: scuderiaId, gara: garaId })
     .populate("scuderia", CAMPI_SCUDERIA_BREVE)
-    .populate("gara", "slug nome circuito paese stagione ordineAnalisi stato")
+    .populate("gara", CAMPI_GARA_BREVE)
     .lean();
 }
 
@@ -86,17 +96,22 @@ async function richiediGaraAttuale(risposta) {
 }
 
 function descrizioneApi(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
+  const testi = testiApi(lingua);
+
   risposta.json({
     nome: "Race Analysis Hub API",
     versione: VERSIONE_API,
-    descrizione:
-      "API pubblica di sola lettura per il Gran Premio attuale, i piloti, " +
-      "le scuderie e la classifica previsionale",
+    descrizione: testi.descrizione,
     documentazione: "/api/docs",
     specificaOpenApi: "/api/v1/openapi.json",
+    lingua,
+    linguaPredefinita: LINGUA_PREDEFINITA,
+    lingueSupportate: Object.values(LINGUE_SUPPORTATE),
     attribuzioneDati: attribuzioneF1db,
     endpoint: {
       home: "/api/v1/home",
+      lingue: "/api/v1/lingue",
       piloti: "/api/v1/piloti",
       dettaglioPilota: "/api/v1/piloti/:pilotaSlug",
       scuderie: "/api/v1/scuderie",
@@ -111,6 +126,16 @@ function descrizioneApi(richiesta, risposta) {
       analisiScuderia:
         "/api/v1/gare/:garaSlug/scuderie/:scuderiaSlug/analisi",
     },
+  });
+}
+
+function elencaLingue(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
+  risposta.json({
+    lingua,
+    linguaPredefinita: LINGUA_PREDEFINITA,
+    lingue: Object.values(LINGUE_SUPPORTATE),
+    utilizzo: testiApi(lingua).utilizzo,
   });
 }
 
@@ -129,6 +154,7 @@ function statoServizio(richiesta, risposta) {
 }
 
 async function home(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const garaAttuale = await richiediGaraAttuale(risposta);
   if (!garaAttuale) return;
 
@@ -141,9 +167,12 @@ async function home(richiesta, risposta) {
   ]);
 
   risposta.json({
-    garaAttuale: presentaGaraBreve(garaAttuale),
-    piloti: piloti.map(presentaPilota),
-    scuderie: scuderie.map(presentaScuderia),
+    lingua,
+    garaAttuale: presentaGaraBreve(garaAttuale, lingua),
+    piloti: piloti.map((pilota) => presentaPilota(pilota, lingua)),
+    scuderie: scuderie.map((scuderia) =>
+      presentaScuderia(scuderia, lingua),
+    ),
     metadati: {
       stagione: garaAttuale.stagione,
       totalePiloti: piloti.length,
@@ -153,6 +182,7 @@ async function home(richiesta, risposta) {
 }
 
 async function classificaPrevisionale(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const garaAttuale = await richiediGaraAttuale(risposta);
   if (!garaAttuale) return;
 
@@ -178,23 +208,27 @@ async function classificaPrevisionale(richiesta, risposta) {
       scuderie,
       analisiPiloti,
       analisiScuderie,
+      lingua,
     }),
   );
 }
 
 async function elencaPiloti(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const piloti = await Pilota.find()
     .populate("scuderia", CAMPI_SCUDERIA_BREVE)
     .sort("classifica2026.posizione")
     .lean();
 
   risposta.json({
+    lingua,
     totale: piloti.length,
-    piloti: piloti.map(presentaPilota),
+    piloti: piloti.map((pilota) => presentaPilota(pilota, lingua)),
   });
 }
 
 async function dettaglioPilota(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const [garaAttuale, pilota] = await Promise.all([
     trovaGaraAttuale(),
     Pilota.findOne({ slug: richiesta.params.pilotaSlug })
@@ -222,28 +256,34 @@ async function dettaglioPilota(richiesta, risposta) {
 
   const [analisi, andamento] = await Promise.all([
     recuperaAnalisiPilota(pilota._id, garaAttuale._id),
-    recuperaAndamentoPilota(pilota, garaAttuale),
+    recuperaAndamentoPilota(pilota, garaAttuale, lingua),
   ]);
 
   risposta.json({
-    pilota: presentaPilota(pilota),
-    analisi: presentaAnalisiPilota(analisi),
+    lingua,
+    pilota: presentaPilota(pilota, lingua),
+    analisi: presentaAnalisiPilota(analisi, lingua),
     andamentoStagioneCorrente: andamento,
   });
 }
 
 async function elencaScuderie(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const scuderie = await Scuderia.find()
     .sort("classifica2026.posizione")
     .lean();
 
   risposta.json({
+    lingua,
     totale: scuderie.length,
-    scuderie: scuderie.map(presentaScuderia),
+    scuderie: scuderie.map((scuderia) =>
+      presentaScuderia(scuderia, lingua),
+    ),
   });
 }
 
 async function dettaglioScuderia(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const [garaAttuale, scuderia] = await Promise.all([
     trovaGaraAttuale(),
     Scuderia.findOne({ slug: richiesta.params.scuderiaSlug }).lean(),
@@ -274,34 +314,43 @@ async function dettaglioScuderia(richiesta, risposta) {
       .lean(),
     recuperaAnalisiScuderia(scuderia._id, garaAttuale._id),
   ]);
-  const andamento = await recuperaAndamentoScuderia(scuderia, garaAttuale);
+  const andamento = await recuperaAndamentoScuderia(
+    scuderia,
+    garaAttuale,
+    lingua,
+  );
 
   risposta.json({
-    scuderia: presentaScuderia(scuderia),
-    piloti: piloti.map(presentaPilota),
-    analisi: presentaAnalisiScuderia(analisi),
+    lingua,
+    scuderia: presentaScuderia(scuderia, lingua),
+    piloti: piloti.map((pilota) => presentaPilota(pilota, lingua)),
+    analisi: presentaAnalisiScuderia(analisi, lingua),
     andamentoStagioneCorrente: andamento,
   });
 }
 
 async function elencaGare(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const garaAttuale = await richiediGaraAttuale(risposta);
   if (!garaAttuale) return;
 
   risposta.json({
+    lingua,
     totale: 1,
-    gare: [presentaGaraBreve(garaAttuale)],
+    gare: [presentaGaraBreve(garaAttuale, lingua)],
   });
 }
 
 async function garaAttuale(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const gara = await richiediGaraAttuale(risposta);
   if (!gara) return;
 
-  risposta.json({ gara: presentaGara(gara) });
+  risposta.json({ lingua, gara: presentaGara(gara, lingua) });
 }
 
 async function dettaglioGara(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const gara = await richiediGaraAttuale(risposta);
   if (!gara) return;
 
@@ -318,11 +367,11 @@ async function dettaglioGara(richiesta, risposta) {
     AnalisiGara.find({ gara: gara._id })
       .populate("pilota", `${CAMPI_PILOTA_BREVE} classifica2026`)
       .populate("scuderia", CAMPI_SCUDERIA_BREVE)
-      .populate("gara", "slug nome circuito paese stagione ordineAnalisi stato")
+      .populate("gara", CAMPI_GARA_BREVE)
       .lean(),
     AnalisiScuderia.find({ gara: gara._id })
       .populate("scuderia", `${CAMPI_SCUDERIA_BREVE} classifica2026`)
-      .populate("gara", "slug nome circuito paese stagione ordineAnalisi stato")
+      .populate("gara", CAMPI_GARA_BREVE)
       .lean(),
   ]);
 
@@ -338,13 +387,19 @@ async function dettaglioGara(richiesta, risposta) {
   );
 
   risposta.json({
-    gara: presentaGara(gara),
-    analisiPiloti: analisiPiloti.map(presentaAnalisiPilota),
-    analisiScuderie: analisiScuderie.map(presentaAnalisiScuderia),
+    lingua,
+    gara: presentaGara(gara, lingua),
+    analisiPiloti: analisiPiloti.map((analisi) =>
+      presentaAnalisiPilota(analisi, lingua),
+    ),
+    analisiScuderie: analisiScuderie.map((analisi) =>
+      presentaAnalisiScuderia(analisi, lingua),
+    ),
   });
 }
 
 async function classificaPiloti(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const gara = await richiediGaraAttuale(risposta);
   if (!gara) return;
 
@@ -354,6 +409,7 @@ async function classificaPiloti(richiesta, risposta) {
     .lean();
 
   risposta.json({
+    lingua,
     stagione: gara.stagione,
     tipo: "piloti",
     totale: piloti.length,
@@ -368,6 +424,7 @@ async function classificaPiloti(richiesta, risposta) {
 }
 
 async function classificaScuderie(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const gara = await richiediGaraAttuale(risposta);
   if (!gara) return;
 
@@ -376,6 +433,7 @@ async function classificaScuderie(richiesta, risposta) {
     .lean();
 
   risposta.json({
+    lingua,
     stagione: gara.stagione,
     tipo: "scuderie",
     totale: scuderie.length,
@@ -389,6 +447,7 @@ async function classificaScuderie(richiesta, risposta) {
 }
 
 async function analisiPilotaPerGara(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const gara = await richiediGaraAttuale(risposta);
   if (!gara) return;
 
@@ -425,10 +484,11 @@ async function analisiPilotaPerGara(richiesta, risposta) {
     );
   }
 
-  risposta.json({ analisi: presentaAnalisiPilota(analisi) });
+  risposta.json({ lingua, analisi: presentaAnalisiPilota(analisi, lingua) });
 }
 
 async function analisiScuderiaPerGara(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   const gara = await richiediGaraAttuale(risposta);
   if (!gara) return;
 
@@ -467,7 +527,10 @@ async function analisiScuderiaPerGara(richiesta, risposta) {
     );
   }
 
-  risposta.json({ analisi: presentaAnalisiScuderia(analisi) });
+  risposta.json({
+    lingua,
+    analisi: presentaAnalisiScuderia(analisi, lingua),
+  });
 }
 
 module.exports = {
@@ -481,6 +544,7 @@ module.exports = {
   dettaglioPilota,
   dettaglioScuderia,
   elencaGare,
+  elencaLingue,
   elencaPiloti,
   elencaScuderie,
   garaAttuale,

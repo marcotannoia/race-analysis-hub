@@ -29,7 +29,10 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
 
     assert.equal(risposta.status, 200);
     assert.equal(corpo.nome, "Race Analysis Hub API");
-    assert.equal(corpo.versione, "1.5.0");
+    assert.equal(corpo.versione, "1.6.0");
+    assert.equal(corpo.linguaPredefinita, "it");
+    assert.equal(corpo.lingueSupportate.length, 6);
+    assert.equal(corpo.endpoint.lingue, "/api/v1/lingue");
     assert.equal(
       corpo.endpoint.classificaPrevisionale,
       "/api/v1/previsioni/piloti",
@@ -85,6 +88,53 @@ test("l'API v1 rifiuta query e identificatori non previsti", async () => {
     const slugCorpo = await slug.json();
     assert.equal(slug.status, 400);
     assert.equal(slugCorpo.errore.codice, "IDENTIFICATORE_NON_VALIDO");
+
+    const lingua = await fetch(`${baseUrl}/api/v1?lingua=nl`);
+    const linguaCorpo = await lingua.json();
+    assert.equal(lingua.status, 400);
+    assert.equal(linguaCorpo.errore.codice, "LINGUA_NON_SUPPORTATA");
+  });
+});
+
+test("l'API v1 espone e seleziona le sei lingue", async () => {
+  await conServer(async (baseUrl) => {
+    const elenco = await fetch(`${baseUrl}/api/v1/lingue`);
+    const corpoElenco = await elenco.json();
+    assert.equal(elenco.status, 200);
+    assert.equal(corpoElenco.linguaPredefinita, "it");
+    assert.deepEqual(
+      corpoElenco.lingue.map((lingua) => lingua.codice),
+      ["it", "en", "fr", "pt", "es", "de"],
+    );
+
+    const francese = await fetch(`${baseUrl}/api/v1?lingua=fr`);
+    const corpoFrancese = await francese.json();
+    assert.equal(francese.status, 200);
+    assert.equal(corpoFrancese.lingua, "fr");
+    assert.equal(francese.headers.get("content-language"), "fr");
+  });
+});
+
+test("l'API v1 localizza anche i messaggi di errore", async () => {
+  await conServer(async (baseUrl) => {
+    const metodo = await fetch(`${baseUrl}/api/v1/piloti?lingua=de`, {
+      method: "POST",
+    });
+    const corpoMetodo = await metodo.json();
+    assert.equal(metodo.status, 405);
+    assert.equal(metodo.headers.get("content-language"), "de");
+    assert.equal(
+      corpoMetodo.errore.messaggio,
+      "Diese öffentliche API erlaubt ausschließlich Lesezugriffe",
+    );
+
+    const query = await fetch(`${baseUrl}/api/v1?lingua=fr&pagina=2`);
+    const corpoQuery = await query.json();
+    assert.equal(query.status, 400);
+    assert.equal(
+      corpoQuery.errore.messaggio,
+      "Paramètres de requête non pris en charge : pagina",
+    );
   });
 });
 
@@ -94,7 +144,8 @@ test("specifica OpenAPI e documentazione Swagger sono pubbliche", async () => {
     const corpo = await specifica.json();
     assert.equal(specifica.status, 200);
     assert.equal(corpo.openapi, "3.1.0");
-    assert.equal(corpo.info.version, "1.5.0");
+    assert.equal(corpo.info.version, "1.6.0");
+    assert.ok(corpo.paths["/lingue"]);
     assert.ok(corpo.paths["/gare/attuale"]);
     assert.ok(corpo.paths["/previsioni/piloti"]);
     assert.equal(

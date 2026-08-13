@@ -9,6 +9,7 @@ import {
   PointElement,
   Tooltip,
 } from 'chart.js'
+import { useLingua } from '../i18n/contestoLingua.js'
 
 Chart.register(
   CategoryScale,
@@ -27,6 +28,7 @@ const colori = [
 ]
 
 function GraficoAndamento({ titolo, descrizione, etichette, serie }) {
+  const { t } = useLingua()
   const riferimentoCanvas = useRef(null)
 
   useEffect(() => {
@@ -99,7 +101,7 @@ function GraficoAndamento({ titolo, descrizione, etichette, serie }) {
               label(contesto) {
                 const valore = contesto.raw
                 return valore === null
-                  ? `${contesto.dataset.label}: dato non disponibile`
+                  ? `${contesto.dataset.label}: ${t.datoNonDisponibile}`
                   : `${contesto.dataset.label}: P${valore}`
               },
             },
@@ -142,7 +144,7 @@ function GraficoAndamento({ titolo, descrizione, etichette, serie }) {
     })
 
     return () => grafico.destroy()
-  }, [etichette, serie])
+  }, [etichette, serie, t.datoNonDisponibile])
 
   return (
     <article className="grafico-andamento">
@@ -156,7 +158,7 @@ function GraficoAndamento({ titolo, descrizione, etichette, serie }) {
           role="img"
           aria-label={`${titolo}. ${descrizione}`}
         >
-          {titolo}: grafico delle posizioni Gran Premio per Gran Premio.
+          {t.fallbackGrafico(titolo)}
         </canvas>
       </div>
     </article>

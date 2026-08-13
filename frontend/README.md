@@ -4,11 +4,22 @@ Interfaccia React/Vite del progetto. Consuma esclusivamente l'API pubblica v1
 del backend e visualizza analisi editoriali, classifiche, grafici Chart.js e la
 classifica previsionale spiegabile del Gran Premio attuale.
 
-La release `1.5.0` dell'API aggiunge ai piloti i codici ISO2/ISO3, il numero
+La release `1.5.0` dell'API ha aggiunto ai piloti i codici ISO2/ISO3, il numero
 vettura e l'abbreviazione del nome; l'oggetto `scuderia` include inoltre
 abbreviazione e colore esadecimale. I precedenti campi `codice` e `numero`
 restano disponibili, quindi le viste esistenti continuano a funzionare senza
 modifiche.
+
+Dalla release `1.6.0` il selettore globale supporta `it`, `en`, `fr`, `pt`,
+`es` e `de`. La scelta iniziale segue le lingue del browser, viene salvata in
+`localStorage` e aggiunge `?lingua=...` alle richieste verso home, dettagli e
+classifica previsionale. Il controllo mostra icona, nome nativo e codice della
+lingua in un elemento compatto coerente con la grafica del sito, mantenendo un
+`select` nativo per tastiera e tecnologie assistive. Il codice `pt` seleziona il
+catalogo portoghese europeo (`pt-PT`). Le stringhe dell'interfaccia sono in
+`src/i18n/traduzioniInterfaccia.js`; i contenuti editoriali arrivano già
+localizzati dal backend. Il frontend non contiene credenziali Azure e non
+invia richieste a servizi di traduzione esterni.
 
 ## Avvio locale
 
@@ -20,6 +31,12 @@ npm run dev
 In assenza di configurazione il frontend usa il backend locale su
 `http://127.0.0.1:5002`. Per indicare un'altra istanza, creare `.env` da
 `.env.example` e impostare `VITE_API_URL`.
+
+Per una prova completa avviare prima `npm run dev` nella cartella `backend`:
+quel comando prepara un MongoDB temporaneo con il catalogo locale, senza usare
+Atlas. Avviare poi questo frontend con `npm run dev` e cambiare lingua dal
+selettore globale; ogni cambio ricarica i contenuti dall'API con il parametro
+`lingua` corrispondente.
 
 ## Controlli
 

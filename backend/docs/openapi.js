@@ -2,7 +2,9 @@ const { version: versioneApi } = require("../package.json");
 
 const intestazioneRequestId = {
   "X-Request-ID": { $ref: "#/components/headers/RequestId" },
+  "Content-Language": { $ref: "#/components/headers/ContentLanguage" },
 };
+const parametroLingua = { $ref: "#/components/parameters/Lingua" };
 
 const esempioPesiPrevisionali = [
   ["andamento2026", "Andamento 2026", 20],
@@ -73,7 +75,13 @@ const documentoOpenApi = {
       "del solo Gran Premio attuale. L'indice e i singoli fattori sono stime " +
       "soggette a errore e non rappresentano risultati sportivi certi. " +
       "In produzione si applicano una cache pubblica di 60 secondi e un limite di " +
-      "1000 richieste ogni 15 minuti per indirizzo IP.",
+      "1000 richieste ogni 15 minuti per indirizzo IP. I testi editoriali sono " +
+      "disponibili in italiano, inglese, francese, portoghese europeo, spagnolo e tedesco: " +
+      "aggiungere il parametro opzionale ?lingua=it|en|fr|pt|es|de. In assenza " +
+      "del parametro viene usato l'italiano. I cataloghi tradotti sono salvati e " +
+      "selezionati dal backend: nessun endpoint pubblico inoltra testi ad Azure o " +
+      "espone credenziali del servizio di traduzione. Slug, codici, nomi propri, " +
+      "numeri e URL restano invariati in tutte le lingue.",
     termsOfService:
       "https://github.com/marcotannoia/race-analysis-hub/blob/master/LICENSE.md",
     contact: {
@@ -125,6 +133,12 @@ const documentoOpenApi = {
       name: "Analisi",
       description: "Analisi editoriali del Gran Premio attuale.",
     },
+    {
+      name: "Localizzazione",
+      description:
+        "Selezione dei cataloghi testuali pre-generati. Italiano predefinito; " +
+        "portoghese in variante europea (pt-PT, esposta con il codice API pt).",
+    },
   ],
   paths: {
     "/": {
@@ -134,6 +148,7 @@ const documentoOpenApi = {
         summary: "Descrizione e indice dell'API",
         description:
           "Restituisce versione, collegamenti alla documentazione e indice degli endpoint pubblici.",
+        parameters: [parametroLingua],
         responses: {
           200: rispostaJson(
             "Indice degli endpoint",
@@ -149,7 +164,10 @@ const documentoOpenApi = {
         tags: ["Servizio"],
         summary: "Stato del servizio e del database",
         description:
-          "Endpoint non memorizzato in cache e non conteggiato nel rate limit.",
+          "Endpoint non memorizzato in cache e non conteggiato nel rate limit. " +
+          "Il parametro lingua determina l'header Content-Language, ma i valori " +
+          "tecnici di stato non vengono tradotti.",
+        parameters: [parametroLingua],
         responses: {
           200: rispostaJson(
             "Servizio e database disponibili",
@@ -174,9 +192,43 @@ const documentoOpenApi = {
         summary: "Dati aggregati per la home",
         description:
           "Restituisce il Gran Premio attuale, i piloti e le scuderie. La previsione è isolata nel proprio endpoint.",
+        parameters: [parametroLingua],
         responses: {
           200: rispostaJson("Contenuto della home", "#/components/schemas/Home"),
           404: { $ref: "#/components/responses/RisorsaNonTrovata" },
+          ...risposteComuni,
+        },
+      },
+    },
+    "/lingue": {
+      get: {
+        operationId: "elencaLingue",
+        tags: ["Localizzazione"],
+        summary: "Lingue supportate",
+        description:
+          "Restituisce i sei codici accettati dal parametro query lingua, la lingua " +
+          "predefinita e il nome nativo di ciascuna lingua. Il parametro lingua " +
+          "localizza il testo utilizzo della risposta.",
+        parameters: [parametroLingua],
+        responses: {
+          200: rispostaJson(
+            "Elenco delle lingue disponibili",
+            "#/components/schemas/RispostaLingue",
+            {
+              lingua: "en",
+              linguaPredefinita: "it",
+              lingue: [
+                { codice: "it", nome: "Italiano", nomeLocale: "Italiano" },
+                { codice: "en", nome: "Inglese", nomeLocale: "English" },
+                { codice: "fr", nome: "Francese", nomeLocale: "Français" },
+                { codice: "pt", nome: "Portoghese", nomeLocale: "Português" },
+                { codice: "es", nome: "Spagnolo", nomeLocale: "Español" },
+                { codice: "de", nome: "Tedesco", nomeLocale: "Deutsch" },
+              ],
+              utilizzo:
+                "Add ?lingua=it, en, fr, pt, es or de to public endpoints",
+            },
+          ),
           ...risposteComuni,
         },
       },
@@ -188,6 +240,7 @@ const documentoOpenApi = {
         summary: "Classifica previsionale dei piloti",
         description:
           "Calcola la previsione spiegabile esclusivamente per il Gran Premio attuale.",
+        parameters: [parametroLingua],
         responses: {
           200: rispostaJson(
             "Classifica previsionale del Gran Premio attuale",
@@ -203,6 +256,7 @@ const documentoOpenApi = {
         operationId: "elencaPiloti",
         tags: ["Piloti"],
         summary: "Elenco dei piloti",
+        parameters: [parametroLingua],
         responses: {
           200: rispostaJson(
             "Piloti ordinati per posizione in classifica",
@@ -219,7 +273,10 @@ const documentoOpenApi = {
         summary: "Scheda completa di un pilota",
         description:
           "Restituisce profilo, analisi del Gran Premio attuale e andamento della stagione corrente fino ai GP registrati.",
-        parameters: [{ $ref: "#/components/parameters/PilotaSlug" }],
+        parameters: [
+          { $ref: "#/components/parameters/PilotaSlug" },
+          parametroLingua,
+        ],
         responses: {
           200: rispostaJson(
             "Scheda del pilota",
@@ -235,6 +292,7 @@ const documentoOpenApi = {
         operationId: "elencaScuderie",
         tags: ["Scuderie"],
         summary: "Elenco delle scuderie",
+        parameters: [parametroLingua],
         responses: {
           200: rispostaJson(
             "Scuderie ordinate per posizione in classifica",
@@ -251,7 +309,10 @@ const documentoOpenApi = {
         summary: "Scheda completa di una scuderia",
         description:
           "Restituisce profilo, piloti, analisi del Gran Premio attuale e andamento della stagione corrente.",
-        parameters: [{ $ref: "#/components/parameters/ScuderiaSlug" }],
+        parameters: [
+          { $ref: "#/components/parameters/ScuderiaSlug" },
+          parametroLingua,
+        ],
         responses: {
           200: rispostaJson(
             "Scheda della scuderia",
@@ -269,6 +330,7 @@ const documentoOpenApi = {
         summary: "Elenco delle gare pubblicamente disponibili",
         description:
           "Restituisce sempre e soltanto il Gran Premio attuale. Non espone calendario futuro o analisi future.",
+        parameters: [parametroLingua],
         responses: {
           200: rispostaJson(
             "Elenco contenente la gara attuale",
@@ -284,6 +346,7 @@ const documentoOpenApi = {
         operationId: "recuperaGaraAttuale",
         tags: ["Gare"],
         summary: "Gran Premio attuale",
+        parameters: [parametroLingua],
         responses: {
           200: rispostaJson(
             "Contenuto completo della gara attuale",
@@ -301,7 +364,10 @@ const documentoOpenApi = {
         summary: "Dettaglio della gara attuale",
         description:
           "Lo slug deve appartenere al Gran Premio attuale. Qualsiasi altra gara restituisce 404.",
-        parameters: [{ $ref: "#/components/parameters/GaraSlug" }],
+        parameters: [
+          { $ref: "#/components/parameters/GaraSlug" },
+          parametroLingua,
+        ],
         responses: {
           200: rispostaJson(
             "Gara con analisi dei piloti e delle scuderie",
@@ -317,6 +383,7 @@ const documentoOpenApi = {
         operationId: "recuperaClassificaPiloti",
         tags: ["Classifiche"],
         summary: "Classifica piloti della stagione attuale",
+        parameters: [parametroLingua],
         responses: {
           200: rispostaJson(
             "Classifica piloti",
@@ -332,6 +399,7 @@ const documentoOpenApi = {
         operationId: "recuperaClassificaScuderie",
         tags: ["Classifiche"],
         summary: "Classifica scuderie della stagione attuale",
+        parameters: [parametroLingua],
         responses: {
           200: rispostaJson(
             "Classifica scuderie",
@@ -350,6 +418,7 @@ const documentoOpenApi = {
         parameters: [
           { $ref: "#/components/parameters/GaraSlug" },
           { $ref: "#/components/parameters/PilotaSlug" },
+          parametroLingua,
         ],
         responses: {
           200: rispostaJson(
@@ -369,6 +438,7 @@ const documentoOpenApi = {
         parameters: [
           { $ref: "#/components/parameters/GaraSlug" },
           { $ref: "#/components/parameters/ScuderiaSlug" },
+          parametroLingua,
         ],
         responses: {
           200: rispostaJson(
@@ -383,6 +453,12 @@ const documentoOpenApi = {
   },
   components: {
     headers: {
+      ContentLanguage: {
+        description:
+          "Lingua effettiva selezionata per la risposta. È presente anche sugli " +
+          "endpoint tecnici, i cui codici di stato restano invariati.",
+        schema: { $ref: "#/components/schemas/CodiceLingua" },
+      },
       RequestId: {
         description:
           "Identificatore univoco della richiesta, utile per assistenza e analisi dei log.",
@@ -390,6 +466,23 @@ const documentoOpenApi = {
       },
     },
     parameters: {
+      Lingua: {
+        name: "lingua",
+        in: "query",
+        required: false,
+        description:
+          "Seleziona il catalogo dei campi testuali: it italiano, en inglese, fr " +
+          "francese, pt portoghese europeo (pt-PT), es spagnolo, de tedesco. " +
+          "Il valore predefinito è it. Codici, slug, nomi propri, numeri e URL non " +
+          "vengono modificati. Un codice non supportato restituisce HTTP 400 con " +
+          "codice errore LINGUA_NON_SUPPORTATA.",
+        schema: {
+          type: "string",
+          enum: ["it", "en", "fr", "pt", "es", "de"],
+          default: "it",
+        },
+        example: "en",
+      },
       GaraSlug: {
         name: "garaSlug",
         in: "path",
@@ -437,11 +530,27 @@ const documentoOpenApi = {
         content: {
           "application/json": {
             schema: { $ref: "#/components/schemas/Errore" },
-            example: {
-              errore: {
-                codice: "PARAMETRO_QUERY_NON_VALIDO",
-                messaggio: "Parametri non supportati: pagina",
-                requestId: "2f1c7e5f-7f55-4f16-a29c-45f3f667ae21",
+            examples: {
+              queryNonValida: {
+                summary: "Parametro query non previsto",
+                value: {
+                  errore: {
+                    codice: "PARAMETRO_QUERY_NON_VALIDO",
+                    messaggio: "Parametri non supportati: pagina",
+                    requestId: "2f1c7e5f-7f55-4f16-a29c-45f3f667ae21",
+                  },
+                },
+              },
+              linguaNonSupportata: {
+                summary: "Codice lingua non supportato",
+                value: {
+                  errore: {
+                    codice: "LINGUA_NON_SUPPORTATA",
+                    messaggio: "Lingua non supportata: xx",
+                    lingueSupportate: ["it", "en", "fr", "pt", "es", "de"],
+                    requestId: "2f1c7e5f-7f55-4f16-a29c-45f3f667ae21",
+                  },
+                },
               },
             },
           },
@@ -511,6 +620,7 @@ const documentoOpenApi = {
         type: "object",
         required: [
           "home",
+          "lingue",
           "piloti",
           "dettaglioPilota",
           "scuderie",
@@ -525,6 +635,7 @@ const documentoOpenApi = {
         ],
         properties: {
           home: { type: "string", example: "/api/v1/home" },
+          lingue: { type: "string", example: "/api/v1/lingue" },
           piloti: { type: "string", example: "/api/v1/piloti" },
           dettaglioPilota: {
             type: "string",
@@ -574,6 +685,9 @@ const documentoOpenApi = {
           "descrizione",
           "documentazione",
           "specificaOpenApi",
+          "lingua",
+          "linguaPredefinita",
+          "lingueSupportate",
           "attribuzioneDati",
           "endpoint",
         ],
@@ -586,10 +700,64 @@ const documentoOpenApi = {
             type: "string",
             example: "/api/v1/openapi.json",
           },
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
+          linguaPredefinita: {
+            $ref: "#/components/schemas/CodiceLingua",
+          },
+          lingueSupportate: {
+            type: "array",
+            minItems: 6,
+            maxItems: 6,
+            items: { $ref: "#/components/schemas/LinguaDisponibile" },
+          },
           attribuzioneDati: {
             $ref: "#/components/schemas/FonteAndamento",
           },
           endpoint: { $ref: "#/components/schemas/IndiceEndpoint" },
+        },
+      },
+      CodiceLingua: {
+        type: "string",
+        description:
+          "Codice lingua pubblico. pt identifica il catalogo portoghese europeo (pt-PT).",
+        enum: ["it", "en", "fr", "pt", "es", "de"],
+        example: "it",
+      },
+      LinguaDisponibile: {
+        type: "object",
+        required: ["codice", "nome", "nomeLocale"],
+        properties: {
+          codice: { $ref: "#/components/schemas/CodiceLingua" },
+          nome: {
+            type: "string",
+            description: "Nome della lingua in italiano.",
+            example: "Inglese",
+          },
+          nomeLocale: {
+            type: "string",
+            description: "Nome della lingua nella lingua stessa.",
+            example: "English",
+          },
+        },
+      },
+      RispostaLingue: {
+        type: "object",
+        required: ["lingua", "linguaPredefinita", "lingue", "utilizzo"],
+        properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
+          linguaPredefinita: {
+            $ref: "#/components/schemas/CodiceLingua",
+          },
+          lingue: {
+            type: "array",
+            minItems: 6,
+            maxItems: 6,
+            items: { $ref: "#/components/schemas/LinguaDisponibile" },
+          },
+          utilizzo: {
+            type: "string",
+            description: "Istruzione d'uso localizzata nella lingua richiesta.",
+          },
         },
       },
       StatoServizio: {
@@ -1070,8 +1238,9 @@ const documentoOpenApi = {
       },
       ElencoPiloti: {
         type: "object",
-        required: ["totale", "piloti"],
+        required: ["lingua", "totale", "piloti"],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           totale: { type: "integer", minimum: 0 },
           piloti: {
             type: "array",
@@ -1081,8 +1250,9 @@ const documentoOpenApi = {
       },
       ElencoScuderie: {
         type: "object",
-        required: ["totale", "scuderie"],
+        required: ["lingua", "totale", "scuderie"],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           totale: { type: "integer", minimum: 0 },
           scuderie: {
             type: "array",
@@ -1092,8 +1262,9 @@ const documentoOpenApi = {
       },
       ElencoGare: {
         type: "object",
-        required: ["totale", "gare"],
+        required: ["lingua", "totale", "gare"],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           totale: { type: "integer", const: 1 },
           gare: {
             type: "array",
@@ -1105,13 +1276,17 @@ const documentoOpenApi = {
       },
       RispostaGara: {
         type: "object",
-        required: ["gara"],
-        properties: { gara: { $ref: "#/components/schemas/Gara" } },
+        required: ["lingua", "gara"],
+        properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
+          gara: { $ref: "#/components/schemas/Gara" },
+        },
       },
       DettaglioPilota: {
         type: "object",
-        required: ["pilota", "analisi", "andamentoStagioneCorrente"],
+        required: ["lingua", "pilota", "analisi", "andamentoStagioneCorrente"],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           pilota: { $ref: "#/components/schemas/Pilota" },
           analisi: {
             oneOf: [
@@ -1127,12 +1302,14 @@ const documentoOpenApi = {
       DettaglioScuderia: {
         type: "object",
         required: [
+          "lingua",
           "scuderia",
           "piloti",
           "analisi",
           "andamentoStagioneCorrente",
         ],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           scuderia: { $ref: "#/components/schemas/Scuderia" },
           piloti: {
             type: "array",
@@ -1199,6 +1376,7 @@ const documentoOpenApi = {
           "pilota",
           "scuderia",
           "confidenza",
+          "confidenzaCodice",
           "sintesi",
           "fattori",
           "aggiornamentiTecnici",
@@ -1214,6 +1392,9 @@ const documentoOpenApi = {
           pilota: { $ref: "#/components/schemas/PilotaBreve" },
           scuderia: { $ref: "#/components/schemas/ScuderiaBreve" },
           confidenza: {
+            type: "string",
+          },
+          confidenzaCodice: {
             type: "string",
             enum: ["bassa", "media", "alta"],
           },
@@ -1233,6 +1414,7 @@ const documentoOpenApi = {
       ClassificaPrevisionale: {
         type: "object",
         required: [
+          "lingua",
           "gara",
           "modello",
           "avvertenza",
@@ -1241,6 +1423,7 @@ const documentoOpenApi = {
           "classifica",
         ],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           gara: {
             type: "object",
             required: ["slug", "nome", "circuito"],
@@ -1286,8 +1469,9 @@ const documentoOpenApi = {
       },
       Home: {
         type: "object",
-        required: ["garaAttuale", "piloti", "scuderie", "metadati"],
+        required: ["lingua", "garaAttuale", "piloti", "scuderie", "metadati"],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           garaAttuale: { $ref: "#/components/schemas/GaraBreve" },
           piloti: {
             type: "array",
@@ -1302,8 +1486,9 @@ const documentoOpenApi = {
       },
       DettaglioGara: {
         type: "object",
-        required: ["gara", "analisiPiloti", "analisiScuderie"],
+        required: ["lingua", "gara", "analisiPiloti", "analisiScuderie"],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           gara: { $ref: "#/components/schemas/Gara" },
           analisiPiloti: {
             type: "array",
@@ -1344,8 +1529,9 @@ const documentoOpenApi = {
       },
       ClassificaPiloti: {
         type: "object",
-        required: ["stagione", "tipo", "totale", "classifica"],
+        required: ["lingua", "stagione", "tipo", "totale", "classifica"],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           stagione: { type: "integer", minimum: 2026 },
           tipo: { type: "string", const: "piloti" },
           totale: { type: "integer", minimum: 0 },
@@ -1359,8 +1545,9 @@ const documentoOpenApi = {
       },
       ClassificaScuderie: {
         type: "object",
-        required: ["stagione", "tipo", "totale", "classifica"],
+        required: ["lingua", "stagione", "tipo", "totale", "classifica"],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           stagione: { type: "integer", minimum: 2026 },
           tipo: { type: "string", const: "scuderie" },
           totale: { type: "integer", minimum: 0 },
@@ -1374,15 +1561,17 @@ const documentoOpenApi = {
       },
       RispostaAnalisiPilota: {
         type: "object",
-        required: ["analisi"],
+        required: ["lingua", "analisi"],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           analisi: { $ref: "#/components/schemas/AnalisiPilota" },
         },
       },
       RispostaAnalisiScuderia: {
         type: "object",
-        required: ["analisi"],
+        required: ["lingua", "analisi"],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           analisi: { $ref: "#/components/schemas/AnalisiScuderia" },
         },
       },
@@ -1398,6 +1587,14 @@ const documentoOpenApi = {
               messaggio: {
                 type: "string",
                 example: "Il pilota richiesto non esiste",
+              },
+              lingueSupportate: {
+                type: "array",
+                description:
+                  "Presente soltanto quando codice è LINGUA_NON_SUPPORTATA.",
+                minItems: 6,
+                maxItems: 6,
+                items: { $ref: "#/components/schemas/CodiceLingua" },
               },
               requestId: { type: "string", format: "uuid" },
             },

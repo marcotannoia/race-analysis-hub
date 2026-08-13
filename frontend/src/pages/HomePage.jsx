@@ -4,6 +4,7 @@ import Collegamento from '../components/Collegamento.jsx'
 import ClassificaPrevisionale from '../components/ClassificaPrevisionale.jsx'
 import Marchio from '../components/Marchio.jsx'
 import { Caricamento, ErrorePagina } from '../components/StatoPagina.jsx'
+import { useLingua } from '../i18n/contestoLingua.js'
 
 function normalizza(testo) {
   return testo
@@ -13,14 +14,17 @@ function normalizza(testo) {
 }
 
 function HomePage() {
+  const { lingua, t } = useLingua()
   const [dati, setDati] = useState(null)
   const [errore, setErrore] = useState('')
   const [ricerca, setRicerca] = useState('')
 
   useEffect(() => {
     let componenteAttivo = true
+    setDati(null)
+    setErrore('')
 
-    caricaHome()
+    caricaHome(lingua)
       .then((home) => {
         if (componenteAttivo) {
           setDati({
@@ -38,7 +42,7 @@ function HomePage() {
     return () => {
       componenteAttivo = false
     }
-  }, [])
+  }, [lingua])
 
   const risultati = useMemo(() => {
     const termine = normalizza(ricerca.trim())
@@ -60,7 +64,7 @@ function HomePage() {
       sigla: scuderia.classifica?.posizione
         ? `P${scuderia.classifica.posizione}`
         : '—',
-      descrizione: 'Scuderia',
+      descrizione: t.scuderia,
     }))
 
     return [...piloti, ...scuderie]
@@ -70,7 +74,7 @@ function HomePage() {
         ).includes(termine),
       )
       .slice(0, 8)
-  }, [dati, ricerca])
+  }, [dati, ricerca, t.scuderia])
 
   if (errore) return <ErrorePagina messaggio={errore} />
   if (!dati) return <Caricamento />
@@ -81,8 +85,8 @@ function HomePage() {
         <Marchio />
 
         <div className="introduzione-home">
-          <span className="sovratitolo">Analisi del Gran Premio in Arrivo</span>
-          <h1>Cerca il pilota o la scuderia</h1>
+          <span className="sovratitolo">{t.analisiGp}</span>
+          <h1>{t.cercaTitolo}</h1>
         </div>
 
         <div className="ricerca-home">
@@ -92,13 +96,13 @@ function HomePage() {
               <path d="m20 20-4-4" />
             </svg>
             <span className="solo-screen-reader">
-              Cerca un pilota o una scuderia
+              {t.cercaEtichetta}
             </span>
             <input
               type="search"
               value={ricerca}
               onChange={(evento) => setRicerca(evento.target.value)}
-              placeholder="Es. Leclerc, Ferrari, ANT…"
+              placeholder={t.cercaPlaceholder}
               autoComplete="off"
             />
           </label>
@@ -121,7 +125,7 @@ function HomePage() {
                   </Collegamento>
                 ))
               ) : (
-                <p className="ricerca-vuota">Nessun pilota o scuderia trovata.</p>
+                <p className="ricerca-vuota">{t.nessunRisultato}</p>
               )}
             </div>
           )}
@@ -129,7 +133,7 @@ function HomePage() {
 
         <div className="prossimo-gp-home">
           <div>
-            <span className="sovratitolo">GP attuale</span>
+            <span className="sovratitolo">{t.gpAttuale}</span>
             {dati.garaAttuale ? (
               <>
                 <h2>{dati.garaAttuale.nome}</h2>
@@ -138,11 +142,11 @@ function HomePage() {
                 </p>
               </>
             ) : (
-              <p>Il Gran Premio attuale sarà pubblicato a breve.</p>
+              <p>{t.gpNonDisponibile}</p>
             )}
           </div>
           {dati.garaAttuale && (
-            <span className="numero-gp" aria-label="Numero analisi">
+            <span className="numero-gp" aria-label={t.numeroAnalisi}>
               {String(dati.garaAttuale.ordineAnalisi).padStart(2, '0')}
             </span>
           )}

@@ -15,6 +15,9 @@ const {
   normalizzaNotaBene,
   normalizzaTestiAnnuali,
 } = require("../utils/normalizzaNotaBene");
+const {
+  normalizzaTraduzioniAnalisi,
+} = require("../utils/normalizzaTraduzioni");
 
 const attesi = {
   piloti: 22,
@@ -103,6 +106,7 @@ async function verificaCorrispondenzaSorgente() {
           nazionalitaIso3: documento.nazionalitaIso3,
           scuderiaSlug: documento.scuderia.slug,
           classifica2026: documento.classifica2026,
+          traduzioni: documento.traduzioni || {},
         }
       : null;
 
@@ -132,6 +136,7 @@ async function verificaCorrispondenzaSorgente() {
       penalita: sorgente.penalita || "",
       affidabilita: sorgente.affidabilita || "",
       aggiornamentiInArrivo: sorgente.aggiornamentiInArrivo || "",
+      traduzioni: normalizzaTraduzioniAnalisi(sorgente.traduzioni),
       fonti: sorgente.fonti,
     };
 
@@ -153,6 +158,7 @@ async function verificaCorrispondenzaSorgente() {
       considerazioni: sorgente.considerazioniFinali,
       affidabilita: sorgente.affidabilita || "",
       aggiornamentiInArrivo: sorgente.aggiornamentiInArrivo || "",
+      traduzioni: normalizzaTraduzioniAnalisi(sorgente.traduzioni),
       fonti: sorgente.fonti,
     };
 

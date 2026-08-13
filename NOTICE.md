@@ -56,6 +56,19 @@ valutazioni editoriali su pista, vettura, gomme, affidabilità e aggiornamenti
 tecnici. L'indice è una stima soggetta a errore, non un risultato ufficiale né
 una garanzia sulla prestazione futura.
 
+## Traduzioni
+
+Le versioni inglese, francese, portoghese europeo, spagnola e tedesca dei contenuti
+editoriali sono inizialmente generate con Azure Translator e poi salvate nel
+database del progetto. Azure non è chiamato dalle API pubbliche o dal
+frontend. Procedura, memoria di traduzione e controlli sono documentati in
+`LOCALIZZAZIONE.md`.
+
+La chiave e la cache amministrativa non sono incluse nel repository né nel
+servizio in produzione. Le API leggono esclusivamente traduzioni già salvate
+nel database; non inviano i testi a servizi esterni durante le richieste degli
+utenti. Il codice pubblico `pt` identifica il catalogo `pt-PT`.
+
 Le risposte pubbliche di Race Analysis Hub, compresi i testi editoriali
 originali restituiti dalle API, sono riutilizzabili secondo la licenza descritta
 in `LICENSE.md`. Il riutilizzatore può adattarle nel proprio software, anche per

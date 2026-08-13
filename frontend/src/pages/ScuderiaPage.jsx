@@ -3,8 +3,10 @@ import { caricaScuderia } from '../services/api.js'
 import { Caricamento, ErrorePagina } from '../components/StatoPagina.jsx'
 import IntestazioneDettaglio from '../components/IntestazioneDettaglio.jsx'
 import AnalisiCircuito from '../components/AnalisiCircuito.jsx'
+import { useLingua } from '../i18n/contestoLingua.js'
 
 function ScuderiaPage({ slug }) {
+  const { lingua, t } = useLingua()
   const [dati, setDati] = useState(null)
   const [errore, setErrore] = useState('')
 
@@ -13,7 +15,7 @@ function ScuderiaPage({ slug }) {
     setDati(null)
     setErrore('')
 
-    caricaScuderia(slug)
+    caricaScuderia(slug, lingua)
       .then((risultato) => {
         if (componenteAttivo) {
           setDati(risultato)
@@ -26,7 +28,7 @@ function ScuderiaPage({ slug }) {
     return () => {
       componenteAttivo = false
     }
-  }, [slug])
+  }, [slug, lingua])
 
   if (errore) return <ErrorePagina messaggio={errore} />
   if (!dati) return <Caricamento />
@@ -36,18 +38,18 @@ function ScuderiaPage({ slug }) {
   return (
     <>
       <IntestazioneDettaglio
-        etichetta="Profilo scuderia"
+        etichetta={t.profiloScuderia}
         titolo={dati.scuderia.nome}
         sottotitolo={`${nomiPiloti} · ${dati.scuderia.nazionalita}`}
         sigla={dati.scuderia.nome.slice(0, 3).toUpperCase()}
         statistiche={[
           {
             valore: `P${dati.scuderia.classifica2026.posizione}`,
-            etichetta: 'Classifica 2026',
+            etichetta: t.classifica2026,
           },
           {
             valore: dati.scuderia.classifica2026.punti,
-            etichetta: 'Punti',
+            etichetta: t.punti,
           },
         ]}
       />

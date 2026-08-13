@@ -5,9 +5,12 @@ const convalidaParametriSlug = require("../../middleware/convalidaParametriSlug"
 const convalidaQuery = require("../../middleware/convalidaQuery");
 const cachePubblica = require("../../middleware/cachePubblica");
 const { inviaErrore } = require("../../utils/rispostaApi");
+const { convalidaLingua } = require("../../i18n/lingue");
 
 const router = express.Router();
-const senzaQuery = convalidaQuery();
+const senzaQuery = convalidaQuery("lingua");
+
+router.use(convalidaLingua);
 
 router.use((richiesta, risposta, next) => {
   if (["GET", "HEAD", "OPTIONS"].includes(richiesta.method)) {
@@ -27,6 +30,7 @@ router.use(cachePubblica(60));
 
 router.get("/", senzaQuery, controller.descrizioneApi);
 router.get("/health", senzaQuery, controller.statoServizio);
+router.get("/lingue", senzaQuery, controller.elencaLingue);
 router.get("/home", senzaQuery, gestisciFunzioneAsincrona(controller.home));
 router.get(
   "/previsioni/piloti",

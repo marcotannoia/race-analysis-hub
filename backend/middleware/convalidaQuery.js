@@ -1,3 +1,5 @@
+const { messaggioErrore } = require("../i18n/lingue");
+
 function convalidaQuery(...parametriPermessi) {
   const permessi = new Set(parametriPermessi);
 
@@ -10,7 +12,11 @@ function convalidaQuery(...parametriPermessi) {
       return risposta.status(400).json({
         errore: {
           codice: "PARAMETRO_QUERY_NON_VALIDO",
-          messaggio: `Parametri non supportati: ${nonPermessi.join(", ")}`,
+          messaggio: messaggioErrore(
+            "PARAMETRO_QUERY_NON_VALIDO",
+            risposta.locals.lingua,
+            { parametri: nonPermessi.join(", ") },
+          ),
           requestId: risposta.locals.requestId,
         },
       });

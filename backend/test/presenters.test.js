@@ -73,6 +73,24 @@ test("la gara pubblica e sempre marcata come attuale", () => {
   assert.equal(JSON.stringify(gara).includes("_id"), false);
 });
 
+test("i presentatori selezionano la traduzione senza esporre il catalogo", () => {
+  const pilota = presentaPilota(
+    {
+      slug: "leclerc",
+      nome: "Charles Leclerc",
+      nazionalita: "Monegasque",
+      traduzioni: {
+        it: { nazionalita: "Monegasca" },
+        fr: { nazionalita: "Monégasque" },
+      },
+    },
+    "fr",
+  );
+
+  assert.equal(pilota.nazionalita, "Monégasque");
+  assert.equal("traduzioni" in pilota, false);
+});
+
 test("l'analisi raggruppa le prestazioni senza perdere i contenuti", () => {
   const analisi = presentaAnalisiPilota({
     pilota: {
@@ -135,6 +153,34 @@ test("l'analisi raggruppa le prestazioni senza perdere i contenuti", () => {
   assert.equal(analisi.gara.stato, "attuale");
   assert.equal(analisi.pilota.nazionalitaIso3, "MCO");
   assert.equal(analisi.scuderia.colore, "#E8002D");
+});
+
+test("le note annuali vuote usano il fallback della lingua richiesta", () => {
+  const analisi = presentaAnalisiPilota(
+    {
+      gara: { nome: "Gran Premio", circuito: "Circuito", paese: "Italia" },
+      posizioniStoriche: { 2025: "P1" },
+      spiegazionePosizioni: { 2025: "" },
+      qualificheStoriche: { 2025: "Q1" },
+      passoGara: { 2025: "Passo" },
+      gomme: { 2025: "Gomme" },
+      traduzioni: {
+        de: {
+          risultatiGara: { 2025: "P1" },
+          notaBene: { 2025: "" },
+          risultatiQualifica: { 2025: "Q1" },
+          passoGara: { 2025: "Tempo" },
+          gestioneGomme: { 2025: "Reifen" },
+        },
+      },
+    },
+    "de",
+  );
+
+  assert.equal(
+    analisi.datiPerAnno.notaBene[2025],
+    "Kein besonderes Ereignis zu berichten",
+  );
 });
 
 test("la penalita appartiene solo all'analisi del pilota", () => {
