@@ -1,6 +1,6 @@
 {
   "name": "race-analysis-hub-backend",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "API REST pubblica per Race Analysis Hub",
   "main": "server.js",
   "engines": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
+    "dev": "nodemon --watch . --ext js,json --ignore .translation-cache/ --exec node scripts/avviaSviluppo.js",
     "seed": "node scripts/importaDati.js",
     "gp": "node scripts/registraGpConcluso.js",
     "aggiorna-gp": "node scripts/registraGpConcluso.js",
@@ -17,6 +17,8 @@
     "lint:api": "node scripts/verificaOpenApi.js",
     "sync-f1db": "node scripts/sincronizzaF1db.js",
     "verify-data": "node scripts/verificaQualitaDati.js",
+    "verify-translations": "node scripts/verificaTraduzioni.js",
+    "translate-data": "python3 scripts/generaTraduzioni.py",
     "verify-db": "node scripts/verificaDatabase.js"
   },
   "dependencies": {
@@ -30,6 +32,7 @@
   },
   "devDependencies": {
     "@redocly/cli": "^2.46.0",
+    "mongodb-memory-server": "^11.2.0",
     "nodemon": "^3.1.14"
   }
 }

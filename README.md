@@ -7,7 +7,7 @@ Il progetto utilizza React e Vite per il frontend, Node.js ed Express per le
 API e MongoDB per la persistenza dei dati. Le API pubbliche sono anonime, di
 sola lettura e documentate con Swagger.
 
-La versione corrente del progetto e dell'API è `1.5.0`.
+La versione corrente del progetto e dell'API è `1.6.0`.
 
 La parte finale della landing page mostra una classifica previsionale dei
 piloti per il solo Gran Premio attuale. Il modello combina risultati 2026,
@@ -19,6 +19,40 @@ presenti nel progetto.
 - [Sito pubblico](https://www.race-analysis-hub.it)
 - [Documentazione Swagger](https://f1-stats-5v93.onrender.com/api/docs)
 - [Specifica OpenAPI](https://f1-stats-5v93.onrender.com/api/v1/openapi.json)
+
+## Lingue e traduzioni
+
+Frontend e API supportano sei lingue:
+
+| Parametro | Lingua | Variante |
+|---|---|---|
+| `it` | Italiano | predefinita |
+| `en` | English | inglese |
+| `fr` | Français | francese |
+| `pt` | Português | portoghese europeo (`pt-PT`) |
+| `es` | Español | spagnolo |
+| `de` | Deutsch | tedesco |
+
+Il frontend propone la prima lingua supportata tra quelle del browser, ricorda
+la scelta e invia il parametro `lingua` a ogni richiesta. Il selettore globale
+mostra nome nativo e codice della lingua ed è utilizzabile anche da tastiera e
+con tecnologie assistive.
+
+Le integrazioni possono usare, per esempio,
+`GET /api/v1/home?lingua=en`. Ogni risposta v1 dichiara la lingua effettiva nel
+campo `lingua`, quando previsto dal relativo schema, e nell'header
+`Content-Language`. Senza parametro viene usato `it`; un codice non supportato
+restituisce HTTP `400` con `LINGUA_NON_SUPPORTATA`. L'endpoint
+`GET /api/v1/lingue` espone l'elenco aggiornato.
+
+La traduzione iniziale viene generata con Azure Translator F0 tramite uno script
+amministrativo, conservata nel database e verificata prima della pubblicazione.
+Le richieste degli utenti selezionano esclusivamente testi già salvati: Azure
+non viene chiamato a runtime e non è accessibile tramite le API pubbliche o il
+frontend. La memoria di traduzione permette di elaborare soltanto i testi nuovi
+o modificati, evitando un catalogo rigido. Procedura, sicurezza e regole per le
+personalizzazioni sono descritte in
+[`LOCALIZZAZIONE.md`](LOCALIZZAZIONE.md).
 
 ## Dati anagrafici dei piloti
 
@@ -42,8 +76,7 @@ tutta l'API.
 
 ## Avvio locale
 
-Creare `backend/.env` partendo da `backend/.env.example`, quindi installare le
-dipendenze e avviare backend e frontend in due terminali:
+Installare le dipendenze e avviare backend e frontend in due terminali:
 
 ```bash
 npm ci --prefix backend
@@ -54,6 +87,16 @@ npm --prefix frontend run dev
 
 Il backend è disponibile su `http://localhost:5002` e il frontend su
 `http://localhost:5173`.
+
+In sviluppo, `npm --prefix backend run dev` crea automaticamente un MongoDB
+temporaneo in memoria e importa `backend/data/dati-iniziali.json`. In questo
+modo l'anteprima mostra esattamente le API e le traduzioni della copia locale,
+senza leggere o modificare Atlas. Al primo avvio viene scaricato e conservato
+in cache il binario MongoDB necessario; gli avvii successivi lo riutilizzano.
+
+`npm --prefix backend start` mantiene invece il comportamento di produzione e
+richiede `MONGO_URL`. Il comando `seed` scrive nel database configurato e non
+deve essere usato per la semplice anteprima locale.
 
 ## Riutilizzo delle API
 
@@ -125,3 +168,4 @@ penalità, specifiche FIA o nuove informazioni tecniche.
 - [Deployment](DEPLOYMENT.md)
 - [Aggiornamento post-GP](post-gp.md)
 - [Contenuti editoriali](fix-frontend.md)
+- [Localizzazione](LOCALIZZAZIONE.md)

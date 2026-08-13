@@ -14,6 +14,9 @@ const {
   normalizzaNotaBene,
   normalizzaTestiAnnuali,
 } = require("../utils/normalizzaNotaBene");
+const {
+  normalizzaTraduzioniAnalisi,
+} = require("../utils/normalizzaTraduzioni");
 const dati = require("../data/dati-iniziali.json");
 
 async function salvaDocumentiPerSlug(Modello, documenti) {
@@ -74,9 +77,9 @@ function stampaRisultato(nome, risultato) {
   );
 }
 
-async function importaDati() {
+async function importaDati({ collega = true, disconnetti = true } = {}) {
   try {
-    await collegaDatabase();
+    if (collega) await collegaDatabase();
 
     const risultatoScuderie = await salvaDocumentiPerSlug(
       Scuderia,
@@ -98,6 +101,7 @@ async function importaDati() {
       nazionalitaIso3: pilota.nazionalitaIso3,
       scuderia: scuderiaPerSlug.get(pilota.scuderiaSlug)._id,
       classifica2026: pilota.classifica2026,
+      traduzioni: pilota.traduzioni || {},
     }));
 
     const risultatoPiloti = await salvaDocumentiPerSlug(
@@ -135,6 +139,7 @@ async function importaDati() {
         penalita: analisi.penalita || "",
         affidabilita: analisi.affidabilita || "",
         aggiornamentiInArrivo: analisi.aggiornamentiInArrivo || "",
+        traduzioni: normalizzaTraduzioniAnalisi(analisi.traduzioni),
         fonti: analisi.fonti,
       };
 
@@ -174,6 +179,7 @@ async function importaDati() {
               affidabilita: analisi.affidabilita || "",
               aggiornamentiInArrivo:
                 analisi.aggiornamentiInArrivo || "",
+              traduzioni: normalizzaTraduzioniAnalisi(analisi.traduzioni),
               fonti: analisi.fonti,
             },
             $setOnInsert: {
@@ -199,10 +205,15 @@ async function importaDati() {
     console.log("Importazione completata.");
   } catch (errore) {
     console.error("Importazione fallita:", errore.message);
-    process.exitCode = 1;
+    if (require.main === module) process.exitCode = 1;
+    throw errore;
   } finally {
-    await mongoose.disconnect();
+    if (disconnetti) await mongoose.disconnect();
   }
 }
 
-importaDati();
+if (require.main === module) {
+  importaDati().catch(() => {});
+}
+
+module.exports = { importaDati };

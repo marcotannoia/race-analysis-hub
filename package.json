@@ -1,7 +1,7 @@
 {
   "name": "race-analysis-hub",
   "private": true,
-  "version": "1.5.0",
+  "version": "1.6.0",
   "engines": {
     "node": ">=22.12.0 <25"
   },
@@ -10,6 +10,8 @@
     "set-current": "npm --prefix backend run set-current --",
     "sync-f1db": "npm --prefix backend run sync-f1db --",
     "verify-data": "npm --prefix backend run verify-data",
+    "verify-translations": "npm --prefix backend run verify-translations",
+    "translate-data": "npm --prefix backend run translate-data --",
     "verify-db": "npm --prefix backend run verify-db",
     "build": "npm --prefix frontend run build",
     "build:cloudfront": "VITE_API_URL=https://f1-stats-5v93.onrender.com npm --prefix frontend run build",

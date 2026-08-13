@@ -1,3 +1,5 @@
+import { TRADUZIONI_INTERFACCIA } from '../i18n/traduzioniInterfaccia.js'
+
 const URL_LOCALE = 'http://127.0.0.1:5002'
 const URL_PREDEFINITO = import.meta.env.PROD ? window.location.origin : URL_LOCALE
 const API_URL = (import.meta.env.VITE_API_URL || URL_PREDEFINITO).replace(
@@ -5,24 +7,27 @@ const API_URL = (import.meta.env.VITE_API_URL || URL_PREDEFINITO).replace(
   '',
 )
 
-function rispostaJson(risposta) {
+function rispostaJson(risposta, messaggioErrore) {
   const tipoContenuto = risposta.headers.get('content-type') || ''
 
   if (!tipoContenuto.toLowerCase().includes('application/json')) {
-    throw new Error('Risposta del servizio non valida')
+    throw new Error(messaggioErrore)
   }
 
   return risposta.json()
 }
 
-async function richiesta(percorso) {
+async function richiesta(percorso, lingua = 'it') {
+  const t = TRADUZIONI_INTERFACCIA[lingua] || TRADUZIONI_INTERFACCIA.it
   const controllo = new AbortController()
   const timeout = window.setTimeout(() => controllo.abort(), 10000)
 
   let risposta
 
   try {
-    risposta = await fetch(`${API_URL}${percorso}`, {
+    const url = new URL(`${API_URL}${percorso}`)
+    url.searchParams.set('lingua', lingua)
+    risposta = await fetch(url, {
       method: 'GET',
       credentials: 'omit',
       headers: { Accept: 'application/json' },
@@ -31,24 +36,22 @@ async function richiesta(percorso) {
     })
   } catch (errore) {
     if (errore.name === 'AbortError') {
-      throw new Error('Il server sta impiegando troppo tempo a rispondere')
+      throw new Error(t.timeout)
     }
 
-    throw new Error('Impossibile raggiungere il server')
+    throw new Error(t.serverIrraggiungibile)
   } finally {
     window.clearTimeout(timeout)
   }
 
   if (!risposta.ok) {
-    const errore = await rispostaJson(risposta).catch(() => null)
-    throw new Error(
-      errore?.errore?.messaggio ||
-        errore?.messaggio ||
-        'Impossibile recuperare i dati',
+    const corpo = await rispostaJson(risposta, t.erroreRisposta).catch(
+      () => null,
     )
+    throw new Error(corpo?.errore?.messaggio || t.datiNonRecuperabili)
   }
 
-  return rispostaJson(risposta)
+  return rispostaJson(risposta, t.erroreRisposta)
 }
 
 function adattaPilota(pilota) {
@@ -115,10 +118,10 @@ function adattaAnalisi(analisi) {
   }
 }
 
-export async function caricaHome() {
+export async function caricaHome(lingua) {
   const [dati, classificaPrevisionale] = await Promise.all([
-    richiesta('/api/v1/home'),
-    richiesta('/api/v1/previsioni/piloti'),
+    richiesta('/api/v1/home', lingua),
+    richiesta('/api/v1/previsioni/piloti', lingua),
   ])
 
   return {
@@ -129,8 +132,8 @@ export async function caricaHome() {
   }
 }
 
-export async function caricaPilota(slug) {
-  const dati = await richiesta(`/api/v1/piloti/${encodeURIComponent(slug)}`)
+export async function caricaPilota(slug, lingua) {
+  const dati = await richiesta(`/api/v1/piloti/${encodeURIComponent(slug)}`, lingua)
 
   return {
     ...dati,
@@ -141,8 +144,8 @@ export async function caricaPilota(slug) {
   }
 }
 
-export async function caricaScuderia(slug) {
-  const dati = await richiesta(`/api/v1/scuderie/${encodeURIComponent(slug)}`)
+export async function caricaScuderia(slug, lingua) {
+  const dati = await richiesta(`/api/v1/scuderie/${encodeURIComponent(slug)}`, lingua)
 
   return {
     ...dati,

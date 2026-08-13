@@ -1,4 +1,6 @@
 const snapshotF1db = require("../data/f1db-v2026.11.0-derivato.json");
+const { testiPrevisione } = require("../i18n/previsioni");
+const { valoreLocalizzato } = require("../i18n/lingue");
 
 const PESI = Object.freeze({
   andamento2026: 20,
@@ -188,15 +190,16 @@ function valutaAffidabilita(risultati, analisiPilota, analisiScuderia) {
   return limita(valore, 20, 95);
 }
 
-function valutaAggiornamento(testoOriginale) {
+function valutaAggiornamento(testoOriginale, lingua = "it") {
+  const testi = testiPrevisione(lingua);
   const testo = normalizzaTesto(testoOriginale);
 
   if (!testo.trim()) {
     return {
       valore: 50,
       evidenza: 0,
-      stato: "Nessuna informazione",
-      nota: "Non viene attribuito alcun vantaggio tecnico.",
+      stato: testi.stati.nessunaInformazione,
+      nota: testi.note.nessunVantaggio,
     };
   }
 
@@ -204,8 +207,8 @@ function valutaAggiornamento(testoOriginale) {
     return {
       valore: 35,
       evidenza: 1,
-      stato: "Vantaggio non rilevato",
-      nota: "L'aggiornamento non ha mostrato un beneficio reale.",
+      stato: testi.stati.vantaggioNonRilevato,
+      nota: testi.note.vantaggioAssente,
     };
   }
 
@@ -213,30 +216,30 @@ function valutaAggiornamento(testoOriginale) {
     return {
       valore: 42,
       evidenza: 1,
-      stato: "Poco pertinente",
-      nota: "Il possibile beneficio riguarda aspetti poco rilevanti per questo circuito.",
+      stato: testi.stati.pocoPertinente,
+      nota: testi.note.pocoPertinente,
     };
   }
 
   let evidenza = 0.25;
-  let stato = "Possibile, da verificare";
+  let stato = testi.stati.possibile;
 
   if (/ha (?:gia )?introdotto|lavoro gia portato/.test(testo)) {
     evidenza = 0.6;
-    stato = "Già introdotto, effetto da confermare";
+    stato = testi.stati.giaIntrodotto;
   } else if (NESSUN_PACCHETTO_CONFERMATO.test(testo)) {
     return {
       valore: 50,
       evidenza: 0,
-      stato: "Nessun pacchetto confermato",
-      nota: "Le migliorie ipotetiche non vengono conteggiate come vantaggio.",
+      stato: testi.stati.nessunPacchetto,
+      nota: testi.note.nessunPacchetto,
     };
   } else if (/ha confermato per|confermato.*(?:zandvoort|circuito|gran premio)/.test(testo)) {
     evidenza = 0.75;
-    stato = "Confermato per il circuito";
+    stato = testi.stati.confermato;
   } else if (/ha annunciato|prima occasione utile|ha anticipato/.test(testo)) {
     evidenza = 0.35;
-    stato = "Annunciato, da verificare";
+    stato = testi.stati.annunciato;
   }
 
   let pertinenza = 0.45;
@@ -253,8 +256,8 @@ function valutaAggiornamento(testoOriginale) {
     stato,
     nota:
       evidenza >= 0.6
-        ? "Il vantaggio è pesato in base alla pertinenza con le caratteristiche della pista."
-        : "Il beneficio resta ridotto finché componenti ed effetto non sono verificati in pista.",
+        ? testi.note.evidenzaAlta
+        : testi.note.evidenzaBassa,
   };
 }
 
@@ -266,21 +269,21 @@ function livelloConfidenza(gara, storico, etichettaPilota) {
   return ["bassa", "bassa", "media", "alta"][limita(livello, 1, 3)];
 }
 
-function creaSintesi(fattori) {
+function creaSintesi(fattori, testi) {
   const migliori = [...fattori]
     .sort((primo, secondo) => secondo.valutazione - primo.valutazione)
     .slice(0, 2)
-    .map((fattore) => fattore.nome.toLowerCase());
+    .map((fattore) => fattore.nome);
 
-  return `I fattori più favorevoli sono ${migliori.join(" e ")}.`;
+  return testi.sintesi(migliori[0], migliori[1]);
 }
 
-function creaFattori(valutazioni) {
+function creaFattori(valutazioni, testi) {
   return Object.entries(PESI).map(([chiave, pesoPercentuale]) => {
     const valutazione = arrotonda(limita(valutazioni[chiave]));
     return {
       chiave,
-      nome: NOMI_FATTORI[chiave],
+      nome: testi.fattori[chiave],
       pesoPercentuale,
       valutazione,
       contributo: arrotonda((valutazione * pesoPercentuale) / 100),
@@ -295,7 +298,9 @@ function creaClassificaPrevisionale({
   analisiPiloti,
   analisiScuderie,
   snapshot = snapshotF1db,
+  lingua = "it",
 }) {
+  const testi = testiPrevisione(lingua);
   const eventi = snapshot.andamento2026?.eventi || [];
   const analisiPilotaPerSlug = new Map(
     analisiPiloti.map((analisi) => [analisi.pilota.slug, analisi]),
@@ -328,6 +333,7 @@ function creaClassificaPrevisionale({
     const storico = valutaStorico(analisiPilota);
     const aggiornamento = valutaAggiornamento(
       analisiScuderia?.aggiornamentiInArrivo || analisiPilota?.aggiornamentiInArrivo,
+      lingua,
     );
     const compatibilitaPilota = valutaEtichetta(analisiPilota?.considerazioni);
     const andamentoScuderia = valutaClassifica(
@@ -364,7 +370,12 @@ function creaClassificaPrevisionale({
         analisiScuderia,
       ),
     };
-    const fattori = creaFattori(valutazioni);
+    const fattori = creaFattori(valutazioni, testi);
+    const confidenzaCodice = livelloConfidenza(
+      gara,
+      storico,
+      compatibilitaPilota,
+    );
 
     return {
       indice: arrotonda(
@@ -386,12 +397,9 @@ function creaClassificaPrevisionale({
         abbreviazione: scuderia.abbreviazione,
         colore: scuderia.colore,
       },
-      confidenza: livelloConfidenza(
-        gara,
-        storico,
-        compatibilitaPilota,
-      ),
-      sintesi: creaSintesi(fattori),
+      confidenza: testi.livelli[confidenzaCodice],
+      confidenzaCodice,
+      sintesi: creaSintesi(fattori, testi),
       fattori,
       aggiornamentiTecnici: {
         stato: aggiornamento.stato,
@@ -407,19 +415,17 @@ function creaClassificaPrevisionale({
   );
 
   return {
+    lingua,
     gara: {
       slug: gara.slug,
-      nome: gara.nome,
-      circuito: gara.circuito,
+      nome: valoreLocalizzato(gara, "nome", lingua),
+      circuito: valoreLocalizzato(gara, "circuito", lingua),
     },
     modello: "statistico-editoriale-v1",
-    avvertenza:
-      "Queste sono previsioni statistiche ed editoriali, non certezze sportive. " +
-      "Possono contenere errori e cambiare dopo aggiornamenti tecnici, meteo, " +
-      "prove libere, penalità o altri eventi del weekend.",
+    avvertenza: testi.avvertenza,
     pesi: Object.entries(PESI).map(([chiave, pesoPercentuale]) => ({
       chiave,
-      nome: NOMI_FATTORI[chiave],
+      nome: testi.fattori[chiave],
       pesoPercentuale,
     })),
     aggiornatoIl: snapshot.andamento2026?.aggiornatoIl || null,

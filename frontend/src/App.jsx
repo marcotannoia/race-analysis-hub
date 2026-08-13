@@ -5,8 +5,10 @@ import PilotaPage from './pages/PilotaPage.jsx'
 import ScuderiaPage from './pages/ScuderiaPage.jsx'
 import PaginaNonTrovata from './pages/PaginaNonTrovata.jsx'
 import usePercorso from './hooks/usePercorso.js'
+import SelettoreLingua from './components/SelettoreLingua.jsx'
+import { FornitoreLingua } from './i18n/LinguaContext.jsx'
 
-function App() {
+function ContenutoApp() {
   const percorso = usePercorso()
   const pilota = percorso.match(/^\/piloti\/([^/]+)$/)
   const scuderia = percorso.match(/^\/scuderie\/([^/]+)$/)
@@ -23,9 +25,20 @@ function App() {
 
   return (
     <div className="app-shell">
+      <div className="barra-lingua contenitore">
+        <SelettoreLingua />
+      </div>
       <main>{pagina}</main>
       <Footer />
     </div>
+  )
+}
+
+function App() {
+  return (
+    <FornitoreLingua>
+      <ContenutoApp />
+    </FornitoreLingua>
   )
 }
 

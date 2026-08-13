@@ -1,15 +1,20 @@
 import { useState } from 'react'
 import Collegamento from './Collegamento.jsx'
+import { useLingua } from '../i18n/contestoLingua.js'
 
 const NUMERO_RIGHE_INIZIALI = 10
 
-function formattaData(valore) {
-  if (!valore) return 'dato non disponibile'
+const LOCALE = {
+  it: 'it-IT', en: 'en-GB', fr: 'fr-FR', pt: 'pt-PT', es: 'es-ES', de: 'de-DE',
+}
+
+function formattaData(valore, lingua, datoNonDisponibile) {
+  if (!valore) return datoNonDisponibile
 
   const data = new Date(valore)
-  if (Number.isNaN(data.getTime())) return 'dato non disponibile'
+  if (Number.isNaN(data.getTime())) return datoNonDisponibile
 
-  return new Intl.DateTimeFormat('it-IT', {
+  return new Intl.DateTimeFormat(LOCALE[lingua] || LOCALE.it, {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
@@ -17,15 +22,16 @@ function formattaData(valore) {
 }
 
 function ClassificaPrevisionale({ previsioni }) {
+  const { lingua, t } = useLingua()
   const [mostraTutti, setMostraTutti] = useState(false)
 
   if (!previsioni?.classifica?.length) {
     return (
       <section className="sezione-previsioni" aria-labelledby="titolo-previsioni">
         <div className="intestazione-previsioni">
-          <span className="sovratitolo">Previsione per questo GP</span>
-          <h2 id="titolo-previsioni">Classifica previsionale</h2>
-          <p>La classifica del Gran Premio attuale è in aggiornamento.</p>
+          <span className="sovratitolo">{t.previsioneGp}</span>
+          <h2 id="titolo-previsioni">{t.classificaPrevisionale}</h2>
+          <p>{t.previsioneAggiornamento}</p>
         </div>
       </section>
     )
@@ -38,24 +44,19 @@ function ClassificaPrevisionale({ previsioni }) {
   return (
     <section className="sezione-previsioni" aria-labelledby="titolo-previsioni">
       <div className="intestazione-previsioni">
-        <span className="sovratitolo">Previsione per questo GP</span>
-        <h2 id="titolo-previsioni">Classifica previsionale</h2>
+        <span className="sovratitolo">{t.previsioneGp}</span>
+        <h2 id="titolo-previsioni">{t.classificaPrevisionale}</h2>
         <div className="contesto-previsioni">
           <p>
-            Favoriti per {previsioni.gara.nome} · {previsioni.gara.circuito}
+            {t.favoritiPer(previsioni.gara.nome, previsioni.gara.circuito)}
           </p>
           <p>{previsioni.avvertenza}</p>
         </div>
       </div>
 
       <details className="metodologia-previsioni">
-        <summary>Come viene calcolato l’indice</summary>
-        <p>
-          Ogni pilota riceve un indice da 0 a 100. La forza reale di pilota e
-          scuderia nel 2026 ha il peso maggiore. La compatibilità con la pista è
-          corretta usando la competitività attuale della vettura, mentre gli
-          aggiornamenti contano soltanto quando sono pertinenti e verificabili.
-        </p>
+        <summary>{t.calcoloIndice}</summary>
+        <p>{t.metodologia}</p>
         <div className="pesi-previsioni">
           {previsioni.pesi.map((fattore) => (
             <span key={fattore.chiave}>
@@ -65,7 +66,7 @@ function ClassificaPrevisionale({ previsioni }) {
         </div>
       </details>
 
-      <ol className="elenco-previsioni" aria-label="Classifica dei piloti favoriti">
+      <ol className="elenco-previsioni" aria-label={t.ariaClassifica}>
         {classificaVisibile.map((elemento) => (
           <li
             key={elemento.pilota.slug}
@@ -87,20 +88,20 @@ function ClassificaPrevisionale({ previsioni }) {
 
               <div className="indice-previsione">
                 <span>
-                  Indice <strong>{elemento.indice}</strong>/100
+                  {t.indice} <strong>{elemento.indice}</strong>/100
                 </span>
                 <span className="barra-indice" aria-hidden="true">
                   <i style={{ width: `${elemento.indice}%` }} />
                 </span>
               </div>
 
-              <span className={`confidenza-previsione ${elemento.confidenza}`}>
-                Confidenza {elemento.confidenza}
+              <span className={`confidenza-previsione ${elemento.confidenzaCodice || ''}`}>
+                {t.confidenza} {elemento.confidenza}
               </span>
             </div>
 
             <details className="dettagli-previsione">
-              <summary>Mostra fattori e aggiornamenti</summary>
+              <summary>{t.mostraFattori}</summary>
               <p className="sintesi-previsione">{elemento.sintesi}</p>
 
               <div className="fattori-previsione">
@@ -109,7 +110,7 @@ function ClassificaPrevisionale({ previsioni }) {
                     <span>{fattore.nome}</span>
                     <strong>{fattore.valutazione}/100</strong>
                     <small>
-                      Peso {fattore.pesoPercentuale}% · contributo{' '}
+                      {t.peso} {fattore.pesoPercentuale}% · {t.contributo}{' '}
                       {fattore.contributo}
                     </small>
                   </div>
@@ -117,7 +118,7 @@ function ClassificaPrevisionale({ previsioni }) {
               </div>
 
               <div className="nota-aggiornamenti-previsione">
-                <span>Aggiornamenti tecnici</span>
+                <span>{t.aggiornamentiTecnici}</span>
                 <strong>{elemento.aggiornamentiTecnici.stato}</strong>
                 <p>{elemento.aggiornamentiTecnici.nota}</p>
               </div>
@@ -132,13 +133,14 @@ function ClassificaPrevisionale({ previsioni }) {
           className="bottone bottone-classifica"
           onClick={() => setMostraTutti((valore) => !valore)}
         >
-          {mostraTutti ? 'Mostra i primi 10' : 'Mostra tutti i piloti'}
+          {mostraTutti ? t.mostraPrimi : t.mostraTutti}
         </button>
       )}
 
       <p className="fonte-previsioni">
-        Risultati quantitativi aggiornati al {formattaData(previsioni.aggiornatoIl)}.
-        Valutazioni tecniche ed editoriali: Race Analysis Hub.
+        {t.fontePrevisioni(
+          formattaData(previsioni.aggiornatoIl, lingua, t.datoNonDisponibile),
+        )}
       </p>
     </section>
   )

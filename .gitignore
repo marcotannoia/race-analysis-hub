@@ -10,3 +10,6 @@ coverage/
 *.p12
 .DS_Store
 .codex_work/
+__pycache__/
+*.py[cod]
+backend/.translation-cache/

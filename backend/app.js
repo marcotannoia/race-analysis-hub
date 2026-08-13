@@ -12,6 +12,7 @@ const gestoreErrori = require("./middleware/gestoreErrori");
 const ambiente = require("./config/ambiente");
 const documentoOpenApi = require("./docs/openapi");
 const { inviaErrore } = require("./utils/rispostaApi");
+const { linguaRichiesta } = require("./i18n/lingue");
 
 const app = express();
 const cartellaFrontend = path.join(__dirname, "../frontend/dist");
@@ -29,6 +30,13 @@ app.use((richiesta, risposta, next) => {
   const requestId = randomUUID();
   risposta.locals.requestId = requestId;
   risposta.set("X-Request-ID", requestId);
+
+  if (richiesta.originalUrl.startsWith("/api/v1")) {
+    const lingua = linguaRichiesta(richiesta);
+    risposta.locals.lingua = lingua;
+    risposta.set("Content-Language", lingua);
+  }
+
   next();
 });
 
@@ -57,7 +65,13 @@ app.use(
     credentials: false,
     methods: ["GET", "HEAD", "OPTIONS"],
     allowedHeaders: ["Accept", "Content-Type", "If-None-Match"],
-    exposedHeaders: ["ETag", "RateLimit", "RateLimit-Policy", "X-Request-ID"],
+    exposedHeaders: [
+      "Content-Language",
+      "ETag",
+      "RateLimit",
+      "RateLimit-Policy",
+      "X-Request-ID",
+    ],
     maxAge: 86400,
   }),
 );

@@ -26,6 +26,7 @@ const garaSchema = new mongoose.Schema(
     gommeStrategia: { type: String, required: true },
     rischi: { type: String, required: true },
     confidenza: { type: String, required: true },
+    traduzioni: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
     fonti: [{ type: String, trim: true }],
   },
   {

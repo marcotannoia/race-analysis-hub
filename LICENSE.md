@@ -20,6 +20,10 @@ Questo comprende anche l'indice, i fattori e le spiegazioni della classifica
 previsionale restituita dalla home, fermo restando che si tratta di stime
 soggette a errore e non di risultati ufficiali.
 
+La stessa licenza sulle risposte si applica alle traduzioni pubblicate. Il
+servizio usato per assisterne la generazione non modifica la licenza dei
+contenuti; i dettagli tecnici sono riportati in `NOTICE.md`.
+
 Questa licenza permette a chi utilizza le API di copiare, mostrare, distribuire
 e modificare le risposte nel proprio software, anche per finalità commerciali.
 È quindi consentito, per esempio, riscrivere nel software del riutilizzatore il

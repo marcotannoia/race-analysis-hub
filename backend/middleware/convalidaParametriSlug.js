@@ -1,3 +1,5 @@
+const { messaggioErrore } = require("../i18n/lingue");
+
 const FORMATO_SLUG = /^[a-z0-9]+(?:[-_][a-z0-9]+)*$/;
 
 function convalidaParametriSlug(...nomiParametri) {
@@ -9,7 +11,11 @@ function convalidaParametriSlug(...nomiParametri) {
         return risposta.status(400).json({
           errore: {
             codice: "IDENTIFICATORE_NON_VALIDO",
-            messaggio: `Il parametro ${nome} non e valido`,
+            messaggio: messaggioErrore(
+              "IDENTIFICATORE_NON_VALIDO",
+              risposta.locals.lingua,
+              { parametro: nome },
+            ),
             requestId: risposta.locals.requestId,
           },
         });

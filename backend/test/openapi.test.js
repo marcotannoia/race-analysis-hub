@@ -34,7 +34,7 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
     ),
   );
   assert.equal(documentoOpenApi.info.title, "Race Analysis Hub API");
-  assert.equal(documentoOpenApi.info.version, "1.5.0");
+  assert.equal(documentoOpenApi.info.version, "1.6.0");
   assert.match(documentoOpenApi.info.description, /adattate nel software/);
   assert.match(documentoOpenApi.info.description, /Race Analysis Hub/);
   assert.match(documentoOpenApi.info.license.name, /CC BY 4\.0/);
@@ -77,6 +77,37 @@ test("OpenAPI documenta i nuovi dati anagrafici senza cambiare le chiamate", () 
   );
   assert.ok(documentoOpenApi.paths["/piloti"]);
   assert.ok(documentoOpenApi.paths["/piloti/{pilotaSlug}"]);
+});
+
+test("OpenAPI documenta il contratto di localizzazione senza esporre Azure", () => {
+  const parametro = documentoOpenApi.components.parameters.Lingua;
+  const schemaErrore = documentoOpenApi.components.schemas.Errore;
+  const rispostaLingue =
+    documentoOpenApi.paths["/lingue"].get.responses[200].content[
+      "application/json"
+    ];
+
+  assert.deepEqual(parametro.schema.enum, ["it", "en", "fr", "pt", "es", "de"]);
+  assert.equal(parametro.schema.default, "it");
+  assert.match(parametro.description, /pt-PT/);
+  assert.match(parametro.description, /LINGUA_NON_SUPPORTATA/);
+  assert.match(documentoOpenApi.info.description, /nessun endpoint pubblico/i);
+  assert.ok(documentoOpenApi.components.headers.ContentLanguage);
+  assert.equal(rispostaLingue.example.lingue.length, 6);
+  assert.equal(
+    schemaErrore.properties.errore.properties.lingueSupportate.items.$ref,
+    "#/components/schemas/CodiceLingua",
+  );
+
+  for (const [percorso, definizione] of Object.entries(documentoOpenApi.paths)) {
+    assert.ok(
+      definizione.get.parameters?.some(
+        (parametroOperazione) =>
+          parametroOperazione.$ref === "#/components/parameters/Lingua",
+      ),
+      `${percorso} non documenta il parametro lingua`,
+    );
+  }
 });
 
 test("tutte le route GET v1 sono documentate una sola volta", () => {

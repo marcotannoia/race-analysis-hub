@@ -1,27 +1,30 @@
 import Collegamento from './Collegamento.jsx'
+import { useLingua } from '../i18n/contestoLingua.js'
 
 export function Caricamento() {
+  const { t } = useLingua()
   return (
     <div className="stato-pagina" role="status">
       <span className="indicatore-caricamento" aria-hidden="true" />
-      <p>Caricamento dei dati…</p>
+      <p>{t.caricamento}</p>
     </div>
   )
 }
 
 export function ErrorePagina({ messaggio }) {
+  const { t } = useLingua()
   return (
     <div className="stato-pagina stato-errore" role="alert">
-      <span className="etichetta">Connessione non disponibile</span>
-      <h1>Non riesco a leggere i dati.</h1>
+      <span className="etichetta">{t.connessioneAssente}</span>
+      <h1>{t.datiIlleggibili}</h1>
       <p>{messaggio}</p>
       {import.meta.env.DEV && (
         <p className="testo-secondario">
-          Verifica che il backend locale sia avviato.
+          {t.verificaBackend}
         </p>
       )}
       <Collegamento a="/" className="bottone bottone-rosso">
-        Torna alla home
+        {t.tornaHome}
       </Collegamento>
     </div>
   )

@@ -1,3 +1,5 @@
+const { messaggioErrore } = require("../i18n/lingue");
+
 function gestoreErrori(errore, richiesta, risposta, next) {
   if (risposta.headersSent) {
     return next(errore);
@@ -12,15 +14,16 @@ function gestoreErrori(errore, richiesta, risposta, next) {
     console.error(dettaglio, errore.stack);
   }
 
-  const messaggio =
-    stato === 400
-      ? "Richiesta non valida"
-      : "Si è verificato un errore interno al server";
+  const codice = stato === 400 ? "RICHIESTA_NON_VALIDA" : "ERRORE_INTERNO";
+  const messaggio = messaggioErrore(
+    codice,
+    risposta.locals.lingua || "it",
+  );
 
   if (richiesta.originalUrl.startsWith("/api/v1")) {
     return risposta.status(stato).json({
       errore: {
-        codice: stato === 400 ? "RICHIESTA_NON_VALIDA" : "ERRORE_INTERNO",
+        codice,
         messaggio,
         requestId: risposta.locals.requestId,
       },

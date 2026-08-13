@@ -40,8 +40,8 @@ function normalizzaTestiAnnuali(valore, testoPredefinito = "") {
   );
 }
 
-function normalizzaNotaBene(notaBene) {
-  return normalizzaTestiAnnuali(notaBene, NOTA_PREDEFINITA);
+function normalizzaNotaBene(notaBene, testoPredefinito = NOTA_PREDEFINITA) {
+  return normalizzaTestiAnnuali(notaBene, testoPredefinito);
 }
 
 module.exports = {

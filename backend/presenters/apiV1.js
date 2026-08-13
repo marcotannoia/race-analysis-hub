@@ -2,6 +2,14 @@ const {
   normalizzaNotaBene,
   normalizzaTestiAnnuali,
 } = require("../utils/normalizzaNotaBene");
+const {
+  traduzioneDocumento,
+  valoreLocalizzato,
+} = require("../i18n/lingue");
+const {
+  localizzaEtichettaGara,
+  localizzaModificheF1db,
+} = require("../i18n/andamento");
 
 function dataIso(valore) {
   if (!valore) return null;
@@ -61,73 +69,83 @@ function presentaPilotaBreve(pilota) {
   };
 }
 
-function presentaPilota(pilota) {
+function presentaPilota(pilota, lingua = "it") {
   if (!pilota) return null;
 
   return {
     ...presentaPilotaBreve(pilota),
-    nazionalita: pilota.nazionalita,
+    nazionalita: valoreLocalizzato(pilota, "nazionalita", lingua),
     scuderia: presentaScuderiaBreve(pilota.scuderia),
     classifica: presentaClassifica(pilota.classifica2026),
     aggiornatoIl: dataIso(pilota.updatedAt),
   };
 }
 
-function presentaScuderia(scuderia) {
+function presentaScuderia(scuderia, lingua = "it") {
   if (!scuderia) return null;
 
   return {
     ...presentaScuderiaBreve(scuderia),
     nomeClassifica: scuderia.nomeClassifica,
-    nazionalita: scuderia.nazionalita,
+    nazionalita: valoreLocalizzato(scuderia, "nazionalita", lingua),
     denominazioniStoriche: scuderia.denominazioniStoriche || {},
     classifica: presentaClassifica(scuderia.classifica2026),
     aggiornatoIl: dataIso(scuderia.updatedAt),
   };
 }
 
-function presentaGaraBreve(gara) {
+function presentaGaraBreve(gara, lingua = "it") {
   if (!gara) return null;
 
   return {
     slug: gara.slug,
-    nome: gara.nome,
-    circuito: gara.circuito,
-    paese: gara.paese,
+    nome: valoreLocalizzato(gara, "nome", lingua),
+    circuito: valoreLocalizzato(gara, "circuito", lingua),
+    paese: valoreLocalizzato(gara, "paese", lingua),
     stagione: gara.stagione,
     ordineAnalisi: gara.ordineAnalisi,
     stato: "attuale",
   };
 }
 
-function presentaGara(gara) {
+function presentaGara(gara, lingua = "it") {
   if (!gara) return null;
 
   return {
-    ...presentaGaraBreve(gara),
-    contestoStorico: gara.contestoStorico,
-    pilotiFavoriti: gara.pilotiFavoriti,
-    scuderieFavorite: gara.scuderieFavorite,
-    outsider: gara.outsider,
-    potenzialiDifficolta: gara.potenzialiDifficolta,
-    gommeStrategia: gara.gommeStrategia,
-    rischi: gara.rischi,
-    confidenza: gara.confidenza,
+    ...presentaGaraBreve(gara, lingua),
+    contestoStorico: valoreLocalizzato(gara, "contestoStorico", lingua),
+    pilotiFavoriti: valoreLocalizzato(gara, "pilotiFavoriti", lingua),
+    scuderieFavorite: valoreLocalizzato(gara, "scuderieFavorite", lingua),
+    outsider: valoreLocalizzato(gara, "outsider", lingua),
+    potenzialiDifficolta: valoreLocalizzato(
+      gara,
+      "potenzialiDifficolta",
+      lingua,
+    ),
+    gommeStrategia: valoreLocalizzato(gara, "gommeStrategia", lingua),
+    rischi: valoreLocalizzato(gara, "rischi", lingua),
+    confidenza: valoreLocalizzato(gara, "confidenza", lingua),
     fonti: presentaFonti(gara.fonti),
     aggiornatoIl: dataIso(gara.updatedAt),
   };
 }
 
-function presentaStoricoEdizioni(storicoEdizioni) {
-  return (storicoEdizioni || []).map((edizione) => ({
-    stagione: edizione.stagione,
-    posizioneGara: edizione.posizioneGara,
-    posizioneQualifica: edizione.posizioneQualifica,
-    notaRisultato: edizione.notaRisultato || "",
-    passoGara: edizione.passoGara || "",
-    gestioneGomme: edizione.gomme || "",
-    affidabilita: edizione.affidabilita || "",
-  }));
+function presentaStoricoEdizioni(storicoEdizioni, lingua = "it") {
+  return (storicoEdizioni || []).map((edizione) => {
+    const traduzione = traduzioneDocumento(edizione, lingua);
+
+    return {
+      stagione: edizione.stagione,
+      posizioneGara: edizione.posizioneGara,
+      posizioneQualifica: edizione.posizioneQualifica,
+      notaRisultato:
+        traduzione.notaRisultato ?? edizione.notaRisultato ?? "",
+      passoGara: traduzione.passoGara ?? edizione.passoGara ?? "",
+      gestioneGomme:
+        traduzione.gestioneGomme ?? traduzione.gomme ?? edizione.gomme ?? "",
+      affidabilita: traduzione.affidabilita ?? edizione.affidabilita ?? "",
+    };
+  });
 }
 
 function serializzaTestiAnnuali(contenuti) {
@@ -136,24 +154,40 @@ function serializzaTestiAnnuali(contenuti) {
     .join("\n");
 }
 
-function presentaAnalisiBase(analisi) {
+function presentaAnalisiBase(analisi, lingua = "it") {
   if (!analisi) return null;
 
+  const contenuti = {
+    ...analisi,
+    ...traduzioneDocumento(analisi, lingua),
+  };
+
   const risultatiGaraPerAnno = normalizzaTestiAnnuali(
-    analisi.posizioniStoriche,
+    contenuti.posizioniStoriche,
   );
-  const notaBenePerAnno = normalizzaNotaBene(analisi.spiegazionePosizioni);
+  const notaPredefinita = {
+    it: "Nessun evento particolare da trattare",
+    en: "No noteworthy event to report",
+    fr: "Aucun événement particulier à signaler",
+    pt: "Nenhum acontecimento relevante a assinalar",
+    es: "Ningún acontecimiento relevante que señalar",
+    de: "Kein besonderes Ereignis zu berichten",
+  }[lingua];
+  const notaBenePerAnno = normalizzaNotaBene(
+    contenuti.spiegazionePosizioni,
+    notaPredefinita,
+  );
   const risultatiQualificaPerAnno = normalizzaTestiAnnuali(
-    analisi.qualificheStoriche,
+    contenuti.qualificheStoriche,
   );
   const andamentoPerAnno = normalizzaTestiAnnuali(
-    analisi.andamentoPerAnno || "",
+    contenuti.andamentoPerAnno || "",
   );
-  const passoGaraPerAnno = normalizzaTestiAnnuali(analisi.passoGara);
-  const gestioneGommePerAnno = normalizzaTestiAnnuali(analisi.gomme);
+  const passoGaraPerAnno = normalizzaTestiAnnuali(contenuti.passoGara);
+  const gestioneGommePerAnno = normalizzaTestiAnnuali(contenuti.gomme);
 
   return {
-    gara: presentaGaraBreve(analisi.gara),
+    gara: presentaGaraBreve(analisi.gara, lingua),
     risultatiGara: serializzaTestiAnnuali(risultatiGaraPerAnno),
     notaBene: serializzaTestiAnnuali(notaBenePerAnno),
     risultatiQualifica: serializzaTestiAnnuali(risultatiQualificaPerAnno),
@@ -161,7 +195,7 @@ function presentaAnalisiBase(analisi) {
     prestazioni: {
       passoGara: serializzaTestiAnnuali(passoGaraPerAnno),
       gestioneGomme: serializzaTestiAnnuali(gestioneGommePerAnno),
-      affidabilita: analisi.affidabilita || "",
+      affidabilita: contenuti.affidabilita || "",
     },
     datiPerAnno: {
       risultatiGara: risultatiGaraPerAnno,
@@ -173,38 +207,44 @@ function presentaAnalisiBase(analisi) {
         gestioneGomme: gestioneGommePerAnno,
       },
     },
-    considerazioniFinali: analisi.considerazioni,
-    aggiornamentiInArrivo: analisi.aggiornamentiInArrivo || "",
-    storicoEdizioni: presentaStoricoEdizioni(analisi.storicoEdizioni),
+    considerazioniFinali: contenuti.considerazioni,
+    aggiornamentiInArrivo: contenuti.aggiornamentiInArrivo || "",
+    storicoEdizioni: presentaStoricoEdizioni(
+      contenuti.storicoEdizioni || analisi.storicoEdizioni,
+      lingua,
+    ),
     fonti: presentaFonti(analisi.fonti),
     aggiornatoIl: dataIso(analisi.updatedAt),
   };
 }
 
-function presentaAnalisiPilota(analisi) {
+function presentaAnalisiPilota(analisi, lingua = "it") {
   if (!analisi) return null;
 
   return {
     pilota: presentaPilotaBreve(analisi.pilota),
     scuderia: presentaScuderiaBreve(analisi.scuderia),
-    ...presentaAnalisiBase(analisi),
-    penalita: analisi.penalita || "",
+    ...presentaAnalisiBase(analisi, lingua),
+    penalita:
+      traduzioneDocumento(analisi, lingua).penalita ?? analisi.penalita ?? "",
   };
 }
 
-function presentaAnalisiScuderia(analisi) {
+function presentaAnalisiScuderia(analisi, lingua = "it") {
   if (!analisi) return null;
 
   return {
     scuderia: presentaScuderiaBreve(analisi.scuderia),
-    ...presentaAnalisiBase(analisi),
+    ...presentaAnalisiBase(analisi, lingua),
   };
 }
 
-function presentaAndamento(andamento) {
+function presentaAndamento(andamento, lingua = "it") {
   return {
     stagione: andamento.stagione,
-    etichette: [...(andamento.etichette || [])],
+    etichette: (andamento.etichette || []).map((etichetta) =>
+      localizzaEtichettaGara(etichetta, lingua),
+    ),
     qualifica: (andamento.qualifica || []).map((serie) => ({
       nome: serie.nome,
       valori: [...serie.valori],
@@ -231,7 +271,12 @@ function presentaAndamento(andamento) {
             ? { versione: andamento.fonte.versione }
             : {}),
           ...(andamento.fonte.modifiche
-            ? { modifiche: andamento.fonte.modifiche }
+            ? {
+                modifiche: localizzaModificheF1db(
+                  andamento.fonte.modifiche,
+                  lingua,
+                ),
+              }
             : {}),
         }
       : null,

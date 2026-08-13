@@ -36,6 +36,12 @@ Dopo l'aggiornamento, il file compilato viene conservato in
 `backend/data/archivio-gp/`. Il comando non usa API esterne: i contenuti
 editoriali e i risultati inseriti restano quelli verificati manualmente.
 
+I nuovi testi editoriali devono essere forniti e revisionati anche nelle
+lingue pubblicate. La procedura amministrativa, gratuita entro la quota F0 e
+incrementale è descritta in
+[`LOCALIZZAZIONE.md`](LOCALIZZAZIONE.md); non pubblicare un nuovo testo italiano
+lasciando attive traduzioni riferite alla versione precedente.
+
 Questa procedura non aggiorna i grafici quantitativi 2026, che provengono dallo
 snapshot locale derivato da F1DB. Per aggiungere nuovi GP ai grafici bisogna
 rigenerare lo snapshot da una release F1DB, eseguire `npm run verify-data` e

@@ -14,6 +14,7 @@ const edizioneStoricaSchema = new mongoose.Schema(
     passoGara: { type: String, default: "", trim: true },
     gomme: { type: String, default: "", trim: true },
     affidabilita: { type: String, default: "", trim: true },
+    traduzioni: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
   },
   { _id: false },
 );
@@ -39,6 +40,7 @@ const analisiScuderiaSchema = new mongoose.Schema(
     considerazioni: { type: String, required: true },
     affidabilita: { type: String, default: "" },
     aggiornamentiInArrivo: { type: String, default: "" },
+    traduzioni: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
     storicoEdizioni: { type: [edizioneStoricaSchema], default: [] },
     fonti: [{ type: String, trim: true }],
   },

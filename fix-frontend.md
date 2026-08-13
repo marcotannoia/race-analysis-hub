@@ -90,6 +90,15 @@ node -e "JSON.parse(require('fs').readFileSync('backend/data/dati-iniziali.json'
 
 ## Applicare le modifiche al database
 
+Prima del seed rigenerare e controllare le traduzioni dei testi modificati,
+seguendo [`LOCALIZZAZIONE.md`](LOCALIZZAZIONE.md):
+
+```bash
+npm run translate-data -- --dry-run
+npm run translate-data
+npm run verify-translations
+```
+
 Dalla cartella principale:
 
 ```bash
