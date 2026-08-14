@@ -6,6 +6,7 @@ const convalidaQuery = require("../../middleware/convalidaQuery");
 const cachePubblica = require("../../middleware/cachePubblica");
 const { inviaErrore } = require("../../utils/rispostaApi");
 const { convalidaLingua } = require("../../i18n/lingue");
+const ambiente = require("../../config/ambiente");
 
 const router = express.Router();
 const senzaQuery = convalidaQuery("lingua");
@@ -26,7 +27,13 @@ router.use((richiesta, risposta, next) => {
   );
 });
 
-router.use(cachePubblica(60));
+router.use(
+  cachePubblica({
+    secondiBrowser: 60,
+    secondiCondivisi: ambiente.durataCacheApi,
+    massimoVoci: ambiente.massimoVociCacheApi,
+  }),
+);
 
 router.get("/", senzaQuery, controller.descrizioneApi);
 router.get("/health", senzaQuery, controller.statoServizio);

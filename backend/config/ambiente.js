@@ -71,6 +71,18 @@ const ambiente = Object.freeze({
     10,
     10000,
   ),
+  durataCacheApi: leggiIntero(
+    primaVariabileDisponibile("API_CACHE_TTL_SECONDS"),
+    300,
+    30,
+    3600,
+  ),
+  massimoVociCacheApi: leggiIntero(
+    primaVariabileDisponibile("API_CACHE_MAX_ENTRIES"),
+    500,
+    50,
+    5000,
+  ),
   serviFrontend: leggiBooleano(
     primaVariabileDisponibile("SERVE_FRONTEND"),
     produzione,

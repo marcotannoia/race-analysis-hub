@@ -70,6 +70,7 @@ app.use(
       "ETag",
       "RateLimit",
       "RateLimit-Policy",
+      "X-App-Cache",
       "X-Request-ID",
     ],
     maxAge: 86400,

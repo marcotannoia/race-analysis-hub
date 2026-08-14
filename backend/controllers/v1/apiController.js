@@ -158,12 +158,19 @@ async function home(richiesta, risposta) {
   const garaAttuale = await richiediGaraAttuale(risposta);
   if (!garaAttuale) return;
 
-  const [piloti, scuderie] = await Promise.all([
+  const [piloti, scuderie, analisiPiloti, analisiScuderie] = await Promise.all([
     Pilota.find()
       .populate("scuderia", CAMPI_SCUDERIA_BREVE)
       .sort("classifica2026.posizione")
       .lean(),
     Scuderia.find().sort("classifica2026.posizione").lean(),
+    AnalisiGara.find({ gara: garaAttuale._id })
+      .populate("pilota", `${CAMPI_PILOTA_BREVE} classifica2026`)
+      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
+      .lean(),
+    AnalisiScuderia.find({ gara: garaAttuale._id })
+      .populate("scuderia", `${CAMPI_SCUDERIA_BREVE} classifica2026`)
+      .lean(),
   ]);
 
   risposta.json({
@@ -173,6 +180,14 @@ async function home(richiesta, risposta) {
     scuderie: scuderie.map((scuderia) =>
       presentaScuderia(scuderia, lingua),
     ),
+    classificaPrevisionale: creaClassificaPrevisionale({
+      gara: garaAttuale,
+      piloti,
+      scuderie,
+      analisiPiloti,
+      analisiScuderie,
+      lingua,
+    }),
     metadati: {
       stagione: garaAttuale.stagione,
       totalePiloti: piloti.length,

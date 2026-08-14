@@ -34,7 +34,7 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
     ),
   );
   assert.equal(documentoOpenApi.info.title, "Race Analysis Hub API");
-  assert.equal(documentoOpenApi.info.version, "1.6.0");
+  assert.equal(documentoOpenApi.info.version, "1.7.0");
   assert.match(documentoOpenApi.info.description, /adattate nel software/);
   assert.match(documentoOpenApi.info.description, /Race Analysis Hub/);
   assert.match(documentoOpenApi.info.license.name, /CC BY 4\.0/);
@@ -93,6 +93,7 @@ test("OpenAPI documenta il contratto di localizzazione senza esporre Azure", () 
   assert.match(parametro.description, /LINGUA_NON_SUPPORTATA/);
   assert.match(documentoOpenApi.info.description, /nessun endpoint pubblico/i);
   assert.ok(documentoOpenApi.components.headers.ContentLanguage);
+  assert.ok(documentoOpenApi.components.headers.XAppCache);
   assert.equal(rispostaLingue.example.lingue.length, 6);
   assert.equal(
     schemaErrore.properties.errore.properties.lingueSupportate.items.$ref,
@@ -184,7 +185,11 @@ test("classifiche, andamento e metadati espongono schemi strutturati", () => {
     schemi.Home.properties.metadati.$ref,
     "#/components/schemas/MetadatiHome",
   );
-  assert.equal(schemi.Home.properties.classificaPrevisionale, undefined);
+  assert.equal(
+    schemi.Home.properties.classificaPrevisionale.$ref,
+    "#/components/schemas/ClassificaPrevisionale",
+  );
+  assert.ok(schemi.Home.required.includes("classificaPrevisionale"));
   assert.equal(
     documentoOpenApi.paths["/previsioni/piloti"].get.responses[200].content[
       "application/json"
