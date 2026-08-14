@@ -16,12 +16,19 @@ HOST=0.0.0.0
 FRONTEND_URL=https://www.esempio.it
 TRUST_PROXY=1
 RATE_LIMIT_MAX=1000
+API_CACHE_TTL_SECONDS=300
+API_CACHE_MAX_ENTRIES=500
 SERVE_FRONTEND=true
 ```
 
 `FRONTEND_URL` accetta più origini separate da virgole. Le credenziali MongoDB
 devono essere configurate nel gestore dei segreti della piattaforma e non in un
 file incluso nel deployment.
+
+`API_CACHE_TTL_SECONDS` controlla sia la cache in memoria sia `s-maxage` per le
+cache condivise. `API_CACHE_MAX_ENTRIES` limita l'uso di memoria. L'IP futuro del
+backend della società potrà ricevere un limite dedicato senza aumentare quello
+pubblico globale; per ora non va configurata alcuna eccezione.
 
 ## Build e avvio
 
@@ -46,11 +53,23 @@ Per la distribuzione statica su CloudFront, usare il comando dedicato:
 npm run build:cloudfront
 ```
 
-Il comando genera `frontend/dist` configurando il frontend per chiamare il
-backend pubblico su Render. I file con hash sotto `assets/` possono essere
+Il comando genera `frontend/dist` configurando il frontend per chiamare `/api`
+sullo stesso dominio. CloudFront deve quindi inoltrare `/api/v1*` al backend
+pubblico su Render e mantenere le query nella chiave di cache. I file con hash
+sotto `assets/` possono essere
 mantenuti in cache per un anno; `index.html` e il favicon devono invece usare
 `no-cache`. Dopo il caricamento su S3 è necessario invalidare almeno `/*` sulla
 distribuzione CloudFront.
+
+La configurazione verificata usa l'origine HTTPS
+`f1-stats-5v93.onrender.com`, il comportamento `/api/v1*` e la policy
+`race-analysis-hub-api-v1-cache`. La policy inoltra e include nella chiave tutte
+le query, così i parametri non ammessi raggiungono la validazione e non possono
+riutilizzare una risposta valida; le integrazioni lecite usano soltanto
+`lingua`. Non inoltra cookie e accetta la compressione Brotli/Gzip. TTL
+minimo, predefinito e massimo sono rispettivamente 0, 60 e 300 secondi. Questa
+configurazione usa la distribuzione pay-as-you-go già esistente e non introduce
+un nuovo servizio con canone fisso.
 
 Esempio completo, usando variabili dedicate per evitare di pubblicare sul
 bucket o sulla distribuzione sbagliati:
@@ -83,13 +102,13 @@ aws cloudfront create-invalidation \
 
 Prima del caricamento verificare con `aws sts get-caller-identity` l'account
 attivo e controllare che l'alias CloudFront corrisponda al dominio pubblico.
-La landing page richiede anche `GET /api/v1/previsioni/piloti`: se il backend è
-distribuito automaticamente dal push, attendere che l'endpoint restituisca il
-modello e la classifica completa prima di aggiornare S3.
+La landing page usa una sola richiesta a `GET /api/v1/home`: se il backend è
+distribuito automaticamente dal push, attendere che la risposta includa
+`classificaPrevisionale` prima di aggiornare S3.
 
 Per la release multilingua attendere inoltre che
 `GET /api/v1/lingue` e `GET /api/v1/home?lingua=en` rispondano dalla versione
-backend `1.6.0`. Soltanto dopo si può pubblicare il frontend: in caso contrario
+backend `1.7.0`. Soltanto dopo si può pubblicare il frontend: in caso contrario
 il selettore cambierebbe l'interfaccia ma riceverebbe ancora testi italiani.
 `AZURE_TRANSLATOR_KEY` non deve essere configurata su Render o inclusa nella
 build Vite: serve soltanto allo script amministrativo locale.
@@ -123,9 +142,11 @@ invalidazioni CloudFront.
   l'endpoint `/api/v1/health`;
 - usare uno store condiviso per il rate limit se il backend avrà più istanze.
 
-Per la release `1.6.0`, verificare inoltre che:
+Per la release `1.7.0`, verificare inoltre che:
 
-- `GET /api/v1` restituisca `"versione": "1.6.0"`;
+- `GET /api/v1` restituisca `"versione": "1.7.0"`;
+- `GET /api/v1/home` includa `classificaPrevisionale`, così la landing usi una
+  sola chiamata;
 - `GET /api/v1/lingue` elenchi esattamente le sei lingue;
 - `GET /api/v1/gare/attuale?lingua=de` restituisca `"lingua": "de"` e
   l'header `Content-Language: de`;

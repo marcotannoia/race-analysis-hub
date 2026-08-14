@@ -19,5 +19,9 @@ services:
         value: "1"
       - key: RATE_LIMIT_MAX
         value: "1000"
+      - key: API_CACHE_TTL_SECONDS
+        value: "300"
+      - key: API_CACHE_MAX_ENTRIES
+        value: "500"
       - key: MONGO_URL
         sync: false

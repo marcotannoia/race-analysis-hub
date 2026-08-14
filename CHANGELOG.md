@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.7.0 — 2026-08-14
+
+### Aggiunto
+
+- cache in memoria delle risposte API pubbliche, limitata a 500 voci e con TTL
+  configurabile, per evitare query MongoDB duplicate;
+- coalescenza delle richieste simultanee: alla scadenza della cache una sola
+  richiesta ricostruisce la risposta mentre le altre attendono lo stesso dato;
+- intestazioni `s-maxage`, `stale-while-revalidate` e `X-App-Cache` per integrare
+  una cache condivisa davanti a Render senza nuovi servizi a costo fisso;
+- classifica previsionale nella risposta di `GET /api/v1/home`.
+
+### Ottimizzato
+
+- la landing usa una sola chiamata API invece delle precedenti due;
+- la build CloudFront usa `/api` sul dominio pubblico, permettendo alla CDN di
+  assorbire le richieste ripetute prima che raggiungano Render e Atlas;
+- errori e health check non vengono memorizzati in cache.
+
+### Compatibilità
+
+- rotte, metodi, parametri e campi pubblici esistenti restano invariati;
+- `GET /api/v1/previsioni/piloti` rimane disponibile come endpoint dedicato;
+- MongoDB Atlas non richiede modifiche né un passaggio a un piano a pagamento.
+
 ## 1.6.0 — 2026-08-12
 
 ### Aggiunto

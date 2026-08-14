@@ -119,16 +119,12 @@ function adattaAnalisi(analisi) {
 }
 
 export async function caricaHome(lingua) {
-  const [dati, classificaPrevisionale] = await Promise.all([
-    richiesta('/api/v1/home', lingua),
-    richiesta('/api/v1/previsioni/piloti', lingua),
-  ])
+  const dati = await richiesta('/api/v1/home', lingua)
 
   return {
     ...dati,
     piloti: dati.piloti.map(adattaPilota),
     scuderie: dati.scuderie.map(adattaScuderia),
-    classificaPrevisionale,
   }
 }
 

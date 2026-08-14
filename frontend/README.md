@@ -21,6 +21,11 @@ catalogo portoghese europeo (`pt-PT`). Le stringhe dell'interfaccia sono in
 localizzati dal backend. Il frontend non contiene credenziali Azure e non
 invia richieste a servizi di traduzione esterni.
 
+Dalla release `1.7.0` la landing usa soltanto `GET /api/v1/home`: la risposta
+include anche la classifica previsionale. In produzione il frontend chiama
+`/api` sullo stesso dominio, così CloudFront può servire le risposte ripetute
+senza raggiungere ogni volta Render e MongoDB Atlas.
+
 ## Avvio locale
 
 ```bash
@@ -51,8 +56,10 @@ occupa soltanto della rappresentazione grafica ed è distribuito con licenza
 MIT. Per contratto API, deployment, fonti e condizioni di riutilizzo consultare
 il `README.md`, il `NOTICE.md` e la documentazione Swagger del progetto.
 
-La landing page usa `GET /api/v1/home` per i contenuti generali e l'endpoint
-isolato `GET /api/v1/previsioni/piloti` per la classifica. Per ogni pilota mostra
-indice, confidenza, scomposizione dei dieci fattori e trattamento degli
-aggiornamenti tecnici. L'avvertenza sulla natura fallibile della previsione deve
-restare visibile e non va rimossa nelle personalizzazioni grafiche.
+La landing page usa `GET /api/v1/home` per contenuti generali e classifica. Per
+ogni pilota mostra indice, confidenza, scomposizione dei dieci fattori e
+trattamento degli aggiornamenti tecnici. L'endpoint dedicato
+`GET /api/v1/previsioni/piloti` resta disponibile per le integrazioni che
+richiedono soltanto la previsione. L'avvertenza sulla natura fallibile della
+previsione deve restare visibile e non va rimossa nelle personalizzazioni
+grafiche.

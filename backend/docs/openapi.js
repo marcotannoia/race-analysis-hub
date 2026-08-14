@@ -3,6 +3,7 @@ const { version: versioneApi } = require("../package.json");
 const intestazioneRequestId = {
   "X-Request-ID": { $ref: "#/components/headers/RequestId" },
   "Content-Language": { $ref: "#/components/headers/ContentLanguage" },
+  "X-App-Cache": { $ref: "#/components/headers/XAppCache" },
 };
 const parametroLingua = { $ref: "#/components/parameters/Lingua" };
 
@@ -71,10 +72,12 @@ const documentoOpenApi = {
       "numero vettura, abbreviazione del nome, abbreviazione della scuderia e " +
       "colore identificativo in formato esadecimale. I campi codice e numero " +
       "restano disponibili per compatibilità con le integrazioni esistenti. " +
-      "L'endpoint dedicato /previsioni/piloti espone la classifica previsionale " +
-      "del solo Gran Premio attuale. L'indice e i singoli fattori sono stime " +
+      "La home include la classifica previsionale per evitare una seconda chiamata; " +
+      "l'endpoint dedicato /previsioni/piloti resta disponibile per compatibilità. " +
+      "L'indice e i singoli fattori sono stime " +
       "soggette a errore e non rappresentano risultati sportivi certi. " +
-      "In produzione si applicano una cache pubblica di 60 secondi e un limite di " +
+      "In produzione si applicano una cache browser di 60 secondi, una cache " +
+      "condivisa configurabile di 300 secondi e un limite di " +
       "1000 richieste ogni 15 minuti per indirizzo IP. I testi editoriali sono " +
       "disponibili in italiano, inglese, francese, portoghese europeo, spagnolo e tedesco: " +
       "aggiungere il parametro opzionale ?lingua=it|en|fr|pt|es|de. In assenza " +
@@ -463,6 +466,16 @@ const documentoOpenApi = {
         description:
           "Identificatore univoco della richiesta, utile per assistenza e analisi dei log.",
         schema: { type: "string", format: "uuid" },
+      },
+      XAppCache: {
+        description:
+          "Stato della cache applicativa: MISS per la prima elaborazione, HIT per " +
+          "una risposta già disponibile, COALESCED per richieste simultanee " +
+          "accorpate. È distinto dall'header X-Cache generato da CloudFront.",
+        schema: {
+          type: "string",
+          enum: ["MISS", "HIT", "COALESCED"],
+        },
       },
     },
     parameters: {
@@ -1469,7 +1482,14 @@ const documentoOpenApi = {
       },
       Home: {
         type: "object",
-        required: ["lingua", "garaAttuale", "piloti", "scuderie", "metadati"],
+        required: [
+          "lingua",
+          "garaAttuale",
+          "piloti",
+          "scuderie",
+          "classificaPrevisionale",
+          "metadati",
+        ],
         properties: {
           lingua: { $ref: "#/components/schemas/CodiceLingua" },
           garaAttuale: { $ref: "#/components/schemas/GaraBreve" },
@@ -1480,6 +1500,9 @@ const documentoOpenApi = {
           scuderie: {
             type: "array",
             items: { $ref: "#/components/schemas/Scuderia" },
+          },
+          classificaPrevisionale: {
+            $ref: "#/components/schemas/ClassificaPrevisionale",
           },
           metadati: { $ref: "#/components/schemas/MetadatiHome" },
         },

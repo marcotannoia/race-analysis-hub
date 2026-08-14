@@ -7,7 +7,7 @@ Il progetto utilizza React e Vite per il frontend, Node.js ed Express per le
 API e MongoDB per la persistenza dei dati. Le API pubbliche sono anonime, di
 sola lettura e documentate con Swagger.
 
-La versione corrente del progetto e dell'API è `1.6.0`.
+La versione corrente del progetto e dell'API è `1.7.0`.
 
 La parte finale della landing page mostra una classifica previsionale dei
 piloti per il solo Gran Premio attuale. Il modello combina risultati 2026,
@@ -44,6 +44,11 @@ campo `lingua`, quando previsto dal relativo schema, e nell'header
 `Content-Language`. Senza parametro viene usato `it`; un codice non supportato
 restituisce HTTP `400` con `LINGUA_NON_SUPPORTATA`. L'endpoint
 `GET /api/v1/lingue` espone l'elenco aggiornato.
+
+`GET /api/v1/home` include gara, piloti, scuderie e classifica previsionale: una
+landing o una feature esterna può quindi caricare tutti questi dati con una sola
+chiamata. Le risposte pubbliche usano una cache condivisa di cinque minuti e
+accorpano le richieste simultanee, riducendo il carico su Render e MongoDB Atlas.
 
 La traduzione iniziale viene generata con Azure Translator F0 tramite uno script
 amministrativo, conservata nel database e verificata prima della pubblicazione.
@@ -133,7 +138,8 @@ delle scuderie sono identificatori editoriali stabili di Race Analysis Hub.
 
 ## Classifica previsionale
 
-L'indice dei favoriti va da 0 a 100 ed è isolato nell'endpoint dedicato
+L'indice dei favoriti va da 0 a 100 ed è incluso nella home per evitare una
+seconda chiamata. Resta disponibile anche l'endpoint dedicato
 `GET /api/v1/previsioni/piloti`, insieme alla scomposizione dei fattori. I pesi
 sono:
 

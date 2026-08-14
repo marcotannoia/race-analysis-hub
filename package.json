@@ -1,7 +1,7 @@
 {
   "name": "race-analysis-hub",
   "private": true,
-  "version": "1.6.0",
+  "version": "1.7.0",
   "engines": {
     "node": ">=22.12.0 <25"
   },
@@ -14,7 +14,7 @@
     "translate-data": "npm --prefix backend run translate-data --",
     "verify-db": "npm --prefix backend run verify-db",
     "build": "npm --prefix frontend run build",
-    "build:cloudfront": "VITE_API_URL=https://f1-stats-5v93.onrender.com npm --prefix frontend run build",
+    "build:cloudfront": "npm --prefix frontend run build",
     "lint": "npm --prefix frontend run lint",
     "lint:api": "npm --prefix backend run lint:api",
     "test": "npm --prefix backend test"
