@@ -1,5 +1,19 @@
 # Changelog
 
+## Non rilasciato
+
+### Sicurezza
+
+- aggiornata la dipendenza transitiva di sviluppo `nanoid` da `3.3.16` a
+  `3.3.18`, correggendo `GHSA-2v37-7h3g-55p8`;
+- verificati backend e frontend con `npm audit`: nessuna vulnerabilità residua.
+
+### Manutenzione
+
+- aggiornati `express-rate-limit` a `8.6.2`, `mongoose` a `9.9.2` e
+  `@redocly/cli` a `2.46.1` nel backend;
+- aggiornati `vite` a `8.2.1` e `oxlint` a `1.78.0` nel frontend.
+
 ## 1.7.0 — 2026-08-14
 
 ### Aggiunto
