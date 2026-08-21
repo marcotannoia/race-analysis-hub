@@ -8,10 +8,9 @@ function arrotondaPercentuale(numeratore, denominatore) {
 function sommaStatistiche(voci) {
   const campi = [
     "gareDisputate",
-    "gareBagnateDisputate",
-    "gareMisteDisputate",
-    "vittorieBagnato",
-    "vittorieMiste",
+    "gareConPioggiaDisputate",
+    "gareConPioggiaPositive",
+    "vittorieConPioggia",
     "erroriPilota",
     "erroriFatali",
   ];
@@ -27,10 +26,6 @@ function sommaStatistiche(voci) {
 function presentaIndicatori(valori) {
   if (!valori) return null;
 
-  const gareConPioggia =
-    valori.gareBagnateDisputate + valori.gareMisteDisputate;
-  const vittorieConPioggia =
-    valori.vittorieBagnato + valori.vittorieMiste;
   const percentualeErrori = arrotondaPercentuale(
     valori.erroriPilota,
     valori.gareDisputate,
@@ -42,9 +37,11 @@ function presentaIndicatori(valori) {
 
   return {
     bravuraBagnatoPercentuale: arrotondaPercentuale(
-      vittorieConPioggia,
-      gareConPioggia,
+      valori.gareConPioggiaPositive,
+      valori.gareConPioggiaDisputate,
     ),
+    gareConPioggiaPositive: valori.gareConPioggiaPositive,
+    gareConPioggiaDisputate: valori.gareConPioggiaDisputate,
     erroriPilotaPercentuale: percentualeErrori,
     erroriFataliPercentuale: percentualeErroriFatali,
   };

@@ -1391,12 +1391,18 @@ const documentoOpenApi = {
       IndicatoriProfilo: {
         type: "object",
         description:
-          "Percentuali cumulative fino all'ultimo GP registrato. La bravura sul " +
-          "bagnato usa come denominatore soltanto i GP bagnati o misti disputati; " +
-          "gli errori e gli errori fatali usano entrambi tutte le partenze in gara. " +
-          "I conteggi grezzi non vengono esposti.",
+          "Indicatori cumulativi fino all'ultimo GP registrato. La percentuale sul " +
+          "bagnato misura le gare con pioggia vinte o concluse davanti al compagno " +
+          "classificato oppure ad almeno metà dei rivali presenti nella top 10 " +
+          "del campionato dopo quella gara; DNS e ritiri altrui non migliorano " +
+          "il risultato. " +
+          "Gli errori e gli errori fatali usano entrambi tutte le partenze in gara. " +
+          "I conteggi delle gare con pioggia sono esposti per rendere verificabile " +
+          "la percentuale.",
         required: [
           "bravuraBagnatoPercentuale",
+          "gareConPioggiaPositive",
+          "gareConPioggiaDisputate",
           "erroriPilotaPercentuale",
           "erroriFataliPercentuale",
         ],
@@ -1405,7 +1411,17 @@ const documentoOpenApi = {
             type: "number",
             minimum: 0,
             maximum: 100,
-            example: 34,
+            example: 57.9,
+          },
+          gareConPioggiaPositive: {
+            type: "integer",
+            minimum: 0,
+            example: 11,
+          },
+          gareConPioggiaDisputate: {
+            type: "integer",
+            minimum: 0,
+            example: 19,
           },
           erroriPilotaPercentuale: {
             type: "number",

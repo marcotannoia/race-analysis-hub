@@ -479,6 +479,66 @@ function verificaAggiornamento(aggiornamento, garaCorrente, piloti, scuderie) {
   }
 }
 
+function posizioneGaraNumerica(risultato) {
+  const corrispondenza = campoTestuale(risultato?.posizioneGara)
+    .toUpperCase()
+    .match(/^P(\d+)$/);
+
+  return corrispondenza ? Number(corrispondenza[1]) : null;
+}
+
+function prestazionePioggiaPositiva(
+  pilota,
+  piloti,
+  risultatiPerPilota,
+  classificaPiloti,
+) {
+  const posizionePilota = posizioneGaraNumerica(
+    risultatiPerPilota.get(pilota.slug),
+  );
+  if (!posizionePilota) return false;
+  if (posizionePilota === 1) return true;
+
+  const compagni = piloti.filter(
+    (altroPilota) =>
+      altroPilota.slug !== pilota.slug &&
+      String(altroPilota.scuderia) === String(pilota.scuderia),
+  );
+  const haBattutoCompagno = compagni.some((compagno) => {
+    const posizioneCompagno = posizioneGaraNumerica(
+      risultatiPerPilota.get(compagno.slug),
+    );
+    return posizioneCompagno && posizionePilota < posizioneCompagno;
+  });
+  if (haBattutoCompagno) return true;
+
+  const slugTop10 = new Set(
+    classificaPiloti
+      .filter((voce) => voce.posizione <= 10)
+      .map((voce) => voce.pilotaSlug),
+  );
+  const slugCompagni = new Set(compagni.map((compagno) => compagno.slug));
+  const posizioniRivali = piloti
+    .filter(
+      (rivale) =>
+        rivale.slug !== pilota.slug &&
+        !slugCompagni.has(rivale.slug) &&
+        slugTop10.has(rivale.slug),
+    )
+    .map((rivale) =>
+      posizioneGaraNumerica(risultatiPerPilota.get(rivale.slug)),
+    )
+    .filter(Boolean);
+
+  if (!posizioniRivali.length) return false;
+
+  const rivaliBattuti = posizioniRivali.filter(
+    (posizioneRivale) => posizionePilota < posizioneRivale,
+  ).length;
+
+  return rivaliBattuti >= Math.ceil(posizioniRivali.length / 2);
+}
+
 function aggiornaStatisticheContesto(
   aggiornamento,
   garaCorrente,
@@ -501,19 +561,24 @@ function aggiornaStatisticheContesto(
     const haPresoIlVia = risultato.posizioneGara.toUpperCase() !== "DNS";
     if (haPresoIlVia) valori.gareDisputate += 1;
 
-    if (haPresoIlVia && aggiornamento.condizioniGara === "bagnato") {
-      valori.gareBagnateDisputate += 1;
-    }
-    if (haPresoIlVia && aggiornamento.condizioniGara === "misto") {
-      valori.gareMisteDisputate += 1;
-    }
+    const garaConPioggia =
+      aggiornamento.condizioniGara === "bagnato" ||
+      aggiornamento.condizioniGara === "misto";
 
-    if (risultato.posizioneGara.toUpperCase() === "P1") {
-      if (aggiornamento.condizioniGara === "bagnato") {
-        valori.vittorieBagnato += 1;
+    if (haPresoIlVia && garaConPioggia) {
+      valori.gareConPioggiaDisputate += 1;
+      if (risultato.posizioneGara.toUpperCase() === "P1") {
+        valori.vittorieConPioggia += 1;
       }
-      if (aggiornamento.condizioniGara === "misto") {
-        valori.vittorieMiste += 1;
+      if (
+        prestazionePioggiaPositiva(
+          pilota,
+          piloti,
+          risultatiPerPilota,
+          aggiornamento.classificaPiloti,
+        )
+      ) {
+        valori.gareConPioggiaPositive += 1;
       }
     }
 
@@ -531,7 +596,9 @@ function aggiornaStatisticheContesto(
   statistiche.metadati.ultimoGpIncluso = identificatore;
   statistiche.metadati.descrizione =
     `Statistiche cumulative fino a ${garaCorrente.nome} ` +
-    `${aggiornamento.stagione} incluso.`;
+    `${aggiornamento.stagione} incluso. La percentuale sul bagnato misura ` +
+    "le gare con pioggia concluse con una prestazione positiva, non la sola " +
+    "percentuale di vittorie.";
   statistiche.metadati.aggiornamentiApplicati = [
     ...applicati,
     identificatore,
@@ -775,5 +842,6 @@ if (require.main === module) {
 module.exports = {
   aggiornaStatisticheContesto,
   creaRisultatiScuderie,
+  prestazionePioggiaPositiva,
   verificaAggiornamento,
 };
