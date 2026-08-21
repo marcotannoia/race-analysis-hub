@@ -87,10 +87,9 @@ for (const pilota of dati.piloti) {
   const valori = statisticheContesto.piloti[pilota.slug];
   const campiInteri = [
     "gareDisputate",
-    "gareBagnateDisputate",
-    "gareMisteDisputate",
-    "vittorieBagnato",
-    "vittorieMiste",
+    "gareConPioggiaDisputate",
+    "gareConPioggiaPositive",
+    "vittorieConPioggia",
     "erroriPilota",
     "erroriFatali",
   ];
@@ -100,11 +99,10 @@ for (const pilota of dati.piloti) {
   );
   if (!valori) continue;
   richiedi(
-    valori.vittorieBagnato <= valori.gareBagnateDisputate &&
-      valori.vittorieMiste <= valori.gareMisteDisputate &&
-      valori.gareBagnateDisputate + valori.gareMisteDisputate <=
-        valori.gareDisputate,
-    `Vittorie con pioggia incoerenti: ${pilota.slug}`,
+    valori.vittorieConPioggia <= valori.gareConPioggiaPositive &&
+      valori.gareConPioggiaPositive <= valori.gareConPioggiaDisputate &&
+      valori.gareConPioggiaDisputate <= valori.gareDisputate,
+    `Prestazioni con pioggia incoerenti: ${pilota.slug}`,
   );
   richiedi(
     valori.erroriFatali <= valori.erroriPilota &&

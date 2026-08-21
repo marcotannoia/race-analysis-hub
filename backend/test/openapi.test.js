@@ -204,9 +204,12 @@ test("OpenAPI documenta indicatori percentuali e confronti completi", () => {
 
   assert.deepEqual(indicatori.required, [
     "bravuraBagnatoPercentuale",
+    "gareConPioggiaPositive",
+    "gareConPioggiaDisputate",
     "erroriPilotaPercentuale",
     "erroriFataliPercentuale",
   ]);
+  assert.match(indicatori.description, /top 10/i);
   assert.match(
     indicatori.properties.erroriFataliPercentuale.description,
     /tutte le partenze/i,

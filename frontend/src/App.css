@@ -927,6 +927,12 @@ main {
   text-transform: uppercase;
 }
 
+.indicatore-profilo small {
+  color: #727272;
+  font-size: 0.67rem;
+  line-height: 1.35;
+}
+
 /* Confronto */
 .hero-confronto {
   padding: 30px 0 64px;
@@ -1021,6 +1027,10 @@ main {
 .contenuto-confronto {
   padding-top: 64px;
   padding-bottom: 110px;
+}
+
+.nota-confronto-mobile {
+  display: none;
 }
 
 .griglia-confronto {
@@ -1565,8 +1575,8 @@ main {
   }
 
   .griglia-confronto {
-    grid-template-columns: 1fr;
-    gap: 84px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
   }
 
   .riga-previsione {
@@ -1659,6 +1669,129 @@ main {
   }
 }
 
+@media (max-width: 700px) {
+  .hero-confronto {
+    padding-bottom: 42px;
+  }
+
+  .hero-confronto .sovratitolo {
+    margin-top: 42px;
+  }
+
+  .hero-confronto h1 {
+    margin-bottom: 24px;
+    font-size: clamp(2.25rem, 12vw, 3.4rem);
+  }
+
+  .controlli-confronto {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .selettore-confronto {
+    min-width: 0;
+  }
+
+  .selettore-confronto span {
+    min-height: 24px;
+    font-size: 0.54rem;
+    line-height: 1.35;
+  }
+
+  .selettore-confronto select {
+    min-width: 0;
+    padding: 0 9px;
+    font-size: 0.75rem;
+  }
+
+  .contenuto-confronto {
+    padding-top: 32px;
+    padding-bottom: 72px;
+  }
+
+  .nota-confronto-mobile {
+    display: block;
+    margin: 0 0 20px;
+    padding: 13px 14px;
+    color: var(--testo-secondario);
+    background: #080808;
+    border: 1px solid var(--bordo);
+    border-radius: 6px;
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+  .griglia-confronto {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .identita-confronto {
+    min-height: 240px;
+    padding: 17px 13px;
+  }
+
+  .identita-confronto .sovratitolo {
+    font-size: 0.52rem;
+  }
+
+  .identita-confronto h2 {
+    overflow-wrap: anywhere;
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+  }
+
+  .identita-confronto > p {
+    min-height: 66px;
+    overflow-wrap: anywhere;
+    font-size: 0.66rem;
+  }
+
+  .statistiche-confronto {
+    gap: 7px;
+    margin-top: 18px;
+  }
+
+  .statistiche-confronto small {
+    font-size: 0.49rem;
+  }
+
+  .statistiche-confronto strong {
+    font-size: 1.25rem;
+  }
+
+  .indicatori-profilo-compatti {
+    margin: 10px 0 0;
+  }
+
+  .indicatori-profilo-compatti .griglia-indicatori {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .indicatori-profilo-compatti .indicatore-profilo {
+    min-height: 114px;
+    padding: 12px 7px;
+  }
+
+  .indicatori-profilo-compatti .indicatore-profilo strong {
+    font-size: 1.5rem;
+  }
+
+  .indicatori-profilo-compatti .indicatore-profilo span {
+    font-size: 0.54rem;
+    line-height: 1.4;
+  }
+
+  .indicatori-profilo-compatti .indicatore-profilo small {
+    font-size: 0.6rem;
+  }
+
+  .dettaglio-confronto-desktop {
+    display: none;
+  }
+}
+
 @media (max-width: 500px) {
   .barra-lingua {
     min-height: 62px;
@@ -1716,8 +1849,7 @@ main {
   }
 
   .griglia-indicatori,
-  .indicatori-profilo-compatti .griglia-indicatori,
-  .controlli-confronto {
+  .indicatori-profilo-compatti .griglia-indicatori {
     grid-template-columns: 1fr;
   }
 
@@ -1726,7 +1858,7 @@ main {
   }
 
   .controlli-confronto > span {
-    padding: 0;
+    padding: 0 0 15px;
   }
 
   .tipo-confronto,

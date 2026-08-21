@@ -59,10 +59,12 @@ function ProfiloConfronto({ scheda, tipo }) {
       </header>
 
       <IndicatoriProfilo indicatori={scheda.indicatori} compatto />
-      <AnalisiCircuito
-        analisi={scheda.analisi}
-        andamentoStagioneCorrente={scheda.andamentoStagioneCorrente}
-      />
+      <div className="dettaglio-confronto-desktop">
+        <AnalisiCircuito
+          analisi={scheda.analisi}
+          andamentoStagioneCorrente={scheda.andamentoStagioneCorrente}
+        />
+      </div>
     </article>
   )
 }
@@ -199,12 +201,17 @@ function ConfrontoPage() {
         {errore && <ErrorePagina messaggio={errore} />}
         {!errore && !confronto && <Caricamento />}
         {confronto?.tipo === tipo && (
-          <div className="griglia-confronto">
-            {confronto.elementi.map((scheda) => {
-              const entita = tipo === 'piloti' ? scheda.pilota : scheda.scuderia
-              return <ProfiloConfronto key={entita.slug} scheda={scheda} tipo={tipo} />
-            })}
-          </div>
+          <>
+            <p className="nota-confronto-mobile">
+              {t.confrontoMobileNumerico}
+            </p>
+            <div className="griglia-confronto">
+              {confronto.elementi.map((scheda) => {
+                const entita = tipo === 'piloti' ? scheda.pilota : scheda.scuderia
+                return <ProfiloConfronto key={entita.slug} scheda={scheda} tipo={tipo} />
+              })}
+            </div>
+          </>
         )}
       </div>
     </div>

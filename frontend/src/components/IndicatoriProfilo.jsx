@@ -11,10 +11,20 @@ function IndicatoriProfilo({ indicatori, compatto = false }) {
   const { lingua, t } = useLingua()
   if (!indicatori) return null
 
+  const haGareConPioggia = indicatori.gareConPioggiaDisputate > 0
+
   const valori = [
     {
       etichetta: t.bravuraBagnato,
-      valore: indicatori.bravuraBagnatoPercentuale,
+      valore: haGareConPioggia
+        ? indicatori.bravuraBagnatoPercentuale
+        : null,
+      dettaglio: haGareConPioggia
+        ? t.garePositivePioggia(
+            indicatori.gareConPioggiaPositive,
+            indicatori.gareConPioggiaDisputate,
+          )
+        : t.nessunaGaraPioggia,
     },
     {
       etichetta: t.erroriPilota,
@@ -40,8 +50,13 @@ function IndicatoriProfilo({ indicatori, compatto = false }) {
       <div className="griglia-indicatori">
         {valori.map((indicatore) => (
           <article key={indicatore.etichetta} className="indicatore-profilo">
-            <strong>{formattaPercentuale(indicatore.valore, lingua)}</strong>
+            <strong>
+              {indicatore.valore === null
+                ? '—'
+                : formattaPercentuale(indicatore.valore, lingua)}
+            </strong>
             <span>{indicatore.etichetta}</span>
+            {indicatore.dettaglio && <small>{indicatore.dettaglio}</small>}
           </article>
         ))}
       </div>

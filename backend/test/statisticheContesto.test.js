@@ -7,26 +7,38 @@ const {
   sommaStatistiche,
 } = require("../services/statisticheContesto");
 
-test("la bravura sul bagnato usa solo le gare bagnate o miste disputate", () => {
+test("la percentuale sul bagnato usa le prestazioni positive nelle gare con pioggia", () => {
   const hamilton = indicatoriPilota("hamilton");
-  assert.equal(hamilton.bravuraBagnatoPercentuale, 34);
+  assert.equal(hamilton.bravuraBagnatoPercentuale, 70.8);
+  assert.equal(hamilton.gareConPioggiaPositive, 34);
+  assert.equal(hamilton.gareConPioggiaDisputate, 48);
   assert.equal(hamilton.erroriPilotaPercentuale, 3.8);
   assert.equal(hamilton.erroriFataliPercentuale, 1.3);
+});
+
+test("Leclerc non viene valutato soltanto in base alle vittorie sul bagnato", () => {
+  const leclerc = indicatoriPilota("leclerc");
+
+  assert.equal(statistiche.piloti.leclerc.vittorieConPioggia, 0);
+  assert.equal(leclerc.gareConPioggiaPositive, 11);
+  assert.equal(leclerc.gareConPioggiaDisputate, 19);
+  assert.equal(leclerc.bravuraBagnatoPercentuale, 57.9);
 });
 
 test("gli errori fatali sono rapportati a tutte le gare e non agli errori", () => {
   const indicatori = presentaIndicatori({
     gareDisputate: 100,
-    gareBagnateDisputate: 5,
-    gareMisteDisputate: 5,
-    vittorieBagnato: 1,
-    vittorieMiste: 1,
+    gareConPioggiaDisputate: 10,
+    gareConPioggiaPositive: 6,
+    vittorieConPioggia: 2,
     erroriPilota: 20,
     erroriFatali: 5,
   });
 
   assert.deepEqual(indicatori, {
-    bravuraBagnatoPercentuale: 20,
+    bravuraBagnatoPercentuale: 60,
+    gareConPioggiaPositive: 6,
+    gareConPioggiaDisputate: 10,
     erroriPilotaPercentuale: 20,
     erroriFataliPercentuale: 5,
   });
@@ -39,7 +51,9 @@ test("l'indicatore scuderia è un aggregato ponderato dei piloti attuali", () =>
   ]);
   const indicatori = presentaIndicatori(aggregato);
 
-  assert.equal(indicatori.bravuraBagnatoPercentuale, 24.2);
+  assert.equal(indicatori.bravuraBagnatoPercentuale, 67.2);
+  assert.equal(indicatori.gareConPioggiaPositive, 45);
+  assert.equal(indicatori.gareConPioggiaDisputate, 67);
   assert.ok(indicatori.erroriFataliPercentuale <= indicatori.erroriPilotaPercentuale);
 });
 
@@ -48,6 +62,11 @@ test("tutti i piloti rispettano i vincoli delle percentuali", () => {
     const indicatori = indicatoriPilota(slug);
     assert.ok(indicatori.bravuraBagnatoPercentuale >= 0, slug);
     assert.ok(indicatori.bravuraBagnatoPercentuale <= 100, slug);
+    assert.ok(
+      indicatori.gareConPioggiaPositive <=
+        indicatori.gareConPioggiaDisputate,
+      slug,
+    );
     assert.ok(
       indicatori.erroriFataliPercentuale <= indicatori.erroriPilotaPercentuale,
       slug,
