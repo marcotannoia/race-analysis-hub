@@ -1507,6 +1507,13 @@ main {
   gap: 24px;
 }
 
+.footer-identita {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .footer span {
   color: #fff;
   font-family: var(--font-racing);
@@ -1522,6 +1529,39 @@ main {
 .footer span strong {
   color: var(--rosso);
   font-weight: 400;
+}
+
+.footer-contatti {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-contatti a {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--bordo-evidente);
+  border-radius: 50%;
+  color: var(--rosso);
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.footer-contatti a:hover {
+  border-color: var(--rosso);
+  background: rgba(239, 43, 36, 0.1);
+}
+
+.footer-contatti svg {
+  width: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
 }
 
 .footer-note {
