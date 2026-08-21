@@ -46,6 +46,19 @@ router.get(
 );
 
 router.get(
+  "/confronti/piloti/:primoPilotaSlug/:secondoPilotaSlug",
+  convalidaParametriSlug("primoPilotaSlug", "secondoPilotaSlug"),
+  senzaQuery,
+  gestisciFunzioneAsincrona(controller.confrontoPiloti),
+);
+router.get(
+  "/confronti/scuderie/:primaScuderiaSlug/:secondaScuderiaSlug",
+  convalidaParametriSlug("primaScuderiaSlug", "secondaScuderiaSlug"),
+  senzaQuery,
+  gestisciFunzioneAsincrona(controller.confrontoScuderie),
+);
+
+router.get(
   "/piloti",
   senzaQuery,
   gestisciFunzioneAsincrona(controller.elencaPiloti),

@@ -34,7 +34,7 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
     ),
   );
   assert.equal(documentoOpenApi.info.title, "Race Analysis Hub API");
-  assert.equal(documentoOpenApi.info.version, "1.7.0");
+  assert.equal(documentoOpenApi.info.version, "1.8.0");
   assert.match(documentoOpenApi.info.description, /adattate nel software/);
   assert.match(documentoOpenApi.info.description, /Race Analysis Hub/);
   assert.match(documentoOpenApi.info.license.name, /CC BY 4\.0/);
@@ -195,6 +195,33 @@ test("classifiche, andamento e metadati espongono schemi strutturati", () => {
       "application/json"
     ].schema.$ref,
     "#/components/schemas/ClassificaPrevisionale",
+  );
+});
+
+test("OpenAPI documenta indicatori percentuali e confronti completi", () => {
+  const schemi = documentoOpenApi.components.schemas;
+  const indicatori = schemi.IndicatoriProfilo;
+
+  assert.deepEqual(indicatori.required, [
+    "bravuraBagnatoPercentuale",
+    "erroriPilotaPercentuale",
+    "erroriFataliPercentuale",
+  ]);
+  assert.match(
+    indicatori.properties.erroriFataliPercentuale.description,
+    /tutte le partenze/i,
+  );
+  assert.ok(schemi.DettaglioPilota.required.includes("indicatori"));
+  assert.ok(schemi.DettaglioScuderia.required.includes("indicatori"));
+  assert.equal(
+    documentoOpenApi.paths[
+      "/confronti/piloti/{primoPilotaSlug}/{secondoPilotaSlug}"
+    ].get.responses[200].content["application/json"].schema.$ref,
+    "#/components/schemas/ConfrontoPiloti",
+  );
+  assert.equal(
+    schemi.ConfrontoScuderie.properties.elementi.maxItems,
+    2,
   );
 });
 

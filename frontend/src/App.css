@@ -428,6 +428,58 @@ main {
   line-height: 1.65;
 }
 
+.invito-confronto {
+  width: min(760px, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  margin: 54px auto 0;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--bordo);
+}
+
+.invito-confronto h2 {
+  margin: 8px 0;
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.invito-confronto p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--testo-secondario);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.link-confronto {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  padding: 13px 17px;
+  color: #fff;
+  border: 1px solid var(--bordo-evidente);
+  border-radius: 6px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.link-confronto span {
+  color: var(--rosso);
+  font-size: 1rem;
+}
+
+.link-confronto:hover {
+  border-color: var(--rosso);
+}
+
 .contesto-previsioni {
   display: grid;
   grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
@@ -825,6 +877,259 @@ main {
   width: min(1000px, calc(100% - 48px));
   padding-top: 66px;
   padding-bottom: 110px;
+}
+
+.indicatori-profilo {
+  margin-bottom: 72px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid var(--bordo);
+}
+
+.intestazione-indicatori h2 {
+  margin: 9px 0 28px;
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.griglia-indicatori {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.indicatore-profilo {
+  min-height: 128px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background: #080808;
+  border: 1px solid var(--bordo);
+  border-radius: 7px;
+  text-align: center;
+}
+
+.indicatore-profilo strong {
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+
+.indicatore-profilo span {
+  color: var(--testo-secondario);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Confronto */
+.hero-confronto {
+  padding: 30px 0 64px;
+  background: #050505;
+  border-bottom: 1px solid var(--bordo);
+  text-align: center;
+}
+
+.hero-confronto .sovratitolo {
+  display: inline-block;
+  margin-top: 58px;
+}
+
+.hero-confronto h1 {
+  margin: 10px 0 32px;
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.tipo-confronto {
+  display: inline-flex;
+  padding: 4px;
+  background: #090909;
+  border: 1px solid var(--bordo);
+  border-radius: 7px;
+}
+
+.tipo-confronto button {
+  min-width: 112px;
+  padding: 11px 16px;
+  color: var(--testo-secondario);
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tipo-confronto button.attivo {
+  color: #fff;
+  background: var(--rosso);
+}
+
+.controlli-confronto {
+  max-width: 840px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: end;
+  gap: 22px;
+  margin: 32px auto 0;
+}
+
+.controlli-confronto > span {
+  padding-bottom: 15px;
+  color: var(--rosso);
+  font-family: var(--font-racing);
+  font-size: 1.2rem;
+}
+
+.selettore-confronto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.selettore-confronto span {
+  color: #858585;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.selettore-confronto select {
+  width: 100%;
+  height: 50px;
+  padding: 0 14px;
+  color: #fff;
+  background: #0b0b0b;
+  border: 1px solid var(--bordo-evidente);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.contenuto-confronto {
+  padding-top: 64px;
+  padding-bottom: 110px;
+}
+
+.griglia-confronto {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+}
+
+.colonna-confronto {
+  min-width: 0;
+}
+
+.identita-confronto {
+  min-height: 252px;
+  padding: 30px;
+  background: #080808;
+  border: 1px solid var(--bordo);
+  border-radius: 8px;
+}
+
+.identita-confronto h2 {
+  margin: 9px 0 6px;
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.identita-confronto > p {
+  min-height: 42px;
+  margin: 0;
+  color: var(--testo-secondario);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.statistiche-confronto {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.statistiche-confronto > span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 14px;
+  border-top: 1px solid var(--bordo);
+}
+
+.statistiche-confronto small {
+  color: #777;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.statistiche-confronto strong {
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.indicatori-profilo-compatti {
+  margin: 18px 0 50px;
+  padding: 0;
+  border: 0;
+}
+
+.indicatori-profilo-compatti .griglia-indicatori {
+  gap: 8px;
+}
+
+.indicatori-profilo-compatti .indicatore-profilo {
+  min-height: 102px;
+  padding: 12px 8px;
+}
+
+.indicatori-profilo-compatti .indicatore-profilo strong {
+  font-size: 1.65rem;
+}
+
+.colonna-confronto .introduzione-circuito h2,
+.colonna-confronto .intestazione-sezione h2 {
+  font-size: 2rem;
+}
+
+.colonna-confronto .griglia-risultati-storici {
+  gap: 24px;
+  padding-left: 0;
+}
+
+.colonna-confronto .nota-bene,
+.colonna-confronto .blocchi-performance,
+.colonna-confronto .righe-finali,
+.colonna-confronto .spazio-aggiornamenti,
+.colonna-confronto .griglia-grafici,
+.colonna-confronto .grafici-senza-risultati,
+.colonna-confronto .fonte-andamento {
+  margin-left: 0;
+}
+
+.colonna-confronto .riga-etichettata {
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 18px;
 }
 
 .introduzione-circuito {
@@ -1254,6 +1559,16 @@ main {
     margin-top: 72px;
   }
 
+  .invito-confronto {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .griglia-confronto {
+    grid-template-columns: 1fr;
+    gap: 84px;
+  }
+
   .riga-previsione {
     grid-template-columns: 48px minmax(0, 1fr) 130px;
   }
@@ -1398,6 +1713,38 @@ main {
 
   .numero-gp {
     font-size: 2.6rem;
+  }
+
+  .griglia-indicatori,
+  .indicatori-profilo-compatti .griglia-indicatori,
+  .controlli-confronto {
+    grid-template-columns: 1fr;
+  }
+
+  .indicatore-profilo {
+    min-height: 100px;
+  }
+
+  .controlli-confronto > span {
+    padding: 0;
+  }
+
+  .tipo-confronto,
+  .tipo-confronto button {
+    width: 100%;
+  }
+
+  .hero-confronto .testata-dettaglio {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-confronto .testata-dettaglio .marchio {
+    grid-column: 1;
+  }
+
+  .colonna-confronto .griglia-risultati-storici,
+  .colonna-confronto .riga-etichettata {
+    grid-template-columns: 1fr;
   }
 
   .sezione-previsioni {

@@ -8,6 +8,10 @@ const creaAndamentoAnnuale = require("../../services/andamentoAnnuale");
 const {
   creaClassificaPrevisionale,
 } = require("../../services/classificaPrevisionale");
+const {
+  indicatoriPilota,
+  indicatoriScuderia,
+} = require("../../services/statisticheContesto");
 const { inviaErrore } = require("../../utils/rispostaApi");
 const {
   LINGUA_PREDEFINITA,
@@ -121,6 +125,10 @@ function descrizioneApi(richiesta, risposta) {
       classificaPiloti: "/api/v1/classifiche/piloti",
       classificaScuderie: "/api/v1/classifiche/scuderie",
       classificaPrevisionale: "/api/v1/previsioni/piloti",
+      confrontoPiloti:
+        "/api/v1/confronti/piloti/:primoPilotaSlug/:secondoPilotaSlug",
+      confrontoScuderie:
+        "/api/v1/confronti/scuderie/:primaScuderiaSlug/:secondaScuderiaSlug",
       analisiPilota:
         "/api/v1/gare/:garaSlug/piloti/:pilotaSlug/analisi",
       analisiScuderia:
@@ -242,6 +250,20 @@ async function elencaPiloti(richiesta, risposta) {
   });
 }
 
+async function creaSchedaPilota(pilota, garaAttuale, lingua) {
+  const [analisi, andamento] = await Promise.all([
+    recuperaAnalisiPilota(pilota._id, garaAttuale._id),
+    recuperaAndamentoPilota(pilota, garaAttuale, lingua),
+  ]);
+
+  return {
+    pilota: presentaPilota(pilota, lingua),
+    indicatori: indicatoriPilota(pilota.slug),
+    analisi: presentaAnalisiPilota(analisi, lingua),
+    andamentoStagioneCorrente: andamento,
+  };
+}
+
 async function dettaglioPilota(richiesta, risposta) {
   const lingua = linguaRichiesta(richiesta);
   const [garaAttuale, pilota] = await Promise.all([
@@ -269,16 +291,9 @@ async function dettaglioPilota(richiesta, risposta) {
     );
   }
 
-  const [analisi, andamento] = await Promise.all([
-    recuperaAnalisiPilota(pilota._id, garaAttuale._id),
-    recuperaAndamentoPilota(pilota, garaAttuale, lingua),
-  ]);
-
   risposta.json({
     lingua,
-    pilota: presentaPilota(pilota, lingua),
-    analisi: presentaAnalisiPilota(analisi, lingua),
-    andamentoStagioneCorrente: andamento,
+    ...(await creaSchedaPilota(pilota, garaAttuale, lingua)),
   });
 }
 
@@ -295,6 +310,29 @@ async function elencaScuderie(richiesta, risposta) {
       presentaScuderia(scuderia, lingua),
     ),
   });
+}
+
+async function creaSchedaScuderia(scuderia, garaAttuale, lingua) {
+  const [piloti, analisi] = await Promise.all([
+    Pilota.find({ scuderia: scuderia._id })
+      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
+      .sort("classifica2026.posizione")
+      .lean(),
+    recuperaAnalisiScuderia(scuderia._id, garaAttuale._id),
+  ]);
+  const andamento = await recuperaAndamentoScuderia(
+    scuderia,
+    garaAttuale,
+    lingua,
+  );
+
+  return {
+    scuderia: presentaScuderia(scuderia, lingua),
+    piloti: piloti.map((pilota) => presentaPilota(pilota, lingua)),
+    indicatori: indicatoriScuderia(piloti),
+    analisi: presentaAnalisiScuderia(analisi, lingua),
+    andamentoStagioneCorrente: andamento,
+  };
 }
 
 async function dettaglioScuderia(richiesta, risposta) {
@@ -322,26 +360,122 @@ async function dettaglioScuderia(richiesta, risposta) {
     );
   }
 
-  const [piloti, analisi] = await Promise.all([
-    Pilota.find({ scuderia: scuderia._id })
-      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
-      .sort("classifica2026.posizione")
-      .lean(),
-    recuperaAnalisiScuderia(scuderia._id, garaAttuale._id),
-  ]);
-  const andamento = await recuperaAndamentoScuderia(
-    scuderia,
-    garaAttuale,
-    lingua,
-  );
-
   risposta.json({
     lingua,
-    scuderia: presentaScuderia(scuderia, lingua),
-    piloti: piloti.map((pilota) => presentaPilota(pilota, lingua)),
-    analisi: presentaAnalisiScuderia(analisi, lingua),
-    andamentoStagioneCorrente: andamento,
+    ...(await creaSchedaScuderia(scuderia, garaAttuale, lingua)),
   });
+}
+
+function verificaEntitaConfronto(risposta, prima, seconda, tipo) {
+  if (prima === seconda) {
+    inviaErrore(
+      risposta,
+      400,
+      "CONFRONTO_IDENTICO",
+      `Seleziona due ${tipo} diversi per il confronto`,
+    );
+    return false;
+  }
+
+  return true;
+}
+
+async function confrontoPiloti(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
+  const { primoPilotaSlug, secondoPilotaSlug } = richiesta.params;
+  if (
+    !verificaEntitaConfronto(
+      risposta,
+      primoPilotaSlug,
+      secondoPilotaSlug,
+      "piloti",
+    )
+  ) {
+    return;
+  }
+
+  const [garaAttuale, piloti] = await Promise.all([
+    trovaGaraAttuale(),
+    Pilota.find({ slug: { $in: [primoPilotaSlug, secondoPilotaSlug] } })
+      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
+      .lean(),
+  ]);
+
+  if (piloti.length !== 2) {
+    return inviaErrore(
+      risposta,
+      404,
+      "PILOTA_NON_TROVATO",
+      "Uno dei piloti richiesti non esiste",
+    );
+  }
+  if (!garaAttuale) {
+    return inviaErrore(
+      risposta,
+      404,
+      "GARA_ATTUALE_NON_DISPONIBILE",
+      "Il Gran Premio attuale non e ancora stato pubblicato",
+    );
+  }
+
+  const pilotaPerSlug = new Map(piloti.map((pilota) => [pilota.slug, pilota]));
+  const elementi = await Promise.all(
+    [primoPilotaSlug, secondoPilotaSlug].map((slug) =>
+      creaSchedaPilota(pilotaPerSlug.get(slug), garaAttuale, lingua),
+    ),
+  );
+
+  risposta.json({ lingua, tipo: "piloti", elementi });
+}
+
+async function confrontoScuderie(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
+  const { primaScuderiaSlug, secondaScuderiaSlug } = richiesta.params;
+  if (
+    !verificaEntitaConfronto(
+      risposta,
+      primaScuderiaSlug,
+      secondaScuderiaSlug,
+      "scuderie",
+    )
+  ) {
+    return;
+  }
+
+  const [garaAttuale, scuderie] = await Promise.all([
+    trovaGaraAttuale(),
+    Scuderia.find({
+      slug: { $in: [primaScuderiaSlug, secondaScuderiaSlug] },
+    }).lean(),
+  ]);
+
+  if (scuderie.length !== 2) {
+    return inviaErrore(
+      risposta,
+      404,
+      "SCUDERIA_NON_TROVATA",
+      "Una delle scuderie richieste non esiste",
+    );
+  }
+  if (!garaAttuale) {
+    return inviaErrore(
+      risposta,
+      404,
+      "GARA_ATTUALE_NON_DISPONIBILE",
+      "Il Gran Premio attuale non e ancora stato pubblicato",
+    );
+  }
+
+  const scuderiaPerSlug = new Map(
+    scuderie.map((scuderia) => [scuderia.slug, scuderia]),
+  );
+  const elementi = await Promise.all(
+    [primaScuderiaSlug, secondaScuderiaSlug].map((slug) =>
+      creaSchedaScuderia(scuderiaPerSlug.get(slug), garaAttuale, lingua),
+    ),
+  );
+
+  risposta.json({ lingua, tipo: "scuderie", elementi });
 }
 
 async function elencaGare(richiesta, risposta) {
@@ -554,6 +688,8 @@ module.exports = {
   classificaPrevisionale,
   classificaPiloti,
   classificaScuderie,
+  confrontoPiloti,
+  confrontoScuderie,
   descrizioneApi,
   dettaglioGara,
   dettaglioPilota,

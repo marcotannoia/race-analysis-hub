@@ -6,6 +6,19 @@ const intestazioneRequestId = {
   "X-App-Cache": { $ref: "#/components/headers/XAppCache" },
 };
 const parametroLingua = { $ref: "#/components/parameters/Lingua" };
+const parametroSlugConfronto = (nome, descrizione, esempio) => ({
+  name: nome,
+  in: "path",
+  required: true,
+  description: descrizione,
+  schema: {
+    type: "string",
+    minLength: 1,
+    maxLength: 80,
+    pattern: "^[a-z0-9]+(?:[-_][a-z0-9]+)*$",
+  },
+  example: esempio,
+});
 
 const esempioPesiPrevisionali = [
   ["andamento2026", "Andamento 2026", 20],
@@ -76,6 +89,9 @@ const documentoOpenApi = {
       "l'endpoint dedicato /previsioni/piloti resta disponibile per compatibilità. " +
       "L'indice e i singoli fattori sono stime " +
       "soggette a errore e non rappresentano risultati sportivi certi. " +
+      "Le schede includono percentuali di rendimento sul bagnato e di errori " +
+      "normalizzate sulle gare effettivamente disputate, senza esporre i conteggi grezzi. " +
+      "Gli endpoint di confronto restituiscono due schede complete nello stesso ordine richiesto. " +
       "In produzione si applicano una cache browser di 60 secondi, una cache " +
       "condivisa configurabile di 300 secondi e un limite di " +
       "1000 richieste ogni 15 minuti per indirizzo IP. I testi editoriali sono " +
@@ -131,6 +147,11 @@ const documentoOpenApi = {
     {
       name: "Previsioni",
       description: "Classifica previsionale spiegabile del Gran Premio attuale.",
+    },
+    {
+      name: "Confronti",
+      description:
+        "Confronto affiancato tra due piloti o due scuderie con schede complete.",
     },
     {
       name: "Analisi",
@@ -248,6 +269,66 @@ const documentoOpenApi = {
           200: rispostaJson(
             "Classifica previsionale del Gran Premio attuale",
             "#/components/schemas/ClassificaPrevisionale",
+          ),
+          404: { $ref: "#/components/responses/RisorsaNonTrovata" },
+          ...risposteComuni,
+        },
+      },
+    },
+    "/confronti/piloti/{primoPilotaSlug}/{secondoPilotaSlug}": {
+      get: {
+        operationId: "confrontaPiloti",
+        tags: ["Confronti"],
+        summary: "Confronto tra due piloti",
+        description:
+          "Restituisce, nell'ordine richiesto, le stesse informazioni disponibili nelle due schede pilota singole.",
+        parameters: [
+          parametroSlugConfronto(
+            "primoPilotaSlug",
+            "Identificatore del primo pilota.",
+            "leclerc",
+          ),
+          parametroSlugConfronto(
+            "secondoPilotaSlug",
+            "Identificatore del secondo pilota.",
+            "hamilton",
+          ),
+          parametroLingua,
+        ],
+        responses: {
+          200: rispostaJson(
+            "Confronto completo tra due piloti",
+            "#/components/schemas/ConfrontoPiloti",
+          ),
+          404: { $ref: "#/components/responses/RisorsaNonTrovata" },
+          ...risposteComuni,
+        },
+      },
+    },
+    "/confronti/scuderie/{primaScuderiaSlug}/{secondaScuderiaSlug}": {
+      get: {
+        operationId: "confrontaScuderie",
+        tags: ["Confronti"],
+        summary: "Confronto tra due scuderie",
+        description:
+          "Restituisce, nell'ordine richiesto, le stesse informazioni disponibili nelle due schede scuderia singole.",
+        parameters: [
+          parametroSlugConfronto(
+            "primaScuderiaSlug",
+            "Identificatore della prima scuderia.",
+            "ferrari",
+          ),
+          parametroSlugConfronto(
+            "secondaScuderiaSlug",
+            "Identificatore della seconda scuderia.",
+            "mercedes",
+          ),
+          parametroLingua,
+        ],
+        responses: {
+          200: rispostaJson(
+            "Confronto completo tra due scuderie",
+            "#/components/schemas/ConfrontoScuderie",
           ),
           404: { $ref: "#/components/responses/RisorsaNonTrovata" },
           ...risposteComuni,
@@ -643,6 +724,8 @@ const documentoOpenApi = {
           "classificaPiloti",
           "classificaScuderie",
           "classificaPrevisionale",
+          "confrontoPiloti",
+          "confrontoScuderie",
           "analisiPilota",
           "analisiScuderia",
         ],
@@ -678,6 +761,16 @@ const documentoOpenApi = {
           classificaPrevisionale: {
             type: "string",
             example: "/api/v1/previsioni/piloti",
+          },
+          confrontoPiloti: {
+            type: "string",
+            example:
+              "/api/v1/confronti/piloti/:primoPilotaSlug/:secondoPilotaSlug",
+          },
+          confrontoScuderie: {
+            type: "string",
+            example:
+              "/api/v1/confronti/scuderie/:primaScuderiaSlug/:secondaScuderiaSlug",
           },
           analisiPilota: {
             type: "string",
@@ -1295,12 +1388,54 @@ const documentoOpenApi = {
           gara: { $ref: "#/components/schemas/Gara" },
         },
       },
+      IndicatoriProfilo: {
+        type: "object",
+        description:
+          "Percentuali cumulative fino all'ultimo GP registrato. La bravura sul " +
+          "bagnato usa come denominatore soltanto i GP bagnati o misti disputati; " +
+          "gli errori e gli errori fatali usano entrambi tutte le partenze in gara. " +
+          "I conteggi grezzi non vengono esposti.",
+        required: [
+          "bravuraBagnatoPercentuale",
+          "erroriPilotaPercentuale",
+          "erroriFataliPercentuale",
+        ],
+        properties: {
+          bravuraBagnatoPercentuale: {
+            type: "number",
+            minimum: 0,
+            maximum: 100,
+            example: 34,
+          },
+          erroriPilotaPercentuale: {
+            type: "number",
+            minimum: 0,
+            maximum: 100,
+            example: 3.8,
+          },
+          erroriFataliPercentuale: {
+            type: "number",
+            minimum: 0,
+            maximum: 100,
+            description:
+              "Quota di tutte le partenze compromessa o terminata da un errore del pilota; non è una percentuale degli errori e resta inferiore all'indicatore generale.",
+            example: 1.3,
+          },
+        },
+      },
       DettaglioPilota: {
         type: "object",
-        required: ["lingua", "pilota", "analisi", "andamentoStagioneCorrente"],
+        required: [
+          "lingua",
+          "pilota",
+          "indicatori",
+          "analisi",
+          "andamentoStagioneCorrente",
+        ],
         properties: {
           lingua: { $ref: "#/components/schemas/CodiceLingua" },
           pilota: { $ref: "#/components/schemas/Pilota" },
+          indicatori: { $ref: "#/components/schemas/IndicatoriProfilo" },
           analisi: {
             oneOf: [
               { $ref: "#/components/schemas/AnalisiPilota" },
@@ -1318,6 +1453,7 @@ const documentoOpenApi = {
           "lingua",
           "scuderia",
           "piloti",
+          "indicatori",
           "analisi",
           "andamentoStagioneCorrente",
         ],
@@ -1328,6 +1464,83 @@ const documentoOpenApi = {
             type: "array",
             items: { $ref: "#/components/schemas/Pilota" },
           },
+          indicatori: {
+            allOf: [{ $ref: "#/components/schemas/IndicatoriProfilo" }],
+            description:
+              "Aggregato ponderato sulle gare disputate dai piloti attualmente appartenenti alla scuderia.",
+          },
+          analisi: {
+            oneOf: [
+              { $ref: "#/components/schemas/AnalisiScuderia" },
+              { type: "null" },
+            ],
+          },
+          andamentoStagioneCorrente: {
+            $ref: "#/components/schemas/Andamento",
+          },
+        },
+      },
+      ConfrontoPiloti: {
+        type: "object",
+        required: ["lingua", "tipo", "elementi"],
+        properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
+          tipo: { type: "string", const: "piloti" },
+          elementi: {
+            type: "array",
+            minItems: 2,
+            maxItems: 2,
+            items: { $ref: "#/components/schemas/DettaglioPilotaSenzaLingua" },
+          },
+        },
+      },
+      DettaglioPilotaSenzaLingua: {
+        type: "object",
+        required: ["pilota", "indicatori", "analisi", "andamentoStagioneCorrente"],
+        properties: {
+          pilota: { $ref: "#/components/schemas/Pilota" },
+          indicatori: { $ref: "#/components/schemas/IndicatoriProfilo" },
+          analisi: {
+            oneOf: [
+              { $ref: "#/components/schemas/AnalisiPilota" },
+              { type: "null" },
+            ],
+          },
+          andamentoStagioneCorrente: {
+            $ref: "#/components/schemas/Andamento",
+          },
+        },
+      },
+      ConfrontoScuderie: {
+        type: "object",
+        required: ["lingua", "tipo", "elementi"],
+        properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
+          tipo: { type: "string", const: "scuderie" },
+          elementi: {
+            type: "array",
+            minItems: 2,
+            maxItems: 2,
+            items: { $ref: "#/components/schemas/DettaglioScuderiaSenzaLingua" },
+          },
+        },
+      },
+      DettaglioScuderiaSenzaLingua: {
+        type: "object",
+        required: [
+          "scuderia",
+          "piloti",
+          "indicatori",
+          "analisi",
+          "andamentoStagioneCorrente",
+        ],
+        properties: {
+          scuderia: { $ref: "#/components/schemas/Scuderia" },
+          piloti: {
+            type: "array",
+            items: { $ref: "#/components/schemas/Pilota" },
+          },
+          indicatori: { $ref: "#/components/schemas/IndicatoriProfilo" },
           analisi: {
             oneOf: [
               { $ref: "#/components/schemas/AnalisiScuderia" },

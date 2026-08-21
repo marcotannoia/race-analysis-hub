@@ -1,0 +1,39 @@
+{
+  "metadati": {
+    "versioneMetodologia": "1.0.0",
+    "aggiornatoAl": "2026-07-26",
+    "ultimoGpIncluso": "2026:hungary",
+    "descrizione": "Statistiche cumulative fino al Gran Premio d'Ungheria 2026 incluso.",
+    "fonti": [
+      "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+      "https://www.tudosobreformula1.com.br/corridas-com-pista-molhada-ou-%C3%BAmida",
+      "https://www.formula1.com/en/latest/article/antonelli-wins-dramatic-canadian-grand-prix-as-russell-retires-amid-thrilling-mercedes-battle.MzvclJaqCidlYMUXonuDq",
+      "https://www.fia.com/news/f1-antonelli-wins-thrilling-canadian-grand-prix-ahead-hamilton-and-verstappen-russell-retires"
+    ],
+    "aggiornamentiApplicati": []
+  },
+  "piloti": {
+    "antonelli": { "gareDisputate": 35, "gareBagnateDisputate": 0, "gareMisteDisputate": 4, "vittorieBagnato": 0, "vittorieMiste": 1, "erroriPilota": 5, "erroriFatali": 0 },
+    "hamilton": { "gareDisputate": 391, "gareBagnateDisputate": 14, "gareMisteDisputate": 33, "vittorieBagnato": 6, "vittorieMiste": 10, "erroriPilota": 15, "erroriFatali": 5 },
+    "russell": { "gareDisputate": 163, "gareBagnateDisputate": 5, "gareMisteDisputate": 13, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 7, "erroriFatali": 3 },
+    "leclerc": { "gareDisputate": 182, "gareBagnateDisputate": 5, "gareMisteDisputate": 14, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 10, "erroriFatali": 4 },
+    "norris": { "gareDisputate": 162, "gareBagnateDisputate": 5, "gareMisteDisputate": 13, "vittorieBagnato": 0, "vittorieMiste": 2, "erroriPilota": 6, "erroriFatali": 1 },
+    "max_verstappen": { "gareDisputate": 244, "gareBagnateDisputate": 7, "gareMisteDisputate": 19, "vittorieBagnato": 2, "vittorieMiste": 6, "erroriPilota": 14, "erroriFatali": 4 },
+    "piastri": { "gareDisputate": 79, "gareBagnateDisputate": 1, "gareMisteDisputate": 8, "vittorieBagnato": 0, "vittorieMiste": 1, "erroriPilota": 4, "erroriFatali": 2 },
+    "hadjar": { "gareDisputate": 35, "gareBagnateDisputate": 0, "gareMisteDisputate": 4, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 4, "erroriFatali": 3 },
+    "lawson": { "gareDisputate": 46, "gareBagnateDisputate": 1, "gareMisteDisputate": 5, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 3, "erroriFatali": 1 },
+    "gasly": { "gareDisputate": 188, "gareBagnateDisputate": 5, "gareMisteDisputate": 13, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 12, "erroriFatali": 0 },
+    "arvid_lindblad": { "gareDisputate": 10, "gareBagnateDisputate": 0, "gareMisteDisputate": 0, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 0, "erroriFatali": 0 },
+    "colapinto": { "gareDisputate": 37, "gareBagnateDisputate": 1, "gareMisteDisputate": 2, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 5, "erroriFatali": 1 },
+    "bearman": { "gareDisputate": 38, "gareBagnateDisputate": 1, "gareMisteDisputate": 4, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 5, "erroriFatali": 1 },
+    "bortoleto": { "gareDisputate": 34, "gareBagnateDisputate": 0, "gareMisteDisputate": 4, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 4, "erroriFatali": 3 },
+    "sainz": { "gareDisputate": 240, "gareBagnateDisputate": 7, "gareMisteDisputate": 19, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 17, "erroriFatali": 7 },
+    "albon": { "gareDisputate": 138, "gareBagnateDisputate": 3, "gareMisteDisputate": 11, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 12, "erroriFatali": 1 },
+    "ocon": { "gareDisputate": 191, "gareBagnateDisputate": 7, "gareMisteDisputate": 15, "vittorieBagnato": 0, "vittorieMiste": 1, "erroriPilota": 5, "erroriFatali": 0 },
+    "hulkenberg": { "gareDisputate": 260, "gareBagnateDisputate": 5, "gareMisteDisputate": 22, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 12, "erroriFatali": 5 },
+    "alonso": { "gareDisputate": 437, "gareBagnateDisputate": 15, "gareMisteDisputate": 40, "vittorieBagnato": 1, "vittorieMiste": 3, "erroriPilota": 13, "erroriFatali": 6 },
+    "stroll": { "gareDisputate": 200, "gareBagnateDisputate": 5, "gareMisteDisputate": 15, "vittorieBagnato": 0, "vittorieMiste": 0, "erroriPilota": 18, "erroriFatali": 4 },
+    "bottas": { "gareDisputate": 257, "gareBagnateDisputate": 8, "gareMisteDisputate": 18, "vittorieBagnato": 1, "vittorieMiste": 0, "erroriPilota": 7, "erroriFatali": 3 },
+    "perez": { "gareDisputate": 292, "gareBagnateDisputate": 8, "gareMisteDisputate": 22, "vittorieBagnato": 1, "vittorieMiste": 1, "erroriPilota": 17, "erroriFatali": 4 }
+  }
+}

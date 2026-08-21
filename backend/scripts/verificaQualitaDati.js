@@ -1,5 +1,6 @@
 const dati = require("../data/dati-iniziali.json");
 const snapshotF1db = require("../data/f1db-v2026.11.0-derivato.json");
+const statisticheContesto = require("../data/statistiche-contesto.json");
 
 const errori = [];
 
@@ -74,6 +75,60 @@ for (const pilota of dati.piloti) {
     `Classifica pilota diversa da F1DB: ${pilota.slug}`,
   );
 }
+
+const slugStatistiche = Object.keys(statisticheContesto.piloti || {}).sort();
+const slugPiloti = dati.piloti.map((pilota) => pilota.slug).sort();
+richiedi(
+  uguali(slugStatistiche, slugPiloti),
+  "Statistiche di contesto incomplete rispetto ai piloti",
+);
+
+for (const pilota of dati.piloti) {
+  const valori = statisticheContesto.piloti[pilota.slug];
+  const campiInteri = [
+    "gareDisputate",
+    "gareBagnateDisputate",
+    "gareMisteDisputate",
+    "vittorieBagnato",
+    "vittorieMiste",
+    "erroriPilota",
+    "erroriFatali",
+  ];
+  richiedi(
+    valori && campiInteri.every((campo) => Number.isInteger(valori[campo]) && valori[campo] >= 0),
+    `Statistiche non valide: ${pilota.slug}`,
+  );
+  if (!valori) continue;
+  richiedi(
+    valori.vittorieBagnato <= valori.gareBagnateDisputate &&
+      valori.vittorieMiste <= valori.gareMisteDisputate &&
+      valori.gareBagnateDisputate + valori.gareMisteDisputate <=
+        valori.gareDisputate,
+    `Vittorie con pioggia incoerenti: ${pilota.slug}`,
+  );
+  richiedi(
+    valori.erroriFatali <= valori.erroriPilota &&
+      valori.erroriPilota <= valori.gareDisputate &&
+      (valori.erroriPilota === 0 || valori.erroriFatali < valori.erroriPilota),
+    `Percentuali di errore incoerenti: ${pilota.slug}`,
+  );
+}
+
+const aggiornamentiStatistiche =
+  statisticheContesto.metadati?.aggiornamentiApplicati || [];
+const ultimoGpStatistiche = statisticheContesto.metadati?.ultimoGpIncluso;
+richiedi(
+  /^\d{4}:[a-z0-9_-]+$/.test(ultimoGpStatistiche || "") &&
+    (aggiornamentiStatistiche.length
+      ? aggiornamentiStatistiche.at(-1) === ultimoGpStatistiche
+      : ultimoGpStatistiche === "2026:hungary") &&
+    new Set(aggiornamentiStatistiche).size ===
+      aggiornamentiStatistiche.length &&
+    statisticheContesto.metadati.fonti.every((fonte) =>
+      fonte.startsWith("https://"),
+    ),
+  "Metadati delle statistiche di contesto mancanti o incoerenti",
+);
 
 for (const scuderia of dati.scuderie) {
   const f1db = classificheScuderieF1db.get(scuderia.slug);

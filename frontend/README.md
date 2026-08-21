@@ -26,6 +26,13 @@ include anche la classifica previsionale. In produzione il frontend chiama
 `/api` sullo stesso dominio, così CloudFront può servire le risposte ripetute
 senza raggiungere ogni volta Render e MongoDB Atlas.
 
+Dalla release `1.8.0` le pagine di piloti e scuderie mostrano tre indicatori
+percentuali normalizzati: bravura sul bagnato, errori imputabili al pilota ed
+errori fatali o compromettenti. I conteggi grezzi restano interni. La pagina
+`/confronto` affianca due piloti o due scuderie riproponendo le schede complete
+dei profili singoli; usa gli endpoint dedicati `/api/v1/confronti/piloti/...`
+e `/api/v1/confronti/scuderie/...`.
+
 ## Avvio locale
 
 ```bash

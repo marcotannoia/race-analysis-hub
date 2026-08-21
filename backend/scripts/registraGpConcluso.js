@@ -16,6 +16,10 @@ const percorsoPredefinito = path.join(
   __dirname,
   "../data/aggiornamento-gp.json",
 );
+const percorsoStatisticheContesto = path.join(
+  __dirname,
+  "../data/statistiche-contesto.json",
+);
 const argomenti = process.argv.slice(2);
 const soloControllo = argomenti.includes("--controlla");
 const forzaPreparazione = argomenti.includes("--prepara");
@@ -44,6 +48,12 @@ function scriviJson(percorso, contenuto) {
   fs.writeFileSync(percorso, `${JSON.stringify(contenuto, null, 2)}\n`, "utf8");
 }
 
+function scriviJsonAtomico(percorso, contenuto) {
+  const percorsoTemporaneo = `${percorso}.${process.pid}.tmp`;
+  scriviJson(percorsoTemporaneo, contenuto);
+  fs.renameSync(percorsoTemporaneo, percorso);
+}
+
 function campoTestuale(valore) {
   return typeof valore === "string" ? valore.trim() : "";
 }
@@ -56,11 +66,17 @@ function verificaRisultatiPiloti(risultati) {
   const slugVisti = new Set();
   const formatoGara = /^(?:P\d+|DNF|DNS|DSQ|NC)$/i;
   const formatoQualifica = /^(?:Q\d+|DNS|DSQ|NC)$/i;
+  const gravitaErroreAmmesse = new Set([
+    "nessuno",
+    "non_fatale",
+    "fatale",
+  ]);
 
   risultati.forEach((risultato, indice) => {
     const slug = campoTestuale(risultato.pilotaSlug);
     const posizioneGara = campoTestuale(risultato.posizioneGara);
     const posizioneQualifica = campoTestuale(risultato.posizioneQualifica);
+    const errorePilota = campoTestuale(risultato.errorePilota);
 
     if (!slug || !posizioneGara || !posizioneQualifica) {
       throw new Error(
@@ -78,6 +94,18 @@ function verificaRisultatiPiloti(risultati) {
     if (!formatoQualifica.test(posizioneQualifica)) {
       throw new Error(
         `${slug}: posizioneQualifica non valida. Usa Q1, Q2, DNS, DSQ o NC`,
+      );
+    }
+
+    if (!gravitaErroreAmmesse.has(errorePilota)) {
+      throw new Error(
+        `${slug}: errorePilota non valido. Usa nessuno, non_fatale o fatale`,
+      );
+    }
+
+    if (posizioneGara.toUpperCase() === "DNS" && errorePilota !== "nessuno") {
+      throw new Error(
+        `${slug}: un pilota che non ha preso il via non può avere un errore di gara`,
       );
     }
 
@@ -308,6 +336,8 @@ function creaTemplate(garaCorrente, piloti, scuderie) {
     stagione: garaCorrente.stagione,
     garaConclusaSlug: garaCorrente.slug,
     conclusaIl: "",
+    condizioniGara: "",
+    fonteIndicatori: "",
     risultatiPiloti: [...piloti].sort(ordinaClassifica).map((pilota) => ({
       pilotaSlug: pilota.slug,
       posizioneGara: "",
@@ -316,6 +346,7 @@ function creaTemplate(garaCorrente, piloti, scuderie) {
       passoGara: "",
       gestioneGomme: "",
       affidabilita: "",
+      errorePilota: "",
     })),
     risultatiScuderie: [...scuderie].sort(ordinaClassifica).map((scuderia) => ({
       scuderiaSlug: scuderia.slug,
@@ -387,6 +418,23 @@ function verificaAggiornamento(aggiornamento, garaCorrente, piloti, scuderie) {
     throw new Error("Il campo conclusaIl non contiene una data valida");
   }
 
+  if (
+    !new Set(["asciutto", "misto", "bagnato"]).has(
+      aggiornamento.condizioniGara,
+    )
+  ) {
+    throw new Error(
+      "condizioniGara deve essere asciutto, misto o bagnato",
+    );
+  }
+
+  try {
+    const fonteIndicatori = new URL(aggiornamento.fonteIndicatori);
+    if (fonteIndicatori.protocol !== "https:") throw new Error();
+  } catch {
+    throw new Error("fonteIndicatori deve contenere un URL HTTPS verificabile");
+  }
+
   verificaRisultatiPiloti(aggiornamento.risultatiPiloti);
   verificaRisultatiScuderie(aggiornamento.risultatiScuderie);
   verificaClassifica(
@@ -429,6 +477,71 @@ function verificaAggiornamento(aggiornamento, garaCorrente, piloti, scuderie) {
       `Risultati scuderie: slug sconosciuti ${scuderieSconosciute.join(", ")}`,
     );
   }
+}
+
+function aggiornaStatisticheContesto(
+  aggiornamento,
+  garaCorrente,
+  piloti,
+  risultatiPerPilota,
+) {
+  const statistiche = leggiJson(percorsoStatisticheContesto);
+  const identificatore = `${aggiornamento.stagione}:${garaCorrente.slug}`;
+  const applicati = statistiche.metadati.aggiornamentiApplicati || [];
+
+  if (applicati.includes(identificatore)) return false;
+
+  for (const pilota of piloti) {
+    const risultato = risultatiPerPilota.get(pilota.slug);
+    const valori = statistiche.piloti[pilota.slug];
+    if (!valori) {
+      throw new Error(`Statistiche cumulative mancanti per ${pilota.slug}`);
+    }
+
+    const haPresoIlVia = risultato.posizioneGara.toUpperCase() !== "DNS";
+    if (haPresoIlVia) valori.gareDisputate += 1;
+
+    if (haPresoIlVia && aggiornamento.condizioniGara === "bagnato") {
+      valori.gareBagnateDisputate += 1;
+    }
+    if (haPresoIlVia && aggiornamento.condizioniGara === "misto") {
+      valori.gareMisteDisputate += 1;
+    }
+
+    if (risultato.posizioneGara.toUpperCase() === "P1") {
+      if (aggiornamento.condizioniGara === "bagnato") {
+        valori.vittorieBagnato += 1;
+      }
+      if (aggiornamento.condizioniGara === "misto") {
+        valori.vittorieMiste += 1;
+      }
+    }
+
+    if (risultato.errorePilota !== "nessuno") valori.erroriPilota += 1;
+    if (risultato.errorePilota === "fatale") valori.erroriFatali += 1;
+
+    if (valori.erroriFatali > valori.erroriPilota) {
+      throw new Error(`Errori fatali incoerenti per ${pilota.slug}`);
+    }
+  }
+
+  statistiche.metadati.aggiornatoAl = aggiornamento.conclusaIl
+    ? new Date(aggiornamento.conclusaIl).toISOString().slice(0, 10)
+    : new Date().toISOString().slice(0, 10);
+  statistiche.metadati.ultimoGpIncluso = identificatore;
+  statistiche.metadati.descrizione =
+    `Statistiche cumulative fino a ${garaCorrente.nome} ` +
+    `${aggiornamento.stagione} incluso.`;
+  statistiche.metadati.aggiornamentiApplicati = [
+    ...applicati,
+    identificatore,
+  ];
+  if (!statistiche.metadati.fonti.includes(aggiornamento.fonteIndicatori)) {
+    statistiche.metadati.fonti.push(aggiornamento.fonteIndicatori);
+  }
+
+  scriviJsonAtomico(percorsoStatisticheContesto, statistiche);
+  return true;
 }
 
 async function databaseSupportaTransazioni() {
@@ -622,6 +735,12 @@ async function registraGpConcluso() {
       await eseguiScritture();
     }
 
+    const statisticheAggiornate = aggiornaStatisticheContesto(
+      aggiornamento,
+      garaCorrente,
+      piloti,
+      risultatiPerPilota,
+    );
     const percorsoArchivio = archiviaAggiornamento(
       aggiornamento,
       garaCorrente,
@@ -629,6 +748,11 @@ async function registraGpConcluso() {
 
     console.log(
       `Archiviati ${analisiPiloti.length} piloti e ${analisiScuderie.length} scuderie.`,
+    );
+    console.log(
+      statisticheAggiornate
+        ? "Indicatori bagnato/errori aggiornati senza azzerare lo storico."
+        : "Indicatori già aggiornati per questo GP: nessun duplicato creato.",
     );
     console.log(
       garaSuccessiva
@@ -649,6 +773,7 @@ if (require.main === module) {
 }
 
 module.exports = {
+  aggiornaStatisticheContesto,
   creaRisultatiScuderie,
   verificaAggiornamento,
 };

@@ -3,6 +3,7 @@ import { caricaPilota } from '../services/api.js'
 import { Caricamento, ErrorePagina } from '../components/StatoPagina.jsx'
 import IntestazioneDettaglio from '../components/IntestazioneDettaglio.jsx'
 import AnalisiCircuito from '../components/AnalisiCircuito.jsx'
+import IndicatoriProfilo from '../components/IndicatoriProfilo.jsx'
 import { useLingua } from '../i18n/contestoLingua.js'
 
 function PilotaPage({ slug }) {
@@ -53,6 +54,7 @@ function PilotaPage({ slug }) {
       />
 
       <div className="contenitore dettaglio-contenuto">
+        <IndicatoriProfilo indicatori={dati.indicatori} />
         <AnalisiCircuito
           analisi={dati.analisi}
           andamentoStagioneCorrente={dati.andamentoStagioneCorrente}

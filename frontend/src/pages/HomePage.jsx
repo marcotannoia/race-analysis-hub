@@ -152,6 +152,18 @@ function HomePage() {
           )}
         </div>
 
+        <section className="invito-confronto">
+          <div>
+            <span className="sovratitolo">{t.confrontoDiretto}</span>
+            <h2>{t.confrontaTitolo}</h2>
+            <p>{t.confrontaDescrizione}</p>
+          </div>
+          <Collegamento a="/confronto" className="link-confronto">
+            {t.apriConfronto}
+            <span aria-hidden="true">→</span>
+          </Collegamento>
+        </section>
+
         <ClassificaPrevisionale previsioni={dati.classificaPrevisionale} />
       </div>
     </section>

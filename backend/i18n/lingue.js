@@ -11,27 +11,27 @@ const LINGUE_SUPPORTATE = Object.freeze({
 
 const TESTI_API = Object.freeze({
   it: {
-    descrizione: "API pubblica di sola lettura per il Gran Premio attuale, i piloti, le scuderie e la classifica previsionale",
+    descrizione: "API pubblica di sola lettura per il Gran Premio attuale, piloti, scuderie, indicatori, confronti e classifica previsionale",
     utilizzo: "Aggiungere ?lingua=it, en, fr, pt, es o de agli endpoint pubblici",
   },
   en: {
-    descrizione: "Public read-only API for the current Grand Prix, drivers, teams and prediction ranking",
+    descrizione: "Public read-only API for the current Grand Prix, drivers, teams, indicators, comparisons and prediction ranking",
     utilizzo: "Add ?lingua=it, en, fr, pt, es or de to public endpoints",
   },
   fr: {
-    descrizione: "API publique en lecture seule pour le Grand Prix actuel, les pilotes, les écuries et le classement prévisionnel",
+    descrizione: "API publique en lecture seule pour le Grand Prix actuel, les pilotes, les écuries, les indicateurs, les comparaisons et le classement prévisionnel",
     utilizzo: "Ajouter ?lingua=it, en, fr, pt, es ou de aux endpoints publics",
   },
   pt: {
-    descrizione: "API pública só de leitura para o Grande Prémio atual, pilotos, equipas e classificação prevista",
+    descrizione: "API pública só de leitura para o Grande Prémio atual, pilotos, equipas, indicadores, comparações e classificação prevista",
     utilizzo: "Adicionar ?lingua=it, en, fr, pt, es ou de aos endpoints públicos",
   },
   es: {
-    descrizione: "API pública de solo lectura para el Gran Premio actual, pilotos, equipos y clasificación prevista",
+    descrizione: "API pública de solo lectura para el Gran Premio actual, pilotos, equipos, indicadores, comparaciones y clasificación prevista",
     utilizzo: "Añadir ?lingua=it, en, fr, pt, es o de a los endpoints públicos",
   },
   de: {
-    descrizione: "Öffentliche schreibgeschützte API für den aktuellen Grand Prix, Fahrer, Teams und die Prognoserangliste",
+    descrizione: "Öffentliche schreibgeschützte API für den aktuellen Grand Prix, Fahrer, Teams, Kennzahlen, Vergleiche und die Prognoserangliste",
     utilizzo: "?lingua=it, en, fr, pt, es oder de an öffentliche Endpunkte anhängen",
   },
 });
@@ -45,6 +45,7 @@ const MESSAGGI_ERRORE = Object.freeze({
       "Il Gran Premio attuale non è ancora stato pubblicato",
     PILOTA_NON_TROVATO: "Il pilota richiesto non esiste",
     SCUDERIA_NON_TROVATA: "La scuderia richiesta non esiste",
+    CONFRONTO_IDENTICO: "Seleziona due profili diversi per il confronto",
     GARA_NON_ACCESSIBILE:
       "È disponibile esclusivamente il Gran Premio attuale",
     ANALISI_NON_TROVATA: "L'analisi richiesta non è disponibile",
@@ -69,6 +70,7 @@ const MESSAGGI_ERRORE = Object.freeze({
       "The current Grand Prix has not been published yet",
     PILOTA_NON_TROVATO: "The requested driver does not exist",
     SCUDERIA_NON_TROVATA: "The requested team does not exist",
+    CONFRONTO_IDENTICO: "Select two different profiles to compare",
     GARA_NON_ACCESSIBILE: "Only the current Grand Prix is available",
     ANALISI_NON_TROVATA: "The requested analysis is not available",
     LINGUA_NON_SUPPORTATA: ({ lingua }) =>
@@ -92,6 +94,7 @@ const MESSAGGI_ERRORE = Object.freeze({
       "Le Grand Prix actuel n'a pas encore été publié",
     PILOTA_NON_TROVATO: "Le pilote demandé n'existe pas",
     SCUDERIA_NON_TROVATA: "L'écurie demandée n'existe pas",
+    CONFRONTO_IDENTICO: "Sélectionnez deux profils différents à comparer",
     GARA_NON_ACCESSIBILE: "Seul le Grand Prix actuel est disponible",
     ANALISI_NON_TROVATA: "L'analyse demandée n'est pas disponible",
     LINGUA_NON_SUPPORTATA: ({ lingua }) =>
@@ -115,6 +118,7 @@ const MESSAGGI_ERRORE = Object.freeze({
       "O Grande Prémio atual ainda não foi publicado",
     PILOTA_NON_TROVATO: "O piloto solicitado não existe",
     SCUDERIA_NON_TROVATA: "A equipa solicitada não existe",
+    CONFRONTO_IDENTICO: "Selecione dois perfis diferentes para comparar",
     GARA_NON_ACCESSIBILE: "Apenas o Grande Prémio atual está disponível",
     ANALISI_NON_TROVATA: "A análise solicitada não está disponível",
     LINGUA_NON_SUPPORTATA: ({ lingua }) =>
@@ -138,6 +142,7 @@ const MESSAGGI_ERRORE = Object.freeze({
       "El Gran Premio actual aún no se ha publicado",
     PILOTA_NON_TROVATO: "El piloto solicitado no existe",
     SCUDERIA_NON_TROVATA: "El equipo solicitado no existe",
+    CONFRONTO_IDENTICO: "Selecciona dos perfiles diferentes para comparar",
     GARA_NON_ACCESSIBILE: "Solo está disponible el Gran Premio actual",
     ANALISI_NON_TROVATA: "El análisis solicitado no está disponible",
     LINGUA_NON_SUPPORTATA: ({ lingua }) =>
@@ -161,6 +166,7 @@ const MESSAGGI_ERRORE = Object.freeze({
       "Der aktuelle Grand Prix wurde noch nicht veröffentlicht",
     PILOTA_NON_TROVATO: "Der angeforderte Fahrer existiert nicht",
     SCUDERIA_NON_TROVATA: "Das angeforderte Team existiert nicht",
+    CONFRONTO_IDENTICO: "Wähle zwei verschiedene Profile für den Vergleich aus",
     GARA_NON_ACCESSIBILE: "Es ist nur der aktuelle Grand Prix verfügbar",
     ANALISI_NON_TROVATA: "Die angeforderte Analyse ist nicht verfügbar",
     LINGUA_NON_SUPPORTATA: ({ lingua }) =>

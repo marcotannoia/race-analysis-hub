@@ -3,6 +3,8 @@
   "stagione": 2026,
   "garaConclusaSlug": "olanda-zandvoort",
   "conclusaIl": "",
+  "condizioniGara": "",
+  "fonteIndicatori": "",
   "risultatiPiloti": [
     {
       "pilotaSlug": "antonelli",
@@ -11,7 +13,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "hamilton",
@@ -20,7 +23,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "russell",
@@ -29,7 +33,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "leclerc",
@@ -38,7 +43,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "norris",
@@ -47,7 +53,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "max_verstappen",
@@ -56,7 +63,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "piastri",
@@ -65,7 +73,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "hadjar",
@@ -74,7 +83,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "lawson",
@@ -83,7 +93,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "gasly",
@@ -92,7 +103,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "arvid_lindblad",
@@ -101,7 +113,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "colapinto",
@@ -110,7 +123,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "bearman",
@@ -119,7 +133,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "bortoleto",
@@ -128,7 +143,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "sainz",
@@ -137,7 +153,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "albon",
@@ -146,7 +163,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "ocon",
@@ -155,7 +173,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "hulkenberg",
@@ -164,7 +183,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "alonso",
@@ -173,7 +193,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "stroll",
@@ -182,7 +203,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "bottas",
@@ -191,7 +213,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     },
     {
       "pilotaSlug": "perez",
@@ -200,7 +223,8 @@
       "notaRisultato": "",
       "passoGara": "",
       "gestioneGomme": "",
-      "affidabilita": ""
+      "affidabilita": "",
+      "errorePilota": ""
     }
   ],
   "risultatiScuderie": [

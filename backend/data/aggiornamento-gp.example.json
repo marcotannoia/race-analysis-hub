@@ -3,6 +3,8 @@
   "stagione": 2026,
   "garaConclusaSlug": "olanda-zandvoort",
   "conclusaIl": "2026-08-23T15:00:00.000Z",
+  "condizioniGara": "misto",
+  "fonteIndicatori": "https://www.formula1.com/en/latest",
   "risultatiPiloti": [
     {
       "pilotaSlug": "antonelli",
@@ -11,7 +13,8 @@
       "notaRisultato": "Risultato coerente con il passo mostrato per tutto il fine settimana.",
       "passoGara": "Ritmo stabile nei long run e perdita contenuta rispetto al vincitore.",
       "gestioneGomme": "Buona conservazione dell'anteriore sinistra nello stint centrale.",
-      "affidabilita": "Nessun problema tecnico rilevante."
+      "affidabilita": "Nessun problema tecnico rilevante.",
+      "errorePilota": "nessuno"
     }
   ],
   "risultatiScuderie": [

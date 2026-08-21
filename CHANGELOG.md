@@ -1,6 +1,26 @@
 # Changelog
 
-## Non rilasciato
+## 1.8.0 — 2026-08-21
+
+### Aggiunto
+
+- percentuale di bravura sul bagnato normalizzata sulle gare bagnate o miste
+  effettivamente disputate;
+- percentuale degli errori del pilota e degli errori fatali, entrambe rapportate
+  a tutte le partenze in carriera;
+- aggregato ponderato degli stessi indicatori per ogni scuderia;
+- confronto affiancato tra due piloti o due scuderie, disponibile nel frontend
+  e tramite due nuovi endpoint API;
+- aggiornamento incrementale, verificato e idempotente degli indicatori nel
+  comando `npm run gp`;
+- schemi Swagger, test, traduzioni e guide operative per tutte le nuove funzioni.
+
+### Compatibilità
+
+- rotte e campi esistenti restano invariati; i nuovi campi sono aggiuntivi;
+- i conteggi grezzi restano interni e le API espongono soltanto percentuali;
+- MongoDB non richiede una migrazione, perché gli indicatori sono calcolati da
+  un dataset versionato insieme al codice.
 
 ### Sicurezza
 

@@ -15,16 +15,27 @@ Se `backend/data/aggiornamento-gp.json` non esiste, il comando lo genera per il
 GP attualmente visibile. Il file contiene già tutti i piloti, tutte le scuderie
 e le classifiche correnti. Bisogna quindi:
 
-1. inserire posizione di gara e qualifica per tutti i piloti;
-2. aggiornare le due classifiche complete;
-3. aggiungere, quando disponibili, note, passo gara, gomme e affidabilità;
-4. impostare `"pronto": true`;
-5. rilanciare `npm run gp`.
+1. indicare `condizioniGara` con `asciutto`, `misto` o `bagnato`;
+2. inserire in `fonteIndicatori` un URL HTTPS che documenti gara e incidenti;
+3. inserire posizione di gara e qualifica per tutti i piloti;
+4. compilare `errorePilota` per tutti con `nessuno`, `non_fatale` o `fatale`;
+5. aggiornare le due classifiche complete;
+6. aggiungere, quando disponibili, note, passo gara, gomme e affidabilità;
+7. impostare `"pronto": true`;
+8. rilanciare `npm run gp`.
 
 Lo script controlla che nessun pilota o elemento della classifica sia assente,
 costruisce automaticamente i risultati delle scuderie, registra lo storico,
 aggiorna le classifiche, chiude il GP corrente e pubblica il successivo in base
-all'ordine del calendario.
+all'ordine del calendario. Aggiorna inoltre
+`backend/data/statistiche-contesto.json` in modo cumulativo e idempotente: un
+GP già applicato non può incrementare due volte percentuali e conteggi.
+
+`misto` richiede una parte considerevole di gara su pista bagnata e una parte
+considerevole dopo che la pioggia è cessata; poche gocce senza effetto sulle
+condizioni di gara restano `asciutto`. Un errore `fatale` termina la gara oppure
+ne compromette definitivamente il risultato. Le percentuali generali e fatali
+usano entrambe tutte le partenze come denominatore.
 
 Prima di scrivere nel database si può eseguire un controllo completo:
 

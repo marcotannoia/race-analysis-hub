@@ -152,3 +152,40 @@ export async function caricaScuderia(slug, lingua) {
       dati.andamentoStagioneCorrente ?? dati.andamentoUltimoAnno,
   }
 }
+
+function adattaSchedaPilota(scheda) {
+  return {
+    ...scheda,
+    pilota: adattaPilota(scheda.pilota),
+    analisi: adattaAnalisi(scheda.analisi),
+    andamentoStagioneCorrente:
+      scheda.andamentoStagioneCorrente ?? scheda.andamentoUltimoAnno,
+  }
+}
+
+function adattaSchedaScuderia(scheda) {
+  return {
+    ...scheda,
+    scuderia: adattaScuderia(scheda.scuderia),
+    piloti: scheda.piloti.map(adattaPilota),
+    analisi: adattaAnalisi(scheda.analisi),
+    andamentoStagioneCorrente:
+      scheda.andamentoStagioneCorrente ?? scheda.andamentoUltimoAnno,
+  }
+}
+
+export async function caricaConfrontoPiloti(primoSlug, secondoSlug, lingua) {
+  const dati = await richiesta(
+    `/api/v1/confronti/piloti/${encodeURIComponent(primoSlug)}/${encodeURIComponent(secondoSlug)}`,
+    lingua,
+  )
+  return { ...dati, elementi: dati.elementi.map(adattaSchedaPilota) }
+}
+
+export async function caricaConfrontoScuderie(primoSlug, secondoSlug, lingua) {
+  const dati = await richiesta(
+    `/api/v1/confronti/scuderie/${encodeURIComponent(primoSlug)}/${encodeURIComponent(secondoSlug)}`,
+    lingua,
+  )
+  return { ...dati, elementi: dati.elementi.map(adattaSchedaScuderia) }
+}

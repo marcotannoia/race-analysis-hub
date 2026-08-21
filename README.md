@@ -7,7 +7,7 @@ Il progetto utilizza React e Vite per il frontend, Node.js ed Express per le
 API e MongoDB per la persistenza dei dati. Le API pubbliche sono anonime, di
 sola lettura e documentate con Swagger.
 
-La versione corrente del progetto e dell'API è `1.7.0`.
+La versione corrente del progetto e dell'API è `1.8.0`.
 
 La parte finale della landing page mostra una classifica previsionale dei
 piloti per il solo Gran Premio attuale. Il modello combina risultati 2026,
@@ -79,6 +79,35 @@ Gli stessi oggetti brevi sono riutilizzati nelle analisi, nelle classifiche e
 nella classifica previsionale, così il significato dei campi resta uniforme in
 tutta l'API.
 
+## Indicatori percentuali e confronti
+
+Le schede dei piloti espongono tre indicatori senza mostrare i conteggi grezzi:
+
+- `bravuraBagnatoPercentuale`: vittorie nei GP bagnati o misti divise per i GP
+  di quel tipo effettivamente disputati;
+- `erroriPilotaPercentuale`: gare con un errore documentato del pilota divise
+  per tutte le sue partenze;
+- `erroriFataliPercentuale`: gare terminate o definitivamente compromesse da
+  un errore del pilota, ancora divise per tutte le partenze e non per il numero
+  di errori; sui profili pubblicati resta inferiore alla percentuale generale.
+
+Per le scuderie gli stessi indicatori sono calcolati aggregando e ponderando le
+carriere dei piloti attuali. Questo evita di confrontare direttamente storie
+societarie e denominazioni non equivalenti. I valori iniziali sono aggiornati
+al GP d'Ungheria 2026; `npm run gp` li incrementa dopo ogni nuovo Gran Premio
+senza azzerare lo storico.
+
+Il frontend offre una pagina `/confronto` per affiancare due piloti o due
+scuderie. Le API equivalenti sono:
+
+```text
+GET /api/v1/confronti/piloti/{primoPilotaSlug}/{secondoPilotaSlug}
+GET /api/v1/confronti/scuderie/{primaScuderiaSlug}/{secondaScuderiaSlug}
+```
+
+Ogni elemento del confronto contiene le stesse informazioni della scheda
+singola: profilo, classifica, indicatori, analisi del GP e andamento stagionale.
+
 ## Avvio locale
 
 Installare le dipendenze e avviare backend e frontend in due terminali:
@@ -135,6 +164,12 @@ I colori delle scuderie sono verificati sulla pagina ufficiale
 alle nazionalità seguono lo standard
 [ISO 3166-1](https://www.iso.org/iso-3166-country-codes.html); le abbreviazioni
 delle scuderie sono identificatori editoriali stabili di Race Analysis Hub.
+
+Le partenze in carriera e i risultati usati dagli indicatori derivano dallo
+stesso snapshot F1DB. La classificazione delle gare con pioggia è editoriale e
+documentata in [`NOTICE.md`](NOTICE.md); un GP è `misto` soltanto quando presenta
+fasi significative sia bagnate sia asciutte. Gli errori sono conteggiati con un
+criterio conservativo basato su uscite individuali e penalità registrate.
 
 ## Classifica previsionale
 

@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage.jsx'
 import PilotaPage from './pages/PilotaPage.jsx'
 import ScuderiaPage from './pages/ScuderiaPage.jsx'
 import PaginaNonTrovata from './pages/PaginaNonTrovata.jsx'
+import ConfrontoPage from './pages/ConfrontoPage.jsx'
 import usePercorso from './hooks/usePercorso.js'
 import SelettoreLingua from './components/SelettoreLingua.jsx'
 import { FornitoreLingua } from './i18n/LinguaContext.jsx'
@@ -21,6 +22,8 @@ function ContenutoApp() {
     pagina = <PilotaPage slug={decodeURIComponent(pilota[1])} />
   } else if (scuderia) {
     pagina = <ScuderiaPage slug={decodeURIComponent(scuderia[1])} />
+  } else if (percorso === '/confronto') {
+    pagina = <ConfrontoPage />
   }
 
   return (

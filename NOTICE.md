@@ -56,6 +56,38 @@ valutazioni editoriali su pista, vettura, gomme, affidabilità e aggiornamenti
 tecnici. L'indice è una stima soggetta a errore, non un risultato ufficiale né
 una garanzia sulla prestazione futura.
 
+## Indicatori bagnato ed errori
+
+Le partenze in carriera, i risultati e gli stati di ritiro usati per gli
+indicatori percentuali derivano da F1DB `v2026.11.0`. Le gare con pioggia fino
+al 2025 sono state ricontrollate usando anche l'elenco storico pubblicato da
+Tudo Sobre Fórmula 1:
+
+- https://www.tudosobreformula1.com.br/corridas-com-pista-molhada-ou-%C3%BAmida
+
+Le condizioni miste e il GP del Canada 2026 sono verificati sui resoconti gara
+di Formula 1. Race Analysis Hub considera `mista` una gara con fasi
+significative sia su pista bagnata sia su pista asciutta; una pioggia lieve che
+non modifica sostanzialmente la pista non è sufficiente.
+
+Le penalità non fatali del Canada 2026 sono state ricontrollate anche nel
+resoconto ufficiale FIA:
+
+- https://www.fia.com/news/f1-antonelli-wins-thrilling-canadian-grand-prix-ahead-hamilton-and-verstappen-russell-retires
+
+La percentuale di bravura sul bagnato è il rapporto tra vittorie e gare
+bagnate/miste effettivamente disputate. Non è una valutazione soggettiva né usa
+il numero assoluto di vittorie. Le percentuali di errore adottano un criterio
+conservativo: uscite individuali documentate e penalità di gara registrate. Gli
+errori fatali sono un sottoinsieme e vengono divisi per tutte le partenze, non
+per gli errori complessivi; sui profili pubblicati la relativa percentuale resta
+inferiore a quella generale. I conteggi di supporto restano interni; l'API
+espone soltanto le tre percentuali.
+
+Per una scuderia le percentuali rappresentano l'aggregato ponderato delle
+carriere dei piloti attualmente associati alla squadra, non l'intera storia
+sportiva delle precedenti denominazioni del costruttore.
+
 ## Traduzioni
 
 Le versioni inglese, francese, portoghese europeo, spagnola e tedesca dei contenuti
