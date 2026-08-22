@@ -7,7 +7,7 @@ const {
   valutaCompatibilitaVettura,
 } = require("../services/classificaPrevisionale");
 
-test("i pesi previsionali sommano a cento e privilegiano vettura e aggiornamenti", () => {
+test("i pesi previsionali sommano a cento e valorizzano gli ultimi tre GP", () => {
   assert.equal(
     Object.values(PESI).reduce((totale, peso) => totale + peso, 0),
     100,
@@ -15,7 +15,8 @@ test("i pesi previsionali sommano a cento e privilegiano vettura e aggiornamenti
   assert.ok(
     PESI.compatibilitaVetturaCircuito > PESI.storicoPersonale,
   );
-  assert.ok(PESI.aggiornamentiTecnici > PESI.passoGaraRecente);
+  assert.equal(PESI.aggiornamentiTecnici, PESI.passoGaraRecente);
+  assert.equal(PESI.passoGaraRecente, 12);
   assert.equal(PESI.scuderia2026, Math.max(...Object.values(PESI)));
 });
 
@@ -39,11 +40,23 @@ test("gli aggiornamenti contano solo se reali e pertinenti al circuito", () => {
   const inefficace = valutaAggiornamento(
     "L'aggiornamento non ha portato vantaggi reali nelle prove.",
   );
+  const solaAffidabilita = valutaAggiornamento(
+    "Intervento esclusivamente di affidabilità che non cerca un vantaggio aerodinamico.",
+  );
+  const mirato = valutaAggiornamento(
+    "La squadra ha confermato per Zandvoort un intervento mirato direttamente utile nelle curve veloci.",
+  );
+  const ampio = valutaAggiornamento(
+    "La squadra ha confermato per Zandvoort un ampio pacchetto direttamente utile nelle curve veloci.",
+  );
 
   assert.equal(assente.valore, 50);
   assert.ok(annunciato.valore > assente.valore);
   assert.ok(confermato.valore > annunciato.valore);
   assert.ok(inefficace.valore < assente.valore);
+  assert.equal(solaAffidabilita.valore, assente.valore);
+  assert.match(solaAffidabilita.stato, /affidabilità/i);
+  assert.ok(ampio.valore > mirato.valore);
 });
 
 test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
@@ -150,6 +163,7 @@ test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
   );
   assert.equal(risultato.classifica[0].scuderia.colore, "#112233");
   assert.equal(risultato.classifica[0].fattori.length, 10);
+  assert.equal(risultato.modello, "statistico-editoriale-v2");
   assert.match(risultato.avvertenza, /possono contenere errori/i);
   assert.equal(risultato.aggiornatoIl, "2026-08-01T12:00:00.000Z");
 });

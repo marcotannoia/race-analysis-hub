@@ -3,14 +3,14 @@ const { testiPrevisione } = require("../i18n/previsioni");
 const { valoreLocalizzato } = require("../i18n/lingue");
 
 const PESI = Object.freeze({
-  andamento2026: 20,
-  compatibilitaVetturaCircuito: 18,
+  andamento2026: 18,
+  compatibilitaVetturaCircuito: 17,
   aggiornamentiTecnici: 12,
-  confidenzaPilotaCircuito: 7,
-  qualifica2026: 8,
-  scuderia2026: 26,
-  storicoPersonale: 3,
-  passoGaraRecente: 2,
+  confidenzaPilotaCircuito: 5,
+  qualifica2026: 7,
+  scuderia2026: 23,
+  storicoPersonale: 2,
+  passoGaraRecente: 12,
   gestioneGomme: 2,
   affidabilitaERischi: 2,
 });
@@ -23,7 +23,7 @@ const NOMI_FATTORI = Object.freeze({
   qualifica2026: "Qualifica 2026",
   scuderia2026: "Andamento scuderia 2026",
   storicoPersonale: "Storico personale",
-  passoGaraRecente: "Passo gara recente",
+  passoGaraRecente: "Andamento negli ultimi 3 GP",
   gestioneGomme: "Gestione gomme",
   affidabilitaERischi: "Affidabilità e rischi",
 });
@@ -203,6 +203,22 @@ function valutaAggiornamento(testoOriginale, lingua = "it") {
     };
   }
 
+  if (
+    /(?:solo|esclusivamente|puramente).*affidabilit|intervento.*affidabilit/.test(
+      testo,
+    ) &&
+    /non (?:cerca|produce|introduce|offre).*(?:vantaggio|prestazion|carico aerodinamico)/.test(
+      testo,
+    )
+  ) {
+    return {
+      valore: 50,
+      evidenza: 1,
+      stato: testi.stati.soloAffidabilita,
+      nota: testi.note.soloAffidabilita,
+    };
+  }
+
   if (/non (?:ha|hanno) (?:portato|prodotto).*vantagg|nessun miglioramento reale/.test(testo)) {
     return {
       valore: 35,
@@ -243,13 +259,36 @@ function valutaAggiornamento(testoOriginale, lingua = "it") {
   }
 
   let pertinenza = 0.45;
-  if (/direttamente util|particolarmente util|specific[oa].*(?:circuito|gran premio)/.test(testo)) {
+  if (
+    /direttamente (?:util|pertinent)|particolarmente util|specific[oa].*(?:circuito|gran premio)/.test(
+      testo,
+    )
+  ) {
     pertinenza = 0.9;
   } else if (/puo essere utile|sarebber[oa].*util|sarebbe utile|utile perche/.test(testo)) {
     pertinenza = 0.65;
   }
 
-  const valore = limita(50 + 50 * evidenza * pertinenza, 35, 90);
+  let ampiezza = 0.8;
+  if (
+    /ampio pacchetto|pacchetto esteso|pacchetto (?:di|su) (?:cinque|otto)|(?:cinque|otto) (?:aree|interventi)/.test(
+      testo,
+    )
+  ) {
+    ampiezza = 1;
+  } else if (
+    /intervento mirato|aggiornamento circoscritto|modifica circoscritta|un solo componente/.test(
+      testo,
+    )
+  ) {
+    ampiezza = 0.6;
+  }
+
+  const valore = limita(
+    50 + 50 * evidenza * pertinenza * ampiezza,
+    35,
+    90,
+  );
   return {
     valore,
     evidenza,
@@ -421,7 +460,7 @@ function creaClassificaPrevisionale({
       nome: valoreLocalizzato(gara, "nome", lingua),
       circuito: valoreLocalizzato(gara, "circuito", lingua),
     },
-    modello: "statistico-editoriale-v1",
+    modello: "statistico-editoriale-v2",
     avvertenza: testi.avvertenza,
     pesi: Object.entries(PESI).map(([chiave, pesoPercentuale]) => ({
       chiave,

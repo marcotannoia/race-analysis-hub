@@ -21,14 +21,14 @@ const parametroSlugConfronto = (nome, descrizione, esempio) => ({
 });
 
 const esempioPesiPrevisionali = [
-  ["andamento2026", "Andamento 2026", 20],
-  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 18],
+  ["andamento2026", "Andamento 2026", 18],
+  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 17],
   ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 12],
-  ["confidenzaPilotaCircuito", "Confidenza pilota-circuito", 7],
-  ["qualifica2026", "Qualifica 2026", 8],
-  ["scuderia2026", "Andamento scuderia 2026", 26],
-  ["storicoPersonale", "Storico personale", 3],
-  ["passoGaraRecente", "Passo gara recente", 2],
+  ["confidenzaPilotaCircuito", "Confidenza pilota-circuito", 5],
+  ["qualifica2026", "Qualifica 2026", 7],
+  ["scuderia2026", "Andamento scuderia 2026", 23],
+  ["storicoPersonale", "Storico personale", 2],
+  ["passoGaraRecente", "Andamento negli ultimi 3 GP", 12],
   ["gestioneGomme", "Gestione gomme", 2],
   ["affidabilitaERischi", "Affidabilità e rischi", 2],
 ].map(([chiave, nome, pesoPercentuale]) => ({
@@ -1677,7 +1677,7 @@ const documentoOpenApi = {
           },
           modello: {
             type: "string",
-            const: "statistico-editoriale-v1",
+            const: "statistico-editoriale-v2",
           },
           avvertenza: {
             type: "string",

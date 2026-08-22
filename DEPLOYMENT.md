@@ -108,7 +108,7 @@ distribuito automaticamente dal push, attendere che la risposta includa
 
 Per la release multilingua attendere inoltre che
 `GET /api/v1/lingue` e `GET /api/v1/home?lingua=en` rispondano dalla versione
-backend `1.8.0`. Soltanto dopo si può pubblicare il frontend: in caso contrario
+backend `1.9.0`. Soltanto dopo si può pubblicare il frontend: in caso contrario
 il selettore cambierebbe l'interfaccia ma riceverebbe ancora testi italiani.
 `AZURE_TRANSLATOR_KEY` non deve essere configurata su Render o inclusa nella
 build Vite: serve soltanto allo script amministrativo locale.
@@ -142,11 +142,13 @@ invalidazioni CloudFront.
   l'endpoint `/api/v1/health`;
 - usare uno store condiviso per il rate limit se il backend avrà più istanze.
 
-Per la release `1.8.0`, verificare inoltre che:
+Per la release `1.9.0`, verificare inoltre che:
 
-- `GET /api/v1` restituisca `"versione": "1.8.0"`;
+- `GET /api/v1` restituisca `"versione": "1.9.0"`;
 - `GET /api/v1/home` includa `classificaPrevisionale`, così la landing usi una
   sola chiamata;
+- la classifica usi il modello `statistico-editoriale-v2`, con il 12% assegnato
+  sia agli ultimi tre GP sia agli aggiornamenti tecnici pertinenti;
 - `GET /api/v1/lingue` elenchi esattamente le sei lingue;
 - `GET /api/v1/gare/attuale?lingua=de` restituisca `"lingua": "de"` e
   l'header `Content-Language: de`;

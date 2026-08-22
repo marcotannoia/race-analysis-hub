@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.9.0 — 2026-08-22
+
+### Modificato
+
+- aumentato dal 2% al 12% il peso dell'andamento negli ultimi tre Gran Premi;
+- mantenuto al 12% il peso degli aggiornamenti tecnici, ora corretto anche in
+  base all'ampiezza del pacchetto;
+- escluso ogni bonus prestazionale per interventi esclusivamente di
+  affidabilità;
+- ribilanciati i pesi stagionali, della compatibilità con il circuito, della
+  qualifica e dello storico, mantenendo il totale al 100%;
+- aggiornato il modello pubblico a `statistico-editoriale-v2`.
+
+### Dati
+
+- aggiornati gli interventi dichiarati per il Gran Premio d'Olanda 2026 usando
+  il documento FIA del 21 agosto;
+- rigenerate e verificate le schede in tutte le sei lingue supportate.
+
 ## 1.8.0 — 2026-08-21
 
 ### Aggiunto

@@ -7,12 +7,12 @@ Il progetto utilizza React e Vite per il frontend, Node.js ed Express per le
 API e MongoDB per la persistenza dei dati. Le API pubbliche sono anonime, di
 sola lettura e documentate con Swagger.
 
-La versione corrente del progetto e dell'API è `1.8.0`.
+La versione corrente del progetto e dell'API è `1.9.0`.
 
 La parte finale della landing page mostra una classifica previsionale dei
 piloti per il solo Gran Premio attuale. Il modello combina risultati 2026,
-compatibilità con la pista, valutazioni tecniche e contenuti editoriali già
-presenti nel progetto.
+andamento degli ultimi tre GP, compatibilità con la pista, aggiornamenti
+tecnici confermati e contenuti editoriali già presenti nel progetto.
 
 ## Collegamenti
 
@@ -178,14 +178,14 @@ seconda chiamata. Resta disponibile anche l'endpoint dedicato
 `GET /api/v1/previsioni/piloti`, insieme alla scomposizione dei fattori. I pesi
 sono:
 
-- andamento della scuderia nel 2026: 26%;
-- andamento del pilota nel 2026: 20%;
-- compatibilità vettura-circuito: 18%;
+- andamento della scuderia nel 2026: 23%;
+- andamento del pilota nel 2026: 18%;
+- compatibilità vettura-circuito: 17%;
 - aggiornamenti tecnici pertinenti: 12%;
-- qualifica 2026: 8%;
-- confidenza pilota-circuito: 7%;
-- storico personale: 3%;
-- passo gara recente: 2%;
+- andamento negli ultimi tre GP: 12%;
+- qualifica 2026: 7%;
+- confidenza pilota-circuito: 5%;
+- storico personale: 2%;
 - gestione gomme: 2%;
 - affidabilità e rischi: 2%.
 
@@ -196,8 +196,10 @@ aggiornamento promettente.
 
 Gli aggiornamenti non ricevono automaticamente un punteggio positivo. Il
 vantaggio viene ridotto se il pacchetto è soltanto annunciato, non è stato
-verificato in pista o riguarda caratteristiche poco importanti per il circuito.
-Un aggiornamento senza beneficio reale può diminuire il punteggio.
+verificato in pista, è circoscritto o riguarda caratteristiche poco importanti
+per il circuito. Un intervento esclusivamente di affidabilità non riceve un
+bonus prestazionale; un aggiornamento senza beneficio reale può diminuire il
+punteggio.
 
 La classifica è una previsione statistico-editoriale soggetta a errore. Non
 rappresenta un risultato certo e può cambiare dopo prove libere, meteo,
