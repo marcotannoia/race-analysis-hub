@@ -29,7 +29,7 @@ const NOMI_FATTORI = Object.freeze({
 });
 
 const NESSUN_PACCHETTO_CONFERMATO =
-  /non ha (?:annunciato|comunicato|confermato).*(?:pacchetto|aggiornament)|non ci sono.*componenti confermati/;
+  /non ha (?:ancora )?(?:annunciato|comunicato|confermato).*(?:pacchetto|aggiornament)|non ci sono.*componenti confermati/;
 
 function limita(valore, minimo = 0, massimo = 100) {
   return Math.min(massimo, Math.max(minimo, valore));

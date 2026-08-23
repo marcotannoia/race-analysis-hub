@@ -45,7 +45,7 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
       licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
       versione: "v2026.11.0",
       modifiche:
-        "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato.",
+        "Sottoinsieme F1DB filtrato, rinominato e normalizzato; il GP d'Olanda 2026 è integrato dai risultati ufficiali Formula 1. Nessun risultato sportivo è stato stimato.",
     });
     assert.equal(risposta.headers.get("access-control-allow-origin"), "*");
     assert.match(risposta.headers.get("x-request-id"), /^[0-9a-f-]{36}$/);

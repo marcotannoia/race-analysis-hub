@@ -29,7 +29,7 @@ test("una buona affinità con la pista non nasconde una scuderia debole", () => 
 
 test("gli aggiornamenti contano solo se reali e pertinenti al circuito", () => {
   const assente = valutaAggiornamento(
-    "La squadra non ha annunciato aggiornamenti specifici per il circuito.",
+    "La squadra non ha ancora comunicato aggiornamenti specifici per il circuito.",
   );
   const annunciato = valutaAggiornamento(
     "La squadra ha annunciato un pacchetto da verificare. Sarebbe utile nelle curve veloci.",

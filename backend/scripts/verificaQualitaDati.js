@@ -49,7 +49,7 @@ richiedi(
   snapshotF1db.eventiStorici.length === 36 &&
     snapshotF1db.analisiGare.length === attesi.analisiGare &&
     snapshotF1db.analisiScuderie.length === attesi.analisiScuderie &&
-    snapshotF1db.andamento2026.eventi.length === 11,
+    snapshotF1db.andamento2026.eventi.length === 12,
   "Copertura dello snapshot F1DB incompleta",
 );
 
@@ -261,6 +261,7 @@ if (errori.length) {
   console.log(
     `OK qualità dati: ${valoriStoriciVerificati} risultati storici, ` +
       "33 classifiche e 11 GP 2026 coincidono con F1DB v2026.11.0; " +
+      "il GP d'Olanda è integrato dai risultati ufficiali Formula 1; " +
       "struttura, denominazioni e fonti verificate.",
   );
 }

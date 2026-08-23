@@ -1,9 +1,9 @@
 {
   "metadati": {
     "versioneMetodologia": "2.0.0",
-    "aggiornatoAl": "2026-07-26",
-    "ultimoGpIncluso": "2026:hungary",
-    "descrizione": "Statistiche cumulative fino al Gran Premio d'Ungheria 2026 incluso. La percentuale sul bagnato misura le gare con pioggia concluse con una prestazione positiva, non la sola percentuale di vittorie.",
+    "aggiornatoAl": "2026-08-23",
+    "ultimoGpIncluso": "2026:olanda-zandvoort",
+    "descrizione": "Statistiche cumulative fino a Gran Premio d'Olanda 2026 incluso. La percentuale sul bagnato misura le gare con pioggia concluse con una prestazione positiva, non la sola percentuale di vittorie.",
     "metodologiaPioggia": {
       "garaValutata": "Gran Premio disputato almeno in parte con pneumatici intermedi o da bagnato; DNS esclusi.",
       "prestazionePositiva": "Vittoria, arrivo davanti a un compagno classificato oppure arrivo davanti ad almeno metà dei rivali diretti classificati.",
@@ -14,32 +14,189 @@
       "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
       "https://www.tudosobreformula1.com.br/corridas-com-pista-molhada-ou-%C3%BAmida",
       "https://www.formula1.com/en/latest/article/antonelli-wins-dramatic-canadian-grand-prix-as-russell-retires-amid-thrilling-mercedes-battle.MzvclJaqCidlYMUXonuDq",
-      "https://www.fia.com/news/f1-antonelli-wins-thrilling-canadian-grand-prix-ahead-hamilton-and-verstappen-russell-retires"
+      "https://www.fia.com/news/f1-antonelli-wins-thrilling-canadian-grand-prix-ahead-hamilton-and-verstappen-russell-retires",
+      "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result"
     ],
-    "aggiornamentiApplicati": []
+    "aggiornamentiApplicati": [
+      "2026:olanda-zandvoort"
+    ]
   },
   "piloti": {
-    "antonelli": { "gareDisputate": 35, "gareConPioggiaDisputate": 4, "gareConPioggiaPositive": 2, "vittorieConPioggia": 1, "erroriPilota": 5, "erroriFatali": 0 },
-    "hamilton": { "gareDisputate": 391, "gareConPioggiaDisputate": 48, "gareConPioggiaPositive": 34, "vittorieConPioggia": 16, "erroriPilota": 15, "erroriFatali": 5 },
-    "russell": { "gareDisputate": 163, "gareConPioggiaDisputate": 18, "gareConPioggiaPositive": 9, "vittorieConPioggia": 0, "erroriPilota": 7, "erroriFatali": 3 },
-    "leclerc": { "gareDisputate": 182, "gareConPioggiaDisputate": 19, "gareConPioggiaPositive": 11, "vittorieConPioggia": 0, "erroriPilota": 10, "erroriFatali": 4 },
-    "norris": { "gareDisputate": 162, "gareConPioggiaDisputate": 18, "gareConPioggiaPositive": 14, "vittorieConPioggia": 2, "erroriPilota": 6, "erroriFatali": 1 },
-    "max_verstappen": { "gareDisputate": 244, "gareConPioggiaDisputate": 26, "gareConPioggiaPositive": 23, "vittorieConPioggia": 8, "erroriPilota": 14, "erroriFatali": 4 },
-    "piastri": { "gareDisputate": 79, "gareConPioggiaDisputate": 9, "gareConPioggiaPositive": 4, "vittorieConPioggia": 1, "erroriPilota": 4, "erroriFatali": 2 },
-    "hadjar": { "gareDisputate": 35, "gareConPioggiaDisputate": 4, "gareConPioggiaPositive": 1, "vittorieConPioggia": 0, "erroriPilota": 4, "erroriFatali": 3 },
-    "lawson": { "gareDisputate": 46, "gareConPioggiaDisputate": 6, "gareConPioggiaPositive": 2, "vittorieConPioggia": 0, "erroriPilota": 3, "erroriFatali": 1 },
-    "gasly": { "gareDisputate": 188, "gareConPioggiaDisputate": 18, "gareConPioggiaPositive": 8, "vittorieConPioggia": 0, "erroriPilota": 12, "erroriFatali": 0 },
-    "arvid_lindblad": { "gareDisputate": 10, "gareConPioggiaDisputate": 0, "gareConPioggiaPositive": 0, "vittorieConPioggia": 0, "erroriPilota": 0, "erroriFatali": 0 },
-    "colapinto": { "gareDisputate": 37, "gareConPioggiaDisputate": 3, "gareConPioggiaPositive": 1, "vittorieConPioggia": 0, "erroriPilota": 5, "erroriFatali": 1 },
-    "bearman": { "gareDisputate": 38, "gareConPioggiaDisputate": 5, "gareConPioggiaPositive": 3, "vittorieConPioggia": 0, "erroriPilota": 5, "erroriFatali": 1 },
-    "bortoleto": { "gareDisputate": 34, "gareConPioggiaDisputate": 4, "gareConPioggiaPositive": 1, "vittorieConPioggia": 0, "erroriPilota": 4, "erroriFatali": 3 },
-    "sainz": { "gareDisputate": 240, "gareConPioggiaDisputate": 26, "gareConPioggiaPositive": 10, "vittorieConPioggia": 0, "erroriPilota": 17, "erroriFatali": 7 },
-    "albon": { "gareDisputate": 138, "gareConPioggiaDisputate": 14, "gareConPioggiaPositive": 8, "vittorieConPioggia": 0, "erroriPilota": 12, "erroriFatali": 1 },
-    "ocon": { "gareDisputate": 191, "gareConPioggiaDisputate": 21, "gareConPioggiaPositive": 7, "vittorieConPioggia": 1, "erroriPilota": 5, "erroriFatali": 0 },
-    "hulkenberg": { "gareDisputate": 260, "gareConPioggiaDisputate": 27, "gareConPioggiaPositive": 13, "vittorieConPioggia": 0, "erroriPilota": 12, "erroriFatali": 5 },
-    "alonso": { "gareDisputate": 437, "gareConPioggiaDisputate": 56, "gareConPioggiaPositive": 27, "vittorieConPioggia": 4, "erroriPilota": 13, "erroriFatali": 6 },
-    "stroll": { "gareDisputate": 200, "gareConPioggiaDisputate": 20, "gareConPioggiaPositive": 9, "vittorieConPioggia": 0, "erroriPilota": 18, "erroriFatali": 4 },
-    "bottas": { "gareDisputate": 257, "gareConPioggiaDisputate": 26, "gareConPioggiaPositive": 14, "vittorieConPioggia": 1, "erroriPilota": 7, "erroriFatali": 3 },
-    "perez": { "gareDisputate": 292, "gareConPioggiaDisputate": 30, "gareConPioggiaPositive": 15, "vittorieConPioggia": 2, "erroriPilota": 17, "erroriFatali": 4 }
+    "antonelli": {
+      "gareDisputate": 36,
+      "gareConPioggiaDisputate": 5,
+      "gareConPioggiaPositive": 3,
+      "vittorieConPioggia": 1,
+      "erroriPilota": 5,
+      "erroriFatali": 0
+    },
+    "hamilton": {
+      "gareDisputate": 392,
+      "gareConPioggiaDisputate": 49,
+      "gareConPioggiaPositive": 35,
+      "vittorieConPioggia": 16,
+      "erroriPilota": 15,
+      "erroriFatali": 5
+    },
+    "russell": {
+      "gareDisputate": 164,
+      "gareConPioggiaDisputate": 19,
+      "gareConPioggiaPositive": 10,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 7,
+      "erroriFatali": 3
+    },
+    "leclerc": {
+      "gareDisputate": 183,
+      "gareConPioggiaDisputate": 20,
+      "gareConPioggiaPositive": 12,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 10,
+      "erroriFatali": 4
+    },
+    "norris": {
+      "gareDisputate": 163,
+      "gareConPioggiaDisputate": 19,
+      "gareConPioggiaPositive": 15,
+      "vittorieConPioggia": 3,
+      "erroriPilota": 6,
+      "erroriFatali": 1
+    },
+    "max_verstappen": {
+      "gareDisputate": 245,
+      "gareConPioggiaDisputate": 27,
+      "gareConPioggiaPositive": 23,
+      "vittorieConPioggia": 8,
+      "erroriPilota": 15,
+      "erroriFatali": 5
+    },
+    "piastri": {
+      "gareDisputate": 80,
+      "gareConPioggiaDisputate": 10,
+      "gareConPioggiaPositive": 4,
+      "vittorieConPioggia": 1,
+      "erroriPilota": 4,
+      "erroriFatali": 2
+    },
+    "hadjar": {
+      "gareDisputate": 35,
+      "gareConPioggiaDisputate": 4,
+      "gareConPioggiaPositive": 1,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 4,
+      "erroriFatali": 3
+    },
+    "lawson": {
+      "gareDisputate": 47,
+      "gareConPioggiaDisputate": 7,
+      "gareConPioggiaPositive": 3,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 3,
+      "erroriFatali": 1
+    },
+    "gasly": {
+      "gareDisputate": 189,
+      "gareConPioggiaDisputate": 19,
+      "gareConPioggiaPositive": 9,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 12,
+      "erroriFatali": 0
+    },
+    "arvid_lindblad": {
+      "gareDisputate": 11,
+      "gareConPioggiaDisputate": 1,
+      "gareConPioggiaPositive": 0,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 0,
+      "erroriFatali": 0
+    },
+    "colapinto": {
+      "gareDisputate": 38,
+      "gareConPioggiaDisputate": 4,
+      "gareConPioggiaPositive": 1,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 5,
+      "erroriFatali": 1
+    },
+    "bearman": {
+      "gareDisputate": 39,
+      "gareConPioggiaDisputate": 6,
+      "gareConPioggiaPositive": 3,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 5,
+      "erroriFatali": 1
+    },
+    "bortoleto": {
+      "gareDisputate": 35,
+      "gareConPioggiaDisputate": 5,
+      "gareConPioggiaPositive": 1,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 5,
+      "erroriFatali": 3
+    },
+    "sainz": {
+      "gareDisputate": 241,
+      "gareConPioggiaDisputate": 27,
+      "gareConPioggiaPositive": 10,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 18,
+      "erroriFatali": 7
+    },
+    "albon": {
+      "gareDisputate": 139,
+      "gareConPioggiaDisputate": 15,
+      "gareConPioggiaPositive": 8,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 12,
+      "erroriFatali": 1
+    },
+    "ocon": {
+      "gareDisputate": 192,
+      "gareConPioggiaDisputate": 22,
+      "gareConPioggiaPositive": 7,
+      "vittorieConPioggia": 1,
+      "erroriPilota": 5,
+      "erroriFatali": 0
+    },
+    "hulkenberg": {
+      "gareDisputate": 261,
+      "gareConPioggiaDisputate": 28,
+      "gareConPioggiaPositive": 14,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 12,
+      "erroriFatali": 5
+    },
+    "alonso": {
+      "gareDisputate": 438,
+      "gareConPioggiaDisputate": 57,
+      "gareConPioggiaPositive": 27,
+      "vittorieConPioggia": 4,
+      "erroriPilota": 13,
+      "erroriFatali": 6
+    },
+    "stroll": {
+      "gareDisputate": 201,
+      "gareConPioggiaDisputate": 21,
+      "gareConPioggiaPositive": 9,
+      "vittorieConPioggia": 0,
+      "erroriPilota": 18,
+      "erroriFatali": 4
+    },
+    "bottas": {
+      "gareDisputate": 258,
+      "gareConPioggiaDisputate": 27,
+      "gareConPioggiaPositive": 14,
+      "vittorieConPioggia": 1,
+      "erroriPilota": 7,
+      "erroriFatali": 3
+    },
+    "perez": {
+      "gareDisputate": 293,
+      "gareConPioggiaDisputate": 31,
+      "gareConPioggiaPositive": 15,
+      "vittorieConPioggia": 2,
+      "erroriPilota": 17,
+      "erroriFatali": 4
+    }
   }
 }
