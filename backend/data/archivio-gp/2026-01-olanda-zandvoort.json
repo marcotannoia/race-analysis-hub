@@ -1,0 +1,511 @@
+{
+  "pronto": true,
+  "stagione": 2026,
+  "garaConclusaSlug": "olanda-zandvoort",
+  "conclusaIl": "2026-08-23T17:00:00+02:00",
+  "condizioniGara": "misto",
+  "fonteIndicatori": "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result",
+  "risultatiPiloti": [
+    {
+      "pilotaSlug": "antonelli",
+      "posizioneGara": "P2",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Secondo dopo avere guidato a lungo; Norris lo ha superato dopo la seconda sosta.",
+      "passoGara": "Passo da vittoria nel primo stint, poi meno aderenza sul secondo treno di dure.",
+      "gestioneGomme": "La seconda sosta anticipata lo ha esposto alle gomme più fresche di Norris.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "hamilton",
+      "posizioneGara": "P4",
+      "posizioneQualifica": "Q5",
+      "notaRisultato": "Quarto, a meno di un secondo dal podio dopo il duello finale con Russell e Leclerc.",
+      "passoGara": "Ritmo competitivo, ma la strategia lo ha lasciato a lungo su gomme usate.",
+      "gestioneGomme": "Stint prolungato che lo ha trasformato anche in traffico per la lotta al comando.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "russell",
+      "posizioneGara": "P3",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "Terzo dopo una partenza difficile e una difesa efficace nel finale.",
+      "passoGara": "Passo solido ma inferiore ad Antonelli e Norris.",
+      "gestioneGomme": "Ha protetto il podio su gomme dure usate contro le Ferrari su morbide più fresche.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "leclerc",
+      "posizioneGara": "P5",
+      "posizioneQualifica": "Q6",
+      "notaRisultato": "Quinto, in scia a Hamilton e Russell nel finale.",
+      "passoGara": "Buon recupero nel secondo stint, senza spazio sufficiente per il podio.",
+      "gestioneGomme": "Le morbide finali hanno permesso di attaccare Russell fino alla bandiera.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "norris",
+      "posizioneGara": "P1",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "Vittoria dalla pole dopo avere recuperato la leadership con strategia e passo.",
+      "passoGara": "Ritmo molto forte sul treno finale di gomme dure.",
+      "gestioneGomme": "La seconda sosta ritardata ha creato un vantaggio decisivo di gomma su Antonelli.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "max_verstappen",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q7",
+      "notaRisultato": "Ritiro al primo giro dopo l'impatto alla curva 14 sul tracciato ancora umido.",
+      "passoGara": "Non valutabile: gara terminata al primo giro.",
+      "gestioneGomme": "Non valutabile.",
+      "affidabilita": "Vettura distrutta nell'incidente; il pilota è uscito senza conseguenze.",
+      "errorePilota": "fatale"
+    },
+    {
+      "pilotaSlug": "piastri",
+      "posizioneGara": "P6",
+      "posizioneQualifica": "Q4",
+      "notaRisultato": "Sesto dopo una sosta lenta e un finale senza il passo per recuperare.",
+      "passoGara": "Il passo è calato nella seconda metà di gara rispetto ai riferimenti davanti.",
+      "gestioneGomme": "La sosta lenta ha compromesso la posizione iniziale da podio.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "hadjar",
+      "posizioneGara": "DNS",
+      "posizioneQualifica": "DNS",
+      "notaRisultato": "Assente per l'intero weekend a causa dell'infortunio al polso riportato durante la pausa estiva.",
+      "passoGara": "Non valutabile.",
+      "gestioneGomme": "Non valutabile.",
+      "affidabilita": "Non ha preso parte al GP; Lawson lo ha sostituito in Red Bull.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "lawson",
+      "posizioneGara": "P7",
+      "posizioneQualifica": "Q8",
+      "notaRisultato": "Settimo al rientro temporaneo in Red Bull, miglior risultato possibile dietro i quattro team di vertice.",
+      "passoGara": "Passo regolare e netto riferimento del gruppo centrale.",
+      "gestioneGomme": "Gestione pulita in una gara interrotta e strategica.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "gasly",
+      "posizioneGara": "P10",
+      "posizioneQualifica": "Q11",
+      "notaRisultato": "Decimo, ultimo pilota a punti dopo avere chiuso in pressione su Alonso.",
+      "passoGara": "Buon ritmo nel finale, sufficiente per ridurre il distacco da Aston Martin.",
+      "gestioneGomme": "Ha sfruttato bene la fase conclusiva della gara.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "arvid_lindblad",
+      "posizioneGara": "P12",
+      "posizioneQualifica": "Q10",
+      "notaRisultato": "Dodicesimo, alle spalle del sostituto Tsunoda nella Racing Bulls gemella.",
+      "passoGara": "Passo da centro gruppo senza opportunità concreta di punti.",
+      "gestioneGomme": "Gara completata con un giro di ritardo.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "colapinto",
+      "posizioneGara": "P14",
+      "posizioneQualifica": "Q14",
+      "notaRisultato": "Quattordicesimo e fuori dalla lotta per i punti.",
+      "passoGara": "Passo insufficiente per risalire il centro gruppo.",
+      "gestioneGomme": "Ha chiuso con due giri di ritardo.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "bearman",
+      "posizioneGara": "NC",
+      "posizioneQualifica": "Q20",
+      "notaRisultato": "Ritiro durante la procedura di ripartenza dopo la bandiera rossa.",
+      "passoGara": "Non valutabile: gara conclusa dopo due giri.",
+      "gestioneGomme": "Non valutabile.",
+      "affidabilita": "Problema alla vettura durante il giro di formazione della ripartenza.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "bortoleto",
+      "posizioneGara": "P13",
+      "posizioneQualifica": "Q9",
+      "notaRisultato": "Tredicesimo dopo un testacoda al primo giro, senza impatto, sul fondo ancora scivoloso.",
+      "passoGara": "Il testacoda iniziale ha cancellato il vantaggio della partenza in top 10.",
+      "gestioneGomme": "Gara completata con un giro di ritardo.",
+      "affidabilita": "Gara completata dopo avere evitato danni nel testacoda.",
+      "errorePilota": "non_fatale"
+    },
+    {
+      "pilotaSlug": "sainz",
+      "posizioneGara": "P16",
+      "posizioneQualifica": "Q17",
+      "notaRisultato": "Sedicesimo dopo dieci secondi di penalità per il contatto con Albon nel finale.",
+      "passoGara": "Passo insufficiente per entrare stabilmente in zona punti.",
+      "gestioneGomme": "Stint lungo sulle gomme prima della sosta a metà gara.",
+      "affidabilita": "Gara completata, ma il contatto ha compromesso entrambe le Williams.",
+      "errorePilota": "non_fatale"
+    },
+    {
+      "pilotaSlug": "albon",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q16",
+      "notaRisultato": "Ritiro dopo il contatto con Sainz nel finale.",
+      "passoGara": "Era davanti al compagno prima dell'incidente.",
+      "gestioneGomme": "Strategia compromessa dal contatto conclusivo.",
+      "affidabilita": "Vettura ritirata in seguito al contatto con il compagno.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "ocon",
+      "posizioneGara": "NC",
+      "posizioneQualifica": "Q15",
+      "notaRisultato": "Ritiro nel finale; la vettura ferma ha provocato la Virtual Safety Car.",
+      "passoGara": "Passo fuori dalla zona punti prima del ritiro.",
+      "gestioneGomme": "Non ha completato la gara.",
+      "affidabilita": "Problema tecnico nel finale.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "hulkenberg",
+      "posizioneGara": "P8",
+      "posizioneQualifica": "Q13",
+      "notaRisultato": "Ottavo dopo essere partito tredicesimo, con quattro punti per Audi.",
+      "passoGara": "Ottimo passo nel gruppo centrale.",
+      "gestioneGomme": "Gestione efficace dopo avere evitato il testacoda di Bortoleto al primo giro.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "alonso",
+      "posizioneGara": "P9",
+      "posizioneQualifica": "Q18",
+      "notaRisultato": "Nono con una rimonta costruita su passo, sorpassi e strategia a una sosta.",
+      "passoGara": "Ritmo competitivo nel centro gruppo, soprattutto in aria libera.",
+      "gestioneGomme": "Gestione molto efficace: stint lungo e una sosta per risalire dalla diciottesima casella.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "stroll",
+      "posizioneGara": "NC",
+      "posizioneQualifica": "Q19",
+      "notaRisultato": "Ritiro dopo 45 giri.",
+      "passoGara": "Fuori dalla zona punti prima del ritiro.",
+      "gestioneGomme": "Non ha completato la gara.",
+      "affidabilita": "Ritiro tecnico; causa definitiva non ancora indicata nella classifica ufficiale.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "bottas",
+      "posizioneGara": "NC",
+      "posizioneQualifica": "Q21",
+      "notaRisultato": "Ritiro dopo 61 giri.",
+      "passoGara": "Fuori dalla zona punti prima del ritiro.",
+      "gestioneGomme": "Non ha completato la gara.",
+      "affidabilita": "Ritiro tecnico; causa definitiva non ancora indicata nella classifica ufficiale.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "perez",
+      "posizioneGara": "P15",
+      "posizioneQualifica": "Q22",
+      "notaRisultato": "Quindicesimo dopo essere partito ultimo.",
+      "passoGara": "Passo insufficiente per avvicinare la zona punti.",
+      "gestioneGomme": "Ha completato la gara con due giri di ritardo.",
+      "affidabilita": "Gara completata senza problemi tecnici.",
+      "errorePilota": "nessuno"
+    }
+  ],
+  "risultatiScuderie": [
+    {
+      "scuderiaSlug": "mercedes",
+      "notaRisultato": "Doppio podio con Antonelli P2 e Russell P3.",
+      "passoGara": "Riferimento nella prima parte, poi battuta dalla McLaren sul passo con gomme dure fresche.",
+      "gestioneGomme": "Strategie differenziate e ordine finale gestito senza perdere il doppio podio.",
+      "affidabilita": "Entrambe le vetture al traguardo."
+    },
+    {
+      "scuderiaSlug": "ferrari",
+      "notaRisultato": "Hamilton P4 e Leclerc P5, entrambi a ridosso del podio.",
+      "passoGara": "Buon passo nel finale, ma senza la velocità necessaria per superare Russell.",
+      "gestioneGomme": "Le morbide finali hanno creato un'occasione non concretizzata.",
+      "affidabilita": "Entrambe le vetture al traguardo."
+    },
+    {
+      "scuderiaSlug": "mclaren",
+      "notaRisultato": "Vittoria di Norris e sesto posto di Piastri.",
+      "passoGara": "Norris è stato il riferimento nel finale; Piastri ha perso terreno dopo una sosta lenta.",
+      "gestioneGomme": "La sosta ritardata di Norris ha deciso la vittoria.",
+      "affidabilita": "Entrambe le vetture al traguardo."
+    },
+    {
+      "scuderiaSlug": "red_bull",
+      "notaRisultato": "Lawson P7 da sostituto; Verstappen ritirato al primo giro.",
+      "passoGara": "Lawson ha guidato il centro gruppo, ma il confronto al vertice è stato interrotto dall'incidente di Verstappen.",
+      "gestioneGomme": "Valutazione limitata dalla bandiera rossa e dal ritiro immediato di Verstappen.",
+      "affidabilita": "Una sola vettura al traguardo; Hadjar era assente per infortunio."
+    },
+    {
+      "scuderiaSlug": "rb",
+      "notaRisultato": "Lindblad P12; Tsunoda P11 da sostituto di Lawson.",
+      "passoGara": "Passo da centro gruppo, appena fuori dai punti.",
+      "gestioneGomme": "Entrambe le vetture presenti al traguardo, con Tsunoda davanti.",
+      "affidabilita": "Nessun ritiro."
+    },
+    {
+      "scuderiaSlug": "alpine",
+      "notaRisultato": "Gasly P10 e Colapinto P14.",
+      "passoGara": "Gasly ha conquistato l'ultimo punto con un buon finale.",
+      "gestioneGomme": "Gasly ha chiuso in pressione su Alonso.",
+      "affidabilita": "Entrambe le vetture al traguardo."
+    },
+    {
+      "scuderiaSlug": "haas",
+      "notaRisultato": "Doppio ritiro per Bearman e Ocon.",
+      "passoGara": "Passo non valutabile per Bearman e fuori dai punti per Ocon.",
+      "gestioneGomme": "Weekend compromesso dai ritiri.",
+      "affidabilita": "Bearman fermo alla ripartenza; Ocon ritirato nel finale."
+    },
+    {
+      "scuderiaSlug": "audi",
+      "notaRisultato": "Hulkenberg P8 e Bortoleto P13.",
+      "passoGara": "Hulkenberg è stato tra i migliori del centro gruppo.",
+      "gestioneGomme": "Buona rimonta di Hulkenberg; Bortoleto condizionato dal testacoda iniziale.",
+      "affidabilita": "Entrambe le vetture al traguardo."
+    },
+    {
+      "scuderiaSlug": "williams",
+      "notaRisultato": "Sainz P16 e Albon ritirato dopo il contatto tra compagni.",
+      "passoGara": "Passo insufficiente per la zona punti.",
+      "gestioneGomme": "Il contatto finale ha annullato ogni possibilità residua.",
+      "affidabilita": "Albon ritirato dopo il contatto; Sainz penalizzato di dieci secondi."
+    },
+    {
+      "scuderiaSlug": "aston_martin",
+      "notaRisultato": "Alonso P9, Stroll ritirato.",
+      "passoGara": "Alonso competitivo nel centro gruppo con una rimonta dalla Q18.",
+      "gestioneGomme": "La strategia a una sosta di Alonso ha prodotto due punti.",
+      "affidabilita": "Stroll non ha completato la gara."
+    },
+    {
+      "scuderiaSlug": "cadillac",
+      "notaRisultato": "Perez P15, Bottas ritirato.",
+      "passoGara": "Passo lontano dalla zona punti.",
+      "gestioneGomme": "Perez ha completato la gara con due giri di ritardo.",
+      "affidabilita": "Bottas non ha completato la gara."
+    }
+  ],
+  "classificaPiloti": [
+    {
+      "pilotaSlug": "antonelli",
+      "posizione": 1,
+      "punti": 242,
+      "vittorie": 6
+    },
+    {
+      "pilotaSlug": "russell",
+      "posizione": 2,
+      "punti": 183,
+      "vittorie": 2
+    },
+    {
+      "pilotaSlug": "hamilton",
+      "posizione": 3,
+      "punti": 183,
+      "vittorie": 1
+    },
+    {
+      "pilotaSlug": "norris",
+      "posizione": 4,
+      "punti": 159,
+      "vittorie": 2
+    },
+    {
+      "pilotaSlug": "leclerc",
+      "posizione": 5,
+      "punti": 155,
+      "vittorie": 1
+    },
+    {
+      "pilotaSlug": "max_verstappen",
+      "posizione": 6,
+      "punti": 112,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "piastri",
+      "posizione": 7,
+      "punti": 104,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "hadjar",
+      "posizione": 8,
+      "punti": 68,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "lawson",
+      "posizione": 9,
+      "punti": 49,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "gasly",
+      "posizione": 10,
+      "punti": 44,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "arvid_lindblad",
+      "posizione": 11,
+      "punti": 23,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "colapinto",
+      "posizione": 12,
+      "punti": 19,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bearman",
+      "posizione": 13,
+      "punti": 18,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bortoleto",
+      "posizione": 14,
+      "punti": 10,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "hulkenberg",
+      "posizione": 15,
+      "punti": 6,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "sainz",
+      "posizione": 16,
+      "punti": 6,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "albon",
+      "posizione": 17,
+      "punti": 5,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "ocon",
+      "posizione": 18,
+      "punti": 3,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "alonso",
+      "posizione": 19,
+      "punti": 3,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "stroll",
+      "posizione": 21,
+      "punti": 0,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bottas",
+      "posizione": 22,
+      "punti": 0,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "perez",
+      "posizione": 23,
+      "punti": 0,
+      "vittorie": 0
+    }
+  ],
+  "classificaScuderie": [
+    {
+      "scuderiaSlug": "mercedes",
+      "posizione": 1,
+      "punti": 425,
+      "vittorie": 8
+    },
+    {
+      "scuderiaSlug": "ferrari",
+      "posizione": 2,
+      "punti": 338,
+      "vittorie": 2
+    },
+    {
+      "scuderiaSlug": "mclaren",
+      "posizione": 3,
+      "punti": 263,
+      "vittorie": 2
+    },
+    {
+      "scuderiaSlug": "red_bull",
+      "posizione": 4,
+      "punti": 186,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "rb",
+      "posizione": 5,
+      "punti": 66,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "alpine",
+      "posizione": 6,
+      "punti": 63,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "haas",
+      "posizione": 7,
+      "punti": 21,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "audi",
+      "posizione": 8,
+      "punti": 16,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "williams",
+      "posizione": 9,
+      "punti": 11,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "aston_martin",
+      "posizione": 10,
+      "punti": 3,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "cadillac",
+      "posizione": 11,
+      "punti": 0,
+      "vittorie": 0
+    }
+  ]
+}

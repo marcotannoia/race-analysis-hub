@@ -3,14 +3,16 @@
     "fonte": "F1DB",
     "versione": "v2026.11.0",
     "pubblicatoIl": "2026-07-26T21:00:55.000Z",
-    "derivatoIl": "2026-08-10",
+    "derivatoIl": "2026-08-23",
     "releaseUrl": "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
     "archivio": "f1db-json-splitted.zip",
     "archivioUrl": "https://github.com/f1db/f1db/releases/download/v2026.11.0/f1db-json-splitted.zip",
     "archivioSha256": "7da222e8c2cafe223e4be2c1fb22fd67fb529779075f224c00eebac0acdecdeb",
     "licenza": "CC BY 4.0",
     "licenzaUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "trasformazioni": "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato."
+    "trasformazioni": "Sottoinsieme F1DB filtrato, rinominato e normalizzato; il GP d'Olanda 2026 è integrato dai risultati ufficiali Formula 1. Nessun risultato sportivo è stato stimato.",
+    "fonteIntegrativa": "Formula 1 official results",
+    "fonteIntegrativaUrl": "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result"
   },
   "classifiche2026": {
     "piloti": [
@@ -18,39 +20,39 @@
         "slug": "antonelli",
         "classifica2026": {
           "posizione": 1,
-          "punti": 219,
+          "punti": 242,
           "vittorie": 6
-        }
-      },
-      {
-        "slug": "hamilton",
-        "classifica2026": {
-          "posizione": 2,
-          "punti": 169,
-          "vittorie": 1
         }
       },
       {
         "slug": "russell",
         "classifica2026": {
-          "posizione": 3,
-          "punti": 160,
+          "posizione": 2,
+          "punti": 183,
           "vittorie": 2
         }
       },
       {
-        "slug": "leclerc",
+        "slug": "hamilton",
         "classifica2026": {
-          "posizione": 4,
-          "punti": 138,
+          "posizione": 3,
+          "punti": 183,
           "vittorie": 1
         }
       },
       {
         "slug": "norris",
         "classifica2026": {
+          "posizione": 4,
+          "punti": 159,
+          "vittorie": 2
+        }
+      },
+      {
+        "slug": "leclerc",
+        "classifica2026": {
           "posizione": 5,
-          "punti": 128,
+          "punti": 155,
           "vittorie": 1
         }
       },
@@ -58,7 +60,7 @@
         "slug": "max_verstappen",
         "classifica2026": {
           "posizione": 6,
-          "punti": 109,
+          "punti": 112,
           "vittorie": 0
         }
       },
@@ -66,7 +68,7 @@
         "slug": "piastri",
         "classifica2026": {
           "posizione": 7,
-          "punti": 92,
+          "punti": 104,
           "vittorie": 0
         }
       },
@@ -82,7 +84,7 @@
         "slug": "lawson",
         "classifica2026": {
           "posizione": 9,
-          "punti": 43,
+          "punti": 49,
           "vittorie": 0
         }
       },
@@ -90,7 +92,7 @@
         "slug": "gasly",
         "classifica2026": {
           "posizione": 10,
-          "punti": 42,
+          "punti": 44,
           "vittorie": 0
         }
       },
@@ -127,7 +129,7 @@
         }
       },
       {
-        "slug": "sainz",
+        "slug": "hulkenberg",
         "classifica2026": {
           "posizione": 15,
           "punti": 6,
@@ -135,9 +137,17 @@
         }
       },
       {
-        "slug": "albon",
+        "slug": "sainz",
         "classifica2026": {
           "posizione": 16,
+          "punti": 6,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "albon",
+        "classifica2026": {
+          "posizione": 17,
           "punti": 5,
           "vittorie": 0
         }
@@ -145,16 +155,8 @@
       {
         "slug": "ocon",
         "classifica2026": {
-          "posizione": 17,
-          "punti": 3,
-          "vittorie": 0
-        }
-      },
-      {
-        "slug": "hulkenberg",
-        "classifica2026": {
           "posizione": 18,
-          "punti": 2,
+          "punti": 3,
           "vittorie": 0
         }
       },
@@ -162,20 +164,12 @@
         "slug": "alonso",
         "classifica2026": {
           "posizione": 19,
-          "punti": 1,
+          "punti": 3,
           "vittorie": 0
         }
       },
       {
         "slug": "stroll",
-        "classifica2026": {
-          "posizione": 20,
-          "punti": 0,
-          "vittorie": 0
-        }
-      },
-      {
-        "slug": "bottas",
         "classifica2026": {
           "posizione": 21,
           "punti": 0,
@@ -183,9 +177,17 @@
         }
       },
       {
-        "slug": "perez",
+        "slug": "bottas",
         "classifica2026": {
           "posizione": 22,
+          "punti": 0,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "perez",
+        "classifica2026": {
+          "posizione": 23,
           "punti": 0,
           "vittorie": 0
         }
@@ -196,7 +198,7 @@
         "slug": "mercedes",
         "classifica2026": {
           "posizione": 1,
-          "punti": 379,
+          "punti": 425,
           "vittorie": 8
         }
       },
@@ -204,7 +206,7 @@
         "slug": "ferrari",
         "classifica2026": {
           "posizione": 2,
-          "punti": 307,
+          "punti": 338,
           "vittorie": 2
         }
       },
@@ -212,15 +214,15 @@
         "slug": "mclaren",
         "classifica2026": {
           "posizione": 3,
-          "punti": 220,
-          "vittorie": 1
+          "punti": 263,
+          "vittorie": 2
         }
       },
       {
         "slug": "red_bull",
         "classifica2026": {
           "posizione": 4,
-          "punti": 177,
+          "punti": 186,
           "vittorie": 0
         }
       },
@@ -236,7 +238,7 @@
         "slug": "alpine",
         "classifica2026": {
           "posizione": 6,
-          "punti": 61,
+          "punti": 63,
           "vittorie": 0
         }
       },
@@ -252,7 +254,7 @@
         "slug": "audi",
         "classifica2026": {
           "posizione": 8,
-          "punti": 12,
+          "punti": 16,
           "vittorie": 0
         }
       },
@@ -268,7 +270,7 @@
         "slug": "aston_martin",
         "classifica2026": {
           "posizione": 10,
-          "punti": 1,
+          "punti": 3,
           "vittorie": 0
         }
       },
@@ -284,7 +286,7 @@
   },
   "andamento2026": {
     "stagione": 2026,
-    "aggiornatoIl": "2026-07-26T21:00:55.000Z",
+    "aggiornatoIl": "2026-08-23T16:00:00.000Z",
     "eventi": [
       {
         "raceId": 1150,
@@ -2834,6 +2836,238 @@
             "qualifica": {
               "PER": 22,
               "BOT": 21
+            }
+          }
+        }
+      },
+      {
+        "raceId": 1159,
+        "round": 12,
+        "data": "2026-08-23",
+        "grandPrixId": "netherlands",
+        "circuitoId": "zandvoort",
+        "etichetta": "Zandvoort",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 2,
+            "qualifica": 3
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 4,
+            "qualifica": 5
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": 3,
+            "qualifica": 2
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 5,
+            "qualifica": 6
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": 1,
+            "qualifica": 1
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": null,
+            "qualifica": 7
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": 6,
+            "qualifica": 4
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": null,
+            "qualifica": null
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 7,
+            "qualifica": 8
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": 10,
+            "qualifica": 11
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 12,
+            "qualifica": 10
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": 14,
+            "qualifica": 14
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": null,
+            "qualifica": 20
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 13,
+            "qualifica": 9
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 16,
+            "qualifica": 17
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": null,
+            "qualifica": 16
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": null,
+            "qualifica": 15
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": 8,
+            "qualifica": 13
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": 9,
+            "qualifica": 18
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": null,
+            "qualifica": 19
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": null,
+            "qualifica": 21
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": 15,
+            "qualifica": 22
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "ANT": 2,
+              "RUS": 3
+            },
+            "qualifica": {
+              "ANT": 3,
+              "RUS": 2
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "HAM": 4,
+              "LEC": 5
+            },
+            "qualifica": {
+              "HAM": 5,
+              "LEC": 6
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "NOR": 1,
+              "PIA": 6
+            },
+            "qualifica": {
+              "NOR": 1,
+              "PIA": 4
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "VER": null,
+              "HAD": null
+            },
+            "qualifica": {
+              "VER": 7,
+              "HAD": null
+            }
+          },
+          "rb": {
+            "gara": {
+              "LAW": 7,
+              "LIN": 12
+            },
+            "qualifica": {
+              "LAW": 8,
+              "LIN": 10
+            }
+          },
+          "alpine": {
+            "gara": {
+              "GAS": 10,
+              "COL": 14
+            },
+            "qualifica": {
+              "GAS": 11,
+              "COL": 14
+            }
+          },
+          "haas": {
+            "gara": {
+              "BEA": null,
+              "OCO": null
+            },
+            "qualifica": {
+              "BEA": 20,
+              "OCO": 15
+            }
+          },
+          "audi": {
+            "gara": {
+              "BOR": 13,
+              "HUL": 8
+            },
+            "qualifica": {
+              "BOR": 9,
+              "HUL": 13
+            }
+          },
+          "williams": {
+            "gara": {
+              "SAI": 16,
+              "ALB": null
+            },
+            "qualifica": {
+              "SAI": 17,
+              "ALB": 16
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "ALO": 9,
+              "STR": null
+            },
+            "qualifica": {
+              "ALO": 18,
+              "STR": 19
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "BOT": null,
+              "PER": 15
+            },
+            "qualifica": {
+              "BOT": 21,
+              "PER": 22
             }
           }
         }

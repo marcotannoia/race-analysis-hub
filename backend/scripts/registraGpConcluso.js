@@ -757,12 +757,20 @@ async function registraGpConcluso() {
     const eseguiScritture = async (sessione = null) => {
       const opzioni = sessione ? { session: sessione } : {};
 
-      await Promise.all([
-        ...analisiPiloti.map((analisi) => analisi.save(opzioni)),
-        ...analisiScuderie.map((analisi) => analisi.save(opzioni)),
-        Pilota.bulkWrite(operazioniPiloti, opzioni),
-        Scuderia.bulkWrite(operazioniScuderie, opzioni),
-      ]);
+      if (sessione) {
+        // MongoDB non supporta operazioni parallele nella stessa transazione.
+        for (const analisi of analisiPiloti) await analisi.save(opzioni);
+        for (const analisi of analisiScuderie) await analisi.save(opzioni);
+        await Pilota.bulkWrite(operazioniPiloti, opzioni);
+        await Scuderia.bulkWrite(operazioniScuderie, opzioni);
+      } else {
+        await Promise.all([
+          ...analisiPiloti.map((analisi) => analisi.save(opzioni)),
+          ...analisiScuderie.map((analisi) => analisi.save(opzioni)),
+          Pilota.bulkWrite(operazioniPiloti, opzioni),
+          Scuderia.bulkWrite(operazioniScuderie, opzioni),
+        ]);
+      }
 
       await Gara.updateMany(
         { stato: { $in: ["attuale", "prossima"] } },
