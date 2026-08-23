@@ -1214,7 +1214,7 @@ main {
   margin: 0 0 18px;
   color: var(--rosso);
   font-family: var(--font-racing);
-  font-size: 1.15rem;
+  font-size: 1.24rem;
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1248,6 +1248,13 @@ main {
   letter-spacing: 0.06em;
   line-height: 1.15;
   text-align: center;
+}
+
+.colonna-risultati p span,
+.righe-anni .riga-etichettata > span {
+  color: #fff;
+  border-color: rgba(225, 6, 0, 0.72);
+  background: rgba(225, 6, 0, 0.2);
 }
 
 .colonna-risultati p strong {

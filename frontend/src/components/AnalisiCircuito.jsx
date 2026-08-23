@@ -241,7 +241,6 @@ function segmentaConsiderazioni(analisi, t) {
   })
 
   aggiungiRiga(righe, t.affidabilita, trovaAffidabilita(analisi, t))
-  aggiungiRiga(righe, t.penalita, analisi.penalita)
 
   return righe
 }
@@ -337,8 +336,8 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
         </div>
 
         <aside className="nota-bene">
-          <h3>N.B.</h3>
-          <RigheEtichettate righe={noteAnnuali} />
+          <h3>{t.spiegazioneRisultatiPassati}</h3>
+          <RigheEtichettate righe={noteAnnuali} classe="righe-anni" />
         </aside>
       </section>
 
@@ -354,12 +353,13 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
         <div className="blocchi-performance">
           <article className="blocco-performance">
             <h3>{t.andamentoAnno}</h3>
-            <RigheEtichettate righe={andamentoAnnuale} />
+            <RigheEtichettate righe={andamentoAnnuale} classe="righe-anni" />
           </article>
 
           <article className="blocco-performance">
             <h3>{t.gestioneGomme}</h3>
             <RigheEtichettate
+              classe="righe-anni"
               righe={creaRighePrestazioneAnnuali(
                 analisi.gestioneGomme,
                 t,
@@ -372,6 +372,7 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
           <article className="blocco-performance">
             <h3>{t.passoGara}</h3>
             <RigheEtichettate
+              classe="righe-anni"
               righe={creaRighePrestazioneAnnuali(
                 analisi.passoGara,
                 t,
@@ -410,10 +411,23 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
         </div>
       </section>
 
+      {analisi.penalita && (
+        <section className="sezione-analisi penalita-future">
+          <div className="intestazione-sezione">
+            <span>05</span>
+            <div>
+              <p>{t.soloSeConfermate}</p>
+              <h2>{t.penalitaArrivo}</h2>
+            </div>
+          </div>
+          <div className="spazio-aggiornamenti">{analisi.penalita}</div>
+        </section>
+      )}
+
       {andamentoStagioneCorrente && (
         <section id="andamento" className="sezione-analisi sezione-grafici">
           <div className="intestazione-sezione">
-            <span>05</span>
+            <span>{analisi.penalita ? '06' : '05'}</span>
             <div>
               <p>{t.gpDopoGp}</p>
               <h2>{t.andamento} {andamentoStagioneCorrente.stagione}</h2>

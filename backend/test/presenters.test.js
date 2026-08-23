@@ -140,6 +140,7 @@ test("l'analisi raggruppa le prestazioni senza perdere i contenuti", () => {
   assert.equal(analisi.andamentoPerAnno, "2025: Prestazione solida.");
   assert.deepEqual(analisi.datiPerAnno, {
     risultatiGara: { 2025: "P3" },
+    spiegazioneRisultatiPassati: { 2025: "Nota" },
     notaBene: { 2025: "Nota" },
     risultatiQualifica: { 2025: "Q2" },
     andamento: { 2025: "Prestazione solida." },

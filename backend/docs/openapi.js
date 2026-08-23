@@ -21,14 +21,14 @@ const parametroSlugConfronto = (nome, descrizione, esempio) => ({
 });
 
 const esempioPesiPrevisionali = [
-  ["andamento2026", "Andamento 2026", 18],
-  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 17],
-  ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 12],
-  ["confidenzaPilotaCircuito", "Confidenza pilota-circuito", 5],
-  ["qualifica2026", "Qualifica 2026", 7],
-  ["scuderia2026", "Andamento scuderia 2026", 23],
-  ["storicoPersonale", "Storico personale", 2],
-  ["passoGaraRecente", "Andamento negli ultimi 3 GP", 12],
+  ["andamento2026", "Andamento 2026", 13],
+  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 15],
+  ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 7],
+  ["confidenzaPilotaCircuito", "Confidenza pilota-circuito", 2],
+  ["qualifica2026", "Qualifica 2026", 10],
+  ["scuderia2026", "Andamento scuderia 2026", 25],
+  ["storicoPersonale", "Storico personale", 5],
+  ["passoGaraRecente", "Andamento negli ultimi 3 GP", 19],
   ["gestioneGomme", "Gestione gomme", 2],
   ["affidabilitaERischi", "Affidabilità e rischi", 2],
 ].map(([chiave, nome, pesoPercentuale]) => ({
@@ -1113,6 +1113,7 @@ const documentoOpenApi = {
           "Versione strutturata e aggiornata dei risultati e dei contenuti editoriali storici.",
         required: [
           "risultatiGara",
+          "spiegazioneRisultatiPassati",
           "notaBene",
           "risultatiQualifica",
           "andamento",
@@ -1120,7 +1121,15 @@ const documentoOpenApi = {
         ],
         properties: {
           risultatiGara: { $ref: "#/components/schemas/TestiAnnuali" },
-          notaBene: { $ref: "#/components/schemas/TestiAnnuali" },
+          spiegazioneRisultatiPassati: {
+            $ref: "#/components/schemas/TestiAnnuali",
+          },
+          notaBene: {
+            allOf: [{ $ref: "#/components/schemas/TestiAnnuali" }],
+            deprecated: true,
+            description:
+              "Alias mantenuto per compatibilità. Usare `spiegazioneRisultatiPassati`.",
+          },
           risultatiQualifica: { $ref: "#/components/schemas/TestiAnnuali" },
           andamento: { $ref: "#/components/schemas/TestiAnnuali" },
           prestazioni: { $ref: "#/components/schemas/PrestazioniPerAnno" },
@@ -1189,7 +1198,7 @@ const documentoOpenApi = {
             type: "string",
             deprecated: true,
             description:
-              "Formato testuale mantenuto per compatibilità. Usare `datiPerAnno.notaBene` per gli N.B. separati per stagione.",
+              "Formato testuale mantenuto per compatibilità. Usare `datiPerAnno.spiegazioneRisultatiPassati`.",
           },
           risultatiQualifica: {
             type: "string",
@@ -1213,7 +1222,7 @@ const documentoOpenApi = {
           aggiornamentiInArrivo: {
             type: "string",
             description:
-              "Aggiornamenti tecnici confermati o stato delle informazioni disponibili. " +
+              "Aggiornamenti tecnici confermati; stringa vuota quando la sezione non deve mostrare contenuti. " +
               "Il riutilizzatore può adattare questo testo nel proprio software secondo " +
               "la licenza dichiarata, senza modificare il database ufficiale.",
           },
@@ -1240,7 +1249,7 @@ const documentoOpenApi = {
               penalita: {
                 type: "string",
                 description:
-                  "Situazione delle eventuali penalità del pilota per il Gran Premio attuale.",
+                  "Penalità confermata in arrivo per il Gran Premio attuale; stringa vuota quando non ce ne sono e la sezione non deve essere mostrata.",
               },
             },
           },
