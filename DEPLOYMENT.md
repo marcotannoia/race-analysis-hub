@@ -147,8 +147,10 @@ Per la release `1.9.0`, verificare inoltre che:
 - `GET /api/v1` restituisca `"versione": "1.9.0"`;
 - `GET /api/v1/home` includa `classificaPrevisionale`, così la landing usi una
   sola chiamata;
-- la classifica usi il modello `statistico-editoriale-v2`, con il 12% assegnato
-  sia agli ultimi tre GP sia agli aggiornamenti tecnici pertinenti;
+- la classifica usi il modello `statistico-editoriale-v2`, con pesi complessivi
+  pari al 100%: scuderia 25%, ultimi tre GP 19%, compatibilità 15%, andamento
+  2026 13%, qualifica 10%, aggiornamenti tecnici 7%, storico 5%, fiducia 2%,
+  gomme 2% e affidabilità/rischi 2%;
 - `GET /api/v1/lingue` elenchi esattamente le sei lingue;
 - `GET /api/v1/gare/attuale?lingua=de` restituisca `"lingua": "de"` e
   l'header `Content-Language: de`;

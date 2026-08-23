@@ -3,14 +3,14 @@ const { testiPrevisione } = require("../i18n/previsioni");
 const { valoreLocalizzato } = require("../i18n/lingue");
 
 const PESI = Object.freeze({
-  andamento2026: 18,
-  compatibilitaVetturaCircuito: 17,
-  aggiornamentiTecnici: 12,
-  confidenzaPilotaCircuito: 5,
-  qualifica2026: 7,
-  scuderia2026: 23,
-  storicoPersonale: 2,
-  passoGaraRecente: 12,
+  andamento2026: 13,
+  compatibilitaVetturaCircuito: 15,
+  aggiornamentiTecnici: 7,
+  confidenzaPilotaCircuito: 2,
+  qualifica2026: 10,
+  scuderia2026: 25,
+  storicoPersonale: 5,
+  passoGaraRecente: 19,
   gestioneGomme: 2,
   affidabilitaERischi: 2,
 });

@@ -199,6 +199,7 @@ function presentaAnalisiBase(analisi, lingua = "it") {
     },
     datiPerAnno: {
       risultatiGara: risultatiGaraPerAnno,
+      spiegazioneRisultatiPassati: notaBenePerAnno,
       notaBene: notaBenePerAnno,
       risultatiQualifica: risultatiQualificaPerAnno,
       andamento: andamentoPerAnno,

@@ -85,6 +85,7 @@ function adattaAnalisi(analisi) {
       analisi.posizioniStoriche ??
       '',
     notaBene:
+      datiPerAnno.spiegazioneRisultatiPassati ??
       datiPerAnno.notaBene ??
       analisi.notaBene ??
       analisi.spiegazionePosizioni ??

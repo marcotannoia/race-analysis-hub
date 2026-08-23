@@ -15,8 +15,8 @@ test("i pesi previsionali sommano a cento e valorizzano gli ultimi tre GP", () =
   assert.ok(
     PESI.compatibilitaVetturaCircuito > PESI.storicoPersonale,
   );
-  assert.equal(PESI.aggiornamentiTecnici, PESI.passoGaraRecente);
-  assert.equal(PESI.passoGaraRecente, 12);
+  assert.equal(PESI.passoGaraRecente, 19);
+  assert.equal(PESI.aggiornamentiTecnici, 7);
   assert.equal(PESI.scuderia2026, Math.max(...Object.values(PESI)));
 });
 
