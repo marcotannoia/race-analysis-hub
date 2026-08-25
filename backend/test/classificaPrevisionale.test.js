@@ -15,9 +15,12 @@ test("i pesi previsionali sommano a cento e valorizzano gli ultimi tre GP", () =
   assert.ok(
     PESI.compatibilitaVetturaCircuito > PESI.storicoPersonale,
   );
-  assert.equal(PESI.passoGaraRecente, 19);
-  assert.equal(PESI.aggiornamentiTecnici, 7);
-  assert.equal(PESI.scuderia2026, Math.max(...Object.values(PESI)));
+  assert.equal(PESI.passoGaraRecente, 25);
+  assert.equal(PESI.compatibilitaVetturaCircuito, 25);
+  assert.equal(PESI.aggiornamentiTecnici, 10);
+  assert.equal(PESI.qualifica2026, 3);
+  assert.equal(PESI.affidabilitaERischi, 2);
+  assert.equal(PESI.gestioneGomme, 1);
 });
 
 test("una buona affinità con la pista non nasconde una scuderia debole", () => {
@@ -162,7 +165,7 @@ test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
     "TMA",
   );
   assert.equal(risultato.classifica[0].scuderia.colore, "#112233");
-  assert.equal(risultato.classifica[0].fattori.length, 10);
+  assert.equal(risultato.classifica[0].fattori.length, 9);
   assert.equal(risultato.modello, "statistico-editoriale-v2");
   assert.match(risultato.avvertenza, /possono contenere errori/i);
   assert.equal(risultato.aggiornatoIl, "2026-08-01T12:00:00.000Z");
