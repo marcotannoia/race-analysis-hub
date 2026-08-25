@@ -6588,7 +6588,8 @@
         "https://www.formula1.com/en/results/2026/drivers",
         "https://www.formula1.com/en/racing/2026/italy",
         "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result",
-        "https://www.formula1.com/en/results/2026/team"
+        "https://www.formula1.com/en/results/2026/team",
+        "https://www.formula1.com/en/latest/article/wolff-confirms-antonelli-is-set-for-grid-penalty-at-italian-grand-prix.4IIgVJdITz0W1xOIrbOPAM"
       ],
       "traduzioni": {
         "it": {
@@ -6601,7 +6602,7 @@
           "considerazioniFinali": "FAVORITO — Dopo l'Olanda è P1 nel mondiale 2026 con 242 punti; il miglior arrivo negli ultimi tre GP è P1. Monza premia basso carico, velocità sul dritto, stabilità in frenata e buona trazione in uscita.",
           "affidabilita": "",
           "aggiornamentiInArrivo": "",
-          "penalita": ""
+          "penalita": "Penalità confermata: Antonelli arretrerà di almeno 10 posizioni sulla griglia di Monza per la sostituzione programmata di componenti della power unit oltre la quota consentita. L'entità definitiva dipenderà dagli elementi effettivamente montati."
         },
         "en": {
           "risultatiGara": "2023: DID NOT RACE IN F1\n2024: DID NOT RACE IN F1\n2025: P9 (Mercedes)",
@@ -6613,7 +6614,7 @@
           "considerazioniFinali": "FAVORITO — After the Netherlands the driver is P1 in the 2026 championship with 242 points; the best finish across the last three Grands Prix is P1. Monza rewards low downforce, straight-line speed, braking stability and strong exit traction.",
           "affidabilita": "",
           "aggiornamentiInArrivo": "",
-          "penalita": ""
+          "penalita": "Mercedes has confirmed that Antonelli will serve a grid penalty of at least 10 places at Monza because of a planned change of power-unit components beyond the permitted allocation. The final size will depend on the components actually fitted."
         },
         "fr": {
           "risultatiGara": "2023: N'A PAS COURU EN F1\n2024: N'A PAS COURU EN F1\n2025: P9 (Mercedes)",
@@ -6625,7 +6626,7 @@
           "considerazioniFinali": "FAVORITO — Après les Pays-Bas, le pilote est P1 du championnat 2026 avec 242 points ; la meilleure arrivée sur les trois derniers Grands Prix est P1. Monza récompense le faible appui, la vitesse en ligne droite, la stabilité au freinage et la motricité en sortie.",
           "affidabilita": "",
           "aggiornamentiInArrivo": "",
-          "penalita": ""
+          "penalita": "Mercedes a confirmé qu'Antonelli écopera à Monza d'une pénalité d'au moins 10 places sur la grille en raison du remplacement programmé d'éléments de l'unité de puissance au-delà du quota autorisé. L'ampleur définitive dépendra des éléments effectivement montés."
         },
         "pt": {
           "risultatiGara": "2023: NÃO CORREU NA F1\n2024: NÃO CORREU NA F1\n2025: P9 (Mercedes)",
@@ -6637,7 +6638,7 @@
           "considerazioniFinali": "FAVORITO — Depois dos Países Baixos, o piloto é P1 no campeonato de 2026 com 242 pontos; o melhor resultado nos últimos três Grandes Prémios é P1. Monza premeia baixa carga aerodinâmica, velocidade em reta, estabilidade na travagem e boa tração à saída.",
           "affidabilita": "",
           "aggiornamentiInArrivo": "",
-          "penalita": ""
+          "penalita": "A Mercedes confirmou que Antonelli cumprirá em Monza uma penalização de pelo menos 10 lugares na grelha devido à substituição programada de componentes da unidade motriz para além da quota permitida. A dimensão final dependerá dos componentes efetivamente montados."
         },
         "es": {
           "risultatiGara": "2023: NO COMPITIÓ EN F1\n2024: NO COMPITIÓ EN F1\n2025: P9 (Mercedes)",
@@ -6649,7 +6650,7 @@
           "considerazioniFinali": "FAVORITO — Después de los Países Bajos, el piloto es P1 del mundial de 2026 con 242 puntos; el mejor resultado de los últimos tres Grandes Premios es P1. Monza premia la baja carga, la velocidad en recta, la estabilidad en frenada y la buena tracción a la salida.",
           "affidabilita": "",
           "aggiornamentiInArrivo": "",
-          "penalita": ""
+          "penalita": "Mercedes ha confirmado que Antonelli cumplirá en Monza una penalización de al menos 10 posiciones en parrilla por la sustitución programada de componentes de la unidad de potencia más allá del cupo permitido. La magnitud definitiva dependerá de los elementos que se monten."
         },
         "de": {
           "risultatiGara": "2023: NICHT IN DER F1 ANGETRETEN\n2024: NICHT IN DER F1 ANGETRETEN\n2025: P9 (Mercedes)",
@@ -6661,10 +6662,10 @@
           "considerazioniFinali": "FAVORITO — Nach den Niederlanden liegt der Fahrer mit 242 Punkten auf P1 der Weltmeisterschaft 2026; das beste Ergebnis der letzten drei Grand Prix ist P1. Monza belohnt wenig Abtrieb, Geradeausgeschwindigkeit, Bremsstabilität und gute Traktion am Kurvenausgang.",
           "affidabilita": "",
           "aggiornamentiInArrivo": "",
-          "penalita": ""
+          "penalita": "Mercedes hat bestätigt, dass Antonelli in Monza wegen des geplanten Einsatzes von Antriebskomponenten außerhalb des erlaubten Kontingents mindestens 10 Startplätze zurückversetzt wird. Der endgültige Umfang hängt von den tatsächlich eingebauten Komponenten ab."
         }
       },
-      "penalita": ""
+      "penalita": "Penalità confermata: Antonelli arretrerà di almeno 10 posizioni sulla griglia di Monza per la sostituzione programmata di componenti della power unit oltre la quota consentita. L'entità definitiva dipenderà dagli elementi effettivamente montati."
     },
     {
       "pilotaSlug": "hamilton",
@@ -7648,14 +7649,15 @@
       "gestioneGomme": "Tenuta della posizione e recupero suggeriscono una gestione complessivamente efficace, senza attribuire tutto alle gomme. Degrado spesso contenuto e tempo perso ai box elevato: la singola sosta è normalmente favorita, ma l'anteriore sinistra può diventare il limite. Contesto 2026 della scuderia: Nessun difetto gomme unico; la prestazione complessiva resta il limite principale.",
       "considerazioniFinali": "PUNTI — Dopo l'Olanda è P12 nel mondiale 2026 con 19 punti; il miglior arrivo negli ultimi tre GP è P10. Monza premia basso carico, velocità sul dritto, stabilità in frenata e buona trazione in uscita.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "Alpine ha confermato che a Monza Colapinto riceverà lo stesso pacchetto già usato da Gasly, con nuovo fondo e bordi, diffusore riprofilato e interventi al retrotreno, all'ala posteriore e alla fiancata. Può essere utile per efficienza aerodinamica e stabilità, ma non è specifico per il basso carico.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.11.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/latest/article/verstappen-charges-to-monza-victory-for-record-breaking-10th-successive-f1.6jCUOTZ4lZB3kxfIiwsiHK",
         "https://www.formula1.com/en/results/2026/drivers",
         "https://www.formula1.com/en/racing/2026/italy",
         "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result",
-        "https://www.formula1.com/en/results/2026/team"
+        "https://www.formula1.com/en/results/2026/team",
+        "https://www.formula1.com/en/latest/article/gasly-praises-alpines-positive-step-after-points-in-zandvoort-while-colapinto-rues-harsh-penalty.4tz3Rnzm4Rb3X8hobfdbwO"
       ],
       "traduzioni": {
         "it": {
@@ -7667,7 +7669,7 @@
           "gestioneGomme": "Tenuta della posizione e recupero suggeriscono una gestione complessivamente efficace, senza attribuire tutto alle gomme. Degrado spesso contenuto e tempo perso ai box elevato: la singola sosta è normalmente favorita, ma l'anteriore sinistra può diventare il limite. Contesto 2026 della scuderia: Nessun difetto gomme unico; la prestazione complessiva resta il limite principale.",
           "considerazioniFinali": "PUNTI — Dopo l'Olanda è P12 nel mondiale 2026 con 19 punti; il miglior arrivo negli ultimi tre GP è P10. Monza premia basso carico, velocità sul dritto, stabilità in frenata e buona trazione in uscita.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "Alpine ha confermato che a Monza Colapinto riceverà lo stesso pacchetto già usato da Gasly, con nuovo fondo e bordi, diffusore riprofilato e interventi al retrotreno, all'ala posteriore e alla fiancata. Può essere utile per efficienza aerodinamica e stabilità, ma non è specifico per il basso carico.",
           "penalita": ""
         },
         "en": {
@@ -7679,7 +7681,7 @@
           "gestioneGomme": "Holding position and making progress suggest effective overall management, without attributing everything to the tyres. Degradation is often limited and pit-lane time loss is high: a single stop is normally favoured, but the front-left tyre can become the limiting factor. Context 2026 of the team: No single tyre defects; the overall performance remains the main limit.",
           "considerazioniFinali": "PUNTI — After the Netherlands the driver is P12 in the 2026 championship with 19 points; the best finish across the last three Grands Prix is P10. Monza rewards low downforce, straight-line speed, braking stability and strong exit traction.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "Alpine has confirmed that Colapinto will receive at Monza the same package already used by Gasly, with a new floor and floor edges, a reprofiled diffuser, and changes to the rear end, rear wing and sidepod. It may help aerodynamic efficiency and stability, but it is not specific to low downforce.",
           "penalita": ""
         },
         "fr": {
@@ -7691,7 +7693,7 @@
           "gestioneGomme": "Le maintien de la position et la remontée indiquent une gestion globalement efficace, sans tout attribuer aux pneus. La dégradation est souvent limitée et la perte de temps aux stands élevée : un seul arrêt est généralement privilégié, mais le pneu avant gauche peut devenir le facteur limitant. Contexte 2026 de l’équipe : aucun problème récurrent lié aux pneus ; la performance globale reste la principale limite.",
           "considerazioniFinali": "PUNTI — Après les Pays-Bas, le pilote est P12 du championnat 2026 avec 19 points ; la meilleure arrivée sur les trois derniers Grands Prix est P10. Monza récompense le faible appui, la vitesse en ligne droite, la stabilité au freinage et la motricité en sortie.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "Alpine a confirmé que Colapinto recevra à Monza le même ensemble déjà utilisé par Gasly, avec un nouveau fond et ses bords, un diffuseur reprofilé et des modifications du train arrière, de l'aileron arrière et du ponton. Il peut favoriser l'efficacité aérodynamique et la stabilité, sans être spécifique au faible appui.",
           "penalita": ""
         },
         "pt": {
@@ -7703,7 +7705,7 @@
           "gestioneGomme": "Manter e recuperar posições sugere uma gestão globalmente eficaz, sem atribuir tudo aos pneus. A degradação é frequentemente limitada e o tempo perdido nas boxes é elevado: normalmente prefere-se uma única paragem, mas o pneu dianteiro esquerdo pode tornar-se o fator limitante. Contexto 2026 da equipa: Nenhum problema recorrente com os pneus; O desempenho global continua a ser o principal limite.",
           "considerazioniFinali": "PUNTI — Depois dos Países Baixos, o piloto é P12 no campeonato de 2026 com 19 pontos; o melhor resultado nos últimos três Grandes Prémios é P10. Monza premeia baixa carga aerodinâmica, velocidade em reta, estabilidade na travagem e boa tração à saída.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "A Alpine confirmou que Colapinto receberá em Monza o mesmo pacote já utilizado por Gasly, com novo fundo e bordos, difusor reperfilado e alterações na traseira, asa traseira e sidepod. Pode ajudar a eficiência aerodinâmica e a estabilidade, mas não é específico para baixa carga aerodinâmica.",
           "penalita": ""
         },
         "es": {
@@ -7715,7 +7717,7 @@
           "gestioneGomme": "Mantener y recuperar posiciones indica una gestión globalmente eficaz, sin atribuir todo a los neumáticos. La degradación suele ser limitada y la pérdida de tiempo en boxes elevada: normalmente se prefiere una sola parada, pero el neumático delantero izquierdo puede convertirse en el factor limitante. Contexto 2026 del equipo: Ningún defecto de neumático; El rendimiento general sigue siendo el principal límite.",
           "considerazioniFinali": "PUNTI — Después de los Países Bajos, el piloto es P12 del mundial de 2026 con 19 puntos; el mejor resultado de los últimos tres Grandes Premios es P10. Monza premia la baja carga, la velocidad en recta, la estabilidad en frenada y la buena tracción a la salida.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "Alpine ha confirmado que Colapinto recibirá en Monza el mismo paquete ya utilizado por Gasly, con nuevo fondo y bordes, difusor reperfilado y cambios en la parte trasera, el alerón trasero y el pontón. Puede ayudar a la eficiencia aerodinámica y la estabilidad, pero no es específico para baja carga.",
           "penalita": ""
         },
         "de": {
@@ -7727,7 +7729,7 @@
           "gestioneGomme": "Das Halten der Position und das Aufholen deuten auf ein insgesamt effektives Management hin, ohne alles den Reifen zuzuschreiben. Der Reifenabbau ist häufig begrenzt und der Zeitverlust in der Boxengasse hoch: Normalerweise wird ein einziger Stopp bevorzugt, aber der linke Vorderreifen kann zum limitierenden Faktor werden. Kontext 2026 des Teams: Kein einziger Reifendefekt; Die Gesamtleistung bleibt das Hauptlimit.",
           "considerazioniFinali": "PUNTI — Nach den Niederlanden liegt der Fahrer mit 19 Punkten auf P12 der Weltmeisterschaft 2026; das beste Ergebnis der letzten drei Grand Prix ist P10. Monza belohnt wenig Abtrieb, Geradeausgeschwindigkeit, Bremsstabilität und gute Traktion am Kurvenausgang.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "Alpine hat bestätigt, dass Colapinto in Monza dasselbe Paket wie Gasly erhält, mit neuem Unterboden und Unterbodenkanten, neu profiliertem Diffusor sowie Änderungen am Heck, Heckflügel und Seitenkasten. Es kann Effizienz und Stabilität unterstützen, ist aber nicht speziell für wenig Abtrieb ausgelegt.",
           "penalita": ""
         }
       },
@@ -31560,14 +31562,16 @@
       "gestioneGomme": "Degrado spesso contenuto e tempo perso ai box elevato: la singola sosta è normalmente favorita, ma l'anteriore sinistra può diventare il limite. Contesto 2026: Nessun difetto gomme unico; la prestazione complessiva resta il limite principale.",
       "considerazioniFinali": "PUNTI — A Monza, tra il 2023 e il 2025, le due vetture hanno mostrato in media un passo da P15; il miglior risultato è P14. Dopo l'Olanda la scuderia è P6 nel mondiale 2026 con 63 punti; il miglior arrivo negli ultimi tre GP è P10.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "Alpine ha già introdotto sulla vettura di Gasly un pacchetto con nuovo fondo e bordi, diffusore riprofilato, interventi al retrotreno, all'ala posteriore e alla fiancata; a Monza lo monterà anche Colapinto. Il lavoro migliora carico locale e qualità del flusso e può essere utile per efficienza aerodinamica e stabilità, ma non è specifico per il basso carico.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.11.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/latest/article/verstappen-charges-to-monza-victory-for-record-breaking-10th-successive-f1.6jCUOTZ4lZB3kxfIiwsiHK",
         "https://www.formula1.com/en/results/2026/team",
         "https://www.formula1.com/en/racing/2026/italy",
         "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result",
-        "https://www.formula1.com/en/results/2026/drivers"
+        "https://www.formula1.com/en/results/2026/drivers",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/gasly-praises-alpines-positive-step-after-points-in-zandvoort-while-colapinto-rues-harsh-penalty.4tz3Rnzm4Rb3X8hobfdbwO"
       ],
       "traduzioni": {
         "it": {
@@ -31579,7 +31583,7 @@
           "gestioneGomme": "Degrado spesso contenuto e tempo perso ai box elevato: la singola sosta è normalmente favorita, ma l'anteriore sinistra può diventare il limite. Contesto 2026: Nessun difetto gomme unico; la prestazione complessiva resta il limite principale.",
           "considerazioniFinali": "PUNTI — A Monza, tra il 2023 e il 2025, le due vetture hanno mostrato in media un passo da P15; il miglior risultato è P14. Dopo l'Olanda la scuderia è P6 nel mondiale 2026 con 63 punti; il miglior arrivo negli ultimi tre GP è P10.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": ""
+          "aggiornamentiInArrivo": "Alpine ha già introdotto sulla vettura di Gasly un pacchetto con nuovo fondo e bordi, diffusore riprofilato, interventi al retrotreno, all'ala posteriore e alla fiancata; a Monza lo monterà anche Colapinto. Il lavoro migliora carico locale e qualità del flusso e può essere utile per efficienza aerodinamica e stabilità, ma non è specifico per il basso carico."
         },
         "en": {
           "risultatiGara": "2023: GAS P15 / OCO DNF\n2024: OCO P14 / GAS P15\n2025: GAS P16 / COL P17",
@@ -31590,7 +31594,7 @@
           "gestioneGomme": "Degradation is often limited and pit-lane time loss is high: a single stop is normally favoured, but the front-left tyre can become the limiting factor. 2026 context: No single tyre defects; the overall performance remains the main limit.",
           "considerazioniFinali": "PUNTI — At Monza, from 2023 to 2025, the two cars showed average P15 pace; the best result was P14. After the Netherlands the team is P6 in the 2026 championship with 63 points; the best finish across the last three Grands Prix is P10.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": ""
+          "aggiornamentiInArrivo": "Alpine has already introduced on Gasly's car a package comprising a new floor and floor edges, a reprofiled diffuser, and changes to the rear end, rear wing and sidepod; Colapinto will also receive it at Monza. The work improves local load and flow quality and may help aerodynamic efficiency and stability, but it is not a low-downforce-specific package."
         },
         "fr": {
           "risultatiGara": "2023: GAS P15 / OCO DNF\n2024: OCO P14 / GAS P15\n2025: GAS P16 / COL P17",
@@ -31601,7 +31605,7 @@
           "gestioneGomme": "La dégradation est souvent limitée et la perte de temps aux stands élevée : un seul arrêt est généralement privilégié, mais le pneu avant gauche peut devenir le facteur limitant. Contexte 2026 : aucun problème récurrent lié aux pneus ; la performance globale reste la principale limite.",
           "considerazioniFinali": "PUNTI — À Monza, de 2023 à 2025, les deux voitures ont montré en moyenne un rythme de P15 ; le meilleur résultat est P14. Après les Pays-Bas, l'écurie est P6 du championnat 2026 avec 63 points ; la meilleure arrivée sur les trois derniers Grands Prix est P10.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": ""
+          "aggiornamentiInArrivo": "Alpine a déjà introduit sur la voiture de Gasly un ensemble comprenant un nouveau fond et ses bords, un diffuseur reprofilé, ainsi que des modifications du train arrière, de l'aileron arrière et du ponton ; Colapinto le recevra également à Monza. Le travail améliore la charge locale et la qualité du flux et peut favoriser l'efficacité aérodynamique et la stabilité, sans être spécifique au faible appui."
         },
         "pt": {
           "risultatiGara": "2023: GAS P15 / OCO DNF\n2024: OCO P14 / GAS P15\n2025: GAS P16 / COL P17",
@@ -31612,7 +31616,7 @@
           "gestioneGomme": "A degradação é frequentemente limitada e o tempo perdido nas boxes é elevado: normalmente prefere-se uma única paragem, mas o pneu dianteiro esquerdo pode tornar-se o fator limitante. Contexto de 2026: Nenhum problema recorrente com os pneus; O desempenho global continua a ser o principal limite.",
           "considerazioniFinali": "PUNTI — Em Monza, entre 2023 e 2025, os dois carros mostraram em média ritmo de P15; o melhor resultado foi P14. Depois dos Países Baixos, a equipa é P6 no campeonato de 2026 com 63 pontos; o melhor resultado nos últimos três Grandes Prémios é P10.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": ""
+          "aggiornamentiInArrivo": "A Alpine já introduziu no carro de Gasly um pacote com novo fundo e bordos, difusor reperfilado e alterações na traseira, asa traseira e sidepod; Colapinto também o receberá em Monza. O trabalho melhora a carga local e a qualidade do fluxo e pode ajudar a eficiência aerodinâmica e a estabilidade, mas não é específico para baixa carga aerodinâmica."
         },
         "es": {
           "risultatiGara": "2023: GAS P15 / OCO DNF\n2024: OCO P14 / GAS P15\n2025: GAS P16 / COL P17",
@@ -31623,7 +31627,7 @@
           "gestioneGomme": "La degradación suele ser limitada y la pérdida de tiempo en boxes elevada: normalmente se prefiere una sola parada, pero el neumático delantero izquierdo puede convertirse en el factor limitante. Contexto 2026: No hay defectos en un solo neumático; El rendimiento general sigue siendo el principal límite.",
           "considerazioniFinali": "PUNTI — En Monza, entre 2023 y 2025, los dos coches mostraron de media un ritmo de P15; el mejor resultado fue P14. Después de los Países Bajos, el equipo es P6 del mundial de 2026 con 63 puntos; el mejor resultado de los últimos tres Grandes Premios es P10.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": ""
+          "aggiornamentiInArrivo": "Alpine ya ha introducido en el coche de Gasly un paquete con nuevo fondo y bordes, difusor reperfilado y cambios en la parte trasera, el alerón trasero y el pontón; Colapinto también lo recibirá en Monza. El trabajo mejora la carga local y la calidad del flujo y puede ayudar a la eficiencia aerodinámica y la estabilidad, pero no es específico para baja carga."
         },
         "de": {
           "risultatiGara": "2023: GAS P15 / OCO DNF\n2024: OCO P14 / GAS P15\n2025: GAS P16 / COL P17",
@@ -31634,7 +31638,7 @@
           "gestioneGomme": "Der Reifenabbau ist häufig begrenzt und der Zeitverlust in der Boxengasse hoch: Normalerweise wird ein einziger Stopp bevorzugt, aber der linke Vorderreifen kann zum limitierenden Faktor werden. Kontext 2026: Kein einziger Reifendefekt; Die Gesamtleistung bleibt das Hauptlimit.",
           "considerazioniFinali": "PUNTI — In Monza zeigten beide Autos von 2023 bis 2025 im Mittel eine Pace für P15; das beste Ergebnis war P14. Nach den Niederlanden liegt das Team mit 63 Punkten auf P6 der Weltmeisterschaft 2026; das beste Ergebnis der letzten drei Grand Prix ist P10.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": ""
+          "aggiornamentiInArrivo": "Alpine hat an Gaslys Auto bereits ein Paket mit neuem Unterboden und Unterbodenkanten, neu profiliertem Diffusor sowie Änderungen am Heck, Heckflügel und Seitenkasten eingeführt; Colapinto erhält es ebenfalls in Monza. Die Arbeiten verbessern lokale Last und Strömungsqualität und können Effizienz und Stabilität unterstützen, sind aber nicht speziell für wenig Abtrieb ausgelegt."
         }
       }
     },

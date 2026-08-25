@@ -4,25 +4,8 @@ import { useLingua } from '../i18n/contestoLingua.js'
 
 const NUMERO_RIGHE_INIZIALI = 10
 
-const LOCALE = {
-  it: 'it-IT', en: 'en-GB', fr: 'fr-FR', pt: 'pt-PT', es: 'es-ES', de: 'de-DE',
-}
-
-function formattaData(valore, lingua, datoNonDisponibile) {
-  if (!valore) return datoNonDisponibile
-
-  const data = new Date(valore)
-  if (Number.isNaN(data.getTime())) return datoNonDisponibile
-
-  return new Intl.DateTimeFormat(LOCALE[lingua] || LOCALE.it, {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  }).format(data)
-}
-
 function ClassificaPrevisionale({ previsioni }) {
-  const { lingua, t } = useLingua()
+  const { t } = useLingua()
   const [mostraTutti, setMostraTutti] = useState(false)
 
   if (!previsioni?.classifica?.length) {
@@ -138,9 +121,7 @@ function ClassificaPrevisionale({ previsioni }) {
       )}
 
       <p className="fonte-previsioni">
-        {t.fontePrevisioni(
-          formattaData(previsioni.aggiornatoIl, lingua, t.datoNonDisponibile),
-        )}
+        {t.fontePrevisioni}
       </p>
     </section>
   )

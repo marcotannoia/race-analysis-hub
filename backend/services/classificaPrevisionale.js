@@ -3,15 +3,14 @@ const { testiPrevisione } = require("../i18n/previsioni");
 const { valoreLocalizzato } = require("../i18n/lingue");
 
 const PESI = Object.freeze({
-  andamento2026: 13,
-  compatibilitaVetturaCircuito: 15,
-  aggiornamentiTecnici: 7,
-  confidenzaPilotaCircuito: 2,
-  qualifica2026: 10,
-  scuderia2026: 25,
-  storicoPersonale: 5,
-  passoGaraRecente: 19,
-  gestioneGomme: 2,
+  andamento2026: 10,
+  compatibilitaVetturaCircuito: 25,
+  aggiornamentiTecnici: 10,
+  qualifica2026: 3,
+  scuderia2026: 18,
+  storicoPersonale: 6,
+  passoGaraRecente: 25,
+  gestioneGomme: 1,
   affidabilitaERischi: 2,
 });
 
@@ -19,7 +18,6 @@ const NOMI_FATTORI = Object.freeze({
   andamento2026: "Andamento 2026",
   compatibilitaVetturaCircuito: "Compatibilità vettura-circuito",
   aggiornamentiTecnici: "Aggiornamenti tecnici pertinenti",
-  confidenzaPilotaCircuito: "Confidenza pilota-circuito",
   qualifica2026: "Qualifica 2026",
   scuderia2026: "Andamento scuderia 2026",
   storicoPersonale: "Storico personale",
@@ -397,7 +395,6 @@ function creaClassificaPrevisionale({
         valutazioneCircuitoScuderia,
       ),
       aggiornamentiTecnici: aggiornamento.valore,
-      confidenzaPilotaCircuito: compatibilitaPilota,
       qualifica2026: valutaRisultatiRecenti(qualifiche2026, 5),
       scuderia2026: andamentoScuderia,
       storicoPersonale: storico.valore,
