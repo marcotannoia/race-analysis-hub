@@ -150,7 +150,9 @@ Per la release `1.9.0`, verificare inoltre che:
 - la classifica usi il modello `statistico-editoriale-v2`, con pesi complessivi
   pari al 100%: compatibilità vettura-circuito 25%, ultimi tre GP 25%,
   scuderia 18%, andamento 2026 10%, aggiornamenti tecnici pertinenti 10%,
-  storico 6%, qualifica 3%, affidabilità/rischi 2% e gomme 1%;
+  storico 6%, qualifica 3%, affidabilità/rischi 2% e gomme 1%. Con una penalità
+  confermata, la penalità pesa il 50% e tutti gli altri fattori vengono ridotti
+  proporzionalmente al restante 50%;
 - `GET /api/v1/lingue` elenchi esattamente le sei lingue;
 - `GET /api/v1/gare/attuale?lingua=de` restituisca `"lingua": "de"` e
   l'header `Content-Language: de`;

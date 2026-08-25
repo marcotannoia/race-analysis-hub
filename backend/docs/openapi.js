@@ -21,15 +21,14 @@ const parametroSlugConfronto = (nome, descrizione, esempio) => ({
 });
 
 const esempioPesiPrevisionali = [
-  ["andamento2026", "Andamento 2026", 13],
-  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 15],
-  ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 7],
-  ["confidenzaPilotaCircuito", "Confidenza pilota-circuito", 2],
-  ["qualifica2026", "Qualifica 2026", 10],
-  ["scuderia2026", "Andamento scuderia 2026", 25],
-  ["storicoPersonale", "Storico personale", 5],
-  ["passoGaraRecente", "Andamento negli ultimi 3 GP", 19],
-  ["gestioneGomme", "Gestione gomme", 2],
+  ["andamento2026", "Andamento 2026", 10],
+  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 25],
+  ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 10],
+  ["qualifica2026", "Qualifica 2026", 3],
+  ["scuderia2026", "Andamento scuderia 2026", 18],
+  ["storicoPersonale", "Storico personale", 6],
+  ["passoGaraRecente", "Andamento negli ultimi 3 GP", 25],
+  ["gestioneGomme", "Gestione gomme", 1],
   ["affidabilitaERischi", "Affidabilità e rischi", 2],
 ].map(([chiave, nome, pesoPercentuale]) => ({
   chiave,
@@ -1652,8 +1651,10 @@ const documentoOpenApi = {
           sintesi: { type: "string" },
           fattori: {
             type: "array",
-            minItems: 10,
+            minItems: 9,
             maxItems: 10,
+            description:
+              "Nove fattori ordinari; con una penalità confermata viene aggiunto il fattore penalità al 50% e gli altri pesi vengono dimezzati proporzionalmente.",
             items: { $ref: "#/components/schemas/FattorePrevisionale" },
             example: esempioFattoriPrevisionali,
           },
@@ -1697,8 +1698,8 @@ const documentoOpenApi = {
           },
           pesi: {
             type: "array",
-            minItems: 10,
-            maxItems: 10,
+            minItems: 9,
+            maxItems: 9,
             items: { $ref: "#/components/schemas/PesoPrevisionale" },
             example: esempioPesiPrevisionali,
           },

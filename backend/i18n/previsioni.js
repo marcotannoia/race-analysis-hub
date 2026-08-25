@@ -11,6 +11,7 @@ const TESTI_PREVISIONI = Object.freeze({
       passoGaraRecente: "Andamento negli ultimi 3 GP",
       gestioneGomme: "Gestione gomme",
       affidabilitaERischi: "Affidabilità e rischi",
+      penalita: "Penalità in griglia",
     },
     stati: {
       nessunaInformazione: "Nessuna informazione",
@@ -57,6 +58,7 @@ const TESTI_PREVISIONI = Object.freeze({
       passoGaraRecente: "Trend over the last 3 Grands Prix",
       gestioneGomme: "Tyre management",
       affidabilitaERischi: "Reliability and risks",
+      penalita: "Grid penalty",
     },
     stati: {
       nessunaInformazione: "No information available",
@@ -103,6 +105,7 @@ const TESTI_PREVISIONI = Object.freeze({
       passoGaraRecente: "Tendance sur les 3 derniers Grands Prix",
       gestioneGomme: "Gestion des pneus",
       affidabilitaERischi: "Fiabilité et risques",
+      penalita: "Pénalité sur la grille",
     },
     stati: {
       nessunaInformazione: "Aucune information disponible",
@@ -149,6 +152,7 @@ const TESTI_PREVISIONI = Object.freeze({
       passoGaraRecente: "Tendência nos últimos 3 Grandes Prémios",
       gestioneGomme: "Gestão dos pneus",
       affidabilitaERischi: "Fiabilidade e riscos",
+      penalita: "Penalização na grelha",
     },
     stati: {
       nessunaInformazione: "Nenhuma informação disponível",
@@ -195,6 +199,7 @@ const TESTI_PREVISIONI = Object.freeze({
       passoGaraRecente: "Tendencia en los últimos 3 Grandes Premios",
       gestioneGomme: "Gestión de neumáticos",
       affidabilitaERischi: "Fiabilidad y riesgos",
+      penalita: "Penalización en parrilla",
     },
     stati: {
       nessunaInformazione: "No hay información disponible",
@@ -241,6 +246,7 @@ const TESTI_PREVISIONI = Object.freeze({
       passoGaraRecente: "Trend der letzten 3 Grand Prix",
       gestioneGomme: "Reifenmanagement",
       affidabilitaERischi: "Zuverlässigkeit und Risiken",
+      penalita: "Startplatzstrafe",
     },
     stati: {
       nessunaInformazione: "Keine Informationen verfügbar",
