@@ -1312,6 +1312,59 @@ main {
   font-size: 1rem;
 }
 
+.righe-finali .riga-etichettata:first-child > span {
+  color: #d0d0d0;
+  border-color: #4b4b4b;
+  background: #202020;
+}
+
+.penalita-widget {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.35fr) minmax(0, 1fr);
+  gap: 12px;
+  margin-left: 70px;
+}
+
+.penalita-posizioni,
+.penalita-widget > p {
+  min-height: 116px;
+  margin: 0;
+  border: 1px solid rgba(225, 6, 0, 0.55);
+  border-radius: 8px;
+  background: rgba(225, 6, 0, 0.08);
+}
+
+.penalita-posizioni {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  padding: 22px;
+  color: #fff;
+  font-family: var(--font-racing);
+}
+
+.penalita-posizioni strong {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.penalita-posizioni span {
+  color: var(--rosso);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.penalita-widget > p {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  color: #c5c5c5;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
 .spazio-aggiornamenti {
   min-height: 170px;
   margin-left: 70px;
@@ -1688,6 +1741,10 @@ main {
     margin-left: 0;
   }
 
+  .penalita-widget {
+    margin-left: 0;
+  }
+
   .riga-etichettata {
     grid-template-columns: 1fr;
     align-items: start;
@@ -1698,6 +1755,15 @@ main {
   .riga-etichettata > span {
     min-width: 96px;
     justify-self: start;
+  }
+
+  .penalita-widget {
+    grid-template-columns: 1fr;
+  }
+
+  .penalita-posizioni,
+  .penalita-widget > p {
+    min-height: 96px;
   }
 
   .grafico-andamento header,

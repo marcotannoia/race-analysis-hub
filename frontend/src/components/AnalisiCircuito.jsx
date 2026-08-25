@@ -277,6 +277,21 @@ function RigheEtichettate({ righe, classe = '' }) {
   )
 }
 
+function creaPenalitaWidget(testo) {
+  const contenuto = pulisciProsa(testo)
+  const posizioni = contenuto.match(/\b(\d{1,2})\s+(?:posizion|place|places|lugares|startpl[aä]tz)/i)
+  const primaFrase = contenuto.split(/(?<=[.!?])\s+/)[0]
+  const causa = primaFrase
+    .replace(/^[^:]+:\s*/, '')
+    .replace(/^.*?\b(?:per la|because of a|en raison du|devido à|por la|wegen des)\s+/i, '')
+    .replace(/^./, (carattere) => carattere.toUpperCase())
+
+  return {
+    posizioni: posizioni?.[1] || '—',
+    spiegazione: causa,
+  }
+}
+
 function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
   const { t } = useLingua()
   if (!analisi) {
@@ -310,6 +325,9 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
     noteAnnuali,
     t,
   )
+  const penalitaWidget = analisi.penalita
+    ? creaPenalitaWidget(analisi.penalita)
+    : null
 
   return (
     <>
@@ -420,7 +438,13 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
               <h2>{t.penalitaArrivo}</h2>
             </div>
           </div>
-          <div className="spazio-aggiornamenti">{analisi.penalita}</div>
+          <div className="penalita-widget">
+            <div className="penalita-posizioni">
+              <strong>{penalitaWidget.posizioni}</strong>
+              <span>POS.</span>
+            </div>
+            <p>{penalitaWidget.spiegazione}</p>
+          </div>
         </section>
       )}
 

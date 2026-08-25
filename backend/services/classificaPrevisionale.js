@@ -14,6 +14,8 @@ const PESI = Object.freeze({
   affidabilitaERischi: 2,
 });
 
+const PESO_PENALITA = 50;
+
 const NOMI_FATTORI = Object.freeze({
   andamento2026: "Andamento 2026",
   compatibilitaVetturaCircuito: "Compatibilità vettura-circuito",
@@ -24,6 +26,7 @@ const NOMI_FATTORI = Object.freeze({
   passoGaraRecente: "Andamento negli ultimi 3 GP",
   gestioneGomme: "Gestione gomme",
   affidabilitaERischi: "Affidabilità e rischi",
+  penalita: "Penalità in griglia",
 });
 
 const NESSUN_PACCHETTO_CONFERMATO =
@@ -171,21 +174,30 @@ function valutaAffidabilita(risultati, analisiPilota, analisiScuderia) {
   const testo = normalizzaTesto(
     `${analisiPilota?.affidabilita || ""} ${analisiScuderia?.affidabilita || ""}`,
   );
-  const penalita = normalizzaTesto(analisiPilota?.penalita);
-
   if (/nessun problema|affidabilita (?:alta|buona)/.test(testo)) valore += 8;
   if (/guasto|ritiro tecnico|problema di affidabilita/.test(testo)) valore -= 18;
-  if (
-    penalita &&
-    !/nessuna penalita|non (?:e stata|risulta) .*penalita|alcuna penalita/.test(
-      penalita,
-    ) &&
-    /penalita confermata|arretramento|squalifica/.test(penalita)
-  ) {
-    valore -= 20;
-  }
 
   return limita(valore, 20, 95);
+}
+
+function valutaPenalita(testoOriginale) {
+  const testo = normalizzaTesto(testoOriginale);
+  const confermata =
+    testo &&
+    !/nessuna penalita|non (?:e stata|risulta) .*penalita|alcuna penalita/.test(
+      testo,
+    ) &&
+    /penalita confermata|arretrera|arretramento|squalifica/.test(testo);
+
+  if (!confermata) return null;
+
+  const corrispondenza = testo.match(/(?:almeno\s+)?(\d{1,2})\s+posizion/);
+  const posizioni = corrispondenza ? Number(corrispondenza[1]) : null;
+
+  return {
+    posizioni,
+    valore: posizioni === null ? 25 : limita(100 - posizioni * 10),
+  };
 }
 
 function valutaAggiornamento(testoOriginale, lingua = "it") {
@@ -315,17 +327,31 @@ function creaSintesi(fattori, testi) {
   return testi.sintesi(migliori[0], migliori[1]);
 }
 
-function creaFattori(valutazioni, testi) {
-  return Object.entries(PESI).map(([chiave, pesoPercentuale]) => {
+function creaFattori(valutazioni, testi, penalita) {
+  const moltiplicatore = penalita ? (100 - PESO_PENALITA) / 100 : 1;
+  const fattori = Object.entries(PESI).map(([chiave, pesoPercentuale]) => {
     const valutazione = arrotonda(limita(valutazioni[chiave]));
+    const pesoEffettivo = arrotonda(pesoPercentuale * moltiplicatore);
     return {
       chiave,
       nome: testi.fattori[chiave],
-      pesoPercentuale,
+      pesoPercentuale: pesoEffettivo,
       valutazione,
-      contributo: arrotonda((valutazione * pesoPercentuale) / 100),
+      contributo: arrotonda((valutazione * pesoEffettivo) / 100),
     };
   });
+
+  if (penalita) {
+    fattori.push({
+      chiave: "penalita",
+      nome: testi.fattori.penalita,
+      pesoPercentuale: PESO_PENALITA,
+      valutazione: penalita.valore,
+      contributo: arrotonda((penalita.valore * PESO_PENALITA) / 100),
+    });
+  }
+
+  return fattori;
 }
 
 function creaClassificaPrevisionale({
@@ -368,6 +394,7 @@ function creaClassificaPrevisionale({
     const gare2026 = risultatiPilota(eventi, pilota.slug, "gara");
     const qualifiche2026 = risultatiPilota(eventi, pilota.slug, "qualifica");
     const storico = valutaStorico(analisiPilota);
+    const penalita = valutaPenalita(analisiPilota?.penalita);
     const aggiornamento = valutaAggiornamento(
       analisiScuderia?.aggiornamentiInArrivo || analisiPilota?.aggiornamentiInArrivo,
       lingua,
@@ -406,7 +433,14 @@ function creaClassificaPrevisionale({
         analisiScuderia,
       ),
     };
-    const fattori = creaFattori(valutazioni, testi);
+    const fattoriBase = creaFattori(valutazioni, testi, null);
+    const fattori = penalita
+      ? creaFattori(valutazioni, testi, penalita)
+      : fattoriBase;
+    const indiceBase = fattoriBase.reduce(
+      (totale, fattore) => totale + fattore.contributo,
+      0,
+    );
     const confidenzaCodice = livelloConfidenza(
       gara,
       storico,
@@ -415,7 +449,10 @@ function creaClassificaPrevisionale({
 
     return {
       indice: arrotonda(
-        fattori.reduce((totale, fattore) => totale + fattore.contributo, 0),
+        penalita
+          ? indiceBase * ((100 - PESO_PENALITA) / 100) +
+              penalita.valore * (PESO_PENALITA / 100)
+          : indiceBase,
       ),
       pilota: {
         slug: pilota.slug,
@@ -475,7 +512,9 @@ function creaClassificaPrevisionale({
 module.exports = {
   NOMI_FATTORI,
   PESI,
+  PESO_PENALITA,
   creaClassificaPrevisionale,
   valutaAggiornamento,
   valutaCompatibilitaVettura,
+  valutaPenalita,
 };
