@@ -62,6 +62,7 @@ function ScuderiaPage({ slug }) {
         <AnalisiCircuito
           analisi={dati.analisi}
           andamentoStagioneCorrente={dati.andamentoStagioneCorrente}
+          valutazioneFinale={dati.valutazioneFinale}
         />
       </div>
     </>

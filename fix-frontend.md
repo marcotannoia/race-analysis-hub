@@ -18,12 +18,12 @@ backend/data/dati-iniziali.json
 |---|---|---|
 | `risultatiGara` | Storico essenziale → Gara | Sì |
 | `risultatiQualifica` | Storico essenziale → Qualifica | Sì |
-| `notaBene` | N.B. | Sì |
-| `andamentoPerAnno` | Prestazioni e performance → Andamento per anno | Sì, se compilato |
-| `gestioneGomme` | Prestazioni e performance → Gestione gomme | Sì |
-| `passoGara` | Prestazioni e performance → Passo gara | Sì |
-| `considerazioniFinali` | Considerazioni finali → Conclusione | Sì |
-| `gestioneGomme` + `affidabilita` | Considerazioni finali → Macchina e guida | Sì |
+| `notaBene` | Risultati sul circuito ↳ Analisi | Sì; il blocco non appare se non ci sono eventi |
+| `andamentoPerAnno` | Risultati sul circuito ↳ Analisi | Sì, se compilato |
+| `gestioneGomme` | Prestazioni e performance ↳ Gestione gomme | Sì |
+| `passoGara` | Prestazioni e performance ↳ Passo gara | Sì |
+| Compatibilità della scuderia | Considerazioni finali → Compatibilità col circuito | Calcolata nella home |
+| Classifica previsionale | Considerazioni finali → Classifica previsionale | Calcolata nella home |
 | `aggiornamentiInArrivo` | Aggiornamenti in arrivo → Tipo e benefici attesi | Sì |
 | `fonti` | Fonti associate all'analisi | Sì |
 
@@ -51,23 +51,22 @@ compatibilità con chi usa già l'API.
 `andamentoPerAnno` è un campo particolare:
 
 - se contiene del testo, la pagina mostra esattamente il contenuto inserito;
-- se è vuoto, la pagina costruisce automaticamente l'andamento usando
-  `risultatiGara`, `risultatiQualifica` e `notaBene`.
+- se è vuoto, la pagina costruisce l'analisi usando `risultatiGara`,
+  `risultatiQualifica` e soltanto le note realmente presenti in `notaBene`;
+- le frasi equivalenti a “nessun evento da segnalare” non generano un widget;
+- quando il pilota non ha partecipato, nelle schede Gara e Qualifica appare
+  soltanto `DNP` (*Did Not Participate*) e quell'anno non genera un'analisi.
 
 ## Considerazioni finali
 
-Il frontend usa `considerazioniFinali` come conclusione leggibile e rimuove le
-vecchie etichette previsionali iniziali, come `FAVORITO`, `PODIO` o `PUNTI`.
-Il testo deve quindi contenere una conclusione reale sostenuta dai dati, non una
-categoria di pronostico.
+Il frontend non ricava più questa sezione da etichette editoriali come
+`FAVORITO`, `PODIO` o `PUNTI`. Pilota e scuderia caricano in parallelo la propria
+scheda e `/api/v1/home`: la conclusione mostra la compatibilità reale della
+scuderia col circuito e la classifica previsionale già calcolata per il GP.
 
-```json
-"considerazioniFinali": "Il passo recente è stabile e le frenate di Monza valorizzano la precisione in ingresso; la gestione dell'anteriore sinistra resta il punto da controllare."
-```
-
-Il widget `Macchina e guida` riusa inoltre le evidenze presenti in
-`gestioneGomme` e `affidabilita`, mentre il widget `Conclusione` mostra il testo
-editoriale ripulito dalla vecchia etichetta.
+Nel profilo pilota compare la sua posizione; nel profilo scuderia compaiono le
+posizioni di entrambi i piloti. In questo modo i valori restano identici alla
+home e non vengono duplicati o ricalcolati nel browser.
 
 ## Aggiornamenti e indice previsionale
 

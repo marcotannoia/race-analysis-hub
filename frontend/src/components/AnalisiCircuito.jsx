@@ -9,14 +9,6 @@ function pulisciProsa(testo) {
     .trim()
 }
 
-function rimuoviGiudizioPrevisionale(testo) {
-  return pulisciProsa(testo)
-    .replace(/^(?:FAVORIT[OAIE]?|FAVOURITE|FAVORI|PODIO|TOP\s*10|PUNTI|MOLTO COMPETITIV[OA]|VERY COMPETITIVE|TRÈS COMPÉTITIF|MUITO COMPETITIVO|MUY COMPETITIVO|SEHR KONKURRENZFÄHIG|OUTSIDER(?: DI LUSSO)?|DA VALUTARE|DIFFICILE)\s*[—–-]\s*/i, '')
-    .replace(/(?:^|[;,.]\s*)favorit[oaie]?\s+(?:quasi\s+)?ovunque[;,.]?/gi, '')
-    .replace(/\s{2,}/g, ' ')
-    .trim()
-}
-
 function normalizzaQualifica(testo) {
   return String(testo || '').replace(/\bQ(?=\d)/gi, 'P')
 }
@@ -99,12 +91,22 @@ function creaNoteAnnuali(analisi, anni, t) {
     }
   })
 
-  const note = anni.map((anno) => ({
-    etichetta: String(anno),
-    testo: notePerAnno.get(anno) || t.nessunEvento,
-  }))
+  const nessunEvento = pulisciProsa(t.nessunEvento).toLocaleLowerCase()
+  const notaValida = (testo) => {
+    const contenuto = pulisciProsa(testo)
+    const nessunaAnomalia = /^(?:nessuna anomalia|no marked anomalies|aucune anomalie|sem anomalias|no hay anomalías|keine (?:markanten|auffälligen) anomalien)/i
+    return contenuto
+      && contenuto.toLocaleLowerCase() !== nessunEvento
+      && !nessunaAnomalia.test(contenuto)
+  }
+  const note = anni
+    .filter((anno) => notaValida(notePerAnno.get(anno)))
+    .map((anno) => ({
+      etichetta: String(anno),
+      testo: notePerAnno.get(anno),
+    }))
 
-  if (notePerAnno.has('generale')) {
+  if (notaValida(notePerAnno.get('generale'))) {
     note.push({ etichetta: t.generale, testo: notePerAnno.get('generale') })
   }
 
@@ -112,35 +114,45 @@ function creaNoteAnnuali(analisi, anni, t) {
 }
 
 function creaAndamentoAnnuale(storicoGara, storicoQualifica, noteAnnuali, t) {
-  const notePerAnno = new Map(
-    noteAnnuali.map((nota) => [Number(nota.etichetta), nota.testo]),
-  )
+  return noteAnnuali.map((nota) => {
+    if (nota.etichetta === t.generale) return nota
 
-  return storicoGara.map((gara) => {
-    const qualifica = storicoQualifica.find((riga) => riga.anno === gara.anno)
+    const anno = Number(nota.etichetta)
+    const gara = storicoGara.find((riga) => riga.anno === anno)
+    const qualifica = storicoQualifica.find((riga) => riga.anno === anno)
     const posizioneQualifica = qualifica?.posizione || '—'
-    const nonDisputata =
-      gara.posizione === t.nonCorso && posizioneQualifica === t.nonCorso
-
-    const andamento = nonDisputata
-      ? t.nonDisputato
-      : t.andamentoRisultato(posizioneQualifica, gara.posizione)
+    const posizioneGara = gara?.posizione || '—'
+    const andamento = t.andamentoRisultato(posizioneQualifica, posizioneGara)
 
     return {
-      etichetta: String(gara.anno),
-      testo: `${andamento} ${notePerAnno.get(gara.anno) || ''}`.trim(),
+      etichetta: String(anno),
+      testo: `${andamento} ${nota.testo}`.trim(),
     }
   })
 }
 
 function creaAndamentoVisualizzato(analisi, storicoGara, storicoQualifica, noteAnnuali, t) {
+  const haPartecipato = storicoGara.some((gara) => {
+    const qualifica = storicoQualifica.find((riga) => riga.anno === gara.anno)
+    return gara.posizione !== t.nonCorso || qualifica?.posizione !== t.nonCorso
+  })
+
+  if (!haPartecipato) return []
+
   const andamentoPersonalizzato = leggiTestiAnnuali(analisi.andamentoPerAnno)
 
   if (andamentoPersonalizzato.size) {
-    return [...andamentoPersonalizzato].map(([anno, testo]) => ({
-      etichetta: anno === 'generale' ? t.generale : String(anno),
-      testo,
-    }))
+    return [...andamentoPersonalizzato]
+      .filter(([anno]) => {
+        if (anno === 'generale') return true
+        const gara = storicoGara.find((riga) => riga.anno === anno)?.posizione
+        const qualifica = storicoQualifica.find((riga) => riga.anno === anno)?.posizione
+        return gara !== t.nonCorso || qualifica !== t.nonCorso
+      })
+      .map(([anno, testo]) => ({
+        etichetta: anno === 'generale' ? t.generale : String(anno),
+        testo,
+      }))
   }
 
   return creaAndamentoAnnuale(storicoGara, storicoQualifica, noteAnnuali, t)
@@ -170,58 +182,7 @@ function creaRighePrestazioneAnnuali(testo, t, edizioni = [], campoEdizione) {
     }))
 }
 
-function trovaAffidabilita(analisi, t) {
-  if (analisi.affidabilita) return pulisciProsa(analisi.affidabilita)
-
-  const ultimaAffidabilita = [...(analisi.storicoEdizioni || [])]
-    .reverse()
-    .find((edizione) => edizione.affidabilita)?.affidabilita
-
-  if (ultimaAffidabilita) return pulisciProsa(ultimaAffidabilita)
-
-  const testoPassoGara = [...leggiTestiAnnuali(analisi.passoGara).values()].join(
-    ' ',
-  )
-  const testoNotaBene = [...leggiTestiAnnuali(analisi.notaBene).values()].join(
-    ' ',
-  )
-  const ritiri = testoPassoGara.match(/(\d+)\s+ritiri?\/DNS/i)
-
-  if (ritiri && Number(ritiri[1]) > 0) {
-    return t.ritiriStagione(ritiri[1])
-  }
-
-  if (/\britir(?:o|i|ato|ata)\b|\bDNS\b/i.test(testoNotaBene)) {
-    return t.ritiriStorici
-  }
-
-  return ''
-}
-
-function segmentaConsiderazioni(analisi, t) {
-  const frasiGomme = [...leggiTestiAnnuali(analisi.gestioneGomme).values()]
-    .join(' ')
-    .split(/(?<=[.!?])\s+/)
-    .filter(Boolean)
-  const contestoVettura = frasiGomme.find((frase) => /2026|scuderia|team|écurie|equipa|equipo|Team/i.test(frase))
-  const caratteristiche = [frasiGomme[0], contestoVettura]
-    .filter((frase, indice, elenco) => frase && elenco.indexOf(frase) === indice)
-    .map(rimuoviGiudizioPrevisionale)
-    .filter(Boolean)
-    .join(' ')
-  const affidabilita = trovaAffidabilita(analisi, t)
-  const conclusione = rimuoviGiudizioPrevisionale(analisi.considerazioniFinali)
-
-  return [
-    {
-      etichetta: t.caratteristicheVetturaGuida,
-      testo: [caratteristiche, affidabilita].filter(Boolean).join(' '),
-    },
-    { etichetta: t.conclusioneFinale, testo: conclusione },
-  ].filter((riga) => riga.testo)
-}
-
-function RisultatiStorici({ titolo, righe }) {
+function RisultatiStorici({ titolo, righe, t }) {
   return (
     <article className="colonna-risultati">
       <h3>{titolo}</h3>
@@ -229,11 +190,57 @@ function RisultatiStorici({ titolo, righe }) {
         {righe.map((riga) => (
           <p key={`${titolo}-${riga.anno}`}>
             <span>{riga.anno}</span>
-            <strong className="risultato-posizione">{riga.posizione}</strong>
+            <strong
+              className="risultato-posizione"
+              title={riga.posizione === t.nonCorso ? t.dnpDescrizione : undefined}
+            >
+              {riga.posizione}
+            </strong>
           </p>
         ))}
       </div>
     </article>
+  )
+}
+
+function ValutazioneFinale({ valutazione, t }) {
+  if (!valutazione) return null
+
+  const compatibilita = valutazione.compatibilita
+  const previsioni = valutazione.previsioni || []
+
+  if (!compatibilita && !previsioni.length) return null
+
+  return (
+    <div className="griglia-valutazione-finale">
+      {compatibilita && (
+        <article className="widget-valutazione compatibilita-finale">
+          <span>{t.compatibilitaCircuito}</span>
+          <div>
+            <strong>{compatibilita.scuderia.nome}</strong>
+            <b>{compatibilita.indice}%</b>
+          </div>
+          <i aria-hidden="true">
+            <span style={{ width: `${compatibilita.indice}%` }} />
+          </i>
+        </article>
+      )}
+
+      {previsioni.length > 0 && (
+        <article className="widget-valutazione classifica-finale">
+          <span>{t.classificaPrevisionale}</span>
+          <ol>
+            {previsioni.map((voce) => (
+              <li key={voce.pilota.slug}>
+                <b>P{voce.posizione}</b>
+                <strong>{voce.pilota.nome}</strong>
+                <small>{voce.indice}/100</small>
+              </li>
+            ))}
+          </ol>
+        </article>
+      )}
+    </div>
   )
 }
 
@@ -311,7 +318,11 @@ function creaPenalitaWidget(testo) {
   }
 }
 
-function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
+function AnalisiCircuito({
+  analisi,
+  andamentoStagioneCorrente,
+  valutazioneFinale = null,
+}) {
   const { t } = useLingua()
   if (!analisi) {
     return (
@@ -347,6 +358,27 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
   const penalitaWidget = analisi.penalita
     ? creaPenalitaWidget(analisi.penalita)
     : null
+  const righeGestioneGomme = creaRighePrestazioneAnnuali(
+    analisi.gestioneGomme,
+    t,
+    analisi.storicoEdizioni,
+    'gestioneGomme',
+  )
+  const righePassoGara = creaRighePrestazioneAnnuali(
+    analisi.passoGara,
+    t,
+    analisi.storicoEdizioni,
+    'passoGara',
+  )
+  const mostraPrestazioni = righeGestioneGomme.length > 0 || righePassoGara.length > 0
+  const mostraValutazioneFinale = Boolean(
+    valutazioneFinale?.compatibilita || valutazioneFinale?.previsioni?.length,
+  )
+  const numeroAggiornamenti = mostraValutazioneFinale ? '04' : '03'
+  const numeroPenalita = mostraValutazioneFinale ? '05' : '04'
+  const numeroAndamento = mostraValutazioneFinale
+    ? (analisi.penalita ? '06' : '05')
+    : (analisi.penalita ? '05' : '04')
 
   return (
     <>
@@ -368,17 +400,20 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
         </div>
 
         <div className="griglia-risultati-storici">
-          <RisultatiStorici titolo={t.gara} righe={storicoGara} />
-          <RisultatiStorici titolo={t.qualifica} righe={storicoQualifica} />
+          <RisultatiStorici titolo={t.gara} righe={storicoGara} t={t} />
+          <RisultatiStorici titolo={t.qualifica} righe={storicoQualifica} t={t} />
         </div>
 
-        <aside className="nota-bene">
-          <h3>{t.spiegazioneRisultatiPassati}</h3>
-          <RigheEtichettate righe={noteAnnuali} classe="righe-anni" />
-        </aside>
+        {andamentoAnnuale.length > 0 && (
+          <div className="ramo-analisi">
+            <h3 className="titolo-ramo"><span>↳</span>{t.analisi}</h3>
+            <RigheEtichettate righe={andamentoAnnuale} classe="righe-anni" />
+          </div>
+        )}
       </section>
 
-      <section className="sezione-analisi performance-circuito">
+      {mostraPrestazioni && (
+        <section className="sezione-analisi performance-circuito">
         <div className="intestazione-sezione">
           <span>02</span>
           <div>
@@ -387,41 +422,26 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
           </div>
         </div>
 
-        <div className="blocchi-performance">
-          <article className="blocco-performance">
-            <h3>{t.andamentoAnno}</h3>
-            <RigheEtichettate righe={andamentoAnnuale} classe="righe-anni" />
-          </article>
+        <div className="albero-performance">
+          {righeGestioneGomme.length > 0 && (
+            <article className="ramo-performance">
+              <h3 className="titolo-ramo"><span>↳</span>{t.gestioneGomme}</h3>
+              <RigheEtichettate classe="righe-anni" righe={righeGestioneGomme} />
+            </article>
+          )}
 
-          <article className="blocco-performance">
-            <h3>{t.gestioneGomme}</h3>
-            <RigheEtichettate
-              classe="righe-anni"
-              righe={creaRighePrestazioneAnnuali(
-                analisi.gestioneGomme,
-                t,
-                analisi.storicoEdizioni,
-                'gestioneGomme',
-              )}
-            />
-          </article>
-
-          <article className="blocco-performance">
-            <h3>{t.passoGara}</h3>
-            <RigheEtichettate
-              classe="righe-anni"
-              righe={creaRighePrestazioneAnnuali(
-                analisi.passoGara,
-                t,
-                analisi.storicoEdizioni,
-                'passoGara',
-              )}
-            />
-          </article>
+          {righePassoGara.length > 0 && (
+            <article className="ramo-performance">
+              <h3 className="titolo-ramo"><span>↳</span>{t.passoGara}</h3>
+              <RigheEtichettate classe="righe-anni" righe={righePassoGara} />
+            </article>
+          )}
         </div>
       </section>
+      )}
 
-      <section className="sezione-analisi considerazioni-finali">
+      {mostraValutazioneFinale && (
+        <section className="sezione-analisi considerazioni-finali">
         <div className="intestazione-sezione">
           <span>03</span>
           <div>
@@ -429,15 +449,13 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
             <h2>{t.considerazioniFinali}</h2>
           </div>
         </div>
-        <RigheEtichettate
-          righe={segmentaConsiderazioni(analisi, t)}
-          classe="righe-finali"
-        />
+        <ValutazioneFinale valutazione={valutazioneFinale} t={t} />
       </section>
+      )}
 
       <section className="sezione-analisi aggiornamenti-futuri">
         <div className="intestazione-sezione">
-          <span>04</span>
+          <span>{numeroAggiornamenti}</span>
           <div>
             <p>{t.quadroTecnico}</p>
             <h2>{t.aggiornamentiArrivo}</h2>
@@ -449,7 +467,7 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
       {analisi.penalita && (
         <section className="sezione-analisi penalita-future">
           <div className="intestazione-sezione">
-            <span>05</span>
+            <span>{numeroPenalita}</span>
             <div>
               <p>{t.soloSeConfermate}</p>
               <h2>{t.penalitaArrivo}</h2>
@@ -468,7 +486,7 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
       {andamentoStagioneCorrente && (
         <section id="andamento" className="sezione-analisi sezione-grafici">
           <div className="intestazione-sezione">
-            <span>{analisi.penalita ? '06' : '05'}</span>
+            <span>{numeroAndamento}</span>
             <div>
               <p>{t.gpDopoGp}</p>
               <h2>{t.andamento} {andamentoStagioneCorrente.stagione}</h2>

@@ -1131,9 +1131,9 @@ main {
   padding-left: 0;
 }
 
-.colonna-confronto .nota-bene,
-.colonna-confronto .blocchi-performance,
-.colonna-confronto .righe-finali,
+.colonna-confronto .ramo-analisi,
+.colonna-confronto .albero-performance,
+.colonna-confronto .griglia-valutazione-finale,
 .colonna-confronto .griglia-aggiornamenti,
 .colonna-confronto .griglia-grafici,
 .colonna-confronto .grafici-senza-risultati,
@@ -1213,8 +1213,7 @@ main {
 }
 
 .colonna-risultati h3,
-.nota-bene h3,
-.blocco-performance h3 {
+.titolo-ramo {
   margin: 0 0 18px;
   color: var(--rosso);
   font-family: var(--font-racing);
@@ -1222,6 +1221,20 @@ main {
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.colonna-risultati:first-child {
+  position: relative;
+  padding-right: 28px;
+}
+
+.colonna-risultati:first-child::after {
+  position: absolute;
+  top: 0;
+  right: -28px;
+  height: 100%;
+  border-right: 1px dashed var(--bordo-evidente);
+  content: '';
 }
 
 .colonna-risultati > div {
@@ -1281,12 +1294,6 @@ main {
   text-align: center;
 }
 
-.nota-bene {
-  margin: 42px 0 0 70px;
-  padding-top: 34px;
-  border-top: 1px solid var(--bordo);
-}
-
 .righe-etichettate {
   border-top: 1px solid var(--bordo);
 }
@@ -1308,66 +1315,170 @@ main {
   line-height: 1.8;
 }
 
-.blocchi-performance {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+.ramo-analisi,
+.albero-performance {
   margin-left: 70px;
 }
 
-.blocco-performance {
-  margin: 0;
-  padding: 24px;
-  border: 1px solid var(--bordo);
-  border-radius: 8px;
-  background: #080808;
+.ramo-analisi {
+  position: relative;
+  margin-top: 48px;
+  padding: 32px 0 0 42px;
+  border-top: 1px solid var(--bordo);
 }
 
-.blocco-performance:last-child {
-  margin-bottom: 0;
+.ramo-analisi::before,
+.albero-performance::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 52px;
+  border-bottom: 1px solid var(--bordo-evidente);
+  border-left: 1px solid var(--bordo-evidente);
+  border-radius: 0 0 0 14px;
+  content: '';
 }
 
-.blocco-performance .riga-etichettata {
-  grid-template-columns: 1fr;
-  align-items: start;
-  gap: 14px;
-  padding: 18px 0;
+.titolo-ramo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.blocco-performance .riga-etichettata > span {
-  min-width: 96px;
-  justify-self: start;
+.titolo-ramo span {
+  color: var(--rosso);
+  font-size: 1.65rem;
+  line-height: 1;
 }
 
-.righe-finali {
+.albero-performance {
+  position: relative;
+  display: grid;
+  gap: 42px;
+  padding-left: 42px;
+}
+
+.albero-performance::before {
+  height: calc(100% - 26px);
+}
+
+.ramo-performance {
+  position: relative;
+}
+
+.ramo-performance + .ramo-performance::before {
+  position: absolute;
+  top: -24px;
+  left: -42px;
+  width: 24px;
+  height: 46px;
+  border-bottom: 1px solid var(--bordo-evidente);
+  content: '';
+}
+
+.griglia-valutazione-finale {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   margin-left: 70px;
-  border: 0;
 }
 
-.righe-finali .riga-etichettata {
+.widget-valutazione {
   min-height: 180px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0;
   padding: 26px;
   border: 1px solid var(--bordo-evidente);
   border-radius: 8px;
   background: #080808;
 }
 
-.righe-finali .riga-etichettata p {
-  color: #ddd;
-  font-size: 1rem;
+.widget-valutazione > span {
+  color: var(--rosso);
+  font-family: var(--font-racing);
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.righe-finali .riga-etichettata > span {
+.compatibilita-finale > div {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.compatibilita-finale strong {
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.compatibilita-finale b {
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 2.7rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.compatibilita-finale i {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #202020;
+}
+
+.compatibilita-finale i span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--rosso);
+}
+
+.classifica-finale ol {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.classifica-finale li {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 11px;
+  border: 1px solid var(--bordo);
+  border-radius: 7px;
+  background: #0d0d0d;
+}
+
+.classifica-finale li b {
+  padding: 7px;
   color: #fff;
   border-color: rgba(225, 6, 0, 0.72);
-  background: rgba(225, 6, 0, 0.16);
+  border-radius: 5px;
+  background: rgba(225, 6, 0, 0.2);
+  font-family: var(--font-racing);
+  font-size: 1.15rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.classifica-finale li strong {
+  color: #fff;
+}
+
+.classifica-finale li small {
+  color: var(--testo-secondario);
 }
 
 .penalita-widget {
@@ -2265,9 +2376,9 @@ main {
     padding-left: 0;
   }
 
-  .nota-bene,
-  .blocchi-performance,
-  .righe-finali,
+  .ramo-analisi,
+  .albero-performance,
+  .griglia-valutazione-finale,
   .griglia-aggiornamenti,
   .griglia-grafici,
   .grafici-senza-risultati,
@@ -2287,10 +2398,17 @@ main {
     padding: 20px 0;
   }
 
-  .blocchi-performance,
-  .righe-finali,
+  .griglia-valutazione-finale,
   .griglia-aggiornamenti {
     grid-template-columns: 1fr;
+  }
+
+  .colonna-risultati:first-child {
+    padding-right: 0;
+  }
+
+  .colonna-risultati:first-child::after {
+    display: none;
   }
 
   .riga-etichettata > span {
@@ -2662,8 +2780,7 @@ main {
     font-size: 0.78rem;
   }
 
-  .riga-etichettata p,
-  .righe-finali .riga-etichettata p {
+  .riga-etichettata p {
     font-size: 0.9rem;
     line-height: 1.65;
   }
