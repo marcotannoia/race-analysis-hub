@@ -34,7 +34,7 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
     ),
   );
   assert.equal(documentoOpenApi.info.title, "Race Analysis Hub API");
-  assert.equal(documentoOpenApi.info.version, "1.9.0");
+  assert.equal(documentoOpenApi.info.version, "1.10.0");
   assert.match(documentoOpenApi.info.description, /adattate nel software/);
   assert.match(documentoOpenApi.info.description, /Race Analysis Hub/);
   assert.match(documentoOpenApi.info.license.name, /CC BY 4\.0/);
@@ -190,6 +190,13 @@ test("classifiche, andamento e metadati espongono schemi strutturati", () => {
     "#/components/schemas/ClassificaPrevisionale",
   );
   assert.ok(schemi.Home.required.includes("classificaPrevisionale"));
+  assert.ok(schemi.Home.required.includes("circuitoTecnico"));
+  assert.ok(schemi.Home.required.includes("aggiornamentiLive"));
+  assert.equal(
+    schemi.DettaglioScuderia.properties.profiloTecnico.$ref,
+    "#/components/schemas/ProfiloTecnicoScuderia",
+  );
+  assert.match(schemi.AggiornamentiLiveFia.description, /11 scuderie/);
   assert.equal(
     documentoOpenApi.paths["/previsioni/piloti"].get.responses[200].content[
       "application/json"

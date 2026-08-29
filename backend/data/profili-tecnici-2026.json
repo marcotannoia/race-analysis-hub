@@ -1,0 +1,220 @@
+{
+  "metadati": {
+    "stagione": 2026,
+    "aggiornatoIl": "2026-08-29",
+    "versione": "profilo-tecnico-v1",
+    "metodo": "Indici editoriali da 0 a 100 ricavati dall'andamento 2026, dai documenti FIA sugli sviluppi e da analisi tecniche pubbliche. Non sono probabilita di vittoria e non usano la posizione nel mondiale come scorciatoia."
+  },
+  "dimensioni": [
+    "efficienzaAerodinamica",
+    "potenzaDeployment",
+    "curvaLenta",
+    "curvaMedia",
+    "curvaVeloce",
+    "trazione",
+    "frenata",
+    "cordoli",
+    "gestioneGomme",
+    "stabilitaAssetto"
+  ],
+  "scuderie": {
+    "mercedes": {
+      "capacita": {
+        "efficienzaAerodinamica": 96,
+        "potenzaDeployment": 98,
+        "curvaLenta": 94,
+        "curvaMedia": 95,
+        "curvaVeloce": 94,
+        "trazione": 96,
+        "frenata": 95,
+        "cordoli": 92,
+        "gestioneGomme": 95,
+        "stabilitaAssetto": 96
+      },
+      "fonti": [
+        "https://www.formula1.com/en/latest/article/something-more-sizeable-mercedes-target-major-upgrade-after-f1-summer-break.4dxqU3SkbY2BFaecTvbTsR",
+        "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card"
+      ]
+    },
+    "ferrari": {
+      "capacita": {
+        "efficienzaAerodinamica": 91,
+        "potenzaDeployment": 88,
+        "curvaLenta": 89,
+        "curvaMedia": 94,
+        "curvaVeloce": 96,
+        "trazione": 90,
+        "frenata": 96,
+        "cordoli": 89,
+        "gestioneGomme": 92,
+        "stabilitaAssetto": 92
+      },
+      "fonti": [
+        "https://www.raceteq.com/en/articles/2026/06/f1-how-ferrari-mclaren-mercedes-red-bull-changed-in-miami-and-montreal",
+        "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf"
+      ]
+    },
+    "mclaren": {
+      "capacita": {
+        "efficienzaAerodinamica": 93,
+        "potenzaDeployment": 89,
+        "curvaLenta": 84,
+        "curvaMedia": 93,
+        "curvaVeloce": 95,
+        "trazione": 85,
+        "frenata": 92,
+        "cordoli": 88,
+        "gestioneGomme": 91,
+        "stabilitaAssetto": 88
+      },
+      "fonti": [
+        "https://www.mclaren.com/racing/formula-1/2026/how-we-responded-to-f1-regulation-challenges/",
+        "https://www.autosport.com/f1/news/why-mclaren-has-struggled-to-get-the-most-of-mercedes-f1-engine/10845524/"
+      ]
+    },
+    "red_bull": {
+      "capacita": {
+        "efficienzaAerodinamica": 90,
+        "potenzaDeployment": 96,
+        "curvaLenta": 86,
+        "curvaMedia": 88,
+        "curvaVeloce": 92,
+        "trazione": 91,
+        "frenata": 89,
+        "cordoli": 85,
+        "gestioneGomme": 86,
+        "stabilitaAssetto": 73
+      },
+      "fonti": [
+        "https://www.motorsport.com/f1/news/f1-2026-mid-season-grades-red-bull-stumbles-but-summer-rally-shows-glimmer-of-progress/10845430/",
+        "https://www.raceteq.com/en/articles/2026/06/f1-how-ferrari-mclaren-mercedes-red-bull-changed-in-miami-and-montreal"
+      ]
+    },
+    "rb": {
+      "capacita": {
+        "efficienzaAerodinamica": 82,
+        "potenzaDeployment": 91,
+        "curvaLenta": 84,
+        "curvaMedia": 84,
+        "curvaVeloce": 82,
+        "trazione": 85,
+        "frenata": 83,
+        "cordoli": 83,
+        "gestioneGomme": 82,
+        "stabilitaAssetto": 89
+      },
+      "fonti": [
+        "https://www.autosport.com/f1/news/whats-racing-bulls-doing-that-red-bull-isnt/10837786/",
+        "https://www.formula1.com/en/latest/article/alpine-in-development-war-with-racing-bulls-nielsen.1zD1DyYRcpezBRBxjSjOBG"
+      ]
+    },
+    "alpine": {
+      "capacita": {
+        "efficienzaAerodinamica": 78,
+        "potenzaDeployment": 91,
+        "curvaLenta": 83,
+        "curvaMedia": 84,
+        "curvaVeloce": 82,
+        "trazione": 84,
+        "frenata": 82,
+        "cordoli": 82,
+        "gestioneGomme": 83,
+        "stabilitaAssetto": 80
+      },
+      "fonti": [
+        "https://www.formula1.com/en/latest/article/alpine-in-development-war-with-racing-bulls-nielsen.1zD1DyYRcpezBRBxjSjOBG",
+        "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf"
+      ]
+    },
+    "haas": {
+      "capacita": {
+        "efficienzaAerodinamica": 73,
+        "potenzaDeployment": 84,
+        "curvaLenta": 76,
+        "curvaMedia": 74,
+        "curvaVeloce": 72,
+        "trazione": 75,
+        "frenata": 75,
+        "cordoli": 76,
+        "gestioneGomme": 70,
+        "stabilitaAssetto": 74
+      },
+      "fonti": [
+        "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
+        "https://www.the-race.com/formula-1/every-2026-f1-team-big-weakness/"
+      ]
+    },
+    "audi": {
+      "capacita": {
+        "efficienzaAerodinamica": 80,
+        "potenzaDeployment": 76,
+        "curvaLenta": 82,
+        "curvaMedia": 81,
+        "curvaVeloce": 80,
+        "trazione": 80,
+        "frenata": 82,
+        "cordoli": 78,
+        "gestioneGomme": 81,
+        "stabilitaAssetto": 83
+      },
+      "fonti": [
+        "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
+        "https://www.the-race.com/formula-1/every-2026-f1-team-big-weakness/"
+      ]
+    },
+    "williams": {
+      "capacita": {
+        "efficienzaAerodinamica": 79,
+        "potenzaDeployment": 91,
+        "curvaLenta": 75,
+        "curvaMedia": 64,
+        "curvaVeloce": 66,
+        "trazione": 72,
+        "frenata": 68,
+        "cordoli": 72,
+        "gestioneGomme": 61,
+        "stabilitaAssetto": 69
+      },
+      "fonti": [
+        "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
+        "https://www.motorsportmagazine.com/articles/single-seaters/f1/what-went-wrong-at-williams-and-can-it-salvage-its-2026-f1-season/"
+      ]
+    },
+    "aston_martin": {
+      "capacita": {
+        "efficienzaAerodinamica": 75,
+        "potenzaDeployment": 68,
+        "curvaLenta": 82,
+        "curvaMedia": 84,
+        "curvaVeloce": 83,
+        "trazione": 80,
+        "frenata": 80,
+        "cordoli": 78,
+        "gestioneGomme": 80,
+        "stabilitaAssetto": 81
+      },
+      "fonti": [
+        "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
+        "https://www.formula1.com/en/latest/article/the-state-of-play-at-aston-martin-after-three-rounds-of-the-2026-season.3OIUIgiMal6dG90xZbUqS4"
+      ]
+    },
+    "cadillac": {
+      "capacita": {
+        "efficienzaAerodinamica": 64,
+        "potenzaDeployment": 82,
+        "curvaLenta": 66,
+        "curvaMedia": 62,
+        "curvaVeloce": 60,
+        "trazione": 64,
+        "frenata": 65,
+        "cordoli": 65,
+        "gestioneGomme": 63,
+        "stabilitaAssetto": 62
+      },
+      "fonti": [
+        "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
+        "https://www.formula1.com/en/latest/article/the-state-of-play-at-cadillac-after-three-races-of-the-2026-season.1exa0SK5ZiGPYuFHDxL86d"
+      ]
+    }
+  }
+}

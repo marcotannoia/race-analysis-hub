@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { caricaHome } from '../services/api.js'
 import Collegamento from '../components/Collegamento.jsx'
 import ClassificaPrevisionale from '../components/ClassificaPrevisionale.jsx'
+import AggiornamentiLive from '../components/AggiornamentiLive.jsx'
+import DatiTecniciCircuito from '../components/DatiTecniciCircuito.jsx'
 import Marchio from '../components/Marchio.jsx'
 import { Caricamento, ErrorePagina } from '../components/StatoPagina.jsx'
 import { useLingua } from '../i18n/contestoLingua.js'
@@ -31,6 +33,8 @@ function HomePage() {
             piloti: home.piloti,
             scuderie: home.scuderie,
             garaAttuale: home.garaAttuale,
+            circuitoTecnico: home.circuitoTecnico,
+            aggiornamentiLive: home.aggiornamentiLive,
             classificaPrevisionale: home.classificaPrevisionale,
           })
         }
@@ -131,26 +135,33 @@ function HomePage() {
           )}
         </div>
 
-        <div className="prossimo-gp-home">
-          <div>
-            <span className="sovratitolo">{t.gpAttuale}</span>
-            {dati.garaAttuale ? (
-              <>
-                <h2>{dati.garaAttuale.nome}</h2>
-                <p>
-                  {dati.garaAttuale.circuito} · {dati.garaAttuale.paese}
-                </p>
-              </>
-            ) : (
-              <p>{t.gpNonDisponibile}</p>
+        <section className="prossimo-gp-home">
+          <div className="testata-gp-home">
+            <div>
+              <span className="sovratitolo">{t.gpAttuale}</span>
+              {dati.garaAttuale ? (
+                <>
+                  <h2>{dati.garaAttuale.nome}</h2>
+                  <p>
+                    {dati.garaAttuale.circuito} · {dati.garaAttuale.paese}
+                  </p>
+                </>
+              ) : (
+                <p>{t.gpNonDisponibile}</p>
+              )}
+            </div>
+            {dati.garaAttuale && (
+              <span className="numero-gp" aria-label={t.numeroAnalisi}>
+                {String(dati.garaAttuale.ordineAnalisi).padStart(2, '0')}
+              </span>
             )}
           </div>
-          {dati.garaAttuale && (
-            <span className="numero-gp" aria-label={t.numeroAnalisi}>
-              {String(dati.garaAttuale.ordineAnalisi).padStart(2, '0')}
-            </span>
-          )}
-        </div>
+          <DatiTecniciCircuito profilo={dati.circuitoTecnico} />
+        </section>
+
+        {dati.aggiornamentiLive && (
+          <AggiornamentiLive aggiornamenti={dati.aggiornamentiLive} />
+        )}
 
         <section className="invito-confronto">
           <div>

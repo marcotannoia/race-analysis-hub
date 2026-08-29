@@ -1,0 +1,130 @@
+{
+  "metadati": {
+    "stagione": 2026,
+    "aggiornatoIl": "2026-08-29",
+    "versione": "circuiti-tecnici-v1",
+    "metodo": "I dati geometrici provengono dalle pagine ufficiali Formula 1. Gli indici di richiesta da 0 a 100 sono una lettura editoriale tecnica della pista e servono esclusivamente a calcolare l'aderenza macchina-circuito. Le zone Straight Mode vengono aggiunte solo dopo l'acquisizione della mappa ufficiale FIA dell'evento."
+  },
+  "dimensioni": [
+    "efficienzaAerodinamica",
+    "potenzaDeployment",
+    "curvaLenta",
+    "curvaMedia",
+    "curvaVeloce",
+    "trazione",
+    "frenata",
+    "cordoli",
+    "gestioneGomme",
+    "stabilitaAssetto"
+  ],
+  "circuiti": {
+    "olanda-zandvoort": {
+      "fp1At": "2026-08-21T10:30:00.000Z",
+      "eventoFia": "Dutch Grand Prix",
+      "dati": { "lunghezzaKm": 4.259, "giri": 72, "distanzaKm": 306.587, "curve": 14, "direzione": "orario", "tipologia": "permanente", "livelloCarico": "alto", "stressFreni": "medio", "stressGomme": "alto" },
+      "caratteristiche": ["Curve sopraelevate", "Sequenze veloci e strette", "Poche occasioni naturali di sorpasso"],
+      "puntiSorpassoPrincipali": 2,
+      "richieste": { "efficienzaAerodinamica": 86, "potenzaDeployment": 58, "curvaLenta": 62, "curvaMedia": 84, "curvaVeloce": 96, "trazione": 72, "frenata": 62, "cordoli": 65, "gestioneGomme": 88, "stabilitaAssetto": 94 },
+      "fonti": ["https://www.formula1.com/en/racing/2026/netherlands", "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072/event/Dutch%20Grand%20Prix"]
+    },
+    "italia-monza": {
+      "fp1At": "2026-09-04T10:30:00.000Z",
+      "eventoFia": "Italian Grand Prix",
+      "dati": { "lunghezzaKm": 5.793, "giri": 53, "distanzaKm": 306.72, "curve": 11, "rettilineoPrincipaleKm": 1.1, "percentualePienoGas": 80, "direzione": "orario", "tipologia": "permanente", "livelloCarico": "basso", "stressFreni": "alto", "stressGomme": "medio" },
+      "caratteristiche": ["Massima velocità e minimo drag", "Frenate violente da alta velocità", "Trazione e stabilità sui cordoli delle chicane"],
+      "puntiSorpassoPrincipali": 2,
+      "richieste": { "efficienzaAerodinamica": 100, "potenzaDeployment": 100, "curvaLenta": 70, "curvaMedia": 55, "curvaVeloce": 78, "trazione": 88, "frenata": 100, "cordoli": 85, "gestioneGomme": 55, "stabilitaAssetto": 90 },
+      "fonti": ["https://www.formula1.com/en/racing/2026/italy"]
+    },
+    "spagna-madring": {
+      "fp1At": "2026-09-11T11:30:00.000Z",
+      "eventoFia": "Spanish Grand Prix",
+      "dati": { "lunghezzaKm": 5.416, "giri": 57, "distanzaKm": 308.706, "curve": 22, "velocitaMassimaStimataKmh": 340, "direzione": "orario", "tipologia": "semi-permanente", "livelloCarico": "medio", "stressFreni": "alto", "stressGomme": "medio" },
+      "caratteristiche": ["Tratto cittadino e sezione permanente", "Curva 12 sopraelevata al 24 per cento", "Alternanza tra rettilinei veloci e sezioni tecniche"],
+      "puntiSorpassoPrincipali": 3,
+      "richieste": { "efficienzaAerodinamica": 90, "potenzaDeployment": 88, "curvaLenta": 82, "curvaMedia": 80, "curvaVeloce": 76, "trazione": 88, "frenata": 92, "cordoli": 78, "gestioneGomme": 76, "stabilitaAssetto": 86 },
+      "fonti": ["https://www.formula1.com/en/racing/2026/spain"]
+    },
+    "azerbaigian-baku": {
+      "fp1At": "2026-09-24T08:30:00.000Z",
+      "eventoFia": "Azerbaijan Grand Prix",
+      "dati": { "lunghezzaKm": 6.003, "giri": 51, "distanzaKm": 306.049, "curve": 20, "direzione": "antiorario", "tipologia": "cittadino", "livelloCarico": "medio-basso", "stressFreni": "alto", "stressGomme": "medio" },
+      "caratteristiche": ["Lunghissimo rettilineo del traguardo", "Sezione del castello molto lenta e stretta", "Compromesso critico tra drag e carico"],
+      "puntiSorpassoPrincipali": 2,
+      "richieste": { "efficienzaAerodinamica": 98, "potenzaDeployment": 100, "curvaLenta": 96, "curvaMedia": 58, "curvaVeloce": 55, "trazione": 94, "frenata": 100, "cordoli": 68, "gestioneGomme": 62, "stabilitaAssetto": 88 },
+      "fonti": ["https://www.formula1.com/en/racing/2026/azerbaijan"]
+    },
+    "bahrein-sepang": {
+      "fp1At": "2026-10-02T04:30:00.000Z",
+      "eventoFia": "Bahrain Grand Prix in Malaysia",
+      "dati": { "lunghezzaKm": 5.543, "giri": 56, "distanzaKm": 310.408, "curve": 15, "direzione": "orario", "tipologia": "permanente", "livelloCarico": "medio-alto", "stressFreni": "medio", "stressGomme": "alto" },
+      "caratteristiche": ["Caldo e umidità elevati", "Due lunghi rettilinei separati da un tornante", "Mix di curve lente, medie e veloci"],
+      "puntiSorpassoPrincipali": 3,
+      "richieste": { "efficienzaAerodinamica": 92, "potenzaDeployment": 90, "curvaLenta": 78, "curvaMedia": 92, "curvaVeloce": 94, "trazione": 84, "frenata": 78, "cordoli": 72, "gestioneGomme": 98, "stabilitaAssetto": 92 },
+      "fonti": ["https://www.sepangcircuit.com/architecture", "https://corp.formula1.com/formula-1-and-fia-confirm-that-malaysia-will-join-the-2026-calendar-as-host-venue-for-the-bahrain-grand-prix/"]
+    },
+    "singapore-marina-bay": {
+      "fp1At": "2026-10-09T08:30:00.000Z",
+      "eventoFia": "Singapore Grand Prix",
+      "dati": { "lunghezzaKm": 4.927, "giri": 62, "distanzaKm": 305.337, "curve": 19, "direzione": "antiorario", "tipologia": "cittadino", "livelloCarico": "alto", "stressFreni": "alto", "stressGomme": "medio" },
+      "caratteristiche": ["Curve lente, muri vicini e fondo sconnesso", "Caldo e umidità anche in notturna", "Trazione e precisione contano più della velocità massima"],
+      "puntiSorpassoPrincipali": 3,
+      "richieste": { "efficienzaAerodinamica": 72, "potenzaDeployment": 58, "curvaLenta": 100, "curvaMedia": 82, "curvaVeloce": 42, "trazione": 100, "frenata": 94, "cordoli": 86, "gestioneGomme": 84, "stabilitaAssetto": 98 },
+      "fonti": ["https://www.formula1.com/en/racing/2026/singapore"]
+    },
+    "usa-austin": {
+      "fp1At": "2026-10-23T17:30:00.000Z",
+      "eventoFia": "United States Grand Prix",
+      "dati": { "lunghezzaKm": 5.513, "giri": 56, "distanzaKm": 308.405, "curve": 20, "direzione": "antiorario", "tipologia": "permanente", "livelloCarico": "medio-alto", "stressFreni": "medio", "stressGomme": "alto" },
+      "caratteristiche": ["Esse veloci nel primo settore", "Lungo rettilineo opposto", "Sezione finale lenta e tecnica"],
+      "puntiSorpassoPrincipali": 3,
+      "richieste": { "efficienzaAerodinamica": 92, "potenzaDeployment": 84, "curvaLenta": 82, "curvaMedia": 90, "curvaVeloce": 96, "trazione": 82, "frenata": 84, "cordoli": 84, "gestioneGomme": 96, "stabilitaAssetto": 94 },
+      "fonti": ["https://www.formula1.com/en/racing/2026/united-states"]
+    },
+    "messico-citta-del-messico": {
+      "fp1At": "2026-10-30T18:30:00.000Z",
+      "eventoFia": "Mexico City Grand Prix",
+      "dati": { "lunghezzaKm": 4.304, "giri": 71, "distanzaKm": 305.354, "curve": 17, "quotaMetri": 2285, "direzione": "orario", "tipologia": "permanente", "livelloCarico": "alto", "stressFreni": "alto", "stressGomme": "medio" },
+      "caratteristiche": ["Aria rarefatta oltre i 2.200 metri", "Ali da alto carico con resistenza ridotta dall'altitudine", "Raffreddamento e deployment molto sollecitati"],
+      "puntiSorpassoPrincipali": 3,
+      "richieste": { "efficienzaAerodinamica": 88, "potenzaDeployment": 100, "curvaLenta": 88, "curvaMedia": 84, "curvaVeloce": 68, "trazione": 92, "frenata": 92, "cordoli": 76, "gestioneGomme": 78, "stabilitaAssetto": 92 },
+      "fonti": ["https://www.formula1.com/en/racing/2026/mexico"]
+    },
+    "brasile-interlagos": {
+      "fp1At": "2026-11-06T15:30:00.000Z",
+      "eventoFia": "Brazilian Grand Prix",
+      "dati": { "lunghezzaKm": 4.309, "giri": 71, "distanzaKm": 305.879, "curve": 15, "direzione": "antiorario", "tipologia": "permanente", "livelloCarico": "medio-alto", "stressFreni": "medio", "stressGomme": "alto" },
+      "caratteristiche": ["Saliscendi e curve con camber variabile", "Secondo settore lento e guidato", "Ultima salita percorsa a pieno gas"],
+      "puntiSorpassoPrincipali": 2,
+      "richieste": { "efficienzaAerodinamica": 90, "potenzaDeployment": 88, "curvaLenta": 82, "curvaMedia": 94, "curvaVeloce": 82, "trazione": 92, "frenata": 82, "cordoli": 84, "gestioneGomme": 94, "stabilitaAssetto": 92 },
+      "fonti": ["https://www.formula1.com/en/racing/2026/brazil"]
+    },
+    "usa-las-vegas": {
+      "fp1At": "2026-11-20T00:30:00.000Z",
+      "eventoFia": "Las Vegas Grand Prix",
+      "dati": { "lunghezzaKm": 6.201, "giri": 50, "distanzaKm": 309.958, "curve": 17, "direzione": "antiorario", "tipologia": "cittadino", "livelloCarico": "basso", "stressFreni": "alto", "stressGomme": "basso" },
+      "caratteristiche": ["Rettifili molto lunghi e velocità elevate", "Asfalto freddo e bassa aderenza", "Efficienza, frenata e warm-up gomme decisivi"],
+      "puntiSorpassoPrincipali": 3,
+      "richieste": { "efficienzaAerodinamica": 100, "potenzaDeployment": 100, "curvaLenta": 84, "curvaMedia": 62, "curvaVeloce": 58, "trazione": 88, "frenata": 98, "cordoli": 68, "gestioneGomme": 92, "stabilitaAssetto": 88 },
+      "fonti": ["https://www.formula1.com/en/racing/2026/las-vegas"]
+    },
+    "qatar-lusail": {
+      "fp1At": "2026-11-27T13:30:00.000Z",
+      "eventoFia": "Qatar Grand Prix",
+      "dati": { "lunghezzaKm": 5.419, "giri": 57, "distanzaKm": 308.611, "curve": 16, "rettilineoPrincipaleKm": 1.068, "direzione": "orario", "tipologia": "permanente", "livelloCarico": "medio-alto", "stressFreni": "basso", "stressGomme": "molto alto" },
+      "caratteristiche": ["Sequenza continua di curve medio-veloci", "Carichi laterali e stress pneumatici molto elevati", "Poche frenate forti"],
+      "puntiSorpassoPrincipali": 1,
+      "richieste": { "efficienzaAerodinamica": 92, "potenzaDeployment": 76, "curvaLenta": 50, "curvaMedia": 98, "curvaVeloce": 100, "trazione": 65, "frenata": 48, "cordoli": 72, "gestioneGomme": 100, "stabilitaAssetto": 98 },
+      "fonti": ["https://www.formula1.com/en/racing/2026/qatar"]
+    },
+    "abu-dhabi-yas-marina": {
+      "fp1At": "2026-12-04T09:30:00.000Z",
+      "eventoFia": "Abu Dhabi Grand Prix",
+      "dati": { "lunghezzaKm": 5.281, "giri": 58, "distanzaKm": 306.183, "curve": 16, "direzione": "antiorario", "tipologia": "permanente", "livelloCarico": "medio", "stressFreni": "alto", "stressGomme": "medio" },
+      "caratteristiche": ["Due lunghi rettilinei", "Curve lente di trazione nel settore finale", "Evoluzione della pista dal tramonto alla notte"],
+      "puntiSorpassoPrincipali": 2,
+      "richieste": { "efficienzaAerodinamica": 92, "potenzaDeployment": 92, "curvaLenta": 94, "curvaMedia": 82, "curvaVeloce": 68, "trazione": 96, "frenata": 94, "cordoli": 74, "gestioneGomme": 82, "stabilitaAssetto": 90 },
+      "fonti": ["https://www.formula1.com/en/racing/2026/united-arab-emirates"]
+    }
+  }
+}

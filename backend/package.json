@@ -1,6 +1,6 @@
 {
   "name": "race-analysis-hub-backend",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "API REST pubblica per Race Analysis Hub",
   "main": "server.js",
   "engines": {
@@ -28,6 +28,7 @@
     "express-rate-limit": "^8.6.2",
     "helmet": "^8.3.0",
     "mongoose": "^9.9.2",
+    "pdfjs-dist": "5.4.624",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {

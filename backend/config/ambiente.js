@@ -87,6 +87,10 @@ const ambiente = Object.freeze({
     primaVariabileDisponibile("SERVE_FRONTEND"),
     produzione,
   ),
+  monitorFiaAbilitato: leggiBooleano(
+    primaVariabileDisponibile("FIA_MONITOR_ENABLED"),
+    produzione,
+  ),
 })
 
 module.exports = ambiente

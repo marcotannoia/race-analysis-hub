@@ -7,6 +7,9 @@ dotenv.config({ path: path.join(__dirname, ".env"), quiet: true });
 const app = require("./app");
 const collegaDatabase = require("./config/database");
 const ambiente = require("./config/ambiente");
+const {
+  avviaMonitorAggiornamentiFia,
+} = require("./services/aggiornamentiFia");
 
 async function avviaServer() {
   try {
@@ -19,6 +22,10 @@ async function avviaServer() {
     server.requestTimeout = 60000;
     server.headersTimeout = 65000;
     server.keepAliveTimeout = 5000;
+
+    const arrestaMonitorFia = ambiente.monitorFiaAbilitato
+      ? avviaMonitorAggiornamentiFia()
+      : () => {};
 
     server.on("error", (errore) => {
       console.error("Impossibile avviare il server:", errore.message);
@@ -34,6 +41,7 @@ async function avviaServer() {
 
       chiusuraInCorso = true;
       console.log(`Arresto del server richiesto da ${segnale}`);
+      arrestaMonitorFia();
 
       const arrestoForzato = setTimeout(() => process.exit(1), 10000);
       arrestoForzato.unref();

@@ -1,0 +1,25 @@
+name: Mantieni attivo il monitor FIA
+
+on:
+  schedule:
+    - cron: "*/5 * * * 4,5"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: monitor-fia
+  cancel-in-progress: true
+
+jobs:
+  sveglia-api:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Risveglia il servizio che acquisisce i documenti FIA
+        run: >-
+          curl --fail --silent --show-error
+          --retry 4 --retry-all-errors --retry-delay 15
+          --max-time 120
+          https://f1-stats-5v93.onrender.com/api/health

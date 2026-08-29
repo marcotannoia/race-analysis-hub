@@ -1,6 +1,8 @@
 const dati = require("../data/dati-iniziali.json");
 const snapshotF1db = require("../data/f1db-v2026.11.0-derivato.json");
 const statisticheContesto = require("../data/statistiche-contesto.json");
+const profiliTecnici = require("../data/profili-tecnici-2026.json");
+const circuitiTecnici = require("../data/circuiti-tecnici-2026.json");
 
 const errori = [];
 
@@ -62,6 +64,61 @@ const classificheScuderieF1db = new Map(
     scuderia,
   ]),
 );
+
+const slugScuderie = dati.scuderie.map((scuderia) => scuderia.slug).sort();
+const slugProfiliTecnici = Object.keys(profiliTecnici.scuderie || {}).sort();
+richiedi(
+  uguali(slugScuderie, slugProfiliTecnici) &&
+    uguali(profiliTecnici.dimensioni, circuitiTecnici.dimensioni),
+  "Profili tecnici incompleti o dimensioni incoerenti",
+);
+
+for (const [slug, profilo] of Object.entries(profiliTecnici.scuderie || {})) {
+  richiedi(
+    profiliTecnici.dimensioni.every(
+      (dimensione) =>
+        Number.isInteger(profilo.capacita?.[dimensione]) &&
+        profilo.capacita[dimensione] >= 0 &&
+        profilo.capacita[dimensione] <= 100,
+    ),
+    `Profilo tecnico non valido: ${slug}`,
+  );
+  richiedi(
+    profilo.fonti?.length >= 2 &&
+      profilo.fonti.every(
+        (fonte) =>
+          fonte.startsWith("https://") &&
+          !/\.([A-Za-z0-9_-]{8,})\.\1$/.test(fonte),
+      ),
+    `Fonti del profilo tecnico insufficienti: ${slug}`,
+  );
+}
+
+const slugGare = dati.gare.map((gara) => gara.slug).sort();
+const slugCircuitiTecnici = Object.keys(circuitiTecnici.circuiti || {}).sort();
+richiedi(
+  uguali(slugGare, slugCircuitiTecnici),
+  "Profili tecnici dei circuiti incompleti",
+);
+
+for (const [slug, circuito] of Object.entries(circuitiTecnici.circuiti || {})) {
+  richiedi(
+    !Number.isNaN(new Date(circuito.fp1At).getTime()) &&
+      circuito.dati?.curve > 0 &&
+      circuito.dati?.lunghezzaKm > 0 &&
+      circuito.fonti?.every((fonte) => fonte.startsWith("https://")),
+    `Dati tecnici del circuito non validi: ${slug}`,
+  );
+  richiedi(
+    circuitiTecnici.dimensioni.every(
+      (dimensione) =>
+        Number.isInteger(circuito.richieste?.[dimensione]) &&
+        circuito.richieste[dimensione] >= 0 &&
+        circuito.richieste[dimensione] <= 100,
+    ),
+    `Richieste tecniche del circuito non valide: ${slug}`,
+  );
+}
 
 for (const pilota of dati.piloti) {
   const f1db = classifichePilotiF1db.get(pilota.slug);
