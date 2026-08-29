@@ -9,6 +9,14 @@ function pulisciProsa(testo) {
     .trim()
 }
 
+function rimuoviGiudizioPrevisionale(testo) {
+  return pulisciProsa(testo)
+    .replace(/^(?:FAVORIT[OAIE]?|FAVOURITE|FAVORI|PODIO|TOP\s*10|PUNTI|MOLTO COMPETITIV[OA]|VERY COMPETITIVE|TRÈS COMPÉTITIF|MUITO COMPETITIVO|MUY COMPETITIVO|SEHR KONKURRENZFÄHIG|OUTSIDER(?: DI LUSSO)?|DA VALUTARE|DIFFICILE)\s*[—–-]\s*/i, '')
+    .replace(/(?:^|[;,.]\s*)favorit[oaie]?\s+(?:quasi\s+)?ovunque[;,.]?/gi, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
+}
+
 function normalizzaQualifica(testo) {
   return String(testo || '').replace(/\bQ(?=\d)/gi, 'P')
 }
@@ -138,16 +146,6 @@ function creaAndamentoVisualizzato(analisi, storicoGara, storicoQualifica, noteA
   return creaAndamentoAnnuale(storicoGara, storicoQualifica, noteAnnuali, t)
 }
 
-function aggiungiRiga(righe, etichetta, testo) {
-  const contenuto = pulisciProsa(testo)
-  if (!contenuto) return
-
-  const esistente = righe.find((riga) => riga.etichetta === etichetta)
-
-  if (esistente) esistente.testo = `${esistente.testo} ${contenuto}`
-  else righe.push({ etichetta, testo: contenuto })
-}
-
 function creaRighePrestazioneAnnuali(testo, t, edizioni = [], campoEdizione) {
   const testiPerAnno = leggiTestiAnnuali(testo)
 
@@ -201,48 +199,26 @@ function trovaAffidabilita(analisi, t) {
 }
 
 function segmentaConsiderazioni(analisi, t) {
-  const righe = []
-  const forma = /^(?:Forma|Forme|Form)\s+2026\s*:\s*(.*)$/i
-  const riferimento = /^(?:Riferimento|Reference|Référence|Referência|Referencia|Referenz)\s+2026\s*:\s*(.*)$/i
-  const aderenzaPista = /^(?:Fit pista|Track fit|Adéquation à la piste|Adequação à pista|Adaptación a la pista|Streckeneignung|Strecken-Eignung)\s*:\s*(.*)$/i
-  const confidenza = /^(?:Confidenza|Confidence|Confiance|Confiança|Confianza|Konfidenz|Vertrauen)\s*([^.:]*)[.:]?\s*(.*)$/i
-  const frasi = pulisciProsa(analisi.considerazioniFinali)
+  const frasiGomme = [...leggiTestiAnnuali(analisi.gestioneGomme).values()]
+    .join(' ')
     .split(/(?<=[.!?])\s+/)
     .filter(Boolean)
+  const contestoVettura = frasiGomme.find((frase) => /2026|scuderia|team|écurie|equipa|equipo|Team/i.test(frase))
+  const caratteristiche = [frasiGomme[0], contestoVettura]
+    .filter((frase, indice, elenco) => frase && elenco.indexOf(frase) === indice)
+    .map(rimuoviGiudizioPrevisionale)
+    .filter(Boolean)
+    .join(' ')
+  const affidabilita = trovaAffidabilita(analisi, t)
+  const conclusione = rimuoviGiudizioPrevisionale(analisi.considerazioniFinali)
 
-  frasi.forEach((frase, indice) => {
-    let corrispondenza
-
-    if (indice === 0) {
-      aggiungiRiga(righe, t.valutazione, frase)
-    } else if ((corrispondenza = frase.match(forma))) {
-      aggiungiRiga(righe, t.forma2026, corrispondenza[1])
-    } else if ((corrispondenza = frase.match(riferimento))) {
-      aggiungiRiga(righe, '2026', corrispondenza[1])
-    } else if ((corrispondenza = frase.match(aderenzaPista))) {
-      aggiungiRiga(righe, t.circuito, corrispondenza[1])
-    } else if (/^(?:Il circuito|The circuit|Le circuit|O circuito|El circuito|Die Strecke)\b/i.test(frase)) {
-      aggiungiRiga(righe, t.circuito, frase)
-    } else if ((corrispondenza = frase.match(confidenza))) {
-      const livello = corrispondenza[1].trim()
-      const spiegazione = corrispondenza[2].trim()
-      aggiungiRiga(
-        righe,
-        t.confidenza,
-        [livello, spiegazione].filter(Boolean).join(': '),
-      )
-    } else if (/\b2026\b/.test(frase)) {
-      aggiungiRiga(righe, '2026', frase)
-    } else if (righe.length) {
-      righe[righe.length - 1].testo += ` ${frase}`
-    } else {
-      aggiungiRiga(righe, t.analisi, frase)
-    }
-  })
-
-  aggiungiRiga(righe, t.affidabilita, trovaAffidabilita(analisi, t))
-
-  return righe
+  return [
+    {
+      etichetta: t.caratteristicheVetturaGuida,
+      testo: [caratteristiche, affidabilita].filter(Boolean).join(' '),
+    },
+    { etichetta: t.conclusioneFinale, testo: conclusione },
+  ].filter((riga) => riga.testo)
 }
 
 function RisultatiStorici({ titolo, righe }) {
@@ -253,11 +229,54 @@ function RisultatiStorici({ titolo, righe }) {
         {righe.map((riga) => (
           <p key={`${titolo}-${riga.anno}`}>
             <span>{riga.anno}</span>
-            <strong>{riga.posizione}</strong>
+            <strong className="risultato-posizione">{riga.posizione}</strong>
           </p>
         ))}
       </div>
     </article>
+  )
+}
+
+function AggiornamentiWidget({ testo, t }) {
+  const contenuto = pulisciProsa(testo)
+
+  if (!contenuto) {
+    return (
+      <div className="griglia-aggiornamenti">
+        <article className="widget-aggiornamento">
+          <span>{t.tipoAggiornamento}</span>
+          <strong>{t.nessunAggiornamentoConfermato}</strong>
+        </article>
+        <article className="widget-aggiornamento">
+          <span>{t.beneficiAggiornamento}</span>
+          <ul>
+            <li>{t.nessunBeneficioConfermato}</li>
+          </ul>
+        </article>
+      </div>
+    )
+  }
+
+  const frasi = contenuto.split(/(?<=[.!?])\s+/).filter(Boolean)
+  const benefici = frasi.slice(1)
+
+  return (
+    <div className="griglia-aggiornamenti">
+      <article className="widget-aggiornamento">
+        <span>{t.tipoAggiornamento}</span>
+        <p>{frasi[0]}</p>
+      </article>
+      <article className="widget-aggiornamento">
+        <span>{t.beneficiAggiornamento}</span>
+        <ul>
+          {(benefici.length ? benefici : [t.beneficioDaVerificare]).map(
+            (beneficio, indice) => (
+              <li key={`${beneficio}-${indice}`}>{beneficio}</li>
+            ),
+          )}
+        </ul>
+      </article>
+    </div>
   )
 }
 
@@ -420,13 +439,11 @@ function AnalisiCircuito({ analisi, andamentoStagioneCorrente }) {
         <div className="intestazione-sezione">
           <span>04</span>
           <div>
-            <p>{t.daCompilare}</p>
+            <p>{t.quadroTecnico}</p>
             <h2>{t.aggiornamentiArrivo}</h2>
           </div>
         </div>
-        <div className="spazio-aggiornamenti" aria-label={t.sezioneVuota}>
-          {analisi.aggiornamentiInArrivo || null}
-        </div>
+        <AggiornamentiWidget testo={analisi.aggiornamentiInArrivo} t={t} />
       </section>
 
       {analisi.penalita && (

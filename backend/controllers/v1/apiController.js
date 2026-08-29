@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Gara = require("../../models/Gara");
 const Pilota = require("../../models/Pilota");
 const Scuderia = require("../../models/Scuderia");
 const AnalisiGara = require("../../models/AnalisiGara");
@@ -172,8 +173,14 @@ async function home(richiesta, risposta) {
   const garaAttuale = await richiediGaraAttuale(risposta);
   if (!garaAttuale) return;
 
-  const [piloti, scuderie, analisiPiloti, analisiScuderie, datiLiveFia] =
-    await Promise.all([
+  const [
+    piloti,
+    scuderie,
+    analisiPiloti,
+    analisiScuderie,
+    datiLiveFia,
+    totaleGareAnalisi,
+  ] = await Promise.all([
       Pilota.find()
         .populate("scuderia", CAMPI_SCUDERIA_BREVE)
         .sort("classifica2026.posizione")
@@ -187,6 +194,7 @@ async function home(richiesta, risposta) {
         .populate("scuderia", `${CAMPI_SCUDERIA_BREVE} classifica2026`)
         .lean(),
       DatiLiveFia.findOne({ garaSlug: garaAttuale.slug }).lean(),
+      Gara.countDocuments({ stagione: garaAttuale.stagione }),
     ]);
 
   risposta.json({
@@ -214,6 +222,7 @@ async function home(richiesta, risposta) {
       stagione: garaAttuale.stagione,
       totalePiloti: piloti.length,
       totaleScuderie: scuderie.length,
+      totaleGareAnalisi,
     },
   });
 }

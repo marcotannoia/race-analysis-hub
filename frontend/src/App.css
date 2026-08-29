@@ -1134,7 +1134,7 @@ main {
 .colonna-confronto .nota-bene,
 .colonna-confronto .blocchi-performance,
 .colonna-confronto .righe-finali,
-.colonna-confronto .spazio-aggiornamenti,
+.colonna-confronto .griglia-aggiornamenti,
 .colonna-confronto .griglia-grafici,
 .colonna-confronto .grafici-senza-risultati,
 .colonna-confronto .fonte-andamento {
@@ -1225,17 +1225,23 @@ main {
 }
 
 .colonna-risultati > div {
-  border-top: 1px solid var(--bordo);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .colonna-risultati p {
-  min-height: 62px;
-  display: grid;
-  grid-template-columns: 78px minmax(0, 1fr);
-  align-items: center;
-  gap: 20px;
+  min-height: 116px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
   margin: 0;
-  border-bottom: 1px solid var(--bordo);
+  padding: 16px;
+  border: 1px solid var(--bordo);
+  border-radius: 8px;
+  background: #080808;
 }
 
 .colonna-risultati p span,
@@ -1262,10 +1268,17 @@ main {
 }
 
 .colonna-risultati p strong {
+  min-width: 64px;
+  padding: 9px 12px;
   color: #fff;
+  border: 1px solid rgba(225, 6, 0, 0.72);
+  border-radius: 7px;
+  background: rgba(225, 6, 0, 0.16);
   font-family: var(--font-racing);
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   font-weight: 400;
+  line-height: 1;
+  text-align: center;
 }
 
 .nota-bene {
@@ -1296,19 +1309,54 @@ main {
 }
 
 .blocchi-performance {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
   margin-left: 70px;
 }
 
 .blocco-performance {
-  margin-bottom: 56px;
+  margin: 0;
+  padding: 24px;
+  border: 1px solid var(--bordo);
+  border-radius: 8px;
+  background: #080808;
 }
 
 .blocco-performance:last-child {
   margin-bottom: 0;
 }
 
+.blocco-performance .riga-etichettata {
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 14px;
+  padding: 18px 0;
+}
+
+.blocco-performance .riga-etichettata > span {
+  min-width: 96px;
+  justify-self: start;
+}
+
 .righe-finali {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
   margin-left: 70px;
+  border: 0;
+}
+
+.righe-finali .riga-etichettata {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 26px;
+  border: 1px solid var(--bordo-evidente);
+  border-radius: 8px;
+  background: #080808;
 }
 
 .righe-finali .riga-etichettata p {
@@ -1316,10 +1364,10 @@ main {
   font-size: 1rem;
 }
 
-.righe-finali .riga-etichettata:first-child > span {
-  color: #d0d0d0;
-  border-color: #4b4b4b;
-  background: #202020;
+.righe-finali .riga-etichettata > span {
+  color: #fff;
+  border-color: rgba(225, 6, 0, 0.72);
+  background: rgba(225, 6, 0, 0.16);
 }
 
 .penalita-widget {
@@ -1369,14 +1417,51 @@ main {
   line-height: 1.65;
 }
 
-.spazio-aggiornamenti {
-  min-height: 170px;
+.griglia-aggiornamenti {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
   margin-left: 70px;
+}
+
+.widget-aggiornamento {
+  min-height: 170px;
   padding: 26px;
   color: #c5c5c5;
-  border: 1px dashed #333;
-  border-radius: 7px;
+  border: 1px solid var(--bordo-evidente);
+  border-radius: 8px;
+  background: #080808;
   line-height: 1.8;
+}
+
+.widget-aggiornamento > span {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--rosso);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.widget-aggiornamento strong {
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+.widget-aggiornamento p,
+.widget-aggiornamento ul {
+  margin: 0;
+}
+
+.widget-aggiornamento ul {
+  padding-left: 20px;
+}
+
+.widget-aggiornamento li::marker {
+  color: var(--rosso);
 }
 
 .griglia-grafici {
@@ -1717,19 +1802,37 @@ main {
 }
 
 .tratti-circuito {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 8px;
+}
+
+.tratti-circuito article {
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: #080808;
+  border: 1px solid var(--bordo);
+  border-radius: 6px;
+}
+
+.tratti-circuito strong {
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 1.1rem;
+  font-weight: 400;
 }
 
 .tratti-circuito span {
-  padding: 8px 11px;
-  color: #c5c5c5;
-  background: #0a0a0a;
-  border: 1px solid #272727;
-  border-radius: 999px;
-  font-size: 0.65rem;
+  color: var(--testo-secondario);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .lettura-tecnica-circuito {
@@ -2165,10 +2268,11 @@ main {
   .nota-bene,
   .blocchi-performance,
   .righe-finali,
+  .griglia-aggiornamenti,
   .griglia-grafici,
   .grafici-senza-risultati,
   .fonte-andamento,
-  .spazio-aggiornamenti {
+  .griglia-aggiornamenti {
     margin-left: 0;
   }
 
@@ -2181,6 +2285,12 @@ main {
     align-items: start;
     gap: 14px;
     padding: 20px 0;
+  }
+
+  .blocchi-performance,
+  .righe-finali,
+  .griglia-aggiornamenti {
+    grid-template-columns: 1fr;
   }
 
   .riga-etichettata > span {
@@ -2215,6 +2325,7 @@ main {
 
 @media (max-width: 700px) {
   .griglia-dati-circuito,
+  .tratti-circuito,
   .griglia-live-fia,
   .riassunto-profilo-tecnico {
     grid-template-columns: 1fr 1fr;

@@ -41,10 +41,6 @@ const TESTI_PREVISIONI = Object.freeze({
     livelli: { bassa: "bassa", media: "media", alta: "alta" },
     sintesi: (primo, secondo) =>
       `I fattori più favorevoli sono ${primo} e ${secondo}.`,
-    avvertenza:
-      "Queste sono previsioni statistiche ed editoriali, non certezze sportive. " +
-      "Possono contenere errori e cambiare dopo aggiornamenti tecnici, meteo, " +
-      "prove libere, penalità o altri eventi del weekend.",
   },
   en: {
     fattori: {
@@ -88,10 +84,6 @@ const TESTI_PREVISIONI = Object.freeze({
     livelli: { bassa: "low", media: "medium", alta: "high" },
     sintesi: (primo, secondo) =>
       `The strongest factors are ${primo} and ${secondo}.`,
-    avvertenza:
-      "These are statistical and editorial predictions, not sporting certainties. " +
-      "They may contain errors and change after technical upgrades, weather changes, " +
-      "practice sessions, penalties or other events during the weekend.",
   },
   fr: {
     fattori: {
@@ -135,10 +127,6 @@ const TESTI_PREVISIONI = Object.freeze({
     livelli: { bassa: "faible", media: "moyenne", alta: "élevée" },
     sintesi: (primo, secondo) =>
       `Les facteurs les plus favorables sont ${primo} et ${secondo}.`,
-    avvertenza:
-      "Il s'agit de prévisions statistiques et éditoriales, et non de certitudes sportives. " +
-      "Elles peuvent comporter des erreurs et évoluer après des changements techniques, " +
-      "des variations météorologiques, les essais libres, des pénalités ou d'autres événements du week-end.",
   },
   pt: {
     fattori: {
@@ -182,10 +170,6 @@ const TESTI_PREVISIONI = Object.freeze({
     livelli: { bassa: "baixa", media: "média", alta: "alta" },
     sintesi: (primo, secondo) =>
       `Os fatores mais favoráveis são ${primo} e ${secondo}.`,
-    avvertenza:
-      "Estas são previsões estatísticas e editoriais, não certezas desportivas. " +
-      "Podem conter erros e mudar após atualizações técnicas, alterações meteorológicas, " +
-      "treinos livres, penalizações ou outros acontecimentos do fim de semana.",
   },
   es: {
     fattori: {
@@ -229,10 +213,6 @@ const TESTI_PREVISIONI = Object.freeze({
     livelli: { bassa: "baja", media: "media", alta: "alta" },
     sintesi: (primo, secondo) =>
       `Los factores más favorables son ${primo} y ${secondo}.`,
-    avvertenza:
-      "Estas son previsiones estadísticas y editoriales, no certezas deportivas. " +
-      "Pueden contener errores y cambiar tras actualizaciones técnicas, cambios meteorológicos, " +
-      "entrenamientos libres, sanciones u otros acontecimientos del fin de semana.",
   },
   de: {
     fattori: {
@@ -276,10 +256,6 @@ const TESTI_PREVISIONI = Object.freeze({
     livelli: { bassa: "niedrig", media: "mittel", alta: "hoch" },
     sintesi: (primo, secondo) =>
       `Die günstigsten Faktoren sind ${primo} und ${secondo}.`,
-    avvertenza:
-      "Dies sind statistische und redaktionelle Prognosen, keine sportlichen Gewissheiten. " +
-      "Sie können Fehler enthalten und sich nach technischen Updates, Wetteränderungen, " +
-      "freien Trainings, Strafen oder anderen Ereignissen des Wochenendes ändern.",
   },
 });
 

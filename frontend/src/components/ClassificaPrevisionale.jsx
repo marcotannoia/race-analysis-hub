@@ -33,7 +33,6 @@ function ClassificaPrevisionale({ previsioni }) {
           <p>
             {t.favoritiPer(previsioni.gara.nome, previsioni.gara.circuito)}
           </p>
-          <p>{previsioni.avvertenza}</p>
         </div>
       </div>
 

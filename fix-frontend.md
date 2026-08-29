@@ -22,9 +22,9 @@ backend/data/dati-iniziali.json
 | `andamentoPerAnno` | Prestazioni e performance → Andamento per anno | Sì, se compilato |
 | `gestioneGomme` | Prestazioni e performance → Gestione gomme | Sì |
 | `passoGara` | Prestazioni e performance → Passo gara | Sì |
-| `considerazioniFinali` | Considerazioni finali | Sì |
-| `affidabilita` | Considerazioni finali → Affidabilità | Sì |
-| `aggiornamentiInArrivo` | Aggiornamenti in arrivo | Sì |
+| `considerazioniFinali` | Considerazioni finali → Conclusione | Sì |
+| `gestioneGomme` + `affidabilita` | Considerazioni finali → Macchina e guida | Sì |
+| `aggiornamentiInArrivo` | Aggiornamenti in arrivo → Tipo e benefici attesi | Sì |
 | `fonti` | Fonti associate all'analisi | Sì |
 
 I campi `considerazioniFinali`, `passoGara`, `gestioneGomme`, `affidabilita`,
@@ -56,15 +56,18 @@ compatibilità con chi usa già l'API.
 
 ## Considerazioni finali
 
-Il frontend riconosce alcune etichette all'interno di `considerazioniFinali`:
+Il frontend usa `considerazioniFinali` come conclusione leggibile e rimuove le
+vecchie etichette previsionali iniziali, come `FAVORITO`, `PODIO` o `PUNTI`.
+Il testo deve quindi contenere una conclusione reale sostenuta dai dati, non una
+categoria di pronostico.
 
 ```json
-"considerazioniFinali": "Valutazione generale. Forma 2026: descrizione della forma. Fit pista: descrizione del circuito. Confidenza media: motivazione della confidenza."
+"considerazioniFinali": "Il passo recente è stabile e le frenate di Monza valorizzano la precisione in ingresso; la gestione dell'anteriore sinistra resta il punto da controllare."
 ```
 
-La prima frase viene mostrata come `Valutazione`. Le frasi che iniziano con
-`Forma 2026:`, `Fit pista:` e `Confidenza` vengono separate nelle rispettive
-righe. Il campo `affidabilita` genera la riga `Affidabilità`.
+Il widget `Macchina e guida` riusa inoltre le evidenze presenti in
+`gestioneGomme` e `affidabilita`, mentre il widget `Conclusione` mostra il testo
+editoriale ripulito dalla vecchia etichetta.
 
 ## Aggiornamenti e indice previsionale
 
@@ -82,6 +85,17 @@ usato e quali caratteristiche del circuito può migliorare. Le ipotesi del tipo
 “sarebbe utile” non vengono trattate come componenti realmente disponibili.
 La compatibilità dichiarata viene inoltre corretta usando la competitività 2026
 della scuderia: un'etichetta positiva non può nascondere una vettura debole.
+
+La pagina divide automaticamente il contenuto in due widget: la prima frase
+descrive il tipo o il pacchetto, le frasi successive diventano l'elenco puntato
+dei benefici effettivi. Se il campo è vuoto, la pagina dichiara esplicitamente
+che non esistono aggiornamenti o benefici confermati.
+
+## Progressivo del circuito
+
+La home mostra `ordineAnalisi/totaleGareAnalisi` accanto al GP. Il numeratore
+proviene dalla gara corrente, mentre il totale è calcolato dal backend contando
+le gare della stessa stagione presenti nella sequenza editoriale.
 
 ## Controllare che il JSON sia valido
 ```bash

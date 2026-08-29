@@ -36,7 +36,6 @@ function DatiTecniciCircuito({ profilo }) {
           <span className="sovratitolo">{t.datiCircuito}</span>
           <h3>{t.tecnicaCircuito}</h3>
         </div>
-        <p>{t.aderenzaSpiegazione}</p>
       </header>
 
       <div className="griglia-dati-circuito">
@@ -64,7 +63,10 @@ function DatiTecniciCircuito({ profilo }) {
 
       <div className="tratti-circuito" aria-label={t.tecnicaCircuito}>
         {profilo.caratteristiche.map((caratteristica) => (
-          <span key={caratteristica}>{caratteristica}</span>
+          <article key={caratteristica}>
+            <strong>{caratteristica}</strong>
+            <span>{t.caratteristicaCircuito}</span>
+          </article>
         ))}
       </div>
 
