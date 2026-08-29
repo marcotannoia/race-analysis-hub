@@ -3,6 +3,7 @@ const Pilota = require("../../models/Pilota");
 const Scuderia = require("../../models/Scuderia");
 const AnalisiGara = require("../../models/AnalisiGara");
 const AnalisiScuderia = require("../../models/AnalisiScuderia");
+const DatiLiveFia = require("../../models/DatiLiveFia");
 const trovaGaraAttuale = require("../../services/garaAttuale");
 const creaAndamentoAnnuale = require("../../services/andamentoAnnuale");
 const {
@@ -12,6 +13,11 @@ const {
   indicatoriPilota,
   indicatoriScuderia,
 } = require("../../services/statisticheContesto");
+const {
+  creaAggiornamentiLive,
+  creaProfiloCircuito,
+  creaProfiloScuderia,
+} = require("../../services/profiliTecnici");
 const { inviaErrore } = require("../../utils/rispostaApi");
 const {
   LINGUA_PREDEFINITA,
@@ -166,20 +172,22 @@ async function home(richiesta, risposta) {
   const garaAttuale = await richiediGaraAttuale(risposta);
   if (!garaAttuale) return;
 
-  const [piloti, scuderie, analisiPiloti, analisiScuderie] = await Promise.all([
-    Pilota.find()
-      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
-      .sort("classifica2026.posizione")
-      .lean(),
-    Scuderia.find().sort("classifica2026.posizione").lean(),
-    AnalisiGara.find({ gara: garaAttuale._id })
-      .populate("pilota", `${CAMPI_PILOTA_BREVE} classifica2026`)
-      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
-      .lean(),
-    AnalisiScuderia.find({ gara: garaAttuale._id })
-      .populate("scuderia", `${CAMPI_SCUDERIA_BREVE} classifica2026`)
-      .lean(),
-  ]);
+  const [piloti, scuderie, analisiPiloti, analisiScuderie, datiLiveFia] =
+    await Promise.all([
+      Pilota.find()
+        .populate("scuderia", CAMPI_SCUDERIA_BREVE)
+        .sort("classifica2026.posizione")
+        .lean(),
+      Scuderia.find().sort("classifica2026.posizione").lean(),
+      AnalisiGara.find({ gara: garaAttuale._id })
+        .populate("pilota", `${CAMPI_PILOTA_BREVE} classifica2026`)
+        .populate("scuderia", CAMPI_SCUDERIA_BREVE)
+        .lean(),
+      AnalisiScuderia.find({ gara: garaAttuale._id })
+        .populate("scuderia", `${CAMPI_SCUDERIA_BREVE} classifica2026`)
+        .lean(),
+      DatiLiveFia.findOne({ garaSlug: garaAttuale.slug }).lean(),
+    ]);
 
   risposta.json({
     lingua,
@@ -188,6 +196,12 @@ async function home(richiesta, risposta) {
     scuderie: scuderie.map((scuderia) =>
       presentaScuderia(scuderia, lingua),
     ),
+    circuitoTecnico: creaProfiloCircuito(
+      garaAttuale.slug,
+      scuderie,
+      datiLiveFia,
+    ),
+    aggiornamentiLive: creaAggiornamentiLive(datiLiveFia, scuderie),
     classificaPrevisionale: creaClassificaPrevisionale({
       gara: garaAttuale,
       piloti,
@@ -330,6 +344,7 @@ async function creaSchedaScuderia(scuderia, garaAttuale, lingua) {
     scuderia: presentaScuderia(scuderia, lingua),
     piloti: piloti.map((pilota) => presentaPilota(pilota, lingua)),
     indicatori: indicatoriScuderia(piloti),
+    profiloTecnico: creaProfiloScuderia(scuderia.slug),
     analisi: presentaAnalisiScuderia(analisi, lingua),
     andamentoStagioneCorrente: andamento,
   };

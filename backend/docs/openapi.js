@@ -91,6 +91,11 @@ const documentoOpenApi = {
       "Le schede includono percentuali di rendimento sul bagnato e di errori " +
       "normalizzate sulle gare effettivamente disputate, senza esporre i conteggi grezzi. " +
       "Gli endpoint di confronto restituiscono due schede complete nello stesso ordine richiesto. " +
+      "La home espone il profilo tecnico del circuito e un indice editoriale di " +
+      "aderenza per scuderia, distinto dalla probabilità di vittoria e dalla classifica. " +
+      "Un monitor acquisisce i documenti evento dal sito FIA ogni cinque minuti nelle " +
+      "ore precedenti le FP1: aggiornamentiLive resta null finché il documento Car " +
+      "Presentation Submissions non è disponibile e validato per tutte le 11 scuderie. " +
       "In produzione si applicano una cache browser di 60 secondi, una cache " +
       "condivisa configurabile di 300 secondi e un limite di " +
       "1000 richieste ogni 15 minuti per indirizzo IP. I testi editoriali sono " +
@@ -1447,6 +1452,227 @@ const documentoOpenApi = {
           },
         },
       },
+      ValoreTecnico: {
+        type: "object",
+        required: ["dimensione", "valore"],
+        properties: {
+          dimensione: {
+            type: "string",
+            enum: [
+              "efficienzaAerodinamica",
+              "potenzaDeployment",
+              "curvaLenta",
+              "curvaMedia",
+              "curvaVeloce",
+              "trazione",
+              "frenata",
+              "cordoli",
+              "gestioneGomme",
+              "stabilitaAssetto",
+            ],
+          },
+          valore: { type: "integer", minimum: 0, maximum: 100 },
+        },
+      },
+      ProfiloTecnicoScuderia: {
+        type: "object",
+        description:
+          "Profilo editoriale tecnico 2026 basato su dati stagionali, documenti FIA e analisi pubbliche; non rappresenta una probabilità di vittoria.",
+        required: [
+          "stagione",
+          "aggiornatoIl",
+          "metodo",
+          "capacita",
+          "puntiForza",
+          "areeSensibili",
+          "fonti",
+        ],
+        properties: {
+          stagione: { type: "integer", const: 2026 },
+          aggiornatoIl: { type: "string", format: "date" },
+          metodo: { type: "string" },
+          capacita: {
+            type: "array",
+            minItems: 10,
+            maxItems: 10,
+            items: { $ref: "#/components/schemas/ValoreTecnico" },
+          },
+          puntiForza: {
+            type: "array",
+            minItems: 3,
+            maxItems: 3,
+            items: { $ref: "#/components/schemas/ValoreTecnico" },
+          },
+          areeSensibili: {
+            type: "array",
+            minItems: 2,
+            maxItems: 2,
+            items: { $ref: "#/components/schemas/ValoreTecnico" },
+          },
+          fonti: {
+            type: "array",
+            minItems: 2,
+            items: { type: "string", format: "uri", pattern: "^https://" },
+          },
+        },
+      },
+      DatiGeometriciCircuito: {
+        type: "object",
+        required: [
+          "lunghezzaKm",
+          "giri",
+          "distanzaKm",
+          "curve",
+          "direzione",
+          "tipologia",
+          "livelloCarico",
+          "stressFreni",
+          "stressGomme",
+        ],
+        properties: {
+          lunghezzaKm: { type: "number", minimum: 1 },
+          giri: { type: "integer", minimum: 1 },
+          distanzaKm: { type: "number", minimum: 1 },
+          curve: { type: "integer", minimum: 1 },
+          rettilineoPrincipaleKm: { type: "number", minimum: 0 },
+          percentualePienoGas: { type: "number", minimum: 0, maximum: 100 },
+          quotaMetri: { type: "number" },
+          velocitaMassimaStimataKmh: { type: "number", minimum: 0 },
+          direzione: { type: "string" },
+          tipologia: { type: "string" },
+          livelloCarico: { type: "string" },
+          stressFreni: { type: "string" },
+          stressGomme: { type: "string" },
+        },
+      },
+      CompatibilitaTecnicaScuderia: {
+        type: "object",
+        required: ["scuderia", "indice", "corrispondenze"],
+        properties: {
+          scuderia: { $ref: "#/components/schemas/ScuderiaBreve" },
+          indice: {
+            type: "integer",
+            minimum: 0,
+            maximum: 100,
+            description:
+              "Aderenza tecnica macchina-circuito; non è una probabilità di vittoria e non deriva dalla posizione in campionato.",
+          },
+          corrispondenze: {
+            type: "array",
+            minItems: 2,
+            maxItems: 2,
+            items: { type: "string" },
+          },
+        },
+      },
+      DocumentoCircuitoFia: {
+        type: "object",
+        required: [
+          "documentoUrl",
+          "pubblicatoIl",
+          "acquisitoIl",
+          "zoneStraightMode",
+          "rilevamentiOvertakeMode",
+        ],
+        properties: {
+          documentoUrl: { type: "string", format: "uri", pattern: "^https://" },
+          pubblicatoIl: { type: ["string", "null"], format: "date-time" },
+          acquisitoIl: { type: ["string", "null"], format: "date-time" },
+          zoneStraightMode: { type: "integer", minimum: 0 },
+          rilevamentiOvertakeMode: { type: "integer", minimum: 0 },
+        },
+      },
+      CircuitoTecnico: {
+        type: "object",
+        required: [
+          "stagione",
+          "aggiornatoIl",
+          "metodo",
+          "fp1At",
+          "dati",
+          "caratteristiche",
+          "puntiSorpassoPrincipali",
+          "richieste",
+          "compatibilita",
+          "documentoCircuito",
+          "fonti",
+        ],
+        properties: {
+          stagione: { type: "integer", const: 2026 },
+          aggiornatoIl: { type: "string", format: "date" },
+          metodo: { type: "string" },
+          fp1At: { type: "string", format: "date-time" },
+          dati: { $ref: "#/components/schemas/DatiGeometriciCircuito" },
+          caratteristiche: { type: "array", items: { type: "string" } },
+          puntiSorpassoPrincipali: { type: "integer", minimum: 0 },
+          richieste: {
+            type: "array",
+            minItems: 10,
+            maxItems: 10,
+            items: { $ref: "#/components/schemas/ValoreTecnico" },
+          },
+          compatibilita: {
+            type: "array",
+            minItems: 11,
+            maxItems: 11,
+            items: { $ref: "#/components/schemas/CompatibilitaTecnicaScuderia" },
+          },
+          documentoCircuito: {
+            oneOf: [
+              { $ref: "#/components/schemas/DocumentoCircuitoFia" },
+              { type: "null" },
+            ],
+          },
+          fonti: {
+            type: "array",
+            items: { type: "string", format: "uri", pattern: "^https://" },
+          },
+        },
+      },
+      AggiornamentoLiveScuderia: {
+        type: "object",
+        required: [
+          "scuderia",
+          "nessunAggiornamento",
+          "componenti",
+          "descrizione",
+        ],
+        properties: {
+          scuderia: { $ref: "#/components/schemas/ScuderiaBreve" },
+          nessunAggiornamento: { type: "boolean" },
+          componenti: { type: "array", items: { type: "string" } },
+          descrizione: {
+            type: "string",
+            description: "Testo tecnico originale estratto dal documento FIA.",
+          },
+        },
+      },
+      AggiornamentiLiveFia: {
+        type: "object",
+        description:
+          "Presente soltanto dopo l'acquisizione e la validazione del documento Car Presentation Submissions per tutte le 11 scuderie.",
+        required: [
+          "stato",
+          "fonte",
+          "documentoUrl",
+          "pubblicatoIl",
+          "acquisitoIl",
+          "scuderie",
+        ],
+        properties: {
+          stato: { type: "string", const: "ufficiale" },
+          fonte: { type: "string", const: "FIA" },
+          documentoUrl: { type: "string", format: "uri", pattern: "^https://" },
+          pubblicatoIl: { type: ["string", "null"], format: "date-time" },
+          acquisitoIl: { type: "string", format: "date-time" },
+          scuderie: {
+            type: "array",
+            minItems: 11,
+            maxItems: 11,
+            items: { $ref: "#/components/schemas/AggiornamentoLiveScuderia" },
+          },
+        },
+      },
       DettaglioPilota: {
         type: "object",
         required: [
@@ -1478,6 +1704,7 @@ const documentoOpenApi = {
           "scuderia",
           "piloti",
           "indicatori",
+          "profiloTecnico",
           "analisi",
           "andamentoStagioneCorrente",
         ],
@@ -1492,6 +1719,9 @@ const documentoOpenApi = {
             allOf: [{ $ref: "#/components/schemas/IndicatoriProfilo" }],
             description:
               "Aggregato ponderato sulle gare disputate dai piloti attualmente appartenenti alla scuderia.",
+          },
+          profiloTecnico: {
+            $ref: "#/components/schemas/ProfiloTecnicoScuderia",
           },
           analisi: {
             oneOf: [
@@ -1555,6 +1785,7 @@ const documentoOpenApi = {
           "scuderia",
           "piloti",
           "indicatori",
+          "profiloTecnico",
           "analisi",
           "andamentoStagioneCorrente",
         ],
@@ -1565,6 +1796,9 @@ const documentoOpenApi = {
             items: { $ref: "#/components/schemas/Pilota" },
           },
           indicatori: { $ref: "#/components/schemas/IndicatoriProfilo" },
+          profiloTecnico: {
+            $ref: "#/components/schemas/ProfiloTecnicoScuderia",
+          },
           analisi: {
             oneOf: [
               { $ref: "#/components/schemas/AnalisiScuderia" },
@@ -1726,6 +1960,8 @@ const documentoOpenApi = {
           "garaAttuale",
           "piloti",
           "scuderie",
+          "circuitoTecnico",
+          "aggiornamentiLive",
           "classificaPrevisionale",
           "metadati",
         ],
@@ -1739,6 +1975,20 @@ const documentoOpenApi = {
           scuderie: {
             type: "array",
             items: { $ref: "#/components/schemas/Scuderia" },
+          },
+          circuitoTecnico: {
+            oneOf: [
+              { $ref: "#/components/schemas/CircuitoTecnico" },
+              { type: "null" },
+            ],
+          },
+          aggiornamentiLive: {
+            description:
+              "Null finché il documento FIA ufficiale non è disponibile e completo; il frontend non mostra alcuna sezione Live in questo stato.",
+            oneOf: [
+              { $ref: "#/components/schemas/AggiornamentiLiveFia" },
+              { type: "null" },
+            ],
           },
           classificaPrevisionale: {
             $ref: "#/components/schemas/ClassificaPrevisionale",

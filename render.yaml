@@ -23,5 +23,7 @@ services:
         value: "300"
       - key: API_CACHE_MAX_ENTRIES
         value: "500"
+      - key: FIA_MONITOR_ENABLED
+        value: "true"
       - key: MONGO_URL
         sync: false

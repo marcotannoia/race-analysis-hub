@@ -367,16 +367,20 @@ main {
 }
 
 .prossimo-gp-home {
-  width: min(760px, 100%);
+  width: min(1000px, 100%);
   min-height: 126px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 36px;
+  display: block;
   margin: 92px auto 0;
   padding: 26px 4px;
   border-top: 1px solid var(--bordo);
   border-bottom: 1px solid var(--bordo);
+}
+
+.testata-gp-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
 }
 
 .prossimo-gp-home h2 {
@@ -1639,6 +1643,411 @@ main {
   margin-top: 6px;
 }
 
+/* Profili tecnici 2026 e documenti FIA live */
+.tecnica-circuito-home {
+  margin-top: 34px;
+  padding-top: 30px;
+  border-top: 1px solid var(--bordo);
+}
+
+.intestazione-tecnica-circuito,
+.intestazione-live-fia,
+.profilo-tecnico-scuderia > header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.intestazione-tecnica-circuito h3,
+.intestazione-live-fia h2,
+.profilo-tecnico-scuderia h2 {
+  margin: 8px 0 0;
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.intestazione-tecnica-circuito > p,
+.profilo-tecnico-scuderia > header p {
+  max-width: 430px;
+  margin: 0;
+  color: var(--testo-secondario);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.griglia-dati-circuito {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.dato-circuito {
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: #080808;
+  border: 1px solid var(--bordo);
+  border-radius: 6px;
+}
+
+.dato-circuito strong {
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+.dato-circuito span,
+.etichetta-componenti {
+  color: var(--testo-secondario);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.tratti-circuito {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tratti-circuito span {
+  padding: 8px 11px;
+  color: #c5c5c5;
+  background: #0a0a0a;
+  border: 1px solid #272727;
+  border-radius: 999px;
+  font-size: 0.65rem;
+}
+
+.lettura-tecnica-circuito {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 34px;
+  margin-top: 34px;
+}
+
+.lettura-tecnica-circuito h4,
+.sintesi-profilo-tecnico h3 {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.barre-tecniche,
+.griglia-capacita-tecniche {
+  display: grid;
+  gap: 12px;
+}
+
+.barra-tecnica,
+.capacita-tecnica {
+  display: grid;
+  grid-template-columns: minmax(118px, 1fr) minmax(90px, 1.1fr) 30px;
+  align-items: center;
+  gap: 12px;
+}
+
+.barra-tecnica > span,
+.capacita-tecnica > span {
+  color: #c7c7c7;
+  font-size: 0.65rem;
+}
+
+.barra-tecnica > div,
+.capacita-tecnica > div {
+  height: 5px;
+  overflow: hidden;
+  background: #242424;
+  border-radius: 999px;
+}
+
+.barra-tecnica i,
+.capacita-tecnica i {
+  height: 100%;
+  display: block;
+  background: var(--rosso);
+  border-radius: inherit;
+}
+
+.barra-tecnica > strong,
+.capacita-tecnica > strong {
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: right;
+}
+
+.classifica-aderenza-tecnica {
+  max-height: 446px;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.classifica-aderenza-tecnica li {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--bordo);
+  box-shadow: inset 3px 0 0 var(--colore-scuderia);
+}
+
+.classifica-aderenza-tecnica li > span {
+  color: #777;
+  font-family: var(--font-racing);
+}
+
+.classifica-aderenza-tecnica li > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.classifica-aderenza-tecnica li strong {
+  color: #fff;
+  font-size: 0.78rem;
+}
+
+.classifica-aderenza-tecnica li small {
+  overflow: hidden;
+  color: #777;
+  font-size: 0.58rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.classifica-aderenza-tecnica li b {
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.fonti-tecniche {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.fonti-tecniche a,
+.metadati-live-fia a {
+  color: #a8a8a8;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.fonti-tecniche a:hover,
+.metadati-live-fia a:hover {
+  color: #fff;
+}
+
+.sezione-live-fia {
+  width: min(1000px, 100%);
+  margin: 64px auto 0;
+  padding: 34px 0 42px;
+  border-top: 1px solid var(--rosso);
+  border-bottom: 1px solid var(--bordo);
+}
+
+.etichetta-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--rosso);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.etichetta-live i {
+  width: 7px;
+  height: 7px;
+  background: var(--rosso);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--rosso);
+}
+
+.intestazione-live-fia p {
+  margin: 9px 0 0;
+  color: var(--testo-secondario);
+  font-size: 0.72rem;
+}
+
+.metadati-live-fia {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+}
+
+.metadati-live-fia small {
+  color: #707070;
+  font-size: 0.6rem;
+}
+
+.metadati-live-fia a {
+  color: #fff;
+}
+
+.griglia-live-fia {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.scheda-live-scuderia {
+  min-height: 168px;
+  padding: 18px;
+  background: #080808;
+  border: 1px solid var(--bordo);
+  border-top: 3px solid var(--colore-scuderia);
+  border-radius: 6px;
+}
+
+.scheda-live-scuderia > header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.scheda-live-scuderia > header span {
+  min-width: 36px;
+  color: var(--colore-scuderia);
+  font-family: var(--font-racing);
+  font-size: 1.05rem;
+}
+
+.scheda-live-scuderia h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 0.82rem;
+}
+
+.scheda-live-scuderia ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scheda-live-scuderia li {
+  padding: 6px 8px;
+  color: #d1d1d1;
+  background: #111;
+  border: 1px solid #2b2b2b;
+  border-radius: 4px;
+  font-size: 0.62rem;
+}
+
+.nessun-aggiornamento-fia {
+  margin: 0;
+  color: #8a8a8a;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.scheda-live-scuderia details {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--bordo);
+}
+
+.scheda-live-scuderia summary {
+  color: #a7a7a7;
+  cursor: pointer;
+  font-size: 0.62rem;
+}
+
+.scheda-live-scuderia details p {
+  margin: 12px 0 0;
+  color: #8f8f8f;
+  font-size: 0.66rem;
+  line-height: 1.55;
+}
+
+.profilo-tecnico-scuderia {
+  margin-bottom: 72px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid var(--bordo);
+}
+
+.profilo-tecnico-scuderia > header {
+  align-items: flex-start;
+}
+
+.riassunto-profilo-tecnico {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.sintesi-profilo-tecnico {
+  padding: 22px;
+  background: #080808;
+  border: 1px solid var(--bordo);
+  border-radius: 7px;
+}
+
+.sintesi-profilo-tecnico ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sintesi-profilo-tecnico li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: #c5c5c5;
+  font-size: 0.76rem;
+}
+
+.sintesi-profilo-tecnico strong {
+  color: #fff;
+  font-family: var(--font-racing);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.griglia-capacita-tecniche {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 34px;
+  margin-top: 34px;
+}
+
 @media (max-width: 900px) {
   .contenitore,
   .dettaglio-contenuto {
@@ -1663,10 +2072,32 @@ main {
   }
 
   .prossimo-gp-home {
+    margin-top: 72px;
+  }
+
+  .testata-gp-home,
+  .intestazione-tecnica-circuito,
+  .intestazione-live-fia,
+  .profilo-tecnico-scuderia > header {
     align-items: flex-start;
     flex-direction: column;
     gap: 18px;
-    margin-top: 72px;
+  }
+
+  .griglia-dati-circuito {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lettura-tecnica-circuito {
+    grid-template-columns: 1fr;
+  }
+
+  .griglia-live-fia {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metadati-live-fia {
+    align-items: flex-start;
   }
 
   .invito-confronto {
@@ -1783,6 +2214,12 @@ main {
 }
 
 @media (max-width: 700px) {
+  .griglia-dati-circuito,
+  .griglia-live-fia,
+  .riassunto-profilo-tecnico {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .hero-confronto {
     padding-bottom: 42px;
   }
@@ -1906,6 +2343,23 @@ main {
 }
 
 @media (max-width: 500px) {
+  .griglia-dati-circuito,
+  .griglia-live-fia,
+  .riassunto-profilo-tecnico {
+    grid-template-columns: 1fr;
+  }
+
+  .barra-tecnica,
+  .capacita-tecnica {
+    grid-template-columns: minmax(100px, 1fr) minmax(70px, 0.9fr) 28px;
+    gap: 8px;
+  }
+
+  .tecnica-circuito-home,
+  .sezione-live-fia {
+    margin-top: 42px;
+  }
+
   .barra-lingua {
     min-height: 62px;
     padding-top: 10px;
@@ -2065,6 +2519,10 @@ main {
   .dettaglio-contenuto {
     padding-top: 52px;
     padding-bottom: 78px;
+  }
+
+  .griglia-capacita-tecniche {
+    grid-template-columns: 1fr;
   }
 
   .sezione-analisi {
