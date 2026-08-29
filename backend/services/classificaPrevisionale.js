@@ -495,7 +495,6 @@ function creaClassificaPrevisionale({
       circuito: valoreLocalizzato(gara, "circuito", lingua),
     },
     modello: "statistico-editoriale-v2",
-    avvertenza: testi.avvertenza,
     pesi: Object.entries(PESI).map(([chiave, pesoPercentuale]) => ({
       chiave,
       nome: testi.fattori[chiave],

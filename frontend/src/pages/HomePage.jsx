@@ -36,6 +36,7 @@ function HomePage() {
             circuitoTecnico: home.circuitoTecnico,
             aggiornamentiLive: home.aggiornamentiLive,
             classificaPrevisionale: home.classificaPrevisionale,
+            metadati: home.metadati,
           })
         }
       })
@@ -152,7 +153,7 @@ function HomePage() {
             </div>
             {dati.garaAttuale && (
               <span className="numero-gp" aria-label={t.numeroAnalisi}>
-                {String(dati.garaAttuale.ordineAnalisi).padStart(2, '0')}
+                {`${dati.garaAttuale.ordineAnalisi}/${dati.metadati.totaleGareAnalisi}`}
               </span>
             )}
           </div>

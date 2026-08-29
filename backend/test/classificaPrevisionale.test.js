@@ -179,7 +179,7 @@ test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
   assert.equal(risultato.classifica[0].scuderia.colore, "#112233");
   assert.equal(risultato.classifica[0].fattori.length, 9);
   assert.equal(risultato.modello, "statistico-editoriale-v2");
-  assert.match(risultato.avvertenza, /possono contenere errori/i);
+  assert.equal("avvertenza" in risultato, false);
   assert.equal(risultato.aggiornatoIl, "2026-08-01T12:00:00.000Z");
 });
 

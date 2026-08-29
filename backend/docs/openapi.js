@@ -1903,7 +1903,6 @@ const documentoOpenApi = {
           "lingua",
           "gara",
           "modello",
-          "avvertenza",
           "pesi",
           "aggiornatoIl",
           "classifica",
@@ -1923,13 +1922,6 @@ const documentoOpenApi = {
             type: "string",
             const: "statistico-editoriale-v2",
           },
-          avvertenza: {
-            type: "string",
-            description:
-              "Avverte che la previsione è soggetta a errore e può cambiare durante il weekend.",
-            example:
-              "Queste sono previsioni statistiche ed editoriali, non certezze sportive.",
-          },
           pesi: {
             type: "array",
             minItems: 9,
@@ -1946,11 +1938,16 @@ const documentoOpenApi = {
       },
       MetadatiHome: {
         type: "object",
-        required: ["stagione", "totalePiloti", "totaleScuderie"],
+        required: ["stagione", "totalePiloti", "totaleScuderie", "totaleGareAnalisi"],
         properties: {
           stagione: { type: "integer", minimum: 2026 },
           totalePiloti: { type: "integer", minimum: 0 },
           totaleScuderie: { type: "integer", minimum: 0 },
+          totaleGareAnalisi: {
+            type: "integer",
+            minimum: 1,
+            description: "Numero totale dei circuiti nella sequenza editoriale della stagione.",
+          },
         },
       },
       Home: {
