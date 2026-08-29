@@ -119,6 +119,30 @@ function adattaAnalisi(analisi) {
   }
 }
 
+function creaValutazioneFinale(home, scuderiaSlug, pilotaSlug = null) {
+  const compatibilita = home.circuitoTecnico?.compatibilita?.find(
+    (voce) => voce.scuderia.slug === scuderiaSlug,
+  )
+  const previsioni = (home.classificaPrevisionale?.classifica || [])
+    .filter((voce) =>
+      pilotaSlug
+        ? voce.pilota.slug === pilotaSlug
+        : voce.scuderia.slug === scuderiaSlug,
+    )
+    .map((voce) => ({
+      posizione: voce.posizione,
+      indice: voce.indice,
+      pilota: voce.pilota,
+    }))
+
+  if (!compatibilita && !previsioni.length) return null
+
+  return {
+    compatibilita: compatibilita || null,
+    previsioni,
+  }
+}
+
 export async function caricaHome(lingua) {
   const dati = await richiesta('/api/v1/home', lingua)
 
@@ -130,7 +154,10 @@ export async function caricaHome(lingua) {
 }
 
 export async function caricaPilota(slug, lingua) {
-  const dati = await richiesta(`/api/v1/piloti/${encodeURIComponent(slug)}`, lingua)
+  const [dati, home] = await Promise.all([
+    richiesta(`/api/v1/piloti/${encodeURIComponent(slug)}`, lingua),
+    richiesta('/api/v1/home', lingua),
+  ])
 
   return {
     ...dati,
@@ -138,11 +165,19 @@ export async function caricaPilota(slug, lingua) {
     analisi: adattaAnalisi(dati.analisi),
     andamentoStagioneCorrente:
       dati.andamentoStagioneCorrente ?? dati.andamentoUltimoAnno,
+    valutazioneFinale: creaValutazioneFinale(
+      home,
+      dati.pilota.scuderia.slug,
+      dati.pilota.slug,
+    ),
   }
 }
 
 export async function caricaScuderia(slug, lingua) {
-  const dati = await richiesta(`/api/v1/scuderie/${encodeURIComponent(slug)}`, lingua)
+  const [dati, home] = await Promise.all([
+    richiesta(`/api/v1/scuderie/${encodeURIComponent(slug)}`, lingua),
+    richiesta('/api/v1/home', lingua),
+  ])
 
   return {
     ...dati,
@@ -151,6 +186,7 @@ export async function caricaScuderia(slug, lingua) {
     analisi: adattaAnalisi(dati.analisi),
     andamentoStagioneCorrente:
       dati.andamentoStagioneCorrente ?? dati.andamentoUltimoAnno,
+    valutazioneFinale: creaValutazioneFinale(home, dati.scuderia.slug),
   }
 }
 
