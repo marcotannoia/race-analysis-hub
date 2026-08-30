@@ -107,6 +107,12 @@ contesto, controllare nomi, anni, posizioni `P`/`Q`, acronimi e terminologia
 tecnica. I controlli automatici verificano completezza, struttura e codici, ma
 non sostituiscono la revisione editoriale del significato.
 
+Per la release `1.11.0` la revisione contestuale comprende anche la nuova prosa
+di Gestione gomme e Passo gara, le etichette del calendario e delle
+caratteristiche del circuito e lo stato degli aggiornamenti non ufficiali. Le
+cinque traduzioni straniere devono conservare gli stessi anni, risultati,
+posizioni, punti e livelli di certezza del testo italiano.
+
 Il controllo completo locale, senza consumo Azure, è:
 
 ```bash
@@ -118,6 +124,10 @@ npm run lint:api
 npm run lint
 npm run build
 ```
+
+Se le traduzioni sono state revisionate e salvate manualmente nel catalogo,
+eseguire anche `npm run translate-data -- --dry-run`: il riepilogo deve indicare
+`0 segmenti nuovi` e `0 caratteri`, senza inviare richieste ad Azure.
 
 ## Aggiornamento del database ufficiale
 

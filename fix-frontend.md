@@ -75,6 +75,7 @@ Il modello distingue quattro casi:
 | Stato dell'aggiornamento | Trattamento |
 |---|---|
 | Nessun pacchetto confermato | Nessun vantaggio aggiuntivo |
+| Quasi certo ma non ancora ufficiale | Mostrato come provvisorio, senza bonus previsionale |
 | Annunciato ma non verificato | Vantaggio ridotto |
 | Già introdotto o confermato | Valutato secondo la pertinenza con la pista |
 | Nessun miglioramento reale o scarsa pertinenza | Punteggio ridotto |
@@ -86,15 +87,16 @@ La compatibilità dichiarata viene inoltre corretta usando la competitività 202
 della scuderia: un'etichetta positiva non può nascondere una vettura debole.
 
 La pagina divide automaticamente il contenuto in due widget: la prima frase
-descrive il tipo o il pacchetto, le frasi successive diventano l'elenco puntato
-dei benefici effettivi. Se il campo è vuoto, la pagina dichiara esplicitamente
-che non esistono aggiornamenti o benefici confermati.
+descrive il tipo o il pacchetto e le frasi successive compongono una spiegazione
+discorsiva dei benefici attesi. Se il campo è vuoto, la pagina dichiara
+esplicitamente che non esistono aggiornamenti o benefici confermati.
 
 ## Progressivo del circuito
 
-La home mostra `ordineAnalisi/totaleGareAnalisi` accanto al GP. Il numeratore
-proviene dalla gara corrente, mentre il totale è calcolato dal backend contando
-le gare della stessa stagione presenti nella sequenza editoriale.
+La home mostra `ordineCalendario/totaleGareCalendario` accanto al GP. Entrambi i
+valori seguono il calendario ufficiale della stagione e restano distinti da
+`ordineAnalisi` e `totaleGareAnalisi`, che descrivono soltanto la sequenza
+editoriale interna.
 
 ## Controllare che il JSON sia valido
 ```bash

@@ -1247,7 +1247,7 @@ main {
   min-height: 116px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 14px;
   margin: 0;
@@ -1257,7 +1257,6 @@ main {
   background: #080808;
 }
 
-.colonna-risultati p span,
 .riga-etichettata > span {
   display: grid;
   place-items: center;
@@ -1273,11 +1272,21 @@ main {
   text-align: center;
 }
 
-.colonna-risultati p span,
 .righe-anni .riga-etichettata > span {
   color: #fff;
   border-color: rgba(225, 6, 0, 0.72);
   background: rgba(225, 6, 0, 0.2);
+}
+
+.colonna-risultati p span {
+  padding-bottom: 3px;
+  color: var(--rosso);
+  border-bottom: 1px solid var(--rosso);
+  font-family: var(--font-racing);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-align: center;
 }
 
 .colonna-risultati p strong {
@@ -1313,6 +1322,17 @@ main {
   color: #c5c5c5;
   font-size: 0.96rem;
   line-height: 1.8;
+}
+
+.prosa-performance {
+  max-width: 820px;
+  margin: 0;
+  padding: 20px 0 22px;
+  color: #c5c5c5;
+  border-top: 1px solid var(--bordo);
+  border-bottom: 1px solid var(--bordo);
+  font-size: 0.98rem;
+  line-height: 1.9;
 }
 
 .ramo-analisi,
@@ -1529,10 +1549,25 @@ main {
 }
 
 .griglia-aggiornamenti {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   margin-left: 70px;
+}
+
+.griglia-aggiornamenti::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 4px 7px;
+  color: var(--rosso);
+  background: var(--nero);
+  content: '→';
+  font-family: var(--font-racing);
+  font-size: 1.15rem;
+  line-height: 1;
+  transform: translate(-50%, -50%);
 }
 
 .widget-aggiornamento {
@@ -1562,17 +1597,19 @@ main {
   font-weight: 400;
 }
 
-.widget-aggiornamento p,
-.widget-aggiornamento ul {
-  margin: 0;
-}
-
-.widget-aggiornamento ul {
-  padding-left: 20px;
-}
-
-.widget-aggiornamento li::marker {
+.widget-aggiornamento .stato-aggiornamento {
+  display: inline-block;
+  margin: -4px 0 16px;
+  padding-bottom: 3px;
   color: var(--rosso);
+  border-bottom: 1px solid var(--rosso);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.widget-aggiornamento p {
+  margin: 0;
 }
 
 .griglia-grafici {
@@ -1878,9 +1915,20 @@ main {
 
 .griglia-dati-circuito {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   margin-top: 28px;
+}
+
+.ramo-caratteristiche-circuito {
+  position: relative;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--bordo);
+}
+
+.ramo-caratteristiche-circuito .titolo-ramo {
+  margin: 0 0 18px 42px;
 }
 
 .dato-circuito {
@@ -1914,9 +1962,10 @@ main {
 
 .tratti-circuito {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 8px;
-  margin-top: 8px;
+  width: 100%;
+  margin-top: 0;
 }
 
 .tratti-circuito article {
@@ -2403,6 +2452,10 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .griglia-aggiornamenti::after {
+    display: none;
+  }
+
   .colonna-risultati:first-child {
     padding-right: 0;
   }
@@ -2443,7 +2496,6 @@ main {
 
 @media (max-width: 700px) {
   .griglia-dati-circuito,
-  .tratti-circuito,
   .griglia-live-fia,
   .riassunto-profilo-tecnico {
     grid-template-columns: 1fr 1fr;

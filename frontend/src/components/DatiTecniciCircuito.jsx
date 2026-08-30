@@ -39,36 +39,28 @@ function DatiTecniciCircuito({ profilo }) {
       </header>
 
       <div className="griglia-dati-circuito">
-        <Dato etichetta={t.lunghezza} valore={formattaNumero(dati.lunghezzaKm, lingua, 3)} unita=" km" />
         <Dato etichetta={t.giri} valore={dati.giri} />
         <Dato etichetta={t.curve} valore={dati.curve} />
-        <Dato etichetta={t.distanza} valore={formattaNumero(dati.distanzaKm, lingua, 3)} unita=" km" />
         <Dato etichetta={t.rettilineoPrincipale} valore={dati.rettilineoPrincipaleKm ? formattaNumero(dati.rettilineoPrincipaleKm, lingua, 3) : null} unita=" km" />
-        <Dato etichetta={t.pienoGas} valore={dati.percentualePienoGas} unita="%" />
-        <Dato etichetta={t.quota} valore={dati.quotaMetri ? formattaNumero(dati.quotaMetri, lingua) : null} unita=" m" />
-        <Dato etichetta={t.velocitaMassimaStimata} valore={dati.velocitaMassimaStimataKmh} unita=" km/h" />
-        <Dato etichetta={t.direzione} valore={valoreTecnico(dati.direzione)} />
-        <Dato etichetta={t.tipologia} valore={valoreTecnico(dati.tipologia)} />
         <Dato etichetta={t.caricoAerodinamico} valore={valoreTecnico(dati.livelloCarico)} />
-        <Dato etichetta={t.stressFreni} valore={valoreTecnico(dati.stressFreni)} />
         <Dato etichetta={t.stressGomme} valore={valoreTecnico(dati.stressGomme)} />
-        <Dato etichetta={t.puntiSorpasso} valore={profilo.puntiSorpassoPrincipali} />
-        {profilo.documentoCircuito && (
-          <>
-            <Dato etichetta={t.zoneStraightMode} valore={profilo.documentoCircuito.zoneStraightMode} />
-            <Dato etichetta={t.rilevamentiOvertakeMode} valore={profilo.documentoCircuito.rilevamentiOvertakeMode} />
-          </>
-        )}
+        <Dato etichetta={t.stressFreni} valore={valoreTecnico(dati.stressFreni)} />
       </div>
 
-      <div className="tratti-circuito" aria-label={t.tecnicaCircuito}>
-        {profilo.caratteristiche.map((caratteristica) => (
-          <article key={caratteristica}>
-            <strong>{caratteristica}</strong>
-            <span>{t.caratteristicaCircuito}</span>
-          </article>
-        ))}
-      </div>
+      <section className="ramo-caratteristiche-circuito">
+        <h4 className="titolo-ramo">
+          <span aria-hidden="true">↳</span>
+          {t.caratteristicheCircuito}
+        </h4>
+        <div className="tratti-circuito" aria-label={t.caratteristicheCircuito}>
+          {profilo.caratteristiche.map((caratteristica) => (
+            <article key={caratteristica}>
+              <strong>{caratteristica}</strong>
+              <span>{t.caratteristicaCircuito}</span>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <div className="lettura-tecnica-circuito">
         <section>

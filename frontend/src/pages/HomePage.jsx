@@ -152,8 +152,8 @@ function HomePage() {
               )}
             </div>
             {dati.garaAttuale && (
-              <span className="numero-gp" aria-label={t.numeroAnalisi}>
-                {`${dati.garaAttuale.ordineAnalisi}/${dati.metadati.totaleGareAnalisi}`}
+              <span className="numero-gp" aria-label={t.numeroCalendario}>
+                {`${dati.garaAttuale.ordineCalendario || dati.garaAttuale.ordineAnalisi}/${dati.metadati.totaleGareCalendario || dati.metadati.totaleGareAnalisi}`}
               </span>
             )}
           </div>

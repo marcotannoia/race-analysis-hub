@@ -1030,6 +1030,7 @@ const documentoOpenApi = {
           "paese",
           "stagione",
           "ordineAnalisi",
+          "ordineCalendario",
           "stato",
         ],
         properties: {
@@ -1039,6 +1040,11 @@ const documentoOpenApi = {
           paese: { type: "string", example: "Olanda" },
           stagione: { type: "integer", minimum: 2026, example: 2026 },
           ordineAnalisi: { type: "integer", minimum: 1 },
+          ordineCalendario: {
+            type: "integer",
+            minimum: 1,
+            description: "Posizione del Gran Premio nel calendario ufficiale della stagione.",
+          },
           stato: { type: "string", const: "attuale" },
         },
       },
@@ -1938,7 +1944,13 @@ const documentoOpenApi = {
       },
       MetadatiHome: {
         type: "object",
-        required: ["stagione", "totalePiloti", "totaleScuderie", "totaleGareAnalisi"],
+        required: [
+          "stagione",
+          "totalePiloti",
+          "totaleScuderie",
+          "totaleGareAnalisi",
+          "totaleGareCalendario",
+        ],
         properties: {
           stagione: { type: "integer", minimum: 2026 },
           totalePiloti: { type: "integer", minimum: 0 },
@@ -1947,6 +1959,11 @@ const documentoOpenApi = {
             type: "integer",
             minimum: 1,
             description: "Numero totale dei circuiti nella sequenza editoriale della stagione.",
+          },
+          totaleGareCalendario: {
+            type: "integer",
+            minimum: 1,
+            description: "Numero totale dei Gran Premi nel calendario ufficiale della stagione.",
           },
         },
       },

@@ -108,7 +108,7 @@ distribuito automaticamente dal push, attendere che la risposta includa
 
 Per la release multilingua attendere inoltre che
 `GET /api/v1/lingue` e `GET /api/v1/home?lingua=en` rispondano dalla versione
-backend `1.9.0`. Soltanto dopo si può pubblicare il frontend: in caso contrario
+backend `1.11.0`. Soltanto dopo si può pubblicare il frontend: in caso contrario
 il selettore cambierebbe l'interfaccia ma riceverebbe ancora testi italiani.
 `AZURE_TRANSLATOR_KEY` non deve essere configurata su Render o inclusa nella
 build Vite: serve soltanto allo script amministrativo locale.
@@ -142,11 +142,13 @@ invalidazioni CloudFront.
   l'endpoint `/api/v1/health`;
 - usare uno store condiviso per il rate limit se il backend avrà più istanze.
 
-Per la release `1.9.0`, verificare inoltre che:
+Per la release `1.11.0`, verificare inoltre che:
 
-- `GET /api/v1` restituisca `"versione": "1.9.0"`;
+- `GET /api/v1` restituisca `"versione": "1.11.0"`;
 - `GET /api/v1/home` includa `classificaPrevisionale`, così la landing usi una
   sola chiamata;
+- `GET /api/v1/home` esponga `garaAttuale.ordineCalendario` e
+  `metadati.totaleGareCalendario`, separati dalla sequenza editoriale interna;
 - la classifica usi il modello `statistico-editoriale-v2`, con pesi complessivi
   pari al 100%: compatibilità vettura-circuito 25%, ultimi tre GP 25%,
   scuderia 18%, andamento 2026 10%, aggiornamenti tecnici pertinenti 10%,
@@ -167,6 +169,13 @@ Per la release `1.9.0`, verificare inoltre che:
 - `/api/v1/openapi.json` dichiari gli stessi campi senza variazioni a rotte,
   parametri o metodi HTTP;
 - `npm run verify-db` termini con `0 differenze`.
+
+La verifica frontend deve inoltre confermare che gli anni dei risultati siano
+centrati e sottolineati, che Gestione gomme e Passo gara non mostrino il tag
+“Generale”, che la scheda circuito contenga i sei dati sintetici previsti e
+che ogni caratteristica occupi tutta la larghezza disponibile. Gli
+aggiornamenti quasi certi ma non ancora ufficiali devono riportare
+esplicitamente lo stato provvisorio e restare neutrali nel calcolo previsionale.
 
 ## Aggiornamento editoriale post-gara
 

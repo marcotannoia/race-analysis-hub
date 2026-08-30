@@ -101,6 +101,21 @@ richiedi(
   "Profili tecnici dei circuiti incompleti",
 );
 
+const ordiniCalendario = dati.gare.map((gara) => gara.ordineCalendario);
+richiedi(
+  ordiniCalendario.every((ordine) => Number.isInteger(ordine) && ordine >= 1) &&
+    new Set(ordiniCalendario).size === ordiniCalendario.length &&
+    Math.max(...ordiniCalendario) === 23 &&
+    dati.gare.find((gara) => gara.slug === "italia-monza")?.ordineCalendario === 13,
+  "Ordine del calendario ufficiale incompleto o incoerente",
+);
+richiedi(
+  dati.metadati?.formula1Calendario?.url ===
+    "https://www.formula1.com/en/racing/2026" &&
+    dati.metadati.formula1Calendario.totaleGranPremi === 23,
+  "Fonte ufficiale del calendario Formula 1 mancante o incoerente",
+);
+
 for (const [slug, circuito] of Object.entries(circuitiTecnici.circuiti || {})) {
   richiedi(
     !Number.isNaN(new Date(circuito.fp1At).getTime()) &&
