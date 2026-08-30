@@ -7,12 +7,18 @@ Il progetto utilizza React e Vite per il frontend, Node.js ed Express per le
 API e MongoDB per la persistenza dei dati. Le API pubbliche sono anonime, di
 sola lettura e documentate con Swagger.
 
-La versione corrente del progetto e dell'API è `1.9.0`.
+La versione corrente del progetto e dell'API è `1.11.0`.
 
 La parte finale della landing page mostra una classifica previsionale dei
 piloti per il solo Gran Premio attuale. Il modello combina risultati 2026,
 andamento degli ultimi tre GP, compatibilità con la pista, aggiornamenti
-tecnici confermati e contenuti editoriali già presenti nel progetto.
+tecnici confermati e contenuti editoriali già presenti nel progetto. Gli
+aggiornamenti non ancora ufficiali ma supportati da evidenze concrete vengono
+mostrati come provvisori e non ricevono un bonus previsionale finché non sono
+confermati.
+
+La home usa la posizione del Gran Premio nel calendario ufficiale della
+stagione, distinta dall'ordine interno con cui le analisi vengono pubblicate.
 
 ## Collegamenti
 

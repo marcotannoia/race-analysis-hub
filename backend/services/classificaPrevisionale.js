@@ -214,6 +214,19 @@ function valutaAggiornamento(testoOriginale, lingua = "it") {
   }
 
   if (
+    /non (?:e )?ancora.*ufficial|not yet.*official|pas encore.*officiel|ainda nao.*oficial|todavia no.*oficial|noch nicht.*offiziell/.test(
+      testo,
+    )
+  ) {
+    return {
+      valore: 50,
+      evidenza: 0,
+      stato: testi.stati.possibile,
+      nota: testi.note.evidenzaBassa,
+    };
+  }
+
+  if (
     /(?:solo|esclusivamente|puramente).*affidabilit|intervento.*affidabilit/.test(
       testo,
     ) &&

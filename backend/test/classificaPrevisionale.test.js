@@ -64,6 +64,9 @@ test("gli aggiornamenti contano solo se reali e pertinenti al circuito", () => {
   const ampio = valutaAggiornamento(
     "La squadra ha confermato per Zandvoort un ampio pacchetto direttamente utile nelle curve veloci.",
   );
+  const quasiCertoMaNonUfficiale = valutaAggiornamento(
+    "Non è ancora una presentazione ufficiale FIA, ma la squadra ha preparato i componenti.",
+  );
 
   assert.equal(assente.valore, 50);
   assert.ok(annunciato.valore > assente.valore);
@@ -72,6 +75,8 @@ test("gli aggiornamenti contano solo se reali e pertinenti al circuito", () => {
   assert.equal(solaAffidabilita.valore, assente.valore);
   assert.match(solaAffidabilita.stato, /affidabilità/i);
   assert.ok(ampio.valore > mirato.valore);
+  assert.equal(quasiCertoMaNonUfficiale.valore, assente.valore);
+  assert.equal(quasiCertoMaNonUfficiale.evidenza, 0);
 });
 
 test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {

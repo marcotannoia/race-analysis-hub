@@ -1,5 +1,46 @@
 # Changelog
 
+## 1.11.0 — 2026-08-30
+
+### Interfaccia
+
+- rimossi i tag “Generale” da Gestione gomme e Passo gara, ora presentati con
+  una prosa più discorsiva;
+- sostituiti i box degli anni nei risultati storici con etichette rosse,
+  centrate e sottolineate;
+- ridotta la scheda circuito ai sei dati principali e spostate le
+  caratteristiche in widget a piena larghezza con freccia e rientro;
+- collegato il progressivo della home al calendario ufficiale Formula 1 anziché
+  al sottoinsieme editoriale del database.
+
+### Dati e traduzioni
+
+- aggiunto `ordineCalendario` alle gare e `totaleGareCalendario` ai metadati
+  della home;
+- riscritte le analisi di gestione gomme e passo gara di Monza in tutte le sei
+  lingue, preservando anni, risultati, punti e contesto tecnico;
+- aggiunto l'aggiornamento Ferrari ADUO 2 come informazione non ufficiale ma
+  attesa, con fonte pubblica e senza bonus nel modello previsionale;
+- corretta la scheda Cadillac priva di storico confrontabile a Monza.
+
+### Compatibilità
+
+- rotte, metodi e campi esistenti restano invariati; i nuovi campi di calendario
+  sono aggiuntivi;
+- OpenAPI, controlli qualità, test e guide operative sono allineati alla release.
+
+## 1.10.0 — 2026-08-29
+
+### Interfaccia
+
+- ridisegnate le analisi di piloti e scuderie con una gerarchia a rami per
+  storico, prestazioni, valutazione finale e aggiornamenti;
+- collegate compatibilità vettura-circuito e posizione previsionale ai dati già
+  calcolati nella home, evitando duplicazioni nel browser;
+- nascosti i blocchi di analisi privi di contenuto e introdotto `DNP`
+  localizzato per le stagioni non disputate;
+- verificata la disposizione responsive senza overflow a 390 px.
+
 ## 1.9.0 — 2026-08-22
 
 ### Modificato

@@ -34,7 +34,7 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
     ),
   );
   assert.equal(documentoOpenApi.info.title, "Race Analysis Hub API");
-  assert.equal(documentoOpenApi.info.version, "1.10.0");
+  assert.equal(documentoOpenApi.info.version, "1.11.0");
   assert.match(documentoOpenApi.info.description, /adattate nel software/);
   assert.match(documentoOpenApi.info.description, /Race Analysis Hub/);
   assert.match(documentoOpenApi.info.license.name, /CC BY 4\.0/);

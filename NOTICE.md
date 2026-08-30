@@ -56,6 +56,15 @@ valutazioni editoriali su pista, vettura, gomme, affidabilità e aggiornamenti
 tecnici. L'indice è una stima soggetta a errore, non un risultato ufficiale né
 una garanzia sulla prestazione futura.
 
+L'ordine e il totale dei Gran Premi 2026 mostrati nella home sono verificati
+sul calendario ufficiale Formula 1:
+
+- https://www.formula1.com/en/racing/2026
+
+Gli aggiornamenti tecnici non ancora ufficiali vengono identificati come tali,
+collegati alla relativa fonte pubblica e mantenuti neutrali nel calcolo finché
+non sono confermati.
+
 ## Indicatori bagnato ed errori
 
 Le partenze in carriera, i risultati e gli stati di ritiro usati per gli

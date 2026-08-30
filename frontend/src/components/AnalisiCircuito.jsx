@@ -266,22 +266,25 @@ function AggiornamentiWidget({ testo, t }) {
 
   const frasi = contenuto.split(/(?<=[.!?])\s+/).filter(Boolean)
   const benefici = frasi.slice(1)
+  const nonUfficiale = /(?:non (?:è|e) ancora|not yet|pas encore|ainda não|todavía no|noch nicht).*ufficial|(?:non ufficial|unofficial|non officiel|não oficial|no oficial|inoffiziell)/i
+    .test(contenuto)
 
   return (
     <div className="griglia-aggiornamenti">
       <article className="widget-aggiornamento">
         <span>{t.tipoAggiornamento}</span>
+        {nonUfficiale && (
+          <strong className="stato-aggiornamento">
+            {t.aggiornamentoNonUfficiale}
+          </strong>
+        )}
         <p>{frasi[0]}</p>
       </article>
       <article className="widget-aggiornamento">
         <span>{t.beneficiAggiornamento}</span>
-        <ul>
-          {(benefici.length ? benefici : [t.beneficioDaVerificare]).map(
-            (beneficio, indice) => (
-              <li key={`${beneficio}-${indice}`}>{beneficio}</li>
-            ),
-          )}
-        </ul>
+        <p>
+          {(benefici.length ? benefici : [t.beneficioDaVerificare]).join(' ')}
+        </p>
       </article>
     </div>
   )
@@ -301,6 +304,18 @@ function RigheEtichettate({ righe, classe = '' }) {
       ))}
     </div>
   )
+}
+
+function ProsaPrestazione({ righe, t }) {
+  const testo = righe
+    .map((riga) => (
+      riga.etichetta === t.generale
+        ? riga.testo
+        : `${riga.etichetta}: ${riga.testo}`
+    ))
+    .join(' ')
+
+  return <p className="prosa-performance">{testo}</p>
 }
 
 function creaPenalitaWidget(testo) {
@@ -426,14 +441,14 @@ function AnalisiCircuito({
           {righeGestioneGomme.length > 0 && (
             <article className="ramo-performance">
               <h3 className="titolo-ramo"><span>↳</span>{t.gestioneGomme}</h3>
-              <RigheEtichettate classe="righe-anni" righe={righeGestioneGomme} />
+              <ProsaPrestazione righe={righeGestioneGomme} t={t} />
             </article>
           )}
 
           {righePassoGara.length > 0 && (
             <article className="ramo-performance">
               <h3 className="titolo-ramo"><span>↳</span>{t.passoGara}</h3>
-              <RigheEtichettate classe="righe-anni" righe={righePassoGara} />
+              <ProsaPrestazione righe={righePassoGara} t={t} />
             </article>
           )}
         </div>

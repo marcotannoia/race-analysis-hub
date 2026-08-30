@@ -53,7 +53,7 @@ const CAMPI_PILOTA_BREVE =
   "slug nome codice numero nazionalitaIso2 nazionalitaIso3";
 const CAMPI_SCUDERIA_BREVE = "slug nome abbreviazione colore";
 const CAMPI_GARA_BREVE =
-  "slug nome circuito paese stagione ordineAnalisi stato traduzioni";
+  "slug nome circuito paese stagione ordineAnalisi ordineCalendario stato traduzioni";
 
 async function recuperaAndamentoPilota(pilota, garaAttuale, lingua) {
   return presentaAndamento(
@@ -180,6 +180,7 @@ async function home(richiesta, risposta) {
     analisiScuderie,
     datiLiveFia,
     totaleGareAnalisi,
+    ultimaGaraCalendario,
   ] = await Promise.all([
       Pilota.find()
         .populate("scuderia", CAMPI_SCUDERIA_BREVE)
@@ -195,6 +196,10 @@ async function home(richiesta, risposta) {
         .lean(),
       DatiLiveFia.findOne({ garaSlug: garaAttuale.slug }).lean(),
       Gara.countDocuments({ stagione: garaAttuale.stagione }),
+      Gara.findOne({ stagione: garaAttuale.stagione })
+        .sort({ ordineCalendario: -1 })
+        .select("ordineCalendario")
+        .lean(),
     ]);
 
   risposta.json({
@@ -223,6 +228,8 @@ async function home(richiesta, risposta) {
       totalePiloti: piloti.length,
       totaleScuderie: scuderie.length,
       totaleGareAnalisi,
+      totaleGareCalendario:
+        ultimaGaraCalendario?.ordineCalendario || totaleGareAnalisi,
     },
   });
 }

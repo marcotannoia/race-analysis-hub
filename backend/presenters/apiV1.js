@@ -104,6 +104,7 @@ function presentaGaraBreve(gara, lingua = "it") {
     paese: valoreLocalizzato(gara, "paese", lingua),
     stagione: gara.stagione,
     ordineAnalisi: gara.ordineAnalisi,
+    ordineCalendario: gara.ordineCalendario,
     stato: "attuale",
   };
 }

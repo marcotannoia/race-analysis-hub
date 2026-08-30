@@ -55,6 +55,7 @@ test("la gara pubblica e sempre marcata come attuale", () => {
     paese: "Olanda",
     stagione: 2026,
     ordineAnalisi: 1,
+    ordineCalendario: 12,
     stato: "prossima",
     etichettaExcel: "CAMPO INTERNO",
     contestoStorico: "Contesto",
@@ -69,6 +70,7 @@ test("la gara pubblica e sempre marcata come attuale", () => {
   });
 
   assert.equal(gara.stato, "attuale");
+  assert.equal(gara.ordineCalendario, 12);
   assert.equal("etichettaExcel" in gara, false);
   assert.equal(JSON.stringify(gara).includes("_id"), false);
 });
@@ -114,6 +116,7 @@ test("l'analisi raggruppa le prestazioni senza perdere i contenuti", () => {
       paese: "Olanda",
       stagione: 2026,
       ordineAnalisi: 1,
+      ordineCalendario: 12,
     },
     posizioniStoriche: "2025: P3",
     spiegazionePosizioni: "2025: Nota",

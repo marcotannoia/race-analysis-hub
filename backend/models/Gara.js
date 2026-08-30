@@ -9,6 +9,7 @@ const garaSchema = new mongoose.Schema(
     etichettaExcel: { type: String, required: true, trim: true },
     stagione: { type: Number, required: true },
     ordineAnalisi: { type: Number, required: true },
+    ordineCalendario: { type: Number, required: true },
     stato: {
       type: String,
       // "prossima" resta accettato solo per leggere database creati prima
