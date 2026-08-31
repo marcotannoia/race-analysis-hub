@@ -25,12 +25,12 @@ test("i pesi previsionali sommano a cento e valorizzano gli ultimi tre GP", () =
   assert.equal(PESI.gestioneGomme, 1);
 });
 
-test("una penalità confermata pesa il 50% e dimezza gli altri fattori", () => {
+test("una penalità confermata incide fino al 35% e lascia il 65% agli altri fattori", () => {
   const penalita = valutaPenalita(
     "Penalità confermata: arretramento di almeno 10 posizioni sulla griglia.",
   );
 
-  assert.equal(PESO_PENALITA, 50);
+  assert.equal(PESO_PENALITA, 35);
   assert.deepEqual(penalita, { posizioni: 10, valore: 0 });
   assert.equal(valutaPenalita("Nessuna penalità confermata."), null);
 });
@@ -244,7 +244,7 @@ test("la classifica applica i pesi condizionali al pilota penalizzato", () => {
     conPenalita.fattori.reduce((totale, fattore) => totale + fattore.pesoPercentuale, 0),
     100,
   );
-  assert.equal(conPenalita.fattori.at(-1).pesoPercentuale, 50);
+  assert.equal(conPenalita.fattori.at(-1).pesoPercentuale, 35);
   assert.equal(conPenalita.fattori.at(-1).valutazione, 0);
-  assert.equal(conPenalita.indice, Math.round((senzaPenalita.indice / 2) * 10) / 10);
+  assert.equal(conPenalita.indice, Math.round((senzaPenalita.indice * 0.65) * 10) / 10);
 });

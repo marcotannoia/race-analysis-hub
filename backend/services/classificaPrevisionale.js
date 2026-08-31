@@ -14,7 +14,7 @@ const PESI = Object.freeze({
   affidabilitaERischi: 2,
 });
 
-const PESO_PENALITA = 50;
+const PESO_PENALITA = 35;
 
 const NOMI_FATTORI = Object.freeze({
   andamento2026: "Andamento 2026",
@@ -344,7 +344,7 @@ function creaFattori(valutazioni, testi, penalita) {
   const moltiplicatore = penalita ? (100 - PESO_PENALITA) / 100 : 1;
   const fattori = Object.entries(PESI).map(([chiave, pesoPercentuale]) => {
     const valutazione = arrotonda(limita(valutazioni[chiave]));
-    const pesoEffettivo = arrotonda(pesoPercentuale * moltiplicatore);
+    const pesoEffettivo = arrotonda(pesoPercentuale * moltiplicatore, 2);
     return {
       chiave,
       nome: testi.fattori[chiave],
