@@ -184,16 +184,18 @@ seconda chiamata. Resta disponibile anche l'endpoint dedicato
 `GET /api/v1/previsioni/piloti`, insieme alla scomposizione dei fattori. I pesi
 sono:
 
-- andamento della scuderia nel 2026: 23%;
-- andamento del pilota nel 2026: 18%;
-- compatibilità vettura-circuito: 17%;
-- aggiornamenti tecnici pertinenti: 12%;
-- andamento negli ultimi tre GP: 12%;
-- qualifica 2026: 7%;
-- confidenza pilota-circuito: 5%;
-- storico personale: 2%;
-- gestione gomme: 2%;
-- affidabilità e rischi: 2%.
+- compatibilità vettura-circuito: 25%;
+- andamento negli ultimi tre GP: 25%;
+- andamento della scuderia nel 2026: 18%;
+- andamento del pilota nel 2026: 10%;
+- aggiornamenti tecnici pertinenti: 10%;
+- storico personale: 6%;
+- qualifica 2026: 3%;
+- affidabilità e rischi: 2%;
+- gestione gomme: 1%.
+
+Quando esiste una penalità in griglia confermata, essa può incidere fino al 35%
+e i nove fattori ordinari vengono riproporzionati sul restante 65%.
 
 La compatibilità vettura-circuito combina l'affinità tecnica editoriale con la
 forza effettiva della scuderia nel 2026. Una vettura poco competitiva non può

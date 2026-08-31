@@ -153,8 +153,8 @@ Per la release `1.11.0`, verificare inoltre che:
   pari al 100%: compatibilità vettura-circuito 25%, ultimi tre GP 25%,
   scuderia 18%, andamento 2026 10%, aggiornamenti tecnici pertinenti 10%,
   storico 6%, qualifica 3%, affidabilità/rischi 2% e gomme 1%. Con una penalità
-  confermata, la penalità pesa il 50% e tutti gli altri fattori vengono ridotti
-  proporzionalmente al restante 50%;
+  confermata, la penalità può incidere fino al 35% e tutti gli altri fattori
+  vengono riproporzionati sul restante 65%;
 - `GET /api/v1/lingue` elenchi esattamente le sei lingue;
 - `GET /api/v1/gare/attuale?lingua=de` restituisca `"lingua": "de"` e
   l'header `Content-Language: de`;

@@ -1894,7 +1894,7 @@ const documentoOpenApi = {
             minItems: 9,
             maxItems: 10,
             description:
-              "Nove fattori ordinari; con una penalità confermata viene aggiunto il fattore penalità al 50% e gli altri pesi vengono dimezzati proporzionalmente.",
+              "Nove fattori ordinari; una penalità confermata può incidere fino al 35% e gli altri pesi vengono riproporzionati sul restante 65%.",
             items: { $ref: "#/components/schemas/FattorePrevisionale" },
             example: esempioFattoriPrevisionali,
           },
