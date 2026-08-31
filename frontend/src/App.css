@@ -1131,6 +1131,10 @@ main {
   padding-left: 0;
 }
 
+.colonna-confronto .colonna-risultati:first-child::after {
+  right: -12px;
+}
+
 .colonna-confronto .ramo-analisi,
 .colonna-confronto .albero-performance,
 .colonna-confronto .griglia-valutazione-finale,
