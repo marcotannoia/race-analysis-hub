@@ -77,7 +77,6 @@ function presentaPilota(pilota, lingua = "it") {
     nazionalita: valoreLocalizzato(pilota, "nazionalita", lingua),
     scuderia: presentaScuderiaBreve(pilota.scuderia),
     classifica: presentaClassifica(pilota.classifica2026),
-    aggiornatoIl: dataIso(pilota.updatedAt),
   };
 }
 
@@ -90,7 +89,6 @@ function presentaScuderia(scuderia, lingua = "it") {
     nazionalita: valoreLocalizzato(scuderia, "nazionalita", lingua),
     denominazioniStoriche: scuderia.denominazioniStoriche || {},
     classifica: presentaClassifica(scuderia.classifica2026),
-    aggiornatoIl: dataIso(scuderia.updatedAt),
   };
 }
 
@@ -127,7 +125,6 @@ function presentaGara(gara, lingua = "it") {
     rischi: valoreLocalizzato(gara, "rischi", lingua),
     confidenza: valoreLocalizzato(gara, "confidenza", lingua),
     fonti: presentaFonti(gara.fonti),
-    aggiornatoIl: dataIso(gara.updatedAt),
   };
 }
 
@@ -216,7 +213,6 @@ function presentaAnalisiBase(analisi, lingua = "it") {
       lingua,
     ),
     fonti: presentaFonti(analisi.fonti),
-    aggiornatoIl: dataIso(analisi.updatedAt),
   };
 }
 
@@ -282,7 +278,6 @@ function presentaAndamento(andamento, lingua = "it") {
             : {}),
         }
       : null,
-    aggiornatoIl: dataIso(andamento.aggiornatoIl),
   };
 }
 

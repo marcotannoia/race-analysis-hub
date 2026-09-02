@@ -608,6 +608,10 @@ TRADUZIONI_ESATTE = {
         "it": "Neozelandese", "en": "New Zealander", "fr": "Néo-zélandaise",
         "pt": "Neozelandesa", "es": "Neozelandesa", "de": "Neuseeländisch",
     },
+    "Japanese": {
+        "it": "Giapponese", "en": "Japanese", "fr": "Japonaise",
+        "pt": "Japonesa", "es": "Japonesa", "de": "Japanisch",
+    },
 }
 
 TRADUZIONI_GARE_ESATTE = {
@@ -939,6 +943,16 @@ TRADUZIONI_GP_ATTUALE_REVISIONATE = {
 }
 
 TRADUZIONI_ESATTE.update(TRADUZIONI_GP_ATTUALE_REVISIONATE)
+TRADUZIONI_ESATTE.update({
+    "STR • BOT • PER • OCO: la forma 2026 indica un fine settimana più difficile": {
+        "it": "STR • BOT • PER • OCO: la forma 2026 indica un fine settimana più difficile",
+        "en": "STR • BOT • PER • OCO: 2026 form points to a more difficult weekend",
+        "fr": "STR • BOT • PER • OCO : la forme affichée en 2026 laisse prévoir un week-end plus difficile",
+        "pt": "STR • BOT • PER • OCO: a forma de 2026 aponta para um fim de semana mais difícil",
+        "es": "STR • BOT • PER • OCO: la forma de 2026 apunta a un fin de semana más difícil",
+        "de": "STR • BOT • PER • OCO: Die Form von 2026 deutet auf ein schwierigeres Wochenende hin",
+    },
+})
 
 
 def argomenti() -> argparse.Namespace:
@@ -1155,6 +1169,20 @@ def proteggi_parti_deterministiche(
 def applica_glossario(testo: str, lingua: str, originale: str = "") -> str:
     risultato = testo
     for schema, sostituzione in GLOSSARIO[lingua]:
+        risultato = re.sub(schema, sostituzione, risultato, flags=re.IGNORECASE)
+
+    ripetizioni_glossario = {
+        "pt": (
+            r"\bbaixa carga aerodinâmica(?: aerodinâmica)+\b",
+            "baixa carga aerodinâmica",
+        ),
+        "es": (
+            r"\bbaja carga aerodinámica(?: aerodinámica)+\b",
+            "baja carga aerodinámica",
+        ),
+    }
+    if lingua in ripetizioni_glossario:
+        schema, sostituzione = ripetizioni_glossario[lingua]
         risultato = re.sub(schema, sostituzione, risultato, flags=re.IGNORECASE)
 
     if "pattino" in originale.lower():
@@ -1445,6 +1473,16 @@ def applica_glossario(testo: str, lingua: str, originale: str = "") -> str:
     if lingua == "de":
         risultato = re.sub(r"\bundercut\b", "Undercut", risultato, flags=re.IGNORECASE)
         risultato = re.sub(r"\bstint\b", "Stint", risultato, flags=re.IGNORECASE)
+    if lingua in ripetizioni_glossario:
+        schema, sostituzione = ripetizioni_glossario[lingua]
+        risultato = re.sub(schema, sostituzione, risultato, flags=re.IGNORECASE)
+    if lingua == "fr":
+        risultato = re.sub(
+            r"\bfond plat(?: plat)+\b",
+            "fond plat",
+            risultato,
+            flags=re.IGNORECASE,
+        )
     return risultato.strip()
 
 
@@ -1848,22 +1886,45 @@ def main() -> None:
     dati = json.loads(opzioni.file.read_text(encoding="utf-8"))
     configura_token_protetti(dati)
     memoria = crea_memoria(dati)
+    cache, testi_completi_cache, caratteri_gia_inviati = carica_cache(
+        opzioni.cache
+    )
     testi = set()
     invarianti = set()
 
     for lingua in LINGUE:
         for gara in dati["gare"]:
             invarianti.update(
-                (gara["circuito"], gara["scuderieFavorite"], gara["potenzialiDifficolta"])
+                (gara["circuito"], gara["scuderieFavorite"])
             )
             memoria[lingua][gara["circuito"]] = gara["circuito"]
             memoria[lingua][gara["scuderieFavorite"]] = gara["scuderieFavorite"]
-            memoria[lingua][gara["potenzialiDifficolta"]] = gara["potenzialiDifficolta"]
 
     for sezione, campi in CAMPI_LOCALIZZABILI.items():
         for documento in dati[sezione]:
             for campo in campi:
                 testi.update(valori_testuali(documento.get(campo, "")))
+
+    # Le traduzioni gia revisionate nel dataset sono memoria approvata. Le
+    # salviamo anche nella cache locale, così un successivo rebuild offline può
+    # riprodurre esattamente il catalogo senza consumare quota Azure.
+    if not opzioni.rebuild_from_cache:
+        for testo in testi:
+            traduzioni_approvate = {
+                lingua: memoria[lingua][testo]
+                for lingua in LINGUE_DA_TRADURRE
+                if testo in memoria[lingua]
+            }
+            if len(traduzioni_approvate) == len(LINGUE_DA_TRADURRE):
+                testi_completi_cache.setdefault(testo, {}).update(
+                    traduzioni_approvate
+                )
+        salva_cache(
+            opzioni.cache,
+            cache,
+            testi_completi_cache,
+            caratteri_gia_inviati,
+        )
 
     catalogo_italiano = {
         testo: TRADUZIONI_ESATTE.get(testo, {}).get("it", testo)
@@ -1900,8 +1961,18 @@ def main() -> None:
             if (traduzione := traduzione_deterministica(testo, lingua)) is not None
         }
         memoria_approvata = {} if opzioni.rebuild_from_cache else memoria[lingua]
+        memoria_testi_completi = (
+            {
+                testo: traduzioni[lingua]
+                for testo, traduzioni in testi_completi_cache.items()
+                if lingua in traduzioni
+            }
+            if opzioni.rebuild_from_cache
+            else {}
+        )
         cataloghi[lingua] = {
             **memoria_approvata,
+            **memoria_testi_completi,
             **{testo: testo for testo in invarianti},
             **deterministiche,
             **esatte,
@@ -1917,7 +1988,6 @@ def main() -> None:
         for testo in testi_da_segmentare
         for segmento in segmenti_da_tradurre(testo)
     })
-    cache, testi_completi_cache, caratteri_gia_inviati = carica_cache(opzioni.cache)
     segmenti_mancanti = [
         segmento for segmento in segmenti
         if any(lingua not in cache.get(segmento, {}) for lingua in LINGUE_DA_TRADURRE)

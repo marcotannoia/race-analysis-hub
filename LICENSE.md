@@ -45,7 +45,7 @@ pubblicamente, il riutilizzatore deve:
 Esempio sintetico per un contenuto modificato:
 
 > Contenuto adattato da Race Analysis Hub — dati quantitativi derivati da F1DB
-> v2026.11.0 — modifiche del riutilizzatore — CC BY 4.0.
+> v2026.12.0 — modifiche del riutilizzatore — CC BY 4.0.
 
 ## Dati derivati da F1DB
 

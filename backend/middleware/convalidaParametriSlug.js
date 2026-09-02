@@ -8,7 +8,7 @@ function convalidaParametriSlug(...nomiParametri) {
       const valore = richiesta.params[nome];
 
       if (!valore || valore.length > 80 || !FORMATO_SLUG.test(valore)) {
-        return risposta.status(400).json({
+        return risposta.status(400).set("Cache-Control", "no-store").json({
           errore: {
             codice: "IDENTIFICATORE_NON_VALIDO",
             messaggio: messaggioErrore(

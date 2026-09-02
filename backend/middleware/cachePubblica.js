@@ -1,3 +1,5 @@
+const { createHash } = require("crypto");
+
 function cachePubblica({
   secondiBrowser = 60,
   secondiCondivisi = 300,
@@ -6,9 +8,22 @@ function cachePubblica({
   const risposte = new Map();
   const richiesteInCorso = new Map();
 
-  function chiaveCache(richiesta) {
-    // L'URL completo mantiene separate anche le richieste non valide: una voce
-    // lecita non deve mai permettere di saltare la validazione delle query.
+  function chiaveCache(richiesta, risposta) {
+    const parametri = Object.keys(richiesta.query);
+
+    // L'assenza di `lingua` equivale esplicitamente all'italiano. Condividere
+    // la stessa voce evita due elaborazioni identiche per i client che omettono
+    // il valore predefinito e per quelli che inviano `?lingua=it`.
+    if (
+      parametri.length === 0 ||
+      (parametri.length === 1 && parametri[0] === "lingua")
+    ) {
+      const lingua = risposta.locals.lingua || "it";
+      return `${richiesta.baseUrl}${richiesta.path}?lingua=${lingua}`;
+    }
+
+    // Le richieste con query non previste restano separate: una voce lecita
+    // non deve mai permettere di saltare la validazione dei parametri.
     return richiesta.originalUrl;
   }
 
@@ -25,7 +40,7 @@ function cachePubblica({
     // Reinserire la voce mantiene in fondo gli elementi usati più di recente.
     risposte.delete(chiave);
     risposte.set(chiave, voce);
-    return voce.corpo;
+    return voce;
   }
 
   function salvaRisposta(chiave, corpo) {
@@ -34,10 +49,37 @@ function cachePubblica({
       risposte.delete(chiaveMenoRecente);
     }
 
+    const serializzato = JSON.stringify(corpo);
+    const hash = createHash("sha256").update(serializzato).digest("base64url");
+
     risposte.set(chiave, {
       corpo,
+      etag: `W/"${Buffer.byteLength(serializzato).toString(16)}-${hash}"`,
       scadeIl: Date.now() + secondiCondivisi * 1000,
     });
+  }
+
+  function etagCorrisponde(richiesta, etag) {
+    const condizione = richiesta.get("If-None-Match");
+    if (!condizione) return false;
+    if (condizione.trim() === "*") return true;
+
+    const normalizza = (valore) => valore.trim().replace(/^W\//, "");
+    const etagNormalizzato = normalizza(etag);
+    return condizione
+      .split(",")
+      .some((candidato) => normalizza(candidato) === etagNormalizzato);
+  }
+
+  function inviaVoce(richiesta, risposta, voce, statoCache) {
+    risposta.set("X-App-Cache", statoCache);
+    risposta.set("ETag", voce.etag);
+
+    if (etagCorrisponde(richiesta, voce.etag)) {
+      return risposta.status(304).end();
+    }
+
+    return risposta.json(voce.corpo);
   }
 
   async function configuraCache(richiesta, risposta, next) {
@@ -52,23 +94,21 @@ function cachePubblica({
       return next();
     }
 
-    const chiave = chiaveCache(richiesta);
-    const corpoInCache = leggiRisposta(chiave);
+    const chiave = chiaveCache(richiesta, risposta);
+    const voceInCache = leggiRisposta(chiave);
 
-    if (corpoInCache) {
-      risposta.set("X-App-Cache", "HIT");
-      return risposta.json(corpoInCache);
+    if (voceInCache) {
+      return inviaVoce(richiesta, risposta, voceInCache, "HIT");
     }
 
     const richiestaInCorso = richiesteInCorso.get(chiave);
 
     if (richiestaInCorso) {
       await richiestaInCorso;
-      const corpoCondiviso = leggiRisposta(chiave);
+      const voceCondivisa = leggiRisposta(chiave);
 
-      if (corpoCondiviso) {
-        risposta.set("X-App-Cache", "COALESCED");
-        return risposta.json(corpoCondiviso);
+      if (voceCondivisa) {
+        return inviaVoce(richiesta, risposta, voceCondivisa, "COALESCED");
       }
     }
 
@@ -82,6 +122,13 @@ function cachePubblica({
     risposta.json = function jsonConCache(corpo) {
       if (risposta.statusCode >= 200 && risposta.statusCode < 300) {
         salvaRisposta(chiave, corpo);
+        const voce = leggiRisposta(chiave);
+        risposta.set("ETag", voce.etag);
+
+        if (etagCorrisponde(richiesta, voce.etag)) {
+          risposta.status(304);
+          return risposta.end();
+        }
       } else {
         risposta.set("Cache-Control", "no-store");
       }

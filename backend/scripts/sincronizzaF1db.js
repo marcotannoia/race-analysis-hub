@@ -1,10 +1,10 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const VERSIONE_F1DB = "v2026.11.0";
-const PUBBLICATO_IL = "2026-07-26T21:00:55.000Z";
+const VERSIONE_F1DB = "v2026.12.0";
+const PUBBLICATO_IL = "2026-08-23T18:00:49.000Z";
 const SHA256_ARCHIVIO =
-  "7da222e8c2cafe223e4be2c1fb22fd67fb529779075f224c00eebac0acdecdeb";
+  "36cd3e85bc169643b8f26e23040298beca92168b9511cb2d57516738bfa81e73";
 const URL_REPOSITORY = "https://github.com/f1db/f1db";
 const URL_RELEASE = `${URL_REPOSITORY}/releases/tag/${VERSIONE_F1DB}`;
 const URL_ARCHIVIO = `${URL_REPOSITORY}/releases/download/${VERSIONE_F1DB}/f1db-json-splitted.zip`;
@@ -29,6 +29,7 @@ const pilotiF1db = {
   piastri: "oscar-piastri",
   hadjar: "isack-hadjar",
   lawson: "liam-lawson",
+  tsunoda: "yuki-tsunoda",
   gasly: "pierre-gasly",
   arvid_lindblad: "arvid-lindblad",
   colapinto: "franco-colapinto",
@@ -489,7 +490,7 @@ function creaSnapshot(percorsoF1db, datiProgetto) {
       fonte: "F1DB",
       versione: VERSIONE_F1DB,
       pubblicatoIl: PUBBLICATO_IL,
-      derivatoIl: "2026-08-10",
+      derivatoIl: "2026-09-02",
       releaseUrl: URL_RELEASE,
       archivio: "f1db-json-splitted.zip",
       archivioUrl: URL_ARCHIVIO,
@@ -505,7 +506,6 @@ function creaSnapshot(percorsoF1db, datiProgetto) {
     },
     andamento2026: {
       stagione: 2026,
-      aggiornatoIl: PUBBLICATO_IL,
       eventi: andamentoEventi2026,
     },
     eventiStorici,
@@ -538,7 +538,6 @@ function applicaSnapshot(dati, snapshot) {
   );
 
   dati.metadati.origine = `Race Analysis Hub + F1DB ${VERSIONE_F1DB}`;
-  dati.metadati.aggiornamentoDati = "2026-08-10";
   dati.metadati.descrizione =
     `Classifiche 2026 e risultati F1 2023-2025 derivati da F1DB ${VERSIONE_F1DB}; ` +
     "analisi descrittive e previsioni originali di Race Analysis Hub.";
@@ -559,7 +558,12 @@ function applicaSnapshot(dati, snapshot) {
   function sostituisciFonti(fonti = []) {
     return [
       URL_ARCHIVIO,
-      ...fonti.filter((fonte) => fonte !== URL_ARCHIVIO),
+      ...fonti.filter(
+        (fonte) =>
+          !/^https:\/\/github\.com\/f1db\/f1db\/releases\/download\/v[^/]+\/f1db-json-splitted\.zip$/.test(
+            fonte,
+          ),
+      ),
     ].filter((fonte, indice, elenco) => elenco.indexOf(fonte) === indice);
   }
 

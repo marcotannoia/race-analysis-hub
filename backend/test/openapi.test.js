@@ -34,7 +34,7 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
     ),
   );
   assert.equal(documentoOpenApi.info.title, "Race Analysis Hub API");
-  assert.equal(documentoOpenApi.info.version, "1.11.0");
+  assert.equal(documentoOpenApi.info.version, "1.12.0");
   assert.match(documentoOpenApi.info.description, /adattate nel software/);
   assert.match(documentoOpenApi.info.description, /Race Analysis Hub/);
   assert.match(documentoOpenApi.info.license.name, /CC BY 4\.0/);
@@ -93,6 +93,8 @@ test("OpenAPI documenta il contratto di localizzazione senza esporre Azure", () 
   assert.match(parametro.description, /LINGUA_NON_SUPPORTATA/);
   assert.match(documentoOpenApi.info.description, /nessun endpoint pubblico/i);
   assert.ok(documentoOpenApi.components.headers.ContentLanguage);
+  assert.ok(documentoOpenApi.components.headers.CacheControl);
+  assert.ok(documentoOpenApi.components.headers.ETag);
   assert.ok(documentoOpenApi.components.headers.XAppCache);
   assert.equal(rispostaLingue.example.lingue.length, 6);
   assert.equal(
@@ -142,6 +144,7 @@ test("ogni operazione ha identificatore, risposte comuni e schema di successo", 
     assert.ok(operazione.responses[500], `${percorso} senza risposta 500`);
 
     if (percorso !== "/health") {
+      assert.ok(operazione.responses[304], `${percorso} senza risposta 304`);
       assert.ok(operazione.responses[429], `${percorso} senza risposta 429`);
     }
 
@@ -192,6 +195,16 @@ test("classifiche, andamento e metadati espongono schemi strutturati", () => {
   assert.ok(schemi.Home.required.includes("classificaPrevisionale"));
   assert.ok(schemi.Home.required.includes("circuitoTecnico"));
   assert.ok(schemi.Home.required.includes("aggiornamentiLive"));
+  assert.match(
+    documentoOpenApi.paths["/home"].get.description,
+    /classifica previsionale/i,
+  );
+  assert.doesNotMatch(
+    documentoOpenApi.paths["/home"].get.description,
+    /previsione è isolata/i,
+  );
+  assert.ok(schemi.IndiceEndpoint.required.includes("health"));
+  assert.ok(schemi.IndiceEndpoint.required.includes("gare"));
   assert.equal(
     schemi.DettaglioScuderia.properties.profiloTecnico.$ref,
     "#/components/schemas/ProfiloTecnicoScuderia",

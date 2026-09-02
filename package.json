@@ -1,7 +1,7 @@
 {
   "name": "race-analysis-hub",
   "private": true,
-  "version": "1.11.0",
+  "version": "1.12.0",
   "engines": {
     "node": ">=22.12.0 <25"
   },
@@ -13,6 +13,7 @@
     "verify-translations": "npm --prefix backend run verify-translations",
     "translate-data": "npm --prefix backend run translate-data --",
     "verify-db": "npm --prefix backend run verify-db",
+    "verify-docs": "npm --prefix backend run verify-docs",
     "build": "npm --prefix frontend run build",
     "build:cloudfront": "npm --prefix frontend run build",
     "lint": "npm --prefix frontend run lint",

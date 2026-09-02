@@ -3,6 +3,10 @@ const { version: versioneApi } = require("../package.json");
 const intestazioneRequestId = {
   "X-Request-ID": { $ref: "#/components/headers/RequestId" },
   "Content-Language": { $ref: "#/components/headers/ContentLanguage" },
+  "Cache-Control": { $ref: "#/components/headers/CacheControl" },
+  ETag: { $ref: "#/components/headers/ETag" },
+  RateLimit: { $ref: "#/components/headers/RateLimit" },
+  "RateLimit-Policy": { $ref: "#/components/headers/RateLimitPolicy" },
   "X-App-Cache": { $ref: "#/components/headers/XAppCache" },
 };
 const parametroLingua = { $ref: "#/components/parameters/Lingua" };
@@ -57,6 +61,7 @@ function rispostaJson(descrizione, riferimentoSchema, esempio) {
 }
 
 const risposteComuni = {
+  304: { $ref: "#/components/responses/NonModificato" },
   400: { $ref: "#/components/responses/RichiestaNonValida" },
   429: { $ref: "#/components/responses/LimiteRichiesteSuperato" },
   500: { $ref: "#/components/responses/ErroreInterno" },
@@ -72,7 +77,7 @@ const documentoOpenApi = {
       "consente esclusivamente GET, HEAD e OPTIONS. Le analisi editoriali sono " +
       "pubblicate soltanto per il Gran Premio attuale; gare future e relative " +
       "analisi non vengono esposte. Classifiche e risultati quantitativi provengono " +
-      "da uno snapshot locale derivato da F1DB v2026.11.0 (CC BY 4.0), senza " +
+      "da uno snapshot locale derivato da F1DB v2026.12.0 (CC BY 4.0), senza " +
       "chiamate esterne a runtime, e sono visualizzati con Chart.js. " +
       "Le risposte pubbliche possono essere copiate, mostrate e adattate nel software " +
       "del riutilizzatore, anche per uso commerciale, secondo la CC BY 4.0. " +
@@ -89,7 +94,8 @@ const documentoOpenApi = {
       "L'indice e i singoli fattori sono stime " +
       "soggette a errore e non rappresentano risultati sportivi certi. " +
       "Le schede includono percentuali di rendimento sul bagnato e di errori " +
-      "normalizzate sulle gare effettivamente disputate, senza esporre i conteggi grezzi. " +
+      "normalizzate sulle gare effettivamente disputate; per il bagnato sono esposti " +
+      "anche i conteggi che rendono verificabile la percentuale. " +
       "Gli endpoint di confronto restituiscono due schede complete nello stesso ordine richiesto. " +
       "La home espone il profilo tecnico del circuito e un indice editoriale di " +
       "aderenza per scuderia, distinto dalla probabilità di vittoria e dalla classifica. " +
@@ -219,7 +225,10 @@ const documentoOpenApi = {
         tags: ["Servizio"],
         summary: "Dati aggregati per la home",
         description:
-          "Restituisce il Gran Premio attuale, i piloti e le scuderie. La previsione è isolata nel proprio endpoint.",
+          "Endpoint di bootstrap consigliato per ridurre le chiamate: restituisce " +
+          "Gran Premio attuale, piloti, scuderie, profilo tecnico del circuito, " +
+          "aggiornamenti FIA validati e classifica previsionale. L'endpoint dedicato " +
+          "/previsioni/piloti resta disponibile quando serve soltanto la previsione.",
         parameters: [parametroLingua],
         responses: {
           200: rispostaJson("Contenuto della home", "#/components/schemas/Home"),
@@ -541,6 +550,12 @@ const documentoOpenApi = {
   },
   components: {
     headers: {
+      CacheControl: {
+        description:
+          "Politica di cache. Le risposte valide usano normalmente max-age=60, " +
+          "s-maxage=300 e stale-while-revalidate=60; errori e health check usano no-store.",
+        schema: { type: "string" },
+      },
       ContentLanguage: {
         description:
           "Lingua effettiva selezionata per la risposta. È presente anche sugli " +
@@ -551,6 +566,22 @@ const documentoOpenApi = {
         description:
           "Identificatore univoco della richiesta, utile per assistenza e analisi dei log.",
         schema: { type: "string", format: "uuid" },
+      },
+      ETag: {
+        description:
+          "Validatore della rappresentazione. Reinviarlo in If-None-Match per " +
+          "ricevere 304 quando il JSON conservato dal client è ancora valido.",
+        schema: { type: "string", example: 'W/"2f3-abc123"' },
+      },
+      RateLimit: {
+        description:
+          "Stato standard del limite richieste per la finestra corrente.",
+        schema: { type: "string" },
+      },
+      RateLimitPolicy: {
+        description:
+          "Politica standard del limite richieste applicato dal backend.",
+        schema: { type: "string" },
       },
       XAppCache: {
         description:
@@ -622,6 +653,12 @@ const documentoOpenApi = {
       },
     },
     responses: {
+      NonModificato: {
+        description:
+          "La rappresentazione identificata da If-None-Match non è cambiata. " +
+          "Riutilizzare il corpo conservato nella cache interna del client.",
+        headers: intestazioneRequestId,
+      },
       RichiestaNonValida: {
         description: "Parametri, query o identificatori non validi",
         headers: intestazioneRequestId,
@@ -717,12 +754,14 @@ const documentoOpenApi = {
       IndiceEndpoint: {
         type: "object",
         required: [
+          "health",
           "home",
           "lingue",
           "piloti",
           "dettaglioPilota",
           "scuderie",
           "dettaglioScuderia",
+          "gare",
           "garaAttuale",
           "dettaglioGaraAttuale",
           "classificaPiloti",
@@ -734,6 +773,7 @@ const documentoOpenApi = {
           "analisiScuderia",
         ],
         properties: {
+          health: { type: "string", example: "/api/v1/health" },
           home: { type: "string", example: "/api/v1/home" },
           lingue: { type: "string", example: "/api/v1/lingue" },
           piloti: { type: "string", example: "/api/v1/piloti" },
@@ -746,6 +786,7 @@ const documentoOpenApi = {
             type: "string",
             example: "/api/v1/scuderie/:scuderiaSlug",
           },
+          gare: { type: "string", example: "/api/v1/gare" },
           garaAttuale: {
             type: "string",
             example: "/api/v1/gare/attuale",
@@ -974,20 +1015,11 @@ const documentoOpenApi = {
           { $ref: "#/components/schemas/PilotaBreve" },
           {
             type: "object",
-            required: [
-              "nazionalita",
-              "scuderia",
-              "classifica",
-              "aggiornatoIl",
-            ],
+            required: ["nazionalita", "scuderia", "classifica"],
             properties: {
               nazionalita: { type: "string", example: "Monegasque" },
               scuderia: { $ref: "#/components/schemas/ScuderiaBreve" },
               classifica: { $ref: "#/components/schemas/Classifica" },
-              aggiornatoIl: {
-                type: ["string", "null"],
-                format: "date-time",
-              },
             },
           },
         ],
@@ -1002,7 +1034,6 @@ const documentoOpenApi = {
               "nazionalita",
               "denominazioniStoriche",
               "classifica",
-              "aggiornatoIl",
             ],
             properties: {
               nomeClassifica: { type: "string", example: "Ferrari" },
@@ -1013,10 +1044,6 @@ const documentoOpenApi = {
                 additionalProperties: { type: ["string", "null"] },
               },
               classifica: { $ref: "#/components/schemas/Classifica" },
-              aggiornatoIl: {
-                type: ["string", "null"],
-                format: "date-time",
-              },
             },
           },
         ],
@@ -1063,7 +1090,6 @@ const documentoOpenApi = {
               "rischi",
               "confidenza",
               "fonti",
-              "aggiornatoIl",
             ],
             properties: {
               contestoStorico: { type: "string" },
@@ -1077,10 +1103,6 @@ const documentoOpenApi = {
               fonti: {
                 type: "array",
                 items: { type: "string", format: "uri", pattern: "^https://" },
-              },
-              aggiornatoIl: {
-                type: ["string", "null"],
-                format: "date-time",
               },
             },
           },
@@ -1194,7 +1216,6 @@ const documentoOpenApi = {
           "aggiornamentiInArrivo",
           "storicoEdizioni",
           "fonti",
-          "aggiornatoIl",
         ],
         properties: {
           gara: { $ref: "#/components/schemas/GaraBreve" },
@@ -1244,7 +1265,6 @@ const documentoOpenApi = {
             type: "array",
             items: { type: "string", format: "uri", pattern: "^https://" },
           },
-          aggiornatoIl: { type: ["string", "null"], format: "date-time" },
         },
       },
       AnalisiPilota: {
@@ -1313,7 +1333,7 @@ const documentoOpenApi = {
             type: "string",
             format: "uri",
             example:
-              "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+              "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
           },
           licenza: { type: "string", example: "CC BY 4.0" },
           licenzaUrl: {
@@ -1321,7 +1341,7 @@ const documentoOpenApi = {
             format: "uri",
             example: "https://creativecommons.org/licenses/by/4.0/",
           },
-          versione: { type: "string", example: "v2026.11.0" },
+          versione: { type: "string", example: "v2026.12.0" },
           modifiche: {
             type: "string",
             description:
@@ -1339,7 +1359,6 @@ const documentoOpenApi = {
           "qualifica",
           "gara",
           "fonte",
-          "aggiornatoIl",
         ],
         properties: {
           stagione: { type: "integer", minimum: 2026 },
@@ -1358,7 +1377,6 @@ const documentoOpenApi = {
               { type: "null" },
             ],
           },
-          aggiornatoIl: { type: ["string", "null"], format: "date-time" },
         },
       },
       ElencoPiloti: {
@@ -1486,7 +1504,6 @@ const documentoOpenApi = {
           "Profilo editoriale tecnico 2026 basato su dati stagionali, documenti FIA e analisi pubbliche; non rappresenta una probabilità di vittoria.",
         required: [
           "stagione",
-          "aggiornatoIl",
           "metodo",
           "capacita",
           "puntiForza",
@@ -1495,7 +1512,6 @@ const documentoOpenApi = {
         ],
         properties: {
           stagione: { type: "integer", const: 2026 },
-          aggiornatoIl: { type: "string", format: "date" },
           metodo: { type: "string" },
           capacita: {
             type: "array",
@@ -1592,7 +1608,6 @@ const documentoOpenApi = {
         type: "object",
         required: [
           "stagione",
-          "aggiornatoIl",
           "metodo",
           "fp1At",
           "dati",
@@ -1605,7 +1620,6 @@ const documentoOpenApi = {
         ],
         properties: {
           stagione: { type: "integer", const: 2026 },
-          aggiornatoIl: { type: "string", format: "date" },
           metodo: { type: "string" },
           fp1At: { type: "string", format: "date-time" },
           dati: { $ref: "#/components/schemas/DatiGeometriciCircuito" },
@@ -1691,7 +1705,14 @@ const documentoOpenApi = {
         properties: {
           lingua: { $ref: "#/components/schemas/CodiceLingua" },
           pilota: { $ref: "#/components/schemas/Pilota" },
-          indicatori: { $ref: "#/components/schemas/IndicatoriProfilo" },
+          indicatori: {
+            oneOf: [
+              { $ref: "#/components/schemas/IndicatoriProfilo" },
+              { type: "null" },
+            ],
+            description:
+              "Indicatori editoriali verificati, oppure null finché le fonti necessarie non sono state validate.",
+          },
           analisi: {
             oneOf: [
               { $ref: "#/components/schemas/AnalisiPilota" },
@@ -1722,9 +1743,12 @@ const documentoOpenApi = {
             items: { $ref: "#/components/schemas/Pilota" },
           },
           indicatori: {
-            allOf: [{ $ref: "#/components/schemas/IndicatoriProfilo" }],
+            oneOf: [
+              { $ref: "#/components/schemas/IndicatoriProfilo" },
+              { type: "null" },
+            ],
             description:
-              "Aggregato ponderato sulle gare disputate dai piloti attualmente appartenenti alla scuderia.",
+              "Aggregato ponderato sui piloti schierati nel GP attuale; null se manca un indicatore verificato.",
           },
           profiloTecnico: {
             $ref: "#/components/schemas/ProfiloTecnicoScuderia",
@@ -1759,7 +1783,12 @@ const documentoOpenApi = {
         required: ["pilota", "indicatori", "analisi", "andamentoStagioneCorrente"],
         properties: {
           pilota: { $ref: "#/components/schemas/Pilota" },
-          indicatori: { $ref: "#/components/schemas/IndicatoriProfilo" },
+          indicatori: {
+            oneOf: [
+              { $ref: "#/components/schemas/IndicatoriProfilo" },
+              { type: "null" },
+            ],
+          },
           analisi: {
             oneOf: [
               { $ref: "#/components/schemas/AnalisiPilota" },
@@ -1801,7 +1830,12 @@ const documentoOpenApi = {
             type: "array",
             items: { $ref: "#/components/schemas/Pilota" },
           },
-          indicatori: { $ref: "#/components/schemas/IndicatoriProfilo" },
+          indicatori: {
+            oneOf: [
+              { $ref: "#/components/schemas/IndicatoriProfilo" },
+              { type: "null" },
+            ],
+          },
           profiloTecnico: {
             $ref: "#/components/schemas/ProfiloTecnicoScuderia",
           },
@@ -1910,7 +1944,6 @@ const documentoOpenApi = {
           "gara",
           "modello",
           "pesi",
-          "aggiornatoIl",
           "classifica",
         ],
         properties: {
@@ -1935,7 +1968,6 @@ const documentoOpenApi = {
             items: { $ref: "#/components/schemas/PesoPrevisionale" },
             example: esempioPesiPrevisionali,
           },
-          aggiornatoIl: { type: ["string", "null"], format: "date-time" },
           classifica: {
             type: "array",
             items: { $ref: "#/components/schemas/PosizionePrevisionale" },

@@ -1,5 +1,37 @@
 # Changelog
 
+## 1.12.0 — 2026-09-02
+
+### Dati del Gran Premio d'Italia
+
+- applicata esclusivamente a Monza la sostituzione di Hadjar: Lawson è
+  associato a Red Bull e Tsunoda a Racing Bulls senza modificare le anagrafiche
+  stagionali o la struttura MongoDB;
+- aggiunti profilo, classifica 2026, storico di Monza, analisi completa e
+  traduzioni di Tsunoda, aggiornando home e classifica previsionale ai 22
+  partecipanti effettivi;
+- aggiornato lo snapshot quantitativo a F1DB `v2026.12.0`;
+- registrati l'aggiornamento Ferrari ADUO e l'ala posteriore specifica per basso
+  carico, mantenendo il pacchetto Alpine già annunciato per Colapinto;
+- gli indicatori editoriali senza un set completo di fonti validate restano
+  `null`, inclusi i relativi aggregati di scuderia, invece di usare stime.
+
+### Documentazione e API
+
+- aggiunta una guida unica agli endpoint con una strategia di bootstrap,
+  caricamento lazy e cache interna per le app che riutilizzano l'API;
+- documentate la rivalidazione condizionale con `ETag`/`If-None-Match`, la
+  risposta `304` e gli header di cache e rate limit;
+- allineate descrizioni, conteggi del bagnato e pesi previsionali al contratto
+  effettivamente implementato;
+- completato l'indice restituito da `/api/v1` con `health` e `gare`;
+- unificate nella cache backend le richieste equivalenti senza lingua e con
+  `?lingua=it`, mantenendo isolate le query non valide;
+- aggiunto `npm run verify-docs` per controllare versioni, link locali e
+  copertura degli endpoint documentati.
+- documentata la distinzione tra catalogo stagionale da 23 piloti e
+  schieramento del GP da 22 partecipanti, comprese le associazioni temporanee.
+
 ## 1.11.0 — 2026-08-30
 
 ### Interfaccia

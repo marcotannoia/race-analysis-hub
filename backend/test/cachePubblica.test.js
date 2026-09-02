@@ -63,6 +63,37 @@ test("la cache condivide una sola elaborazione tra richieste simultanee", async 
     const cacheEn = await fetch(`${baseUrl}/api/v1/dati?lingua=en`);
     assert.equal(cacheEn.headers.get("x-app-cache"), "MISS");
     assert.equal(elaborazioni, 2);
+
+    const italianoPredefinito = await fetch(`${baseUrl}/api/v1/dati`);
+    assert.equal(italianoPredefinito.headers.get("x-app-cache"), "HIT");
+    assert.equal(elaborazioni, 2);
+  });
+});
+
+test("la cache supporta la rivalidazione condizionale tramite ETag", async () => {
+  const app = express();
+
+  app.use((richiesta, risposta, next) => {
+    risposta.locals.lingua = "it";
+    next();
+  });
+  app.use("/api/v1", cachePubblica());
+  app.get("/api/v1/dati", (richiesta, risposta) => {
+    risposta.json({ valore: 42 });
+  });
+
+  await conServer(app, async (baseUrl) => {
+    const prima = await fetch(`${baseUrl}/api/v1/dati`);
+    const etag = prima.headers.get("etag");
+    assert.ok(etag);
+
+    const rivalidata = await fetch(`${baseUrl}/api/v1/dati`, {
+      headers: { "If-None-Match": etag },
+    });
+
+    assert.equal(rivalidata.status, 304);
+    assert.equal(await rivalidata.text(), "");
+    assert.equal(rivalidata.headers.get("etag"), etag);
   });
 });
 

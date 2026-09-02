@@ -18,7 +18,6 @@ function creaProfiloScuderia(scuderiaSlug) {
 
   return {
     stagione: profili.metadati.stagione,
-    aggiornatoIl: profili.metadati.aggiornatoIl,
     metodo: profili.metadati.metodo,
     capacita,
     puntiForza: capacita.slice(0, 3),
@@ -90,7 +89,6 @@ function creaProfiloCircuito(garaSlug, scuderie, datiLiveFia = null) {
 
   return {
     stagione: circuiti.metadati.stagione,
-    aggiornatoIl: circuiti.metadati.aggiornatoIl,
     metodo: circuiti.metadati.metodo,
     fp1At: circuito.fp1At,
     dati: { ...circuito.dati },

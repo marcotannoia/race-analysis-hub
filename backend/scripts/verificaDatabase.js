@@ -20,7 +20,7 @@ const {
 } = require("../utils/normalizzaTraduzioni");
 
 const attesi = {
-  piloti: 22,
+  piloti: 23,
   scuderie: 11,
   gare: 12,
   analisiGare: 264,
@@ -237,14 +237,16 @@ async function verificaDatabase() {
       ]);
 
     const coperturaCompleta =
-      analisiPerPilota.every((gruppo) => gruppo.totale === 12) &&
+      analisiPerPilota.reduce((totale, gruppo) => totale + gruppo.totale, 0) ===
+        attesi.analisiGare &&
+      analisiPilotaPerGara.length === attesi.gare &&
       analisiPilotaPerGara.every((gruppo) => gruppo.totale === 22) &&
       analisiPerScuderia.every((gruppo) => gruppo.totale === 12) &&
       analisiScuderiaPerGara.every((gruppo) => gruppo.totale === 11);
 
     console.log(
       `${coperturaCompleta ? "OK" : "ERRORE"} copertura: ` +
-        "12 gare per ogni pilota e scuderia",
+        "22 partecipanti per gara e 12 gare per ogni scuderia",
     );
 
     if (!coperturaCompleta) {

@@ -12,12 +12,12 @@ approvazione, sponsorizzazione o affiliazione con Formula One Licensing B.V.,
 Formula One World Championship Limited, la FIA, le scuderie o i piloti.
 
 Le classifiche 2026, i risultati di gara e qualifica 2023-2025 e i grafici
-quantitativi 2026 derivano da F1DB `v2026.11.0`, distribuito da Marcel Overdijk
+quantitativi 2026 derivano da F1DB `v2026.12.0`, distribuito da Marcel Overdijk
 e dai contributori di F1DB con licenza Creative Commons Attribution 4.0
 International (CC BY 4.0):
 
 - progetto originale: https://github.com/f1db/f1db
-- release utilizzata: https://github.com/f1db/f1db/releases/tag/v2026.11.0
+- release utilizzata: https://github.com/f1db/f1db/releases/tag/v2026.12.0
 - licenza: https://creativecommons.org/licenses/by/4.0/
 
 Race Analysis Hub ha filtrato, rinominato e normalizzato un sottoinsieme dei
@@ -68,7 +68,7 @@ non sono confermati.
 ## Indicatori bagnato ed errori
 
 Le partenze in carriera, i risultati e gli stati di ritiro usati per gli
-indicatori percentuali derivano da F1DB `v2026.11.0`. Le gare con pioggia fino
+indicatori percentuali derivano da F1DB `v2026.12.0`. Le gare con pioggia fino
 al 2025 sono state ricontrollate usando anche l'elenco storico pubblicato da
 Tudo Sobre Fórmula 1:
 
@@ -84,9 +84,10 @@ resoconto ufficiale FIA:
 
 - https://www.fia.com/news/f1-antonelli-wins-thrilling-canadian-grand-prix-ahead-hamilton-and-verstappen-russell-retires
 
-La percentuale di bravura sul bagnato è il rapporto tra vittorie e gare
-bagnate/miste effettivamente disputate. Non è una valutazione soggettiva né usa
-il numero assoluto di vittorie. Le percentuali di errore adottano un criterio
+La percentuale di bravura sul bagnato è il rapporto tra gare positive e gare
+bagnate o miste effettivamente disputate. Sono positive le vittorie e le gare
+concluse davanti al compagno classificato o ad almeno metà dei rivali diretti
+classificati. Le percentuali di errore adottano un criterio
 conservativo: uscite individuali documentate e penalità di gara registrate. Gli
 errori fatali sono un sottoinsieme e vengono divisi per tutte le partenze, non
 per gli errori complessivi; sui profili pubblicati la relativa percentuale resta
@@ -94,8 +95,9 @@ inferiore a quella generale. I conteggi di supporto restano interni; l'API
 espone soltanto le tre percentuali.
 
 Per una scuderia le percentuali rappresentano l'aggregato ponderato delle
-carriere dei piloti attualmente associati alla squadra, non l'intera storia
-sportiva delle precedenti denominazioni del costruttore.
+carriere dei piloti schierati nel GP attuale, non l'intera storia sportiva delle
+precedenti denominazioni del costruttore. Un profilo o aggregato resta `null`
+quando le fonti necessarie non sono ancora state validate.
 
 ## Traduzioni
 
@@ -120,7 +122,7 @@ l'attribuzione a F1DB per i dati quantitativi e segnalare le modifiche.
 Attribuzione sintetica consigliata:
 
 > Contenuto adattato da Race Analysis Hub — dati quantitativi derivati da F1DB
-> v2026.11.0 — modifiche del riutilizzatore — CC BY 4.0.
+> v2026.12.0 — modifiche del riutilizzatore — CC BY 4.0.
 
 L'inserimento straordinario del Gran Premio del Bahrein a Sepang nel calendario
 2026 è documentato separatamente dalla comunicazione ufficiale di Formula 1 del

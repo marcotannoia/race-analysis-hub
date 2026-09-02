@@ -28,7 +28,8 @@ senza raggiungere ogni volta Render e MongoDB Atlas.
 
 Dalla release `1.8.0` le pagine di piloti e scuderie mostrano tre indicatori
 percentuali normalizzati: bravura sul bagnato, errori imputabili al pilota ed
-errori fatali o compromettenti. I conteggi grezzi restano interni. La pagina
+errori fatali o compromettenti. Per il bagnato l'API espone anche i due conteggi
+usati nel calcolo, così la percentuale è verificabile. La pagina
 `/confronto` affianca due piloti o due scuderie riproponendo le schede complete
 dei profili singoli; usa gli endpoint dedicati `/api/v1/confronti/piloti/...`
 e `/api/v1/confronti/scuderie/...`.
@@ -64,7 +65,7 @@ MIT. Per contratto API, deployment, fonti e condizioni di riutilizzo consultare
 il `README.md`, il `NOTICE.md` e la documentazione Swagger del progetto.
 
 La landing page usa `GET /api/v1/home` per contenuti generali e classifica. Per
-ogni pilota mostra indice, confidenza, scomposizione dei dieci fattori e
+ogni pilota mostra indice, confidenza, scomposizione dei nove fattori ordinari e
 trattamento degli aggiornamenti tecnici. L'endpoint dedicato
 `GET /api/v1/previsioni/piloti` resta disponibile per le integrazioni che
 richiedono soltanto la previsione. L'avvertenza sulla natura fallibile della

@@ -224,7 +224,7 @@ function convalidaLingua(richiesta, risposta, next) {
   risposta.set("Content-Language", linguaEffettiva);
 
   if (lingua !== undefined && !linguaSupportata(lingua)) {
-    return risposta.status(400).json({
+    return risposta.status(400).set("Cache-Control", "no-store").json({
       errore: {
         codice: "LINGUA_NON_SUPPORTATA",
         messaggio: messaggioErrore(

@@ -1,5 +1,5 @@
 const dati = require("../data/dati-iniziali.json");
-const snapshotF1db = require("../data/f1db-v2026.11.0-derivato.json");
+const snapshotF1db = require("../data/f1db-v2026.12.0-derivato.json");
 const statisticheContesto = require("../data/statistiche-contesto.json");
 const profiliTecnici = require("../data/profili-tecnici-2026.json");
 const circuitiTecnici = require("../data/circuiti-tecnici-2026.json");
@@ -11,16 +11,16 @@ function richiedi(condizione, messaggio) {
 }
 
 const attesi = {
-  piloti: 22,
+  piloti: 23,
   scuderie: 11,
   gare: 12,
   analisiGare: 264,
   analisiScuderie: 132,
 };
 
-const VERSIONE_F1DB = "v2026.11.0";
+const VERSIONE_F1DB = "v2026.12.0";
 const URL_ARCHIVIO_F1DB =
-  "https://github.com/f1db/f1db/releases/download/v2026.11.0/f1db-json-splitted.zip";
+  "https://github.com/f1db/f1db/releases/download/v2026.12.0/f1db-json-splitted.zip";
 
 function uguali(primo, secondo) {
   return JSON.stringify(primo) === JSON.stringify(secondo);
@@ -49,7 +49,7 @@ richiedi(
 
 richiedi(
   snapshotF1db.eventiStorici.length === 36 &&
-    snapshotF1db.analisiGare.length === attesi.analisiGare &&
+    snapshotF1db.analisiGare.length === attesi.piloti * attesi.gare &&
     snapshotF1db.analisiScuderie.length === attesi.analisiScuderie &&
     snapshotF1db.andamento2026.eventi.length === 12,
   "Copertura dello snapshot F1DB incompleta",
@@ -165,11 +165,17 @@ for (const pilota of dati.piloti) {
     "erroriPilota",
     "erroriFatali",
   ];
+  if (!valori) {
+    richiedi(
+      pilota.slug === "tsunoda",
+      `Statistiche non disponibili senza giustificazione: ${pilota.slug}`,
+    );
+    continue;
+  }
   richiedi(
-    valori && campiInteri.every((campo) => Number.isInteger(valori[campo]) && valori[campo] >= 0),
+    campiInteri.every((campo) => Number.isInteger(valori[campo]) && valori[campo] >= 0),
     `Statistiche non valide: ${pilota.slug}`,
   );
-  if (!valori) continue;
   richiedi(
     valori.vittorieConPioggia <= valori.gareConPioggiaPositive &&
       valori.gareConPioggiaPositive <= valori.gareConPioggiaDisputate &&
@@ -266,6 +272,23 @@ const analisiMadridScuderie = dati.analisiScuderie.filter(
 );
 
 richiedi(analisiMadridPiloti.length === 22, "Madrid: attese 22 analisi piloti");
+
+const analisiMonzaPiloti = dati.analisiGare.filter(
+  (analisi) => analisi.garaSlug === "italia-monza",
+);
+richiedi(
+  analisiMonzaPiloti.length === 22 &&
+    !analisiMonzaPiloti.some((analisi) => analisi.pilotaSlug === "hadjar") &&
+    analisiMonzaPiloti.some(
+      (analisi) =>
+        analisi.pilotaSlug === "lawson" && analisi.scuderiaSlug === "red_bull",
+    ) &&
+    analisiMonzaPiloti.some(
+      (analisi) =>
+        analisi.pilotaSlug === "tsunoda" && analisi.scuderiaSlug === "rb",
+    ),
+  "Monza: sostituzione temporanea Hadjar/Lawson/Tsunoda incoerente",
+);
 richiedi(
   analisiMadridScuderie.length === 11,
   "Madrid: attese 11 analisi scuderie",
@@ -332,8 +355,7 @@ if (errori.length) {
     (attesi.analisiGare + attesi.analisiScuderie) * 3 * 2;
   console.log(
     `OK qualità dati: ${valoriStoriciVerificati} risultati storici, ` +
-      "33 classifiche e 11 GP 2026 coincidono con F1DB v2026.11.0; " +
-      "il GP d'Olanda è integrato dai risultati ufficiali Formula 1; " +
+      "34 classifiche e 12 GP 2026 coincidono con F1DB v2026.12.0; " +
       "struttura, denominazioni e fonti verificate.",
   );
 }

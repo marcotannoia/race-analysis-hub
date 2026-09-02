@@ -52,11 +52,13 @@ function indicatoriPilota(pilotaSlug) {
 }
 
 function indicatoriScuderia(piloti) {
-  const voci = (piloti || [])
-    .map((pilota) => statistiche.piloti[pilota.slug])
-    .filter(Boolean);
+  const voci = (piloti || []).map(
+    (pilota) => statistiche.piloti[pilota.slug],
+  );
 
-  return voci.length ? presentaIndicatori(sommaStatistiche(voci)) : null;
+  return voci.length && voci.every(Boolean)
+    ? presentaIndicatori(sommaStatistiche(voci))
+    : null;
 }
 
 module.exports = {

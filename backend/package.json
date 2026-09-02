@@ -1,6 +1,6 @@
 {
   "name": "race-analysis-hub-backend",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "description": "API REST pubblica per Race Analysis Hub",
   "main": "server.js",
   "engines": {
@@ -17,6 +17,7 @@
     "lint:api": "node scripts/verificaOpenApi.js",
     "sync-f1db": "node scripts/sincronizzaF1db.js",
     "verify-data": "node scripts/verificaQualitaDati.js",
+    "verify-docs": "node scripts/verificaDocumentazione.js",
     "verify-translations": "node scripts/verificaTraduzioni.js",
     "translate-data": "python3 scripts/generaTraduzioni.py",
     "verify-db": "node scripts/verificaDatabase.js"

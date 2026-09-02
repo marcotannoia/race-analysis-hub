@@ -1,4 +1,4 @@
-const snapshotF1db = require("../data/f1db-v2026.11.0-derivato.json");
+const snapshotF1db = require("../data/f1db-v2026.12.0-derivato.json");
 const { testiPrevisione } = require("../i18n/previsioni");
 const { valoreLocalizzato } = require("../i18n/lingue");
 
@@ -384,10 +384,16 @@ function creaClassificaPrevisionale({
   const analisiScuderiaPerSlug = new Map(
     analisiScuderie.map((analisi) => [analisi.scuderia.slug, analisi]),
   );
+  const pilotiPartecipanti = piloti.filter((pilota) =>
+    analisiPilotaPerSlug.has(pilota.slug),
+  );
   const scuderiaPerSlug = new Map(scuderie.map((scuderia) => [scuderia.slug, scuderia]));
-  const massimoPuntiPiloti = Math.max(...piloti.map((pilota) => pilota.classifica2026.punti), 0);
+  const massimoPuntiPiloti = Math.max(
+    ...pilotiPartecipanti.map((pilota) => pilota.classifica2026.punti),
+    0,
+  );
   const massimoVittoriePiloti = Math.max(
-    ...piloti.map((pilota) => pilota.classifica2026.vittorie),
+    ...pilotiPartecipanti.map((pilota) => pilota.classifica2026.vittorie),
     0,
   );
   const massimoPuntiScuderie = Math.max(
@@ -399,10 +405,10 @@ function creaClassificaPrevisionale({
     0,
   );
 
-  const classifica = piloti.map((pilota) => {
-    const scuderiaSlug = pilota.scuderia.slug;
-    const scuderia = scuderiaPerSlug.get(scuderiaSlug);
+  const classifica = pilotiPartecipanti.map((pilota) => {
     const analisiPilota = analisiPilotaPerSlug.get(pilota.slug);
+    const scuderiaSlug = analisiPilota.scuderia?.slug || pilota.scuderia.slug;
+    const scuderia = scuderiaPerSlug.get(scuderiaSlug);
     const analisiScuderia = analisiScuderiaPerSlug.get(scuderiaSlug);
     const gare2026 = risultatiPilota(eventi, pilota.slug, "gara");
     const qualifiche2026 = risultatiPilota(eventi, pilota.slug, "qualifica");
@@ -428,7 +434,7 @@ function creaClassificaPrevisionale({
         pilota.classifica2026,
         massimoPuntiPiloti,
         massimoVittoriePiloti,
-        piloti.length,
+        pilotiPartecipanti.length,
       ),
       compatibilitaVetturaCircuito: valutaCompatibilitaVettura(
         andamentoScuderia,
@@ -513,7 +519,6 @@ function creaClassificaPrevisionale({
       nome: testi.fattori[chiave],
       pesoPercentuale,
     })),
-    aggiornatoIl: snapshot.andamento2026?.aggiornatoIl || null,
     classifica: classifica.map((elemento, indice) => ({
       posizione: indice + 1,
       ...elemento,
