@@ -139,7 +139,6 @@ test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
   }));
   const snapshot = {
     andamento2026: {
-      aggiornatoIl: "2026-08-01T12:00:00.000Z",
       eventi: [
         {
           piloti: {
@@ -185,7 +184,68 @@ test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
   assert.equal(risultato.classifica[0].fattori.length, 9);
   assert.equal(risultato.modello, "statistico-editoriale-v2");
   assert.equal("avvertenza" in risultato, false);
-  assert.equal(risultato.aggiornatoIl, "2026-08-01T12:00:00.000Z");
+  assert.equal("aggiornatoIl" in risultato, false);
+});
+
+test("usa lo schieramento della gara e ignora i piloti senza analisi corrente", () => {
+  const redBull = {
+    slug: "red_bull",
+    nome: "Red Bull Racing",
+    abbreviazione: "RBR",
+    colore: "#3671C6",
+    classifica2026: { posizione: 4, punti: 100, vittorie: 0 },
+  };
+  const racingBulls = {
+    slug: "rb",
+    nome: "Racing Bulls",
+    abbreviazione: "RB",
+    colore: "#6692FF",
+    classifica2026: { posizione: 5, punti: 70, vittorie: 0 },
+  };
+  const lawson = {
+    slug: "lawson",
+    nome: "Liam Lawson",
+    codice: "LAW",
+    numero: "30",
+    nazionalitaIso2: "NZ",
+    nazionalitaIso3: "NZL",
+    scuderia: racingBulls,
+    classifica2026: { posizione: 9, punti: 49, vittorie: 0 },
+  };
+  const hadjar = {
+    slug: "hadjar",
+    nome: "Isack Hadjar",
+    codice: "HAD",
+    numero: "6",
+    nazionalitaIso2: "FR",
+    nazionalitaIso3: "FRA",
+    scuderia: redBull,
+    classifica2026: { posizione: 8, punti: 68, vittorie: 0 },
+  };
+  const analisiLawson = {
+    pilota: lawson,
+    scuderia: redBull,
+    considerazioni: "TOP 10 — sostituto",
+    posizioniStoriche: { 2025: "P14" },
+    passoGara: {},
+    gomme: {},
+  };
+
+  const risultato = creaClassificaPrevisionale({
+    gara: { slug: "italia-monza", nome: "GP Italia", circuito: "Monza", confidenza: "MEDIA" },
+    piloti: [lawson, hadjar],
+    scuderie: [redBull, racingBulls],
+    analisiPiloti: [analisiLawson],
+    analisiScuderie: [
+      { scuderia: redBull, considerazioni: "TOP 10", passoGara: {}, gomme: {} },
+      { scuderia: racingBulls, considerazioni: "DA VALUTARE", passoGara: {}, gomme: {} },
+    ],
+    snapshot: { andamento2026: { eventi: [] } },
+  });
+
+  assert.equal(risultato.classifica.length, 1);
+  assert.equal(risultato.classifica[0].pilota.slug, "lawson");
+  assert.equal(risultato.classifica[0].scuderia.slug, "red_bull");
 });
 
 test("la classifica applica i pesi condizionali al pilota penalizzato", () => {

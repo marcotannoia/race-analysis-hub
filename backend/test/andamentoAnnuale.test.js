@@ -5,15 +5,14 @@ const creaAndamentoAnnuale = require("../services/andamentoAnnuale");
 const snapshot = {
   metadati: {
     fonte: "F1DB",
-    releaseUrl: "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+    releaseUrl: "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
     licenza: "CC BY 4.0",
     licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
-    versione: "v2026.11.0",
+    versione: "v2026.12.0",
     trasformazioni: "Dati filtrati e normalizzati.",
   },
   andamento2026: {
     stagione: 2026,
-    aggiornatoIl: "2026-07-26T21:00:55.000Z",
     eventi: [
       {
         etichetta: "Australia",
@@ -59,13 +58,12 @@ test("crea il grafico pilota dai risultati F1DB", () => {
   ]);
   assert.deepEqual(andamento.fonte, {
     nome: "F1DB",
-    url: "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+    url: "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
     licenza: "CC BY 4.0",
     licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
-    versione: "v2026.11.0",
+    versione: "v2026.12.0",
     modifiche: "Dati filtrati e normalizzati.",
   });
-  assert.equal(andamento.aggiornatoIl, "2026-07-26T21:00:55.000Z");
 });
 
 test("crea le serie di tutti i piloti della scuderia", () => {
@@ -96,5 +94,4 @@ test("non usa lo snapshot per una stagione diversa", () => {
   assert.deepEqual(andamento.qualifica, []);
   assert.deepEqual(andamento.gara, []);
   assert.equal(andamento.fonte, null);
-  assert.equal(andamento.aggiornatoIl, null);
 });

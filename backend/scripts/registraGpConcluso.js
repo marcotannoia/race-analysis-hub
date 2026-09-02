@@ -590,9 +590,6 @@ function aggiornaStatisticheContesto(
     }
   }
 
-  statistiche.metadati.aggiornatoAl = aggiornamento.conclusaIl
-    ? new Date(aggiornamento.conclusaIl).toISOString().slice(0, 10)
-    : new Date().toISOString().slice(0, 10);
   statistiche.metadati.ultimoGpIncluso = identificatore;
   statistiche.metadati.descrizione =
     `Statistiche cumulative fino a ${garaCorrente.nome} ` +

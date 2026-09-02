@@ -21,7 +21,7 @@ function gestoreErrori(errore, richiesta, risposta, next) {
   );
 
   if (richiesta.originalUrl.startsWith("/api/v1")) {
-    return risposta.status(stato).json({
+    return risposta.status(stato).set("Cache-Control", "no-store").json({
       errore: {
         codice,
         messaggio,

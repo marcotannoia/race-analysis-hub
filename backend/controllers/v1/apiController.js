@@ -37,7 +37,7 @@ const {
   presentaScuderia,
   presentaScuderiaBreve,
 } = require("../../presenters/apiV1");
-const { metadati: metadatiF1db } = require("../../data/f1db-v2026.11.0-derivato.json");
+const { metadati: metadatiF1db } = require("../../data/f1db-v2026.12.0-derivato.json");
 const { version: VERSIONE_API } = require("../../package.json");
 
 const attribuzioneF1db = {
@@ -121,12 +121,14 @@ function descrizioneApi(richiesta, risposta) {
     lingueSupportate: Object.values(LINGUE_SUPPORTATE),
     attribuzioneDati: attribuzioneF1db,
     endpoint: {
+      health: "/api/v1/health",
       home: "/api/v1/home",
       lingue: "/api/v1/lingue",
       piloti: "/api/v1/piloti",
       dettaglioPilota: "/api/v1/piloti/:pilotaSlug",
       scuderie: "/api/v1/scuderie",
       dettaglioScuderia: "/api/v1/scuderie/:scuderiaSlug",
+      gare: "/api/v1/gare",
       garaAttuale: "/api/v1/gare/attuale",
       dettaglioGaraAttuale: "/api/v1/gare/:garaSlug",
       classificaPiloti: "/api/v1/classifiche/piloti",
@@ -202,10 +204,20 @@ async function home(richiesta, risposta) {
         .lean(),
     ]);
 
+  const analisiPerPilota = new Map(
+    analisiPiloti.map((analisi) => [analisi.pilota.slug, analisi]),
+  );
+  const pilotiPartecipanti = piloti
+    .filter((pilota) => analisiPerPilota.has(pilota.slug))
+    .map((pilota) => ({
+      ...pilota,
+      scuderia: analisiPerPilota.get(pilota.slug).scuderia,
+    }));
+
   risposta.json({
     lingua,
     garaAttuale: presentaGaraBreve(garaAttuale, lingua),
-    piloti: piloti.map((pilota) => presentaPilota(pilota, lingua)),
+    piloti: pilotiPartecipanti.map((pilota) => presentaPilota(pilota, lingua)),
     scuderie: scuderie.map((scuderia) =>
       presentaScuderia(scuderia, lingua),
     ),
@@ -217,7 +229,7 @@ async function home(richiesta, risposta) {
     aggiornamentiLive: creaAggiornamentiLive(datiLiveFia, scuderie),
     classificaPrevisionale: creaClassificaPrevisionale({
       gara: garaAttuale,
-      piloti,
+      piloti: pilotiPartecipanti,
       scuderie,
       analisiPiloti,
       analisiScuderie,
@@ -225,7 +237,7 @@ async function home(richiesta, risposta) {
     }),
     metadati: {
       stagione: garaAttuale.stagione,
-      totalePiloti: piloti.length,
+      totalePiloti: pilotiPartecipanti.length,
       totaleScuderie: scuderie.length,
       totaleGareAnalisi,
       totaleGareCalendario:
@@ -286,8 +298,12 @@ async function creaSchedaPilota(pilota, garaAttuale, lingua) {
     recuperaAndamentoPilota(pilota, garaAttuale, lingua),
   ]);
 
+  const pilotaNelGp = analisi?.scuderia
+    ? { ...pilota, scuderia: analisi.scuderia }
+    : pilota;
+
   return {
-    pilota: presentaPilota(pilota, lingua),
+    pilota: presentaPilota(pilotaNelGp, lingua),
     indicatori: indicatoriPilota(pilota.slug),
     analisi: presentaAnalisiPilota(analisi, lingua),
     andamentoStagioneCorrente: andamento,
@@ -343,13 +359,18 @@ async function elencaScuderie(richiesta, risposta) {
 }
 
 async function creaSchedaScuderia(scuderia, garaAttuale, lingua) {
-  const [piloti, analisi] = await Promise.all([
-    Pilota.find({ scuderia: scuderia._id })
-      .populate("scuderia", CAMPI_SCUDERIA_BREVE)
-      .sort("classifica2026.posizione")
+  const [analisiPiloti, analisi] = await Promise.all([
+    AnalisiGara.find({ gara: garaAttuale._id, scuderia: scuderia._id })
+      .populate("pilota", `${CAMPI_PILOTA_BREVE} classifica2026 traduzioni`)
       .lean(),
     recuperaAnalisiScuderia(scuderia._id, garaAttuale._id),
   ]);
+  const piloti = analisiPiloti
+    .map((voce) => ({ ...voce.pilota, scuderia }))
+    .sort(
+      (primo, secondo) =>
+        primo.classifica2026.posizione - secondo.classifica2026.posizione,
+    );
   const andamento = await recuperaAndamentoScuderia(
     scuderia,
     garaAttuale,

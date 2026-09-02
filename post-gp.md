@@ -59,6 +59,10 @@ rigenerare lo snapshot da una release F1DB, eseguire `npm run verify-data` e
 pubblicare il codice aggiornato. Versione, licenza e trasformazioni dello
 snapshot sono documentate in `NOTICE.md`.
 
+Le API non espongono una data generica di ultimo aggiornamento. Per capire se
+un blocco è cambiato bisogna confrontare il relativo payload o il suo `ETag`,
+non una data condivisa tra dati quantitativi e contenuti editoriali.
+
 ## Effetto sulla classifica previsionale
 
 La classifica della landing page viene generata dal backend per il GP marcato

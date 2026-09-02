@@ -6,7 +6,7 @@ function inviaErrore(risposta, stato, codice, messaggio, valori = {}) {
     ? messaggioErrore(codice, lingua, valori)
     : messaggio;
 
-  return risposta.status(stato).json({
+  return risposta.status(stato).set("Cache-Control", "no-store").json({
     errore: {
       codice,
       messaggio: messaggioFinale,

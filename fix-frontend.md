@@ -168,7 +168,7 @@ I grafici `Andamento in qualifica` e `Andamento in gara` mostrano esclusivamente
 la stagione indicata dal Gran Premio attuale, per esempio il 2026.
 
 Le posizioni provengono dallo snapshot locale derivato da F1DB
-`v2026.11.0`. Il frontend non interroga provider esterni: il backend legge lo
+`v2026.12.0`. Il frontend non interroga provider esterni: il backend legge lo
 snapshot, prepara le serie numeriche e restituisce insieme ai dati la fonte, la
 versione, la licenza e le trasformazioni applicate.
 
@@ -182,10 +182,10 @@ La risposta relativa all'andamento indica la provenienza:
 ```json
 "fonte": {
   "nome": "F1DB",
-  "url": "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+  "url": "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
   "licenza": "CC BY 4.0",
   "licenzaUrl": "https://creativecommons.org/licenses/by/4.0/",
-  "versione": "v2026.11.0"
+  "versione": "v2026.12.0"
 }
 ```
 

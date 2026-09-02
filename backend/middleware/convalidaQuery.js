@@ -9,7 +9,7 @@ function convalidaQuery(...parametriPermessi) {
     );
 
     if (nonPermessi.length > 0) {
-      return risposta.status(400).json({
+      return risposta.status(400).set("Cache-Control", "no-store").json({
         errore: {
           codice: "PARAMETRO_QUERY_NON_VALIDO",
           messaggio: messaggioErrore(

@@ -197,11 +197,31 @@ async function importaDati({ collega = true, disconnetti = true } = {}) {
         AnalisiScuderia.bulkWrite(operazioniAnalisiScuderie),
       ]);
 
+    const chiaviAnalisiAttese = new Set(
+      dati.analisiGare.map(
+        (analisi) =>
+          `${pilotaPerSlug.get(analisi.pilotaSlug)._id}|${garaPerSlug.get(analisi.garaSlug)._id}`,
+      ),
+    );
+    const analisiEsistenti = await AnalisiGara.find()
+      .select("_id pilota gara")
+      .lean();
+    const analisiObsolete = analisiEsistenti
+      .filter(
+        (analisi) =>
+          !chiaviAnalisiAttese.has(`${analisi.pilota}|${analisi.gara}`),
+      )
+      .map((analisi) => analisi._id);
+    if (analisiObsolete.length) {
+      await AnalisiGara.deleteMany({ _id: { $in: analisiObsolete } });
+    }
+
     stampaRisultato("Scuderie", risultatoScuderie);
     stampaRisultato("Piloti", risultatoPiloti);
     stampaRisultato("Gare", risultatoGare);
     stampaRisultato("Analisi piloti", risultatoAnalisiGare);
     stampaRisultato("Analisi scuderie", risultatoAnalisiScuderie);
+    console.log(`Analisi piloti obsolete rimosse: ${analisiObsolete.length}`);
     console.log("Importazione completata.");
   } catch (errore) {
     console.error("Importazione fallita:", errore.message);

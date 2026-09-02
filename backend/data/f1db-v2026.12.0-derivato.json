@@ -1,18 +1,16 @@
 {
   "metadati": {
     "fonte": "F1DB",
-    "versione": "v2026.11.0",
-    "pubblicatoIl": "2026-07-26T21:00:55.000Z",
-    "derivatoIl": "2026-08-23",
-    "releaseUrl": "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+    "versione": "v2026.12.0",
+    "pubblicatoIl": "2026-08-23T18:00:49.000Z",
+    "derivatoIl": "2026-09-02",
+    "releaseUrl": "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
     "archivio": "f1db-json-splitted.zip",
-    "archivioUrl": "https://github.com/f1db/f1db/releases/download/v2026.11.0/f1db-json-splitted.zip",
-    "archivioSha256": "7da222e8c2cafe223e4be2c1fb22fd67fb529779075f224c00eebac0acdecdeb",
+    "archivioUrl": "https://github.com/f1db/f1db/releases/download/v2026.12.0/f1db-json-splitted.zip",
+    "archivioSha256": "36cd3e85bc169643b8f26e23040298beca92168b9511cb2d57516738bfa81e73",
     "licenza": "CC BY 4.0",
     "licenzaUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "trasformazioni": "Sottoinsieme F1DB filtrato, rinominato e normalizzato; il GP d'Olanda 2026 è integrato dai risultati ufficiali Formula 1. Nessun risultato sportivo è stato stimato.",
-    "fonteIntegrativa": "Formula 1 official results",
-    "fonteIntegrativaUrl": "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result"
+    "trasformazioni": "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato."
   },
   "classifiche2026": {
     "piloti": [
@@ -25,14 +23,6 @@
         }
       },
       {
-        "slug": "russell",
-        "classifica2026": {
-          "posizione": 2,
-          "punti": 183,
-          "vittorie": 2
-        }
-      },
-      {
         "slug": "hamilton",
         "classifica2026": {
           "posizione": 3,
@@ -41,10 +31,10 @@
         }
       },
       {
-        "slug": "norris",
+        "slug": "russell",
         "classifica2026": {
-          "posizione": 4,
-          "punti": 159,
+          "posizione": 2,
+          "punti": 183,
           "vittorie": 2
         }
       },
@@ -54,6 +44,14 @@
           "posizione": 5,
           "punti": 155,
           "vittorie": 1
+        }
+      },
+      {
+        "slug": "norris",
+        "classifica2026": {
+          "posizione": 4,
+          "punti": 159,
+          "vittorie": 2
         }
       },
       {
@@ -85,6 +83,14 @@
         "classifica2026": {
           "posizione": 9,
           "punti": 49,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "tsunoda",
+        "classifica2026": {
+          "posizione": 20,
+          "punti": 0,
           "vittorie": 0
         }
       },
@@ -129,14 +135,6 @@
         }
       },
       {
-        "slug": "hulkenberg",
-        "classifica2026": {
-          "posizione": 15,
-          "punti": 6,
-          "vittorie": 0
-        }
-      },
-      {
         "slug": "sainz",
         "classifica2026": {
           "posizione": 16,
@@ -157,6 +155,14 @@
         "classifica2026": {
           "posizione": 18,
           "punti": 3,
+          "vittorie": 0
+        }
+      },
+      {
+        "slug": "hulkenberg",
+        "classifica2026": {
+          "posizione": 15,
+          "punti": 6,
           "vittorie": 0
         }
       },
@@ -286,7 +292,6 @@
   },
   "andamento2026": {
     "stagione": 2026,
-    "aggiornatoIl": "2026-08-23T16:00:00.000Z",
     "eventi": [
       {
         "raceId": 1150,
@@ -340,6 +345,11 @@
             "codice": "LAW",
             "gara": 13,
             "qualifica": 8
+          },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
           },
           "gasly": {
             "codice": "GAS",
@@ -573,6 +583,11 @@
             "gara": 7,
             "qualifica": 14
           },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
+          },
           "gasly": {
             "codice": "GAS",
             "gara": 6,
@@ -804,6 +819,11 @@
             "codice": "LAW",
             "gara": 9,
             "qualifica": 14
+          },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
           },
           "gasly": {
             "codice": "GAS",
@@ -1037,6 +1057,11 @@
             "gara": null,
             "qualifica": 11
           },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
+          },
           "gasly": {
             "codice": "GAS",
             "gara": null,
@@ -1268,6 +1293,11 @@
             "codice": "LAW",
             "gara": 7,
             "qualifica": 12
+          },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
           },
           "gasly": {
             "codice": "GAS",
@@ -1501,6 +1531,11 @@
             "gara": 6,
             "qualifica": 10
           },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
+          },
           "gasly": {
             "codice": "GAS",
             "gara": 3,
@@ -1732,6 +1767,11 @@
             "codice": "LAW",
             "gara": 8,
             "qualifica": 8
+          },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
           },
           "gasly": {
             "codice": "GAS",
@@ -1965,6 +2005,11 @@
             "gara": 9,
             "qualifica": 9
           },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
+          },
           "gasly": {
             "codice": "GAS",
             "gara": 13,
@@ -2196,6 +2241,11 @@
             "codice": "LAW",
             "gara": 6,
             "qualifica": 10
+          },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
           },
           "gasly": {
             "codice": "GAS",
@@ -2429,6 +2479,11 @@
             "gara": 12,
             "qualifica": 11
           },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
+          },
           "gasly": {
             "codice": "GAS",
             "gara": 11,
@@ -2661,6 +2716,11 @@
             "gara": 8,
             "qualifica": 11
           },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
+          },
           "gasly": {
             "codice": "GAS",
             "gara": 12,
@@ -2841,7 +2901,7 @@
         }
       },
       {
-        "raceId": 1159,
+        "raceId": 1161,
         "round": 12,
         "data": "2026-08-23",
         "grandPrixId": "netherlands",
@@ -2893,6 +2953,11 @@
             "gara": 7,
             "qualifica": 8
           },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": 11,
+            "qualifica": 12
+          },
           "gasly": {
             "codice": "GAS",
             "gara": 10,
@@ -2925,7 +2990,7 @@
           },
           "albon": {
             "codice": "ALB",
-            "gara": null,
+            "gara": 17,
             "qualifica": 16
           },
           "ocon": {
@@ -2992,21 +3057,21 @@
           },
           "red_bull": {
             "gara": {
-              "VER": null,
-              "HAD": null
+              "LAW": 7,
+              "VER": null
             },
             "qualifica": {
-              "VER": 7,
-              "HAD": null
+              "LAW": 8,
+              "VER": 7
             }
           },
           "rb": {
             "gara": {
-              "LAW": 7,
+              "TSU": 11,
               "LIN": 12
             },
             "qualifica": {
-              "LAW": 8,
+              "TSU": 12,
               "LIN": 10
             }
           },
@@ -3022,28 +3087,28 @@
           },
           "haas": {
             "gara": {
-              "BEA": null,
-              "OCO": null
+              "OCO": null,
+              "BEA": null
             },
             "qualifica": {
-              "BEA": 20,
-              "OCO": 15
+              "OCO": 15,
+              "BEA": 20
             }
           },
           "audi": {
             "gara": {
-              "BOR": 13,
-              "HUL": 8
+              "HUL": 8,
+              "BOR": 13
             },
             "qualifica": {
-              "BOR": 9,
-              "HUL": 13
+              "HUL": 13,
+              "BOR": 9
             }
           },
           "williams": {
             "gara": {
               "SAI": 16,
-              "ALB": null
+              "ALB": 17
             },
             "qualifica": {
               "SAI": 17,
@@ -3062,12 +3127,12 @@
           },
           "cadillac": {
             "gara": {
-              "BOT": null,
-              "PER": 15
+              "PER": 15,
+              "BOT": null
             },
             "qualifica": {
-              "BOT": 21,
-              "PER": 22
+              "PER": 22,
+              "BOT": 21
             }
           }
         }
@@ -3421,6 +3486,12 @@
     },
     {
       "garaSlug": "olanda-zandvoort",
+      "pilotaSlug": "tsunoda",
+      "risultatiGara": "2023: P15 (AlphaTauri)\n2024: P17 (RB)\n2025: P9 (Red Bull)",
+      "risultatiQualifica": "2023: Q14 (AlphaTauri)\n2024: Q12 (RB)\n2025: Q12 (Red Bull)"
+    },
+    {
+      "garaSlug": "olanda-zandvoort",
       "pilotaSlug": "gasly",
       "risultatiGara": "2023: P3 (Alpine)\n2024: P9 (Alpine)\n2025: P17 (Alpine)",
       "risultatiQualifica": "2023: Q12 (Alpine)\n2024: Q9 (Alpine)\n2025: Q14 (Alpine)"
@@ -3553,6 +3624,12 @@
     },
     {
       "garaSlug": "italia-monza",
+      "pilotaSlug": "tsunoda",
+      "risultatiGara": "2023: DNS (AlphaTauri)\n2024: DNF (RB)\n2025: P13 (Red Bull)",
+      "risultatiQualifica": "2023: Q11 (AlphaTauri)\n2024: Q16 (RB)\n2025: Q10 (Red Bull)"
+    },
+    {
+      "garaSlug": "italia-monza",
       "pilotaSlug": "gasly",
       "risultatiGara": "2023: P15 (Alpine)\n2024: P15 (Alpine)\n2025: P16 (Alpine)",
       "risultatiQualifica": "2023: Q17 (Alpine)\n2024: Q14 (Alpine)\n2025: Q19 (Alpine)"
@@ -3680,6 +3757,12 @@
     {
       "garaSlug": "spagna-madring",
       "pilotaSlug": "lawson",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "pilotaSlug": "tsunoda",
       "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
       "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
     },
@@ -3817,6 +3900,12 @@
     },
     {
       "garaSlug": "azerbaigian-baku",
+      "pilotaSlug": "tsunoda",
+      "risultatiGara": "2023: P10 (AlphaTauri)\n2024: DNF (RB)\n2025: P6 (Red Bull)",
+      "risultatiQualifica": "2023: Q8 (AlphaTauri)\n2024: Q12 (RB)\n2025: Q6 (Red Bull)"
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
       "pilotaSlug": "gasly",
       "risultatiGara": "2023: P14 (Alpine)\n2024: P12 (Alpine)\n2025: P18 (Alpine)",
       "risultatiQualifica": "2023: Q19 (Alpine)\n2024: DSQ (Alpine)\n2025: Q18 (Alpine)"
@@ -3944,6 +4033,12 @@
     {
       "garaSlug": "bahrein-sepang",
       "pilotaSlug": "lawson",
+      "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
+      "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "pilotaSlug": "tsunoda",
       "risultatiGara": "2023: GP NON DISPUTATO SU QUESTO CIRCUITO\n2024: GP NON DISPUTATO SU QUESTO CIRCUITO\n2025: GP NON DISPUTATO SU QUESTO CIRCUITO",
       "risultatiQualifica": "2023: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2024: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO\n2025: QUALIFICHE NON DISPUTATE SU QUESTO CIRCUITO"
     },
@@ -4081,6 +4176,12 @@
     },
     {
       "garaSlug": "singapore-marina-bay",
+      "pilotaSlug": "tsunoda",
+      "risultatiGara": "2023: DNF (AlphaTauri)\n2024: P12 (RB)\n2025: P12 (Red Bull)",
+      "risultatiQualifica": "2023: Q15 (AlphaTauri)\n2024: Q8 (RB)\n2025: Q13 (Red Bull)"
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
       "pilotaSlug": "gasly",
       "risultatiGara": "2023: P6 (Alpine)\n2024: P17 (Alpine)\n2025: P19 (Alpine)",
       "risultatiQualifica": "2023: Q12 (Alpine)\n2024: Q18 (Alpine)\n2025: Q18 (Alpine)"
@@ -4210,6 +4311,12 @@
       "pilotaSlug": "lawson",
       "risultatiGara": "2023: NON CORSO IN F1\n2024: P9 (RB)\n2025: P11 (Racing Bulls)",
       "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q15 (RB)\n2025: Q12 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "usa-austin",
+      "pilotaSlug": "tsunoda",
+      "risultatiGara": "2023: P8 (AlphaTauri)\n2024: P14 (RB)\n2025: P7 (Red Bull)",
+      "risultatiQualifica": "2023: Q11 (AlphaTauri)\n2024: Q11 (RB)\n2025: Q13 (Red Bull)"
     },
     {
       "garaSlug": "usa-austin",
@@ -4345,6 +4452,12 @@
     },
     {
       "garaSlug": "messico-citta-del-messico",
+      "pilotaSlug": "tsunoda",
+      "risultatiGara": "2023: P12 (AlphaTauri)\n2024: DNF (RB)\n2025: P11 (Red Bull)",
+      "risultatiQualifica": "2023: Q15 (AlphaTauri)\n2024: Q11 (RB)\n2025: Q11 (Red Bull)"
+    },
+    {
+      "garaSlug": "messico-citta-del-messico",
       "pilotaSlug": "gasly",
       "risultatiGara": "2023: P11 (Alpine)\n2024: P10 (Alpine)\n2025: P15 (Alpine)",
       "risultatiQualifica": "2023: Q11 (Alpine)\n2024: Q8 (Alpine)\n2025: Q18 (Alpine)"
@@ -4474,6 +4587,12 @@
       "pilotaSlug": "lawson",
       "risultatiGara": "2023: NON CORSO IN F1\n2024: P9 (RB)\n2025: P7 (Racing Bulls)",
       "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q5 (RB)\n2025: Q7 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "brasile-interlagos",
+      "pilotaSlug": "tsunoda",
+      "risultatiGara": "2023: P9 (AlphaTauri)\n2024: P7 (RB)\n2025: P17 (Red Bull)",
+      "risultatiQualifica": "2023: Q16 (AlphaTauri)\n2024: Q3 (RB)\n2025: Q19 (Red Bull)"
     },
     {
       "garaSlug": "brasile-interlagos",
@@ -4609,6 +4728,12 @@
     },
     {
       "garaSlug": "usa-las-vegas",
+      "pilotaSlug": "tsunoda",
+      "risultatiGara": "2023: P18 (AlphaTauri)\n2024: P9 (RB)\n2025: P12 (Red Bull)",
+      "risultatiQualifica": "2023: Q20 (AlphaTauri)\n2024: Q7 (RB)\n2025: Q19 (Red Bull)"
+    },
+    {
+      "garaSlug": "usa-las-vegas",
       "pilotaSlug": "gasly",
       "risultatiGara": "2023: P11 (Alpine)\n2024: DNF (Alpine)\n2025: P13 (Alpine)",
       "risultatiQualifica": "2023: Q5 (Alpine)\n2024: Q3 (Alpine)\n2025: Q10 (Alpine)"
@@ -4741,6 +4866,12 @@
     },
     {
       "garaSlug": "qatar-lusail",
+      "pilotaSlug": "tsunoda",
+      "risultatiGara": "2023: P15 (AlphaTauri)\n2024: P13 (RB)\n2025: P10 (Red Bull)",
+      "risultatiQualifica": "2023: Q11 (AlphaTauri)\n2024: Q14 (RB)\n2025: Q16 (Red Bull)"
+    },
+    {
+      "garaSlug": "qatar-lusail",
       "pilotaSlug": "gasly",
       "risultatiGara": "2023: P12 (Alpine)\n2024: P5 (Alpine)\n2025: P16 (Alpine)",
       "risultatiQualifica": "2023: Q7 (Alpine)\n2024: Q11 (Alpine)\n2025: Q9 (Alpine)"
@@ -4870,6 +5001,12 @@
       "pilotaSlug": "lawson",
       "risultatiGara": "2023: NON CORSO IN F1\n2024: P17 (RB)\n2025: P18 (Racing Bulls)",
       "risultatiQualifica": "2023: NON CORSO IN F1\n2024: Q12 (RB)\n2025: Q13 (Racing Bulls)"
+    },
+    {
+      "garaSlug": "abu-dhabi-yas-marina",
+      "pilotaSlug": "tsunoda",
+      "risultatiGara": "2023: P8 (AlphaTauri)\n2024: P12 (RB)\n2025: P14 (Red Bull)",
+      "risultatiQualifica": "2023: Q6 (AlphaTauri)\n2024: Q11 (RB)\n2025: Q10 (Red Bull)"
     },
     {
       "garaSlug": "abu-dhabi-yas-marina",

@@ -3,10 +3,14 @@
 ## Versione supportata
 
 È supportata esclusivamente l'API pubblica `/api/v1`, attualmente alla versione
-applicativa `1.11.0`. Gli endpoint sono anonimi, di sola lettura e soggetti a
+applicativa `1.12.0`. Gli endpoint sono anonimi, di sola lettura e soggetti a
 validazione, cache e limitazione delle richieste. La cache conserva soltanto
 risposte `2xx`; health check ed errori usano `no-store`. Le richieste simultanee
 per lo stesso URL vengono accorpate per evitare query duplicate sul database.
+La richiesta senza parametro lingua e quella con `?lingua=it` condividono la
+stessa voce; i parametri non previsti restano separati e vengono sempre
+validati. I client possono rivalidare la propria cache con `ETag` e
+`If-None-Match`, ricevendo `304` quando il contenuto non è cambiato.
 
 L'API non usa chiavi segrete perché i dati sono pubblici. CORS non costituisce
 un controllo di accesso: la protezione dagli abusi resta affidata a rate limit,

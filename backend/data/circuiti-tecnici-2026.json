@@ -1,7 +1,6 @@
 {
   "metadati": {
     "stagione": 2026,
-    "aggiornatoIl": "2026-08-29",
     "versione": "circuiti-tecnici-v1",
     "metodo": "I dati geometrici provengono dalle pagine ufficiali Formula 1. Gli indici di richiesta da 0 a 100 sono una lettura editoriale tecnica della pista e servono esclusivamente a calcolare l'aderenza macchina-circuito. Le zone Straight Mode vengono aggiunte solo dopo l'acquisizione della mappa ufficiale FIA dell'evento."
   },

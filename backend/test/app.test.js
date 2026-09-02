@@ -29,10 +29,12 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
 
     assert.equal(risposta.status, 200);
     assert.equal(corpo.nome, "Race Analysis Hub API");
-    assert.equal(corpo.versione, "1.11.0");
+    assert.equal(corpo.versione, "1.12.0");
     assert.equal(corpo.linguaPredefinita, "it");
     assert.equal(corpo.lingueSupportate.length, 6);
     assert.equal(corpo.endpoint.lingue, "/api/v1/lingue");
+    assert.equal(corpo.endpoint.health, "/api/v1/health");
+    assert.equal(corpo.endpoint.gare, "/api/v1/gare");
     assert.equal(
       corpo.endpoint.classificaPrevisionale,
       "/api/v1/previsioni/piloti",
@@ -40,12 +42,12 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
     assert.equal(corpo.documentazione, "/api/docs");
     assert.deepEqual(corpo.attribuzioneDati, {
       nome: "F1DB",
-      url: "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+      url: "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
       licenza: "CC BY 4.0",
       licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
-      versione: "v2026.11.0",
+      versione: "v2026.12.0",
       modifiche:
-        "Sottoinsieme F1DB filtrato, rinominato e normalizzato; il GP d'Olanda 2026 è integrato dai risultati ufficiali Formula 1. Nessun risultato sportivo è stato stimato.",
+        "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato.",
     });
     assert.equal(risposta.headers.get("access-control-allow-origin"), "*");
     assert.match(risposta.headers.get("x-request-id"), /^[0-9a-f-]{36}$/);
@@ -83,16 +85,19 @@ test("l'API v1 rifiuta query e identificatori non previsti", async () => {
     const queryCorpo = await query.json();
     assert.equal(query.status, 400);
     assert.equal(queryCorpo.errore.codice, "PARAMETRO_QUERY_NON_VALIDO");
+    assert.equal(query.headers.get("cache-control"), "no-store");
 
     const slug = await fetch(`${baseUrl}/api/v1/piloti/slug%20non%20valido`);
     const slugCorpo = await slug.json();
     assert.equal(slug.status, 400);
     assert.equal(slugCorpo.errore.codice, "IDENTIFICATORE_NON_VALIDO");
+    assert.equal(slug.headers.get("cache-control"), "no-store");
 
     const lingua = await fetch(`${baseUrl}/api/v1?lingua=nl`);
     const linguaCorpo = await lingua.json();
     assert.equal(lingua.status, 400);
     assert.equal(linguaCorpo.errore.codice, "LINGUA_NON_SUPPORTATA");
+    assert.equal(lingua.headers.get("cache-control"), "no-store");
   });
 });
 
@@ -144,7 +149,7 @@ test("specifica OpenAPI e documentazione Swagger sono pubbliche", async () => {
     const corpo = await specifica.json();
     assert.equal(specifica.status, 200);
     assert.equal(corpo.openapi, "3.1.0");
-    assert.equal(corpo.info.version, "1.11.0");
+    assert.equal(corpo.info.version, "1.12.0");
     assert.ok(corpo.paths["/lingue"]);
     assert.ok(corpo.paths["/gare/attuale"]);
     assert.ok(corpo.paths["/previsioni/piloti"]);

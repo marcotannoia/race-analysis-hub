@@ -7,7 +7,7 @@ Il progetto utilizza React e Vite per il frontend, Node.js ed Express per le
 API e MongoDB per la persistenza dei dati. Le API pubbliche sono anonime, di
 sola lettura e documentate con Swagger.
 
-La versione corrente del progetto e dell'API è `1.11.0`.
+La versione corrente del progetto e dell'API è `1.12.0`.
 
 La parte finale della landing page mostra una classifica previsionale dei
 piloti per il solo Gran Premio attuale. Il modello combina risultati 2026,
@@ -25,6 +25,7 @@ stagione, distinta dall'ordine interno con cui le analisi vengono pubblicate.
 - [Sito pubblico](https://www.race-analysis-hub.it)
 - [Documentazione Swagger](https://f1-stats-5v93.onrender.com/api/docs)
 - [Specifica OpenAPI](https://f1-stats-5v93.onrender.com/api/v1/openapi.json)
+- [Guida all'integrazione e alla cache](API.md)
 
 ## Lingue e traduzioni
 
@@ -55,6 +56,16 @@ restituisce HTTP `400` con `LINGUA_NON_SUPPORTATA`. L'endpoint
 landing o una feature esterna può quindi caricare tutti questi dati con una sola
 chiamata. Le risposte pubbliche usano una cache condivisa di cinque minuti e
 accorpano le richieste simultanee, riducendo il carico su Render e MongoDB Atlas.
+I client con cache interna devono conservare anche l'header `ETag` e rivalidare
+con `If-None-Match`: se i dati non sono cambiati, l'API risponde `304` senza
+trasferire nuovamente il JSON. La strategia completa è descritta in
+[`API.md`](API.md).
+
+La home rappresenta lo schieramento del solo GP attuale: per Monza 2026 espone
+Lawson con Red Bull e Tsunoda con Racing Bulls, senza alterare le associazioni
+stagionali conservate nel catalogo. `GET /api/v1/piloti` resta infatti il
+catalogo dei 23 piloti presenti nella stagione, mentre home, analisi e
+previsione contengono i 22 effettivamente schierati nell'evento.
 
 La traduzione iniziale viene generata con Azure Translator F0 tramite uno script
 amministrativo, conservata nel database e verificata prima della pubblicazione.
@@ -87,10 +98,20 @@ tutta l'API.
 
 ## Indicatori percentuali e confronti
 
-Le schede dei piloti espongono tre indicatori senza mostrare i conteggi grezzi:
+Le schede dei piloti espongono tre indicatori percentuali quando le fonti
+necessarie sono state validate; in caso contrario `indicatori` vale `null`,
+senza stime inventate. Per il rendimento
+sul bagnato sono disponibili anche i conteggi usati nel calcolo:
 
-- `bravuraBagnatoPercentuale`: vittorie nei GP bagnati o misti divise per i GP
-  di quel tipo effettivamente disputati;
+- `bravuraBagnatoPercentuale`: gare con pioggia vinte oppure concluse davanti
+  al compagno di squadra classificato o ad almeno metà dei rivali diretti
+  classificati, individuati nella top 10 del campionato dopo quella gara,
+  divise per le gare con pioggia effettivamente disputate. I DNS sono esclusi;
+  i ritiri degli altri piloti non migliorano il risultato;
+- `gareConPioggiaPositive`: numero di gare con pioggia considerate positive
+  secondo i criteri precedenti;
+- `gareConPioggiaDisputate`: numero di partenze in gare disputate interamente
+  o parzialmente con pioggia;
 - `erroriPilotaPercentuale`: gare con un errore documentato del pilota divise
   per tutte le sue partenze;
 - `erroriFataliPercentuale`: gare terminate o definitivamente compromesse da
@@ -98,10 +119,10 @@ Le schede dei piloti espongono tre indicatori senza mostrare i conteggi grezzi:
   di errori; sui profili pubblicati resta inferiore alla percentuale generale.
 
 Per le scuderie gli stessi indicatori sono calcolati aggregando e ponderando le
-carriere dei piloti attuali. Questo evita di confrontare direttamente storie
-societarie e denominazioni non equivalenti. I valori iniziali sono aggiornati
-al GP d'Ungheria 2026; `npm run gp` li incrementa dopo ogni nuovo Gran Premio
-senza azzerare lo storico.
+carriere dei piloti schierati nel GP attuale. Se manca un profilo verificato,
+l'aggregato vale `null`. Questo evita di confrontare direttamente storie
+societarie e denominazioni non equivalenti. `npm run gp` incrementa questi
+valori dopo ogni nuovo Gran Premio senza azzerare lo storico.
 
 Il frontend offre una pagina `/confronto` per affiancare due piloti o due
 scuderie. Le API equivalenti sono:
@@ -146,6 +167,12 @@ copiate, mostrate e personalizzate nel software del riutilizzatore, anche per
 finalità commerciali. È quindi possibile, per esempio, riscrivere localmente il
 campo `aggiornamentiInArrivo` senza alterare la fonte originale.
 
+Per ridurre le chiamate, usare `/api/v1/home` come bootstrap, gli endpoint di
+confronto al posto di due richieste distinte e `/api/v1/gare/{garaSlug}` quando
+servono tutte le analisi del GP. Le schede singole vanno caricate soltanto
+quando l'utente le apre. Rotte, cache, `ETag`, errori e limite richieste sono
+riepilogati in [`API.md`](API.md).
+
 Le risposte pubbliche sono distribuite con licenza CC BY 4.0. Occorre citare
 `Race Analysis Hub — Marco Tannoia`, mantenere l'attribuzione a F1DB per i dati
 quantitativi e indicare chiaramente le eventuali modifiche. Le condizioni
@@ -155,7 +182,7 @@ complete sono riportate in [`LICENSE.md`](LICENSE.md) e [`NOTICE.md`](NOTICE.md)
 
 Le classifiche 2026, i risultati di gara e qualifica 2023–2025 e i grafici
 quantitativi 2026 derivano da
-[F1DB v2026.11.0](https://github.com/f1db/f1db/releases/tag/v2026.11.0),
+[F1DB v2026.12.0](https://github.com/f1db/f1db/releases/tag/v2026.12.0),
 distribuito con licenza
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). I dati vengono
 filtrati e normalizzati da Race Analysis Hub; i contenuti editoriali restano
@@ -213,9 +240,37 @@ La classifica è una previsione statistico-editoriale soggetta a errore. Non
 rappresenta un risultato certo e può cambiare dopo prove libere, meteo,
 penalità, specifiche FIA o nuove informazioni tecniche.
 
+## Dati da aggiornare manualmente
+
+Non esiste un'unica data di aggiornamento affidabile per l'intero payload:
+ogni gruppo di dati cambia con una cadenza diversa. Le attività manuali sono:
+
+- **dopo ogni GP**: compilare `backend/data/aggiornamento-gp.json` tramite
+  `npm run gp` con risultati, classifiche, condizioni, errori e note
+  editoriali; lo script aggiorna anche gli indicatori cumulativi e seleziona
+  il GP successivo;
+- **quando F1DB pubblica una nuova release utile**: rigenerare
+  `backend/data/f1db-*-derivato.json` con `npm run sync-f1db -- <cartella>`;
+  questo aggiorna classifiche, andamento quantitativo e risultati storici;
+- **quando cambiano le valutazioni del GP attuale**: revisionare in
+  `backend/data/dati-iniziali.json` analisi piloti e scuderie, penalità,
+  aggiornamenti tecnici, fonti e traduzioni nelle sei lingue;
+- **quando emergono nuove evidenze tecniche**: revisionare
+  `backend/data/profili-tecnici-2026.json` e, se cambiano dati o requisiti della
+  pista, `backend/data/circuiti-tecnici-2026.json`;
+- **quando cambia calendario, rosa o identità di una scuderia**: aggiornare i
+  relativi record in `backend/data/dati-iniziali.json` e rieseguire i controlli
+  di qualità e traduzione.
+
+I documenti FIA del weekend non richiedono inserimento manuale quando
+`FIA_MONITOR_ENABLED=true`: il backend li controlla periodicamente e pubblica
+la sezione Live solo dopo la validazione completa. Restano manuali la verifica
+editoriale dell'impatto e l'eventuale recepimento nella previsione.
+
 ## Guide operative
 
 - [Changelog](CHANGELOG.md)
+- [API, endpoint e cache](API.md)
 - [Deployment](DEPLOYMENT.md)
 - [Aggiornamento post-GP](post-gp.md)
 - [Contenuti editoriali](fix-frontend.md)

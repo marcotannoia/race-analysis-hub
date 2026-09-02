@@ -1,4 +1,4 @@
-const snapshotF1db = require("../data/f1db-v2026.11.0-derivato.json");
+const snapshotF1db = require("../data/f1db-v2026.12.0-derivato.json");
 
 function creaSeriePilota(eventi, pilotaSlug) {
   const primoRisultato = eventi
@@ -68,7 +68,6 @@ function creaAndamentoAnnuale({
       qualifica: [],
       gara: [],
       fonte: null,
-      aggiornatoIl: null,
     };
   }
 
@@ -89,7 +88,6 @@ function creaAndamentoAnnuale({
       versione: metadati.versione,
       modifiche: metadati.trasformazioni,
     },
-    aggiornatoIl: andamento.aggiornatoIl,
   };
 }
 

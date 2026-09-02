@@ -2,6 +2,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const statistiche = require("../data/statistiche-contesto.json");
 const {
+  indicatoriScuderia,
   indicatoriPilota,
   presentaIndicatori,
   sommaStatistiche,
@@ -57,9 +58,20 @@ test("l'indicatore scuderia è un aggregato ponderato dei piloti attuali", () =>
   assert.ok(indicatori.erroriFataliPercentuale <= indicatori.erroriPilotaPercentuale);
 });
 
+test("l'indicatore scuderia resta nullo se manca una fonte per un pilota", () => {
+  assert.equal(
+    indicatoriScuderia([{ slug: "lindblad" }, { slug: "tsunoda" }]),
+    null,
+  );
+});
+
 test("tutti i piloti rispettano i vincoli delle percentuali", () => {
   for (const slug of Object.keys(statistiche.piloti)) {
     const indicatori = indicatoriPilota(slug);
+    if (!indicatori) {
+      assert.equal(slug, "tsunoda");
+      continue;
+    }
     assert.ok(indicatori.bravuraBagnatoPercentuale >= 0, slug);
     assert.ok(indicatori.bravuraBagnatoPercentuale <= 100, slug);
     assert.ok(

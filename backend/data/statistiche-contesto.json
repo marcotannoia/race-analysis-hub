@@ -1,7 +1,6 @@
 {
   "metadati": {
     "versioneMetodologia": "2.0.0",
-    "aggiornatoAl": "2026-08-23",
     "ultimoGpIncluso": "2026:olanda-zandvoort",
     "descrizione": "Statistiche cumulative fino a Gran Premio d'Olanda 2026 incluso. La percentuale sul bagnato misura le gare con pioggia concluse con una prestazione positiva, non la sola percentuale di vittorie.",
     "metodologiaPioggia": {
@@ -11,11 +10,12 @@
       "ritiri": "Il ritiro del pilota resta nel totale delle gare disputate e non vale come prestazione positiva. I piloti ritirati non sono usati come termine di confronto."
     },
     "fonti": [
-      "https://github.com/f1db/f1db/releases/tag/v2026.11.0",
+      "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
       "https://www.tudosobreformula1.com.br/corridas-com-pista-molhada-ou-%C3%BAmida",
       "https://www.formula1.com/en/latest/article/antonelli-wins-dramatic-canadian-grand-prix-as-russell-retires-amid-thrilling-mercedes-battle.MzvclJaqCidlYMUXonuDq",
       "https://www.fia.com/news/f1-antonelli-wins-thrilling-canadian-grand-prix-ahead-hamilton-and-verstappen-russell-retires",
-      "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result"
+      "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result",
+      "https://www.formula1.com/en/results/2026/drivers/YUKTSU01/yuki-tsunoda"
     ],
     "aggiornamentiApplicati": [
       "2026:olanda-zandvoort"
@@ -197,6 +197,7 @@
       "vittorieConPioggia": 2,
       "erroriPilota": 17,
       "erroriFatali": 4
-    }
+    },
+    "tsunoda": null
   }
 }
