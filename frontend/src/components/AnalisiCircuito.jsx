@@ -321,15 +321,9 @@ function ProsaPrestazione({ righe, t }) {
 function creaPenalitaWidget(testo) {
   const contenuto = pulisciProsa(testo)
   const posizioni = contenuto.match(/\b(\d{1,2})\s+(?:posizion|place|places|lugares|startpl[aä]tz)/i)
-  const primaFrase = contenuto.split(/(?<=[.!?])\s+/)[0]
-  const causa = primaFrase
-    .replace(/^[^:]+:\s*/, '')
-    .replace(/^.*?\b(?:per la|because of a|en raison du|devido à|por la|wegen des)\s+/i, '')
-    .replace(/^./, (carattere) => carattere.toUpperCase())
-
   return {
-    posizioni: posizioni?.[1] || '—',
-    spiegazione: causa,
+    posizioni: posizioni?.[1] || null,
+    spiegazione: contenuto,
   }
 }
 
@@ -484,15 +478,14 @@ function AnalisiCircuito({
           <div className="intestazione-sezione">
             <span>{numeroPenalita}</span>
             <div>
-              <p>{t.soloSeConfermate}</p>
-              <h2>{t.penalitaArrivo}</h2>
+              <h2>{t.penalita}</h2>
             </div>
           </div>
           <div className="penalita-widget">
-            <div className="penalita-posizioni">
+            {penalitaWidget.posizioni && <div className="penalita-posizioni">
               <strong>{penalitaWidget.posizioni}</strong>
               <span>POS.</span>
-            </div>
+            </div>}
             <p>{penalitaWidget.spiegazione}</p>
           </div>
         </section>
