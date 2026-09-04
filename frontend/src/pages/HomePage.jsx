@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { caricaHome } from '../services/api.js'
 import Collegamento from '../components/Collegamento.jsx'
 import ClassificaPrevisionale from '../components/ClassificaPrevisionale.jsx'
-import AggiornamentiLive from '../components/AggiornamentiLive.jsx'
 import DatiTecniciCircuito from '../components/DatiTecniciCircuito.jsx'
 import Marchio from '../components/Marchio.jsx'
 import { Caricamento, ErrorePagina } from '../components/StatoPagina.jsx'
@@ -34,7 +33,6 @@ function HomePage() {
             scuderie: home.scuderie,
             garaAttuale: home.garaAttuale,
             circuitoTecnico: home.circuitoTecnico,
-            aggiornamentiLive: home.aggiornamentiLive,
             classificaPrevisionale: home.classificaPrevisionale,
             metadati: home.metadati,
           })
@@ -159,10 +157,6 @@ function HomePage() {
           </div>
           <DatiTecniciCircuito profilo={dati.circuitoTecnico} />
         </section>
-
-        {dati.aggiornamentiLive && (
-          <AggiornamentiLive aggiornamenti={dati.aggiornamentiLive} />
-        )}
 
         <section className="invito-confronto">
           <div>

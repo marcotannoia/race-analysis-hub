@@ -32,3 +32,5 @@ Attendere il completamento dell'invalidazione e confrontare il file pubblico con
 ## Verifica del 4 settembre 2026
 
 Pubblicati i tre file su S3. Invalidazione CloudFront `IYWJJYRE826XE07KDV4A2KR5S` completata. HTML pubblico identico al locale tramite SHA-256; font pubblico HTTP 200. Verifica visiva della pagina a larghezza desktop e 390 px. Nessuna modifica eseguita al campo URL in App Store Connect: deve essere salvato nella scheda dell'app.
+
+La pagina è accessibile anche tramite l’icona cuffie nel footer del sito.
