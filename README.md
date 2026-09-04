@@ -23,6 +23,8 @@ stagione, distinta dall'ordine interno con cui le analisi vengono pubblicate.
 ## Collegamenti
 
 - [Sito pubblico](https://www.race-analysis-hub.it)
+- [Assistenza FantaStats GP](https://www.race-analysis-hub.it/assistenza.html)
+- [Gestione della pagina di assistenza](ASSISTENZA.md)
 - [Documentazione Swagger](https://f1-stats-5v93.onrender.com/api/docs)
 - [Specifica OpenAPI](https://f1-stats-5v93.onrender.com/api/v1/openapi.json)
 - [Guida all'integrazione e alla cache](API.md)
