@@ -2030,7 +2030,7 @@ const documentoOpenApi = {
           },
           aggiornamentiLive: {
             description:
-              "Null finché il documento FIA ufficiale non è disponibile e completo; il frontend non mostra alcuna sezione Live in questo stato.",
+              "Rapporto live FIA rimosso: campo deprecato, restituito sempre null per compatibilità.",
             oneOf: [
               { $ref: "#/components/schemas/AggiornamentiLiveFia" },
               { type: "null" },

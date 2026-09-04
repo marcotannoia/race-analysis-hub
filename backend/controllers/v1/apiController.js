@@ -15,7 +15,6 @@ const {
   indicatoriScuderia,
 } = require("../../services/statisticheContesto");
 const {
-  creaAggiornamentiLive,
   creaProfiloCircuito,
   creaProfiloScuderia,
 } = require("../../services/profiliTecnici");
@@ -226,7 +225,7 @@ async function home(richiesta, risposta) {
       scuderie,
       datiLiveFia,
     ),
-    aggiornamentiLive: creaAggiornamentiLive(datiLiveFia, scuderie),
+    aggiornamentiLive: null, // Campo mantenuto per compatibilità; rapporto FIA rimosso.
     classificaPrevisionale: creaClassificaPrevisionale({
       gara: garaAttuale,
       piloti: pilotiPartecipanti,

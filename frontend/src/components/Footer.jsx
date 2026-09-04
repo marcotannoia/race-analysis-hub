@@ -8,6 +8,11 @@ function Footer() {
         <div className="footer-identita">
           <span>Race <i>Analysis</i> <strong>Hub</strong></span>
           <div className="footer-contatti" aria-label="Contatti Marco Tannoia">
+            <a href="/assistenza.html" aria-label="Assistenza FantaStats GP" title="Assistenza FantaStats GP">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M4 14v-2a8 8 0 0 1 16 0v2M4 12H2v7h4v-7H4Zm16 0h2v7h-4v-7h2ZM20 19v2h-8" />
+              </svg>
+            </a>
             <a
               href="mailto:marco.tannoia@gmail.com"
               aria-label="Invia una email a Marco Tannoia"

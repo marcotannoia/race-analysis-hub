@@ -130,3 +130,7 @@ l'assistenza:
 
 Le risposte pubbliche sono riutilizzabili alle condizioni descritte in
 [`LICENSE.md`](LICENSE.md) e [`NOTICE.md`](NOTICE.md).
+
+### Rimozione rapporto live FIA — 4 settembre 2026
+
+Il rapporto live FIA non viene più mostrato sul sito e nell’app aggiornata. Il campo `aggiornamentiLive` della home è mantenuto per compatibilità ma restituisce sempre `null`, anche con documenti storici nel database. Il server non avvia più il monitor automatico FIA. I dati storici non sono cancellati; restano i profili tecnici e le relative fonti. Questa rimozione non costituisce una verifica dei diritti sulle altre fonti.
