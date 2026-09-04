@@ -193,10 +193,11 @@ function valutaPenalita(testoOriginale) {
 
   const corrispondenza = testo.match(/(?:almeno\s+)?(\d{1,2})\s+posizion/);
   const posizioni = corrispondenza ? Number(corrispondenza[1]) : null;
+  const fondoGriglia = /(?:fondo|fine) della griglia|pit lane/.test(testo);
 
   return {
     posizioni,
-    valore: posizioni === null ? 25 : limita(100 - posizioni * 10),
+    valore: fondoGriglia ? 0 : posizioni === null ? 25 : limita(100 - posizioni * 10),
   };
 }
 

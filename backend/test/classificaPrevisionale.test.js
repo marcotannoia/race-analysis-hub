@@ -35,6 +35,15 @@ test("una penalità confermata incide fino al 35% e lascia il 65% agli altri fat
   assert.equal(valutaPenalita("Nessuna penalità confermata."), null);
 });
 
+test("il fondo griglia non diventa una penalità lieve quando manca il numero di posizioni", () => {
+  assert.deepEqual(
+    valutaPenalita("Penalità confermata: partenza dal fondo della griglia a Monza."),
+    { posizioni: null, valore: 0 },
+  );
+  assert.equal(valutaPenalita("Nessuna penalità da scontare a Monza confermata al 4 settembre 2026."), null);
+  assert.deepEqual(valutaPenalita("Penalità confermata: 3 posizioni in griglia."), { posizioni: 3, valore: 70 });
+});
+
 test("una buona affinità con la pista non nasconde una scuderia debole", () => {
   const compatibilita = valutaCompatibilitaVettura(10, 92);
 
