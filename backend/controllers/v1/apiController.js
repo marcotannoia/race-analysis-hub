@@ -224,6 +224,7 @@ async function home(richiesta, risposta) {
       garaAttuale.slug,
       scuderie,
       datiLiveFia,
+      lingua,
     ),
     aggiornamentiLive: null, // Campo mantenuto per compatibilità; rapporto FIA rimosso.
     classificaPrevisionale: creaClassificaPrevisionale({
@@ -380,7 +381,7 @@ async function creaSchedaScuderia(scuderia, garaAttuale, lingua) {
     scuderia: presentaScuderia(scuderia, lingua),
     piloti: piloti.map((pilota) => presentaPilota(pilota, lingua)),
     indicatori: indicatoriScuderia(piloti),
-    profiloTecnico: creaProfiloScuderia(scuderia.slug),
+    profiloTecnico: creaProfiloScuderia(scuderia.slug, lingua),
     analisi: presentaAnalisiScuderia(analisi, lingua),
     andamentoStagioneCorrente: andamento,
   };

@@ -1,4 +1,5 @@
 const profili = require("../data/profili-tecnici-2026.json");
+const traduzioni = require("../i18n/profiliTecnici.json");
 const circuiti = require("../data/circuiti-tecnici-2026.json");
 
 function ordinaCapacita(capacita) {
@@ -10,7 +11,7 @@ function ordinaCapacita(capacita) {
     .sort((prima, seconda) => seconda.valore - prima.valore);
 }
 
-function creaProfiloScuderia(scuderiaSlug) {
+function creaProfiloScuderia(scuderiaSlug, lingua = "it") {
   const profilo = profili.scuderie[scuderiaSlug];
   if (!profilo) return null;
 
@@ -18,7 +19,7 @@ function creaProfiloScuderia(scuderiaSlug) {
 
   return {
     stagione: profili.metadati.stagione,
-    metodo: profili.metadati.metodo,
+    metodo: traduzioni[lingua]?.metodoScuderia ?? profili.metadati.metodo,
     capacita,
     puntiForza: capacita.slice(0, 3),
     areeSensibili: capacita.slice(-2).reverse(),
@@ -62,7 +63,7 @@ function creaCompatibilita(scuderia, profilo, richieste) {
   };
 }
 
-function creaProfiloCircuito(garaSlug, scuderie, datiLiveFia = null) {
+function creaProfiloCircuito(garaSlug, scuderie, datiLiveFia = null, lingua = "it") {
   const circuito = circuiti.circuiti[garaSlug];
   if (!circuito) return null;
 
@@ -89,10 +90,10 @@ function creaProfiloCircuito(garaSlug, scuderie, datiLiveFia = null) {
 
   return {
     stagione: circuiti.metadati.stagione,
-    metodo: circuiti.metadati.metodo,
+    metodo: traduzioni[lingua]?.metodoCircuito ?? circuiti.metadati.metodo,
     fp1At: circuito.fp1At,
     dati: { ...circuito.dati },
-    caratteristiche: [...circuito.caratteristiche],
+    caratteristiche: [...(traduzioni[lingua]?.circuiti[garaSlug] ?? circuito.caratteristiche)],
     puntiSorpassoPrincipali: circuito.puntiSorpassoPrincipali,
     richieste: circuiti.dimensioni.map((dimensione) => ({
       dimensione,

@@ -95,10 +95,10 @@ function DatiTecniciCircuito({ profilo }) {
 
       <footer className="fonti-tecniche">
         {profilo.fonti.map((fonte, indice) => (
-          <a key={fonte} href={fonte} target="_blank" rel="noreferrer">Fonte {indice + 1}</a>
+          <a key={fonte} href={fonte} target="_blank" rel="noreferrer">{t.fonteTecnica} {indice + 1}</a>
         ))}
         {profilo.documentoCircuito && (
-          <a href={profilo.documentoCircuito.documentoUrl} target="_blank" rel="noreferrer">FIA · Circuit map</a>
+          <a href={profilo.documentoCircuito.documentoUrl} target="_blank" rel="noreferrer">FIA · {t.mappaCircuito}</a>
         )}
       </footer>
     </div>

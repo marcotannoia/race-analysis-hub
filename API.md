@@ -100,6 +100,19 @@ Tutti gli endpoint accettano soltanto la query opzionale
 esposta con il codice API `pt`. Slug e query non validi restituiscono `400`; una
 risorsa assente o una gara diversa da quella attuale restituisce `404`.
 
+I testi `circuitoTecnico.caratteristiche`, `circuitoTecnico.metodo` e
+`profiloTecnico.metodo` seguono la lingua richiesta anche nella home e nei
+confronti scuderie. I codici tecnici (`dimensione`, `direzione`, `tipologia`,
+`livelloCarico`, `stressFreni`, `stressGomme`) restano identificatori stabili:
+il client li visualizza usando il proprio dizionario. Numeri, indici e fonti
+non cambiano con la lingua.
+
+I testi tecnici sono versionati in `backend/i18n/profiliTecnici.json`, con
+l’italiano nei cataloghi tecnici originali. Non sono documenti MongoDB:
+`verify-db` verifica i dati persistiti, mentre `verify-translations` controlla
+anche la copertura dei testi tecnici per tutti i 12 circuiti e le sei lingue.
+Una modifica di questi testi richiede il rilascio API, senza un nuovo seed.
+
 ## Esempio di rivalidazione
 
 ```http
