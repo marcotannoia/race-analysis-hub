@@ -43,7 +43,8 @@ const CAMPI_LOCALIZZABILI = {
   ],
 };
 
-const errori = [];
+const { verificaProfiliTecnici } = require("../i18n/verificaProfiliTecnici");
+const errori = verificaProfiliTecnici();
 let campiVerificati = 0;
 let stringheVerificate = 0;
 const CODICI_SPORTIVI = new Set([
@@ -281,6 +282,7 @@ if (errori.length) {
   process.exitCode = 1;
 } else {
   console.log(
+    `OK profili tecnici: metodi e caratteristiche di 12 circuiti in 6 lingue.\n` +
     `OK traduzioni: ${campiVerificati} campi e ${stringheVerificate} testi ` +
       `verificati in ${LINGUE.length} lingue.`,
   );

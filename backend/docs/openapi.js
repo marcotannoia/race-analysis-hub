@@ -1512,7 +1512,7 @@ const documentoOpenApi = {
         ],
         properties: {
           stagione: { type: "integer", const: 2026 },
-          metodo: { type: "string" },
+          metodo: { type: "string", description: "Descrizione localizzata nella lingua richiesta." },
           capacita: {
             type: "array",
             minItems: 10,
@@ -1620,10 +1620,10 @@ const documentoOpenApi = {
         ],
         properties: {
           stagione: { type: "integer", const: 2026 },
-          metodo: { type: "string" },
+          metodo: { type: "string", description: "Descrizione localizzata nella lingua richiesta." },
           fp1At: { type: "string", format: "date-time" },
           dati: { $ref: "#/components/schemas/DatiGeometriciCircuito" },
-          caratteristiche: { type: "array", items: { type: "string" } },
+          caratteristiche: { type: "array", description: "Caratteristiche del circuito localizzate nella lingua richiesta.", items: { type: "string" } },
           puntiSorpassoPrincipali: { type: "integer", minimum: 0 },
           richieste: {
             type: "array",

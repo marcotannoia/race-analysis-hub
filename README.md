@@ -277,3 +277,14 @@ editoriale dell'impatto e l'eventuale recepimento nella previsione.
 - [Aggiornamento post-GP](post-gp.md)
 - [Contenuti editoriali](fix-frontend.md)
 - [Localizzazione](LOCALIZZAZIONE.md)
+
+### Traduzioni dei dati tecnici
+
+Le caratteristiche dei circuiti e le descrizioni dei metodi tecnici sono
+localizzate dall’API nelle sei lingue supportate. Il catalogo
+`backend/i18n/profiliTecnici.json` copre tutti i 12 circuiti presenti; l’italiano
+resta nei cataloghi tecnici originali. `npm run verify-translations` controlla
+anche questi testi, oltre alle traduzioni dei documenti destinati a MongoDB.
+I codici tecnici rimangono stabili e vengono tradotti dai dizionari dei client.
+Questa localizzazione richiede il rilascio del backend, senza un nuovo seed.
+Per dettagli sul contratto e sulla cache per lingua, vedere [API.md](API.md).

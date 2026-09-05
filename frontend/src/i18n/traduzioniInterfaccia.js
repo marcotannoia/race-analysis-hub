@@ -8,6 +8,7 @@ export const LINGUE = [
 ]
 
 const it = {
+  fonteTecnica: 'Fonte', mappaCircuito: 'Mappa circuito',
   lingua: 'Lingua',
   selezionaLingua: 'Seleziona la lingua',
   analisiGp: 'Analisi del Gran Premio in arrivo',
@@ -189,6 +190,7 @@ const it = {
 }
 
 const en = {
+  fonteTecnica: 'Source', mappaCircuito: 'Circuit map',
   ...it,
   lingua: 'Language', selezionaLingua: 'Select language', analisiGp: 'Analysis of the upcoming Grand Prix',
   cercaTitolo: 'Search for a driver or team', cercaEtichetta: 'Search for a driver or team',
@@ -235,6 +237,7 @@ const en = {
 }
 
 const fr = {
+  fonteTecnica: 'Source', mappaCircuito: 'Plan du circuit',
   ...en,
   lingua: 'Langue', selezionaLingua: 'Choisir la langue', analisiGp: 'Analyse du prochain Grand Prix', cercaTitolo: 'Rechercher un pilote ou une écurie',
   cercaEtichetta: 'Rechercher un pilote ou une écurie', cercaPlaceholder: 'Ex. Leclerc, Ferrari, ANT…', nessunRisultato: 'Aucun pilote ni aucune écurie trouvé.', scuderia: 'Écurie',
@@ -257,6 +260,7 @@ const fr = {
 }
 
 const pt = {
+  fonteTecnica: 'Fonte', mappaCircuito: 'Mapa do circuito',
   ...en,
   lingua: 'Idioma', selezionaLingua: 'Selecionar o idioma', analisiGp: 'Análise do próximo Grande Prémio', cercaTitolo: 'Pesquisar piloto ou equipa', cercaEtichetta: 'Pesquisar piloto ou equipa', cercaPlaceholder: 'Ex. Leclerc, Ferrari, ANT…', nessunRisultato: 'Nenhum piloto ou equipa encontrado.', scuderia: 'Equipa',
   gpAttuale: 'GP atual', gpNonDisponibile: 'O Grande Prémio atual será publicado em breve.', numeroAnalisi: 'Número da análise', numeroCalendario: 'Posição no calendário', caricamento: 'A carregar dados…', connessioneAssente: 'Ligação indisponível', datiIlleggibili: 'Não foi possível ler os dados.', verificaBackend: 'Verifique se o backend local está em execução.', tornaHome: 'Voltar ao início', erroreRisposta: 'Resposta inválida do serviço', timeout: 'O servidor está a demorar demasiado tempo a responder', serverIrraggiungibile: 'Não foi possível contactar o servidor', datiNonRecuperabili: 'Não foi possível obter os dados',
@@ -273,6 +277,7 @@ const pt = {
 }
 
 const es = {
+  fonteTecnica: 'Fuente', mappaCircuito: 'Mapa del circuito',
   ...en,
   lingua: 'Idioma', selezionaLingua: 'Seleccionar idioma', analisiGp: 'Análisis del próximo Gran Premio', cercaTitolo: 'Buscar piloto o equipo', cercaEtichetta: 'Buscar piloto o equipo', cercaPlaceholder: 'Ej. Leclerc, Ferrari, ANT…', nessunRisultato: 'No se ha encontrado ningún piloto o equipo.', scuderia: 'Equipo', gpAttuale: 'GP actual', gpNonDisponibile: 'El Gran Premio actual se publicará próximamente.', numeroAnalisi: 'Número de análisis', numeroCalendario: 'Posición en el calendario', caricamento: 'Cargando datos…', connessioneAssente: 'Conexión no disponible', datiIlleggibili: 'No se han podido leer los datos.', verificaBackend: 'Comprueba que el backend local esté en ejecución.', tornaHome: 'Volver al inicio', erroreRisposta: 'Respuesta del servicio no válida', timeout: 'El servidor está tardando demasiado en responder', serverIrraggiungibile: 'No se puede contactar con el servidor', datiNonRecuperabili: 'No se pueden recuperar los datos',
   profiloPilota: 'Perfil del piloto', profiloScuderia: 'Perfil del equipo', classifica2026: 'Clasificación 2026', punti: 'Puntos', tornaRicerca: 'Volver a la búsqueda', profilo: 'Perfil', sigla: 'Código', statisticheAttuali: 'Estadísticas actuales', errore404: 'Error 404', paginaNonTrovata: 'Página no encontrada.', indirizzoNonValido: 'La dirección solicitada no corresponde a ningún perfil disponible.', circuitoAttuale: 'Circuito actual', analisiPreparazione: 'Análisis en preparación', datiGpQui: 'Los datos del Gran Premio actual se publicarán aquí.', nonCorso: 'DNP', dnpDescrizione: 'DNP · No participó', nessunEvento: 'Ningún acontecimiento relevante que señalar', generale: 'General', nonDisputato: 'DNP', andamentoRisultato: (qualifica, gara) => `Clasificación ${qualifica} → Carrera ${gara}.`,
@@ -285,6 +290,7 @@ const es = {
 }
 
 const de = {
+  fonteTecnica: 'Quelle', mappaCircuito: 'Streckenkarte',
   ...en,
   lingua: 'Sprache', selezionaLingua: 'Sprache auswählen', analisiGp: 'Analyse des bevorstehenden Grand Prix', cercaTitolo: 'Fahrer oder Team suchen', cercaEtichetta: 'Fahrer oder Team suchen', cercaPlaceholder: 'Z. B. Leclerc, Ferrari, ANT…', nessunRisultato: 'Kein Fahrer oder Team gefunden.', scuderia: 'Team', gpAttuale: 'Aktueller GP', gpNonDisponibile: 'Der aktuelle Grand Prix wird in Kürze veröffentlicht.', numeroAnalisi: 'Analysenummer', numeroCalendario: 'Kalenderposition', caricamento: 'Daten werden geladen…', connessioneAssente: 'Verbindung nicht verfügbar', datiIlleggibili: 'Die Daten konnten nicht gelesen werden.', verificaBackend: 'Prüfe, ob das lokale Backend läuft.', tornaHome: 'Zur Startseite', erroreRisposta: 'Ungültige Dienstantwort', timeout: 'Der Server braucht zu lange für eine Antwort', serverIrraggiungibile: 'Der Server ist nicht erreichbar', datiNonRecuperabili: 'Die Daten konnten nicht abgerufen werden',
   profiloPilota: 'Fahrerprofil', profiloScuderia: 'Teamprofil', classifica2026: 'WM-Stand 2026', punti: 'Punkte', tornaRicerca: 'Zurück zur Suche', profilo: 'Profil', sigla: 'Kürzel', statisticheAttuali: 'Aktuelle Statistiken', errore404: 'Fehler 404', paginaNonTrovata: 'Seite nicht gefunden.', indirizzoNonValido: 'Die angeforderte Adresse entspricht keinem verfügbaren Profil.', circuitoAttuale: 'Aktuelle Strecke', analisiPreparazione: 'Analyse in Vorbereitung', datiGpQui: 'Die Daten des aktuellen Grand Prix werden hier veröffentlicht.', nonCorso: 'DNP', dnpDescrizione: 'DNP · Nicht teilgenommen', nessunEvento: 'Kein besonderes Ereignis zu vermerken', generale: 'Allgemein', nonDisputato: 'DNP', andamentoRisultato: (qualifica, gara) => `Qualifying ${qualifica} → Rennen ${gara}.`,
