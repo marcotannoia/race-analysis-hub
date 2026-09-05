@@ -8,6 +8,7 @@ export const LINGUE = [
 ]
 
 const it = {
+  contattiAutore: "Contatti Marco Tannoia", assistenzaApp: "Assistenza FantaStats GP", emailAutore: "Invia una email a Marco Tannoia", linkedinAutore: "Profilo LinkedIn di Marco Tannoia",
   fonteTecnica: 'Fonte', mappaCircuito: 'Mappa circuito',
   lingua: 'Lingua',
   selezionaLingua: 'Seleziona la lingua',
@@ -190,6 +191,7 @@ const it = {
 }
 
 const en = {
+  contattiAutore: "Contact Marco Tannoia", assistenzaApp: "FantaStats GP support", emailAutore: "Email Marco Tannoia", linkedinAutore: "Marco Tannoia’s LinkedIn profile",
   fonteTecnica: 'Source', mappaCircuito: 'Circuit map',
   ...it,
   lingua: 'Language', selezionaLingua: 'Select language', analisiGp: 'Analysis of the upcoming Grand Prix',
@@ -237,6 +239,7 @@ const en = {
 }
 
 const fr = {
+  contattiAutore: "Contacter Marco Tannoia", assistenzaApp: "Assistance FantaStats GP", emailAutore: "Envoyer un e-mail à Marco Tannoia", linkedinAutore: "Profil LinkedIn de Marco Tannoia",
   fonteTecnica: 'Source', mappaCircuito: 'Plan du circuit',
   ...en,
   lingua: 'Langue', selezionaLingua: 'Choisir la langue', analisiGp: 'Analyse du prochain Grand Prix', cercaTitolo: 'Rechercher un pilote ou une écurie',
@@ -260,6 +263,7 @@ const fr = {
 }
 
 const pt = {
+  contattiAutore: "Contactar Marco Tannoia", assistenzaApp: "Apoio FantaStats GP", emailAutore: "Enviar um email a Marco Tannoia", linkedinAutore: "Perfil LinkedIn de Marco Tannoia",
   fonteTecnica: 'Fonte', mappaCircuito: 'Mapa do circuito',
   ...en,
   lingua: 'Idioma', selezionaLingua: 'Selecionar o idioma', analisiGp: 'Análise do próximo Grande Prémio', cercaTitolo: 'Pesquisar piloto ou equipa', cercaEtichetta: 'Pesquisar piloto ou equipa', cercaPlaceholder: 'Ex. Leclerc, Ferrari, ANT…', nessunRisultato: 'Nenhum piloto ou equipa encontrado.', scuderia: 'Equipa',
@@ -277,6 +281,7 @@ const pt = {
 }
 
 const es = {
+  contattiAutore: "Contactar con Marco Tannoia", assistenzaApp: "Asistencia de FantaStats GP", emailAutore: "Enviar un correo a Marco Tannoia", linkedinAutore: "Perfil de LinkedIn de Marco Tannoia",
   fonteTecnica: 'Fuente', mappaCircuito: 'Mapa del circuito',
   ...en,
   lingua: 'Idioma', selezionaLingua: 'Seleccionar idioma', analisiGp: 'Análisis del próximo Gran Premio', cercaTitolo: 'Buscar piloto o equipo', cercaEtichetta: 'Buscar piloto o equipo', cercaPlaceholder: 'Ej. Leclerc, Ferrari, ANT…', nessunRisultato: 'No se ha encontrado ningún piloto o equipo.', scuderia: 'Equipo', gpAttuale: 'GP actual', gpNonDisponibile: 'El Gran Premio actual se publicará próximamente.', numeroAnalisi: 'Número de análisis', numeroCalendario: 'Posición en el calendario', caricamento: 'Cargando datos…', connessioneAssente: 'Conexión no disponible', datiIlleggibili: 'No se han podido leer los datos.', verificaBackend: 'Comprueba que el backend local esté en ejecución.', tornaHome: 'Volver al inicio', erroreRisposta: 'Respuesta del servicio no válida', timeout: 'El servidor está tardando demasiado en responder', serverIrraggiungibile: 'No se puede contactar con el servidor', datiNonRecuperabili: 'No se pueden recuperar los datos',
@@ -290,6 +295,7 @@ const es = {
 }
 
 const de = {
+  contattiAutore: "Kontakt zu Marco Tannoia", assistenzaApp: "FantaStats GP Support", emailAutore: "E-Mail an Marco Tannoia senden", linkedinAutore: "LinkedIn-Profil von Marco Tannoia",
   fonteTecnica: 'Quelle', mappaCircuito: 'Streckenkarte',
   ...en,
   lingua: 'Sprache', selezionaLingua: 'Sprache auswählen', analisiGp: 'Analyse des bevorstehenden Grand Prix', cercaTitolo: 'Fahrer oder Team suchen', cercaEtichetta: 'Fahrer oder Team suchen', cercaPlaceholder: 'Z. B. Leclerc, Ferrari, ANT…', nessunRisultato: 'Kein Fahrer oder Team gefunden.', scuderia: 'Team', gpAttuale: 'Aktueller GP', gpNonDisponibile: 'Der aktuelle Grand Prix wird in Kürze veröffentlicht.', numeroAnalisi: 'Analysenummer', numeroCalendario: 'Kalenderposition', caricamento: 'Daten werden geladen…', connessioneAssente: 'Verbindung nicht verfügbar', datiIlleggibili: 'Die Daten konnten nicht gelesen werden.', verificaBackend: 'Prüfe, ob das lokale Backend läuft.', tornaHome: 'Zur Startseite', erroreRisposta: 'Ungültige Dienstantwort', timeout: 'Der Server braucht zu lange für eine Antwort', serverIrraggiungibile: 'Der Server ist nicht erreichbar', datiNonRecuperabili: 'Die Daten konnten nicht abgerufen werden',

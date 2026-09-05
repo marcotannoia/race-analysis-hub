@@ -7,15 +7,15 @@ function Footer() {
       <div className="contenitore footer-contenuto">
         <div className="footer-identita">
           <span>Race <i>Analysis</i> <strong>Hub</strong></span>
-          <div className="footer-contatti" aria-label="Contatti Marco Tannoia">
-            <a href="/assistenza.html" aria-label="Assistenza FantaStats GP" title="Assistenza FantaStats GP">
+          <div className="footer-contatti" aria-label={t.contattiAutore}>
+            <a href="/assistenza.html" aria-label={t.assistenzaApp} title={t.assistenzaApp}>
               <svg aria-hidden="true" viewBox="0 0 24 24">
                 <path d="M4 14v-2a8 8 0 0 1 16 0v2M4 12H2v7h4v-7H4Zm16 0h2v7h-4v-7h2ZM20 19v2h-8" />
               </svg>
             </a>
             <a
               href="mailto:marco.tannoia@gmail.com"
-              aria-label="Invia una email a Marco Tannoia"
+              aria-label={t.emailAutore}
               title="marco.tannoia@gmail.com"
             >
               <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -25,7 +25,7 @@ function Footer() {
             </a>
             <a
               href="https://www.linkedin.com/in/marco-tannoia-6b87361ba?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-              aria-label="Profilo LinkedIn di Marco Tannoia"
+              aria-label={t.linkedinAutore}
               rel="noreferrer"
               target="_blank"
               title="LinkedIn - Marco Tannoia"
