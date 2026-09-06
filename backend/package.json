@@ -1,6 +1,6 @@
 {
   "name": "race-analysis-hub-backend",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "description": "API REST pubblica per Race Analysis Hub",
   "main": "server.js",
   "engines": {

@@ -1,7 +1,7 @@
 {
   "en": {
     "metodoCircuito": "Geometric data comes from official Formula 1 pages. Circuit demand indices from 0 to 100 are an editorial technical assessment used solely to calculate car–circuit compatibility. Straight Mode zones are added only after the official FIA event map has been obtained.",
-    "metodoScuderia": "Editorial indices from 0 to 100 based on 2026 performance, FIA development documents and public technical analyses. They are not win probabilities and do not use championship position as a shortcut.",
+    "metodoScuderia": "Editorial estimates from 0 to 100, reviewed against installed upgrades and track evidence. Not telemetry measurements or win probabilities. Values are retained when specific evidence is missing; predictive accuracy has not yet been validated out of sample.",
     "circuiti": {
       "olanda-zandvoort": [
         "Banked corners",
@@ -67,7 +67,7 @@
   },
   "fr": {
     "metodoCircuito": "Les données géométriques proviennent des pages officielles de Formula 1. Les indices d’exigence de 0 à 100 sont une évaluation technique éditoriale servant uniquement à calculer la compatibilité voiture-circuit. Les zones Straight Mode ne sont ajoutées qu’après obtention de la carte officielle FIA de l’épreuve.",
-    "metodoScuderia": "Indices éditoriaux de 0 à 100 fondés sur les performances de 2026, les documents FIA sur les évolutions et les analyses techniques publiques. Ce ne sont pas des probabilités de victoire et ils n’utilisent pas la position au championnat comme raccourci.",
+    "metodoScuderia": "Estimations éditoriales de 0 à 100, révisées selon les évolutions installees et les observations en piste. Ce ne sont ni des mesures télémétriques ni des probabilités de victoire. Sans preuve spécifique, les valeurs sont conservées ; la précision prédictive reste à valider hors échantillon.",
     "circuiti": {
       "olanda-zandvoort": [
         "Virages relevés",
@@ -133,7 +133,7 @@
   },
   "pt": {
     "metodoCircuito": "Os dados geométricos provêm das páginas oficiais da Formula 1. Os índices de exigência de 0 a 100 são uma avaliação técnica editorial da pista, usada apenas para calcular a compatibilidade entre carro e circuito. As zonas Straight Mode só são adicionadas após a obtenção do mapa oficial da FIA para o evento.",
-    "metodoScuderia": "Índices editoriais de 0 a 100 baseados no desempenho de 2026, nos documentos da FIA sobre desenvolvimentos e em análises técnicas públicas. Não são probabilidades de vitória e não usam a posição no campeonato como atalho.",
+    "metodoScuderia": "Estimativas editoriais de 0 a 100, revistas com base nas atualizações instaladas e nas observações em pista. Não são medições de telemetria nem probabilidades de vitória. Sem evidência específica, os valores são mantidos; a precisão preditiva ainda não foi validada fora da amostra.",
     "circuiti": {
       "olanda-zandvoort": [
         "Curvas sobrelevadas",
@@ -199,7 +199,7 @@
   },
   "es": {
     "metodoCircuito": "Los datos geométricos proceden de las páginas oficiales de Formula 1. Los índices de exigencia de 0 a 100 son una valoración técnica editorial de la pista y se usan exclusivamente para calcular la compatibilidad entre coche y circuito. Las zonas Straight Mode se añaden solo tras obtener el mapa oficial de la FIA para el evento.",
-    "metodoScuderia": "Índices editoriales de 0 a 100 basados en el rendimiento de 2026, los documentos de la FIA sobre desarrollos y análisis técnicos públicos. No son probabilidades de victoria ni usan la posición en el campeonato como atajo.",
+    "metodoScuderia": "Estimaciones editoriales de 0 a 100, revisadas con las mejoras instaladas y las observaciones en pista. No son mediciones de telemetría ni probabilidades de victoria. Sin evidencia específica se mantienen los valores; la precisión predictiva aún no se ha validado fuera de la muestra.",
     "circuiti": {
       "olanda-zandvoort": [
         "Curvas peraltadas",
@@ -265,7 +265,7 @@
   },
   "de": {
     "metodoCircuito": "Die geometrischen Daten stammen von den offiziellen Seiten der Formula 1. Die Anforderungsindizes von 0 bis 100 sind eine redaktionelle technische Bewertung der Strecke und dienen ausschließlich zur Berechnung der Fahrzeug-Strecken-Kompatibilität. Straight-Mode-Zonen werden erst nach Erhalt der offiziellen FIA-Streckenkarte der Veranstaltung ergänzt.",
-    "metodoScuderia": "Redaktionelle Indizes von 0 bis 100 auf Grundlage der Leistungen 2026, der FIA-Dokumente zu Weiterentwicklungen und öffentlicher technischer Analysen. Sie sind keine Siegchancen und verwenden die WM-Position nicht als Abkürzung.",
+    "metodoScuderia": "Redaktionelle Schätzungen von 0 bis 100 anhand eingebauter Updates und Beobachtungen auf der Strecke. Keine Telemetriemessungen oder Siegwahrscheinlichkeiten. Ohne spezifische Belege bleiben die Werte bestehen; die Prognosegenauigkeit wurde noch nicht an unabhängigen Daten validiert.",
     "circuiti": {
       "olanda-zandvoort": [
         "Überhöhte Kurven",

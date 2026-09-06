@@ -5,7 +5,7 @@ JSON. Il contratto eseguibile completo è disponibile in
 [Swagger](https://f1-stats-5v93.onrender.com/api/docs) e come
 [OpenAPI 3.1](https://f1-stats-5v93.onrender.com/api/v1/openapi.json).
 
-La versione applicativa corrente è `1.12.0`. Le integrazioni devono usare
+La versione applicativa corrente è `1.13.0`. Le integrazioni devono usare
 `GET`, `HEAD` o `OPTIONS`; non sono richieste chiavi API. Gli esempi seguenti
 mostrano percorsi relativi, utilizzabili sul dominio pubblico oppure sul backend
 locale `http://127.0.0.1:5002`.
@@ -147,3 +147,17 @@ Le risposte pubbliche sono riutilizzabili alle condizioni descritte in
 ### Rimozione rapporto live FIA — 4 settembre 2026
 
 Il rapporto live FIA non viene più mostrato sul sito e nell’app aggiornata. Il campo `aggiornamentiLive` della home è mantenuto per compatibilità ma restituisce sempre `null`, anche con documenti storici nel database. Il server non avvia più il monitor automatico FIA. I dati storici non sono cancellati; restano i profili tecnici e le relative fonti. Questa rimozione non costituisce una verifica dei diritti sulle altre fonti.
+
+### Overall tecnici — revisione 6 settembre 2026
+
+Il fattore previsionale `compatibilitaVetturaCircuito` usa ora la stessa media delle dieci capacità 0–100, ponderata sulle richieste della pista, esposta in `profiloTecnico.compatibilita` del circuito. Il peso è 60% prima dell'eventuale penalità. Se manca il profilo della squadra o del circuito si mantiene il calcolo precedente basato su classifica ed etichetta editoriale.
+
+Le capacità sono stime editoriali, non misure telemetriche. Metodo, data e motivazioni sono in `backend/data/profili-tecnici-2026.json`; il riepilogo è in `backend/data/revisione-overall-2026-09-06.md`. La revisione incorpora informazioni del weekend di Monza e non costituisce un backtest della previsione precedente alla gara. La maggiore accuratezza deve essere verificata su gare successive.
+
+I sette pesi ordinari sono: compatibilità 60%, qualifica 3%, storico personale 3%, aggiornamenti pertinenti 7%, andamento pilota 2026 7%, andamento pilota negli ultimi tre GP 15%, andamento scuderia negli ultimi tre GP 5%. La correzione per penalità confermate resta separata e riproporziona i pesi ordinari.
+
+L'andamento scuderia media le valutazioni dei risultati delle sue vetture in ciascuno degli ultimi tre GP dello snapshot, con pesi temporali 1, 2 e 3. Un ritiro vale 15/100; un GP senza dati scuderia vale 40/100. Si usano le associazioni scuderia dell'evento storico, inclusi i sostituti.
+
+Il bonus aggiornamenti richiede una caratteristica tecnica esplicitamente menzionata e una richiesta del circuito di almeno 85/100; frasi negative e descrizioni generiche non danno bonus. La soglia è una regola editoriale, non un parametro ottimizzato statisticamente. In assenza di corrispondenza il valore è neutro (50/100).
+
+Il sito e l'app nativa non visualizzano metodologia, pesi, contributi o dettagli dei fattori. I campi API rimangono disponibili ai client: questa modifica riguarda la presentazione e non rende privato il modello.
