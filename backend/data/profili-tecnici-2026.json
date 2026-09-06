@@ -1,8 +1,10 @@
 {
   "metadati": {
     "stagione": 2026,
-    "versione": "profilo-tecnico-v1",
-    "metodo": "Indici editoriali da 0 a 100 ricavati dall'andamento 2026, dai documenti FIA sugli sviluppi e da analisi tecniche pubbliche. Non sono probabilita di vittoria e non usano la posizione nel mondiale come scorciatoia."
+    "versione": "profilo-tecnico-v2",
+    "metodo": "Stime editoriali 0-100 delle singole capacita, non misure telemetriche o probabilita. Revisione prudente per dimensione: sviluppi installati e riscontri in pista; nessun bonus automatico per annunci, punti, incidenti o penalita. Valori invariati quando manca evidenza specifica. Accuratezza predittiva non ancora validata fuori campione.",
+    "aggiornatoIl": "2026-09-06T16:00:48Z",
+    "riferimento": "Ungheria e Olanda; prove e qualifiche Monza. Risultato gara Monza ancora provvisorio, usato solo come riscontro."
   },
   "dimensioni": [
     "efficienzaAerodinamica",
@@ -32,8 +34,16 @@
       },
       "fonti": [
         "https://www.formula1.com/en/latest/article/something-more-sizeable-mercedes-target-major-upgrade-after-f1-summer-break.4dxqU3SkbY2BFaecTvbTsR",
-        "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card"
-      ]
+        "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+      ],
+      "revisione": {
+        "nota": "Confermati i valori: riferimento complessivo, senza bonus per un aggiornamento annunciato.",
+        "confidenza": "media",
+        "dimensioniModificate": []
+      }
     },
     "ferrari": {
       "capacita": {
@@ -46,20 +56,30 @@
         "frenata": 96,
         "cordoli": 89,
         "gestioneGomme": 92,
-        "stabilitaAssetto": 92
+        "stabilitaAssetto": 93
       },
       "fonti": [
         "https://www.raceteq.com/en/articles/2026/06/f1-how-ferrari-mclaren-mercedes-red-bull-changed-in-miami-and-montreal",
-        "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf"
-      ]
+        "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+      ],
+      "revisione": {
+        "nota": "Fondo e diffusore rivisti: +1 alla stabilita come ipotesi prudente di maggiore robustezza dei flussi; frenata invariata, non misurata direttamente.",
+        "confidenza": "media",
+        "dimensioniModificate": [
+          "stabilitaAssetto"
+        ]
+      }
     },
     "mclaren": {
       "capacita": {
-        "efficienzaAerodinamica": 93,
+        "efficienzaAerodinamica": 94,
         "potenzaDeployment": 89,
         "curvaLenta": 84,
-        "curvaMedia": 93,
-        "curvaVeloce": 95,
+        "curvaMedia": 94,
+        "curvaVeloce": 96,
         "trazione": 85,
         "frenata": 92,
         "cordoli": 88,
@@ -68,8 +88,20 @@
       },
       "fonti": [
         "https://www.mclaren.com/racing/formula-1/2026/how-we-responded-to-f1-regulation-challenges/",
-        "https://www.autosport.com/f1/news/why-mclaren-has-struggled-to-get-the-most-of-mercedes-f1-engine/10845524/"
-      ]
+        "https://www.autosport.com/f1/news/why-mclaren-has-struggled-to-get-the-most-of-mercedes-f1-engine/10845524/",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+      ],
+      "revisione": {
+        "nota": "Ala e carrozzeria aggiornate, vittorie Ungheria/Olanda: lieve revisione aero e curve; nessun incremento automatico di frenata dal solo raffreddamento freni.",
+        "confidenza": "media",
+        "dimensioniModificate": [
+          "efficienzaAerodinamica",
+          "curvaMedia",
+          "curvaVeloce"
+        ]
+      }
     },
     "red_bull": {
       "capacita": {
@@ -82,20 +114,30 @@
         "frenata": 89,
         "cordoli": 85,
         "gestioneGomme": 86,
-        "stabilitaAssetto": 73
+        "stabilitaAssetto": 76
       },
       "fonti": [
         "https://www.motorsport.com/f1/news/f1-2026-mid-season-grades-red-bull-stumbles-but-summer-rally-shows-glimmer-of-progress/10845430/",
-        "https://www.raceteq.com/en/articles/2026/06/f1-how-ferrari-mclaren-mercedes-red-bull-changed-in-miami-and-montreal"
-      ]
+        "https://www.raceteq.com/en/articles/2026/06/f1-how-ferrari-mclaren-mercedes-red-bull-changed-in-miami-and-montreal",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+      ],
+      "revisione": {
+        "nota": "Feeling migliore a Monza: recupero limitato della stabilita, senza cancellare la sensibilita del pacchetto.",
+        "confidenza": "media",
+        "dimensioniModificate": [
+          "stabilitaAssetto"
+        ]
+      }
     },
     "rb": {
       "capacita": {
         "efficienzaAerodinamica": 82,
         "potenzaDeployment": 91,
         "curvaLenta": 84,
-        "curvaMedia": 84,
-        "curvaVeloce": 82,
+        "curvaMedia": 85,
+        "curvaVeloce": 84,
         "trazione": 85,
         "frenata": 83,
         "cordoli": 83,
@@ -104,16 +146,27 @@
       },
       "fonti": [
         "https://www.autosport.com/f1/news/whats-racing-bulls-doing-that-red-bull-isnt/10837786/",
-        "https://www.formula1.com/en/latest/article/alpine-in-development-war-with-racing-bulls-nielsen.1zD1DyYRcpezBRBxjSjOBG"
-      ]
+        "https://www.formula1.com/en/latest/article/alpine-in-development-war-with-racing-bulls-nielsen.1zD1DyYRcpezBRBxjSjOBG",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+      ],
+      "revisione": {
+        "nota": "Continuita in Q3 e piattaforma nelle curve medio-veloci: piccoli incrementi mirati.",
+        "confidenza": "media",
+        "dimensioniModificate": [
+          "curvaMedia",
+          "curvaVeloce"
+        ]
+      }
     },
     "alpine": {
       "capacita": {
-        "efficienzaAerodinamica": 78,
+        "efficienzaAerodinamica": 83,
         "potenzaDeployment": 91,
         "curvaLenta": 83,
-        "curvaMedia": 84,
-        "curvaVeloce": 82,
+        "curvaMedia": 85,
+        "curvaVeloce": 83,
         "trazione": 84,
         "frenata": 82,
         "cordoli": 82,
@@ -122,16 +175,28 @@
       },
       "fonti": [
         "https://www.formula1.com/en/latest/article/alpine-in-development-war-with-racing-bulls-nielsen.1zD1DyYRcpezBRBxjSjOBG",
-        "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf"
-      ]
+        "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+      ],
+      "revisione": {
+        "nota": "Pacchetto esteso a entrambe le vetture a Monza: efficienza rivista con prudenza, senza generalizzare la pole a tutti i circuiti.",
+        "confidenza": "media",
+        "dimensioniModificate": [
+          "efficienzaAerodinamica",
+          "curvaMedia",
+          "curvaVeloce"
+        ]
+      }
     },
     "haas": {
       "capacita": {
         "efficienzaAerodinamica": 73,
         "potenzaDeployment": 84,
         "curvaLenta": 76,
-        "curvaMedia": 74,
-        "curvaVeloce": 72,
+        "curvaMedia": 77,
+        "curvaVeloce": 75,
         "trazione": 75,
         "frenata": 75,
         "cordoli": 76,
@@ -140,8 +205,19 @@
       },
       "fonti": [
         "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
-        "https://www.the-race.com/formula-1/every-2026-f1-team-big-weakness/"
-      ]
+        "https://www.the-race.com/formula-1/every-2026-f1-team-big-weakness/",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+      ],
+      "revisione": {
+        "nota": "Piu carico in curva, ma compromesso sui rettilinei e problemi di consistenza: crescono solo curve medie/veloci.",
+        "confidenza": "bassa",
+        "dimensioniModificate": [
+          "curvaMedia",
+          "curvaVeloce"
+        ]
+      }
     },
     "audi": {
       "capacita": {
@@ -158,8 +234,16 @@
       },
       "fonti": [
         "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
-        "https://www.the-race.com/formula-1/every-2026-f1-team-big-weakness/"
-      ]
+        "https://www.the-race.com/formula-1/every-2026-f1-team-big-weakness/",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+      ],
+      "revisione": {
+        "nota": "Confermati: recente continuita competitiva non dimostra da sola guadagni separabili nelle dieci dimensioni.",
+        "confidenza": "media",
+        "dimensioniModificate": []
+      }
     },
     "williams": {
       "capacita": {
@@ -176,17 +260,25 @@
       },
       "fonti": [
         "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
-        "https://www.motorsportmagazine.com/articles/single-seaters/f1/what-went-wrong-at-williams-and-can-it-salvage-its-2026-f1-season/"
-      ]
+        "https://www.motorsportmagazine.com/articles/single-seaters/f1/what-went-wrong-at-williams-and-can-it-salvage-its-2026-f1-season/",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+      ],
+      "revisione": {
+        "nota": "Confermati: persistono limiti nelle curve; nessun credito anticipato al pacchetto Baku.",
+        "confidenza": "media",
+        "dimensioniModificate": []
+      }
     },
     "aston_martin": {
       "capacita": {
         "efficienzaAerodinamica": 75,
-        "potenzaDeployment": 68,
+        "potenzaDeployment": 65,
         "curvaLenta": 82,
         "curvaMedia": 84,
         "curvaVeloce": 83,
-        "trazione": 80,
+        "trazione": 78,
         "frenata": 80,
         "cordoli": 78,
         "gestioneGomme": 80,
@@ -194,8 +286,19 @@
       },
       "fonti": [
         "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
-        "https://www.formula1.com/en/latest/article/the-state-of-play-at-aston-martin-after-three-rounds-of-the-2026-season.3OIUIgiMal6dG90xZbUqS4"
-      ]
+        "https://www.formula1.com/en/latest/article/the-state-of-play-at-aston-martin-after-three-rounds-of-the-2026-season.3OIUIgiMal6dG90xZbUqS4",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+      ],
+      "revisione": {
+        "nota": "Honda ancora limitata in potenza e guidabilita: riduzione prudente di deployment e trazione, mantenendo il recupero del telaio.",
+        "confidenza": "bassa",
+        "dimensioniModificate": [
+          "potenzaDeployment",
+          "trazione"
+        ]
+      }
     },
     "cadillac": {
       "capacita": {
@@ -212,8 +315,16 @@
       },
       "fonti": [
         "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
-        "https://www.formula1.com/en/latest/article/the-state-of-play-at-cadillac-after-three-races-of-the-2026-season.1exa0SK5ZiGPYuFHDxL86d"
-      ]
+        "https://www.formula1.com/en/latest/article/the-state-of-play-at-cadillac-after-three-races-of-the-2026-season.1exa0SK5ZiGPYuFHDxL86d",
+        "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+      ],
+      "revisione": {
+        "nota": "Confermati: un weekend piu pulito non basta per rivalutare carico, gomme o frenata.",
+        "confidenza": "bassa",
+        "dimensioniModificate": []
+      }
     }
   }
 }

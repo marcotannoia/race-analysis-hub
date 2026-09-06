@@ -3,7 +3,7 @@
 ## Versione supportata
 
 È supportata esclusivamente l'API pubblica `/api/v1`, attualmente alla versione
-applicativa `1.12.0`. Gli endpoint sono anonimi, di sola lettura e soggetti a
+applicativa `1.13.0`. Gli endpoint sono anonimi, di sola lettura e soggetti a
 validazione, cache e limitazione delle richieste. La cache conserva soltanto
 risposte `2xx`; health check ed errori usano `no-store`. Le richieste simultanee
 per lo stesso URL vengono accorpate per evitare query duplicate sul database.

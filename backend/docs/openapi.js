@@ -25,15 +25,13 @@ const parametroSlugConfronto = (nome, descrizione, esempio) => ({
 });
 
 const esempioPesiPrevisionali = [
-  ["andamento2026", "Andamento 2026", 10],
-  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 25],
-  ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 10],
+  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 60],
   ["qualifica2026", "Qualifica 2026", 3],
-  ["scuderia2026", "Andamento scuderia 2026", 18],
-  ["storicoPersonale", "Storico personale", 6],
-  ["passoGaraRecente", "Andamento negli ultimi 3 GP", 25],
-  ["gestioneGomme", "Gestione gomme", 1],
-  ["affidabilitaERischi", "Affidabilità e rischi", 2],
+  ["storicoPersonale", "Storico personale", 3],
+  ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 7],
+  ["andamento2026", "Andamento 2026", 7],
+  ["passoGaraRecente", "Andamento pilota negli ultimi 3 GP", 15],
+  ["andamentoScuderiaRecente", "Andamento scuderia negli ultimi 3 GP", 5],
 ].map(([chiave, nome, pesoPercentuale]) => ({
   chiave,
   nome,
@@ -1925,10 +1923,10 @@ const documentoOpenApi = {
           sintesi: { type: "string" },
           fattori: {
             type: "array",
-            minItems: 9,
-            maxItems: 10,
+            minItems: 7,
+            maxItems: 8,
             description:
-              "Nove fattori ordinari; una penalità confermata può incidere fino al 35% e gli altri pesi vengono riproporzionati sul restante 65%.",
+              "Sette fattori ordinari; una penalità confermata può incidere fino al 35% e gli altri pesi vengono riproporzionati sul restante 65%.",
             items: { $ref: "#/components/schemas/FattorePrevisionale" },
             example: esempioFattoriPrevisionali,
           },
@@ -1963,8 +1961,8 @@ const documentoOpenApi = {
           },
           pesi: {
             type: "array",
-            minItems: 9,
-            maxItems: 9,
+            minItems: 7,
+            maxItems: 7,
             items: { $ref: "#/components/schemas/PesoPrevisionale" },
             example: esempioPesiPrevisionali,
           },

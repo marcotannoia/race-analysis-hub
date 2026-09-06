@@ -108,7 +108,7 @@ distribuito automaticamente dal push, attendere che la risposta includa
 
 Per la release multilingua attendere inoltre che
 `GET /api/v1/lingue` e `GET /api/v1/home?lingua=en` rispondano dalla versione
-backend `1.12.0`. Soltanto dopo si può pubblicare il frontend: in caso contrario
+backend `1.13.0`. Soltanto dopo si può pubblicare il frontend: in caso contrario
 il selettore cambierebbe l'interfaccia ma riceverebbe ancora testi italiani.
 `AZURE_TRANSLATOR_KEY` non deve essere configurata su Render o inclusa nella
 build Vite: serve soltanto allo script amministrativo locale.
@@ -143,11 +143,11 @@ invalidazioni CloudFront.
   l'endpoint `/api/v1/health`;
 - usare uno store condiviso per il rate limit se il backend avrà più istanze.
 
-Per la release `1.12.0`, verificare inoltre che:
+Per la release `1.13.0`, verificare inoltre che:
 
-- `GET /api/v1` restituisca `"versione": "1.12.0"`;
-- `GET /api/v1/home` esponga 22 partecipanti e la previsione contenga Lawson
-  con Red Bull e Tsunoda con Racing Bulls, senza Hadjar;
+- `GET /api/v1` restituisca `"versione": "1.13.0"`;
+- `GET /api/v1/home` esponga Madrid come gara attuale e 22 partecipanti,
+  compreso Hadjar rientrato nello schieramento;
 - `GET /api/v1/piloti` esponga il catalogo stagionale completo di 23 piloti;
 - le schede Red Bull e Racing Bulls derivino i rispettivi piloti dallo
   schieramento del GP attuale;
@@ -156,9 +156,10 @@ Per la release `1.12.0`, verificare inoltre che:
 - `GET /api/v1/home` esponga `garaAttuale.ordineCalendario` e
   `metadati.totaleGareCalendario`, separati dalla sequenza editoriale interna;
 - la classifica usi il modello `statistico-editoriale-v2`, con pesi complessivi
-  pari al 100%: compatibilità vettura-circuito 25%, ultimi tre GP 25%,
-  scuderia 18%, andamento 2026 10%, aggiornamenti tecnici pertinenti 10%,
-  storico 6%, qualifica 3%, affidabilità/rischi 2% e gomme 1%. Con una penalità
+  pari al 100%: compatibilità vettura-circuito 60%, andamento pilota negli
+  ultimi tre GP 15%, aggiornamenti tecnici pertinenti 7%, andamento pilota 2026
+  7%, andamento scuderia negli ultimi tre GP 5%, storico 3% e qualifica 3%.
+  Con una penalità
   confermata, la penalità può incidere fino al 35% e tutti gli altri fattori
   vengono riproporzionati sul restante 65%;
 - `GET /api/v1/lingue` elenchi esattamente le sei lingue;

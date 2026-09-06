@@ -1,17 +1,16 @@
 const snapshotF1db = require("../data/f1db-v2026.12.0-derivato.json");
 const { testiPrevisione } = require("../i18n/previsioni");
 const { valoreLocalizzato } = require("../i18n/lingue");
+const { creaProfiloCircuito } = require("./profiliTecnici");
 
 const PESI = Object.freeze({
-  andamento2026: 10,
-  compatibilitaVetturaCircuito: 25,
-  aggiornamentiTecnici: 10,
+  compatibilitaVetturaCircuito: 60,
   qualifica2026: 3,
-  scuderia2026: 18,
-  storicoPersonale: 6,
-  passoGaraRecente: 25,
-  gestioneGomme: 1,
-  affidabilitaERischi: 2,
+  storicoPersonale: 3,
+  aggiornamentiTecnici: 7,
+  andamento2026: 7,
+  passoGaraRecente: 15,
+  andamentoScuderiaRecente: 5,
 });
 
 const PESO_PENALITA = 35;
@@ -21,11 +20,9 @@ const NOMI_FATTORI = Object.freeze({
   compatibilitaVetturaCircuito: "Compatibilità vettura-circuito",
   aggiornamentiTecnici: "Aggiornamenti tecnici pertinenti",
   qualifica2026: "Qualifica 2026",
-  scuderia2026: "Andamento scuderia 2026",
+  andamentoScuderiaRecente: "Andamento scuderia negli ultimi 3 GP",
   storicoPersonale: "Storico personale",
-  passoGaraRecente: "Andamento negli ultimi 3 GP",
-  gestioneGomme: "Gestione gomme",
-  affidabilitaERischi: "Affidabilità e rischi",
+  passoGaraRecente: "Andamento pilota negli ultimi 3 GP",
   penalita: "Penalità in griglia",
 });
 
@@ -89,6 +86,42 @@ function valutaRisultatiRecenti(risultati, quanti) {
   );
 }
 
+function valutaAndamentoScuderia(eventi, slug) {
+  return mediaPesata(eventi.slice(-3).map((evento, indice) => {
+    const posizioni = Object.values(evento.scuderie?.[slug]?.gara || {});
+    return {
+      valore: posizioni.length ? mediaPesata(posizioni.map((posizione) => ({
+        valore: posizione === null ? 15 : punteggioPosizione(posizione), peso: 1,
+      }))) : 40,
+      peso: indice + 1,
+    };
+  }));
+}
+
+// Match esplicito delle caratteristiche, non della sola parola "aggiornamento".
+const CARATTERISTICHE_AGGIORNAMENTI = {
+  efficienzaAerodinamica: /efficienza aerodinamica|riduzion[^.]*drag|resistenza all.avanzamento|basso carico/,
+  potenzaDeployment: /potenza|deployment|recupero (?:di )?energia|erogazione/,
+  curvaLenta: /curve? lent[ae]|bassa velocita/,
+  curvaMedia: /curve? medi[ae]|media velocita/,
+  curvaVeloce: /curve? veloc[ei]|alta velocita|curve in appoggio/,
+  trazione: /trazione/,
+  frenata: /frenata|staccata/,
+  cordoli: /cordoli/,
+  gestioneGomme: /gestione (?:delle )?gomme|degrado|pneumatici/,
+  stabilitaAssetto: /stabilita|bilanciamento|assetto/,
+};
+
+function aggiornamentoPertinente(testo, richieste) {
+  const frasi = normalizzaTesto(testo).split(/[.!?;]/).filter(
+    (frase) => !/\bnon\b|nessun|senza benefici/.test(frase),
+  );
+  return Object.entries(CARATTERISTICHE_AGGIORNAMENTI).some(
+    ([dimensione, espressione]) => richieste[dimensione] >= 85 &&
+      frasi.some((frase) => espressione.test(frase)),
+  );
+}
+
 function estraiPosizioni(valori) {
   return Object.values(valori || {})
     .map((valore) => {
@@ -131,55 +164,6 @@ function valutaCompatibilitaVettura(valoreScuderia, valutazioneCircuito) {
   );
 }
 
-function valutaTestoPrestazione(testi) {
-  const testo = normalizzaTesto(Object.values(testi || {}).join(" "));
-  let valore = 50;
-
-  const positivi = [
-    "ottimo",
-    "molto competitiv",
-    "passo migliore",
-    "buona gestione",
-    "degrado controllato",
-    "passo forte",
-    "ritmo costante",
-    "passo competitivo",
-  ];
-  const negativi = [
-    "degrado elevato",
-    "mancava di passo",
-    "poco stabile",
-    "senza il passo",
-    "passo limitato",
-    "non aveva ritmo",
-    "problema tecnico",
-  ];
-
-  valore += positivi.filter((frase) => testo.includes(frase)).length * 7;
-  valore -= negativi.filter((frase) => testo.includes(frase)).length * 8;
-  return limita(valore, 25, 85);
-}
-
-function valutaGestioneGomme(analisiPilota, analisiScuderia) {
-  return mediaPesata([
-    { valore: valutaTestoPrestazione(analisiPilota?.gomme), peso: 2 },
-    { valore: valutaTestoPrestazione(analisiScuderia?.gomme), peso: 1 },
-  ]);
-}
-
-function valutaAffidabilita(risultati, analisiPilota, analisiScuderia) {
-  const recenti = risultati.slice(-5);
-  const arrivi = recenti.filter(Number.isFinite).length;
-  let valore = recenti.length ? 45 + (arrivi / recenti.length) * 45 : 60;
-  const testo = normalizzaTesto(
-    `${analisiPilota?.affidabilita || ""} ${analisiScuderia?.affidabilita || ""}`,
-  );
-  if (/nessun problema|affidabilita (?:alta|buona)/.test(testo)) valore += 8;
-  if (/guasto|ritiro tecnico|problema di affidabilita/.test(testo)) valore -= 18;
-
-  return limita(valore, 20, 95);
-}
-
 function valutaPenalita(testoOriginale) {
   const testo = normalizzaTesto(testoOriginale);
   const confermata =
@@ -201,7 +185,7 @@ function valutaPenalita(testoOriginale) {
   };
 }
 
-function valutaAggiornamento(testoOriginale, lingua = "it") {
+function valutaAggiornamento(testoOriginale, lingua = "it", richieste = {}) {
   const testi = testiPrevisione(lingua);
   const testo = normalizzaTesto(testoOriginale);
 
@@ -243,6 +227,10 @@ function valutaAggiornamento(testoOriginale, lingua = "it") {
     };
   }
 
+  if (!aggiornamentoPertinente(testo, richieste)) {
+    return { valore: 50, evidenza: 0, stato: testi.stati.pocoPertinente, nota: testi.note.pocoPertinente };
+  }
+
   if (/non (?:ha|hanno) (?:portato|prodotto).*vantagg|nessun miglioramento reale/.test(testo)) {
     return {
       valore: 35,
@@ -254,7 +242,7 @@ function valutaAggiornamento(testoOriginale, lingua = "it") {
 
   if (/non pertinent|non riguarda.*(?:circuito|caratteristic)|vantaggio.*non utile/.test(testo)) {
     return {
-      valore: 42,
+      valore: 50,
       evidenza: 1,
       stato: testi.stati.pocoPertinente,
       nota: testi.note.pocoPertinente,
@@ -378,6 +366,15 @@ function creaClassificaPrevisionale({
   lingua = "it",
 }) {
   const testi = testiPrevisione(lingua);
+  const profiloCircuito = creaProfiloCircuito(gara.slug, scuderie);
+  const richieste = Object.fromEntries(
+    (profiloCircuito?.richieste || []).map(({ dimensione, valore }) => [dimensione, valore]),
+  );
+  const compatibilitaTecniche = new Map(
+    (profiloCircuito?.compatibilita || []).map(
+      ({ scuderia, indice }) => [scuderia.slug, indice],
+    ),
+  );
   const eventi = snapshot.andamento2026?.eventi || [];
   const analisiPilotaPerSlug = new Map(
     analisiPiloti.map((analisi) => [analisi.pilota.slug, analisi]),
@@ -418,6 +415,7 @@ function creaClassificaPrevisionale({
     const aggiornamento = valutaAggiornamento(
       analisiScuderia?.aggiornamentiInArrivo || analisiPilota?.aggiornamentiInArrivo,
       lingua,
+      richieste,
     );
     const compatibilitaPilota = valutaEtichetta(analisiPilota?.considerazioni);
     const andamentoScuderia = valutaClassifica(
@@ -437,21 +435,14 @@ function creaClassificaPrevisionale({
         massimoVittoriePiloti,
         pilotiPartecipanti.length,
       ),
-      compatibilitaVetturaCircuito: valutaCompatibilitaVettura(
-        andamentoScuderia,
-        valutazioneCircuitoScuderia,
-      ),
+      compatibilitaVetturaCircuito:
+        compatibilitaTecniche.get(scuderiaSlug) ??
+        valutaCompatibilitaVettura(andamentoScuderia, valutazioneCircuitoScuderia),
       aggiornamentiTecnici: aggiornamento.valore,
       qualifica2026: valutaRisultatiRecenti(qualifiche2026, 5),
-      scuderia2026: andamentoScuderia,
+      andamentoScuderiaRecente: valutaAndamentoScuderia(eventi, scuderiaSlug),
       storicoPersonale: storico.valore,
       passoGaraRecente: valutaRisultatiRecenti(gare2026, 3),
-      gestioneGomme: valutaGestioneGomme(analisiPilota, analisiScuderia),
-      affidabilitaERischi: valutaAffidabilita(
-        gare2026,
-        analisiPilota,
-        analisiScuderia,
-      ),
     };
     const fattoriBase = creaFattori(valutazioni, testi, null);
     const fattori = penalita
@@ -533,6 +524,7 @@ module.exports = {
   PESO_PENALITA,
   creaClassificaPrevisionale,
   valutaAggiornamento,
+  valutaAndamentoScuderia,
   valutaCompatibilitaVettura,
   valutaPenalita,
 };

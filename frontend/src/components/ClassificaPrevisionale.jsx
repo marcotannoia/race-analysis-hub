@@ -36,18 +36,6 @@ function ClassificaPrevisionale({ previsioni }) {
         </div>
       </div>
 
-      <details className="metodologia-previsioni">
-        <summary>{t.calcoloIndice}</summary>
-        <p>{t.metodologia}</p>
-        <div className="pesi-previsioni">
-          {previsioni.pesi.map((fattore) => (
-            <span key={fattore.chiave}>
-              {fattore.nome} <strong>{fattore.pesoPercentuale}%</strong>
-            </span>
-          ))}
-        </div>
-      </details>
-
       <ol className="elenco-previsioni" aria-label={t.ariaClassifica}>
         {classificaVisibile.map((elemento) => (
           <li
@@ -82,29 +70,6 @@ function ClassificaPrevisionale({ previsioni }) {
               </span>
             </div>
 
-            <details className="dettagli-previsione">
-              <summary>{t.mostraFattori}</summary>
-              <p className="sintesi-previsione">{elemento.sintesi}</p>
-
-              <div className="fattori-previsione">
-                {elemento.fattori.map((fattore) => (
-                  <div key={fattore.chiave}>
-                    <span>{fattore.nome}</span>
-                    <strong>{fattore.valutazione}/100</strong>
-                    <small>
-                      {t.peso} {fattore.pesoPercentuale}% · {t.contributo}{' '}
-                      {fattore.contributo}
-                    </small>
-                  </div>
-                ))}
-              </div>
-
-              <div className="nota-aggiornamenti-previsione">
-                <span>{t.aggiornamentiTecnici}</span>
-                <strong>{elemento.aggiornamentiTecnici.stato}</strong>
-                <p>{elemento.aggiornamentiTecnici.nota}</p>
-              </div>
-            </details>
           </li>
         ))}
       </ol>

@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.13.0 — 2026-09-06
+
+### Previsioni e profili tecnici
+
+- rivisti i profili tecnici 0–100 delle undici scuderie con motivazioni,
+  confidenza e data della revisione;
+- collegata la compatibilità vettura-circuito alle dieci capacità tecniche
+  ponderate sulle richieste del tracciato;
+- aggiornati i pesi previsionali: compatibilità 60%, forma pilota recente 15%,
+  aggiornamenti pertinenti 7%, andamento pilota 2026 7%, forma scuderia recente
+  5%, qualifica 3% e storico personale 3%;
+- aggiunto l'andamento della scuderia negli ultimi tre GP usando entrambe le
+  vetture e le associazioni effettive di ogni evento;
+- limitato il bonus degli aggiornamenti ai benefici che corrispondono a una
+  richiesta importante del circuito;
+- rimossi da sito e app nativa metodologia, pesi, contributi e dettagli dei
+  fattori, mantenendo questi dati nel contratto API pubblico.
+
 ## 1.12.0 — 2026-09-02
 
 ### Dati del Gran Premio d'Italia

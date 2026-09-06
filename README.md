@@ -7,7 +7,7 @@ Il progetto utilizza React e Vite per il frontend, Node.js ed Express per le
 API e MongoDB per la persistenza dei dati. Le API pubbliche sono anonime, di
 sola lettura e documentate con Swagger.
 
-La versione corrente del progetto e dell'API è `1.12.0`.
+La versione corrente del progetto e dell'API è `1.13.0`.
 
 La parte finale della landing page mostra una classifica previsionale dei
 piloti per il solo Gran Premio attuale. Il modello combina risultati 2026,
@@ -210,33 +210,30 @@ criterio conservativo basato su uscite individuali e penalità registrate.
 
 L'indice dei favoriti va da 0 a 100 ed è incluso nella home per evitare una
 seconda chiamata. Resta disponibile anche l'endpoint dedicato
-`GET /api/v1/previsioni/piloti`, insieme alla scomposizione dei fattori. I pesi
-sono:
+`GET /api/v1/previsioni/piloti`, insieme alla scomposizione dei fattori destinata
+ai client API. Il sito e l'app mostrano soltanto classifica, indice e confidenza.
+I pesi sono:
 
-- compatibilità vettura-circuito: 25%;
-- andamento negli ultimi tre GP: 25%;
-- andamento della scuderia nel 2026: 18%;
-- andamento del pilota nel 2026: 10%;
-- aggiornamenti tecnici pertinenti: 10%;
-- storico personale: 6%;
+- compatibilità vettura-circuito: 60%;
+- andamento del pilota negli ultimi tre GP: 15%;
+- aggiornamenti tecnici pertinenti ai requisiti del circuito: 7%;
+- andamento del pilota nel 2026: 7%;
+- andamento della scuderia negli ultimi tre GP: 5%;
 - qualifica 2026: 3%;
-- affidabilità e rischi: 2%;
-- gestione gomme: 1%.
+- storico personale: 3%.
 
 Quando esiste una penalità in griglia confermata, essa può incidere fino al 35%
-e i nove fattori ordinari vengono riproporzionati sul restante 65%.
+e i sette fattori ordinari vengono riproporzionati sul restante 65%.
 
-La compatibilità vettura-circuito combina l'affinità tecnica editoriale con la
-forza effettiva della scuderia nel 2026. Una vettura poco competitiva non può
-quindi risalire eccessivamente soltanto grazie allo storico sulla pista o a un
-aggiornamento promettente.
+La compatibilità vettura-circuito è la media delle dieci capacità tecniche della
+scuderia ponderata sulle richieste del tracciato. Se manca il profilo tecnico,
+il servizio usa il precedente calcolo editoriale come ripiego.
 
 Gli aggiornamenti non ricevono automaticamente un punteggio positivo. Il
-vantaggio viene ridotto se il pacchetto è soltanto annunciato, non è stato
-verificato in pista, è circoscritto o riguarda caratteristiche poco importanti
-per il circuito. Un intervento esclusivamente di affidabilità non riceve un
-bonus prestazionale; un aggiornamento senza beneficio reale può diminuire il
-punteggio.
+vantaggio richiede una caratteristica esplicitamente pertinente a una richiesta
+del circuito valutata almeno 85/100. Un intervento esclusivamente di
+affidabilità, una descrizione generica o un aggiornamento senza corrispondenza
+ricevono un valore neutro.
 
 La classifica è una previsione statistico-editoriale soggetta a errore. Non
 rappresenta un risultato certo e può cambiare dopo prove libere, meteo,
