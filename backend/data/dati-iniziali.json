@@ -1503,7 +1503,7 @@
           "confidenza": "DURCHSCHNITT — historischer Gewinn, aber neue Regelung für 2026"
         }
       },
-      "stato": "attuale",
+      "stato": "conclusa",
       "ordineCalendario": 13
     },
     {
@@ -1515,7 +1515,7 @@
       "stagione": 2026,
       "ordineAnalisi": 3,
       "contestoStorico": "2023: NON CORSO: il Madring non era nel calendario F1.\n2024: NON CORSO: il Madring non era nel calendario F1.\n2025: NON CORSO: il Madring non era nel calendario F1.",
-      "pilotiFavoriti": "ANT (P1 mondiale) • HAM (P2 mondiale) • RUS (P3 mondiale) • LEC (P4 mondiale)",
+      "pilotiFavoriti": "ANT • RUS • HAM • NOR • LEC",
       "scuderieFavorite": "Mercedes • Ferrari • McLaren",
       "outsider": "NOR • VER • PIA",
       "potenzialiDifficolta": "ALO • STR • BOT • PER",
@@ -1533,7 +1533,7 @@
           "paese": "Spagna",
           "etichettaExcel": "SPAGNA — MADRING",
           "contestoStorico": "2023: NON CORSO: il Madring non era nel calendario F1.\n2024: NON CORSO: il Madring non era nel calendario F1.\n2025: NON CORSO: il Madring non era nel calendario F1.",
-          "pilotiFavoriti": "ANT (P1 mondiale) • HAM (P2 mondiale) • RUS (P3 mondiale) • LEC (P4 mondiale)",
+          "pilotiFavoriti": "ANT • RUS • HAM • NOR • LEC",
           "scuderieFavorite": "Mercedes • Ferrari • McLaren",
           "outsider": "NOR • VER • PIA",
           "potenzialiDifficolta": "ALO • STR • BOT • PER",
@@ -1547,7 +1547,7 @@
           "paese": "Spain",
           "etichettaExcel": "SPAIN — MADRING",
           "contestoStorico": "2023: NOT HELD: Madring was not on the F1 calendar.\n2024: NOT HELD: Madring was not on the F1 calendar.\n2025: NOT HELD: Madring was not on the F1 calendar.",
-          "pilotiFavoriti": "ANT (P1 in the championship) • HAM (P2 in the championship) • RUS (P3 in the championship) • LEC (P4 in the championship)",
+          "pilotiFavoriti": "ANT • RUS • HAM • NOR • LEC",
           "scuderieFavorite": "Mercedes • Ferrari • McLaren",
           "outsider": "NOR • VER • PIA",
           "potenzialiDifficolta": "ALO • STR • BOT • PER",
@@ -1561,7 +1561,7 @@
           "paese": "Espagne",
           "etichettaExcel": "ESPAGNE — MADRING",
           "contestoStorico": "2023 : NON DISPUTÉ : le Madring ne figurait pas au calendrier de la F1.\n2024 : NON DISPUTÉ : le Madring ne figurait pas au calendrier de la F1.\n2025 : NON DISPUTÉ : le Madring ne figurait pas au calendrier de la F1.",
-          "pilotiFavoriti": "ANT (P1 au championnat) • HAM (P2 au championnat) • RUS (P3 au championnat) • LEC (P4 au championnat)",
+          "pilotiFavoriti": "ANT • RUS • HAM • NOR • LEC",
           "scuderieFavorite": "Mercedes • Ferrari • McLaren",
           "outsider": "NOR • VER • PIA",
           "potenzialiDifficolta": "ALO • STR • BOT • PER",
@@ -1575,7 +1575,7 @@
           "paese": "Espanha",
           "etichettaExcel": "ESPANHA — MADRING",
           "contestoStorico": "2023: NÃO DISPUTADO: o Madring não fazia parte do calendário da F1.\n2024: NÃO DISPUTADO: o Madring não fazia parte do calendário da F1.\n2025: NÃO DISPUTADO: o Madring não fazia parte do calendário da F1.",
-          "pilotiFavoriti": "ANT (P1 no campeonato) • HAM (P2 no campeonato) • RUS (P3 no campeonato) • LEC (P4 no campeonato)",
+          "pilotiFavoriti": "ANT • RUS • HAM • NOR • LEC",
           "scuderieFavorite": "Mercedes • Ferrari • McLaren",
           "outsider": "NOR • VER • PIA",
           "potenzialiDifficolta": "ALO • STR • BOT • PER",
@@ -1589,7 +1589,7 @@
           "paese": "España",
           "etichettaExcel": "ESPAÑA — MADRING",
           "contestoStorico": "2023: NO DISPUTADO: el Madring no formaba parte del calendario de F1.\n2024: NO DISPUTADO: el Madring no formaba parte del calendario de F1.\n2025: NO DISPUTADO: el Madring no formaba parte del calendario de F1.",
-          "pilotiFavoriti": "ANT (P1 en el campeonato) • HAM (P2 en el campeonato) • RUS (P3 en el campeonato) • LEC (P4 en el campeonato)",
+          "pilotiFavoriti": "ANT • RUS • HAM • NOR • LEC",
           "scuderieFavorite": "Mercedes • Ferrari • McLaren",
           "outsider": "NOR • VER • PIA",
           "potenzialiDifficolta": "ALO • STR • BOT • PER",
@@ -1603,7 +1603,7 @@
           "paese": "Spanien",
           "etichettaExcel": "SPANIEN — MADRING",
           "contestoStorico": "2023: NICHT AUSGETRAGEN: Madring war nicht Teil des F1-Kalenders.\n2024: NICHT AUSGETRAGEN: Madring war nicht Teil des F1-Kalenders.\n2025: NICHT AUSGETRAGEN: Madring war nicht Teil des F1-Kalenders.",
-          "pilotiFavoriti": "ANT (P1 in der WM) • HAM (P2 in der WM) • RUS (P3 in der WM) • LEC (P4 in der WM)",
+          "pilotiFavoriti": "ANT • RUS • HAM • NOR • LEC",
           "scuderieFavorite": "Mercedes • Ferrari • McLaren",
           "outsider": "NOR • VER • PIA",
           "potenzialiDifficolta": "ALO • STR • BOT • PER",
@@ -1612,7 +1612,8 @@
           "confidenza": "NIEDRIG — Schaltung/Daten nicht vergleichbar"
         }
       },
-      "ordineCalendario": 14
+      "ordineCalendario": 14,
+      "stato": "attuale"
     },
     {
       "slug": "azerbaigian-baku",
