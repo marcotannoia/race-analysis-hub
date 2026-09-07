@@ -3,8 +3,8 @@
 Race Analysis Hub is an independent application for exploring Formula 1 World
 Championship data, results, and editorial analysis.
 
-The public website homepage is the official promotional landing page for the
-native **FantaStats GP** app. It links directly to the verified
+The **Race Analysis Hub** public website homepage is the official promotional
+landing page for the native **FantaStats GP** app. It links directly to the verified
 [App Store listing](https://apps.apple.com/it/app/fantastats-gp/id6808340219?l=en-GB).
 The read-only API, Swagger documentation, support page, and privacy policy
 remain available at their existing URLs.
