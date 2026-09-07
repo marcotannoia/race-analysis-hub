@@ -1,112 +1,112 @@
-# Guida ai contenuti editoriali
+# Editorial Content Guide
 
-## File da modificare
+## Files to edit
 
-Le analisi editoriali si trovano in:
+The editorial analyses can be found in:
 
 ```text
 backend/data/dati-iniziali.json
 ```
 
-- `analisiGare`: analisi dei singoli piloti;
-- `analisiScuderie`: analisi delle scuderie.
+- `analisiGare`: analysis of individual pilots;
+- `analisiScuderie`: analysis of the teams.
 
 
-## Corrispondenza fra JSON e pagina
+## Matching JSON to page
 
-| Campo JSON | Testo visibile nella pagina | Modifica diretta |
+| JSON Field | Text Visible on Page | Direct Edit |
 |---|---|---|
-| `risultatiGara` | Storico essenziale → Gara | Sì |
-| `risultatiQualifica` | Storico essenziale → Qualifica | Sì |
-| `notaBene` | Risultati sul circuito ↳ Analisi | Sì; il blocco non appare se non ci sono eventi |
-| `andamentoPerAnno` | Risultati sul circuito ↳ Analisi | Sì, se compilato |
-| `gestioneGomme` | Prestazioni e performance ↳ Gestione gomme | Sì |
-| `passoGara` | Prestazioni e performance ↳ Passo gara | Sì |
-| Compatibilità della scuderia | Considerazioni finali → Compatibilità col circuito | Calcolata nella home |
-| Classifica previsionale | Considerazioni finali → Classifica previsionale | Calcolata nella home |
-| `aggiornamentiInArrivo` | Aggiornamenti in arrivo → Tipo e benefici attesi | Sì |
-| `fonti` | Fonti associate all'analisi | Sì |
+| `risultatiGara` | Essential Race → History | Yes |
+| `risultatiQualifica` | Essential History → Qualification | Yes |
+| `notaBene` | Results on the circuit ↳ Analysis | Yes; the block does not appear if there are no events |
+| `andamentoPerAnno` | Results on the circuit ↳ Analysis | Yes, if filled in |
+| `gestioneGomme` | Performance & Performance ↳ Tire Management | Yes |
+| `passoGara` | Performance & Performance ↳ Race Pace | Yes |
+| Team Compatibility | Final Thoughts → Circuit Compatibility | Calculated in Home |
+| Forecast Ranking | Final Thoughts → Forecast Ranking | Calculated in Home |
+| `aggiornamentiInArrivo` | Upcoming Updates → Type and Expected Benefits | Yes |
+| `fonti` | Sources associated with the analysis | Yes |
 
-I campi `considerazioniFinali`, `passoGara`, `gestioneGomme`, `affidabilita`,
-`penalita` e `aggiornamentiInArrivo` alimentano anche la classifica previsionale
-della landing page. Le modifiche devono quindi descrivere evidenze reali e non
-vantaggi ipotetici presentati come certi.
+The fields `considerazioniFinali`, `passoGara`, `gestioneGomme`, `affidabilita`,
+`penalita` and `aggiornamentiInArrivo` also feed the forecast ranking
+of the landing page. The changes must therefore describe real evidence and not
+hypothetical advantages presented as certain.
 
-## Anagrafiche esposte dalle API
+## Master data exposed by APIs
 
-Le anagrafiche si trovano nelle sezioni `piloti` e `scuderie` di
-`backend/data/dati-iniziali.json`. Dalla versione `1.5.0` vengono esposti anche:
+The personal data can be found in sections `piloti` and `scuderie` of
+`backend/data/dati-iniziali.json`. The `1.5.0` version also shows:
 
-| Campo JSON | Posizione nella risposta API | Regola |
+| JSON Field | Location in API Response | Rule |
 |---|---|---|
-| `nazionalitaIso2` | `pilota.nazionalitaIso2` | ISO 3166-1 alpha-2, due lettere maiuscole |
-| `nazionalitaIso3` | `pilota.nazionalitaIso3` | ISO 3166-1 alpha-3, tre lettere maiuscole |
-| `abbreviazione` della scuderia | `pilota.scuderia.abbreviazione` | identificatore editoriale stabile |
-| `colore` della scuderia | `pilota.scuderia.colore` | RGB esadecimale `#RRGGBB` |
+| `nazionalitaIso2` | `pilota.nazionalitaIso2` | ISO 3166-1 alpha-2, two capital letters |
+| `nazionalitaIso3` | `pilota.nazionalitaIso3` | ISO 3166-1 alpha-3, three capital letters |
+| `abbreviazione` of the team | `pilota.scuderia.abbreviazione` | stable editorial identifier |
+| `colore` of the stable | `pilota.scuderia.colore` | Hexadecimal RGB `#RRGGBB` |
 
-`abbreviazioneNome` e `numeroVettura` sono nomi pubblici espliciti derivati dai
-campi storici `codice` e `numero`. Non rimuovere questi ultimi: garantiscono la
-compatibilità con chi usa già l'API.
+`abbreviazioneNome` and `numeroVettura` are explicit public names derived from
+historic `codice` and `numero` fields. Do not remove the latter: they guarantee the
+compatibility with those who already use the API.
 
-`andamentoPerAnno` è un campo particolare:
+`andamentoPerAnno` is a particular field:
 
-- se contiene del testo, la pagina mostra esattamente il contenuto inserito;
-- se è vuoto, la pagina costruisce l'analisi usando `risultatiGara`,
-  `risultatiQualifica` e soltanto le note realmente presenti in `notaBene`;
-- le frasi equivalenti a “nessun evento da segnalare” non generano un widget;
-- quando il pilota non ha partecipato, nelle schede Gara e Qualifica appare
-  soltanto `DNP` (*Did Not Participate*) e quell'anno non genera un'analisi.
+- if it contains text, the page shows exactly the content entered;
+- if it is empty, the page builds the analysis using `risultatiGara`,
+`risultatiQualifica` and only the notes actually present in the `notaBene`;
+- phrases equivalent to "no events to report" do not generate a widget;
+- when the driver has not participated, the Race and Qualifying tabs will show
+only `DNP` (*Did Not Participate*) and that year does not generate an analysis.
 
-## Considerazioni finali
+## Final Thoughts
 
-Il frontend non ricava più questa sezione da etichette editoriali come
-`FAVORITO`, `PODIO` o `PUNTI`. Pilota e scuderia caricano in parallelo la propria
-scheda e `/api/v1/home`: la conclusione mostra la compatibilità reale della
-scuderia col circuito e la classifica previsionale già calcolata per il GP.
+The frontend no longer derives this section from editorial labels such as
+`FAVORITO`, `PODIO` or `PUNTI`. Driver and team load their own in parallel
+Sheet and `/api/v1/home`: the conclusion shows the real compatibility of the
+team with the circuit and the forecast standings already calculated for the GP.
 
-Nel profilo pilota compare la sua posizione; nel profilo scuderia compaiono le
-posizioni di entrambi i piloti. In questo modo i valori restano identici alla
-home e non vengono duplicati o ricalcolati nel browser.
+His position appears in the driver profile; in the team profile you will see the
+positions of both drivers. In this way, the values remain identical to the
+home and are not duplicated or recalculated in the browser.
 
-## Aggiornamenti e indice previsionale
+## Updates and forecast index
 
-Il modello distingue quattro casi:
+The model distinguishes four cases:
 
-| Stato dell'aggiornamento | Trattamento |
+| Update Status | Treatment |
 |---|---|
-| Nessun pacchetto confermato | Nessun vantaggio aggiuntivo |
-| Quasi certo ma non ancora ufficiale | Mostrato come provvisorio, senza bonus previsionale |
-| Annunciato ma non verificato | Vantaggio ridotto |
-| Già introdotto o confermato | Valutato secondo la pertinenza con la pista |
-| Nessun miglioramento reale o scarsa pertinenza | Punteggio ridotto |
+| No confirmed packages | No additional benefits |
+| Almost certain but not yet official | Shown as provisional, with no forecast bonus |
+| Announced but not verified | Reduced benefit |
+| Already introduced or confirmed | Evaluated according to relevance to the track |
+| No real improvement or little relevance | Reduced score |
 
-Nel testo indicare sempre cosa è stato confermato, se il componente è già stato
-usato e quali caratteristiche del circuito può migliorare. Le ipotesi del tipo
-“sarebbe utile” non vengono trattate come componenti realmente disponibili.
-La compatibilità dichiarata viene inoltre corretta usando la competitività 2026
-della scuderia: un'etichetta positiva non può nascondere una vettura debole.
+In the text, always indicate what has been confirmed, if the component has already been
+used and what characteristics of the circuit it can improve. The hypotheses of the type
+"would be useful" are not treated as actually available components.
+The declared compatibility is also corrected using the 2026 competitiveness
+A positive label cannot hide a weak car.
 
-La pagina divide automaticamente il contenuto in due widget: la prima frase
-descrive il tipo o il pacchetto e le frasi successive compongono una spiegazione
-discorsiva dei benefici attesi. Se il campo è vuoto, la pagina dichiara
-esplicitamente che non esistono aggiornamenti o benefici confermati.
+The page automatically divides the content into two widgets: the first sentence
+describes the type or package, and subsequent sentences make up an explanation
+discursive of the expected benefits. If the field is empty, the page declares
+explicitly that there are no confirmed upgrades or benefits.
 
-## Progressivo del circuito
+## Progressive Circuit
 
-La home mostra `ordineCalendario/totaleGareCalendario` accanto al GP. Entrambi i
-valori seguono il calendario ufficiale della stagione e restano distinti da
-`ordineAnalisi` e `totaleGareAnalisi`, che descrivono soltanto la sequenza
-editoriale interna.
+The home shows `ordineCalendario/totaleGareCalendario` next to the GP. Both
+values follow the official calendar of the season and remain distinct from
+`ordineAnalisi` and `totaleGareAnalisi`, which describe only the sequence
+internal editorial.
 
-## Controllare che il JSON sia valido
+## Check that the JSON is valid
 ```bash
 node -e "JSON.parse(require('fs').readFileSync('backend/data/dati-iniziali.json')); console.log('JSON valido')"
 ```
 
-## Applicare le modifiche al database
+## Apply changes to the database
 
-Prima del seed rigenerare e controllare le traduzioni dei testi modificati,
-seguendo [`LOCALIZZAZIONE.md`](LOCALIZZAZIONE.md):
+Before seeding, regenerate and check the translations of the edited texts,
+following [`LOCALIZZAZIONE.md`](LOCALIZZAZIONE.md):
 
 ```bash
 npm run translate-data -- --dry-run
@@ -114,30 +114,30 @@ npm run translate-data
 npm run verify-translations
 ```
 
-Dalla cartella principale:
+From the root folder:
 
 ```bash
 cd backend
 npm run seed
 ```
 
-Il comando aggiorna il database indicato da `backend/.env`.
+The command updates the database indicated by `backend/.env`.
 
-- Se `MONGO_URL` punta al database di produzione, la modifica diventa visibile
-  nelle API ufficiali.
-- Se punta a un database locale o personale, cambia soltanto quella copia.
-- Il push su GitHub non è necessario per aggiornare MongoDB, ma è utile per
-  conservare le modifiche di `dati-iniziali.json` nella repository.
+- If `MONGO_URL` points to the production database, the change becomes visible
+in the official APIs.
+- If it points to a local or personal database, only that copy changes.
+- Pushing to GitHub is not required to update MongoDB, but it is useful for
+Keep `dati-iniziali.json` changes in the repository.
 
-## Aggiornamento successivo a un GP
+## Update after a GP
 
-Per registrare i risultati del GP appena concluso si usa invece:
+To record the results of the GP that has just ended, the following is used instead:
 
 ```text
 backend/data/aggiornamento-gp.json
 ```
 
-I campi principali sono:
+The main fields are:
 
 ```json
 {
@@ -150,34 +150,34 @@ I campi principali sono:
 }
 ```
 
-Prima di scrivere nel database:
+Before writing to the database:
 
 ```bash
 npm run gp -- --controlla
 ```
 
-Quando il file è completo, impostare `"pronto": true` ed eseguire:
+When the file is complete, set `"pronto": true` and run:
 
 ```bash
 npm run gp
 ```
 
-## Grafici della stagione corrente
+## Current Season Charts
 
-I grafici `Andamento in qualifica` e `Andamento in gara` mostrano esclusivamente
-la stagione indicata dal Gran Premio attuale, per esempio il 2026.
+The `Andamento in qualifica` and `Andamento in gara` graphs show exclusively
+the season indicated by the current Grand Prix, for example 2026.
 
-Le posizioni provengono dallo snapshot locale derivato da F1DB
-`v2026.12.0`. Il frontend non interroga provider esterni: il backend legge lo
-snapshot, prepara le serie numeriche e restituisce insieme ai dati la fonte, la
-versione, la licenza e le trasformazioni applicate.
+The locations are from the local snapshot derived from F1DB
+`v2026.12.0`. The frontend does not query external providers: the backend reads the
+snapshot, prepares the numerical series and returns together with the data the source, the
+version, license and transformations applied.
 
-Le classifiche 2026 e i risultati numerici di gara e qualifica 2023-2025
-presenti nel database derivano anch'essi da F1DB. I testi `notaBene`,
-`passoGara`, `gestioneGomme`, `considerazioniFinali` e gli altri contenuti
-editoriali restano invece quelli modificati manualmente nel JSON.
+The 2026 standings and the numerical results of the 2023-2025 race and qualifying
+present in the database also derive from F1DB. The texts `notaBene`,
+`passoGara`, `gestioneGomme`, `considerazioniFinali` and other content
+editorial ones remain those manually modified in the JSON.
 
-La risposta relativa all'andamento indica la provenienza:
+The trend response indicates where it came from:
 
 ```json
 "fonte": {
@@ -189,30 +189,30 @@ La risposta relativa all'andamento indica la provenienza:
 }
 ```
 
-Lo snapshot contiene esclusivamente i GP conclusi inclusi nella release F1DB
-dichiarata. I risultati `DNF`, `DNS`, `DSQ` e `NC` restano valori mancanti e non
-vengono convertiti in posizioni inventate.
+The snapshot contains only the completed GPs included in the F1DB release
+declared. The results `DNF`, `DNS`, `DSQ` and `NC` remain missing and not
+are converted into invented positions.
 
-Il comando `npm run gp` aggiorna MongoDB e lo storico editoriale, ma non modifica
-automaticamente lo snapshot dei grafici. Per aggiornare quest'ultimo:
+The `npm run gp` command updates MongoDB and the publishing history, but does not modify
+automatically takes the snapshot of the charts. To update the charts:
 
 ```bash
 npm run sync-f1db -- /percorso/alla/distribuzione-f1db
 npm run verify-data
 ```
 
-L'attribuzione completa e le condizioni di riutilizzo sono riportate in
-`NOTICE.md` e nella documentazione Swagger.
+The full attribution and conditions of reuse are set out in
+`NOTICE.md` and in the Swagger documentation.
 
-## Personalizzazione da parte di chi usa le API
+## Customization by API users
 
-Le API pubbliche non consentono di modificare il database ufficiale. Un
-riutilizzatore può però salvare o trasformare la risposta nel proprio software
-e personalizzare campi come `aggiornamentiInArrivo`, `considerazioniFinali` o
+Public APIs do not allow you to modify the official database. A
+However, the reuser can save or transform the answer in his own software
+and customize fields such as `aggiornamentiInArrivo`, `considerazioniFinali`, or
 `passoGara`.
 
-Se il contenuto personalizzato viene mostrato o distribuito, devono essere
-mantenute le attribuzioni previste da `LICENSE.md` e `NOTICE.md` e deve essere
-indicato che il testo è stato modificato. Per conservare le modifiche in modo
-indipendente, il riutilizzatore deve usare il proprio backend o database: la sua
-personalizzazione non cambia le API ufficiali di Race Analysis Hub.
+If personalized content is displayed or distributed, it must be
+the powers provided for by `LICENSE.md` and `NOTICE.md` and must be
+indicated that the text has been changed. To preserve your changes
+independent, the reuser must use his own backend or database: his
+customization does not change the official Race Analysis Hub APIs.

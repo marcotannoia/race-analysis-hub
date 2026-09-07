@@ -1,73 +1,73 @@
 # Frontend Race Analysis Hub
 
-Interfaccia React/Vite del progetto. Consuma esclusivamente l'API pubblica v1
-del backend e visualizza analisi editoriali, classifiche, grafici Chart.js e la
-classifica previsionale spiegabile del Gran Premio attuale.
+Project React/Lifetime interface. Consume only the v1 public API
+and view editorial analytics, rankings, Chart.js charts, and the
+explainable forecast standings of the current Grand Prix.
 
-La release `1.5.0` dell'API ha aggiunto ai piloti i codici ISO2/ISO3, il numero
-vettura e l'abbreviazione del nome; l'oggetto `scuderia` include inoltre
-abbreviazione e colore esadecimale. I precedenti campi `codice` e `numero`
-restano disponibili, quindi le viste esistenti continuano a funzionare senza
-modifiche.
+The `1.5.0` release of the API added ISO2/ISO3 codes to the pilots, the number
+and the abbreviation of the name; the object `scuderia` also includes
+abbreviation and hexadecimal color. The above fields `codice` and `numero`
+remain available, so existing views continue to work without
+modifications.
 
-Dalla release `1.6.0` il selettore globale supporta `it`, `en`, `fr`, `pt`,
-`es` e `de`. La scelta iniziale segue le lingue del browser, viene salvata in
-`localStorage` e aggiunge `?lingua=...` alle richieste verso home, dettagli e
-classifica previsionale. Il controllo mostra icona, nome nativo e codice della
-lingua in un elemento compatto coerente con la grafica del sito, mantenendo un
-`select` nativo per tastiera e tecnologie assistive. Il codice `pt` seleziona il
-catalogo portoghese europeo (`pt-PT`). Le stringhe dell'interfaccia sono in
-`src/i18n/traduzioniInterfaccia.js`; i contenuti editoriali arrivano già
-localizzati dal backend. Il frontend non contiene credenziali Azure e non
-invia richieste a servizi di traduzione esterni.
+Since release `1.6.0` the global selector supports `it`, `en`, `fr`, `pt`,
+`es` and `de`. The initial choice follows the browser languages, is saved in
+`localStorage` and adds `?lingua=...` to requests to home, details and
+forecast ranking. The control shows the icon, native name and code of the
+language in a compact element consistent with the graphics of the site, maintaining a
+`select` native for keyboard and assistive technologies. The code `pt` select the
+European Portuguese Catalog (`pt-PT`). The interface strings are in
+`src/i18n/traduzioniInterfaccia.js`; editorial content arrives already
+localized from the backend. The frontend does not contain Azure credentials and does not
+Send requests to external translation services.
 
-Dalla release `1.7.0` la landing usa soltanto `GET /api/v1/home`: la risposta
-include anche la classifica previsionale. In produzione il frontend chiama
-`/api` sullo stesso dominio, così CloudFront può servire le risposte ripetute
-senza raggiungere ogni volta Render e MongoDB Atlas.
+Since release `1.7.0` the landing page uses only `GET /api/v1/home`: the answer
+it also includes the forecast ranking. In production the frontend calls
+`/api` on the same domain, so CloudFront can serve repeated responses
+without reaching Render and MongoDB Atlas every time.
 
-Dalla release `1.8.0` le pagine di piloti e scuderie mostrano tre indicatori
-percentuali normalizzati: bravura sul bagnato, errori imputabili al pilota ed
-errori fatali o compromettenti. Per il bagnato l'API espone anche i due conteggi
-usati nel calcolo, così la percentuale è verificabile. La pagina
-`/confronto` affianca due piloti o due scuderie riproponendo le schede complete
-dei profili singoli; usa gli endpoint dedicati `/api/v1/confronti/piloti/...`
-e `/api/v1/confronti/scuderie/...`.
+Since the release `1.8.0` the driver and team pages show three indicators
+normalized percentages: skill in the wet, errors attributable to the driver and
+fatal or compromising errors. For wet weather, the API also exposes the two counts
+used in the calculation, so the percentage is verifiable. The page
+`/confronto` supports two drivers or two teams by re-proposing the complete sheets
+individual profiles; use dedicated endpoints `/api/v1/confronti/piloti/...`
+and `/api/v1/confronti/scuderie/...`.
 
-## Avvio locale
+## Local Boot
 
 ```bash
 npm ci
 npm run dev
 ```
 
-In assenza di configurazione il frontend usa il backend locale su
-`http://127.0.0.1:5002`. Per indicare un'altra istanza, creare `.env` da
-`.env.example` e impostare `VITE_API_URL`.
+In the absence of configuration, the frontend uses the local backend on
+`http://127.0.0.1:5002`. To indicate another instance, create `.env` from
+`.env.example` and set up `VITE_API_URL`.
 
-Per una prova completa avviare prima `npm run dev` nella cartella `backend`:
-quel comando prepara un MongoDB temporaneo con il catalogo locale, senza usare
-Atlas. Avviare poi questo frontend con `npm run dev` e cambiare lingua dal
-selettore globale; ogni cambio ricarica i contenuti dall'API con il parametro
-`lingua` corrispondente.
+For a full trial, start `npm run dev` in the `backend` folder first:
+that command prepares a temporary MongoDB with the local catalog, without using
+Atlas. Then start this frontend with `npm run dev` and change language from the
+global selector; each change reloads the contents from the API with the
+`lingua` correspondent.
 
-## Controlli
+## Controls
 
 ```bash
 npm run lint
 npm run build
 ```
 
-Le posizioni quantitative visualizzate nei grafici arrivano dal backend e
-derivano dallo snapshot F1DB indicato nel `NOTICE.md` principale. Chart.js si
-occupa soltanto della rappresentazione grafica ed è distribuito con licenza
-MIT. Per contratto API, deployment, fonti e condizioni di riutilizzo consultare
-il `README.md`, il `NOTICE.md` e la documentazione Swagger del progetto.
+The quantitative positions displayed in the charts come from the backend and
+they are derived from the F1DB snapshot shown in the main `NOTICE.md`. Chart.js you
+it deals only with the graphic representation and is distributed under license
+MIT. For API contract, deployment, sources, and reuse terms, see
+the `README.md`, `NOTICE.md`, and Swagger documentation of the project.
 
-La landing page usa `GET /api/v1/home` per contenuti generali e classifica. Per
-ogni pilota mostra indice, confidenza, scomposizione dei nove fattori ordinari e
-trattamento degli aggiornamenti tecnici. L'endpoint dedicato
-`GET /api/v1/previsioni/piloti` resta disponibile per le integrazioni che
-richiedono soltanto la previsione. L'avvertenza sulla natura fallibile della
-previsione deve restare visibile e non va rimossa nelle personalizzazioni
-grafiche.
+The landing page uses `GET /api/v1/home` for general content and ranking. For
+each driver shows index, confidence, breakdown of the nine ordinary factors and
+processing of technical updates. The dedicated endpoint
+`GET /api/v1/previsioni/piloti` remains available for integrations that
+only require prediction. The warning about the fallible nature of the
+Prediction must remain visible and should not be removed in customizations
+graphics.

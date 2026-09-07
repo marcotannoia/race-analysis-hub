@@ -1,33 +1,33 @@
-# Sicurezza
+# Security
 
-## Versione supportata
+## Supported version
 
-È supportata esclusivamente l'API pubblica `/api/v1`, attualmente alla versione
-applicativa `1.14.0`. Gli endpoint sono anonimi, di sola lettura e soggetti a
-validazione, cache e limitazione delle richieste. La cache conserva soltanto
-risposte `2xx`; health check ed errori usano `no-store`. Le richieste simultanee
-per lo stesso URL vengono accorpate per evitare query duplicate sul database.
-La richiesta senza parametro lingua e quella con `?lingua=it` condividono la
-stessa voce; i parametri non previsti restano separati e vengono sempre
-validati. I client possono rivalidare la propria cache con `ETag` e
-`If-None-Match`, ricevendo `304` quando il contenuto non è cambiato.
+Only the public API `/api/v1` is supported, currently at version
+application `1.14.0`. Endpoints are anonymous, read-only, and subject to
+validation, caching, and throttling. The cache retains only
+`2xx` responses; health checks and errors use `no-store`. Concurrent requests
+for the same URL are merged to avoid duplicate queries on the database.
+The request without a language parameter and the request with `?lingua=it` share the
+same item; the parameters not provided remain separate and are always
+validated. Clients can revalidate their cache with `ETag` and
+`If-None-Match`, receiving `304` when the content has not changed.
 
-L'API non usa chiavi segrete perché i dati sono pubblici. CORS non costituisce
-un controllo di accesso: la protezione dagli abusi resta affidata a rate limit,
-validazione, cache condivisa e monitoraggio. Quando sarà noto l'IP statico del
-backend della società, potrà essere aggiunto un limite dedicato senza ridurre la
-protezione applicata al traffico pubblico.
+The API doesn't use secrets because the data is public. CORS doesn't constitute
+access control: protection against abuse remains entrusted to rate limits,
+validation, shared cache and monitoring. When the static IP of the
+backend, a dedicated limit can be added without reducing the
+protection applied to public traffic.
 
-## Segnalazione responsabile
+## Reporting responsible
 
-Per segnalare una vulnerabilità, scrivere in privato a
-`marco.tannoia@gmail.com` indicando:
+To report a vulnerability, write privately to
+`marco.tannoia@gmail.com` indicating:
 
-- endpoint o componente interessato;
-- passaggi minimi per riprodurre il problema;
-- impatto osservato;
-- eventuale proposta di correzione.
+- endpoint or component affected;
+- minimum steps to reproduce the problem;
+- observed impact;
+- any proposal for correction.
 
-Non inserire credenziali, stringhe MongoDB o altri segreti in issue pubbliche.
-Non eseguire test distruttivi o volumi di traffico elevati sul servizio in
-produzione.
+Do not put credentials, MongoDB strings, or other secrets in public issues.
+Do not perform destructive testing or high traffic volumes on the service in
+production.

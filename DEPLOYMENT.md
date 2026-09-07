@@ -1,11 +1,11 @@
-# Preparazione al deployment
+# Deployment Preparation
 
-Il frontend e il backend possono essere pubblicati separatamente oppure come un
-unico servizio. In produzione il frontend usa `/api` sullo stesso dominio se
-`VITE_API_URL` non è impostata; il backend può servire la cartella
-`frontend/dist` tramite `SERVE_FRONTEND=true`.
+The frontend and backend can be published separately or as a
+single service. In production, the frontend uses `/api` on the same domain if
+`VITE_API_URL` is not set; the backend can serve the
+`frontend/dist` through `SERVE_FRONTEND=true`.
 
-## Variabili del backend
+## Backend variables
 
 ```text
 NODE_ENV=production
@@ -21,16 +21,16 @@ API_CACHE_MAX_ENTRIES=500
 SERVE_FRONTEND=true
 ```
 
-`FRONTEND_URL` accetta più origini separate da virgole. Le credenziali MongoDB
-devono essere configurate nel gestore dei segreti della piattaforma e non in un
-file incluso nel deployment.
+`FRONTEND_URL` accepts multiple sources separated by commas. MongoDB credentials
+must be configured in the platform secrets manager and not in a
+file included in the deployment.
 
-`API_CACHE_TTL_SECONDS` controlla sia la cache in memoria sia `s-maxage` per le
-cache condivise. `API_CACHE_MAX_ENTRIES` limita l'uso di memoria. L'IP futuro del
-backend della società potrà ricevere un limite dedicato senza aumentare quello
-pubblico globale; per ora non va configurata alcuna eccezione.
+`API_CACHE_TTL_SECONDS` controls both the in-memory cache and `s-maxage` for
+shared caches. `API_CACHE_MAX_ENTRIES` limits memory usage. The future IP of the
+backend of the company will be able to receive a dedicated limit without increasing that
+global audience; for now no exceptions should be configured.
 
-## Build e avvio
+## Build and launch
 
 ```bash
 cd frontend
@@ -42,37 +42,37 @@ npm ci --omit=dev
 npm start
 ```
 
-Per due servizi separati, impostare `VITE_API_URL` con l'indirizzo HTTPS del
-backend durante la build del frontend e usare `SERVE_FRONTEND=false`.
+For two separate services, set `VITE_API_URL` with the HTTPS address of the
+backend during frontend build and use `SERVE_FRONTEND=false`.
 
-## Frontend su S3 e CloudFront
+## Frontend on S3 and CloudFront
 
-Per la distribuzione statica su CloudFront, usare il comando dedicato:
+For static delivery to CloudFront, use the dedicated command:
 
 ```bash
 npm run build:cloudfront
 ```
 
-Il comando genera `frontend/dist` configurando il frontend per chiamare `/api`
-sullo stesso dominio. CloudFront deve quindi inoltrare `/api/v1*` al backend
-pubblico su Render e mantenere le query nella chiave di cache. I file con hash
-sotto `assets/` possono essere
-mantenuti in cache per un anno; `index.html` e il favicon devono invece usare
-`no-cache`. Dopo il caricamento su S3 è necessario invalidare almeno `/*` sulla
-distribuzione CloudFront.
+The command generates `frontend/dist` configuring the frontend to call `/api`
+on the same domain. CloudFront then needs to forward `/api/v1*` to the backend
+Render and keep queries in the cache key. Hashed files
+below `assets/` can be
+kept in cache for one year; `index.html` and favicon must instead use
+`no-cache`. After uploading to S3, you must invalidate at least `/*` on the
+CloudFront distribution.
 
-La configurazione verificata usa l'origine HTTPS
-`f1-stats-5v93.onrender.com`, il comportamento `/api/v1*` e la policy
-`race-analysis-hub-api-v1-cache`. La policy inoltra e include nella chiave tutte
-le query, così i parametri non ammessi raggiungono la validazione e non possono
-riutilizzare una risposta valida; le integrazioni lecite usano soltanto
-`lingua`. Non inoltra cookie e accetta la compressione Brotli/Gzip. TTL
-minimo, predefinito e massimo sono rispettivamente 0, 60 e 300 secondi. Questa
-configurazione usa la distribuzione pay-as-you-go già esistente e non introduce
-un nuovo servizio con canone fisso.
+Verified configuration uses HTTPS origin
+`f1-stats-5v93.onrender.com`, `/api/v1*` behavior, and policy
+`race-analysis-hub-api-v1-cache`. The policy forwards and includes in the key all
+queries, so that the parameters that are not allowed reach validation and cannot be
+reuse a valid answer; lawful integrations only use
+`lingua`. Does not forward cookies and accepts Brotli/Gzip compression. TTL
+minimum, default, and maximum are 0, 60, and 300 seconds, respectively. This
+Configuration uses existing pay-as-you-go distribution and does not introduce
+A new service with a fixed fee.
 
-Esempio completo, usando variabili dedicate per evitare di pubblicare sul
-bucket o sulla distribuzione sbagliati:
+Full example, using dedicated variables to avoid publishing to the
+Wrong buckets or distribution:
 
 ```bash
 export RACE_HUB_S3_BUCKET="nome-bucket"
@@ -100,23 +100,23 @@ aws cloudfront create-invalidation \
   --paths "/*"
 ```
 
-Prima del caricamento verificare con `aws sts get-caller-identity` l'account
-attivo e controllare che l'alias CloudFront corrisponda al dominio pubblico.
-La landing page usa una sola richiesta a `GET /api/v1/home`: se il backend è
-distribuito automaticamente dal push, attendere che la risposta includa
-`classificaPrevisionale` prima di aggiornare S3.
+Before uploading, verify your account with `aws sts get-caller-identity`
+and check that the CloudFront alias matches the public domain.
+The landing page uses only one request per `GET /api/v1/home`: if the backend is
+automatically deployed by the push, wait for the response to include
+`classificaPrevisionale` before upgrading S3.
 
-Per la release multilingua attendere inoltre che
-`GET /api/v1/lingue` e `GET /api/v1/home?lingua=en` rispondano dalla versione
-backend `1.14.0`. Soltanto dopo si può pubblicare il frontend: in caso contrario
-il selettore cambierebbe l'interfaccia ma riceverebbe ancora testi italiani.
-`AZURE_TRANSLATOR_KEY` non deve essere configurata su Render o inclusa nella
-build Vite: serve soltanto allo script amministrativo locale.
+For the multilingual release, please also wait for
+`GET /api/v1/lingue` and `GET /api/v1/home?lingua=en` respond from the version
+backend `1.14.0`. Only then can the frontend be published: otherwise
+The selector would change the interface but would still receive Italian texts.
+`AZURE_TRANSLATOR_KEY` should not be configured to Render or included in the
+build Vite: Used only for local administrative script.
 
-## Controlli prima della pubblicazione
+## Pre-Publish Checks
 
-Prima di qualsiasi seed, commit o deployment eseguire il controllo locale
-offline. Il primo comando deve terminare con `0 segmenti nuovi` e `0 caratteri`:
+Before any seed, commit, or deployment, run the local check
+offline. The first command should end with `0 segmenti nuovi` and `0 caratteri`:
 
 ```bash
 npm run translate-data -- --rebuild-from-cache --offline
@@ -129,74 +129,74 @@ npm run lint
 npm run build
 ```
 
-L'opzione `--offline` impedisce l'inizializzazione del client Azure e termina
-con errore se manca una traduzione in cache; questa verifica non consuma quota
-F0. Per la sola anteprima non eseguire `seed`, sincronizzazioni S3 o
-invalidazioni CloudFront.
+The `--offline` option prevents the Azure client from initializing and terminates
+with error if a cached translation is missing; this check does not consume quota
+F0. For preview only, do not run `seed`, S3 syncs, or
+CloudFront invalidations.
 
-- ruotare le credenziali usate durante lo sviluppo;
-- limitare l'IP Access List di MongoDB Atlas agli indirizzi del servizio;
-- assegnare all'utente MongoDB soltanto i permessi necessari;
-- usare esclusivamente HTTPS;
-- configurare le variabili nel gestore dei segreti della piattaforma;
-- eseguire `npm audit`, build, lint, `npm --prefix backend test` e verificare
-  l'endpoint `/api/v1/health`;
-- usare uno store condiviso per il rate limit se il backend avrà più istanze.
+- rotate the credentials used during development;
+- limit the MongoDB Atlas IP Access List to service addresses;
+- assign the MongoDB user only the necessary permissions;
+- use HTTPS exclusively;
+- configure variables in the platform secrets manager;
+- Run `npm audit`, build, lint, `npm --prefix backend test`, and verify
+the endpoint `/api/v1/health`;
+- Use a shared store for the rate limit if the backend will have multiple instances.
 
-Per la release `1.14.0`, verificare inoltre che:
+For release `1.14.0`, also verify that:
 
-- `GET /api/v1` restituisca `"versione": "1.14.0"`;
-- `GET /api/v1/home` esponga Madrid come gara attuale e 22 partecipanti,
-  compreso Hadjar rientrato nello schieramento;
-- `GET /api/v1/piloti` esponga il catalogo stagionale completo di 23 piloti;
-- le schede Red Bull e Racing Bulls derivino i rispettivi piloti dallo
-  schieramento del GP attuale;
-- `GET /api/v1/home` includa `classificaPrevisionale`, così la landing usi una
-  sola chiamata;
-- `GET /api/v1/home` esponga `garaAttuale.ordineCalendario` e
-  `metadati.totaleGareCalendario`, separati dalla sequenza editoriale interna;
-- la classifica usi il modello `statistico-editoriale-v2`, con pesi complessivi
-  pari al 100%: compatibilità vettura-circuito 60%, andamento pilota negli
-  ultimi tre GP 15%, aggiornamenti tecnici pertinenti 7%, andamento pilota 2026
-  7%, andamento scuderia negli ultimi tre GP 5%, storico 3% e qualifica 3%.
-  Con una penalità
-  confermata, la penalità può incidere fino al 35% e tutti gli altri fattori
-  vengono riproporzionati sul restante 65%;
-- `GET /api/v1/lingue` elenchi esattamente le sei lingue;
-- `GET /api/v1/gare/attuale?lingua=de` restituisca `"lingua": "de"` e
-  l'header `Content-Language: de`;
-- `GET /api/v1/home?lingua=xx` restituisca HTTP `400`, codice
-  `LINGUA_NON_SUPPORTATA` e i sei codici ammessi;
-- `GET /api/v1/piloti/leclerc` esponga ISO2, ISO3, numero vettura,
-  abbreviazione del nome, abbreviazione e colore della scuderia;
-- le schede pilota e scuderia espongano `indicatori` con tre percentuali oppure
-  `null` se le fonti non sono state validate; per
-  il bagnato devono essere presenti anche `gareConPioggiaPositive` e
-  `gareConPioggiaDisputate`, che rendono verificabile il calcolo;
-- gli endpoint `/api/v1/confronti/piloti/.../...` e
-  `/api/v1/confronti/scuderie/.../...` restituiscano esattamente due schede;
-- `/api/v1/openapi.json` dichiari gli stessi campi senza variazioni a rotte,
-  parametri o metodi HTTP;
-- `npm run verify-db` termini con `0 differenze`.
+- `GET /api/v1` returns `"versione": "1.14.0"`;
+- `GET /api/v1/home` exhibits Madrid as a current race and 22 participants,
+including Hadjar who returned to the line-up;
+- `GET /api/v1/piloti` exhibits the complete seasonal catalog of 23 drivers;
+- the Red Bull and Racing Bulls cards derive their respective drivers from the
+current GP grid;
+- `GET /api/v1/home` include `classificaPrevisionale`, so the landing page uses a
+call only;
+- `GET /api/v1/home` exposes `garaAttuale.ordineCalendario` and
+`metadati.totaleGareCalendario`, separated from the internal editorial sequence;
+- the ranking uses the `statistico-editoriale-v2` model, with overall weights
+100%: 60% car-circuit compatibility, driver performance in the
+last three GPs 15%, relevant technical updates 7%, 2026 rider trend
+7%, team performance in the last three GPs 5%, historical 3% and qualifying 3%.
+With a penalty
+confirmed, the penalty can affect up to 35% and all other factors
+they are reproportioned to the remaining 65%;
+- `GET /api/v1/lingue` lists the six languages exactly;
+- `GET /api/v1/gare/attuale?lingua=de` returns `"lingua": "de"` and
+the header `Content-Language: de`;
+- `GET /api/v1/home?lingua=xx` returns HTTP `400`, code
+`LINGUA_NON_SUPPORTATA` and the six codes allowed;
+- `GET /api/v1/piloti/leclerc` display ISO2, ISO3, car number,
+abbreviation of the name, abbreviation and color of the stable;
+- the driver and team cards display `indicatori` with three percentages or
+`null` if the sources have not been validated; for
+wet must also be present `gareConPioggiaPositive` and
+`gareConPioggiaDisputate`, which make the calculation verifiable;
+- the endpoints `/api/v1/confronti/piloti/.../...` and
+`/api/v1/confronti/scuderie/.../...` return exactly two cards;
+- `/api/v1/openapi.json` declare the same fields without changes to routes,
+HTTP parameters or methods;
+- `npm run verify-db` terms with `0 differenze`.
 
-La verifica frontend deve inoltre confermare che gli anni dei risultati siano
-centrati e sottolineati, che Gestione gomme e Passo gara non mostrino il tag
-“Generale”, che la scheda circuito contenga i sei dati sintetici previsti e
-che ogni caratteristica occupi tutta la larghezza disponibile. Gli
-aggiornamenti quasi certi ma non ancora ufficiali devono riportare
-esplicitamente lo stato provvisorio e restare neutrali nel calcolo previsionale.
+Frontend verification must also confirm that the years of results are
+that Tyre Management and Race Pace do not show the
+"General", that the circuit board contains the six synthetic data provided and
+that each feature occupies the entire available width. The
+Almost certain but not yet official updates must report
+explicitly the provisional status and remain neutral in the forecast calculation.
 
-## Aggiornamento editoriale post-gara
+## Post-Race Editorial Update
 
-Il cambio del Gran Premio visibile non richiede una nuova build. Dalla cartella
-principale basta eseguire `npm run gp`: la prima esecuzione prepara il modulo
-`backend/data/aggiornamento-gp.json`, mentre quella successiva, dopo la
-compilazione e l'impostazione di `"pronto": true`, aggiorna MongoDB e sposta
-automaticamente il flag `attuale` sulla gara seguente. Il file utilizzato viene
-conservato in `backend/data/archivio-gp/` come fonte editoriale; non inserirvi
-credenziali.
+The visible Grand Prix change does not require a new build. From the folder
+main just run `npm run gp`: the first run prepares the module
+`backend/data/aggiornamento-gp.json`, while the next one, after the
+compiling and setting `"pronto": true`, updating MongoDB and moving
+automatically the flag `attuale` on the following race. The file used is
+kept in `backend/data/archivio-gp/` as an editorial source; do not insert
+credentials.
 
-I grafici quantitativi 2026 non vengono ricavati da questo file: usano lo
-snapshot locale F1DB dichiarato in `NOTICE.md`. Per includere nuovi GP nei
-grafici occorre rigenerare lo snapshot da una nuova release F1DB, eseguire
-`npm run verify-data` e pubblicare il codice aggiornato.
+The 2026 quantitative charts are not taken from this file: they use the
+F1DB local snapshot declared in `NOTICE.md`. To include new GPs in
+graphs you need to regenerate the snapshot from a new F1DB release, run
+`npm run verify-data` and publish the updated code.

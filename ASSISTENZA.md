@@ -1,24 +1,24 @@
-# Assistenza FantaStats GP
+# FantaStats GP Support
 
-URL pubblico da inserire nel campo **URL di assistenza** della versione iOS in App Store Connect:
+Public URL to enter in the iOS version support URL field in App Store Connect:
 
 https://www.race-analysis-hub.it/assistenza.html
 
-Contatto pubblico: **marco.tannoia@gmail.com**.
+Public contact: **marco.tannoia@gmail.com**.
 
-## Contenuto e sorgenti
+## Content and sources
 
-La pagina contiene il contatto dello sviluppatore, le informazioni utili per segnalare problemi e le domande frequenti. È una pagina statica in italiano, accessibile senza account, JavaScript o API. Non sostituisce l'informativa privacy.
+The page contains the developer's contact information, useful information for reporting problems and frequently asked questions. It is a static page in Italian, accessible without an account, JavaScript or API. It does not replace the privacy policy.
 
-- `frontend/public/assistenza.html`: contenuto e stile responsive, coerenti con il sito pubblico.
-- `frontend/public/support-assets/barlow-condensed-600.woff2`: font ospitato sul sito.
-- `frontend/public/support-assets/Barlow-LICENSE.txt`: licenza del font.
+- `frontend/public/assistenza.html`: responsive content and style, consistent with the public site.
+- `frontend/public/support-assets/barlow-condensed-600.woff2`: Font hosted on the site.
+- `frontend/public/support-assets/Barlow-LICENSE.txt`: Font license.
 
-Vite copia questi file nella directory di build. Mantenerli anche nelle successive pubblicazioni complete del frontend.
+Vite copies these files to the build directory. Keep them in subsequent full frontend publications as well.
 
-## Pubblicazione della sola pagina
+## Publishing the page only
 
-Verificare prima account AWS, alias CloudFront e origine S3. Per pubblicare esclusivamente l'assistenza senza distribuire altre modifiche locali:
+Verify your AWS account, CloudFront alias, and S3 origin first. To publish support only without deploying any other on-premises changes:
 
 ```sh
 aws s3 cp frontend/public/support-assets/barlow-condensed-600.woff2 s3://f1stats3/support-assets/barlow-condensed-600.woff2 --content-type font/woff2 --cache-control 'public,max-age=86400'
@@ -27,15 +27,15 @@ aws s3 cp frontend/public/assistenza.html s3://f1stats3/assistenza.html --conten
 aws cloudfront create-invalidation --distribution-id E39KL59ASJLD4 --paths /assistenza.html '/support-assets/*'
 ```
 
-Attendere il completamento dell'invalidazione e confrontare il file pubblico con quello locale. Controllare visualizzazione desktop/mobile, indirizzo email e apertura delle domande frequenti. Non è necessario distribuire il backend per modificare questa pagina.
+Wait for the invalidation to complete and compare the public file to the local one. Check desktop/mobile view, email address, and FAQ opening. You don't need to deploy the backend to edit this page.
 
-## Verifica del 4 settembre 2026
+## Verification of 4 September 2026
 
-Pubblicati i tre file su S3. Invalidazione CloudFront `IYWJJYRE826XE07KDV4A2KR5S` completata. HTML pubblico identico al locale tramite SHA-256; font pubblico HTTP 200. Verifica visiva della pagina a larghezza desktop e 390 px. Nessuna modifica eseguita al campo URL in App Store Connect: deve essere salvato nella scheda dell'app.
+Published the three files to S3. CloudFront invalidation `IYWJJYRE826XE07KDV4A2KR5S` complete. Public HTML identical to local via SHA-256; HTTP 200 public font. Visual verification of the page at desktop width and 390 px. No changes made to the URL field in App Store Connect: it must be saved in the app card.
 
-La pagina è accessibile anche tramite l’icona cuffie nel footer del sito.
+The page is also accessible via the headphones icon in the footer of the site.
 
-## Informativa privacy app
+## App Privacy Policy
 
-Pagina pubblica: https://www.race-analysis-hub.it/privacy-app.html. Collegata dalla pagina assistenza e dalle Impostazioni native nella prossima build. Nessuno script o tracker nella pagina.
-La gestione operativa deve rispettare la cancellazione delle email entro 12 mesi dalla chiusura della richiesta. Verificare nel proprio account Render conservazione log e accordi/garanzie dei fornitori: non sono certificati dalla pubblicazione della pagina.
+Public page: https://www.race-analysis-hub.it/privacy-app.html. Linked from the support page and native Settings in the next build. No scripts or trackers on the page.
+The operational management must respect the deletion of emails within 12 months of the closure of the request. Check in your Render account for log storage and supplier agreements/warranties: they are not certified by the publication of the page.
