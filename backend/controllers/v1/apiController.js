@@ -36,7 +36,8 @@ const {
   presentaScuderia,
   presentaScuderiaBreve,
 } = require("../../presenters/apiV1");
-const { metadati: metadatiF1db } = require("../../data/f1db-v2026.12.0-derivato.json");
+const snapshotF1db = require("../../data/f1db-v2026.13.0-derivato.json");
+const { metadati: metadatiF1db } = snapshotF1db;
 const { version: VERSIONE_API } = require("../../package.json");
 
 const attribuzioneF1db = {
@@ -122,6 +123,7 @@ function descrizioneApi(richiesta, risposta) {
     endpoint: {
       health: "/api/v1/health",
       home: "/api/v1/home",
+      stagione: "/api/v1/stagione",
       lingue: "/api/v1/lingue",
       piloti: "/api/v1/piloti",
       dettaglioPilota: "/api/v1/piloti/:pilotaSlug",
@@ -167,6 +169,13 @@ function statoServizio(richiesta, risposta) {
       versione: VERSIONE_API,
       requestId: risposta.locals.requestId,
     });
+}
+
+function stagione(richiesta, risposta) {
+  risposta.json({
+    ...snapshotF1db.calendario2026,
+    fonte: attribuzioneF1db,
+  });
 }
 
 async function home(richiesta, risposta) {
@@ -752,5 +761,6 @@ module.exports = {
   elencaScuderie,
   garaAttuale,
   home,
+  stagione,
   statoServizio,
 };

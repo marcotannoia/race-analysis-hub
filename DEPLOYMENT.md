@@ -108,7 +108,7 @@ distribuito automaticamente dal push, attendere che la risposta includa
 
 Per la release multilingua attendere inoltre che
 `GET /api/v1/lingue` e `GET /api/v1/home?lingua=en` rispondano dalla versione
-backend `1.13.0`. Soltanto dopo si può pubblicare il frontend: in caso contrario
+backend `1.14.0`. Soltanto dopo si può pubblicare il frontend: in caso contrario
 il selettore cambierebbe l'interfaccia ma riceverebbe ancora testi italiani.
 `AZURE_TRANSLATOR_KEY` non deve essere configurata su Render o inclusa nella
 build Vite: serve soltanto allo script amministrativo locale.
@@ -143,9 +143,9 @@ invalidazioni CloudFront.
   l'endpoint `/api/v1/health`;
 - usare uno store condiviso per il rate limit se il backend avrà più istanze.
 
-Per la release `1.13.0`, verificare inoltre che:
+Per la release `1.14.0`, verificare inoltre che:
 
-- `GET /api/v1` restituisca `"versione": "1.13.0"`;
+- `GET /api/v1` restituisca `"versione": "1.14.0"`;
 - `GET /api/v1/home` esponga Madrid come gara attuale e 22 partecipanti,
   compreso Hadjar rientrato nello schieramento;
 - `GET /api/v1/piloti` esponga il catalogo stagionale completo di 23 piloti;

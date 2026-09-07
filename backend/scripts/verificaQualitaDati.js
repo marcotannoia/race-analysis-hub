@@ -1,5 +1,5 @@
 const dati = require("../data/dati-iniziali.json");
-const snapshotF1db = require("../data/f1db-v2026.12.0-derivato.json");
+const snapshotF1db = require("../data/f1db-v2026.13.0-derivato.json");
 const statisticheContesto = require("../data/statistiche-contesto.json");
 const profiliTecnici = require("../data/profili-tecnici-2026.json");
 const circuitiTecnici = require("../data/circuiti-tecnici-2026.json");
@@ -18,9 +18,9 @@ const attesi = {
   analisiScuderie: 132,
 };
 
-const VERSIONE_F1DB = "v2026.12.0";
+const VERSIONE_F1DB = "v2026.13.0";
 const URL_ARCHIVIO_F1DB =
-  "https://github.com/f1db/f1db/releases/download/v2026.12.0/f1db-json-splitted.zip";
+  "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip";
 
 function uguali(primo, secondo) {
   return JSON.stringify(primo) === JSON.stringify(secondo);
@@ -51,7 +51,9 @@ richiedi(
   snapshotF1db.eventiStorici.length === 36 &&
     snapshotF1db.analisiGare.length === attesi.piloti * attesi.gare &&
     snapshotF1db.analisiScuderie.length === attesi.analisiScuderie &&
-    snapshotF1db.andamento2026.eventi.length === 12,
+    snapshotF1db.andamento2026.eventi.length === 13 &&
+    snapshotF1db.calendario2026.passati.length === 13 &&
+    snapshotF1db.calendario2026.prossimi.length === 10,
   "Copertura dello snapshot F1DB incompleta",
 );
 
@@ -355,7 +357,7 @@ if (errori.length) {
     (attesi.analisiGare + attesi.analisiScuderie) * 3 * 2;
   console.log(
     `OK qualità dati: ${valoriStoriciVerificati} risultati storici, ` +
-      "34 classifiche e 12 GP 2026 coincidono con F1DB v2026.12.0; " +
+      "34 classifiche e 13 GP 2026 coincidono con F1DB v2026.13.0; " +
       "struttura, denominazioni e fonti verificate.",
   );
 }

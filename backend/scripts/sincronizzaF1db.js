@@ -1,10 +1,10 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const VERSIONE_F1DB = "v2026.12.0";
-const PUBBLICATO_IL = "2026-08-23T18:00:49.000Z";
+const VERSIONE_F1DB = "v2026.13.0";
+const PUBBLICATO_IL = "2026-09-06T19:35:18.000Z";
 const SHA256_ARCHIVIO =
-  "36cd3e85bc169643b8f26e23040298beca92168b9511cb2d57516738bfa81e73";
+  "b90a464e196da46d7724fa7b919c3bd9640166ff385f5336a366dd7fbfe562e7";
 const URL_REPOSITORY = "https://github.com/f1db/f1db";
 const URL_RELEASE = `${URL_REPOSITORY}/releases/tag/${VERSIONE_F1DB}`;
 const URL_ARCHIVIO = `${URL_REPOSITORY}/releases/download/${VERSIONE_F1DB}/f1db-json-splitted.zip`;
@@ -239,6 +239,8 @@ function creaSnapshot(percorsoF1db, datiProgetto) {
   const risultatiQualifica = carica("f1db-races-qualifying-results.json");
   const piloti = carica("f1db-drivers.json");
   const costruttori = carica("f1db-constructors.json");
+  const circuiti = carica("f1db-circuits.json");
+  const grandiPremi = carica("f1db-grands-prix.json");
   const stagioniPiloti = carica("f1db-seasons-drivers.json");
   const stagioniScuderie = carica("f1db-seasons-constructors.json");
 
@@ -246,6 +248,8 @@ function creaSnapshot(percorsoF1db, datiProgetto) {
   const costruttoriPerId = new Map(
     costruttori.map((costruttore) => [costruttore.id, costruttore]),
   );
+  const circuitiPerId = new Map(circuiti.map((circuito) => [circuito.id, circuito]));
+  const grandiPremiPerId = new Map(grandiPremi.map((gp) => [gp.id, gp]));
   const garaPerCircuitoAnno = new Map(
     gare.map((gara) => [`${gara.circuitId}|${gara.year}`, gara]),
   );
@@ -485,12 +489,52 @@ function creaSnapshot(percorsoF1db, datiProgetto) {
     };
   });
 
+  const gare2026 = gare
+    .filter((gara) => gara.year === 2026)
+    .sort((prima, seconda) => prima.round - seconda.round);
+  const calendario2026 = {
+    stagione: 2026,
+    prossimi: gare2026
+      .filter((gara) => !(gareRisultatiPerRaceId.get(gara.id) || []).length)
+      .map((gara) => ({
+        round: gara.round,
+        data: gara.date,
+        nome: grandiPremiPerId.get(gara.grandPrixId)?.fullName || gara.officialName,
+        circuito: circuitiPerId.get(gara.circuitId)?.fullName || gara.circuitId,
+      })),
+    passati: gareConcluse2026.map((gara) => ({
+      round: gara.round,
+      data: gara.date,
+      nome: grandiPremiPerId.get(gara.grandPrixId)?.fullName || gara.officialName,
+      circuito: circuitiPerId.get(gara.circuitId)?.fullName || gara.circuitId,
+      qualifiche: (qualifichePerRaceId.get(gara.id) || [])
+        .sort((a, b) => a.positionDisplayOrder - b.positionDisplayOrder)
+        .map((risultato) => ({
+          posizione: risultato.positionText,
+          pilota: pilotiPerId.get(risultato.driverId)?.fullName || risultato.driverId,
+          codice: pilotiPerId.get(risultato.driverId)?.abbreviation || risultato.driverId,
+          q1: risultato.q1 || null,
+          q2: risultato.q2 || null,
+          q3: risultato.q3 || null,
+        })),
+      gara: (gareRisultatiPerRaceId.get(gara.id) || [])
+        .sort((a, b) => a.positionDisplayOrder - b.positionDisplayOrder)
+        .map((risultato) => ({
+          posizione: risultato.positionText,
+          pilota: pilotiPerId.get(risultato.driverId)?.fullName || risultato.driverId,
+          codice: pilotiPerId.get(risultato.driverId)?.abbreviation || risultato.driverId,
+          tempo: risultato.time || risultato.gap || risultato.gapLaps || risultato.reasonRetired || null,
+          punti: risultato.points,
+        })),
+    })),
+  };
+
   return {
     metadati: {
       fonte: "F1DB",
       versione: VERSIONE_F1DB,
       pubblicatoIl: PUBBLICATO_IL,
-      derivatoIl: "2026-09-02",
+      derivatoIl: "2026-09-07",
       releaseUrl: URL_RELEASE,
       archivio: "f1db-json-splitted.zip",
       archivioUrl: URL_ARCHIVIO,
@@ -508,6 +552,7 @@ function creaSnapshot(percorsoF1db, datiProgetto) {
       stagione: 2026,
       eventi: andamentoEventi2026,
     },
+    calendario2026,
     eventiStorici,
     analisiGare,
     analisiScuderie,

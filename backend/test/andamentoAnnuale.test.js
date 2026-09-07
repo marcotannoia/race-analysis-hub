@@ -5,10 +5,10 @@ const creaAndamentoAnnuale = require("../services/andamentoAnnuale");
 const snapshot = {
   metadati: {
     fonte: "F1DB",
-    releaseUrl: "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
+    releaseUrl: "https://github.com/f1db/f1db/releases/tag/v2026.13.0",
     licenza: "CC BY 4.0",
     licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
-    versione: "v2026.12.0",
+    versione: "v2026.13.0",
     trasformazioni: "Dati filtrati e normalizzati.",
   },
   andamento2026: {
@@ -58,10 +58,10 @@ test("crea il grafico pilota dai risultati F1DB", () => {
   ]);
   assert.deepEqual(andamento.fonte, {
     nome: "F1DB",
-    url: "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
+    url: "https://github.com/f1db/f1db/releases/tag/v2026.13.0",
     licenza: "CC BY 4.0",
     licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
-    versione: "v2026.12.0",
+    versione: "v2026.13.0",
     modifiche: "Dati filtrati e normalizzati.",
   });
 });

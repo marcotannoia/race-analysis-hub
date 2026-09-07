@@ -224,20 +224,20 @@ test("l'andamento espone la provenienza dei risultati", () => {
     gara: [{ nome: "LEC", valori: [2] }],
     fonte: {
       nome: "F1DB",
-      url: "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
+      url: "https://github.com/f1db/f1db/releases/tag/v2026.13.0",
       licenza: "CC BY 4.0",
       licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
-      versione: "v2026.12.0",
+      versione: "v2026.13.0",
       modifiche: "Dati filtrati e normalizzati.",
     },
   });
 
   assert.deepEqual(andamento.fonte, {
     nome: "F1DB",
-    url: "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
+    url: "https://github.com/f1db/f1db/releases/tag/v2026.13.0",
     licenza: "CC BY 4.0",
     licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
-    versione: "v2026.12.0",
+    versione: "v2026.13.0",
     modifiche: "Dati filtrati e normalizzati.",
   });
   assert.equal("aggiornatoIl" in andamento, false);
