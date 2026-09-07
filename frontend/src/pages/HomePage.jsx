@@ -8,11 +8,6 @@ function HomePage() {
   return (
     <section className="app-promo">
       <div className="promo-hero">
-        <div className="promo-sparks" aria-hidden="true">
-          {Array.from({ length: 72 }, (_, index) => (
-            <i key={index} style={{ '--x': `${(index * 37 + 9) % 100}%`, '--y': `${(index * 61 + 13) % 94}%`, '--delay': `${-index * 0.19}s` }} />
-          ))}
-        </div>
         <div className="contenitore app-promo-contenuto">
           <h1>TUTTI I DATI A PORTATA DI MANO</h1>
           <a className="app-store-button" href={APP_STORE_URL} rel="noreferrer" target="_blank" aria-label="Scarica FantaStats GP sull’App Store">
