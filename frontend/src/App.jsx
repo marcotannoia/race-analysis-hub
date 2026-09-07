@@ -6,7 +6,6 @@ import ScuderiaPage from './pages/ScuderiaPage.jsx'
 import PaginaNonTrovata from './pages/PaginaNonTrovata.jsx'
 import ConfrontoPage from './pages/ConfrontoPage.jsx'
 import usePercorso from './hooks/usePercorso.js'
-import SelettoreLingua from './components/SelettoreLingua.jsx'
 import { FornitoreLingua } from './i18n/LinguaContext.jsx'
 
 function ContenutoApp() {
@@ -33,9 +32,9 @@ function ContenutoApp() {
           <i key={i} style={{ '--x': `${(i * 37 + 9) % 100}%`, '--delay': `${-i * 0.73}s`, '--duration': `${12 + i % 9}s` }} />
         ))}
       </div>
-      <div className="barra-lingua contenitore">
-        <SelettoreLingua />
-      </div>
+      <header className="site-header">
+        <a href="/" aria-label="FantaStats GP — homepage">FANTASTATS GP</a>
+      </header>
       <main>{pagina}</main>
       <Footer />
     </div>

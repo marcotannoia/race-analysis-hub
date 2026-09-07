@@ -3,6 +3,12 @@
 Race Analysis Hub is an independent application for exploring Formula 1 World
 Championship data, results, and editorial analysis.
 
+The public website homepage is the official promotional landing page for the
+native **FantaStats GP** app. It links directly to the verified
+[App Store listing](https://apps.apple.com/it/app/fantastats-gp/id6808340219?l=en-GB).
+The read-only API, Swagger documentation, support page, and privacy policy
+remain available at their existing URLs.
+
 The frontend is built with React and Vite, the API with Node.js and Express,
 and MongoDB provides data persistence. The public APIs are anonymous,
 read-only, and documented with Swagger.
@@ -22,6 +28,7 @@ which is separate from the internal order in which analyses are published.
 ## Links
 
 - [Public website](https://www.race-analysis-hub.it)
+- [FantaStats GP on the App Store](https://apps.apple.com/it/app/fantastats-gp/id6808340219?l=en-GB)
 - [FantaStats GP support](https://www.race-analysis-hub.it/assistenza.html)
 - [Support page management](ASSISTENZA.md)
 - [Swagger documentation](https://f1-stats-5v93.onrender.com/api/docs)
