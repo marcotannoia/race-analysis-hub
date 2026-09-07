@@ -75,7 +75,7 @@ const documentoOpenApi = {
       "consente esclusivamente GET, HEAD e OPTIONS. Le analisi editoriali sono " +
       "pubblicate soltanto per il Gran Premio attuale; gare future e relative " +
       "analisi non vengono esposte. Classifiche e risultati quantitativi provengono " +
-      "da uno snapshot locale derivato da F1DB v2026.12.0 (CC BY 4.0), senza " +
+      "da uno snapshot locale derivato da F1DB v2026.13.0 (CC BY 4.0), senza " +
       "chiamate esterne a runtime, e sono visualizzati con Chart.js. " +
       "Le risposte pubbliche possono essere copiate, mostrate e adattate nel software " +
       "del riutilizzatore, anche per uso commerciale, secondo la CC BY 4.0. " +
@@ -231,6 +231,20 @@ const documentoOpenApi = {
         responses: {
           200: rispostaJson("Contenuto della home", "#/components/schemas/Home"),
           404: { $ref: "#/components/responses/RisorsaNonTrovata" },
+          ...risposteComuni,
+        },
+      },
+    },
+    "/stagione": {
+      get: {
+        operationId: "recuperaStagione",
+        tags: ["Gare"],
+        summary: "Calendario e risultati della stagione",
+        description:
+          "Restituisce i prossimi Gran Premi e, per ogni GP concluso, i tempi Q1, Q2, Q3 e il risultato gara derivati dall'ultima release F1DB validata.",
+        parameters: [parametroLingua],
+        responses: {
+          200: rispostaJson("Calendario e risultati 2026", "#/components/schemas/Stagione"),
           ...risposteComuni,
         },
       },
@@ -754,6 +768,7 @@ const documentoOpenApi = {
         required: [
           "health",
           "home",
+          "stagione",
           "lingue",
           "piloti",
           "dettaglioPilota",
@@ -773,6 +788,7 @@ const documentoOpenApi = {
         properties: {
           health: { type: "string", example: "/api/v1/health" },
           home: { type: "string", example: "/api/v1/home" },
+          stagione: { type: "string", example: "/api/v1/stagione" },
           lingue: { type: "string", example: "/api/v1/lingue" },
           piloti: { type: "string", example: "/api/v1/piloti" },
           dettaglioPilota: {
@@ -1331,7 +1347,7 @@ const documentoOpenApi = {
             type: "string",
             format: "uri",
             example:
-              "https://github.com/f1db/f1db/releases/tag/v2026.12.0",
+              "https://github.com/f1db/f1db/releases/tag/v2026.13.0",
           },
           licenza: { type: "string", example: "CC BY 4.0" },
           licenzaUrl: {
@@ -1339,7 +1355,7 @@ const documentoOpenApi = {
             format: "uri",
             example: "https://creativecommons.org/licenses/by/4.0/",
           },
-          versione: { type: "string", example: "v2026.12.0" },
+          versione: { type: "string", example: "v2026.13.0" },
           modifiche: {
             type: "string",
             description:
@@ -1970,6 +1986,62 @@ const documentoOpenApi = {
             type: "array",
             items: { $ref: "#/components/schemas/PosizionePrevisionale" },
           },
+        },
+      },
+      GaraCalendario: {
+        type: "object",
+        required: ["round", "data", "nome", "circuito"],
+        properties: {
+          round: { type: "integer", minimum: 1 },
+          data: { type: "string", format: "date" },
+          nome: { type: "string" },
+          circuito: { type: "string" },
+        },
+      },
+      RisultatoQualifica: {
+        type: "object",
+        required: ["posizione", "pilota", "codice", "q1", "q2", "q3"],
+        properties: {
+          posizione: { type: "string" },
+          pilota: { type: "string" },
+          codice: { type: "string" },
+          q1: { type: ["string", "null"] },
+          q2: { type: ["string", "null"] },
+          q3: { type: ["string", "null"] },
+        },
+      },
+      RisultatoGara: {
+        type: "object",
+        required: ["posizione", "pilota", "codice", "tempo", "punti"],
+        properties: {
+          posizione: { type: "string" },
+          pilota: { type: "string" },
+          codice: { type: "string" },
+          tempo: { type: ["string", "null"] },
+          punti: { type: "number", minimum: 0 },
+        },
+      },
+      GaraConclusa: {
+        allOf: [
+          { $ref: "#/components/schemas/GaraCalendario" },
+          {
+            type: "object",
+            required: ["qualifiche", "gara"],
+            properties: {
+              qualifiche: { type: "array", items: { $ref: "#/components/schemas/RisultatoQualifica" } },
+              gara: { type: "array", items: { $ref: "#/components/schemas/RisultatoGara" } },
+            },
+          },
+        ],
+      },
+      Stagione: {
+        type: "object",
+        required: ["stagione", "prossimi", "passati", "fonte"],
+        properties: {
+          stagione: { type: "integer", const: 2026 },
+          prossimi: { type: "array", items: { $ref: "#/components/schemas/GaraCalendario" } },
+          passati: { type: "array", items: { $ref: "#/components/schemas/GaraConclusa" } },
+          fonte: { $ref: "#/components/schemas/FonteAndamento" },
         },
       },
       MetadatiHome: {

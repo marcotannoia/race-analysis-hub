@@ -5,7 +5,7 @@ JSON. Il contratto eseguibile completo è disponibile in
 [Swagger](https://f1-stats-5v93.onrender.com/api/docs) e come
 [OpenAPI 3.1](https://f1-stats-5v93.onrender.com/api/v1/openapi.json).
 
-La versione applicativa corrente è `1.13.0`. Le integrazioni devono usare
+La versione applicativa corrente è `1.14.0`. Le integrazioni devono usare
 `GET`, `HEAD` o `OPTIONS`; non sono richieste chiavi API. Gli esempi seguenti
 mostrano percorsi relativi, utilizzabili sul dominio pubblico oppure sul backend
 locale `http://127.0.0.1:5002`.
@@ -18,6 +18,9 @@ dettagli soltanto quando servono:
 1. All'avvio chiamare `GET /api/v1/home?lingua=it`. Una sola risposta contiene
    Gran Premio attuale, piloti, scuderie, profilo tecnico del circuito,
    aggiornamenti FIA validati e classifica previsionale.
+   Caricare `GET /api/v1/stagione?lingua=it` soltanto quando l'utente apre
+   prossimi GP o GP passati: contiene calendario futuro e risultati ufficiali
+   Q1, Q2, Q3 e gara della stagione corrente.
 2. Salvare risposta, `ETag`, lingua e data di acquisizione nella cache interna.
    Dopo cinque minuti, o quando l'app torna in primo piano, rivalidare con
    `If-None-Match`. Una risposta `304 Not Modified` mantiene valido il JSON già
@@ -79,6 +82,7 @@ richieste condizionali per riconoscere un payload invariato.
 | `GET` | `/api/v1` | Versione, attribuzioni e indice dell'API |
 | `GET` | `/api/v1/health` | Stato di servizio e database, senza cache |
 | `GET` | `/api/v1/home` | Bootstrap aggregato consigliato per l'app |
+| `GET` | `/api/v1/stagione` | Prossimi GP e risultati Q1/Q2/Q3/gara dei GP conclusi |
 | `GET` | `/api/v1/lingue` | Sei lingue supportate e lingua predefinita |
 | `GET` | `/api/v1/previsioni/piloti` | Sola classifica previsionale |
 | `GET` | `/api/v1/confronti/piloti/{primoPilotaSlug}/{secondoPilotaSlug}` | Due schede pilota complete |

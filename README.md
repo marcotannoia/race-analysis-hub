@@ -7,7 +7,7 @@ The frontend is built with React and Vite, the API with Node.js and Express,
 and MongoDB provides data persistence. The public APIs are anonymous,
 read-only, and documented with Swagger.
 
-The current project and API version is `1.13.0`.
+The current project and API version is `1.14.0`.
 
 The final section of the landing page presents a driver prediction ranking for
 the current Grand Prix only. The model combines 2026 results, form across the
@@ -189,7 +189,7 @@ in [`LICENSE.md`](LICENSE.md) and [`NOTICE.md`](NOTICE.md).
 
 The 2026 standings, 2023–2025 race and qualifying results, and 2026 quantitative
 charts are derived from
-[F1DB v2026.12.0](https://github.com/f1db/f1db/releases/tag/v2026.12.0),
+[F1DB v2026.13.0](https://github.com/f1db/f1db/releases/tag/v2026.13.0),
 distributed under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Race Analysis Hub
 filters and normalises the data. Editorial content is original to the project

@@ -32,6 +32,7 @@ router.get("/", senzaQuery, controller.descrizioneApi);
 router.get("/health", senzaQuery, controller.statoServizio);
 router.get("/lingue", senzaQuery, controller.elencaLingue);
 router.get("/home", senzaQuery, gestisciFunzioneAsincrona(controller.home));
+router.get("/stagione", senzaQuery, controller.stagione);
 router.get(
   "/previsioni/piloti",
   senzaQuery,
