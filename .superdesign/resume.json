@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "targets": {
+    "/piloti/:slug": {
+      "targetKind": "existing-ui",
+      "projectId": "d08d59a2-0adc-464e-b3bd-65bf2ab113b8",
+      "baselineDraftId": "7fec123b-0ab3-4a1a-b824-7eeec075834d",
+      "activeDraftId": "7fec123b-0ab3-4a1a-b824-7eeec075834d",
+      "designSystemPath": ".superdesign/design-system.md",
+      "referenceIds": [
+        "550cd858-bb4e-4310-a566-3110a87cce56",
+        "33217ac0-4963-466c-8779-c9b6030155a3"
+      ],
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "frontend/src/pages/PilotaPage.jsx",
+        "frontend/src/components/IntestazioneDettaglio.jsx",
+        "frontend/src/components/AnalisiCircuito.jsx",
+        "frontend/src/components/GraficoAndamento.jsx",
+        "frontend/src/index.css",
+        "frontend/src/App.css:756:1660",
+        "frontend/src/App.css:2265:2821"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "8e185d499cc813d7639527bb98c647763fd786ff9e310a8bb32440c81db143f4",
+        "frontend/src/pages/PilotaPage.jsx": "e163a940edd3d2d310ed237a48e583340e2dc423495bf91d240d29a7c36a9215",
+        "frontend/src/components/IntestazioneDettaglio.jsx": "fa564ee1eac3dca1e96d3c785b9230a8a1c31e667fd0ea44bb44494aed7ed402",
+        "frontend/src/components/AnalisiCircuito.jsx": "b7b1ea479fc7525b9678e255147a310c0957d54bac9aec5150cfd8bc22a2ae78",
+        "frontend/src/components/GraficoAndamento.jsx": "a1a870b16418a06c02703e0bb3307eda5aa71394ed241c9300ba7119911ba200",
+        "frontend/src/index.css": "64b26a7ee548299c16712556f46544a6e6900aefc87752f080a08013bfa6a4a3",
+        "frontend/src/App.css": "f5e7d77d015ecd1a84dea79692fcb9dc9b27e30409baa875c81eef1b75143c6a"
+      },
+      "components": [
+        {
+          "name": "DetailHeader",
+          "id": "71246713-100a-409a-862a-c23b94f05777",
+          "sourcePath": "frontend/src/components/IntestazioneDettaglio.jsx"
+        },
+        {
+          "name": "Footer",
+          "id": "f15f7305-5d5d-4807-9197-172669af2747",
+          "sourcePath": "frontend/src/components/Footer.jsx"
+        }
+      ],
+      "drafts": {
+        "7fec123b-0ab3-4a1a-b824-7eeec075834d": {
+          "title": "Dettaglio Pilota — Risultati e prestazioni affinati",
+          "visualDirection": "anni sottolineati, prestazioni discorsive e aggiornamenti provvisori espliciti",
+          "currentVersion": 2
+        }
+      },
+      "updatedAt": "2026-08-30T09:10:00Z"
+    }
+  }
+}
