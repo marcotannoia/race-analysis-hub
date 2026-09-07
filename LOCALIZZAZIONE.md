@@ -1,19 +1,19 @@
-# Localizzazione in sei lingue
+# Localization in six languages
 
-Race Analysis Hub pubblica i campi testuali in italiano, inglese, francese,
-portoghese europeo, spagnolo e tedesco. L'italiano è la lingua predefinita.
+Race Analysis Hub publishes textual fields in Italian, English, French,
+European Portuguese, Spanish and German. Italian is the default language.
 
-## Uso delle API
+## Using APIs
 
-Il parametro `lingua` è opzionale e accetta `it`, `en`, `fr`, `pt`, `es` e
+The `lingua` parameter is optional and accepts `it`, `en`, `fr`, `pt`, `es`, and
 `de`:
 
-| Codice API | Catalogo |
+| API Code | Catalog |
 |---|---|
-| `it` | Italiano |
+| `it` | English |
 | `en` | English |
 | `fr` | Français |
-| `pt` | Português, variante `pt-PT` |
+| `pt` | Português, variant `pt-PT` |
 | `es` | Español |
 | `de` | Deutsch |
 
@@ -23,38 +23,38 @@ GET /api/v1/piloti/leclerc?lingua=fr
 GET /api/v1/gare/attuale?lingua=de
 ```
 
-La risposta indica sempre la lingua selezionata nel campo `lingua` e
-nell'header `Content-Language`. L'elenco aggiornato è disponibile con:
+The answer always indicates the language selected in the `lingua` field, and
+in the header `Content-Language`. The updated list is available with:
 
 ```text
 GET /api/v1/lingue
 ```
 
-Se `lingua` è assente viene selezionato `it`. Un valore diverso dai sei codici
-supportati non produce un fallback silenzioso: la risposta è HTTP `400` con
-codice `LINGUA_NON_SUPPORTATA` e l'elenco `lingueSupportate`. Gli altri errori
-v1 vengono localizzati nella lingua valida richiesta.
+If `lingua` is absent, `it` is selected. A value other than the six codes
+does not produce a silent fallback: the response is HTTP `400` with
+code `LINGUA_NON_SUPPORTATA` and the list `lingueSupportate`. The other errors
+v1 are localized to the required valid language.
 
-Slug, codici sportivi, codici ISO, nomi propri, valori numerici e URL restano
-stabili. Vengono localizzati i testi editoriali, le nazionalità, i nomi e le
-descrizioni traducibili dei Gran Premi e i testi della classifica previsionale.
+Slugs, sports codes, ISO codes, proper names, numeric values, and URLs remain
+stable. Editorial texts, nationalities, names and
+translatable descriptions of the Grand Prix and the texts of the forecast standings.
 
-## Selezione nel frontend
+## Selection in the frontend
 
-Il selettore globale mostra il nome nativo e il codice della lingua. Al primo
-accesso usa la prima lingua supportata tra `navigator.languages`; in seguito
-riutilizza la scelta salvata in `localStorage` con chiave `race-hub-lingua`.
-Ogni cambio aggiorna l'attributo `lang` della pagina e ricarica i contenuti
-tramite il parametro API, senza contattare servizi di traduzione esterni.
+The global selector shows the native name and language code. To the first
+Access uses the first supported language among `navigator.languages`; thereafter
+Reuse the saved choice in `localStorage` with `race-hub-lingua` key.
+Each change updates the page's `lang` attribute and reloads the content
+via the API parameter, without contacting external translation services.
 
-## Traduzione amministrativa con Azure F0
+## Administrative translation with Azure F0
 
-Lo script `backend/scripts/generaTraduzioni.py` usa Azure Translator F0 solo
-durante la manutenzione editoriale. La chiave resta in `backend/.env`, escluso
-da Git. Il backend pubblico e il frontend non importano lo script, non leggono
-la chiave e non espongono alcun proxy verso Azure.
+The script `backend/scripts/generaTraduzioni.py` uses Azure Translator F0 only
+during editorial maintenance. The key remains in `backend/.env`, excluding
+from Git. The public backend and frontend don't import the script, they don't read
+and do not expose any proxies to Azure.
 
-Configurazione locale:
+Local configuration:
 
 ```env
 AZURE_TRANSLATOR_KEY=chiave-privata
@@ -62,7 +62,7 @@ AZURE_TRANSLATOR_REGION=global
 AZURE_TRANSLATOR_ENDPOINT=https://api.cognitive.microsofttranslator.com
 ```
 
-Generazione e controlli:
+Generation and controls:
 
 ```bash
 npm run translate-data -- --dry-run
@@ -71,49 +71,49 @@ npm run verify-translations
 npm run verify-data
 ```
 
-Per rigenerare il catalogo applicando glossario e correzioni senza consentire
-alcuna chiamata ad Azure:
+To regenerate the catalog by applying glossary and corrections without allowing
+any calls to Azure:
 
 ```bash
 npm run translate-data -- --rebuild-from-cache --offline
 ```
 
-In modalità `--offline` lo script usa esclusivamente la cache locale. Se manca
-anche un solo segmento, termina con errore prima di creare il client Azure e
-non consuma quota. Per una verifica preventiva non distruttiva si può usare:
+In `--offline` mode, the script uses only the local cache. If it is missing
+even a single segment, ends with error before creating the Azure client, and
+it does not consume altitude. For a non-destructive preventive test, the following can be used:
 
 ```bash
 npm run translate-data -- --rebuild-from-cache --dry-run
 ```
 
-Il riepilogo deve indicare `0 segmenti nuovi` e `0 caratteri`; in caso
-contrario non bisogna eseguire la generazione online senza aver prima valutato
-la quota residua.
+The summary must indicate `0 segmenti nuovi` and `0 caratteri`; in case
+Against the contrary, you should not perform the online generation without first evaluating
+the remaining portion.
 
-La cache amministrativa `backend/.translation-cache/azure.json` viene scritta
-dopo ogni blocco ed è esclusa da Git. Le esecuzioni successive leggono le
-traduzioni già presenti e la cache come memoria: se un testo italiano non è
-cambiato viene riutilizzata la versione approvata; se viene aggiunto o
-modificato, viene tradotto soltanto il nuovo contenuto. Il portoghese richiesto
-ad Azure è `pt-PT`. Il glossario integrato uniforma termini di Formula 1 come
-passo gara, gestione gomme, fondo, undercut, Safety Car e aggiornamenti tecnici.
+Administrative cache `backend/.translation-cache/azure.json` is written
+after each block and is excluded from Git. Subsequent executions read the
+translations already present and the cache as memory: if an Italian text is not
+changed the approved version is reused; if you add or
+modified, only the new content is translated. The Portuguese required
+to Azure is `pt-PT`. The built-in glossary standardizes Formula 1 terms such as
+race pace, tyre management, floor, undercut, Safety Car and technical updates.
 
-Il comando `--dry-run` calcola il consumo senza inviare testo. Lo script pone un
-limite di sicurezza inferiore ai due milioni di caratteri F0, usa blocchi
-piccoli, limita la velocità e non stampa mai la chiave.
+The `--dry-run` command calculates the consumption without sending text. The script places a
+security limit less than two million characters F0, use blocks
+small, limits the speed and never prints the key.
 
-Prima della pubblicazione bisogna comunque leggere le nuove traduzioni nel
-contesto, controllare nomi, anni, posizioni `P`/`Q`, acronimi e terminologia
-tecnica. I controlli automatici verificano completezza, struttura e codici, ma
-non sostituiscono la revisione editoriale del significato.
+Before publication, however, you must read the new translations in the
+context, check names, years, `P`/`Q` positions, acronyms and terminology
+technical technology. Automatic checks check completeness, structure and codes, but
+they are not a substitute for editorial revision of meaning.
 
-Per la release `1.11.0` la revisione contestuale comprende anche la nuova prosa
-di Gestione gomme e Passo gara, le etichette del calendario e delle
-caratteristiche del circuito e lo stato degli aggiornamenti non ufficiali. Le
-cinque traduzioni straniere devono conservare gli stessi anni, risultati,
-posizioni, punti e livelli di certezza del testo italiano.
+For the release `1.11.0` contextual revision also includes the new prose
+Tyre Management and Race Pace, Calendar and Race Pace labels
+characteristics of the circuit and the status of unofficial updates. The
+five foreign translations must keep the same years, results,
+positions, points and levels of certainty of the Italian text.
 
-Il controllo completo locale, senza consumo Azure, è:
+Full local control, without Azure consumption, is:
 
 ```bash
 npm run translate-data -- --rebuild-from-cache --offline
@@ -125,27 +125,27 @@ npm run lint
 npm run build
 ```
 
-Se le traduzioni sono state revisionate e salvate manualmente nel catalogo,
-eseguire anche `npm run translate-data -- --dry-run`: il riepilogo deve indicare
-`0 segmenti nuovi` e `0 caratteri`, senza inviare richieste ad Azure.
+If the translations have been manually reviewed and saved in the catalog,
+Also run `npm run translate-data -- --dry-run`: the summary must indicate
+`0 segmenti nuovi` and `0 caratteri`, without sending requests to Azure.
 
-## Aggiornamento del database ufficiale
+## Official Database Update
 
-Dopo aver approvato le traduzioni:
+After approving the translations:
 
 ```bash
 npm --prefix backend run seed
 npm run verify-db
 ```
 
-Il seed aggiorna il database indicato da `backend/.env`. Il push su GitHub non
-aggiorna MongoDB e il seed non deve essere eseguito senza aver verificato la
-destinazione di `MONGO_URL`.
+The seed updates the database indicated by `backend/.env`. Push to GitHub does not
+updates MongoDB and the seed should not be run without verifying the
+destination of `MONGO_URL`.
 
-## Anteprima locale isolata
+## Isolated local preview
 
-Prima di approvare o pubblicare un catalogo, avviare i due progetti in terminali
-separati:
+Before you approve or publish a catalog, start the two projects in terminals
+separated:
 
 ```bash
 cd backend
@@ -157,23 +157,23 @@ cd frontend
 npm run dev
 ```
 
-Il comando di sviluppo del backend ignora intenzionalmente il collegamento
-Atlas e crea un MongoDB temporaneo in memoria. Importa ogni volta
-`backend/data/dati-iniziali.json`, quindi il selettore del frontend mostra la
-versione locale esatta che verrebbe successivamente pubblicata. Arrestando il
-backend, il database temporaneo viene eliminato. Il comando `npm start` non usa
-questa modalità e conserva il comportamento di produzione.
+Backend development command intentionally ignores the link
+Atlas and creates a temporary MongoDB in memory. Import every time
+`backend/data/dati-iniziali.json`, then the frontend selector shows the
+exact local version that would later be published. By arresting the
+backend, the dial tone database is deleted. The `npm start` command does not use
+this mode and preserves the production behavior.
 
-## Testi personalizzati dai riutilizzatori
+## Texts customized by reusers
 
-Le API ufficiali sono di sola lettura. Se un'azienda modifica nel proprio
-software `aggiornamentiInArrivo` o un altro campo, sta creando una propria
-versione del contenuto: questa modifica non può corrompere le traduzioni nel
-database ufficiale.
+Official APIs are read-only. If a company changes in its
+software `aggiornamentiInArrivo` or another field, is creating its own
+Content version: This change cannot corrupt translations in the
+Official database.
 
-Per mantenere sincronizzate le proprie sei versioni, il riutilizzatore può
-salvare il testo italiano e le traduzioni nel proprio database e applicare lo
-stesso schema di memoria di traduzione. Quando cambia il testo sorgente deve
-marcare le vecchie traduzioni come da aggiornare, rigenerarle localmente e
-approvarle prima di pubblicarle. Le modifiche distribuite devono essere
-dichiarate e devono rispettare le attribuzioni di `LICENSE.md` e `NOTICE.md`.
+To keep their six versions in sync, the reuser can
+save the Italian text and translations in your database and apply the
+same translation memory scheme. When the source text changes, it must
+mark old translations as updating, regenerate them locally, and
+approve them before publishing them. Distributed changes must be
+declared and must comply with the powers of `LICENSE.md` and `NOTICE.md`.

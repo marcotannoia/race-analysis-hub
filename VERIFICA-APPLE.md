@@ -1,29 +1,29 @@
-# Verifica licenze e rimozione FIA — 4 settembre 2026
+# FIA License Verification and Removal — September 4, 2026
 
-## Esito
-Le licenze esaminate non presentano un divieto di distribuzione nell’App Store. Questo non certifica i diritti su tutti i contenuti o l’approvazione Apple.
+## Outcome
+The licenses reviewed do not have a ban on distribution in the App Store. This does not certify the rights to all content or Apple approval.
 
-- BBH Bartle e Bungee Hairline: SIL OFL 1.1; testi locali confrontati con Google Fonts, uguali normalizzando le terminazioni di riga. Licenze presenti nelle risorse native. Varianti rinominate FantaStats.
-- CircuitLayouts: testo MIT locale coincidente con bacinger/f1-circuits. Copre il contributo del repository, non garantisce eventuali diritti ulteriori sulle sagome.
-- F1DB: CC BY 4.0, autore, licenza e modifiche attribuiti in NOTICE.md e nei crediti nativi. Non concede automaticamente marchi o diritti esterni alla licenza.
-- Dipendenze backend: precedente censimento di 108 pacchetti non-dev con licenze permissive; lockfile non modificato in questo rilascio.
-- FIA: rimosse le sezioni web e native; API home restituisce sempre aggiornamentiLive=null; monitor automatico non avviato dal server. Documenti storici non cancellati; parser storico non eseguito dal server.
+- BBH Bartle and Bungee Hairline: SIL OFL 1.1; local texts compared with Google Fonts, same normalizing line endings. Licenses present in native resources. Variants renamed FantaStats.
+- CircuitLayouts: local MIT text coincident with bacinger/f1-circuits. It covers the repository's contribution, it does not guarantee any additional rights to the templates.
+- F1DB: CC BY 4.0, author, license, and modifications attributed in native NOTICE.md and credits. It does not automatically grant trademarks or rights outside the license.
+- Backend dependencies: previous census of 108 non-dev packages with permissive licenses; lockfile not changed in this release.
+- FIA: removed web and native sections; home API always returns updatesLive=null; automatic monitor not started by the server. Historical documents not deleted; historical parser not executed by the server.
 
-## Esito aggiornato dopo il chiarimento dell’autore
+## Outcome updated after author's clarification
 
-Marco Tannoia dichiara di non avere copiato dati o testi da altri siti e di avere utilizzato F1DB come fonte dei dati. L’originalità dei testi è una dichiarazione dell’autore, non il risultato di un confronto antiplagio completo. I collegamenti bibliografici presenti nel progetto non sono, da soli, prova di riproduzione di contenuti protetti.
+Marco Tannoia declares that he has not copied data or texts from other sites and that he has used F1DB as a source of data. The originality of the texts is a declaration of the author, not the result of a complete anti-plagiarism comparison. The bibliographic links in the project are not, by themselves, proof of reproduction of protected content.
 
-Il codice distingue risultati/classifiche F1DB da indici e valutazioni editoriali. Sono inoltre presenti planimetrie derivate da bacinger/f1-circuits, licenziate MIT, e font OFL: pertanto “solo F1DB” riguarda i dati dichiarati dall’autore, non tutte le risorse dell’app.
+The code distinguishes F1DB results/rankings from indexes and editorial evaluations. There are also floor plans derived from bacinger/f1-circuits, MIT licensed, and OFL fonts: therefore "F1DB only" concerns the data declared by the author, not all the resources of the app.
 
-Ricontrollati: 2376 risultati storici, 34 classifiche e 12 GP 2026 coincidenti con F1DB v2026.12.0 tramite verify-data; licenze locali dei due font e dei tracciati coincidenti con gli originali; crediti nativi con autore F1DB, collegamento, CC BY 4.0 e indicazione delle modifiche; API pubblica senza rapporto FIA. Il controllo di qualità non prova la provenienza di ogni campo editoriale e non verifica l’intero database cloud.
+Rechecked: 2376 historical results, 34 rankings and 12 GP 2026 coinciding with F1DB v2026.12.0 via verify-data; local licenses of the two fonts and tracks coinciding with the originals; native credits with F1DB author, link, CC BY 4.0 and indication of changes; public API without FIA report. Quality control does not prove the origin of each editorial field and does not verify the entire cloud database.
 
-**Esito tecnico-documentale: nessuna incompatibilità concreta di licenza individuata per i componenti controllati. Sulla base delle licenze esaminate e della dichiarazione dell’autore, è ragionevole procedere con la dichiarazione di utilizzo di contenuti terzi con i diritti necessari.** La precedente conclusione di non procedere basata sulla sola assenza di prova globale dei diritti è superata da questo esito circoscritto. Le esclusioni generiche di garanzia nelle licenze non sono di per sé prova di una violazione. Non è una garanzia di approvazione Apple né una certificazione di ogni possibile diritto di terzi.
+**Technical and documentary outcome: No concrete license incompatibilities identified for the controlled components. Based on the examined licenses and the author's statement, it is reasonable to proceed with the declaration of use of third-party content with the necessary rights.** The previous conclusion not to proceed based solely on the absence of global proof of rights is outweighed by this limited outcome. Generic warranty exclusions in licenses are not in themselves proof of infringement. It is not a guarantee of Apple approval or a certification of every possible right of third parties.
 
-## Azioni del titolare prima dell’invio
+## Actions of the owner before sending
 
-1. Creare e caricare un nuovo archivio iPhone, mantenendo crediti, licenze e rimozione del rapporto FIA. Verificare queste risorse nell’archivio effettivamente inviato: finora è stato verificato il bundle per simulatore.
-2. In Diritti sui contenuti scegliere la voce affermativa relativa ai contenuti terzi e ai diritti necessari, coerentemente con la dichiarazione dell’autore e con le risorse licenziate. Non scegliere “non contiene contenuti di terzi”.
-3. Conservare licenze e riferimenti della versione F1DB utilizzata. Non serve chiedere una seconda autorizzazione per gli usi già concessi dalla CC BY 4.0, MIT e OFL rispettandone le condizioni.
-4. Usare screenshot della build finale. Privacy e altri requisiti App Store sono controlli separati e non risultano certificati da questa verifica dei diritti.
+1. Create and upload a new iPhone archive, keeping credits, licenses and removal of the FIA report. Verify these resources in the archive actually sent: so far the simulator bundle has been verified.
+2. Under Content Rights, choose the affirmative entry for third-party content and necessary rights, consistent with the author's statement and licensed assets. Don't choose "does not contain third-party content."
+3. Keep licenses and references of the F1DB version used. There is no need to ask for a second authorization for uses already granted by CC BY 4.0, MIT and OFL respecting the conditions.
+4. Use screenshots of the final build. Privacy and other App Store requirements are separate controls and are not certified by this rights check.
 
-Riferimenti: https://developer.apple.com/app-store/review/guidelines/#intellectual-property ; https://github.com/f1db/f1db/blob/main/LICENSE ; https://github.com/bacinger/f1-circuits/blob/master/LICENSE.md ; https://openfontlicense.org
+References: https://developer.apple.com/app-store/review/guidelines/#intellectual-property ; https://github.com/f1db/f1db/blob/main/LICENSE ; https://github.com/bacinger/f1-circuits/blob/master/LICENSE.md ; https://openfontlicense.org

@@ -1,71 +1,71 @@
-# Licenza mista
+# Mixed License
 
 Copyright © 2026 Marco Tannoia.
 
-## Codice sorgente
+## Source code
 
-Il codice sorgente e gli altri file del repository che non costituiscono
-risposte pubbliche delle API sono protetti da copyright. Tutti i diritti sono
-riservati: non è concessa alcuna licenza di copia, modifica, redistribuzione o
-uso commerciale senza autorizzazione scritta del titolare.
+The source code and other files in the repository that do not constitute
+public API responses are copyrighted. All rights are
+Confidential: No license is granted to copy, modify, redistribute or
+commercial use without the written permission of the owner.
 
-## Risposte pubbliche delle API
+## Public API Responses
 
-Le risposte JSON ottenute dall'API pubblica `/api/v1`, compresi i contenuti
-editoriali originali restituiti nei diversi campi, sono messe a disposizione da
-Race Analysis Hub — Marco Tannoia con licenza
+JSON responses obtained from the public API `/api/v1`, including content
+original editorials returned in the various fields, are made available by
+Race Analysis Hub — Marco Tannoia with license
 [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
-(CC BY 4.0), salvo dove sia indicata una fonte o una licenza differente.
-Questo comprende anche l'indice, i fattori e le spiegazioni della classifica
-previsionale restituita dalla home, fermo restando che si tratta di stime
-soggette a errore e non di risultati ufficiali.
+(CC BY 4.0), unless a different source or license is indicated.
+This also includes the index, factors and explanations of the ranking
+forecast returned by the homepage, it being understood that these are estimates
+subject to error and not official results.
 
-La stessa licenza sulle risposte si applica alle traduzioni pubblicate. Il
-servizio usato per assisterne la generazione non modifica la licenza dei
-contenuti; i dettagli tecnici sono riportati in `NOTICE.md`.
+The same Answer License applies to published translations. The
+service used to assist in generating it does not change the license of the
+contents; technical details are reported in `NOTICE.md`.
 
-Questa licenza permette a chi utilizza le API di copiare, mostrare, distribuire
-e modificare le risposte nel proprio software, anche per finalità commerciali.
-È quindi consentito, per esempio, riscrivere nel software del riutilizzatore il
-contenuto del campo `aggiornamentiInArrivo`. La modifica riguarda soltanto la
-copia gestita dal riutilizzatore e non aggiorna il database o le API ufficiali
-di Race Analysis Hub, che restano di sola lettura.
+This license allows those who use the APIs to copy, display, distribute
+and modify the answers in their software, including for commercial purposes.
+It is therefore allowed, for example, to rewrite the
+content of the `aggiornamentiInArrivo` field. The change only affects the
+copy managed by the reuser and does not update the database or official APIs
+of Race Analysis Hub, which remain read-only.
 
-Quando le risposte, originali o modificate, vengono condivise o mostrate
-pubblicamente, il riutilizzatore deve:
+When replies, whether original or edited, are shared or shown
+Publicly, the re-user must:
 
-- attribuire il contenuto a `Race Analysis Hub — Marco Tannoia`, possibilmente
-  collegando `https://www.race-analysis-hub.it`;
-- indicare la licenza CC BY 4.0 e, ove ragionevolmente possibile, collegare
-  `https://creativecommons.org/licenses/by/4.0/`;
-- dichiarare chiaramente se il contenuto è stato modificato;
-- non suggerire che Race Analysis Hub, Marco Tannoia, F1DB o altri soggetti
-  citati approvino il riutilizzatore o le modifiche effettuate.
+- attribute the content to `Race Analysis Hub — Marco Tannoia`, possibly
+connecting `https://www.race-analysis-hub.it`;
+- indicate the CC BY 4.0 license and, where reasonably possible, link
+`https://creativecommons.org/licenses/by/4.0/`;
+- clearly state whether the content has been modified;
+- not suggest that Race Analysis Hub, Marco Tannoia, F1DB or other parties
+approved by the re-user or the changes made.
 
-Esempio sintetico per un contenuto modificato:
+Concise example for modified content:
 
-> Contenuto adattato da Race Analysis Hub — dati quantitativi derivati da F1DB
-> v2026.12.0 — modifiche del riutilizzatore — CC BY 4.0.
+> Content adapted from Race Analysis Hub — quantitative data derived from F1DB
+> v2026.12.0 — reuser changes — CC BY 4.0.
 
-## Dati derivati da F1DB
+## Data derived from F1DB
 
-Le classifiche, i risultati quantitativi e gli altri dati identificati in
-`NOTICE.md` derivano da F1DB e restano soggetti alla licenza CC BY 4.0 e alle
-attribuzioni riportate nello stesso avviso. Il riutilizzatore deve conservare
-anche l'attribuzione a F1DB, il collegamento alla licenza e l'indicazione delle
-trasformazioni o delle ulteriori modifiche effettuate.
+The rankings, quantitative results and other data identified in
+`NOTICE.md` derive from F1DB and remain subject to the CC BY 4.0 license and the
+attributions set out in the same notice. The re-user must keep
+also the attribution to F1DB, the link to the license and the indication of the
+transformations or further changes made.
 
-## Identificativi anagrafici e colori
+## Personal identifiers and colors
 
-La provenienza e la natura dei codici ISO, dei numeri vettura, dei codici
-sportivi e dei colori identificativi delle scuderie sono descritte in
-`NOTICE.md`. La presente licenza non attribuisce diritti sui nomi, marchi o
-altri elementi appartenenti a Formula 1, FIA, scuderie, piloti o terzi.
+The origin and nature of ISO codes, vehicle numbers,
+and the identifying colours of the teams are described in
+`NOTICE.md`. This license does not confer any rights to the names, trademarks, or
+other elements belonging to Formula 1, FIA, teams, drivers or third parties.
 
-## Esclusioni e assenza di garanzie
+## Exclusions and No Warranties
 
-Questa licenza non concede diritti sui marchi, sui loghi o sui contenuti di
-terzi e non concede accesso in scrittura al database ufficiale. Le risposte sono
-fornite così come disponibili, senza garanzie di continuità, accuratezza o
-idoneità per uno scopo specifico. Eventuali livelli di servizio, supporto o
-accessi differenti devono essere concordati separatamente.
+This license does not grant you any rights to the trademarks, logos, or content of
+third parties and does not grant write access to the official database. The answers are
+provided as available, without warranty of continuity, accuracy or
+fitness for a specific purpose. Any levels of service, support, or
+different accesses must be agreed separately.

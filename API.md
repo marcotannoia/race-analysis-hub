@@ -1,123 +1,123 @@
-# Guida all'API pubblica
+# Public API Guide
 
-L'API v1 di Race Analysis Hub è pubblica, anonima, di sola lettura e restituisce
-JSON. Il contratto eseguibile completo è disponibile in
-[Swagger](https://f1-stats-5v93.onrender.com/api/docs) e come
-[OpenAPI 3.1](https://f1-stats-5v93.onrender.com/api/v1/openapi.json).
+The Race Analysis Hub v1 API is public, anonymous, read-only, and returns
+JSON. The full executable contract is available at
+[Swagger](https://f1-stats-5v93.onrender.com/api/docs) and the
+[OpenAPI 3.1 specification](https://f1-stats-5v93.onrender.com/api/v1/openapi.json).
 
-La versione applicativa corrente è `1.14.0`. Le integrazioni devono usare
-`GET`, `HEAD` o `OPTIONS`; non sono richieste chiavi API. Gli esempi seguenti
-mostrano percorsi relativi, utilizzabili sul dominio pubblico oppure sul backend
-locale `http://127.0.0.1:5002`.
+The current application version is `1.14.0`. Integrations must use
+`GET`, `HEAD`, or `OPTIONS`; no API keys are required. The following examples
+show relative paths, which can be used on the public domain or on the backend
+local `http://127.0.0.1:5002`.
 
-## Strategia consigliata per l'app
+## Recommended app strategy
 
-Per contenere il numero di richieste, usare gli endpoint aggregati e caricare i
-dettagli soltanto quando servono:
+To contain the number of requests, use aggregated endpoints and load
+Details only when needed:
 
-1. All'avvio chiamare `GET /api/v1/home?lingua=it`. Una sola risposta contiene
-   Gran Premio attuale, piloti, scuderie, profilo tecnico del circuito,
-   aggiornamenti FIA validati e classifica previsionale.
-   Caricare `GET /api/v1/stagione?lingua=it` soltanto quando l'utente apre
-   prossimi GP o GP passati: contiene calendario futuro e risultati ufficiali
-   Q1, Q2, Q3 e gara della stagione corrente.
-2. Salvare risposta, `ETag`, lingua e data di acquisizione nella cache interna.
-   Dopo cinque minuti, o quando l'app torna in primo piano, rivalidare con
-   `If-None-Match`. Una risposta `304 Not Modified` mantiene valido il JSON già
-   salvato e non trasferisce nuovamente il corpo.
-3. Chiamare una scheda pilota o scuderia soltanto quando l'utente la apre. Usare
-   gli endpoint di confronto per ottenere due schede complete con una sola
-   richiesta.
-4. Per tutte le analisi del GP usare il dettaglio gara aggregato, non una
-   richiesta separata per ogni pilota e scuderia.
-5. Svuotare o separare la cache quando cambia `lingua`; rivalidarla quando
-   cambia `versione` o lo slug `garaAttuale.slug`.
+1. At startup, call `GET /api/v1/home?lingua=it`. Only one response contains
+Current Grand Prix, drivers, teams, technical profile of the circuit,
+validated FIA updates and forecast ranking.
+Load `GET /api/v1/stagione?lingua=it` only when the user opens
+Upcoming GPs or past GPs: contains future calendar and official results
+Q1, Q2, Q3 and race of the current season.
+2. Save the answer, `ETag`, language, and acquisition date to the internal cache.
+After five minutes, or when the app returns to the foreground, revalidate with
+`If-None-Match`. A response `304 Not Modified` keeps the JSON already valid
+saved and does not transfer the body again.
+3. Call a driver or team card only when the user opens it. Use
+the comparison endpoints to get two complete cards with one
+request.
+4. For all GP analysis, use the aggregate race detail, not a
+separate request for each driver and team.
+5. Clear or separate the cache when it changes `lingua`; revalidate it when
+Change `versione` or the slug `garaAttuale.slug`.
 
-Non è utile richiamare `/previsioni/piloti` subito dopo `/home`, perché la stessa
-classifica è già inclusa nella home. Analogamente, gli elenchi `/piloti` e
-`/scuderie` servono solo alle viste che desiderano quel sottoinsieme isolato.
-L'endpoint `/health` è destinato al monitoraggio operativo e non al polling
-dell'interfaccia.
+It is not useful to call `/previsioni/piloti` immediately after `/home`, because the same
+is already included in the Home. Similarly, the `/piloti` and
+`/scuderie` only serve the views that want that isolated subset.
+The `/health` endpoint is intended for operational monitoring and not polling
+of the interface.
 
-`/home` descrive lo schieramento del GP attuale e può quindi differire dalle
-associazioni stagionali del catalogo: a Monza 2026 contiene 22 partecipanti,
-con Lawson in Red Bull e Tsunoda in Racing Bulls. `/piloti` contiene invece i
-23 piloti registrati nella stagione, compreso Hadjar. La sostituzione è salvata
-nell'analisi dell'evento e non modifica la struttura del database né i profili
-usati dagli altri GP. Nelle schede, `indicatori` può essere `null` finché non è
-disponibile un set completo di fonti validate; lo stesso vale per l'aggregato
-di una scuderia se uno dei piloti schierati non ha ancora tali indicatori.
+`/home` describes the current GP grid and may therefore differ from the
+seasonal associations of the catalogue: at Monza 2026 it contains 22 participants,
+with Lawson in Red Bull and Tsunoda in Racing Bulls. `/piloti` contains the
+23 drivers registered in the season, including Hadjar. Replacement is saved
+in the analysis of the event and does not change the database structure or profiles
+used by the other GPs. In the cards, `indicatori` can be `null` until it is
+a complete set of validated sources is available; the same applies to the aggregate
+of a team if one of the drivers lined up does not yet have such indicators.
 
-## Cache e limite richieste
+## Cache and Request Limit
 
-Le risposte `2xx` espongono:
+The answers `2xx` explain:
 
 - `Cache-Control: public, max-age=60, s-maxage=300, stale-while-revalidate=60`;
-- `ETag`, da conservare e reinviare con `If-None-Match`;
-- `X-App-Cache: MISS|HIT|COALESCED`, relativo alla cache del backend;
-- `Content-Language`, che identifica il catalogo effettivamente usato;
-- `RateLimit` e `RateLimit-Policy`, con lo stato del limite applicato.
+- `ETag`, to be kept and returned with `If-None-Match`;
+- `X-App-Cache: MISS|HIT|COALESCED`, relating to the backend cache;
+- `Content-Language`, which identifies the catalog actually used;
+- `RateLimit` and `RateLimit-Policy`, with the boundary state applied.
 
-La cache applicativa del backend considera equivalenti una richiesta senza
-`lingua` e la stessa richiesta con `?lingua=it`. CloudFront conserva invece
-tutte le query nella propria chiave affinché i parametri non ammessi arrivino
-alla validazione. Errori e health check usano `Cache-Control: no-store`.
+The backend's application cache considers a request without
+`lingua` is the same request with `?lingua=it`. CloudFront retains
+all queries in their own key for the bad parameters to arrive
+to validation. Errors and health checks use `Cache-Control: no-store`.
 
-Il limite predefinito è di 1.000 richieste ogni 15 minuti per indirizzo IP. Se
-un backend esterno sincronizza i dati e li distribuisce dalla propria cache, il
-numero dei suoi utenti non moltiplica le chiamate a Race Analysis Hub: incidono
-la frequenza di sincronizzazione e gli endpoint scelti. In caso di `429`, non
-eseguire tentativi ravvicinati e rispettare gli header del rate limit.
+The default limit is 1,000 requests per 15 minutes per IP address. If
+An external backend synchronizes the data and distributes it from its own cache, the
+number of its users does not multiply calls to Race Analysis Hub:
+the synchronization frequency and endpoints you choose. If you `429`, don't
+Perform close attempts and respect the rate limit headers.
 
-Le risposte non espongono una data generica di ultimo aggiornamento, perché
-classifiche, analisi editoriali, grafici e documenti FIA hanno cicli distinti.
-Per evitare sovrascritture parziali, un sincronizzatore deve sostituire la
-propria copia soltanto dopo una risposta completa e valida; può usare `ETag` e
-richieste condizionali per riconoscere un payload invariato.
+The answers do not display a generic date of last update, because
+Rankings, editorial analysis, charts and FIA documents have distinct cycles.
+To avoid partial overwrites, a synchronizer must replace the
+copy only after a complete and valid answer; may use `ETag` and
+conditional requests to acknowledge an unchanged payload.
 
-## Catalogo endpoint v1
+## Endpoint Catalog v1
 
-| Metodo | Endpoint | Uso principale |
+| Method | Endpoint | Main Use |
 |---|---|---|
-| `GET` | `/api/v1` | Versione, attribuzioni e indice dell'API |
-| `GET` | `/api/v1/health` | Stato di servizio e database, senza cache |
-| `GET` | `/api/v1/home` | Bootstrap aggregato consigliato per l'app |
-| `GET` | `/api/v1/stagione` | Prossimi GP e risultati Q1/Q2/Q3/gara dei GP conclusi |
-| `GET` | `/api/v1/lingue` | Sei lingue supportate e lingua predefinita |
-| `GET` | `/api/v1/previsioni/piloti` | Sola classifica previsionale |
-| `GET` | `/api/v1/confronti/piloti/{primoPilotaSlug}/{secondoPilotaSlug}` | Due schede pilota complete |
-| `GET` | `/api/v1/confronti/scuderie/{primaScuderiaSlug}/{secondaScuderiaSlug}` | Due schede scuderia complete |
-| `GET` | `/api/v1/piloti` | Catalogo stagionale dei piloti |
-| `GET` | `/api/v1/piloti/{pilotaSlug}` | Profilo, indicatori, analisi e andamento di un pilota |
-| `GET` | `/api/v1/scuderie` | Elenco delle scuderie |
-| `GET` | `/api/v1/scuderie/{scuderiaSlug}` | Profilo, piloti, indicatori e analisi di una scuderia |
-| `GET` | `/api/v1/gare` | Elenco limitato al solo GP attuale |
-| `GET` | `/api/v1/gare/attuale` | Dati completi del GP attuale |
-| `GET` | `/api/v1/gare/{garaSlug}` | GP attuale con tutte le analisi piloti e scuderie |
-| `GET` | `/api/v1/classifiche/piloti` | Classifica piloti 2026 |
-| `GET` | `/api/v1/classifiche/scuderie` | Classifica scuderie 2026 |
-| `GET` | `/api/v1/gare/{garaSlug}/piloti/{pilotaSlug}/analisi` | Singola analisi pilota del GP attuale |
-| `GET` | `/api/v1/gare/{garaSlug}/scuderie/{scuderiaSlug}/analisi` | Singola analisi scuderia del GP attuale |
+| `GET` | `/api/v1` | API version, attributions, and index |
+| `GET` | `/api/v1/health` | Service and database status, no cache |
+| `GET` | `/api/v1/home` | Aggregate bootstrap recommended for your app |
+| `GET` | `/api/v1/stagione` | Upcoming GPs & Q1/Q2/Q3 Results/Race of Finished GPs |
+| `GET` | `/api/v1/lingue` | Six supported languages and default language |
+| `GET` | `/api/v1/previsioni/piloti` | Forecast ranking only |
+| `GET` | `/api/v1/confronti/piloti/{primoPilotaSlug}/{secondoPilotaSlug}` | Two complete pilot boards |
+| `GET` | `/api/v1/confronti/scuderie/{primaScuderiaSlug}/{secondaScuderiaSlug}` | Two complete team cards |
+| `GET` | `/api/v1/piloti` | Seasonal Driver Catalog |
+| `GET` | `/api/v1/piloti/{pilotaSlug}` | Profile, indicators, analysis and performance of a pilot |
+| `GET` | `/api/v1/scuderie` | List of teams |
+| `GET` | `/api/v1/scuderie/{scuderiaSlug}` | Team Profile, Drivers, Gauges & Analysis |
+| `GET` | `/api/v1/gare` | List limited to the current GP only |
+| `GET` | `/api/v1/gare/attuale` | Full data of the current GP |
+| `GET` | `/api/v1/gare/{garaSlug}` | Current GP with all driver and team analysis |
+| `GET` | `/api/v1/classifiche/piloti` | 2026 Drivers' Standings |
+| `GET` | `/api/v1/classifiche/scuderie` | Team standings 2026 |
+| `GET` | `/api/v1/gare/{garaSlug}/piloti/{pilotaSlug}/analisi` | Single driver analysis of the current GP |
+| `GET` | `/api/v1/gare/{garaSlug}/scuderie/{scuderiaSlug}/analisi` | Single team analysis of the current GP |
 
-Tutti gli endpoint accettano soltanto la query opzionale
-`?lingua=it|en|fr|pt|es|de`. Il portoghese usa la variante europea `pt-PT`,
-esposta con il codice API `pt`. Slug e query non validi restituiscono `400`; una
-risorsa assente o una gara diversa da quella attuale restituisce `404`.
+All endpoints accept only the optional query
+`?lingua=it|en|fr|pt|es|de`. Portuguese uses the European variant `pt-PT`,
+exposed with API code `pt`. Invalid slugs and queries return `400`; a
+absent resource or a race different from the current one returns `404`.
 
-I testi `circuitoTecnico.caratteristiche`, `circuitoTecnico.metodo` e
-`profiloTecnico.metodo` seguono la lingua richiesta anche nella home e nei
-confronti scuderie. I codici tecnici (`dimensione`, `direzione`, `tipologia`,
-`livelloCarico`, `stressFreni`, `stressGomme`) restano identificatori stabili:
-il client li visualizza usando il proprio dizionario. Numeri, indici e fonti
-non cambiano con la lingua.
+The texts `circuitoTecnico.caratteristiche`, `circuitoTecnico.metodo` and
+`profiloTecnico.metodo` also follow the required language in the home page and in the
+Team comparisons. Technical codes (`dimensione`, `direzione`, `tipologia`,
+`livelloCarico`, `stressFreni`, `stressGomme`) remain stable identifiers:
+The client displays them using its own dictionary. Numbers, indexes, and sources
+they do not change with language.
 
-I testi tecnici sono versionati in `backend/i18n/profiliTecnici.json`, con
-l’italiano nei cataloghi tecnici originali. Non sono documenti MongoDB:
-`verify-db` verifica i dati persistiti, mentre `verify-translations` controlla
-anche la copertura dei testi tecnici per tutti i 12 circuiti e le sei lingue.
-Una modifica di questi testi richiede il rilascio API, senza un nuovo seed.
+The technical texts are `backend/i18n/profiliTecnici.json` versioned, with
+Italian in the original technical catalogs. The following are not MongoDB documents:
+`verify-db` verifies the persisted data, while `verify-translations` checks
+also the coverage of technical texts for all 12 circuits and six languages.
+A change in these texts requires API release, without a new seed.
 
-## Esempio di rivalidazione
+## Revalidation Example
 
 ```http
 GET /api/v1/home?lingua=it HTTP/1.1
@@ -125,15 +125,15 @@ Accept: application/json
 If-None-Match: W/"etag-salvato-dall-app"
 ```
 
-Con `200 OK` l'app sostituisce corpo ed `ETag` in cache. Con
-`304 Not Modified` conserva il corpo precedente. Ogni cache deve distinguere
-almeno endpoint, parametri di percorso e lingua; non riutilizzare una risposta
-italiana per una richiesta in un'altra lingua.
+With `200 OK`, the app replaces cached body and `ETag`. With
+`304 Not Modified` retains the previous body. Each cache must distinguish
+at least endpoints, path parameters, and language; do not reuse a response
+Italian for a request in another language.
 
-## Errori
+## Errors
 
-Gli errori v1 hanno una forma stabile e includono `requestId`, utile per
-l'assistenza:
+v1 errors have a stable form and include `requestId`, which is useful for
+Assistance:
 
 ```json
 {
@@ -145,23 +145,23 @@ l'assistenza:
 }
 ```
 
-Le risposte pubbliche sono riutilizzabili alle condizioni descritte in
-[`LICENSE.md`](LICENSE.md) e [`NOTICE.md`](NOTICE.md).
+Public responses are reusable under the conditions described in
+[`LICENSE.md`](LICENSE.md) and [`NOTICE.md`](NOTICE.md).
 
-### Rimozione rapporto live FIA — 4 settembre 2026
+### FIA Live Report Removal — September 4, 2026
 
-Il rapporto live FIA non viene più mostrato sul sito e nell’app aggiornata. Il campo `aggiornamentiLive` della home è mantenuto per compatibilità ma restituisce sempre `null`, anche con documenti storici nel database. Il server non avvia più il monitor automatico FIA. I dati storici non sono cancellati; restano i profili tecnici e le relative fonti. Questa rimozione non costituisce una verifica dei diritti sulle altre fonti.
+The FIA live report is no longer shown on the website and in the updated app. The `aggiornamentiLive` field of the home page is kept for compatibility but always returns `null`, even with historical documents in the database. The server no longer starts the FIA automatic monitor. Historical data is not deleted; the technical profiles and their sources remain. This removal does not constitute a verification of the rights on the other sources.
 
-### Overall tecnici — revisione 6 settembre 2026
+### Technical Overall — revised September 6, 2026
 
-Il fattore previsionale `compatibilitaVetturaCircuito` usa ora la stessa media delle dieci capacità 0–100, ponderata sulle richieste della pista, esposta in `profiloTecnico.compatibilita` del circuito. Il peso è 60% prima dell'eventuale penalità. Se manca il profilo della squadra o del circuito si mantiene il calcolo precedente basato su classifica ed etichetta editoriale.
+The forecast factor `compatibilitaVetturaCircuito` now uses the same average of the ten 0–100 capacities, weighted on the demands of the track, shown in the `profiloTecnico.compatibilita` of the circuit. The weight is 60% before any penalty. If the team or circuit profile is missing, the previous calculation based on ranking and editorial label is maintained.
 
-Le capacità sono stime editoriali, non misure telemetriche. Metodo, data e motivazioni sono in `backend/data/profili-tecnici-2026.json`; il riepilogo è in `backend/data/revisione-overall-2026-09-06.md`. La revisione incorpora informazioni del weekend di Monza e non costituisce un backtest della previsione precedente alla gara. La maggiore accuratezza deve essere verificata su gare successive.
+Capabilities are editorial estimates, not telemetry measurements. Method, date and rationale are in `backend/data/profili-tecnici-2026.json`; summary is in `backend/data/revisione-overall-2026-09-06.md`. The review incorporates information from the Monza weekend and does not constitute a backtest of the pre-race prediction. The increased accuracy must be verified on subsequent races.
 
-I sette pesi ordinari sono: compatibilità 60%, qualifica 3%, storico personale 3%, aggiornamenti pertinenti 7%, andamento pilota 2026 7%, andamento pilota negli ultimi tre GP 15%, andamento scuderia negli ultimi tre GP 5%. La correzione per penalità confermate resta separata e riproporziona i pesi ordinari.
+The seven ordinary weights are: compatibility 60%, qualifying 3%, personal history 3%, relevant updates 7%, 2026 driver performance 7%, driver performance in the last three GPs 15%, team performance in the last three GPs 5%. The correction for confirmed penalties remains separate and reproportions the ordinary weights.
 
-L'andamento scuderia media le valutazioni dei risultati delle sue vetture in ciascuno degli ultimi tre GP dello snapshot, con pesi temporali 1, 2 e 3. Un ritiro vale 15/100; un GP senza dati scuderia vale 40/100. Si usano le associazioni scuderia dell'evento storico, inclusi i sostituti.
+The team performance averages the evaluations of the results of its cars in each of the last three GPs of the snapshot, with time weights 1, 2 and 3. A retirement is worth 15/100; a GP without team data is worth 40/100. The team associations of the historic event, including substitutes, are used.
 
-Il bonus aggiornamenti richiede una caratteristica tecnica esplicitamente menzionata e una richiesta del circuito di almeno 85/100; frasi negative e descrizioni generiche non danno bonus. La soglia è una regola editoriale, non un parametro ottimizzato statisticamente. In assenza di corrispondenza il valore è neutro (50/100).
+The upgrade bonus requires an explicitly mentioned technical characteristic and a circuit request of at least 85/100; negative phrases and generic descriptions do not give a bonus. The threshold is an editorial rule, not a statistically optimized parameter. In the absence of a match, the value is neutral (50/100).
 
-Il sito e l'app nativa non visualizzano metodologia, pesi, contributi o dettagli dei fattori. I campi API rimangono disponibili ai client: questa modifica riguarda la presentazione e non rende privato il modello.
+The site and native app do not display methodology, weights, contributions, or factor details. API fields remain available to clients: this change affects presentation and does not make the model private.
