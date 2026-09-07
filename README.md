@@ -1,145 +1,149 @@
 # Race Analysis Hub
 
-Applicazione indipendente per consultare dati, risultati e analisi editoriali
-sul campionato mondiale di Formula 1.
+Race Analysis Hub is an independent application for exploring Formula 1 World
+Championship data, results, and editorial analysis.
 
-Il progetto utilizza React e Vite per il frontend, Node.js ed Express per le
-API e MongoDB per la persistenza dei dati. Le API pubbliche sono anonime, di
-sola lettura e documentate con Swagger.
+The frontend is built with React and Vite, the API with Node.js and Express,
+and MongoDB provides data persistence. The public APIs are anonymous,
+read-only, and documented with Swagger.
 
-La versione corrente del progetto e dell'API è `1.13.0`.
+The current project and API version is `1.13.0`.
 
-La parte finale della landing page mostra una classifica previsionale dei
-piloti per il solo Gran Premio attuale. Il modello combina risultati 2026,
-andamento degli ultimi tre GP, compatibilità con la pista, aggiornamenti
-tecnici confermati e contenuti editoriali già presenti nel progetto. Gli
-aggiornamenti non ancora ufficiali ma supportati da evidenze concrete vengono
-mostrati come provvisori e non ricevono un bonus previsionale finché non sono
-confermati.
+The final section of the landing page presents a driver prediction ranking for
+the current Grand Prix only. The model combines 2026 results, form across the
+last three Grands Prix, circuit compatibility, confirmed technical upgrades,
+and editorial information already stored in the project. Updates that are not
+yet official but are supported by concrete evidence are marked as provisional
+and receive no prediction bonus until they are confirmed.
 
-La home usa la posizione del Gran Premio nel calendario ufficiale della
-stagione, distinta dall'ordine interno con cui le analisi vengono pubblicate.
+The home page uses each Grand Prix's position in the official season calendar,
+which is separate from the internal order in which analyses are published.
 
-## Collegamenti
+## Links
 
-- [Sito pubblico](https://www.race-analysis-hub.it)
-- [Assistenza FantaStats GP](https://www.race-analysis-hub.it/assistenza.html)
-- [Gestione della pagina di assistenza](ASSISTENZA.md)
-- [Documentazione Swagger](https://f1-stats-5v93.onrender.com/api/docs)
-- [Specifica OpenAPI](https://f1-stats-5v93.onrender.com/api/v1/openapi.json)
-- [Guida all'integrazione e alla cache](API.md)
+- [Public website](https://www.race-analysis-hub.it)
+- [FantaStats GP support](https://www.race-analysis-hub.it/assistenza.html)
+- [Support page management](ASSISTENZA.md)
+- [Swagger documentation](https://f1-stats-5v93.onrender.com/api/docs)
+- [OpenAPI specification](https://f1-stats-5v93.onrender.com/api/v1/openapi.json)
+- [Integration and caching guide](API.md)
 
-## Lingue e traduzioni
+## Languages and translations
 
-Frontend e API supportano sei lingue:
+The frontend and API support six languages:
 
-| Parametro | Lingua | Variante |
+| Parameter | Language | Variant |
 |---|---|---|
-| `it` | Italiano | predefinita |
-| `en` | English | inglese |
-| `fr` | Français | francese |
-| `pt` | Português | portoghese europeo (`pt-PT`) |
-| `es` | Español | spagnolo |
-| `de` | Deutsch | tedesco |
+| `it` | Italiano | default |
+| `en` | English | English |
+| `fr` | Français | French |
+| `pt` | Português | European Portuguese (`pt-PT`) |
+| `es` | Español | Spanish |
+| `de` | Deutsch | German |
 
-Il frontend propone la prima lingua supportata tra quelle del browser, ricorda
-la scelta e invia il parametro `lingua` a ogni richiesta. Il selettore globale
-mostra nome nativo e codice della lingua ed è utilizzabile anche da tastiera e
-con tecnologie assistive.
+The frontend selects the first supported browser language, remembers the
+choice, and sends the `lingua` parameter with every request. The global
+selector displays each language's native name and code and is accessible by
+keyboard and assistive technologies.
 
-Le integrazioni possono usare, per esempio,
-`GET /api/v1/home?lingua=en`. Ogni risposta v1 dichiara la lingua effettiva nel
-campo `lingua`, quando previsto dal relativo schema, e nell'header
-`Content-Language`. Senza parametro viene usato `it`; un codice non supportato
-restituisce HTTP `400` con `LINGUA_NON_SUPPORTATA`. L'endpoint
-`GET /api/v1/lingue` espone l'elenco aggiornato.
+Integrations can request English content with:
 
-`GET /api/v1/home` include gara, piloti, scuderie e classifica previsionale: una
-landing o una feature esterna può quindi caricare tutti questi dati con una sola
-chiamata. Le risposte pubbliche usano una cache condivisa di cinque minuti e
-accorpano le richieste simultanee, riducendo il carico su Render e MongoDB Atlas.
-I client con cache interna devono conservare anche l'header `ETag` e rivalidare
-con `If-None-Match`: se i dati non sono cambiati, l'API risponde `304` senza
-trasferire nuovamente il JSON. La strategia completa è descritta in
+```http
+GET /api/v1/home?lingua=en
+```
+
+Each v1 response declares the effective language in the `lingua` field, when
+included in the relevant schema, and in the `Content-Language` header. The API
+defaults to `it`; an unsupported code returns HTTP `400` with
+`LINGUA_NON_SUPPORTATA`. `GET /api/v1/lingue` returns the current list.
+
+`GET /api/v1/home` includes the race, drivers, teams, and prediction ranking,
+allowing an external landing page or feature to load all bootstrap data with a
+single request. Public responses use a shared five-minute cache and coalesce
+simultaneous requests to reduce load on Render and MongoDB Atlas. Clients with
+their own cache should store the `ETag` header and revalidate with
+`If-None-Match`. If the data has not changed, the API returns `304` without
+transferring the JSON again. The complete strategy is documented in
 [`API.md`](API.md).
 
-La home rappresenta lo schieramento del solo GP attuale: per Monza 2026 espone
-Lawson con Red Bull e Tsunoda con Racing Bulls, senza alterare le associazioni
-stagionali conservate nel catalogo. `GET /api/v1/piloti` resta infatti il
-catalogo dei 23 piloti presenti nella stagione, mentre home, analisi e
-previsione contengono i 22 effettivamente schierati nell'evento.
+The home response represents the current Grand Prix entry list only. For Monza
+2026, it exposes Lawson with Red Bull and Tsunoda with Racing Bulls without
+changing the season-long associations stored in the catalogue.
+`GET /api/v1/piloti` therefore remains the catalogue of all 23 drivers present
+during the season, while the home response, analyses, and prediction contain
+the 22 drivers entered for the event.
 
-La traduzione iniziale viene generata con Azure Translator F0 tramite uno script
-amministrativo, conservata nel database e verificata prima della pubblicazione.
-Le richieste degli utenti selezionano esclusivamente testi già salvati: Azure
-non viene chiamato a runtime e non è accessibile tramite le API pubbliche o il
-frontend. La memoria di traduzione permette di elaborare soltanto i testi nuovi
-o modificati, evitando un catalogo rigido. Procedura, sicurezza e regole per le
-personalizzazioni sono descritte in
-[`LOCALIZZAZIONE.md`](LOCALIZZAZIONE.md).
+Initial translations are generated with Azure Translator F0 through an
+administrative script, stored in the database, and verified before release.
+User requests only select previously stored text: Azure is not called at
+runtime and is not exposed through the public API or frontend. Translation
+memory processes only new or modified text without requiring a rigid
+catalogue. The procedure, security constraints, and customisation rules are
+documented in [`LOCALIZZAZIONE.md`](LOCALIZZAZIONE.md).
 
-## Dati anagrafici dei piloti
+## Driver identity data
 
-La release `1.5.0` arricchisce le risposte dei piloti senza modificare rotte,
-parametri o metodi HTTP. I campi `codice` e `numero` restano disponibili; sono
-stati aggiunti nomi più espliciti e dati utili alla localizzazione e alla
-grafica:
+Release `1.5.0` enriched driver responses without changing routes, parameters,
+or HTTP methods. The `codice` and `numero` fields remain available, while more
+explicit names and data useful for localisation and graphics were added:
 
-| Campo | Contenuto | Esempio |
+| Field | Meaning | Example |
 |---|---|---|
-| `abbreviazioneNome` | codice sportivo del pilota | `LEC` |
-| `numeroVettura` | numero della vettura | `16` |
-| `nazionalitaIso2` | codice ISO 3166-1 alpha-2 | `MC` |
-| `nazionalitaIso3` | codice ISO 3166-1 alpha-3 | `MCO` |
-| `scuderia.abbreviazione` | codice breve della scuderia | `FER` |
-| `scuderia.colore` | colore RGB esadecimale | `#E8002D` |
+| `abbreviazioneNome` | driver's sporting code | `LEC` |
+| `numeroVettura` | car number | `16` |
+| `nazionalitaIso2` | ISO 3166-1 alpha-2 code | `MC` |
+| `nazionalitaIso3` | ISO 3166-1 alpha-3 code | `MCO` |
+| `scuderia.abbreviazione` | short team code | `FER` |
+| `scuderia.colore` | hexadecimal RGB colour | `#E8002D` |
 
-Gli stessi oggetti brevi sono riutilizzati nelle analisi, nelle classifiche e
-nella classifica previsionale, così il significato dei campi resta uniforme in
-tutta l'API.
+The same compact objects are reused in analyses, standings, and predictions so
+that field meanings remain consistent throughout the API.
 
-## Indicatori percentuali e confronti
+## Percentage indicators and comparisons
 
-Le schede dei piloti espongono tre indicatori percentuali quando le fonti
-necessarie sono state validate; in caso contrario `indicatori` vale `null`,
-senza stime inventate. Per il rendimento
-sul bagnato sono disponibili anche i conteggi usati nel calcolo:
+Driver profiles expose three percentage indicators when the required sources
+have been validated. Otherwise, `indicatori` is `null`; no unsupported values
+are estimated. Wet-weather performance also includes the counts used in the
+calculation:
 
-- `bravuraBagnatoPercentuale`: gare con pioggia vinte oppure concluse davanti
-  al compagno di squadra classificato o ad almeno metà dei rivali diretti
-  classificati, individuati nella top 10 del campionato dopo quella gara,
-  divise per le gare con pioggia effettivamente disputate. I DNS sono esclusi;
-  i ritiri degli altri piloti non migliorano il risultato;
-- `gareConPioggiaPositive`: numero di gare con pioggia considerate positive
-  secondo i criteri precedenti;
-- `gareConPioggiaDisputate`: numero di partenze in gare disputate interamente
-  o parzialmente con pioggia;
-- `erroriPilotaPercentuale`: gare con un errore documentato del pilota divise
-  per tutte le sue partenze;
-- `erroriFataliPercentuale`: gare terminate o definitivamente compromesse da
-  un errore del pilota, ancora divise per tutte le partenze e non per il numero
-  di errori; sui profili pubblicati resta inferiore alla percentuale generale.
+- `bravuraBagnatoPercentuale`: wet races won, finished ahead of a classified
+  teammate, or finished ahead of at least half of the classified direct rivals
+  identified in the championship top 10 after that race, divided by wet races
+  actually started. DNS entries are excluded, and other drivers' retirements
+  do not improve the result;
+- `gareConPioggiaPositive`: number of wet races considered positive under the
+  criteria above;
+- `gareConPioggiaDisputate`: number of starts in races run fully or partly in
+  wet conditions;
+- `erroriPilotaPercentuale`: races with a documented driver error divided by
+  all of that driver's starts;
+- `erroriFataliPercentuale`: races ended or definitively compromised by a
+  driver error, again divided by all starts rather than by the number of
+  errors. In published profiles, this remains lower than the overall driver
+  error percentage.
 
-Per le scuderie gli stessi indicatori sono calcolati aggregando e ponderando le
-carriere dei piloti schierati nel GP attuale. Se manca un profilo verificato,
-l'aggregato vale `null`. Questo evita di confrontare direttamente storie
-societarie e denominazioni non equivalenti. `npm run gp` incrementa questi
-valori dopo ogni nuovo Gran Premio senza azzerare lo storico.
+Team indicators aggregate and weight the careers of the drivers entered in the
+current Grand Prix. If a verified profile is missing, the aggregate is `null`.
+This avoids directly comparing non-equivalent team histories and identities.
+After each new Grand Prix, `npm run gp` updates these cumulative values without
+resetting their history.
 
-Il frontend offre una pagina `/confronto` per affiancare due piloti o due
-scuderie. Le API equivalenti sono:
+The frontend provides a `/confronto` page for comparing two drivers or two
+teams. The equivalent API endpoints are:
 
 ```text
 GET /api/v1/confronti/piloti/{primoPilotaSlug}/{secondoPilotaSlug}
 GET /api/v1/confronti/scuderie/{primaScuderiaSlug}/{secondaScuderiaSlug}
 ```
 
-Ogni elemento del confronto contiene le stesse informazioni della scheda
-singola: profilo, classifica, indicatori, analisi del GP e andamento stagionale.
+Each comparison entry contains the same information as the corresponding
+single profile: profile data, standings, indicators, Grand Prix analysis, and
+season form.
 
-## Avvio locale
+## Local development
 
-Installare le dipendenze e avviare backend e frontend in due terminali:
+Requires Node.js `22.12.0` or later within the supported major-version range.
+Install dependencies and start the backend and frontend in separate terminals:
 
 ```bash
 npm ci --prefix backend
@@ -148,140 +152,145 @@ npm --prefix backend run dev
 npm --prefix frontend run dev
 ```
 
-Il backend è disponibile su `http://localhost:5002` e il frontend su
+The backend runs at `http://localhost:5002` and the frontend at
 `http://localhost:5173`.
 
-In sviluppo, `npm --prefix backend run dev` crea automaticamente un MongoDB
-temporaneo in memoria e importa `backend/data/dati-iniziali.json`. In questo
-modo l'anteprima mostra esattamente le API e le traduzioni della copia locale,
-senza leggere o modificare Atlas. Al primo avvio viene scaricato e conservato
-in cache il binario MongoDB necessario; gli avvii successivi lo riutilizzano.
+During development, `npm --prefix backend run dev` automatically creates a
+temporary in-memory MongoDB instance and imports
+`backend/data/dati-iniziali.json`. This makes the preview use the exact API data
+and translations from the local checkout without reading from or writing to
+Atlas. The required MongoDB binary is downloaded and cached on first use, then
+reused on subsequent runs.
 
-`npm --prefix backend start` mantiene invece il comportamento di produzione e
-richiede `MONGO_URL`. Il comando `seed` scrive nel database configurato e non
-deve essere usato per la semplice anteprima locale.
+`npm --prefix backend start` preserves production behaviour and requires
+`MONGO_URL`. The `seed` command writes to the configured database and must not
+be used for a standard local preview.
 
-## Riutilizzo delle API
+## Reusing the API
 
-Le API ufficiali sono di sola lettura: chi le utilizza non può modificare il
-database di Race Analysis Hub. Le risposte ricevute possono però essere
-copiate, mostrate e personalizzate nel software del riutilizzatore, anche per
-finalità commerciali. È quindi possibile, per esempio, riscrivere localmente il
-campo `aggiornamentiInArrivo` senza alterare la fonte originale.
+The official APIs are read-only: consumers cannot modify the Race Analysis Hub
+database. Responses may, however, be copied, displayed, and customised in the
+consumer's own software, including for commercial purposes. For example, a
+consumer may locally rewrite `aggiornamentiInArrivo` without changing the
+original source.
 
-Per ridurre le chiamate, usare `/api/v1/home` come bootstrap, gli endpoint di
-confronto al posto di due richieste distinte e `/api/v1/gare/{garaSlug}` quando
-servono tutte le analisi del GP. Le schede singole vanno caricate soltanto
-quando l'utente le apre. Rotte, cache, `ETag`, errori e limite richieste sono
-riepilogati in [`API.md`](API.md).
+To minimise requests, use `/api/v1/home` for bootstrapping, the comparison
+endpoints instead of two separate requests, and `/api/v1/gare/{garaSlug}` when
+all analyses for a Grand Prix are required. Load individual profiles only when
+the user opens them. Routes, caching, `ETag` handling, errors, and rate limits
+are summarised in [`API.md`](API.md).
 
-Le risposte pubbliche sono distribuite con licenza CC BY 4.0. Occorre citare
-`Race Analysis Hub — Marco Tannoia`, mantenere l'attribuzione a F1DB per i dati
-quantitativi e indicare chiaramente le eventuali modifiche. Le condizioni
-complete sono riportate in [`LICENSE.md`](LICENSE.md) e [`NOTICE.md`](NOTICE.md).
+Public API responses are distributed under CC BY 4.0. Users must credit
+`Race Analysis Hub — Marco Tannoia`, preserve F1DB attribution for quantitative
+data, and clearly identify any modifications. The complete terms are available
+in [`LICENSE.md`](LICENSE.md) and [`NOTICE.md`](NOTICE.md).
 
-## Dati e licenze
+## Data and licences
 
-Le classifiche 2026, i risultati di gara e qualifica 2023–2025 e i grafici
-quantitativi 2026 derivano da
+The 2026 standings, 2023–2025 race and qualifying results, and 2026 quantitative
+charts are derived from
 [F1DB v2026.12.0](https://github.com/f1db/f1db/releases/tag/v2026.12.0),
-distribuito con licenza
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). I dati vengono
-filtrati e normalizzati da Race Analysis Hub; i contenuti editoriali restano
-originali del progetto e, quando restituiti dalle API pubbliche, sono anch'essi
-riutilizzabili secondo le condizioni indicate in `LICENSE.md`.
+distributed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Race Analysis Hub
+filters and normalises the data. Editorial content is original to the project
+and, when returned by the public API, may also be reused under the terms in
+`LICENSE.md`.
 
-Per attribuzioni, marchi e condizioni di riutilizzo consultare
-[`NOTICE.md`](NOTICE.md) e [`LICENSE.md`](LICENSE.md).
+See [`NOTICE.md`](NOTICE.md) and [`LICENSE.md`](LICENSE.md) for attribution,
+trademark information, and reuse terms.
 
-I colori delle scuderie sono verificati sulla pagina ufficiale
-[Formula 1 Teams](https://www.formula1.com/en/teams). I codici paese aggiunti
-alle nazionalità seguono lo standard
-[ISO 3166-1](https://www.iso.org/iso-3166-country-codes.html); le abbreviazioni
-delle scuderie sono identificatori editoriali stabili di Race Analysis Hub.
+Team colours are checked against the official
+[Formula 1 Teams](https://www.formula1.com/en/teams) page. Nationality codes use
+[ISO 3166-1](https://www.iso.org/iso-3166-country-codes.html), while team
+abbreviations are stable editorial identifiers maintained by Race Analysis
+Hub.
 
-Le partenze in carriera e i risultati usati dagli indicatori derivano dallo
-stesso snapshot F1DB. La classificazione delle gare con pioggia è editoriale e
-documentata in [`NOTICE.md`](NOTICE.md); un GP è `misto` soltanto quando presenta
-fasi significative sia bagnate sia asciutte. Gli errori sono conteggiati con un
-criterio conservativo basato su uscite individuali e penalità registrate.
+Career starts and indicator results come from the same F1DB snapshot. Wet-race
+classification is editorial and documented in [`NOTICE.md`](NOTICE.md); a
+Grand Prix is classified as `misto` only when it contains significant wet and
+dry phases. Driver errors are counted conservatively from documented
+individual incidents and penalties.
 
-## Classifica previsionale
+## Driver prediction ranking
 
-L'indice dei favoriti va da 0 a 100 ed è incluso nella home per evitare una
-seconda chiamata. Resta disponibile anche l'endpoint dedicato
-`GET /api/v1/previsioni/piloti`, insieme alla scomposizione dei fattori destinata
-ai client API. Il sito e l'app mostrano soltanto classifica, indice e confidenza.
-I pesi sono:
+The favourites index ranges from 0 to 100 and is included in the home response
+to avoid a second request. The dedicated `GET /api/v1/previsioni/piloti`
+endpoint remains available, including the factor breakdown intended for API
+clients. The website and native app display only the ranking, index, and
+confidence. The standard weights are:
 
-- compatibilità vettura-circuito: 60%;
-- andamento del pilota negli ultimi tre GP: 15%;
-- aggiornamenti tecnici pertinenti ai requisiti del circuito: 7%;
-- andamento del pilota nel 2026: 7%;
-- andamento della scuderia negli ultimi tre GP: 5%;
-- qualifica 2026: 3%;
-- storico personale: 3%.
+| Factor | Weight |
+|---|---:|
+| Car–circuit compatibility | 60% |
+| Driver form across the last three Grands Prix | 15% |
+| Technical upgrades relevant to circuit requirements | 7% |
+| Driver's 2026 form | 7% |
+| Team form across the last three Grands Prix | 5% |
+| 2026 qualifying performance | 3% |
+| Driver's historical performance | 3% |
 
-Quando esiste una penalità in griglia confermata, essa può incidere fino al 35%
-e i sette fattori ordinari vengono riproporzionati sul restante 65%.
+When a grid penalty is confirmed, it may account for up to 35% of the final
+index, with the seven standard factors proportionally rescaled across the
+remaining 65%.
 
-La compatibilità vettura-circuito è la media delle dieci capacità tecniche della
-scuderia ponderata sulle richieste del tracciato. Se manca il profilo tecnico,
-il servizio usa il precedente calcolo editoriale come ripiego.
+Car–circuit compatibility is the weighted average of the team's ten technical
+capabilities against the circuit's requirements. If either technical profile
+is missing, the service falls back to the previous editorial calculation.
 
-Gli aggiornamenti non ricevono automaticamente un punteggio positivo. Il
-vantaggio richiede una caratteristica esplicitamente pertinente a una richiesta
-del circuito valutata almeno 85/100. Un intervento esclusivamente di
-affidabilità, una descrizione generica o un aggiornamento senza corrispondenza
-ricevono un valore neutro.
+Technical upgrades do not automatically receive a positive score. A bonus
+requires an explicitly relevant characteristic matched to a circuit
+requirement rated at least 85/100. A reliability-only change, generic
+description, or unmatched upgrade receives a neutral value.
 
-La classifica è una previsione statistico-editoriale soggetta a errore. Non
-rappresenta un risultato certo e può cambiare dopo prove libere, meteo,
-penalità, specifiche FIA o nuove informazioni tecniche.
+The ranking is a statistical-editorial prediction and is subject to error. It
+is not a guaranteed result and may change after practice sessions, weather
+updates, penalties, FIA specifications, or new technical information.
 
-## Dati da aggiornare manualmente
+## Data maintained manually
 
-Non esiste un'unica data di aggiornamento affidabile per l'intero payload:
-ogni gruppo di dati cambia con una cadenza diversa. Le attività manuali sono:
+No single update date can accurately describe the entire payload because each
+data group changes at a different cadence. Manual tasks include:
 
-- **dopo ogni GP**: compilare `backend/data/aggiornamento-gp.json` tramite
-  `npm run gp` con risultati, classifiche, condizioni, errori e note
-  editoriali; lo script aggiorna anche gli indicatori cumulativi e seleziona
-  il GP successivo;
-- **quando F1DB pubblica una nuova release utile**: rigenerare
-  `backend/data/f1db-*-derivato.json` con `npm run sync-f1db -- <cartella>`;
-  questo aggiorna classifiche, andamento quantitativo e risultati storici;
-- **quando cambiano le valutazioni del GP attuale**: revisionare in
-  `backend/data/dati-iniziali.json` analisi piloti e scuderie, penalità,
-  aggiornamenti tecnici, fonti e traduzioni nelle sei lingue;
-- **quando emergono nuove evidenze tecniche**: revisionare
-  `backend/data/profili-tecnici-2026.json` e, se cambiano dati o requisiti della
-  pista, `backend/data/circuiti-tecnici-2026.json`;
-- **quando cambia calendario, rosa o identità di una scuderia**: aggiornare i
-  relativi record in `backend/data/dati-iniziali.json` e rieseguire i controlli
-  di qualità e traduzione.
+- **After each Grand Prix:** complete `backend/data/aggiornamento-gp.json`
+  through `npm run gp` with results, standings, conditions, errors, and
+  editorial notes. The script also updates cumulative indicators and selects
+  the next Grand Prix.
+- **When F1DB publishes a useful release:** regenerate
+  `backend/data/f1db-*-derivato.json` with
+  `npm run sync-f1db -- <directory>`. This updates standings, quantitative
+  form, and historical results.
+- **When current-Grand-Prix assessments change:** review driver and team
+  analyses, penalties, technical upgrades, sources, and six-language
+  translations in `backend/data/dati-iniziali.json`.
+- **When new technical evidence becomes available:** review
+  `backend/data/profili-tecnici-2026.json` and, when circuit data or
+  requirements change, `backend/data/circuiti-tecnici-2026.json`.
+- **When the calendar, entry list, or team identity changes:** update the
+  relevant records in `backend/data/dati-iniziali.json`, then rerun the data
+  quality and translation checks.
 
-I documenti FIA del weekend non richiedono inserimento manuale quando
-`FIA_MONITOR_ENABLED=true`: il backend li controlla periodicamente e pubblica
-la sezione Live solo dopo la validazione completa. Restano manuali la verifica
-editoriale dell'impatto e l'eventuale recepimento nella previsione.
+The historical FIA live-report records remain stored, but the website and
+updated native app no longer display the live report. The backend no longer
+starts the automatic FIA monitor, and `aggiornamentiLive` is retained only for
+compatibility and always returns `null`.
 
-## Guide operative
+## Operational guides
 
 - [Changelog](CHANGELOG.md)
-- [API, endpoint e cache](API.md)
+- [API, endpoints, and caching](API.md)
 - [Deployment](DEPLOYMENT.md)
-- [Aggiornamento post-GP](post-gp.md)
-- [Contenuti editoriali](fix-frontend.md)
-- [Localizzazione](LOCALIZZAZIONE.md)
+- [Post-Grand-Prix update](post-gp.md)
+- [Editorial content](fix-frontend.md)
+- [Localisation](LOCALIZZAZIONE.md)
 
-### Traduzioni dei dati tecnici
+### Technical-data translations
 
-Le caratteristiche dei circuiti e le descrizioni dei metodi tecnici sono
-localizzate dall’API nelle sei lingue supportate. Il catalogo
-`backend/i18n/profiliTecnici.json` copre tutti i 12 circuiti presenti; l’italiano
-resta nei cataloghi tecnici originali. `npm run verify-translations` controlla
-anche questi testi, oltre alle traduzioni dei documenti destinati a MongoDB.
-I codici tecnici rimangono stabili e vengono tradotti dai dizionari dei client.
-Questa localizzazione richiede il rilascio del backend, senza un nuovo seed.
-Per dettagli sul contratto e sulla cache per lingua, vedere [API.md](API.md).
+Circuit characteristics and technical-method descriptions are localised by the
+API in all six supported languages. The
+`backend/i18n/profiliTecnici.json` catalogue covers all 12 circuits currently
+included, while Italian remains in the original technical catalogues.
+`npm run verify-translations` checks these texts in addition to the translations
+of documents stored in MongoDB. Technical codes remain stable and are
+translated through client-side dictionaries. Releasing these translations
+requires a backend deployment but no new database seed. See [API.md](API.md)
+for details about the language-specific contract and caching behaviour.

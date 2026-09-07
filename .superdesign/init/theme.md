@@ -1,3 +1,96 @@
+# Theme
+
+## Compact token summary
+
+- Palette: near-black background `#030303`, panel `#0b0b0b`, light panel `#111111`, primary red `#ef2b24`, dark red `#b81712`, primary text `#f7f7f7`, secondary text `#a0a0a0`, borders `#252525` and `#393939`.
+- Typography: system sans-serif for reading text and Barlow Condensed for racing/display headings, labels and large numerals.
+- Layout: centered containers capped at 1120px, strong vertical section rhythm, square editorial widgets with subtle 6-8px radii, one-pixel grey borders and red accents.
+- Responsive breakpoints used by the source: 1100px, 900px, 700px and 500px.
+- Motion: restrained transitions and native smooth scrolling; no decorative animation system.
+- Accessibility: visible 3px red focus outlines, high-contrast text, semantic sections and aria labels.
+
+## Raw source dumps
+
+### `frontend/src/index.css`
+
+```css
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f7f7f7;
+  background: #030303;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --rosso: #ef2b24;
+  --rosso-scuro: #b81712;
+  --nero: #030303;
+  --pannello: #0b0b0b;
+  --pannello-chiaro: #111111;
+  --bordo: #252525;
+  --bordo-evidente: #393939;
+  --testo: #f7f7f7;
+  --testo-secondario: #a0a0a0;
+  --bianco-sporco: #dedede;
+  --font-racing: "Barlow Condensed", "Arial Narrow", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--nero);
+}
+
+body,
+button,
+input,
+select {
+  font-weight: 400;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+a,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--rosso);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--rosso-scuro);
+}
+
+```
+
+### `frontend/src/App.css`
+
+```css
 .app-shell {
   min-height: 100vh;
   display: flex;
@@ -1131,10 +1224,6 @@ main {
   padding-left: 0;
 }
 
-.colonna-confronto .colonna-risultati:first-child::after {
-  right: -12px;
-}
-
 .colonna-confronto .ramo-analisi,
 .colonna-confronto .albero-performance,
 .colonna-confronto .griglia-valutazione-finale,
@@ -1251,7 +1340,7 @@ main {
   min-height: 116px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 14px;
   margin: 0;
@@ -1261,6 +1350,7 @@ main {
   background: #080808;
 }
 
+.colonna-risultati p span,
 .riga-etichettata > span {
   display: grid;
   place-items: center;
@@ -1276,21 +1366,11 @@ main {
   text-align: center;
 }
 
+.colonna-risultati p span,
 .righe-anni .riga-etichettata > span {
   color: #fff;
   border-color: rgba(225, 6, 0, 0.72);
   background: rgba(225, 6, 0, 0.2);
-}
-
-.colonna-risultati p span {
-  padding-bottom: 3px;
-  color: var(--rosso);
-  border-bottom: 1px solid var(--rosso);
-  font-family: var(--font-racing);
-  font-size: 0.95rem;
-  letter-spacing: 0.06em;
-  line-height: 1;
-  text-align: center;
 }
 
 .colonna-risultati p strong {
@@ -1326,17 +1406,6 @@ main {
   color: #c5c5c5;
   font-size: 0.96rem;
   line-height: 1.8;
-}
-
-.prosa-performance {
-  max-width: 820px;
-  margin: 0;
-  padding: 20px 0 22px;
-  color: #c5c5c5;
-  border-top: 1px solid var(--bordo);
-  border-bottom: 1px solid var(--bordo);
-  font-size: 0.98rem;
-  line-height: 1.9;
 }
 
 .ramo-analisi,
@@ -1553,25 +1622,10 @@ main {
 }
 
 .griglia-aggiornamenti {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   margin-left: 70px;
-}
-
-.griglia-aggiornamenti::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 4px 7px;
-  color: var(--rosso);
-  background: var(--nero);
-  content: '→';
-  font-family: var(--font-racing);
-  font-size: 1.15rem;
-  line-height: 1;
-  transform: translate(-50%, -50%);
 }
 
 .widget-aggiornamento {
@@ -1601,19 +1655,17 @@ main {
   font-weight: 400;
 }
 
-.widget-aggiornamento .stato-aggiornamento {
-  display: inline-block;
-  margin: -4px 0 16px;
-  padding-bottom: 3px;
-  color: var(--rosso);
-  border-bottom: 1px solid var(--rosso);
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.widget-aggiornamento p,
+.widget-aggiornamento ul {
+  margin: 0;
 }
 
-.widget-aggiornamento p {
-  margin: 0;
+.widget-aggiornamento ul {
+  padding-left: 20px;
+}
+
+.widget-aggiornamento li::marker {
+  color: var(--rosso);
 }
 
 .griglia-grafici {
@@ -1919,20 +1971,9 @@ main {
 
 .griglia-dati-circuito {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
   margin-top: 28px;
-}
-
-.ramo-caratteristiche-circuito {
-  position: relative;
-  margin-top: 32px;
-  padding-top: 28px;
-  border-top: 1px solid var(--bordo);
-}
-
-.ramo-caratteristiche-circuito .titolo-ramo {
-  margin: 0 0 18px 42px;
 }
 
 .dato-circuito {
@@ -1966,10 +2007,9 @@ main {
 
 .tratti-circuito {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
-  width: 100%;
-  margin-top: 0;
+  margin-top: 8px;
 }
 
 .tratti-circuito article {
@@ -2456,10 +2496,6 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .griglia-aggiornamenti::after {
-    display: none;
-  }
-
   .colonna-risultati:first-child {
     padding-right: 0;
   }
@@ -2500,6 +2536,7 @@ main {
 
 @media (max-width: 700px) {
   .griglia-dati-circuito,
+  .tratti-circuito,
   .griglia-live-fia,
   .riassunto-profilo-tecnico {
     grid-template-columns: 1fr 1fr;
@@ -2876,40 +2913,23 @@ main {
   }
 }
 
-/* Display typography stays separate from numeric statistics and controls. */
-.app-shell :is(h1, h2, h3, h4, h5, h6), .marchio {
-  font-family: var(--font-heading);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  overflow-wrap: anywhere;
-  text-wrap: balance;
-}
-.app-shell h1 { font-size: clamp(1.65rem, 4.5vw, 3.6rem); }
-.app-shell h2 { font-size: clamp(1.3rem, 3vw, 2.4rem); }
-.app-shell h3 { font-size: clamp(1.05rem, 2vw, 1.6rem); }
-.app-shell h4 { font-size: clamp(.9rem, 1.5vw, 1.15rem); }
-.app-shell { position: relative; isolation: isolate; }
-.racing-sparks { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
-.racing-sparks i {
-  position: absolute; left: var(--x); bottom: -12px;
-  width: 2px; height: 7px; background: #ef2b24;
-  box-shadow: 0 0 7px #ef2b2480;
-  animation: racing-spark-rise var(--duration) var(--delay) linear infinite;
-}
-@keyframes racing-spark-rise {
-  0% { transform: translateY(0) rotate(22deg); opacity: 0; }
-  15%, 75% { opacity: .7; }
-  100% { transform: translateY(-105vh) rotate(22deg); opacity: 0; }
-}
-.home-contenuto > section { position: relative; }
-.home-contenuto > section::before {
-  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, #ef2b24, #fff0ed, #ef2b24, transparent) 0 0 / 18% 100% no-repeat;
-  animation: racing-section-light 4s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-@keyframes racing-section-light { to { background-position: 100% 0; } }
-@media (prefers-reduced-motion: reduce) {
-  .racing-sparks i { animation: none; bottom: calc(var(--x)); opacity: .35; }
-  .home-contenuto > section::before { animation: none; }
-}
+```
+
+### `frontend/vite.config.js`
+
+```js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  build: {
+    sourcemap: false,
+  },
+  server: {
+    host: '127.0.0.1',
+  },
+})
+
+```

@@ -1,3 +1,14 @@
+# Routes
+
+- `/` -> `frontend/src/pages/HomePage.jsx` through `frontend/src/App.jsx`
+- `/piloti/:slug` -> `frontend/src/pages/PilotaPage.jsx` through `frontend/src/App.jsx`
+- `/scuderie/:slug` -> `frontend/src/pages/ScuderiaPage.jsx` through `frontend/src/App.jsx`
+- `/confronto` -> `frontend/src/pages/ConfrontoPage.jsx` through `frontend/src/App.jsx`
+- all other paths -> `frontend/src/pages/PaginaNonTrovata.jsx`
+
+## `frontend/src/App.jsx`
+
+```jsx
 import './App.css'
 import Footer from './components/Footer.jsx'
 import HomePage from './pages/HomePage.jsx'
@@ -28,11 +39,6 @@ function ContenutoApp() {
 
   return (
     <div className="app-shell">
-      <div className="racing-sparks" aria-hidden="true">
-        {Array.from({ length: 48 }, (_, i) => (
-          <i key={i} style={{ '--x': `${(i * 37 + 9) % 100}%`, '--delay': `${-i * 0.73}s`, '--duration': `${12 + i % 9}s` }} />
-        ))}
-      </div>
       <div className="barra-lingua contenitore">
         <SelettoreLingua />
       </div>
@@ -51,3 +57,29 @@ function App() {
 }
 
 export default App
+
+```
+## `frontend/src/hooks/usePercorso.js`
+
+```js
+import { useEffect, useState } from 'react'
+
+function usePercorso() {
+  const [percorso, setPercorso] = useState(window.location.pathname)
+
+  useEffect(() => {
+    function aggiornaPercorso() {
+      setPercorso(window.location.pathname)
+    }
+
+    window.addEventListener('popstate', aggiornaPercorso)
+
+    return () => window.removeEventListener('popstate', aggiornaPercorso)
+  }, [])
+
+  return percorso
+}
+
+export default usePercorso
+
+```
