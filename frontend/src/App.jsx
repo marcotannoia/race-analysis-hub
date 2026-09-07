@@ -33,7 +33,7 @@ function ContenutoApp() {
         ))}
       </div>
       <header className="site-header">
-        <a href="/" aria-label="FantaStats GP — homepage">FANTASTATS GP</a>
+        <a href="/" aria-label="Race Analysis Hub — homepage">RACE ANALYSIS HUB</a>
       </header>
       <main>{pagina}</main>
       <Footer />

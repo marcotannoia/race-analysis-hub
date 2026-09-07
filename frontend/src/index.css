@@ -6,6 +6,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Sideware";
+  src: url("./assets/fonts/SidewareTrial-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #f7f7f7;
@@ -25,6 +33,7 @@
   --bianco-sporco: #dedede;
   --font-heading: "BBH Bartle", "Arial Black", sans-serif;
   --font-racing: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-app: "Sideware", "Arial Narrow", sans-serif;
 }
 
 * {
