@@ -136,6 +136,10 @@ async function verificaCorrispondenzaSorgente() {
       penalita: sorgente.penalita || "",
       affidabilita: sorgente.affidabilita || "",
       aggiornamentiInArrivo: sorgente.aggiornamentiInArrivo || "",
+      vantaggioAggiornamentiTecnici:
+        sorgente.vantaggioAggiornamentiTecnici ?? 50,
+      statoAggiornamentiTecnici:
+        sorgente.statoAggiornamentiTecnici || "",
       traduzioni: normalizzaTraduzioniAnalisi(sorgente.traduzioni),
       fonti: sorgente.fonti,
     };

@@ -331,6 +331,25 @@ test("gli aggiornamenti generici o estranei alle richieste non danno bonus", () 
   assert.equal(valutaAggiornamento("Il nuovo fondo non migliora la trazione.", "it", { trazione: 100 }).valore, 50);
 });
 
+test("il vantaggio editoriale e la disponibilità del singolo pilota prevalgono sul testo di scuderia", () => {
+  const pilota = {
+    aggiornamentiInArrivo:
+      "Aggiornamento confermato per il circuito e direttamente utile in frenata.",
+    vantaggioAggiornamentiTecnici: 72,
+  };
+
+  const valutazione = valutaAggiornamento(
+    pilota.aggiornamentiInArrivo,
+    "it",
+    { frenata: 92 },
+    pilota.vantaggioAggiornamentiTecnici,
+    "confermato",
+  );
+
+  assert.equal(valutazione.valore, 72);
+  assert.match(valutazione.stato, /confermato/i);
+});
+
 test("la forma scuderia usa le due vetture storiche e soltanto gli ultimi tre GP", () => {
   const evento = (gara) => ({ scuderie: { team: { gara } }, piloti: {} });
   const ultimi = [evento({ A: 1, B: 1 }), evento({ A: 12, B: 12 }), evento({ SOSTITUTO: null, B: null })];
