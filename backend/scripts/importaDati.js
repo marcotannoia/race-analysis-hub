@@ -139,6 +139,10 @@ async function importaDati({ collega = true, disconnetti = true } = {}) {
         penalita: analisi.penalita || "",
         affidabilita: analisi.affidabilita || "",
         aggiornamentiInArrivo: analisi.aggiornamentiInArrivo || "",
+        vantaggioAggiornamentiTecnici:
+          analisi.vantaggioAggiornamentiTecnici ?? 50,
+        statoAggiornamentiTecnici:
+          analisi.statoAggiornamentiTecnici || "",
         traduzioni: normalizzaTraduzioniAnalisi(analisi.traduzioni),
         fonti: analisi.fonti,
       };

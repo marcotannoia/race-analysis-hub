@@ -46,6 +46,17 @@ const analisiGaraSchema = new mongoose.Schema(
     penalita: { type: String, default: "" },
     affidabilita: { type: String, default: "" },
     aggiornamentiInArrivo: { type: String, default: "" },
+    vantaggioAggiornamentiTecnici: {
+      type: Number,
+      min: 0,
+      max: 100,
+      default: 50,
+    },
+    statoAggiornamentiTecnici: {
+      type: String,
+      enum: ["", "confermato", "giaIntrodotto", "nessunPacchetto", "pocoPertinente"],
+      default: "",
+    },
     traduzioni: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
     storicoEdizioni: { type: [edizioneStoricaSchema], default: [] },
     fonti: [{ type: String, trim: true }],

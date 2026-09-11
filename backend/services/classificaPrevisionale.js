@@ -185,7 +185,7 @@ function valutaPenalita(testoOriginale) {
   };
 }
 
-function valutaAggiornamento(testoOriginale, lingua = "it", richieste = {}) {
+function valutaAggiornamentoTesto(testoOriginale, lingua = "it", richieste = {}) {
   const testi = testiPrevisione(lingua);
   const testo = normalizzaTesto(testoOriginale);
 
@@ -312,6 +312,48 @@ function valutaAggiornamento(testoOriginale, lingua = "it", richieste = {}) {
   };
 }
 
+function valutaAggiornamento(
+  testoOriginale,
+  lingua = "it",
+  richieste = {},
+  vantaggioEditoriale = null,
+  statoEditoriale = "",
+) {
+  const valutazione = valutaAggiornamentoTesto(
+    testoOriginale,
+    lingua,
+    richieste,
+  );
+
+  const testi = testiPrevisione(lingua);
+  const statiEditoriali = {
+    confermato: {
+      stato: testi.stati.confermato,
+      nota: testi.note.evidenzaAlta,
+    },
+    giaIntrodotto: {
+      stato: testi.stati.giaIntrodotto,
+      nota: testi.note.evidenzaAlta,
+    },
+    nessunPacchetto: {
+      stato: testi.stati.nessunPacchetto,
+      nota: testi.note.nessunPacchetto,
+    },
+    pocoPertinente: {
+      stato: testi.stati.pocoPertinente,
+      nota: testi.note.pocoPertinente,
+    },
+  };
+
+  return {
+    ...valutazione,
+    ...(statiEditoriali[statoEditoriale] || {}),
+    valore: Number.isFinite(vantaggioEditoriale)
+      ? limita(vantaggioEditoriale)
+      : valutazione.valore,
+  };
+}
+
 function livelloConfidenza(gara, storico, etichettaPilota) {
   const testoGara = normalizzaTesto(gara?.confidenza);
   let livello = testoGara.includes("alta") ? 3 : testoGara.includes("bassa") ? 1 : 2;
@@ -413,9 +455,12 @@ function creaClassificaPrevisionale({
     const storico = valutaStorico(analisiPilota);
     const penalita = valutaPenalita(analisiPilota?.penalita);
     const aggiornamento = valutaAggiornamento(
-      analisiScuderia?.aggiornamentiInArrivo || analisiPilota?.aggiornamentiInArrivo,
+      analisiPilota?.aggiornamentiInArrivo ||
+        analisiScuderia?.aggiornamentiInArrivo,
       lingua,
       richieste,
+      analisiPilota?.vantaggioAggiornamentiTecnici,
+      analisiPilota?.statoAggiornamentiTecnici,
     );
     const compatibilitaPilota = valutaEtichetta(analisiPilota?.considerazioni);
     const andamentoScuderia = valutaClassifica(
