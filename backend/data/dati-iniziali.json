@@ -8806,11 +8806,12 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Gestione gomme, sospensioni e raffreddamento sono punti di forza; favorita quasi ovunque.",
       "considerazioniFinali": "FAVORITO — ranking previsionale 1/22. Forma 2026: P1 con 219 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — Mercedes ha portato un’ala posteriore specifica per il livello di resistenza di Madrid, un winglet aggiuntivo dietro lo scarico e un labbro del tamburo anteriore riprofilato.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
-        "https://www.formula1.com/en/results/2026/drivers"
+        "https://www.formula1.com/en/results/2026/drivers",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -8822,7 +8823,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Gestione gomme, sospensioni e raffreddamento sono punti di forza; favorita quasi ovunque.",
           "considerazioniFinali": "FAVORITO — ranking previsionale 1/22. Forma 2026: P1 con 219 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — Mercedes ha portato un’ala posteriore specifica per il livello di resistenza di Madrid, un winglet aggiuntivo dietro lo scarico e un labbro del tamburo anteriore riprofilato.",
           "penalita": ""
         },
         "en": {
@@ -8834,7 +8835,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. The team's 2026 context: tyre management, suspension and cooling are strengths; A favourite at almost every circuit.",
           "considerazioniFinali": "FAVORITE — forecast ranking 1/22. 2026 form: P1 with 219 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — Mercedes introduced a Madrid-specific rear-wing configuration, an additional winglet behind the exhaust and a reprofiled front-drum lip.",
           "penalita": ""
         },
         "fr": {
@@ -8846,7 +8847,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Le contexte de l’équipe pour 2026 : la gestion des pneus, la suspension et le refroidissement sont des points forts ; l’équipe fait partie des favorites sur presque tous les circuits.",
           "considerazioniFinali": "FAVORI — classement des prévisions le 1/22. Forme 2026 : P1 avec 219 points ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — Mercedes a introduit une configuration d’aileron arrière spécifique à Madrid, un winglet supplémentaire derrière l’échappement et une lèvre de tambour avant reprofilée.",
           "penalita": ""
         },
         "pt": {
@@ -8858,7 +8859,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. O contexto da equipa para 2026: gestão dos pneus, suspensão e arrefecimento são pontos fortes; A equipa é favorita em quase todos os circuitos.",
           "considerazioniFinali": "FAVORITO — previsão de 1/22. Forma em 2026: P1 com 219 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A Mercedes introduziu uma configuração de asa traseira específica para Madrid, um winglet adicional atrás do escape e um lábio do tambor dianteiro reperfilado.",
           "penalita": ""
         },
         "es": {
@@ -8870,7 +8871,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. El contexto del equipo para 2026: la gestión de neumáticos, la suspensión y la refrigeración son puntos fuertes; El equipo parte como favorito en casi todos los circuitos.",
           "considerazioniFinali": "FAVORITO — posición de previsión 1/22. Forma 2026: P1 con 219 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — Mercedes introdujo una configuración de alerón trasero específica para Madrid, un winglet adicional tras el escape y un labio del tambor delantero reperfilado.",
           "penalita": ""
         },
         "de": {
@@ -8882,7 +8883,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Der Kontext des Teams für 2026: Reifenmanagement, Fahrwerk und Kühlung sind Stärken; Auf fast allen Strecken ein Favorit.",
           "considerazioniFinali": "FAVORIT — Prognoserang 1/22. Form 2026: P1 mit 219 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — Mercedes brachte eine Madrid-spezifische Heckflügel-Konfiguration, einen zusätzlichen Winglet hinter dem Auspuff und eine neu profilierte Lippe an der vorderen Bremstrommel.",
           "penalita": ""
         }
       }
@@ -8899,12 +8900,13 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Può soffrire degrado nelle condizioni molto calde; attenzione alle piste di potenza pura.",
       "considerazioniFinali": "FAVORITO — ranking previsionale 2/22. Forma 2026: P2 con 169 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "CONFERMATO — Ferrari ha programmato per Madrid una modifica contenuta alla cover del triangolo della sospensione posteriore, con finalità soprattutto aerodinamica. L'aggiornamento è stato anticipato da AutoRacer; l'impiego effettivo sulla vettura sarà riscontrabile nel documento FIA Car Presentation Submissions del weekend.",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — Ferrari ha riprofilato la carenatura del braccio posteriore del triangolo superiore della sospensione posteriore, modificando incidenza e distribuzione del carico per ottenere un beneficio aerodinamico locale.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
         "https://www.formula1.com/en/results/2026/drivers",
-        "https://autoracer.it/ferrari-madrid-leclerc-ok-power-unit-in-forse-novita-sf-26/"
+        "https://autoracer.it/ferrari-madrid-leclerc-ok-power-unit-in-forse-novita-sf-26/",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -8916,7 +8918,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Può soffrire degrado nelle condizioni molto calde; attenzione alle piste di potenza pura.",
           "considerazioniFinali": "FAVORITO — ranking previsionale 2/22. Forma 2026: P2 con 169 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "CONFERMATO — Ferrari ha programmato per Madrid una modifica contenuta alla cover del triangolo della sospensione posteriore, con finalità soprattutto aerodinamica. L'aggiornamento è stato anticipato da AutoRacer; l'impiego effettivo sulla vettura sarà riscontrabile nel documento FIA Car Presentation Submissions del weekend.",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — Ferrari ha riprofilato la carenatura del braccio posteriore del triangolo superiore della sospensione posteriore, modificando incidenza e distribuzione del carico per ottenere un beneficio aerodinamico locale.",
           "penalita": ""
         },
         "en": {
@@ -8928,7 +8930,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. Context 2026 of the team: It can suffer degradation in very hot conditions; Beware of power-sensitive circuits.",
           "considerazioniFinali": "FAVORITE — forecast ranking 2/22. 2026 form: P2 with 169 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "CONFIRMED — Ferrari has scheduled a limited change to the rear suspension triangle cover for Madrid, mainly for aerodynamic purposes. AutoRacer reported the update in advance; its actual use on the car will be recorded in the weekend FIA Car Presentation Submissions document.",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — Ferrari reprofiled the rear leg fairing of the rear suspension’s upper wishbone, changing incidence and spanwise loading for a local aerodynamic-load benefit.",
           "penalita": ""
         },
         "fr": {
@@ -8940,7 +8942,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Contexte 2026 de l’équipe : Elle peut souffrir de dégradation dans des conditions très chaudes ; Prudence sur les circuits exigeants en puissance.",
           "considerazioniFinali": "FAVORI — classement des prévisions le 2/22. Forme 2026 : P2 avec 169 points ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "CONFIRMÉ — Ferrari a programmé pour Madrid une modification limitée du carénage du triangle de suspension arrière, principalement à des fins aérodynamiques. AutoRacer a révélé cette évolution en avance ; son utilisation effective sur la voiture figurera dans le document FIA Car Presentation Submissions du week-end.",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — Ferrari a reprofilé le carénage de la branche arrière du triangle supérieur de la suspension arrière, modifiant l’incidence et la répartition de charge pour un gain aérodynamique local.",
           "penalita": ""
         },
         "pt": {
@@ -8952,7 +8954,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. Contexto 2026 da equipa: Pode sofrer degradação em condições muito quentes; Atenção aos circuitos exigentes em potência.",
           "considerazioniFinali": "FAVORITO — previsão de 2/22. Forma em 2026: P2 com 169 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "CONFIRMADO — A Ferrari programou para Madrid uma alteração limitada à cobertura do triângulo da suspensão traseira, sobretudo com finalidade aerodinâmica. A AutoRacer antecipou a atualização; a sua utilização efetiva no carro constará do documento FIA Car Presentation Submissions do fim de semana.",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A Ferrari reperfilou a carenagem do braço traseiro do triângulo superior da suspensão traseira, alterando a incidência e a distribuição de carga para obter ganho aerodinâmico local.",
           "penalita": ""
         },
         "es": {
@@ -8964,7 +8966,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. Contexto 2026 del equipo: Puede sufrir degradación en condiciones de mucho calor; Atención a los circuitos sensibles a la potencia.",
           "considerazioniFinali": "FAVORITO — posición prevista 2/22. Forma 2026: P2 con 169 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "CONFIRMADO — Ferrari ha programado para Madrid un cambio limitado en la cubierta del triángulo de la suspensión trasera, principalmente con fines aerodinámicos. AutoRacer adelantó la actualización; su uso efectivo en el coche constará en el documento FIA Car Presentation Submissions del fin de semana.",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — Ferrari reperfiló el carenado del brazo trasero del triángulo superior de la suspensión trasera, modificando la incidencia y la distribución de carga para obtener una ganancia aerodinámica local.",
           "penalita": ""
         },
         "de": {
@@ -8976,7 +8978,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Kontext 2026 des Teams: Es kann bei sehr heißen Bedingungen Reifenabbau erleiden; Vorsicht auf reinen leistungsabhängigen Strecken.",
           "considerazioniFinali": "FAVORIT — Prognose Rang 2/22. Form 2026: P2 mit 169 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "BESTÄTIGT — Ferrari hat für Madrid eine begrenzte Änderung an der Verkleidung des hinteren Querlenkers vorgesehen, hauptsächlich aus aerodynamischen Gründen. AutoRacer berichtete vorab über das Update; der tatsächliche Einsatz am Auto wird im FIA-Dokument Car Presentation Submissions des Wochenendes aufgeführt.",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — Ferrari profilierte die Verkleidung des hinteren Schenkels am oberen Querlenker der Hinterradaufhängung neu, um durch veränderte Anstellung und Lastverteilung lokalen Abtrieb zu gewinnen.",
           "penalita": ""
         }
       }
@@ -8993,11 +8995,12 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Gestione gomme, sospensioni e raffreddamento sono punti di forza; favorita quasi ovunque.",
       "considerazioniFinali": "FAVORITO — ranking previsionale 3/22. Forma 2026: P3 con 160 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — Mercedes ha portato un’ala posteriore specifica per il livello di resistenza di Madrid, un winglet aggiuntivo dietro lo scarico e un labbro del tamburo anteriore riprofilato.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
-        "https://www.formula1.com/en/results/2026/drivers"
+        "https://www.formula1.com/en/results/2026/drivers",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -9009,7 +9012,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Gestione gomme, sospensioni e raffreddamento sono punti di forza; favorita quasi ovunque.",
           "considerazioniFinali": "FAVORITO — ranking previsionale 3/22. Forma 2026: P3 con 160 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — Mercedes ha portato un’ala posteriore specifica per il livello di resistenza di Madrid, un winglet aggiuntivo dietro lo scarico e un labbro del tamburo anteriore riprofilato.",
           "penalita": ""
         },
         "en": {
@@ -9021,7 +9024,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. The team's 2026 context: tyre management, suspension and cooling are strengths; A favourite at almost every circuit.",
           "considerazioniFinali": "FAVORITE — forecast ranking 3/22. 2026 form: P3 with 160 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — Mercedes introduced a Madrid-specific rear-wing configuration, an additional winglet behind the exhaust and a reprofiled front-drum lip.",
           "penalita": ""
         },
         "fr": {
@@ -9033,7 +9036,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Le contexte de l’équipe pour 2026 : la gestion des pneus, la suspension et le refroidissement sont des points forts ; l’équipe fait partie des favorites sur presque tous les circuits.",
           "considerazioniFinali": "FAVORI — prévision, classement 3/22. Forme 2026 : P3 avec 160 points ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — Mercedes a introduit une configuration d’aileron arrière spécifique à Madrid, un winglet supplémentaire derrière l’échappement et une lèvre de tambour avant reprofilée.",
           "penalita": ""
         },
         "pt": {
@@ -9045,7 +9048,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. O contexto da equipa para 2026: gestão dos pneus, suspensão e arrefecimento são pontos fortes; A equipa é favorita em quase todos os circuitos.",
           "considerazioniFinali": "FAVORITO — previsão de 3/22. Forma em 2026: P3 com 160 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A Mercedes introduziu uma configuração de asa traseira específica para Madrid, um winglet adicional atrás do escape e um lábio do tambor dianteiro reperfilado.",
           "penalita": ""
         },
         "es": {
@@ -9057,7 +9060,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. El contexto del equipo para 2026: la gestión de neumáticos, la suspensión y la refrigeración son puntos fuertes; El equipo parte como favorito en casi todos los circuitos.",
           "considerazioniFinali": "FAVORITO — posición de previsión 3/22. Forma 2026: P3 con 160 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — Mercedes introdujo una configuración de alerón trasero específica para Madrid, un winglet adicional tras el escape y un labio del tambor delantero reperfilado.",
           "penalita": ""
         },
         "de": {
@@ -9069,7 +9072,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Der Kontext des Teams für 2026: Reifenmanagement, Fahrwerk und Kühlung sind Stärken; Auf fast allen Strecken ein Favorit.",
           "considerazioniFinali": "FAVORIT — Prognose Rang 3/22. Form 2026: P3 mit 160 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — Mercedes brachte eine Madrid-spezifische Heckflügel-Konfiguration, einen zusätzlichen Winglet hinter dem Auspuff und eine neu profilierte Lippe an der vorderen Bremstrommel.",
           "penalita": ""
         }
       }
@@ -9086,13 +9089,14 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Può soffrire degrado nelle condizioni molto calde; attenzione alle piste di potenza pura.",
       "considerazioniFinali": "PODIO — ranking previsionale 4/22. Forma 2026: P4 con 138 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "CONFERMATO — Ferrari ha programmato per Madrid una modifica contenuta alla cover del triangolo della sospensione posteriore, con finalità soprattutto aerodinamica. L'aggiornamento è stato anticipato da AutoRacer; l'impiego effettivo sulla vettura sarà riscontrabile nel documento FIA Car Presentation Submissions del weekend.",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — Ferrari ha riprofilato la carenatura del braccio posteriore del triangolo superiore della sospensione posteriore, modificando incidenza e distribuzione del carico per ottenere un beneficio aerodinamico locale.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
         "https://www.formula1.com/en/results/2026/drivers",
         "https://autoracer.it/ferrari-madrid-leclerc-ok-power-unit-in-forse-novita-sf-26/",
-        "https://www.motorsport.com/f1/news/charles-leclerc-avoiding-spanish-gp-penalty/10853820/"
+        "https://www.motorsport.com/f1/news/charles-leclerc-avoiding-spanish-gp-penalty/10853820/",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -9104,7 +9108,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Può soffrire degrado nelle condizioni molto calde; attenzione alle piste di potenza pura.",
           "considerazioniFinali": "PODIO — ranking previsionale 4/22. Forma 2026: P4 con 138 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "CONFERMATO — Ferrari ha programmato per Madrid una modifica contenuta alla cover del triangolo della sospensione posteriore, con finalità soprattutto aerodinamica. L'aggiornamento è stato anticipato da AutoRacer; l'impiego effettivo sulla vettura sarà riscontrabile nel documento FIA Car Presentation Submissions del weekend.",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — Ferrari ha riprofilato la carenatura del braccio posteriore del triangolo superiore della sospensione posteriore, modificando incidenza e distribuzione del carico per ottenere un beneficio aerodinamico locale.",
           "penalita": ""
         },
         "en": {
@@ -9116,7 +9120,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. Context 2026 of the team: It can suffer degradation in very hot conditions; Beware of power-sensitive circuits.",
           "considerazioniFinali": "PODIUM — forecast ranking 4/22. 2026 form: P4 with 138 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "CONFIRMED — Ferrari has scheduled a limited change to the rear suspension triangle cover for Madrid, mainly for aerodynamic purposes. AutoRacer reported the update in advance; its actual use on the car will be recorded in the weekend FIA Car Presentation Submissions document.",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — Ferrari reprofiled the rear leg fairing of the rear suspension’s upper wishbone, changing incidence and spanwise loading for a local aerodynamic-load benefit.",
           "penalita": ""
         },
         "fr": {
@@ -9128,7 +9132,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Contexte 2026 de l’équipe : Elle peut souffrir de dégradation dans des conditions très chaudes ; Prudence sur les circuits exigeants en puissance.",
           "considerazioniFinali": "PODIUM — classement prévu 4/22. Forme 2026 : P4 avec 138 points ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "CONFIRMÉ — Ferrari a programmé pour Madrid une modification limitée du carénage du triangle de suspension arrière, principalement à des fins aérodynamiques. AutoRacer a révélé cette évolution en avance ; son utilisation effective sur la voiture figurera dans le document FIA Car Presentation Submissions du week-end.",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — Ferrari a reprofilé le carénage de la branche arrière du triangle supérieur de la suspension arrière, modifiant l’incidence et la répartition de charge pour un gain aérodynamique local.",
           "penalita": ""
         },
         "pt": {
@@ -9140,7 +9144,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. Contexto 2026 da equipa: Pode sofrer degradação em condições muito quentes; Atenção aos circuitos exigentes em potência.",
           "considerazioniFinali": "PÓDIO — previsão de classificação 4/22. Forma em 2026: P4 com 138 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "CONFIRMADO — A Ferrari programou para Madrid uma alteração limitada à cobertura do triângulo da suspensão traseira, sobretudo com finalidade aerodinâmica. A AutoRacer antecipou a atualização; a sua utilização efetiva no carro constará do documento FIA Car Presentation Submissions do fim de semana.",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A Ferrari reperfilou a carenagem do braço traseiro do triângulo superior da suspensão traseira, alterando a incidência e a distribuição de carga para obter ganho aerodinâmico local.",
           "penalita": ""
         },
         "es": {
@@ -9152,7 +9156,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. Contexto 2026 del equipo: Puede sufrir degradación en condiciones de mucho calor; Atención a los circuitos sensibles a la potencia.",
           "considerazioniFinali": "PODIO — previsión de clasificación 4/22. Forma 2026: P4 con 138 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "CONFIRMADO — Ferrari ha programado para Madrid un cambio limitado en la cubierta del triángulo de la suspensión trasera, principalmente con fines aerodinámicos. AutoRacer adelantó la actualización; su uso efectivo en el coche constará en el documento FIA Car Presentation Submissions del fin de semana.",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — Ferrari reperfiló el carenado del brazo trasero del triángulo superior de la suspensión trasera, modificando la incidencia y la distribución de carga para obtener una ganancia aerodinámica local.",
           "penalita": ""
         },
         "de": {
@@ -9164,7 +9168,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Kontext 2026 des Teams: Es kann bei sehr heißen Bedingungen Reifenabbau erleiden; Vorsicht auf reinen leistungsabhängigen Strecken.",
           "considerazioniFinali": "PODIUM — prognostizierte Platzierung 4/22. Form 2026: P4 mit 138 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "BESTÄTIGT — Ferrari hat für Madrid eine begrenzte Änderung an der Verkleidung des hinteren Querlenkers vorgesehen, hauptsächlich aus aerodynamischen Gründen. AutoRacer berichtete vorab über das Update; der tatsächliche Einsatz am Auto wird im FIA-Dokument Car Presentation Submissions des Wochenendes aufgeführt.",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — Ferrari profilierte die Verkleidung des hinteren Schenkels am oberen Querlenker der Hinterradaufhängung neu, um durch veränderte Anstellung und Lastverteilung lokalen Abtrieb zu gewinnen.",
           "penalita": ""
         }
       },
@@ -9182,11 +9186,12 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Buon degrado recente, ma restano sensibilità al vento e alla finestra di utilizzo.",
       "considerazioniFinali": "PODIO — ranking previsionale 5/22. Forma 2026: P5 con 128 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — McLaren ha aggiunto elementi aerodinamici all’ala posteriore per migliorare il condizionamento del flusso verso il profilo principale e il flap.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
-        "https://www.formula1.com/en/results/2026/drivers"
+        "https://www.formula1.com/en/results/2026/drivers",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -9198,7 +9203,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Buon degrado recente, ma restano sensibilità al vento e alla finestra di utilizzo.",
           "considerazioniFinali": "PODIO — ranking previsionale 5/22. Forma 2026: P5 con 128 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — McLaren ha aggiunto elementi aerodinamici all’ala posteriore per migliorare il condizionamento del flusso verso il profilo principale e il flap.",
           "penalita": ""
         },
         "en": {
@@ -9210,7 +9215,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. Context 2026 of the team: Good recent degradation, but sensitivity to the wind and the operating window remain.",
           "considerazioniFinali": "PODIUM — forecast ranking 5/22. 2026 form: P5 with 128 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — McLaren added aerodynamic elements to the rear wing to improve flow conditioning onto the mainplane and flap.",
           "penalita": ""
         },
         "fr": {
@@ -9222,7 +9227,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Contexte 2026 de l’équipe : dégradation récemment bien maîtrisée, mais une sensibilité au vent et à la fenêtre de fonctionnement demeure.",
           "considerazioniFinali": "PODIUM — classement prévu 5/22. Forme 2026 : P5 avec 128 points ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — McLaren a ajouté des éléments aérodynamiques à l’aileron arrière afin d’améliorer le conditionnement du flux vers le plan principal et le volet.",
           "penalita": ""
         },
         "pt": {
@@ -9234,7 +9239,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. Contexto 2026 da equipa: Boa degradação recente, mas a sensibilidade ao vento e à janela de utilização mantém-se.",
           "considerazioniFinali": "PÓDIO — previsão de classificação 5/22. Forma em 2026: P5 com 128 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A McLaren adicionou elementos aerodinâmicos à asa traseira para melhorar o condicionamento do fluxo sobre o plano principal e o flap.",
           "penalita": ""
         },
         "es": {
@@ -9246,7 +9251,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. Contexto 2026 del equipo: Buena degradación reciente, pero persiste sensibilidad al viento y a la ventana de funcionamiento.",
           "considerazioniFinali": "PODIO — previsión de clasificación 5/22. Forma 2026: P5 con 128 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — McLaren añadió elementos aerodinámicos al alerón trasero para mejorar el acondicionamiento del flujo hacia el plano principal y el flap.",
           "penalita": ""
         },
         "de": {
@@ -9258,7 +9263,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Kontext 2026 des Teams: In letzter Zeit gut kontrollierter Reifenabbau, aber die Empfindlichkeit gegenüber Wind und Arbeitsfenster bleibt bestehen.",
           "considerazioniFinali": "PODIUM — prognostizierte Platzierung 5/22. Form 2026: P5 mit 128 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — McLaren ergänzte das Heckflügel-System um aerodynamische Elemente, die die Strömung zum Hauptprofil und Flap verbessern.",
           "penalita": ""
         }
       }
@@ -9275,11 +9280,12 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Gestione del pilota buona, ma finestra di bilanciamento e affidabilità PU restano rischi.",
       "considerazioniFinali": "PODIO — ranking previsionale 6/22. Forma 2026: P6 con 109 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — Red Bull ha aggiornato la carrozzeria della ruota posteriore per robustezza e recupero del carico, oltre a modificare geometria e laminato del floor bib per ridurre le sollecitazioni locali.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
-        "https://www.formula1.com/en/results/2026/drivers"
+        "https://www.formula1.com/en/results/2026/drivers",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -9291,7 +9297,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Gestione del pilota buona, ma finestra di bilanciamento e affidabilità PU restano rischi.",
           "considerazioniFinali": "PODIO — ranking previsionale 6/22. Forma 2026: P6 con 109 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — Red Bull ha aggiornato la carrozzeria della ruota posteriore per robustezza e recupero del carico, oltre a modificare geometria e laminato del floor bib per ridurre le sollecitazioni locali.",
           "penalita": ""
         },
         "en": {
@@ -9303,7 +9309,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. The team's 2026 context: Good driver management, but balance window and reliability PU risks remain.",
           "considerazioniFinali": "PODIUM — forecast ranking 6/22. 2026 form: P6 with 109 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — Red Bull updated the rear-wheel bodywork for robustness and load recovery, and revised the floor-bib geometry and laminate to reduce local strain.",
           "penalita": ""
         },
         "fr": {
@@ -9315,7 +9321,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Le contexte de l’équipe en 2026 : Bonne gestion des pilotes, mais une fenêtre d’équilibre, une fiabilité unité de puissance des risques subsistent.",
           "considerazioniFinali": "PODIUM — classement prévu 6/22. Forme 2026 : P6 avec 109 points ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — Red Bull a modifié la carrosserie de la roue arrière pour renforcer la robustesse et récupérer de l’appui, ainsi que la géométrie et le stratifié du floor bib afin de réduire les contraintes locales.",
           "penalita": ""
         },
         "pt": {
@@ -9327,7 +9333,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. O contexto da equipa em 2026: Boa gestão dos pilotos, mas a janela de equilíbrio e a persistem riscos na fiabilidade da PU.",
           "considerazioniFinali": "PÓDIO — previsão de classificação 6/22. Forma em 2026: P6 com 109 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A Red Bull atualizou a carroçaria da roda traseira para maior robustez e recuperação de carga, além da geometria e do laminado do floor bib para reduzir tensões locais.",
           "penalita": ""
         },
         "es": {
@@ -9339,7 +9345,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. El contexto del equipo para 2026: Buena gestión de pilotos, pero la ventana de equilibrio y la fiabilidad PU riesgos persisten.",
           "considerazioniFinali": "PODIO — previsión de clasificación 6/22. Forma 2026: P6 con 109 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — Red Bull actualizó la carrocería de la rueda trasera para mejorar la robustez y recuperar carga, además de revisar la geometría y el laminado del floor bib para reducir tensiones locales.",
           "penalita": ""
         },
         "de": {
@@ -9351,7 +9357,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Der Kontext des Teams für 2026: Gutes Fahrermanagement, aber Risiken für Balancefenster und Zuverlässigkeit PU bestehen.",
           "considerazioniFinali": "PODIUM — prognostizierte Platzierung 6/22. Form 2026: P6 mit 109 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — Red Bull überarbeitete die Hinterrad-Verkleidung für mehr Robustheit und Abtrieb sowie Geometrie und Laminat des Floor Bib zur Verringerung lokaler Belastungen.",
           "penalita": ""
         }
       }
@@ -9368,11 +9374,12 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Buon degrado recente, ma restano sensibilità al vento e alla finestra di utilizzo.",
       "considerazioniFinali": "TOP 6 — ranking previsionale 7/22. Forma 2026: P7 con 92 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — McLaren ha aggiunto elementi aerodinamici all’ala posteriore per migliorare il condizionamento del flusso verso il profilo principale e il flap.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
-        "https://www.formula1.com/en/results/2026/drivers"
+        "https://www.formula1.com/en/results/2026/drivers",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -9384,7 +9391,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Buon degrado recente, ma restano sensibilità al vento e alla finestra di utilizzo.",
           "considerazioniFinali": "TOP 6 — ranking previsionale 7/22. Forma 2026: P7 con 92 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — McLaren ha aggiunto elementi aerodinamici all’ala posteriore per migliorare il condizionamento del flusso verso il profilo principale e il flap.",
           "penalita": ""
         },
         "en": {
@@ -9396,7 +9403,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. Context 2026 of the team: Good recent degradation, but sensitivity to the wind and the operating window remain.",
           "considerazioniFinali": "TOP 6 — forecast ranking 7/22. 2026 form: P7 with 92 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — McLaren added aerodynamic elements to the rear wing to improve flow conditioning onto the mainplane and flap.",
           "penalita": ""
         },
         "fr": {
@@ -9408,7 +9415,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Contexte 2026 de l’équipe : dégradation récemment bien maîtrisée, mais une sensibilité au vent et à la fenêtre de fonctionnement demeure.",
           "considerazioniFinali": "TOP 6 — classement des prévisions le 7/22. Forme 2026 : P7 avec 92 points ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — McLaren a ajouté des éléments aérodynamiques à l’aileron arrière afin d’améliorer le conditionnement du flux vers le plan principal et le volet.",
           "penalita": ""
         },
         "pt": {
@@ -9420,7 +9427,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. Contexto 2026 da equipa: Boa degradação recente, mas a sensibilidade ao vento e à janela de utilização mantém-se.",
           "considerazioniFinali": "TOP 6 — previsão de 7/22. Forma em 2026: P7 com 92 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A McLaren adicionou elementos aerodinâmicos à asa traseira para melhorar o condicionamento do fluxo sobre o plano principal e o flap.",
           "penalita": ""
         },
         "es": {
@@ -9432,7 +9439,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. Contexto 2026 del equipo: Buena degradación reciente, pero persiste sensibilidad al viento y a la ventana de funcionamiento.",
           "considerazioniFinali": "TOP 6 — posición de previsión 7/22. Forma 2026: P7 con 92 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — McLaren añadió elementos aerodinámicos al alerón trasero para mejorar el acondicionamiento del flujo hacia el plano principal y el flap.",
           "penalita": ""
         },
         "de": {
@@ -9444,7 +9451,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Kontext 2026 des Teams: In letzter Zeit gut kontrollierter Reifenabbau, aber die Empfindlichkeit gegenüber Wind und Arbeitsfenster bleibt bestehen.",
           "considerazioniFinali": "TOP 6 — Vorhersage-Rangliste 7/22. Form 2026: P7 mit 92 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — McLaren ergänzte das Heckflügel-System um aerodynamische Elemente, die die Strömung zum Hauptprofil und Flap verbessern.",
           "penalita": ""
         }
       }
@@ -9461,11 +9468,12 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Gestione del pilota buona, ma finestra di bilanciamento e affidabilità PU restano rischi.",
       "considerazioniFinali": "TOP 6 — ranking previsionale 8/22. Forma 2026: P8 con 68 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — Red Bull ha aggiornato la carrozzeria della ruota posteriore per robustezza e recupero del carico, oltre a modificare geometria e laminato del floor bib per ridurre le sollecitazioni locali.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
-        "https://www.formula1.com/en/results/2026/drivers"
+        "https://www.formula1.com/en/results/2026/drivers",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -9477,7 +9485,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Gestione del pilota buona, ma finestra di bilanciamento e affidabilità PU restano rischi.",
           "considerazioniFinali": "TOP 6 — ranking previsionale 8/22. Forma 2026: P8 con 68 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — Red Bull ha aggiornato la carrozzeria della ruota posteriore per robustezza e recupero del carico, oltre a modificare geometria e laminato del floor bib per ridurre le sollecitazioni locali.",
           "penalita": ""
         },
         "en": {
@@ -9489,7 +9497,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. The team's 2026 context: Good driver management, but balance window and reliability PU risks remain.",
           "considerazioniFinali": "TOP 6 — forecast ranking 8/22. 2026 form: P8 with 68 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — Red Bull updated the rear-wheel bodywork for robustness and load recovery, and revised the floor-bib geometry and laminate to reduce local strain.",
           "penalita": ""
         },
         "fr": {
@@ -9501,7 +9509,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Le contexte de l’équipe en 2026 : Bonne gestion des pilotes, mais une fenêtre d’équilibre, une fiabilité unité de puissance des risques subsistent.",
           "considerazioniFinali": "TOP 6 — classement des prévisions le 8/22. Forme 2026 : P8 avec 68 points ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — Red Bull a modifié la carrosserie de la roue arrière pour renforcer la robustesse et récupérer de l’appui, ainsi que la géométrie et le stratifié du floor bib afin de réduire les contraintes locales.",
           "penalita": ""
         },
         "pt": {
@@ -9513,7 +9521,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. O contexto da equipa em 2026: Boa gestão dos pilotos, mas a janela de equilíbrio e a persistem riscos na fiabilidade da PU.",
           "considerazioniFinali": "TOP 6 — previsão de 8/22. Forma em 2026: P8 com 68 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A Red Bull atualizou a carroçaria da roda traseira para maior robustez e recuperação de carga, além da geometria e do laminado do floor bib para reduzir tensões locais.",
           "penalita": ""
         },
         "es": {
@@ -9525,7 +9533,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. El contexto del equipo para 2026: Buena gestión de pilotos, pero la ventana de equilibrio y la fiabilidad PU riesgos persisten.",
           "considerazioniFinali": "TOP 6 — posición de previsión 8/22. Forma 2026: P8 con 68 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — Red Bull actualizó la carrocería de la rueda trasera para mejorar la robustez y recuperar carga, además de revisar la geometría y el laminado del floor bib para reducir tensiones locales.",
           "penalita": ""
         },
         "de": {
@@ -9537,7 +9545,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Der Kontext des Teams für 2026: Gutes Fahrermanagement, aber Risiken für Balancefenster und Zuverlässigkeit PU bestehen.",
           "considerazioniFinali": "TOP 6 — Prognoserang 8/22. Form 2026: P8 mit 68 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — Red Bull überarbeitete die Hinterrad-Verkleidung für mehr Robustheit und Abtrieb sowie Geometrie und Laminat des Floor Bib zur Verringerung lokaler Belastungen.",
           "penalita": ""
         }
       }
@@ -9647,11 +9655,12 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Nessun difetto gomme unico; la prestazione complessiva resta il limite principale.",
       "considerazioniFinali": "TOP 6 — ranking previsionale 10/22. Forma 2026: P10 con 42 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — Alpine ha aggiunto un elemento alla parte anteriore del fondo per ottimizzare la distribuzione locale della pressione e la gestione dei flussi, generando carico efficiente.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
-        "https://www.formula1.com/en/results/2026/drivers"
+        "https://www.formula1.com/en/results/2026/drivers",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -9663,7 +9672,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Nessun difetto gomme unico; la prestazione complessiva resta il limite principale.",
           "considerazioniFinali": "TOP 6 — ranking previsionale 10/22. Forma 2026: P10 con 42 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — Alpine ha aggiunto un elemento alla parte anteriore del fondo per ottimizzare la distribuzione locale della pressione e la gestione dei flussi, generando carico efficiente.",
           "penalita": ""
         },
         "en": {
@@ -9675,7 +9684,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. Context 2026 of the team: No single tyre defects; the overall performance remains the main limit.",
           "considerazioniFinali": "TOP 6 — forecast ranking 10/22. 2026 form: P10 with 42 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — Alpine added an element to the forward floor board to optimise local pressure distribution and flow management, generating efficient downforce.",
           "penalita": ""
         },
         "fr": {
@@ -9687,7 +9696,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Contexte 2026 de l’équipe : aucun problème récurrent lié aux pneus ; la performance globale reste la principale limite.",
           "considerazioniFinali": "TOP 6 — classement des prévisions le 10/22. Forme 2026 : P10 avec 42 points ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — Alpine a ajouté un élément à l’avant du plancher afin d’optimiser la distribution locale de pression et la gestion des flux, générant un appui efficace.",
           "penalita": ""
         },
         "pt": {
@@ -9699,7 +9708,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. Contexto 2026 da equipa: Nenhum problema recorrente com os pneus; O desempenho global continua a ser o principal limite.",
           "considerazioniFinali": "TOP 6 — classificação prevista para 10/22. Forma em 2026: P10 com 42 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A Alpine adicionou um elemento à parte dianteira do assoalho para otimizar a distribuição local de pressão e a gestão do fluxo, gerando carga eficiente.",
           "penalita": ""
         },
         "es": {
@@ -9711,7 +9720,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. Contexto 2026 del equipo: Ningún defecto de neumático; El rendimiento general sigue siendo el principal límite.",
           "considerazioniFinali": "TOP 6 — posición de previsión 10/22. Forma 2026: P10 con 42 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — Alpine añadió un elemento a la parte delantera del suelo para optimizar la distribución local de presión y la gestión del flujo, generando carga eficiente.",
           "penalita": ""
         },
         "de": {
@@ -9723,7 +9732,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Kontext 2026 des Teams: Kein einziger Reifendefekt; Die Gesamtleistung bleibt das Hauptlimit.",
           "considerazioniFinali": "TOP 6 — Prognoserang 10/22. Form 2026: P10 mit 42 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — Alpine ergänzte den vorderen Unterboden um ein Element, das die lokale Druckverteilung und Strömungsführung optimiert und effizienten Abtrieb erzeugt.",
           "penalita": ""
         }
       }
@@ -9833,11 +9842,12 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Nessun difetto gomme unico; la prestazione complessiva resta il limite principale.",
       "considerazioniFinali": "PUNTI — ranking previsionale 12/22. Forma 2026: P12 con 19 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — Alpine ha aggiunto un elemento alla parte anteriore del fondo per ottimizzare la distribuzione locale della pressione e la gestione dei flussi, generando carico efficiente.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
-        "https://www.formula1.com/en/results/2026/drivers"
+        "https://www.formula1.com/en/results/2026/drivers",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -9849,7 +9859,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Nessun difetto gomme unico; la prestazione complessiva resta il limite principale.",
           "considerazioniFinali": "PUNTI — ranking previsionale 12/22. Forma 2026: P12 con 19 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — Alpine ha aggiunto un elemento alla parte anteriore del fondo per ottimizzare la distribuzione locale della pressione e la gestione dei flussi, generando carico efficiente.",
           "penalita": ""
         },
         "en": {
@@ -9861,7 +9871,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. Context 2026 of the team: No single tyre defects; the overall performance remains the main limit.",
           "considerazioniFinali": "POINTS — forecast ranking 12/22. 2026 form: P12 with 19 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — Alpine added an element to the forward floor board to optimise local pressure distribution and flow management, generating efficient downforce.",
           "penalita": ""
         },
         "fr": {
@@ -9873,7 +9883,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Contexte 2026 de l’équipe : aucun problème récurrent lié aux pneus ; la performance globale reste la principale limite.",
           "considerazioniFinali": "POINTS — classement de prévision 12/22. Forme 2026 : P12 avec 19 points ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — Alpine a ajouté un élément à l’avant du plancher afin d’optimiser la distribution locale de pression et la gestion des flux, générant un appui efficace.",
           "penalita": ""
         },
         "pt": {
@@ -9885,7 +9895,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. Contexto 2026 da equipa: Nenhum problema recorrente com os pneus; O desempenho global continua a ser o principal limite.",
           "considerazioniFinali": "PONTOS — classificação prevista para 12/22. Forma em 2026: P12 com 19 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A Alpine adicionou um elemento à parte dianteira do assoalho para otimizar a distribuição local de pressão e a gestão do fluxo, gerando carga eficiente.",
           "penalita": ""
         },
         "es": {
@@ -9897,7 +9907,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. Contexto 2026 del equipo: Ningún defecto de neumático; El rendimiento general sigue siendo el principal límite.",
           "considerazioniFinali": "PUNTOS — posición de previsión 12/22. Forma 2026: P12 con 19 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — Alpine añadió un elemento a la parte delantera del suelo para optimizar la distribución local de presión y la gestión del flujo, generando carga eficiente.",
           "penalita": ""
         },
         "de": {
@@ -9909,7 +9919,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Kontext 2026 des Teams: Kein einziger Reifendefekt; Die Gesamtleistung bleibt das Hauptlimit.",
           "considerazioniFinali": "PUNKTE — Prognose Rang 12/22. Form 2026: P12 mit 19 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — Alpine ergänzte den vorderen Unterboden um ein Element, das die lokale Druckverteilung und Strömungsführung optimiert und effizienten Abtrieb erzeugt.",
           "penalita": ""
         }
       }
@@ -10670,11 +10680,12 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Prestazione gomme non separabile dall'affidabilità; esperienza dei piloti è il principale aiuto.",
       "considerazioniFinali": "DIFFICILE — ranking previsionale 21/22. Forma 2026: P21 con 0 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — Cadillac ha rivisto il winglet sul bordo d’uscita del flap dell’ala posteriore e aggiunto una piccola pinna verticale al diffusore per aumentare carico posteriore e stabilità aerodinamica.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
-        "https://www.formula1.com/en/results/2026/drivers"
+        "https://www.formula1.com/en/results/2026/drivers",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -10686,7 +10697,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Prestazione gomme non separabile dall'affidabilità; esperienza dei piloti è il principale aiuto.",
           "considerazioniFinali": "DIFFICILE — ranking previsionale 21/22. Forma 2026: P21 con 0 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — Cadillac ha rivisto il winglet sul bordo d’uscita del flap dell’ala posteriore e aggiunto una piccola pinna verticale al diffusore per aumentare carico posteriore e stabilità aerodinamica.",
           "penalita": ""
         },
         "en": {
@@ -10698,7 +10709,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. 2026 context of the team: tyre performance not separable from reliability; Driver experience is the main asset.",
           "considerazioniFinali": "DIFFICULT — forecast ranking 21/22. 2026 form: P21 with 0 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — Cadillac revised the rear-wing flap trailing-edge winglet and added a small vertical diffuser vane to increase rear load and aerodynamic stability.",
           "penalita": ""
         },
         "fr": {
@@ -10710,7 +10721,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Contexte 2026 de l’équipe : Performance des pneus indissociable de la fiabilité ; L’expérience des pilotes est le principal atout.",
           "considerazioniFinali": "DIFFICILE — prévision, classement 21/22. Forme 2026 : P21 avec 0 point ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — Cadillac a revu le winglet du bord de fuite du volet d’aileron arrière et ajouté une petite ailette verticale au diffuseur afin d’accroître l’appui arrière et la stabilité aérodynamique.",
           "penalita": ""
         },
         "pt": {
@@ -10722,7 +10733,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. Contexto da equipa em 2026: Desempenho dos pneus não separável da fiabilidade; A experiência dos pilotos é o principal trunfo.",
           "considerazioniFinali": "DIFÍCIL — previsão de classificação 21/22. Forma em 2026: P21 com 0 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A Cadillac reviu o winglet do bordo de fuga do flap da asa traseira e adicionou uma pequena aleta vertical ao difusor para aumentar a carga traseira e a estabilidade aerodinâmica.",
           "penalita": ""
         },
         "es": {
@@ -10734,7 +10745,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. Contexto del equipo en 2026: El rendimiento de los neumáticos no se puede separar de la fiabilidad; La experiencia de los pilotos es la principal baza.",
           "considerazioniFinali": "DIFÍCIL — previsión: 21/22. Forma 2026: P21 con 0 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — Cadillac revisó el winglet del borde de salida del flap del alerón trasero y añadió una pequeña aleta vertical al difusor para aumentar la carga trasera y la estabilidad aerodinámica.",
           "penalita": ""
         },
         "de": {
@@ -10746,7 +10757,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Kontext des Teams 2026: Reifenleistung nicht von der Zuverlässigkeit trennbar; Die Erfahrung der Fahrer ist die wichtigste Stärke.",
           "considerazioniFinali": "SCHWIERIG — Prognoserang 21/22. Form 2026: P21 mit 0 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — Cadillac überarbeitete den Winglet an der Hinterkante des Heckflügel-Flaps und ergänzte den Diffusor um eine kleine vertikale Finne, um hinteren Abtrieb und aerodynamische Stabilität zu erhöhen.",
           "penalita": ""
         }
       }
@@ -10763,11 +10774,12 @@
       "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Prestazione gomme non separabile dall'affidabilità; esperienza dei piloti è il principale aiuto.",
       "considerazioniFinali": "DIFFICILE — ranking previsionale 22/22. Forma 2026: P22 con 0 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
       "affidabilita": "",
-      "aggiornamentiInArrivo": "",
+      "aggiornamentiInArrivo": "CONFERMATO FIA — Cadillac ha rivisto il winglet sul bordo d’uscita del flap dell’ala posteriore e aggiunto una piccola pinna verticale al diffusore per aumentare carico posteriore e stabilità aerodinamica.",
       "fonti": [
         "https://github.com/f1db/f1db/releases/download/v2026.13.0/f1db-json-splitted.zip",
         "https://www.formula1.com/en/racing/2026/spain",
-        "https://www.formula1.com/en/results/2026/drivers"
+        "https://www.formula1.com/en/results/2026/drivers",
+        "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf"
       ],
       "traduzioni": {
         "it": {
@@ -10779,7 +10791,7 @@
           "gestioneGomme": "Nessun campione F1 recente sul tracciato: valutazione non individualizzabile. Asfalto ed evoluzione della pista sono incognite. Saranno decisivi apprendimento, warm-up, carichi laterali e adattamento rapido dell'assetto. Contesto 2026 della scuderia: Prestazione gomme non separabile dall'affidabilità; esperienza dei piloti è il principale aiuto.",
           "considerazioniFinali": "DIFFICILE — ranking previsionale 22/22. Forma 2026: P22 con 0 punti; nessun risultato F1 2023-25 comparabile. Il Madring è un circuito semi-permanente nuovo, lungo 5,416 km e composto da 22 curve; combina tratti urbani, rettilinei e la lunga curva sopraelevata La Monumental. Non esistono precedenti Gran Premi di Formula 1 sul tracciato. Confidenza bassa: regolamento e gomme 2026 riducono la trasferibilità dello storico.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFERMATO FIA — Cadillac ha rivisto il winglet sul bordo d’uscita del flap dell’ala posteriore e aggiunto una piccola pinna verticale al diffusore per aumentare carico posteriore e stabilità aerodinamica.",
           "penalita": ""
         },
         "en": {
@@ -10791,7 +10803,7 @@
           "gestioneGomme": "No recent F1 samples at this circuit: an individual assessment is not possible. Asphalt and track evolution are unknowns. Learning, warm-up, lateral loads and rapid suspension adaptation will be decisive. 2026 context of the team: tyre performance not separable from reliability; Driver experience is the main asset.",
           "considerazioniFinali": "DIFFICULT — forecast ranking 22/22. 2026 form: P22 with 0 points; No comparable F1 2023-25 results. The Madring is a new semi-permanent circuit, 5.416 km long and consisting of 22 corners; It combines urban sections, straights and the long banked curve La Monumental. There are no previous Formula 1 Grands Prix on the track. Low confidence: 2026 regulations and tyres reduce the transferability of the historic bike.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "FIA CONFIRMED — Cadillac revised the rear-wing flap trailing-edge winglet and added a small vertical diffuser vane to increase rear load and aerodynamic stability.",
           "penalita": ""
         },
         "fr": {
@@ -10803,7 +10815,7 @@
           "gestioneGomme": "Aucun échantillon récent de F1 sur ce circuit : l’évaluation ne peut pas être individualisée. L’évolution de l’asphalte et de la piste reste incertaine. L’apprentissage, la mise en température, les charges latérales et l’adaptation rapide des réglages seront décisifs. Contexte 2026 de l’équipe : Performance des pneus indissociable de la fiabilité ; L’expérience des pilotes est le principal atout.",
           "considerazioniFinali": "DIFFICILE — prévision, classement 22/22. Forme 2026 : P22 avec 0 point ; Aucun résultat comparable F1 2023-25. Le Madring est un nouveau circuit semi-permanent, long de 5,416 km et composé de 22 virages ; Elle combine des sections urbaines, des lignes droites et la longue courbe inclinée La Monumental. Il n’y a pas eu de Formula 1 Grands Prix précédents sur ce circuit. Faible confiance : la réglementation et les pneus de 2026 réduisent la transférabilité de les données historiques.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMÉ PAR LA FIA — Cadillac a revu le winglet du bord de fuite du volet d’aileron arrière et ajouté une petite ailette verticale au diffuseur afin d’accroître l’appui arrière et la stabilité aérodynamique.",
           "penalita": ""
         },
         "pt": {
@@ -10815,7 +10827,7 @@
           "gestioneGomme": "Não existem amostras recentes de F1 neste circuito: a avaliação não pode ser individualizada. O asfalto e a evolução da pista são incógnitas. Aprendizagem, warm-up, cargas laterais e adaptação rápida da suspensão serão decisivas. Contexto da equipa em 2026: Desempenho dos pneus não separável da fiabilidade; A experiência dos pilotos é o principal trunfo.",
           "considerazioniFinali": "DIFÍCIL — previsão de classificação 22/22. Forma em 2026: P22 com 0 pontos; Não há resultados comparáveis F1 2023-25. O Madring é um novo circuito semi-permanente, com 5,416 km de extensão e composto por 22 curvas; Combina secções urbanas, rectas e a longa curva inclinada La Monumental. Não existem Formula 1 Grandes Prémios anteriores na pista. Baixa confiança: os regulamentos e pneus de 2026 reduzem a transferibilidade da bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO PELA FIA — A Cadillac reviu o winglet do bordo de fuga do flap da asa traseira e adicionou uma pequena aleta vertical ao difusor para aumentar a carga traseira e a estabilidade aerodinâmica.",
           "penalita": ""
         },
         "es": {
@@ -10827,7 +10839,7 @@
           "gestioneGomme": "No hay muestras recientes de F1 en este circuito: la evaluación no puede ser individualizada. El asfalto y la evolución de la pista son incógnitas. El aprendizaje, la warm-up, las cargas laterales y la rápida adaptación a la suspensión serán decisivos. Contexto del equipo en 2026: El rendimiento de los neumáticos no se puede separar de la fiabilidad; La experiencia de los pilotos es la principal baza.",
           "considerazioniFinali": "DIFÍCIL — posición de previsión 22/22. Forma 2026: P22 con 0 puntos; No hay resultados F1 comparables con 2023-25. El Madring es un nuevo circuito semipermanente, de 5,416 km de longitud y compuesto por 22 curvas; Combina zonas urbanas, rectas y la larga curva peraltada La Monumental. No hay Formula 1 Grandes Premios anteriores en el circuito. Baja confianza: Las normativas y neumáticos de 2026 reducen la transferibilidad de la bicicleta histórica.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "CONFIRMADO POR LA FIA — Cadillac revisó el winglet del borde de salida del flap del alerón trasero y añadió una pequeña aleta vertical al difusor para aumentar la carga trasera y la estabilidad aerodinámica.",
           "penalita": ""
         },
         "de": {
@@ -10839,7 +10851,7 @@
           "gestioneGomme": "Keine aktuellen F1-Daten für diese Strecke: Eine individuelle Bewertung ist nicht möglich. Asphalt und Streckenentwicklung sind unbekannt. Lernen, Aufwärmphase, seitliche Lasten und schnelle Anpassung an die Federung werden entscheidend sein. Kontext des Teams 2026: Reifenleistung nicht von der Zuverlässigkeit trennbar; Die Erfahrung der Fahrer ist die wichtigste Stärke.",
           "considerazioniFinali": "SCHWIERIG — Prognose-Ranking 22/22. Form 2026: P22 mit 0 Punkten; Keine vergleichbaren Ergebnisse F1 2023-25. Die Madring ist eine neue halbpermanente Strecke, 5,416 km lang und bestehend aus 22 Kurven; Er kombiniert städtische Abschnitte, Geraden und die lange, gebankte Kurve La Monumental. Auf der Strecke gibt es keine vorherigen Formula 1 Grands Prix. Geringes Vertrauen: Vorschriften und Reifen von 2026 verringern die Übertragbarkeit des historischen Daten.",
           "affidabilita": "",
-          "aggiornamentiInArrivo": "",
+          "aggiornamentiInArrivo": "VON DER FIA BESTÄTIGT — Cadillac überarbeitete den Winglet an der Hinterkante des Heckflügel-Flaps und ergänzte den Diffusor um eine kleine vertikale Finne, um hinteren Abtrieb und aerodynamische Stabilität zu erhöhen.",
           "penalita": ""
         }
       }
