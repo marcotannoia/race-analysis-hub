@@ -12,7 +12,9 @@
 - archived the source URLs and the provisional status of the classification so
   that a later FIA amendment can be audited and applied without ambiguity;
 - updated cumulative starts and conservative driver-error indicators, while
-  preserving explicitly unavailable profiles as `null`.
+  preserving explicitly unavailable profiles as `null`; the previously missing
+  Monza increment was backfilled from the FIA final classification and Pérez's
+  documented five-second race penalty.
 
 ### Reproducibility
 
