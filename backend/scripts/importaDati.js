@@ -17,7 +17,9 @@ const {
 const {
   normalizzaTraduzioniAnalisi,
 } = require("../utils/normalizzaTraduzioni");
-const dati = require("../data/dati-iniziali.json");
+const datiSorgente = require("../data/dati-iniziali.json");
+const { creaDatiEffettivi } = require("../utils/datiEffettivi");
+const dati = creaDatiEffettivi(datiSorgente);
 
 async function salvaDocumentiPerSlug(Modello, documenti) {
   const operazioni = documenti.map((documento) => ({
@@ -36,8 +38,7 @@ async function salvaGare(documenti) {
     updateOne: {
       filter: { slug: gara.slug },
       update: {
-        $set: gara,
-        $setOnInsert: { stato: stato || "futura" },
+        $set: { ...gara, stato: stato || "futura" },
       },
       upsert: true,
     },
@@ -145,6 +146,7 @@ async function importaDati({ collega = true, disconnetti = true } = {}) {
           analisi.statoAggiornamentiTecnici || "",
         traduzioni: normalizzaTraduzioniAnalisi(analisi.traduzioni),
         fonti: analisi.fonti,
+        storicoEdizioni: analisi.storicoEdizioni || [],
       };
 
       return {
@@ -185,9 +187,7 @@ async function importaDati({ collega = true, disconnetti = true } = {}) {
                 analisi.aggiornamentiInArrivo || "",
               traduzioni: normalizzaTraduzioniAnalisi(analisi.traduzioni),
               fonti: analisi.fonti,
-            },
-            $setOnInsert: {
-              storicoEdizioni: [],
+              storicoEdizioni: analisi.storicoEdizioni || [],
             },
           },
           upsert: true,

@@ -11,13 +11,13 @@ descriptive and editorial. The project does not use official logos and does not 
 endorsement, sponsorship or affiliation with Formula One Licensing B.V.,
 Formula One World Championship Limited, the FIA, the teams or the drivers.
 
-The 2026 standings, 2023-2025 race and qualifying results and graphs
-2026 quantities derive from F1DB `v2026.12.0`, distributed by Marcel Overdijk
+The base 2026 standings, 2023-2025 race and qualifying results and graphs
+2026 quantities derive from F1DB `v2026.13.0`, distributed by Marcel Overdijk
 and F1DB contributors licensed under the Creative Commons Attribution 4.0 license
 International (CC BY 4.0):
 
 - Original design: https://github.com/f1db/f1db
-- Release used: https://github.com/f1db/f1db/releases/tag/v2026.12.0
+- Release used: https://github.com/f1db/f1db/releases/tag/v2026.13.0
 - License: https://creativecommons.org/licenses/by/4.0/
 
 Race Analysis Hub has filtered, renamed, and normalized a subset of the
@@ -61,14 +61,22 @@ on the official Formula 1 calendar:
 
 - https://www.formula1.com/en/racing/2026
 
+The Madrid 2026 post-race archive uses the Formula 1 race, qualifying and
+championship pages together with FIA timing and race-control documents. The FIA
+classification was still marked provisional when the archive was published on
+13 September 2026; that status and the complete source list are retained in
+`backend/data/archivio-gp/2026-03-spagna-madring.json`.
+
 Technical updates that are not yet official are identified as such,
 linked to the relevant public source and kept neutral in the calculation until
 are not confirmed.
 
 ## Wet indicators and errors
 
-Career starts, results and retirement statuses used for
-percentage indicators are derived from F1DB `v2026.12.0`. Races with up to
+Career starts, results and retirement statuses used as the base for
+percentage indicators are derived from F1DB `v2026.12.0`. Later archived
+post-race updates are added incrementally from the official sources recorded in
+each archive. Races with up to
 by 2025 have been rechecked using also the historical list published by
 Tudo Sobre Fórmula 1:
 
@@ -122,7 +130,7 @@ attribution to F1DB for quantitative data and report changes.
 Recommended synthetic attribution:
 
 > Content adapted from Race Analysis Hub — quantitative data derived from F1DB
-> v2026.12.0 — reuser changes — CC BY 4.0.
+> v2026.13.0 — reuser changes — CC BY 4.0.
 
 The extraordinary inclusion of the Bahrain Grand Prix in Sepang on the calendar
 2026 is documented separately from the official Formula 1 communication of the

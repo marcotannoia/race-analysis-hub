@@ -1,6 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const {
+  creaRisultatiScuderie,
   prestazionePioggiaPositiva,
   verificaAggiornamento,
 } = require("../scripts/registraGpConcluso");
@@ -139,4 +140,34 @@ test("un compagno ritirato non rende positiva la gara con pioggia", () => {
     ),
     false,
   );
+});
+
+test("i risultati scuderia rispettano l'associazione specifica del GP", () => {
+  const pilotiEvento = [
+    { _id: "pilota-lawson", slug: "lawson", codice: "LAW", scuderia: "rb" },
+    { _id: "pilota-tsunoda", slug: "tsunoda", codice: "TSU", scuderia: "rb" },
+  ];
+  const scuderieEvento = [
+    { _id: "red-bull", slug: "red_bull" },
+    { _id: "rb", slug: "rb" },
+  ];
+  const risultati = new Map([
+    ["lawson", { posizioneGara: "P6", posizioneQualifica: "Q3" }],
+    ["tsunoda", { posizioneGara: "P14", posizioneQualifica: "Q2" }],
+  ]);
+  const associazioniEvento = new Map([
+    ["pilota-lawson", "red-bull"],
+    ["pilota-tsunoda", "rb"],
+  ]);
+
+  const aggregati = creaRisultatiScuderie(
+    { risultatiScuderie: [] },
+    pilotiEvento,
+    scuderieEvento,
+    risultati,
+    associazioniEvento,
+  );
+
+  assert.equal(aggregati[0].posizioneGara, "LAW P6");
+  assert.equal(aggregati[1].posizioneGara, "TSU P14");
 });

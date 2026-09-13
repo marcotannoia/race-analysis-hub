@@ -260,8 +260,10 @@ data group changes at a different cadence. Manual tasks include:
 
 - **After each Grand Prix:** complete `backend/data/aggiornamento-gp.json`
   through `npm run gp` with results, standings, conditions, errors, and
-  editorial notes. The script also updates cumulative indicators and selects
-  the next Grand Prix.
+  editorial notes. The script also updates cumulative indicators, selects the
+  next Grand Prix and stores an auditable file in `backend/data/archivio-gp/`.
+  Database imports and verification replay those archives over the base F1DB
+  snapshot, so post-race standings and edition history remain reproducible.
 - **When F1DB publishes a useful release:** regenerate
   `backend/data/f1db-*-derivato.json` with
   `npm run sync-f1db -- <directory>`. This updates standings, quantitative

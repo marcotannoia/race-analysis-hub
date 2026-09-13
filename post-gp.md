@@ -12,8 +12,9 @@ npm run gp
 ```
 
 If `backend/data/aggiornamento-gp.json` does not exist, the command generates it for the
-GP currently visible. The file already contains all the drivers, all the teams
-and the current rankings. It is therefore necessary to:
+GP currently visible. The race-results section contains only the participants
+linked to that event; the championship section contains every season driver.
+The file also contains all teams and the current rankings. It is therefore necessary to:
 
 1. indicate `condizioniGara` with `asciutto`, `misto` or `bagnato`;
 2. insert an HTTPS URL in `fonteIndicatori` that documents races and incidents;
@@ -24,8 +25,8 @@ and the current rankings. It is therefore necessary to:
 7. set `"pronto": true`;
 8. relaunch `npm run gp`.
 
-The script checks that no driver or ranking element is absent,
-automatically builds team results, records history,
+The script checks that no race participant or ranking element is absent,
+automatically builds team results using each event's actual driver-team links, records history,
 updates the standings, closes the current GP and publishes the next one based on
 to the calendar order. Also update
 `backend/data/statistiche-contesto.json` cumulatively and idempotently: a
@@ -44,8 +45,16 @@ npm run gp -- --controlla
 ```
 
 After the upgrade, the compiled file is retained in
-`backend/data/archivio-gp/`. The command doesn't use external APIs: the contents
-and the results entered remain those verified manually.
+`backend/data/archivio-gp/`. Store all consulted URLs in the optional `fonti`
+array and state whether the classification is `provvisoria` or `finale` in
+`statoClassificazione`. The command doesn't use external APIs: the contents and
+the results entered remain those verified manually.
+
+The database seed and `npm run verify-db` replay these archives over
+`backend/data/dati-iniziali.json`. This keeps the F1DB-derived snapshot intact
+while making the current standings, race state and `storicoEdizioni`
+reproducible on a fresh database. Archives older than the current base snapshot
+restore history without rolling the standings backwards.
 
 New editorial texts must also be provided and revised in the
 published languages. The administrative procedure, free of charge within the F0 quota and
@@ -74,6 +83,12 @@ Recent form and 2026 qualification also depend on the F1DB snapshot. As long as
 The snapshot is not regenerated, those factors remain unchanged at the last release
 documented. Track compatibility, tyre management, reliability and
 Technical updates derive instead from the editorial analysis of the new tender.
+
+For Madrid 2026, the post-race archive uses Formula 1 results and standings plus
+FIA timing and race-control documents. At publication time the FIA race
+classification was still provisional; the archive records this explicitly.
+The quantitative chart snapshot remains F1DB `v2026.13.0`, the latest release
+available at that time, and therefore ends at Monza until F1DB publishes Madrid.
 
 Before publishing, check in particular
 `aggiornamentiInArrivo`: A package that is only announced or not relevant is not

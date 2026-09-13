@@ -1,0 +1,527 @@
+{
+  "pronto": true,
+  "stagione": 2026,
+  "garaConclusaSlug": "spagna-madring",
+  "conclusaIl": "2026-09-13T14:47:04.000Z",
+  "condizioniGara": "asciutto",
+  "fonteIndicatori": "https://www.fia.com/sites/default/files/2026_14_esp_f1_r0_timing_raceracecontrolmessages_v01.pdf",
+  "risultatiPiloti": [
+    {
+      "pilotaSlug": "antonelli",
+      "posizioneGara": "P1",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Vittoria dopo la partenza dalla seconda posizione; 57 giri in 1:34:23.754.",
+      "passoGara": "Giro più veloce personale in 1:36.030; ha preceduto Verstappen di 4.351 secondi.",
+      "gestioneGomme": "Una sosta: Medium per 14 giri, poi Hard per 43 giri.",
+      "affidabilita": "Ha completato tutti i 57 giri senza ritiro indicato nella classificazione FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "russell",
+      "posizioneGara": "P5",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Quinto dopo la partenza dalla sesta posizione, a 29.829 secondi dal vincitore.",
+      "passoGara": "Giro più veloce della gara in 1:35.587 al giro 49.",
+      "gestioneGomme": "Due soste: Hard 14 giri, Medium 14 giri, Hard 29 giri.",
+      "affidabilita": "Ha completato tutti i 57 giri senza ritiro indicato nella classificazione FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "hamilton",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Ritirato dopo 6 giri dopo la partenza dalla quarta posizione.",
+      "passoGara": "Giro più veloce personale in 1:39.839; campione limitato a 6 giri.",
+      "gestioneGomme": "Soft per 6 giri; il secondo stint registrato non è stato completato.",
+      "affidabilita": "Ritiro dopo 6 giri; la classificazione FIA non specifica la causa.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "norris",
+      "posizioneGara": "P3",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Terzo dopo la pole position, a 5.089 secondi dal vincitore.",
+      "passoGara": "Giro più veloce personale in 1:36.680.",
+      "gestioneGomme": "Una sosta: Medium per 15 giri, poi Hard per 42 giri.",
+      "affidabilita": "Ha completato tutti i 57 giri senza ritiro indicato nella classificazione FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "leclerc",
+      "posizioneGara": "P4",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Quarto dopo la partenza dalla quinta posizione, a 29.116 secondi dal vincitore.",
+      "passoGara": "Giro più veloce personale in 1:36.063.",
+      "gestioneGomme": "Una sosta: Hard per 48 giri, poi Soft per 9 giri.",
+      "affidabilita": "Ha completato tutti i 57 giri senza ritiro indicato nella classificazione FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "max_verstappen",
+      "posizioneGara": "P2",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Secondo dopo la partenza dalla terza posizione, a 4.351 secondi dal vincitore.",
+      "passoGara": "Giro più veloce personale in 1:36.760.",
+      "gestioneGomme": "Una sosta: Soft per 17 giri, poi Hard per 43 giri; la Soft aveva già 3 giri di utilizzo registrati.",
+      "affidabilita": "Ha completato tutti i 57 giri senza ritiro indicato nella classificazione FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "piastri",
+      "posizioneGara": "P8",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Ottavo dopo la partenza dalla settima posizione, a 95.839 secondi dal vincitore.",
+      "passoGara": "Giro più veloce personale in 1:37.226.",
+      "gestioneGomme": "Una sosta: Hard per 42 giri, poi Medium per 15 giri.",
+      "affidabilita": "Ha completato tutti i 57 giri senza ritiro indicato nella classificazione FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "lawson",
+      "posizioneGara": "P6",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Sesto dopo la partenza dall'ottava posizione, a 86.746 secondi dal vincitore.",
+      "passoGara": "Giro più veloce personale in 1:36.846.",
+      "gestioneGomme": "Una sosta: Hard per 44 giri, poi Medium per 13 giri.",
+      "affidabilita": "Ha completato tutti i 57 giri senza ritiro indicato nella classificazione FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "gasly",
+      "posizioneGara": "P12",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "Dodicesimo dopo la partenza dalla quattordicesima posizione; 5 secondi di penalità per eccesso di velocità in pit lane.",
+      "passoGara": "Giro più veloce personale in 1:38.141.",
+      "gestioneGomme": "Una sosta: Hard per 55 giri, poi Soft per 1 giro.",
+      "affidabilita": "Ha completato 56 giri ed è stato classificato; nessun ritiro indicato dalla FIA.",
+      "errorePilota": "non_fatale"
+    },
+    {
+      "pilotaSlug": "arvid_lindblad",
+      "posizioneGara": "P9",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Nono dopo la partenza dalla decima posizione, classificato a un giro.",
+      "passoGara": "Giro più veloce personale in 1:38.211.",
+      "gestioneGomme": "Una sosta: Medium per 14 giri, poi Hard per 42 giri.",
+      "affidabilita": "Ha completato 56 giri ed è stato classificato; nessun ritiro indicato dalla FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "colapinto",
+      "posizioneGara": "P7",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Settimo dopo la partenza dalla nona posizione, a 94.281 secondi dal vincitore.",
+      "passoGara": "Giro più veloce personale in 1:37.321.",
+      "gestioneGomme": "Una sosta: Medium per 14 giri, poi Hard per 43 giri.",
+      "affidabilita": "Ha completato tutti i 57 giri senza ritiro indicato nella classificazione FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "bearman",
+      "posizioneGara": "P16",
+      "posizioneQualifica": "NC",
+      "notaRisultato": "Sedicesimo dalla pit lane dopo non aver registrato un tempo in qualifica ed essere partito con modifiche in regime di parco chiuso.",
+      "passoGara": "Giro più veloce personale in 1:37.308.",
+      "gestioneGomme": "Due soste: Hard 33 giri, Medium 10 giri, Hard 13 giri.",
+      "affidabilita": "Ha completato 56 giri ed è stato classificato; nessun ritiro indicato dalla FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "bortoleto",
+      "posizioneGara": "P13",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "Tredicesimo dopo la partenza dalla dodicesima posizione; ha ricevuto un avvertimento formale per movimento in frenata.",
+      "passoGara": "Giro più veloce personale in 1:37.837.",
+      "gestioneGomme": "Una sosta: Hard per 47 giri, poi Soft per 9 giri.",
+      "affidabilita": "Ha completato 56 giri ed è stato classificato; nessun ritiro indicato dalla FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "hulkenberg",
+      "posizioneGara": "P10",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "Decimo dopo la partenza dall'undicesima posizione, classificato a un giro.",
+      "passoGara": "Giro più veloce personale in 1:38.114.",
+      "gestioneGomme": "Una sosta: Soft per 14 giri, poi Hard per 42 giri.",
+      "affidabilita": "Ha completato 56 giri ed è stato classificato; nessun ritiro indicato dalla FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "sainz",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "Ritirato dopo 43 giri dopo la partenza dalla ventesima posizione; 5 secondi di penalità per la collisione con Alonso, già scontati.",
+      "passoGara": "Giro più veloce personale in 1:40.195; campione limitato a 43 giri.",
+      "gestioneGomme": "Tre soste: Hard 23 giri, Medium 8 giri, Hard 12 giri.",
+      "affidabilita": "Ritiro dopo 43 giri; la classificazione FIA non specifica la causa.",
+      "errorePilota": "non_fatale"
+    },
+    {
+      "pilotaSlug": "albon",
+      "posizioneGara": "P15",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "Quindicesimo dopo la partenza dalla sedicesima posizione, classificato a un giro.",
+      "passoGara": "Giro più veloce personale in 1:39.397.",
+      "gestioneGomme": "Una sosta: Medium per 14 giri, poi Hard per 42 giri.",
+      "affidabilita": "Ha completato 56 giri ed è stato classificato; nessun ritiro indicato dalla FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "ocon",
+      "posizioneGara": "P11",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "Undicesimo dopo la partenza dalla tredicesima posizione, classificato a un giro.",
+      "passoGara": "Giro più veloce personale in 1:38.119.",
+      "gestioneGomme": "Una sosta: Medium per 14 giri, poi Hard per 42 giri.",
+      "affidabilita": "Ha completato 56 giri ed è stato classificato; nessun ritiro indicato dalla FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "alonso",
+      "posizioneGara": "P17",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "Diciassettesimo dopo la partenza dalla diciassettesima posizione, classificato a due giri.",
+      "passoGara": "Giro più veloce personale in 1:39.003.",
+      "gestioneGomme": "Due soste: Hard 14 giri, Soft 23 giri, Hard 18 giri.",
+      "affidabilita": "Ha completato 55 giri ed è stato classificato; nessun ritiro indicato dalla FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "tsunoda",
+      "posizioneGara": "P14",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "Quattordicesimo dopo la partenza dalla quindicesima posizione, classificato a un giro.",
+      "passoGara": "Giro più veloce personale in 1:38.396.",
+      "gestioneGomme": "Una sosta: Hard per 36 giri, poi Medium per 20 giri.",
+      "affidabilita": "Ha completato 56 giri ed è stato classificato; nessun ritiro indicato dalla FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "stroll",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "NC",
+      "notaRisultato": "Ritirato dopo 12 giri dopo la partenza dalla ventunesima posizione; non aveva registrato un tempo in qualifica.",
+      "passoGara": "Giro più veloce personale in 1:43.462; campione limitato a 12 giri.",
+      "gestioneGomme": "Hard per 12 giri, senza una sosta registrata prima del ritiro.",
+      "affidabilita": "Ritiro dopo 12 giri; la classificazione FIA non specifica la causa.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "bottas",
+      "posizioneGara": "P18",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "Diciottesimo dopo la partenza dalla diciannovesima posizione, classificato a tre giri.",
+      "passoGara": "Giro più veloce personale in 1:39.130.",
+      "gestioneGomme": "Due soste: Hard 29 giri, Hard 14 giri, Soft 11 giri.",
+      "affidabilita": "Ha completato 54 giri ed è stato classificato; nessun ritiro indicato dalla FIA.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "perez",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "Ritirato dopo 31 giri dopo la partenza dalla diciottesima posizione.",
+      "passoGara": "Giro più veloce personale in 1:41.116; campione limitato a 31 giri.",
+      "gestioneGomme": "Due soste registrate: Medium per 14 giri e Hard per 17 giri, prima del ritiro.",
+      "affidabilita": "Ritiro dopo 31 giri; la classificazione FIA non specifica la causa.",
+      "errorePilota": "nessuno"
+    }
+  ],
+  "risultatiScuderie": [
+    {
+      "scuderiaSlug": "mercedes",
+      "notaRisultato": "Antonelli P1 e Russell P5: 35 punti complessivi e vittoria nel primo GP del Madring.",
+      "passoGara": "Antonelli ha vinto; Russell ha segnato il giro più veloce della gara in 1:35.587.",
+      "gestioneGomme": "Antonelli ha effettuato una sosta Medium-Hard; Russell due soste Hard-Medium-Hard.",
+      "affidabilita": "Entrambe le vetture hanno completato tutti i 57 giri."
+    },
+    {
+      "scuderiaSlug": "ferrari",
+      "notaRisultato": "Leclerc P4 e Hamilton ritirato dopo 6 giri: 12 punti complessivi.",
+      "passoGara": "Leclerc ha chiuso a 29.116 secondi; il campione di Hamilton è limitato dal ritiro al giro 6.",
+      "gestioneGomme": "Leclerc ha usato Hard-Soft con una sosta; Hamilton ha percorso 6 giri su Soft.",
+      "affidabilita": "Leclerc ha completato 57 giri; Hamilton si è ritirato dopo 6 giri, senza causa indicata nella classificazione FIA."
+    },
+    {
+      "scuderiaSlug": "mclaren",
+      "notaRisultato": "Norris P3 dalla pole e Piastri P8: 19 punti complessivi.",
+      "passoGara": "Norris ha chiuso a 5.089 secondi dal vincitore; Piastri a 95.839 secondi.",
+      "gestioneGomme": "Norris ha usato Medium-Hard; Piastri Hard-Medium, entrambi con una sosta.",
+      "affidabilita": "Entrambe le vetture hanno completato tutti i 57 giri."
+    },
+    {
+      "scuderiaSlug": "red_bull",
+      "notaRisultato": "Verstappen P2 e Lawson P6: 26 punti complessivi con l'associazione piloti specifica del GP.",
+      "passoGara": "Verstappen ha chiuso a 4.351 secondi dal vincitore; Lawson a 86.746 secondi.",
+      "gestioneGomme": "Entrambi hanno usato una strategia a una sosta, chiudendo su Hard per Verstappen e su Medium per Lawson.",
+      "affidabilita": "Entrambe le vetture hanno completato tutti i 57 giri."
+    },
+    {
+      "scuderiaSlug": "rb",
+      "notaRisultato": "Lindblad P9 e Tsunoda P14: 2 punti complessivi.",
+      "passoGara": "Entrambi sono stati classificati a un giro dal vincitore.",
+      "gestioneGomme": "Lindblad ha usato Medium-Hard; Tsunoda Hard-Medium, entrambi con una sosta.",
+      "affidabilita": "Entrambe le vetture hanno completato 56 giri e sono state classificate."
+    },
+    {
+      "scuderiaSlug": "alpine",
+      "notaRisultato": "Colapinto P7 e Gasly P12: 6 punti complessivi; Gasly ha ricevuto 5 secondi per eccesso di velocità in pit lane.",
+      "passoGara": "Colapinto ha chiuso a 94.281 secondi; Gasly è stato classificato a un giro.",
+      "gestioneGomme": "Colapinto ha usato Medium-Hard; Gasly Hard-Soft, entrambi con una sosta.",
+      "affidabilita": "Colapinto ha completato 57 giri e Gasly 56; entrambe le vetture sono state classificate."
+    },
+    {
+      "scuderiaSlug": "haas",
+      "notaRisultato": "Ocon P11 e Bearman P16: nessun punto; Bearman è partito dalla pit lane.",
+      "passoGara": "Ocon è stato classificato a un giro e Bearman a un giro.",
+      "gestioneGomme": "Ocon ha usato Medium-Hard con una sosta; Bearman Hard-Medium-Hard con due soste.",
+      "affidabilita": "Entrambe le vetture hanno completato 56 giri e sono state classificate."
+    },
+    {
+      "scuderiaSlug": "audi",
+      "notaRisultato": "Hulkenberg P10 e Bortoleto P13: 1 punto; Bortoleto ha ricevuto un avvertimento formale.",
+      "passoGara": "Entrambi sono stati classificati a un giro dal vincitore.",
+      "gestioneGomme": "Hulkenberg ha usato Soft-Hard; Bortoleto Hard-Soft, entrambi con una sosta.",
+      "affidabilita": "Entrambe le vetture hanno completato 56 giri e sono state classificate."
+    },
+    {
+      "scuderiaSlug": "williams",
+      "notaRisultato": "Albon P15 e Sainz ritirato dopo 43 giri: nessun punto; Sainz ha scontato 5 secondi per la collisione con Alonso.",
+      "passoGara": "Albon è stato classificato a un giro; il campione di Sainz è limitato dal ritiro.",
+      "gestioneGomme": "Albon ha usato Medium-Hard con una sosta; Sainz Hard-Medium-Hard con tre soste registrate.",
+      "affidabilita": "Albon ha completato 56 giri; Sainz si è ritirato dopo 43 giri, senza causa indicata nella classificazione FIA."
+    },
+    {
+      "scuderiaSlug": "aston_martin",
+      "notaRisultato": "Alonso P17 e Stroll ritirato dopo 12 giri: nessun punto.",
+      "passoGara": "Alonso è stato classificato a due giri; il campione di Stroll è limitato dal ritiro.",
+      "gestioneGomme": "Alonso ha usato Hard-Soft-Hard con due soste; Stroll ha percorso 12 giri su Hard.",
+      "affidabilita": "Alonso ha completato 55 giri; Stroll si è ritirato dopo 12 giri, senza causa indicata nella classificazione FIA."
+    },
+    {
+      "scuderiaSlug": "cadillac",
+      "notaRisultato": "Bottas P18 e Perez ritirato dopo 31 giri: nessun punto.",
+      "passoGara": "Bottas è stato classificato a tre giri; il campione di Perez è limitato dal ritiro.",
+      "gestioneGomme": "Bottas ha usato Hard-Hard-Soft; Perez Medium-Hard, con due soste registrate per entrambi.",
+      "affidabilita": "Bottas ha completato 54 giri; Perez si è ritirato dopo 31 giri, senza causa indicata nella classificazione FIA."
+    }
+  ],
+  "classificaPiloti": [
+    {
+      "pilotaSlug": "antonelli",
+      "posizione": 1,
+      "punti": 292,
+      "vittorie": 8
+    },
+    {
+      "pilotaSlug": "russell",
+      "posizione": 2,
+      "punti": 211,
+      "vittorie": 2
+    },
+    {
+      "pilotaSlug": "hamilton",
+      "posizione": 3,
+      "punti": 191,
+      "vittorie": 1
+    },
+    {
+      "pilotaSlug": "norris",
+      "posizione": 4,
+      "punti": 186,
+      "vittorie": 2
+    },
+    {
+      "pilotaSlug": "leclerc",
+      "posizione": 5,
+      "punti": 167,
+      "vittorie": 1
+    },
+    {
+      "pilotaSlug": "max_verstappen",
+      "posizione": 6,
+      "punti": 145,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "piastri",
+      "posizione": 7,
+      "punti": 120,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "hadjar",
+      "posizione": 8,
+      "punti": 71,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "lawson",
+      "posizione": 9,
+      "punti": 59,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "gasly",
+      "posizione": 10,
+      "punti": 41,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "arvid_lindblad",
+      "posizione": 11,
+      "punti": 31,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "colapinto",
+      "posizione": 12,
+      "punti": 27,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bearman",
+      "posizione": 13,
+      "punti": 18,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bortoleto",
+      "posizione": 14,
+      "punti": 10,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "hulkenberg",
+      "posizione": 15,
+      "punti": 7,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "sainz",
+      "posizione": 16,
+      "punti": 6,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "albon",
+      "posizione": 17,
+      "punti": 5,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "ocon",
+      "posizione": 18,
+      "punti": 3,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "alonso",
+      "posizione": 19,
+      "punti": 3,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "tsunoda",
+      "posizione": 20,
+      "punti": 1,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "stroll",
+      "posizione": 21,
+      "punti": 0,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bottas",
+      "posizione": 22,
+      "punti": 0,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "perez",
+      "posizione": 23,
+      "punti": 0,
+      "vittorie": 0
+    }
+  ],
+  "classificaScuderie": [
+    {
+      "scuderiaSlug": "mercedes",
+      "posizione": 1,
+      "punti": 503,
+      "vittorie": 10
+    },
+    {
+      "scuderiaSlug": "ferrari",
+      "posizione": 2,
+      "punti": 358,
+      "vittorie": 2
+    },
+    {
+      "scuderiaSlug": "mclaren",
+      "posizione": 3,
+      "punti": 306,
+      "vittorie": 2
+    },
+    {
+      "scuderiaSlug": "red_bull",
+      "posizione": 4,
+      "punti": 230,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "rb",
+      "posizione": 5,
+      "punti": 77,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "alpine",
+      "posizione": 6,
+      "punti": 68,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "haas",
+      "posizione": 7,
+      "punti": 21,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "audi",
+      "posizione": 8,
+      "punti": 17,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "williams",
+      "posizione": 9,
+      "punti": 11,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "aston_martin",
+      "posizione": 10,
+      "punti": 3,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "cadillac",
+      "posizione": 11,
+      "punti": 0,
+      "vittorie": 0
+    }
+  ],
+  "statoClassificazione": "provvisoria",
+  "fonti": [
+    "https://www.formula1.com/en/results/2026/races/1294/spain/race-result",
+    "https://www.formula1.com/en/results/2026/races/1294/spain/qualifying",
+    "https://www.formula1.com/en/results/2026/drivers",
+    "https://www.formula1.com/en/results/2026/team",
+    "https://www.fia.com/sites/default/files/2026_14_esp_f1_r0_timing_raceprovisionalclassification_v01.pdf",
+    "https://www.fia.com/sites/default/files/2026_14_esp_f1_r0_timing_raceracecontrolmessages_v01.pdf",
+    "https://www.fia.com/sites/default/files/2026_14_esp_f1_r0_timing_racefastestlaps_v01.pdf"
+  ]
+}
