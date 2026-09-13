@@ -229,6 +229,7 @@ function creaRisultatiScuderie(
   piloti,
   scuderie,
   risultatiPerPilota,
+  scuderiaEventoPerPilota = new Map(),
 ) {
   const dettagliPerScuderia = new Map(
     (aggiornamento.risultatiScuderie || []).map((elemento) => [
@@ -239,7 +240,10 @@ function creaRisultatiScuderie(
 
   return scuderie.map((scuderia) => {
     const pilotiScuderia = piloti.filter(
-      (pilota) => String(pilota.scuderia) === String(scuderia._id),
+      (pilota) =>
+        String(
+          scuderiaEventoPerPilota.get(String(pilota._id)) || pilota.scuderia,
+        ) === String(scuderia._id),
     );
     const dettaglio = dettagliPerScuderia.get(scuderia.slug) || {};
     const posizioneGara = pilotiScuderia
@@ -327,7 +331,12 @@ async function trovaContestoCalendario() {
   return { garaCorrente, garaSuccessiva };
 }
 
-function creaTemplate(garaCorrente, piloti, scuderie) {
+function creaTemplate(
+  garaCorrente,
+  piloti,
+  scuderie,
+  pilotiPartecipanti = piloti,
+) {
   const ordinaClassifica = (prima, seconda) =>
     prima.classifica2026.posizione - seconda.classifica2026.posizione;
 
@@ -338,16 +347,18 @@ function creaTemplate(garaCorrente, piloti, scuderie) {
     conclusaIl: "",
     condizioniGara: "",
     fonteIndicatori: "",
-    risultatiPiloti: [...piloti].sort(ordinaClassifica).map((pilota) => ({
-      pilotaSlug: pilota.slug,
-      posizioneGara: "",
-      posizioneQualifica: "",
-      notaRisultato: "",
-      passoGara: "",
-      gestioneGomme: "",
-      affidabilita: "",
-      errorePilota: "",
-    })),
+    risultatiPiloti: [...pilotiPartecipanti]
+      .sort(ordinaClassifica)
+      .map((pilota) => ({
+        pilotaSlug: pilota.slug,
+        posizioneGara: "",
+        posizioneQualifica: "",
+        notaRisultato: "",
+        passoGara: "",
+        gestioneGomme: "",
+        affidabilita: "",
+        errorePilota: "",
+      })),
     risultatiScuderie: [...scuderie].sort(ordinaClassifica).map((scuderia) => ({
       scuderiaSlug: scuderia.slug,
       notaRisultato: "",
@@ -370,7 +381,13 @@ function creaTemplate(garaCorrente, piloti, scuderie) {
   };
 }
 
-function preparaFile(garaCorrente, garaSuccessiva, piloti, scuderie) {
+function preparaFile(
+  garaCorrente,
+  garaSuccessiva,
+  piloti,
+  scuderie,
+  pilotiPartecipanti = piloti,
+) {
   if (fs.existsSync(percorsoAggiornamento) && !sovrascrivi) {
     throw new Error(
       `Il file esiste già: ${percorsoAggiornamento}. ` +
@@ -380,7 +397,7 @@ function preparaFile(garaCorrente, garaSuccessiva, piloti, scuderie) {
 
   scriviJson(
     percorsoAggiornamento,
-    creaTemplate(garaCorrente, piloti, scuderie),
+    creaTemplate(garaCorrente, piloti, scuderie, pilotiPartecipanti),
   );
 
   console.log(`Template creato: ${percorsoAggiornamento}`);
@@ -393,7 +410,13 @@ function preparaFile(garaCorrente, garaSuccessiva, piloti, scuderie) {
   console.log("Compila i campi, imposta pronto a true e rilancia npm run gp.");
 }
 
-function verificaAggiornamento(aggiornamento, garaCorrente, piloti, scuderie) {
+function verificaAggiornamento(
+  aggiornamento,
+  garaCorrente,
+  piloti,
+  scuderie,
+  pilotiPartecipanti = piloti,
+) {
   if (!Number.isInteger(aggiornamento.stagione)) {
     throw new Error("Il campo stagione deve essere un numero intero");
   }
@@ -449,7 +472,7 @@ function verificaAggiornamento(aggiornamento, garaCorrente, piloti, scuderie) {
   );
   verificaCopertura(
     aggiornamento.risultatiPiloti,
-    piloti,
+    pilotiPartecipanti,
     "pilotaSlug",
     "Risultati piloti",
   );
@@ -554,9 +577,10 @@ function aggiornaStatisticheContesto(
   for (const pilota of piloti) {
     const risultato = risultatiPerPilota.get(pilota.slug);
     const valori = statistiche.piloti[pilota.slug];
-    if (!valori) {
+    if (valori === undefined) {
       throw new Error(`Statistiche cumulative mancanti per ${pilota.slug}`);
     }
+    if (valori === null) continue;
 
     const haPresoIlVia = risultato.posizioneGara.toUpperCase() !== "DNS";
     if (haPresoIlVia) valori.gareDisputate += 1;
@@ -645,11 +669,27 @@ async function registraGpConcluso() {
         Pilota.find().sort("classifica2026.posizione"),
         Scuderia.find().sort("classifica2026.posizione"),
       ]);
+    const [analisiPiloti, analisiScuderie] = await Promise.all([
+      AnalisiGara.find({ gara: garaCorrente._id }),
+      AnalisiScuderia.find({ gara: garaCorrente._id }),
+    ]);
+    const pilotiPartecipantiId = new Set(
+      analisiPiloti.map((analisi) => String(analisi.pilota)),
+    );
+    const pilotiPartecipanti = piloti.filter((pilota) =>
+      pilotiPartecipantiId.has(String(pilota._id)),
+    );
 
     const fileAssente = !fs.existsSync(percorsoAggiornamento);
 
     if (forzaPreparazione || (!argomentoPercorso && fileAssente)) {
-      preparaFile(garaCorrente, garaSuccessiva, piloti, scuderie);
+      preparaFile(
+        garaCorrente,
+        garaSuccessiva,
+        piloti,
+        scuderie,
+        pilotiPartecipanti,
+      );
       return;
     }
 
@@ -658,7 +698,13 @@ async function registraGpConcluso() {
     }
 
     const aggiornamento = leggiJson(percorsoAggiornamento);
-    verificaAggiornamento(aggiornamento, garaCorrente, piloti, scuderie);
+    verificaAggiornamento(
+      aggiornamento,
+      garaCorrente,
+      piloti,
+      scuderie,
+      pilotiPartecipanti,
+    );
 
     if (!soloControllo && aggiornamento.pronto !== true) {
       throw new Error(
@@ -672,20 +718,24 @@ async function registraGpConcluso() {
         risultato,
       ]),
     );
+    const scuderiaEventoPerPilota = new Map(
+      analisiPiloti.map((analisi) => [
+        String(analisi.pilota),
+        String(analisi.scuderia),
+      ]),
+    );
     const risultatiScuderie = creaRisultatiScuderie(
       aggiornamento,
-      piloti,
+      pilotiPartecipanti,
       scuderie,
       risultatiPerPilota,
+      scuderiaEventoPerPilota,
     );
-    const [analisiPiloti, analisiScuderie] = await Promise.all([
-      AnalisiGara.find({ gara: garaCorrente._id }),
-      AnalisiScuderia.find({ gara: garaCorrente._id }),
-    ]);
 
-    if (analisiPiloti.length !== piloti.length) {
+    if (analisiPiloti.length !== pilotiPartecipanti.length) {
       throw new Error(
-        `Copertura analisi piloti incompleta: ${analisiPiloti.length}/${piloti.length}`,
+        `Copertura analisi piloti incompleta: ` +
+          `${analisiPiloti.length}/${pilotiPartecipanti.length}`,
       );
     }
 
@@ -702,7 +752,7 @@ async function registraGpConcluso() {
       analisiScuderie.map((analisi) => [String(analisi.scuderia), analisi]),
     );
 
-    piloti.forEach((pilota) => {
+    pilotiPartecipanti.forEach((pilota) => {
       const analisi = analisiPilotaPerId.get(String(pilota._id));
       if (!analisi) throw new Error(`Analisi mancante per ${pilota.slug}`);
       sostituisciEdizione(
@@ -810,7 +860,7 @@ async function registraGpConcluso() {
     const statisticheAggiornate = aggiornaStatisticheContesto(
       aggiornamento,
       garaCorrente,
-      piloti,
+      pilotiPartecipanti,
       risultatiPerPilota,
     );
     const percorsoArchivio = archiviaAggiornamento(

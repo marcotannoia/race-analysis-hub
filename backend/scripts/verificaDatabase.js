@@ -10,7 +10,9 @@ const Scuderia = require("../models/Scuderia");
 const Gara = require("../models/Gara");
 const AnalisiGara = require("../models/AnalisiGara");
 const AnalisiScuderia = require("../models/AnalisiScuderia");
-const datiSorgente = require("../data/dati-iniziali.json");
+const datiBase = require("../data/dati-iniziali.json");
+const { creaDatiEffettivi } = require("../utils/datiEffettivi");
+const datiSorgente = creaDatiEffettivi(datiBase);
 const {
   normalizzaNotaBene,
   normalizzaTestiAnnuali,
@@ -142,6 +144,7 @@ async function verificaCorrispondenzaSorgente() {
         sorgente.statoAggiornamentiTecnici || "",
       traduzioni: normalizzaTraduzioniAnalisi(sorgente.traduzioni),
       fonti: sorgente.fonti,
+      storicoEdizioni: sorgente.storicoEdizioni || [],
     };
 
     if (!documento || !uguali(confrontaCampi(documento, atteso), atteso)) {
@@ -164,6 +167,7 @@ async function verificaCorrispondenzaSorgente() {
       aggiornamentiInArrivo: sorgente.aggiornamentiInArrivo || "",
       traduzioni: normalizzaTraduzioniAnalisi(sorgente.traduzioni),
       fonti: sorgente.fonti,
+      storicoEdizioni: sorgente.storicoEdizioni || [],
     };
 
     if (!documento || !uguali(confrontaCampi(documento, atteso), atteso)) {

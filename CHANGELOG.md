@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.14.0 — 2026-09-13
+
+### Madrid post-race data
+
+- recorded the official provisional classification of the inaugural Madrid
+  Grand Prix for all 22 starters, including qualifying phase, finishing status,
+  fastest laps, tyre stints, reliability notes and documented penalties;
+- updated the complete 23-driver and 11-team championship standings and moved
+  the published analysis from Madrid to Azerbaijan;
+- archived the source URLs and the provisional status of the classification so
+  that a later FIA amendment can be audited and applied without ambiguity;
+- updated cumulative starts and conservative driver-error indicators, while
+  preserving explicitly unavailable profiles as `null`.
+
+### Reproducibility
+
+- the seed and database verifier now replay archived post-race updates over the
+  versioned F1DB snapshot, reproducing standings, race state and edition history;
+- post-race templates and validation use the 22 participants in the actual GP,
+  while championship standings continue to cover all 23 season drivers;
+- team results use the driver-team association of the specific event, including
+  Lawson for Red Bull and Tsunoda for Racing Bulls at Madrid;
+- added regression tests for event-specific line-ups and archived-data replay.
+
 ## 1.13.0 — 2026-09-06
 
 ### Forecasts and technical profiles
