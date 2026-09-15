@@ -29,7 +29,7 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
 
     assert.equal(risposta.status, 200);
     assert.equal(corpo.nome, "Race Analysis Hub API");
-    assert.equal(corpo.versione, "1.14.0");
+    assert.equal(corpo.versione, "1.15.0");
     assert.equal(corpo.linguaPredefinita, "it");
     assert.equal(corpo.lingueSupportate.length, 6);
     assert.equal(corpo.endpoint.lingue, "/api/v1/lingue");
@@ -43,10 +43,10 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
     assert.equal(corpo.documentazione, "/api/docs");
     assert.deepEqual(corpo.attribuzioneDati, {
       nome: "F1DB",
-      url: "https://github.com/f1db/f1db/releases/tag/v2026.13.0",
+      url: "https://github.com/f1db/f1db/releases/tag/v2026.14.0",
       licenza: "CC BY 4.0",
       licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
-      versione: "v2026.13.0",
+      versione: "v2026.14.0",
       modifiche:
         "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato.",
     });
@@ -56,19 +56,19 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
   });
 });
 
-test("la stagione espone calendario e risultati completi fino a Monza", async () => {
+test("la stagione espone calendario e risultati completi fino a Madrid", async () => {
   await conServer(async (baseUrl) => {
     const risposta = await fetch(`${baseUrl}/api/v1/stagione?lingua=it`);
     const corpo = await risposta.json();
     assert.equal(risposta.status, 200);
     assert.equal(corpo.stagione, 2026);
-    assert.equal(corpo.passati.length, 13);
-    assert.equal(corpo.prossimi.length, 10);
-    const monza = corpo.passati.at(-1);
-    assert.equal(monza.round, 13);
-    assert.equal(monza.qualifiche[0].q3, "1:21.786");
-    assert.equal(monza.gara[0].codice, "ANT");
-    assert.equal(corpo.fonte.versione, "v2026.13.0");
+    assert.equal(corpo.passati.length, 14);
+    assert.equal(corpo.prossimi.length, 9);
+    const madrid = corpo.passati.at(-1);
+    assert.equal(madrid.round, 14);
+    assert.equal(madrid.qualifiche[0].codice, "NOR");
+    assert.equal(madrid.gara[0].codice, "ANT");
+    assert.equal(corpo.fonte.versione, "v2026.14.0");
   });
 });
 
@@ -166,7 +166,7 @@ test("specifica OpenAPI e documentazione Swagger sono pubbliche", async () => {
     const corpo = await specifica.json();
     assert.equal(specifica.status, 200);
     assert.equal(corpo.openapi, "3.1.0");
-    assert.equal(corpo.info.version, "1.14.0");
+    assert.equal(corpo.info.version, "1.15.0");
     assert.ok(corpo.paths["/lingue"]);
     assert.ok(corpo.paths["/gare/attuale"]);
     assert.ok(corpo.paths["/previsioni/piloti"]);

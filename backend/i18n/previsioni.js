@@ -3,6 +3,7 @@ const TESTI_PREVISIONI = Object.freeze({
     fattori: {
       andamento2026: "Andamento 2026",
       compatibilitaVetturaCircuito: "Compatibilità vettura-circuito",
+      risultatiCircuitiSimili: "Risultati su circuiti simili",
       aggiornamentiTecnici: "Aggiornamenti tecnici pertinenti",
       confidenzaPilotaCircuito: "Confidenza pilota-circuito",
       qualifica2026: "Qualifica 2026",
@@ -46,6 +47,7 @@ const TESTI_PREVISIONI = Object.freeze({
     fattori: {
       andamento2026: "2026 driver performance",
       compatibilitaVetturaCircuito: "Car-circuit compatibility",
+      risultatiCircuitiSimili: "Results on similar circuits",
       aggiornamentiTecnici: "Relevant technical upgrades",
       confidenzaPilotaCircuito: "Driver-circuit confidence",
       qualifica2026: "2026 qualifying",
@@ -89,6 +91,7 @@ const TESTI_PREVISIONI = Object.freeze({
     fattori: {
       andamento2026: "Performance du pilote en 2026",
       compatibilitaVetturaCircuito: "Compatibilité voiture-circuit",
+      risultatiCircuitiSimili: "Résultats sur des circuits similaires",
       aggiornamentiTecnici: "Évolutions techniques pertinentes",
       confidenzaPilotaCircuito: "Confiance pilote-circuit",
       qualifica2026: "Qualifications 2026",
@@ -132,6 +135,7 @@ const TESTI_PREVISIONI = Object.freeze({
     fattori: {
       andamento2026: "Desempenho do piloto em 2026",
       compatibilitaVetturaCircuito: "Compatibilidade carro-circuito",
+      risultatiCircuitiSimili: "Resultados em circuitos semelhantes",
       aggiornamentiTecnici: "Atualizações técnicas relevantes",
       confidenzaPilotaCircuito: "Confiança piloto-circuito",
       qualifica2026: "Qualificação de 2026",
@@ -175,6 +179,7 @@ const TESTI_PREVISIONI = Object.freeze({
     fattori: {
       andamento2026: "Rendimiento del piloto en 2026",
       compatibilitaVetturaCircuito: "Compatibilidad coche-circuito",
+      risultatiCircuitiSimili: "Resultados en circuitos similares",
       aggiornamentiTecnici: "Actualizaciones técnicas relevantes",
       confidenzaPilotaCircuito: "Confianza piloto-circuito",
       qualifica2026: "Clasificación de 2026",
@@ -218,6 +223,7 @@ const TESTI_PREVISIONI = Object.freeze({
     fattori: {
       andamento2026: "Fahrerleistung 2026",
       compatibilitaVetturaCircuito: "Fahrzeug-Strecken-Kompatibilität",
+      risultatiCircuitiSimili: "Ergebnisse auf ähnlichen Strecken",
       aggiornamentiTecnici: "Relevante technische Updates",
       confidenzaPilotaCircuito: "Fahrer-Strecken-Vertrauen",
       qualifica2026: "Qualifying 2026",

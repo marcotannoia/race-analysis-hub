@@ -3,23 +3,86 @@ const assert = require("node:assert/strict");
 const {
   PESI,
   PESO_PENALITA,
+  calcolaSimilaritaCircuiti,
   creaClassificaPrevisionale,
+  selezionaCircuitiSimili,
   valutaAggiornamento,
   valutaAndamentoScuderia,
   valutaCompatibilitaVettura,
   valutaPenalita,
+  valutaRisultatiCircuitiSimili,
 } = require("../services/classificaPrevisionale");
 
-test("i pesi previsionali sommano a cento e valorizzano gli ultimi tre GP", () => {
+test("i pesi previsionali sommano a cento e prioritizzano il fit con il circuito", () => {
   assert.equal(
     Object.values(PESI).reduce((totale, peso) => totale + peso, 0),
     100,
   );
   assert.deepEqual(PESI, {
-    compatibilitaVetturaCircuito: 60, qualifica2026: 3, storicoPersonale: 3,
-    aggiornamentiTecnici: 7, andamento2026: 7, passoGaraRecente: 15,
-    andamentoScuderiaRecente: 5,
+    compatibilitaVetturaCircuito: 42, risultatiCircuitiSimili: 28,
+    qualifica2026: 3, storicoPersonale: 2, aggiornamentiTecnici: 10,
+    andamento2026: 5, passoGaraRecente: 8, andamentoScuderiaRecente: 2,
   });
+  assert.equal(
+    PESI.compatibilitaVetturaCircuito + PESI.risultatiCircuitiSimili,
+    70,
+  );
+});
+
+test("la similarità tecnica confronta tutte le dimensioni e seleziona i GP più vicini", () => {
+  assert.equal(
+    calcolaSimilaritaCircuiti(
+      { efficienzaAerodinamica: 100, frenata: 100 },
+      { efficienzaAerodinamica: 100, frenata: 100 },
+    ),
+    100,
+  );
+  assert.equal(
+    calcolaSimilaritaCircuiti(
+      { efficienzaAerodinamica: 100, frenata: 100 },
+      { efficienzaAerodinamica: 50, frenata: 50 },
+    ),
+    50,
+  );
+
+  const simili = selezionaCircuitiSimili("azerbaigian-baku", [
+    { grandPrixId: "netherlands", etichetta: "Zandvoort", round: 12 },
+    { grandPrixId: "italy", etichetta: "Monza", round: 13 },
+    { grandPrixId: "spain", etichetta: "Madring", round: 14 },
+  ]);
+
+  assert.deepEqual(
+    simili.map(({ slug }) => slug),
+    ["italia-monza", "spagna-madring"],
+  );
+  assert.ok(simili[0].similaritaPercentuale >= simili[1].similaritaPercentuale);
+});
+
+test("i risultati dei circuiti simili usano dati pilota e scuderia senza penalizzare un assente", () => {
+  const circuitiSimili = [
+    {
+      similaritaPercentuale: 90,
+      evento: {
+        piloti: { pilota: { gara: 1 } },
+        scuderie: { team: { gara: { PIL: 1, ALT: 3 } } },
+      },
+    },
+    {
+      similaritaPercentuale: 80,
+      evento: {
+        piloti: { pilota: { gara: null } },
+        scuderie: { team: { gara: { ALT: 2, RIS: 4 } } },
+      },
+    },
+  ];
+
+  const valore = valutaRisultatiCircuitiSimili(
+    circuitiSimili,
+    "pilota",
+    "PIL",
+    "team",
+  );
+  assert.ok(valore > 90);
 });
 
 test("una penalità confermata incide fino al 35% e lascia il 65% agli altri fattori", () => {
@@ -187,8 +250,8 @@ test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
     "TMA",
   );
   assert.equal(risultato.classifica[0].scuderia.colore, "#112233");
-  assert.equal(risultato.classifica[0].fattori.length, 7);
-  assert.equal(risultato.modello, "statistico-editoriale-v2");
+  assert.equal(risultato.classifica[0].fattori.length, 8);
+  assert.equal(risultato.modello, "statistico-editoriale-v3");
   assert.equal("avvertenza" in risultato, false);
   assert.equal("aggiornatoIl" in risultato, false);
 });
@@ -312,7 +375,7 @@ test("la classifica applica i pesi condizionali al pilota penalizzato", () => {
     }],
   }).classifica[0];
 
-  assert.equal(conPenalita.fattori.length, 8);
+  assert.equal(conPenalita.fattori.length, 9);
   assert.equal(
     conPenalita.fattori.reduce((totale, fattore) => totale + fattore.pesoPercentuale, 0),
     100,

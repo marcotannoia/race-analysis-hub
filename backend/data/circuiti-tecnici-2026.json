@@ -1,8 +1,8 @@
 {
   "metadati": {
     "stagione": 2026,
-    "versione": "circuiti-tecnici-v1",
-    "metodo": "I dati geometrici provengono dalle pagine ufficiali Formula 1. Gli indici di richiesta da 0 a 100 sono una lettura editoriale tecnica della pista e servono esclusivamente a calcolare l'aderenza macchina-circuito. Le zone Straight Mode vengono aggiunte solo dopo l'acquisizione della mappa ufficiale FIA dell'evento."
+    "versione": "circuiti-tecnici-v2",
+    "metodo": "I dati geometrici provengono dalle pagine ufficiali Formula 1. Gli indici di richiesta da 0 a 100 sono una lettura editoriale tecnica della pista: servono a calcolare sia l'aderenza macchina-circuito sia la similarita tra circuiti sulle dieci dimensioni. La distanza assoluta per dimensione e pesata sulle richieste del GP corrente; le zone Straight Mode vengono aggiunte solo dopo l'acquisizione della mappa ufficiale FIA dell'evento."
   },
   "dimensioni": [
     "efficienzaAerodinamica",
@@ -51,7 +51,7 @@
       "caratteristiche": ["Lunghissimo rettilineo del traguardo", "Sezione del castello molto lenta e stretta", "Compromesso critico tra drag e carico"],
       "puntiSorpassoPrincipali": 2,
       "richieste": { "efficienzaAerodinamica": 98, "potenzaDeployment": 100, "curvaLenta": 96, "curvaMedia": 58, "curvaVeloce": 55, "trazione": 94, "frenata": 100, "cordoli": 68, "gestioneGomme": 62, "stabilitaAssetto": 88 },
-      "fonti": ["https://www.formula1.com/en/racing/2026/azerbaijan"]
+      "fonti": ["https://www.formula1.com/en/racing/2026/azerbaijan", "https://press.pirelli.com/tyre-compound-selections-for-baku-sepang-and-singapore/"]
     },
     "bahrein-sepang": {
       "fp1At": "2026-10-02T04:30:00.000Z",

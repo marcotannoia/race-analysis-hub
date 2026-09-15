@@ -34,7 +34,7 @@ test("OpenAPI dichiara correttamente l'accesso pubblico e il referente", () => {
     ),
   );
   assert.equal(documentoOpenApi.info.title, "Race Analysis Hub API");
-  assert.equal(documentoOpenApi.info.version, "1.14.0");
+  assert.equal(documentoOpenApi.info.version, "1.15.0");
   assert.match(documentoOpenApi.info.description, /adattate nel software/);
   assert.match(documentoOpenApi.info.description, /Race Analysis Hub/);
   assert.match(documentoOpenApi.info.license.name, /CC BY 4\.0/);
@@ -264,7 +264,7 @@ test("gli esempi Swagger della previsione sono matematicamente coerenti", () => 
     pesi.reduce((totale, peso) => totale + peso.pesoPercentuale, 0),
     100,
   );
-  assert.equal(fattori.length, 7);
+  assert.equal(fattori.length, 8);
   assert.equal(
     fattori.reduce((totale, fattore) => totale + fattore.contributo, 0),
     posizione.indice.example,
