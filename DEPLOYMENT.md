@@ -108,7 +108,7 @@ automatically deployed by the push, wait for the response to include
 
 For the multilingual release, please also wait for
 `GET /api/v1/lingue` and `GET /api/v1/home?lingua=en` respond from the version
-backend `1.14.0`. Only then can the frontend be published: otherwise
+backend `1.15.0`. Only then can the frontend be published: otherwise
 The selector would change the interface but would still receive Italian texts.
 `AZURE_TRANSLATOR_KEY` should not be configured to Render or included in the
 build Vite: Used only for local administrative script.
@@ -143,11 +143,10 @@ CloudFront invalidations.
 the endpoint `/api/v1/health`;
 - Use a shared store for the rate limit if the backend will have multiple instances.
 
-For release `1.14.0`, also verify that:
+For release `1.15.0`, also verify that:
 
-- `GET /api/v1` returns `"versione": "1.14.0"`;
-- `GET /api/v1/home` exhibits Madrid as a current race and 22 participants,
-including Hadjar who returned to the line-up;
+- `GET /api/v1` returns `"versione": "1.15.0"`;
+- `GET /api/v1/home` exhibits Baku as the current race and 22 participants;
 - `GET /api/v1/piloti` exhibits the complete seasonal catalog of 23 drivers;
 - the Red Bull and Racing Bulls cards derive their respective drivers from the
 current GP grid;
@@ -155,10 +154,12 @@ current GP grid;
 call only;
 - `GET /api/v1/home` exposes `garaAttuale.ordineCalendario` and
 `metadati.totaleGareCalendario`, separated from the internal editorial sequence;
-- the ranking uses the `statistico-editoriale-v2` model, with overall weights
-100%: 60% car-circuit compatibility, driver performance in the
-last three GPs 15%, relevant technical updates 7%, 2026 rider trend
-7%, team performance in the last three GPs 5%, historical 3% and qualifying 3%.
+- the ranking uses the `statistico-editoriale-v3` model, with overall weights
+100%: 42% car-circuit compatibility, 28% results on the two most similar
+completed circuits, 10% relevant technical updates, 8% driver performance in
+the last three GPs, 5% 2026 driver trend, qualifying 3%, historical 2%, and
+team performance in the last three GPs 2%; the response also exposes the two
+selected circuits and their similarity percentages.
 With a penalty
 confirmed, the penalty can affect up to 35% and all other factors
 they are reproportioned to the remaining 65%;

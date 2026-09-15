@@ -12,12 +12,12 @@ endorsement, sponsorship or affiliation with Formula One Licensing B.V.,
 Formula One World Championship Limited, the FIA, the teams or the drivers.
 
 The base 2026 standings, 2023-2025 race and qualifying results and graphs
-2026 quantities derive from F1DB `v2026.13.0`, distributed by Marcel Overdijk
+2026 quantities derive from F1DB `v2026.14.0`, distributed by Marcel Overdijk
 and F1DB contributors licensed under the Creative Commons Attribution 4.0 license
 International (CC BY 4.0):
 
 - Original design: https://github.com/f1db/f1db
-- Release used: https://github.com/f1db/f1db/releases/tag/v2026.13.0
+- Release used: https://github.com/f1db/f1db/releases/tag/v2026.14.0
 - License: https://creativecommons.org/licenses/by/4.0/
 
 Race Analysis Hub has filtered, renamed, and normalized a subset of the
@@ -130,7 +130,7 @@ attribution to F1DB for quantitative data and report changes.
 Recommended synthetic attribution:
 
 > Content adapted from Race Analysis Hub — quantitative data derived from F1DB
-> v2026.13.0 — reuser changes — CC BY 4.0.
+> v2026.14.0 — reuser changes — CC BY 4.0.
 
 The extraordinary inclusion of the Bahrain Grand Prix in Sepang on the calendar
 2026 is documented separately from the official Formula 1 communication of the

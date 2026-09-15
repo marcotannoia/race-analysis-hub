@@ -13,7 +13,7 @@ The frontend is built with React and Vite, the API with Node.js and Express,
 and MongoDB provides data persistence. The public APIs are anonymous,
 read-only, and documented with Swagger.
 
-The current project and API version is `1.14.0`.
+The current project and API version is `1.15.0`.
 
 The final section of the landing page presents a driver prediction ranking for
 the current Grand Prix only. The model combines 2026 results, form across the
@@ -196,7 +196,7 @@ in [`LICENSE.md`](LICENSE.md) and [`NOTICE.md`](NOTICE.md).
 
 The 2026 standings, 2023–2025 race and qualifying results, and 2026 quantitative
 charts are derived from
-[F1DB v2026.13.0](https://github.com/f1db/f1db/releases/tag/v2026.13.0),
+[F1DB v2026.14.0](https://github.com/f1db/f1db/releases/tag/v2026.14.0),
 distributed under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Race Analysis Hub
 filters and normalises the data. Editorial content is original to the project
@@ -228,21 +228,27 @@ confidence. The standard weights are:
 
 | Factor | Weight |
 |---|---:|
-| Car–circuit compatibility | 60% |
-| Driver form across the last three Grands Prix | 15% |
-| Technical upgrades relevant to circuit requirements | 7% |
-| Driver's 2026 form | 7% |
-| Team form across the last three Grands Prix | 5% |
+| Car–circuit compatibility | 42% |
+| Results on the two most similar completed circuits | 28% |
+| Technical upgrades relevant to circuit requirements | 10% |
+| Driver form across the last three Grands Prix | 8% |
+| Driver's 2026 form | 5% |
 | 2026 qualifying performance | 3% |
-| Driver's historical performance | 3% |
+| Driver's historical performance | 2% |
+| Team form across the last three Grands Prix | 2% |
 
 When a grid penalty is confirmed, it may account for up to 35% of the final
-index, with the seven standard factors proportionally rescaled across the
+index, with the eight standard factors proportionally rescaled across the
 remaining 65%.
 
 Car–circuit compatibility is the weighted average of the team's ten technical
 capabilities against the circuit's requirements. If either technical profile
 is missing, the service falls back to the previous editorial calculation.
+
+The similar-circuit factor selects the two completed 2026 events with the
+smallest weighted distance from the current circuit across the same ten
+technical dimensions. It combines race and qualifying evidence for both the
+driver and team, while an absent driver is not treated as a retirement.
 
 Technical upgrades do not automatically receive a positive score. A bonus
 requires an explicitly relevant characteristic matched to a circuit

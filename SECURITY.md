@@ -3,7 +3,7 @@
 ## Supported version
 
 Only the public API `/api/v1` is supported, currently at version
-application `1.14.0`. Endpoints are anonymous, read-only, and subject to
+application `1.15.0`. Endpoints are anonymous, read-only, and subject to
 validation, caching, and throttling. The cache retains only
 `2xx` responses; health checks and errors use `no-store`. Concurrent requests
 for the same URL are merged to avoid duplicate queries on the database.

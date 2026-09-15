@@ -25,13 +25,14 @@ const parametroSlugConfronto = (nome, descrizione, esempio) => ({
 });
 
 const esempioPesiPrevisionali = [
-  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 60],
+  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 42],
+  ["risultatiCircuitiSimili", "Risultati su circuiti simili", 28],
   ["qualifica2026", "Qualifica 2026", 3],
-  ["storicoPersonale", "Storico personale", 3],
-  ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 7],
-  ["andamento2026", "Andamento 2026", 7],
-  ["passoGaraRecente", "Andamento pilota negli ultimi 3 GP", 15],
-  ["andamentoScuderiaRecente", "Andamento scuderia negli ultimi 3 GP", 5],
+  ["storicoPersonale", "Storico personale", 2],
+  ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 10],
+  ["andamento2026", "Andamento 2026", 5],
+  ["passoGaraRecente", "Andamento pilota negli ultimi 3 GP", 8],
+  ["andamentoScuderiaRecente", "Andamento scuderia negli ultimi 3 GP", 2],
 ].map(([chiave, nome, pesoPercentuale]) => ({
   chiave,
   nome,
@@ -75,7 +76,7 @@ const documentoOpenApi = {
       "consente esclusivamente GET, HEAD e OPTIONS. Le analisi editoriali sono " +
       "pubblicate soltanto per il Gran Premio attuale; gare future e relative " +
       "analisi non vengono esposte. Classifiche e risultati quantitativi provengono " +
-      "da uno snapshot locale derivato da F1DB v2026.13.0 (CC BY 4.0), senza " +
+      "da uno snapshot locale derivato da F1DB v2026.14.0 (CC BY 4.0), senza " +
       "chiamate esterne a runtime, e sono visualizzati con Chart.js. " +
       "Le risposte pubbliche possono essere copiate, mostrate e adattate nel software " +
       "del riutilizzatore, anche per uso commerciale, secondo la CC BY 4.0. " +
@@ -1347,7 +1348,7 @@ const documentoOpenApi = {
             type: "string",
             format: "uri",
             example:
-              "https://github.com/f1db/f1db/releases/tag/v2026.13.0",
+              "https://github.com/f1db/f1db/releases/tag/v2026.14.0",
           },
           licenza: { type: "string", example: "CC BY 4.0" },
           licenzaUrl: {
@@ -1355,7 +1356,7 @@ const documentoOpenApi = {
             format: "uri",
             example: "https://creativecommons.org/licenses/by/4.0/",
           },
-          versione: { type: "string", example: "v2026.13.0" },
+          versione: { type: "string", example: "v2026.14.0" },
           modifiche: {
             type: "string",
             description:
@@ -1906,6 +1907,21 @@ const documentoOpenApi = {
           },
         },
       },
+      CircuitoSimilePrevisionale: {
+        type: "object",
+        required: ["slug", "nome", "round", "similaritaPercentuale"],
+        properties: {
+          slug: { type: "string", example: "italia-monza" },
+          nome: { type: "string", example: "Monza" },
+          round: { type: "integer", minimum: 1, example: 13 },
+          similaritaPercentuale: {
+            type: "number",
+            minimum: 0,
+            maximum: 100,
+            example: 89.4,
+          },
+        },
+      },
       PosizionePrevisionale: {
         type: "object",
         required: [
@@ -1939,10 +1955,10 @@ const documentoOpenApi = {
           sintesi: { type: "string" },
           fattori: {
             type: "array",
-            minItems: 7,
-            maxItems: 8,
+            minItems: 8,
+            maxItems: 9,
             description:
-              "Sette fattori ordinari; una penalità confermata può incidere fino al 35% e gli altri pesi vengono riproporzionati sul restante 65%.",
+              "Otto fattori ordinari; compatibilità tecnica e risultati sui circuiti simili pesano insieme il 70%. Una penalità confermata può incidere fino al 35% e gli altri pesi vengono riproporzionati sul restante 65%.",
             items: { $ref: "#/components/schemas/FattorePrevisionale" },
             example: esempioFattoriPrevisionali,
           },
@@ -1957,6 +1973,7 @@ const documentoOpenApi = {
           "lingua",
           "gara",
           "modello",
+          "circuitiSimili",
           "pesi",
           "classifica",
         ],
@@ -1973,12 +1990,19 @@ const documentoOpenApi = {
           },
           modello: {
             type: "string",
-            const: "statistico-editoriale-v2",
+            const: "statistico-editoriale-v3",
+          },
+          circuitiSimili: {
+            type: "array",
+            maxItems: 2,
+            description:
+              "GP già disputati selezionati confrontando le dieci richieste tecniche del circuito; i risultati reali di pilota e scuderia alimentano il fattore dedicato.",
+            items: { $ref: "#/components/schemas/CircuitoSimilePrevisionale" },
           },
           pesi: {
             type: "array",
-            minItems: 7,
-            maxItems: 7,
+            minItems: 8,
+            maxItems: 8,
             items: { $ref: "#/components/schemas/PesoPrevisionale" },
             example: esempioPesiPrevisionali,
           },

@@ -5,7 +5,7 @@ JSON. The full executable contract is available at
 [Swagger](https://f1-stats-5v93.onrender.com/api/docs) and the
 [OpenAPI 3.1 specification](https://f1-stats-5v93.onrender.com/api/v1/openapi.json).
 
-The current application version is `1.14.0`. Integrations must use
+The current application version is `1.15.0`. Integrations must use
 `GET`, `HEAD`, or `OPTIONS`; no API keys are required. The following examples
 show relative paths, which can be used on the public domain or on the backend
 local `http://127.0.0.1:5002`.
@@ -152,13 +152,15 @@ Public responses are reusable under the conditions described in
 
 The FIA live report is no longer shown on the website and in the updated app. The `aggiornamentiLive` field of the home page is kept for compatibility but always returns `null`, even with historical documents in the database. The server no longer starts the FIA automatic monitor. Historical data is not deleted; the technical profiles and their sources remain. This removal does not constitute a verification of the rights on the other sources.
 
-### Technical Overall — revised September 6, 2026
+### Forecast model — revised September 15, 2026
 
-The forecast factor `compatibilitaVetturaCircuito` now uses the same average of the ten 0–100 capacities, weighted on the demands of the track, shown in the `profiloTecnico.compatibilita` of the circuit. The weight is 60% before any penalty. If the team or circuit profile is missing, the previous calculation based on ranking and editorial label is maintained.
+The forecast factor `compatibilitaVetturaCircuito` uses the same average of the ten 0–100 capacities, weighted on the demands of the track, shown in the `profiloTecnico.compatibilita` of the circuit. Its weight is 42% before any penalty. If the team or circuit profile is missing, the previous calculation based on ranking and editorial label is maintained.
 
 Capabilities are editorial estimates, not telemetry measurements. Method, date and rationale are in `backend/data/profili-tecnici-2026.json`; summary is in `backend/data/revisione-overall-2026-09-06.md`. The review incorporates information from the Monza weekend and does not constitute a backtest of the pre-race prediction. The increased accuracy must be verified on subsequent races.
 
-The seven ordinary weights are: compatibility 60%, qualifying 3%, personal history 3%, relevant updates 7%, 2026 driver performance 7%, driver performance in the last three GPs 15%, team performance in the last three GPs 5%. The correction for confirmed penalties remains separate and reproportions the ordinary weights.
+The eight ordinary weights are: compatibility 42%, results on the two most similar completed circuits 28%, relevant updates 10%, driver performance in the last three GPs 8%, 2026 driver performance 5%, qualifying 3%, personal history 2%, and team performance in the last three GPs 2%. Compatibility and similar-circuit evidence therefore account for 70% of the ordinary score, or 80% together with relevant upgrades. The correction for confirmed penalties remains separate and reproportions the ordinary weights.
+
+Circuit similarity is calculated over all ten technical dimensions. For each dimension, the absolute distance is weighted by the current Grand Prix requirement. The API exposes the selected events and their similarity percentages in `circuitiSimili`; for Baku, the current snapshot selects Monza and Madrid. Race and qualifying results from those events are combined at driver and team level. A driver who did not participate is not scored as a retirement.
 
 The team performance averages the evaluations of the results of its cars in each of the last three GPs of the snapshot, with time weights 1, 2 and 3. A retirement is worth 15/100; a GP without team data is worth 40/100. The team associations of the historic event, including substitutes, are used.
 

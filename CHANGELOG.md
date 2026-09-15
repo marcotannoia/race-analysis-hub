@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.15.0 — 2026-09-15
+
+### Baku and quantitative data
+
+- moved the published analysis to the Azerbaijan Grand Prix after Madrid and
+  refreshed all 22 driver and 11 team cards with the current standings,
+  relevant recent results, tyre selection, participation caveats, and dated
+  technical-update evidence;
+- updated the reproducible quantitative snapshot to F1DB `v2026.14.0`, which
+  includes Madrid, while keeping record counts and database identifiers stable;
+- aligned current, past, and future race sections without changing the native
+  application bundle.
+
+### Prediction model v3
+
+- made car–circuit compatibility the primary basis together with observed
+  performance on the two most similar completed 2026 circuits;
+- added a ten-dimension weighted-distance calculation and exposed the selected
+  comparison circuits through the public API;
+- set the eight ordinary weights to 42% compatibility, 28% similar-circuit
+  results, 10% relevant upgrades, 8% recent driver form, 5% season form, 3%
+  qualifying, 2% personal history, and 2% recent team form;
+- prevented absence from being treated as a retirement and kept announced but
+  unverified upgrades neutral.
+
 ## 1.14.0 — 2026-09-13
 
 ### Madrid post-race data

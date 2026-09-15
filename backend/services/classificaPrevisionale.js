@@ -1,16 +1,18 @@
-const snapshotF1db = require("../data/f1db-v2026.13.0-derivato.json");
+const snapshotF1db = require("../data/f1db-v2026.14.0-derivato.json");
 const { testiPrevisione } = require("../i18n/previsioni");
 const { valoreLocalizzato } = require("../i18n/lingue");
 const { creaProfiloCircuito } = require("./profiliTecnici");
+const circuitiTecnici = require("../data/circuiti-tecnici-2026.json");
 
 const PESI = Object.freeze({
-  compatibilitaVetturaCircuito: 60,
+  compatibilitaVetturaCircuito: 42,
+  risultatiCircuitiSimili: 28,
   qualifica2026: 3,
-  storicoPersonale: 3,
-  aggiornamentiTecnici: 7,
-  andamento2026: 7,
-  passoGaraRecente: 15,
-  andamentoScuderiaRecente: 5,
+  storicoPersonale: 2,
+  aggiornamentiTecnici: 10,
+  andamento2026: 5,
+  passoGaraRecente: 8,
+  andamentoScuderiaRecente: 2,
 });
 
 const PESO_PENALITA = 35;
@@ -18,6 +20,7 @@ const PESO_PENALITA = 35;
 const NOMI_FATTORI = Object.freeze({
   andamento2026: "Andamento 2026",
   compatibilitaVetturaCircuito: "Compatibilità vettura-circuito",
+  risultatiCircuitiSimili: "Risultati su circuiti simili",
   aggiornamentiTecnici: "Aggiornamenti tecnici pertinenti",
   qualifica2026: "Qualifica 2026",
   andamentoScuderiaRecente: "Andamento scuderia negli ultimi 3 GP",
@@ -25,6 +28,23 @@ const NOMI_FATTORI = Object.freeze({
   passoGaraRecente: "Andamento pilota negli ultimi 3 GP",
   penalita: "Penalità in griglia",
 });
+
+const GARA_SLUG_PER_GRAND_PRIX_ID = Object.freeze({
+  netherlands: "olanda-zandvoort",
+  italy: "italia-monza",
+  spain: "spagna-madring",
+  azerbaijan: "azerbaigian-baku",
+  bahrain: "bahrein-sepang",
+  singapore: "singapore-marina-bay",
+  "united-states": "usa-austin",
+  mexico: "messico-citta-del-messico",
+  "sao-paulo": "brasile-interlagos",
+  "las-vegas": "usa-las-vegas",
+  qatar: "qatar-lusail",
+  "abu-dhabi": "abu-dhabi-yas-marina",
+});
+
+const NUMERO_CIRCUITI_SIMILI = 2;
 
 const NESSUN_PACCHETTO_CONFERMATO =
   /non ha (?:ancora )?(?:annunciato|comunicato|confermato).*(?:pacchetto|aggiornament)|non ci sono.*componenti confermati/;
@@ -96,6 +116,132 @@ function valutaAndamentoScuderia(eventi, slug) {
       peso: indice + 1,
     };
   }));
+}
+
+function calcolaSimilaritaCircuiti(richiesteCorrenti, richiesteConfronto) {
+  const dimensioni = circuitiTecnici.dimensioni.filter(
+    (dimensione) =>
+      Number.isFinite(richiesteCorrenti?.[dimensione]) &&
+      Number.isFinite(richiesteConfronto?.[dimensione]),
+  );
+  if (!dimensioni.length) return 0;
+
+  const pesoTotale = dimensioni.reduce(
+    (totale, dimensione) => totale + richiesteCorrenti[dimensione],
+    0,
+  );
+  if (!pesoTotale) return 0;
+
+  const distanzaPesata = dimensioni.reduce(
+    (totale, dimensione) =>
+      totale +
+      Math.abs(
+        richiesteCorrenti[dimensione] - richiesteConfronto[dimensione],
+      ) *
+        richiesteCorrenti[dimensione],
+    0,
+  );
+
+  return arrotonda(limita(100 - distanzaPesata / pesoTotale));
+}
+
+function selezionaCircuitiSimili(garaSlug, eventi, limite = NUMERO_CIRCUITI_SIMILI) {
+  const richiesteCorrenti = circuitiTecnici.circuiti[garaSlug]?.richieste;
+  if (!richiesteCorrenti) return [];
+
+  return eventi
+    .map((evento) => {
+      const slug = GARA_SLUG_PER_GRAND_PRIX_ID[evento.grandPrixId];
+      const richieste = circuitiTecnici.circuiti[slug]?.richieste;
+      if (!slug || slug === garaSlug || !richieste) return null;
+
+      return {
+        evento,
+        slug,
+        nome: evento.etichetta,
+        round: evento.round,
+        similaritaPercentuale: calcolaSimilaritaCircuiti(
+          richiesteCorrenti,
+          richieste,
+        ),
+      };
+    })
+    .filter(Boolean)
+    .sort(
+      (primo, secondo) =>
+        secondo.similaritaPercentuale - primo.similaritaPercentuale ||
+        secondo.round - primo.round,
+    )
+    .slice(0, limite);
+}
+
+function pilotaHaPartecipato(evento, codicePilota) {
+  return Object.values(evento.scuderie || {}).some((scuderia) =>
+    Object.prototype.hasOwnProperty.call(scuderia.gara || {}, codicePilota) ||
+    Object.prototype.hasOwnProperty.call(scuderia.qualifica || {}, codicePilota),
+  );
+}
+
+function valutaPrestazioneEvento(posizioneGara, posizioneQualifica) {
+  const gara = Number.isFinite(posizioneGara)
+    ? punteggioPosizione(posizioneGara)
+    : null;
+  const qualifica = Number.isFinite(posizioneQualifica)
+    ? punteggioPosizione(posizioneQualifica)
+    : null;
+
+  if (gara === null) return qualifica ?? 15;
+  if (qualifica === null) return gara;
+  return gara * 0.7 + qualifica * 0.3;
+}
+
+function valutaRisultatiCircuitiSimili(
+  circuitiSimili,
+  pilotaSlug,
+  codicePilota,
+  scuderiaSlug,
+) {
+  const campioni = circuitiSimili.map(({ evento, similaritaPercentuale }) => {
+    const risultatoPilota = evento.piloti?.[pilotaSlug];
+    const haPartecipato = pilotaHaPartecipato(evento, codicePilota);
+    const risultatoScuderia = evento.scuderie?.[scuderiaSlug];
+    const codiciScuderia = new Set([
+      ...Object.keys(risultatoScuderia?.gara || {}),
+      ...Object.keys(risultatoScuderia?.qualifica || {}),
+    ]);
+    const prestazioniScuderia = [...codiciScuderia]
+      .map((codice) =>
+        valutaPrestazioneEvento(
+          risultatoScuderia?.gara?.[codice],
+          risultatoScuderia?.qualifica?.[codice],
+        ),
+      )
+      .sort((prima, seconda) => seconda - prima);
+    const valoreScuderia = prestazioniScuderia.length
+      ? prestazioniScuderia.length === 1
+        ? prestazioniScuderia[0]
+        : prestazioniScuderia[0] * 0.6 + prestazioniScuderia[1] * 0.4
+      : null;
+    const valorePilota = haPartecipato
+      ? valutaPrestazioneEvento(
+          risultatoPilota?.gara,
+          risultatoPilota?.qualifica,
+        )
+      : null;
+
+    const valore = Number.isFinite(valorePilota)
+      ? Number.isFinite(valoreScuderia)
+        ? valorePilota * 0.6 + valoreScuderia * 0.4
+        : valorePilota
+      : valoreScuderia;
+
+    return {
+      valore,
+      peso: similaritaPercentuale ** 2,
+    };
+  });
+
+  return arrotonda(mediaPesata(campioni));
 }
 
 // Match esplicito delle caratteristiche, non della sola parola "aggiornamento".
@@ -418,6 +564,7 @@ function creaClassificaPrevisionale({
     ),
   );
   const eventi = snapshot.andamento2026?.eventi || [];
+  const circuitiSimili = selezionaCircuitiSimili(gara.slug, eventi);
   const analisiPilotaPerSlug = new Map(
     analisiPiloti.map((analisi) => [analisi.pilota.slug, analisi]),
   );
@@ -483,6 +630,12 @@ function creaClassificaPrevisionale({
       compatibilitaVetturaCircuito:
         compatibilitaTecniche.get(scuderiaSlug) ??
         valutaCompatibilitaVettura(andamentoScuderia, valutazioneCircuitoScuderia),
+      risultatiCircuitiSimili: valutaRisultatiCircuitiSimili(
+        circuitiSimili,
+        pilota.slug,
+        pilota.codice,
+        scuderiaSlug,
+      ),
       aggiornamentiTecnici: aggiornamento.valore,
       qualifica2026: valutaRisultatiRecenti(qualifiche2026, 5),
       andamentoScuderiaRecente: valutaAndamentoScuderia(eventi, scuderiaSlug),
@@ -550,7 +703,15 @@ function creaClassificaPrevisionale({
       nome: valoreLocalizzato(gara, "nome", lingua),
       circuito: valoreLocalizzato(gara, "circuito", lingua),
     },
-    modello: "statistico-editoriale-v2",
+    modello: "statistico-editoriale-v3",
+    circuitiSimili: circuitiSimili.map(
+      ({ slug, nome, round, similaritaPercentuale }) => ({
+        slug,
+        nome,
+        round,
+        similaritaPercentuale,
+      }),
+    ),
     pesi: Object.entries(PESI).map(([chiave, pesoPercentuale]) => ({
       chiave,
       nome: testi.fattori[chiave],
@@ -567,9 +728,12 @@ module.exports = {
   NOMI_FATTORI,
   PESI,
   PESO_PENALITA,
+  calcolaSimilaritaCircuiti,
   creaClassificaPrevisionale,
+  selezionaCircuitiSimili,
   valutaAggiornamento,
   valutaAndamentoScuderia,
   valutaCompatibilitaVettura,
   valutaPenalita,
+  valutaRisultatiCircuitiSimili,
 };

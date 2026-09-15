@@ -1,10 +1,10 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const VERSIONE_F1DB = "v2026.13.0";
-const PUBBLICATO_IL = "2026-09-06T19:35:18.000Z";
+const VERSIONE_F1DB = "v2026.14.0";
+const PUBBLICATO_IL = "2026-09-13T17:19:19.000Z";
 const SHA256_ARCHIVIO =
-  "b90a464e196da46d7724fa7b919c3bd9640166ff385f5336a366dd7fbfe562e7";
+  "96d144f6e57405717b78a0a385d5e1e0416c3674b581f3b24d78d473dc897279";
 const URL_REPOSITORY = "https://github.com/f1db/f1db";
 const URL_RELEASE = `${URL_REPOSITORY}/releases/tag/${VERSIONE_F1DB}`;
 const URL_ARCHIVIO = `${URL_REPOSITORY}/releases/download/${VERSIONE_F1DB}/f1db-json-splitted.zip`;
@@ -534,7 +534,7 @@ function creaSnapshot(percorsoF1db, datiProgetto) {
       fonte: "F1DB",
       versione: VERSIONE_F1DB,
       pubblicatoIl: PUBBLICATO_IL,
-      derivatoIl: "2026-09-07",
+      derivatoIl: "2026-09-15",
       releaseUrl: URL_RELEASE,
       archivio: "f1db-json-splitted.zip",
       archivioUrl: URL_ARCHIVIO,

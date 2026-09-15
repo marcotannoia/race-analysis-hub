@@ -3,8 +3,8 @@
     "stagione": 2026,
     "versione": "profilo-tecnico-v2",
     "metodo": "Stime editoriali 0-100 delle singole capacita, non misure telemetriche o probabilita. Revisione prudente per dimensione: sviluppi installati e riscontri in pista; nessun bonus automatico per annunci, punti, incidenti o penalita. Valori invariati quando manca evidenza specifica. Accuratezza predittiva non ancora validata fuori campione.",
-    "aggiornatoIl": "2026-09-06T16:00:48Z",
-    "riferimento": "Ungheria e Olanda; prove e qualifiche Monza. Risultato gara Monza ancora provvisorio, usato solo come riscontro."
+    "aggiornatoIl": "2026-09-15T00:00:00Z",
+    "riferimento": "Profili riesaminati dopo i risultati di Monza e Madrid. I valori restano invariati in assenza di nuove misure comparabili; il modello usa separatamente i risultati dei circuiti simili e gli aggiornamenti specifici di Baku, evitando il doppio conteggio."
   },
   "dimensioni": [
     "efficienzaAerodinamica",
