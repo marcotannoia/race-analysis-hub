@@ -1,151 +1,112 @@
 # Localization in six languages
 
-Race Analysis Hub publishes textual fields in Italian, English, French,
-European Portuguese, Spanish and German. Italian is the default language.
+Race Analysis Hub publishes API and interface text in Italian, English,
+French, European Portuguese, Spanish and German. Italian is the default.
 
-## Using APIs
+| API code | Language | Variant |
+|---|---|---|
+| `it` | Italiano | default |
+| `en` | English | English |
+| `fr` | Français | French |
+| `pt` | Português | European Portuguese (`pt-PT`) |
+| `es` | Español | Spanish |
+| `de` | Deutsch | German |
 
-The `lingua` parameter is optional and accepts `it`, `en`, `fr`, `pt`, `es`, and
-`de`:
+## API contract
 
-| API Code | Catalog |
-|---|---|
-| `it` | English |
-| `en` | English |
-| `fr` | Français |
-| `pt` | Português, variant `pt-PT` |
-| `es` | Español |
-| `de` | Deutsch |
+Every v1 endpoint accepts the optional query parameter
+`?lingua=it|en|fr|pt|es|de`. An omitted parameter selects Italian; an unknown
+code returns HTTP `400` with `LINGUA_NON_SUPPORTATA`. The effective language is
+reported by the `Content-Language` header and, for localized resource
+responses, by the top-level `lingua` field.
 
 ```text
 GET /api/v1/home?lingua=en
 GET /api/v1/piloti/leclerc?lingua=fr
-GET /api/v1/gare/attuale?lingua=de
+GET /api/v1/stagione?lingua=de
 ```
 
-The answer always indicates the language selected in the `lingua` field, and
-in the header `Content-Language`. The updated list is available with:
+Editorial text, nationalities, Grand Prix names, technical descriptions,
+prediction explanations and error messages are localized. Proper names,
+official circuit names, slugs, ISO and sporting codes, dates, times, numbers,
+URLs, JSON property names and technical enum identifiers remain stable source
+data. Property names are never translated because corporate clients require one
+stable schema across every language.
 
-```text
-GET /api/v1/lingue
-```
+`GET /api/v1/stagione` localizes all 23 Grand Prix names and the F1DB
+transformation notice. Race results, qualifying times and circuit names remain
+identical in every language.
 
-If `lingua` is absent, `it` is selected. A value other than the six codes
-does not produce a silent fallback: the response is HTTP `400` with
-code `LINGUA_NON_SUPPORTATA` and the list `lingueSupportate`. The other errors
-v1 are localized to the required valid language.
+## Frontend contract
 
-Slugs, sports codes, ISO codes, proper names, numeric values, and URLs remain
-stable. Editorial texts, nationalities, names and
-translatable descriptions of the Grand Prix and the texts of the forecast standings.
+The frontend selects the first supported entry in `navigator.languages`, then
+stores the choice under `race-hub-lingua` in `localStorage`. Changing language
+updates the document `lang` attribute and the `lingua` API parameter.
 
-## Selection in the frontend
+Each of the six interface catalogues is complete and independent. A catalogue
+must not spread or inherit another language: this prevents a missing French,
+Portuguese, Spanish or German field from silently appearing in English or
+Italian. Visible text and accessibility labels use the same catalogue.
 
-The global selector shows the native name and language code. To the first
-Access uses the first supported language among `navigator.languages`; thereafter
-Reuse the saved choice in `localStorage` with `race-hub-lingua` key.
-Each change updates the page's `lang` attribute and reloads the content
-via the API parameter, without contacting external translation services.
+## Offline maintenance
 
-## Administrative translation with Azure F0
+The release source of truth is local and versioned:
 
-The script `backend/scripts/generaTraduzioni.py` uses Azure Translator F0 only
-during editorial maintenance. The key remains in `backend/.env`, excluding
-from Git. The public backend and frontend don't import the script, they don't read
-and do not expose any proxies to Azure.
+- `backend/data/dati-iniziali.json` contains localized editorial data;
+- `backend/i18n/` contains API, calendar, prediction and technical catalogues;
+- `frontend/src/i18n/traduzioniInterfaccia.js` contains interface catalogues.
 
-Local configuration:
-
-```env
-AZURE_TRANSLATOR_KEY=chiave-privata
-AZURE_TRANSLATOR_REGION=global
-AZURE_TRANSLATOR_ENDPOINT=https://api.cognitive.microsofttranslator.com
-```
-
-Generation and controls:
+Translations can be edited and reviewed entirely on the local computer. No
+cloud translation account or runtime network call is required. The complete
+release check is:
 
 ```bash
-npm run translate-data -- --dry-run
-npm run translate-data
 npm run verify-translations
 npm run verify-data
-```
-
-To regenerate the catalog by applying glossary and corrections without allowing
-any calls to Azure:
-
-```bash
-npm run translate-data -- --rebuild-from-cache --offline
-```
-
-In `--offline` mode, the script uses only the local cache. If it is missing
-even a single segment, ends with error before creating the Azure client, and
-it does not consume altitude. For a non-destructive preventive test, the following can be used:
-
-```bash
-npm run translate-data -- --rebuild-from-cache --dry-run
-```
-
-The summary must indicate `0 segmenti nuovi` and `0 caratteri`; in case
-Against the contrary, you should not perform the online generation without first evaluating
-the remaining portion.
-
-Administrative cache `backend/.translation-cache/azure.json` is written
-after each block and is excluded from Git. Subsequent executions read the
-translations already present and the cache as memory: if an Italian text is not
-changed the approved version is reused; if you add or
-modified, only the new content is translated. The Portuguese required
-to Azure is `pt-PT`. The built-in glossary standardizes Formula 1 terms such as
-race pace, tyre management, floor, undercut, Safety Car and technical updates.
-
-The `--dry-run` command calculates the consumption without sending text. The script places a
-security limit less than two million characters F0, use blocks
-small, limits the speed and never prints the key.
-
-Before publication, however, you must read the new translations in the
-context, check names, years, `P`/`Q` positions, acronyms and terminology
-technical technology. Automatic checks check completeness, structure and codes, but
-they are not a substitute for editorial revision of meaning.
-
-For the release `1.11.0` contextual revision also includes the new prose
-Tyre Management and Race Pace, Calendar and Race Pace labels
-characteristics of the circuit and the status of unofficial updates. The
-five foreign translations must keep the same years, results,
-positions, points and levels of certainty of the Italian text.
-
-Full local control, without Azure consumption, is:
-
-```bash
-npm run translate-data -- --rebuild-from-cache --offline
-npm run verify-translations
-npm run verify-data
+npm run verify-docs
 npm test
 npm run lint:api
 npm run lint
 npm run build
 ```
 
-If the translations have been manually reviewed and saved in the catalog,
-Also run `npm run translate-data -- --dry-run`: the summary must indicate
-`0 segmenti nuovi` and `0 caratteri`, without sending requests to Azure.
+`verify-translations` checks all six languages in both backend and frontend. It
+rejects missing or empty values, incompatible object shapes, cross-language UI
+fallbacks, untranslated long text, damaged placeholders, changed years,
+numbers, sporting codes, proper names and suspicious Formula 1 terminology.
 
-## Official Database Update
+Automatic checks cannot prove editorial nuance. Before publishing new prose,
+read it in its full driver, team or race context and verify the certainty level,
+technical terminology and relationship between subject and result.
 
-After approving the translations:
+## Optional legacy Azure helper
+
+`backend/scripts/generaTraduzioni.py` remains available as an optional legacy
+translation-memory helper. It is not used by the API, frontend, tests or normal
+publication workflow. Do not configure `AZURE_TRANSLATOR_KEY` on Render or in a
+Vite build. If the helper is used, keep credentials only in the ignored
+`backend/.env` file and review every generated translation before committing.
+
+The existing fully translated catalogue does not require rebuilding the
+ignored Azure cache. In particular, a missing `.translation-cache/azure.json`
+is not a release blocker.
+
+## Database update
+
+After the local catalogues and translations are approved:
 
 ```bash
 npm --prefix backend run seed
 npm run verify-db
 ```
 
-The seed updates the database indicated by `backend/.env`. Push to GitHub does not
-updates MongoDB and the seed should not be run without verifying the
-destination of `MONGO_URL`.
+The seed writes to the database selected by `backend/.env`. Verify the exact
+`MONGO_URL` and `DATABASE_NAME` before running it; pushing to GitHub does not
+update MongoDB automatically.
 
-## Isolated local preview
+## Isolated preview
 
-Before you approve or publish a catalog, start the two projects in terminals
-separated:
+Use two terminals:
 
 ```bash
 cd backend
@@ -157,23 +118,14 @@ cd frontend
 npm run dev
 ```
 
-Backend development command intentionally ignores the link
-Atlas and creates a temporary MongoDB in memory. Import every time
-`backend/data/dati-iniziali.json`, then the frontend selector shows the
-exact local version that would later be published. By arresting the
-backend, the dial tone database is deleted. The `npm start` command does not use
-this mode and preserves the production behavior.
+Backend development mode imports `backend/data/dati-iniziali.json` into a
+temporary in-memory MongoDB. Stopping the process deletes that temporary
+database. `npm start` keeps the normal production database behavior.
 
-## Texts customized by reusers
+## Reusers and company integrations
 
-Official APIs are read-only. If a company changes in its
-software `aggiornamentiInArrivo` or another field, is creating its own
-Content version: This change cannot corrupt translations in the
-Official database.
-
-To keep their six versions in sync, the reuser can
-save the Italian text and translations in your database and apply the
-same translation memory scheme. When the source text changes, it must
-mark old translations as updating, regenerate them locally, and
-approve them before publishing them. Distributed changes must be
-declared and must comply with the powers of `LICENSE.md` and `NOTICE.md`.
+The official API is read-only. A company that changes an editorial field in
+its own software creates a derived content version and is responsible for all
+six translations of that change. Keep source text and translations together,
+invalidate translations when the source changes, rerun the same structural
+checks and disclose derived changes as required by `LICENSE.md` and `NOTICE.md`.

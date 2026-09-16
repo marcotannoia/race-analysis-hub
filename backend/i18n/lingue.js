@@ -9,6 +9,15 @@ const LINGUE_SUPPORTATE = Object.freeze({
   de: { codice: "de", nome: "Tedesco", nomeLocale: "Deutsch" },
 });
 
+const NOMI_LINGUE = Object.freeze({
+  it: ["Italiano", "Inglese", "Francese", "Portoghese", "Spagnolo", "Tedesco"],
+  en: ["Italian", "English", "French", "Portuguese", "Spanish", "German"],
+  fr: ["Italien", "Anglais", "Français", "Portugais", "Espagnol", "Allemand"],
+  pt: ["Italiano", "Inglês", "Francês", "Português", "Espanhol", "Alemão"],
+  es: ["Italiano", "Inglés", "Francés", "Portugués", "Español", "Alemán"],
+  de: ["Italienisch", "Englisch", "Französisch", "Portugiesisch", "Spanisch", "Deutsch"],
+});
+
 const TESTI_API = Object.freeze({
   it: {
     descrizione: "API pubblica di sola lettura per il Gran Premio attuale, piloti, scuderie, indicatori, confronti e classifica previsionale",
@@ -208,6 +217,14 @@ function testiApi(lingua) {
   return TESTI_API[lingua] || TESTI_API[LINGUA_PREDEFINITA];
 }
 
+function elencoLingueLocalizzato(lingua = LINGUA_PREDEFINITA) {
+  const nomi = NOMI_LINGUE[lingua] || NOMI_LINGUE[LINGUA_PREDEFINITA];
+  return Object.values(LINGUE_SUPPORTATE).map((voce, indice) => ({
+    ...voce,
+    nome: nomi[indice],
+  }));
+}
+
 function messaggioErrore(codice, lingua, valori = {}) {
   const catalogo = MESSAGGI_ERRORE[lingua] || MESSAGGI_ERRORE.it;
   const messaggio = catalogo[codice] || MESSAGGI_ERRORE.it[codice] || codice;
@@ -245,6 +262,7 @@ module.exports = {
   LINGUA_PREDEFINITA,
   LINGUE_SUPPORTATE,
   convalidaLingua,
+  elencoLingueLocalizzato,
   linguaRichiesta,
   linguaSupportata,
   messaggioErrore,

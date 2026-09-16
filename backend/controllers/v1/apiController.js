@@ -19,9 +19,11 @@ const {
   creaProfiloScuderia,
 } = require("../../services/profiliTecnici");
 const { inviaErrore } = require("../../utils/rispostaApi");
+const { localizzaCalendario } = require("../../i18n/calendario");
+const { localizzaModificheF1db } = require("../../i18n/andamento");
 const {
   LINGUA_PREDEFINITA,
-  LINGUE_SUPPORTATE,
+  elencoLingueLocalizzato,
   linguaRichiesta,
   testiApi,
 } = require("../../i18n/lingue");
@@ -48,6 +50,13 @@ const attribuzioneF1db = {
   versione: metadatiF1db.versione,
   modifiche: metadatiF1db.trasformazioni,
 };
+
+function attribuzioneF1dbLocalizzata(lingua) {
+  return {
+    ...attribuzioneF1db,
+    modifiche: localizzaModificheF1db(attribuzioneF1db.modifiche, lingua),
+  };
+}
 
 const CAMPI_PILOTA_BREVE =
   "slug nome codice numero nazionalitaIso2 nazionalitaIso3";
@@ -118,8 +127,8 @@ function descrizioneApi(richiesta, risposta) {
     specificaOpenApi: "/api/v1/openapi.json",
     lingua,
     linguaPredefinita: LINGUA_PREDEFINITA,
-    lingueSupportate: Object.values(LINGUE_SUPPORTATE),
-    attribuzioneDati: attribuzioneF1db,
+    lingueSupportate: elencoLingueLocalizzato(lingua),
+    attribuzioneDati: attribuzioneF1dbLocalizzata(lingua),
     endpoint: {
       health: "/api/v1/health",
       home: "/api/v1/home",
@@ -152,7 +161,7 @@ function elencaLingue(richiesta, risposta) {
   risposta.json({
     lingua,
     linguaPredefinita: LINGUA_PREDEFINITA,
-    lingue: Object.values(LINGUE_SUPPORTATE),
+    lingue: elencoLingueLocalizzato(lingua),
     utilizzo: testiApi(lingua).utilizzo,
   });
 }
@@ -172,9 +181,10 @@ function statoServizio(richiesta, risposta) {
 }
 
 function stagione(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
   risposta.json({
-    ...snapshotF1db.calendario2026,
-    fonte: attribuzioneF1db,
+    ...localizzaCalendario(snapshotF1db.calendario2026, lingua),
+    fonte: attribuzioneF1dbLocalizzata(lingua),
   });
 }
 

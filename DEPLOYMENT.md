@@ -108,18 +108,17 @@ automatically deployed by the push, wait for the response to include
 
 For the multilingual release, please also wait for
 `GET /api/v1/lingue` and `GET /api/v1/home?lingua=en` respond from the version
-backend `1.15.0`. Only then can the frontend be published: otherwise
+backend `1.16.0`. Only then can the frontend be published: otherwise
 The selector would change the interface but would still receive Italian texts.
 `AZURE_TRANSLATOR_KEY` should not be configured to Render or included in the
 build Vite: Used only for local administrative script.
 
 ## Pre-Publish Checks
 
-Before any seed, commit, or deployment, run the local check
-offline. The first command should end with `0 segmenti nuovi` and `0 caratteri`:
+Before any seed, commit, or deployment, run the local checks. They read only
+the versioned catalogues and do not contact Azure or any other provider:
 
 ```bash
-npm run translate-data -- --rebuild-from-cache --offline
 npm run verify-translations
 npm run verify-data
 npm run verify-docs
@@ -129,10 +128,9 @@ npm run lint
 npm run build
 ```
 
-The `--offline` option prevents the Azure client from initializing and terminates
-with error if a cached translation is missing; this check does not consume quota
-F0. For preview only, do not run `seed`, S3 syncs, or
-CloudFront invalidations.
+`verify-translations` checks both backend data and the complete frontend
+catalogue in six languages, with no cross-language fallback. For preview only,
+do not run `seed`, S3 syncs, or CloudFront invalidations.
 
 - rotate the credentials used during development;
 - limit the MongoDB Atlas IP Access List to service addresses;
@@ -143,9 +141,9 @@ CloudFront invalidations.
 the endpoint `/api/v1/health`;
 - Use a shared store for the rate limit if the backend will have multiple instances.
 
-For release `1.15.0`, also verify that:
+For release `1.16.0`, also verify that:
 
-- `GET /api/v1` returns `"versione": "1.15.0"`;
+- `GET /api/v1` returns `"versione": "1.16.0"`;
 - `GET /api/v1/home` exhibits Baku as the current race and 22 participants;
 - `GET /api/v1/piloti` exhibits the complete seasonal catalog of 23 drivers;
 - the Red Bull and Racing Bulls cards derive their respective drivers from the
@@ -164,6 +162,8 @@ With a penalty
 confirmed, the penalty can affect up to 35% and all other factors
 they are reproportioned to the remaining 65%;
 - `GET /api/v1/lingue` lists the six languages exactly;
+- `GET /api/v1/stagione?lingua=de` returns `lingua: "de"`, 23 localized Grand
+  Prix names and a localized F1DB transformation notice;
 - `GET /api/v1/gare/attuale?lingua=de` returns `"lingua": "de"` and
 the header `Content-Language: de`;
 - `GET /api/v1/home?lingua=xx` returns HTTP `400`, code

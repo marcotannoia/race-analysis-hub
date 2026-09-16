@@ -5,7 +5,7 @@ JSON. The full executable contract is available at
 [Swagger](https://f1-stats-5v93.onrender.com/api/docs) and the
 [OpenAPI 3.1 specification](https://f1-stats-5v93.onrender.com/api/v1/openapi.json).
 
-The current application version is `1.15.0`. Integrations must use
+The current application version is `1.16.0`. Integrations must use
 `GET`, `HEAD`, or `OPTIONS`; no API keys are required. The following examples
 show relative paths, which can be used on the public domain or on the backend
 local `http://127.0.0.1:5002`.
@@ -17,7 +17,8 @@ Details only when needed:
 
 1. At startup, call `GET /api/v1/home?lingua=it`. Only one response contains
 Current Grand Prix, drivers, teams, technical profile of the circuit,
-validated FIA updates and forecast ranking.
+the compatibility field retained for FIA updates (currently always `null`) and
+the prediction ranking.
 Load `GET /api/v1/stagione?lingua=it` only when the user opens
 Upcoming GPs or past GPs: contains future calendar and official results
 Q1, Q2, Q3 and race of the current season.
@@ -103,6 +104,14 @@ All endpoints accept only the optional query
 `?lingua=it|en|fr|pt|es|de`. Portuguese uses the European variant `pt-PT`,
 exposed with API code `pt`. Invalid slugs and queries return `400`; a
 absent resource or a race different from the current one returns `404`.
+JSON property names and enum identifiers stay stable in every language; only
+human-readable values are localized. This lets an integration switch language
+without changing its parser or data model.
+
+`GET /api/v1/stagione` includes the effective `lingua` and localizes all 23
+Grand Prix names plus the F1DB transformation notice. Circuit names, driver
+names, sporting codes, dates, lap times and results are stable source data and
+therefore remain unchanged across languages.
 
 The texts `circuitoTecnico.caratteristiche`, `circuitoTecnico.metodo` and
 `profiloTecnico.metodo` also follow the required language in the home page and in the

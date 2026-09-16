@@ -98,9 +98,8 @@ const documentoOpenApi = {
       "Gli endpoint di confronto restituiscono due schede complete nello stesso ordine richiesto. " +
       "La home espone il profilo tecnico del circuito e un indice editoriale di " +
       "aderenza per scuderia, distinto dalla probabilità di vittoria e dalla classifica. " +
-      "Un monitor acquisisce i documenti evento dal sito FIA ogni cinque minuti nelle " +
-      "ore precedenti le FP1: aggiornamentiLive resta null finché il documento Car " +
-      "Presentation Submissions non è disponibile e validato per tutte le 11 scuderie. " +
+      "Il rapporto live FIA è stato rimosso: aggiornamentiLive è mantenuto come campo " +
+      "deprecato e restituisce sempre null per compatibilità con le integrazioni esistenti. " +
       "In produzione si applicano una cache browser di 60 secondi, una cache " +
       "condivisa configurabile di 300 secondi e un limite di " +
       "1000 richieste ogni 15 minuti per indirizzo IP. I testi editoriali sono " +
@@ -226,7 +225,7 @@ const documentoOpenApi = {
         description:
           "Endpoint di bootstrap consigliato per ridurre le chiamate: restituisce " +
           "Gran Premio attuale, piloti, scuderie, profilo tecnico del circuito, " +
-          "aggiornamenti FIA validati e classifica previsionale. L'endpoint dedicato " +
+          "campo aggiornamentiLive deprecato e classifica previsionale. L'endpoint dedicato " +
           "/previsioni/piloti resta disponibile quando serve soltanto la previsione.",
         parameters: [parametroLingua],
         responses: {
@@ -242,7 +241,7 @@ const documentoOpenApi = {
         tags: ["Gare"],
         summary: "Calendario e risultati della stagione",
         description:
-          "Restituisce i prossimi Gran Premi e, per ogni GP concluso, i tempi Q1, Q2, Q3 e il risultato gara derivati dall'ultima release F1DB validata.",
+          "Restituisce i prossimi Gran Premi e, per ogni GP concluso, i tempi Q1, Q2, Q3 e il risultato gara derivati dall'ultima release F1DB validata. I nomi dei Gran Premi e l'attribuzione delle trasformazioni seguono la lingua richiesta; nomi propri, circuiti, tempi e risultati restano invariati.",
         parameters: [parametroLingua],
         responses: {
           200: rispostaJson("Calendario e risultati 2026", "#/components/schemas/Stagione"),
@@ -257,8 +256,8 @@ const documentoOpenApi = {
         summary: "Lingue supportate",
         description:
           "Restituisce i sei codici accettati dal parametro query lingua, la lingua " +
-          "predefinita e il nome nativo di ciascuna lingua. Il parametro lingua " +
-          "localizza il testo utilizzo della risposta.",
+          "predefinita, il nome localizzato e il nome nativo di ciascuna lingua. " +
+          "Il parametro lingua localizza entrambi i testi della risposta.",
         parameters: [parametroLingua],
         responses: {
           200: rispostaJson(
@@ -268,12 +267,12 @@ const documentoOpenApi = {
               lingua: "en",
               linguaPredefinita: "it",
               lingue: [
-                { codice: "it", nome: "Italiano", nomeLocale: "Italiano" },
-                { codice: "en", nome: "Inglese", nomeLocale: "English" },
-                { codice: "fr", nome: "Francese", nomeLocale: "Français" },
-                { codice: "pt", nome: "Portoghese", nomeLocale: "Português" },
-                { codice: "es", nome: "Spagnolo", nomeLocale: "Español" },
-                { codice: "de", nome: "Tedesco", nomeLocale: "Deutsch" },
+                { codice: "it", nome: "Italian", nomeLocale: "Italiano" },
+                { codice: "en", nome: "English", nomeLocale: "English" },
+                { codice: "fr", nome: "French", nomeLocale: "Français" },
+                { codice: "pt", nome: "Portuguese", nomeLocale: "Português" },
+                { codice: "es", nome: "Spanish", nomeLocale: "Español" },
+                { codice: "de", nome: "German", nomeLocale: "Deutsch" },
               ],
               utilizzo:
                 "Add ?lingua=it, en, fr, pt, es or de to public endpoints",
@@ -896,8 +895,8 @@ const documentoOpenApi = {
           codice: { $ref: "#/components/schemas/CodiceLingua" },
           nome: {
             type: "string",
-            description: "Nome della lingua in italiano.",
-            example: "Inglese",
+            description: "Nome della lingua localizzato nella lingua richiesta.",
+            example: "English",
           },
           nomeLocale: {
             type: "string",
@@ -2060,8 +2059,9 @@ const documentoOpenApi = {
       },
       Stagione: {
         type: "object",
-        required: ["stagione", "prossimi", "passati", "fonte"],
+        required: ["lingua", "stagione", "prossimi", "passati", "fonte"],
         properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
           stagione: { type: "integer", const: 2026 },
           prossimi: { type: "array", items: { $ref: "#/components/schemas/GaraCalendario" } },
           passati: { type: "array", items: { $ref: "#/components/schemas/GaraConclusa" } },

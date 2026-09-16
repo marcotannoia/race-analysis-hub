@@ -484,7 +484,7 @@ function AnalisiCircuito({
           <div className="penalita-widget">
             {penalitaWidget.posizioni && <div className="penalita-posizioni">
               <strong>{penalitaWidget.posizioni}</strong>
-              <span>POS.</span>
+              <span>{t.posizioneAbbreviata}</span>
             </div>}
             <p style={penalitaWidget.posizioni ? undefined : { gridColumn: '1 / -1' }}>
               {penalitaWidget.spiegazione}

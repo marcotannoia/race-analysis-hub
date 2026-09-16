@@ -16,10 +16,11 @@ try {
     "utf8",
   );
 
-  const comando = process.platform === "win32" ? "redocly.cmd" : "redocly";
+  const pacchettoRedocly = require.resolve("@redocly/cli/package.json");
+  const comandoRedocly = path.join(path.dirname(pacchettoRedocly), "bin", "cli.js");
   const risultato = spawnSync(
-    comando,
-    ["lint", percorsoSpecifica, "--format=stylish"],
+    process.execPath,
+    [comandoRedocly, "lint", percorsoSpecifica, "--format=stylish"],
     { stdio: "inherit" },
   );
 

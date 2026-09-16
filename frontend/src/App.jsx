@@ -7,9 +7,11 @@ import PaginaNonTrovata from './pages/PaginaNonTrovata.jsx'
 import ConfrontoPage from './pages/ConfrontoPage.jsx'
 import usePercorso from './hooks/usePercorso.js'
 import { FornitoreLingua } from './i18n/LinguaContext.jsx'
+import { useLingua } from './i18n/contestoLingua.js'
 
 function ContenutoApp() {
   const percorso = usePercorso()
+  const { t } = useLingua()
   const pilota = percorso.match(/^\/piloti\/([^/]+)$/)
   const scuderia = percorso.match(/^\/scuderie\/([^/]+)$/)
 
@@ -33,7 +35,7 @@ function ContenutoApp() {
         ))}
       </div>
       <header className="site-header">
-        <a href="/" aria-label="Race Analysis Hub — homepage">RACE ANALYSIS HUB</a>
+        <a href="/" aria-label={t.homeAria}>RACE ANALYSIS HUB</a>
       </header>
       <main>{pagina}</main>
       <Footer />
