@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.16.0 — 2026-09-16
+
+### Complete six-language contract
+
+- completed the French, European Portuguese, Spanish and German technical UI
+  catalogues instead of inheriting English values, and localized the landing
+  page text, accessibility labels and screenshot descriptions;
+- localized all 23 Grand Prix names and the F1DB transformation notice returned
+  by `GET /api/v1/stagione`, which now explicitly includes the effective
+  `lingua` field;
+- localized the display names returned by the API language catalogue while
+  keeping codes, native names, property names and enum identifiers stable;
+- added strict backend and frontend translation verification for catalogue
+  shape, empty values, accidental Italian fallbacks, placeholders, sporting
+  codes, years, numbers and proper names.
+
+### Publication readiness
+
+- made OpenAPI validation portable on Windows by running the installed Redocly
+  CLI through Node instead of spawning a `.cmd` shim;
+- updated the OpenAPI contract, deployment guide, API guide and localization
+  runbook for the fully offline publication checks;
+- verified the F1DB `v2026.14.0` snapshot and the amended 23-round 2026 calendar
+  against their current primary sources.
+
 ## 1.15.0 — 2026-09-15
 
 ### Baku and quantitative data

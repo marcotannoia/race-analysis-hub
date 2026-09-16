@@ -29,7 +29,7 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
 
     assert.equal(risposta.status, 200);
     assert.equal(corpo.nome, "Race Analysis Hub API");
-    assert.equal(corpo.versione, "1.15.0");
+    assert.equal(corpo.versione, "1.16.0");
     assert.equal(corpo.linguaPredefinita, "it");
     assert.equal(corpo.lingueSupportate.length, 6);
     assert.equal(corpo.endpoint.lingue, "/api/v1/lingue");
@@ -61,6 +61,7 @@ test("la stagione espone calendario e risultati completi fino a Madrid", async (
     const risposta = await fetch(`${baseUrl}/api/v1/stagione?lingua=it`);
     const corpo = await risposta.json();
     assert.equal(risposta.status, 200);
+    assert.equal(corpo.lingua, "it");
     assert.equal(corpo.stagione, 2026);
     assert.equal(corpo.passati.length, 14);
     assert.equal(corpo.prossimi.length, 9);
@@ -69,6 +70,41 @@ test("la stagione espone calendario e risultati completi fino a Madrid", async (
     assert.equal(madrid.qualifiche[0].codice, "NOR");
     assert.equal(madrid.gara[0].codice, "ANT");
     assert.equal(corpo.fonte.versione, "v2026.14.0");
+  });
+});
+
+test("la stagione localizza tutti i nomi dei GP e l'attribuzione F1DB", async () => {
+  const attesi = {
+    it: ["Gran Premio d'Australia", "Gran Premio di Abu Dhabi"],
+    en: ["Australian Grand Prix", "Abu Dhabi Grand Prix"],
+    fr: ["Grand Prix d'Australie", "Grand Prix d'Abou Dabi"],
+    pt: ["Grande Prémio da Austrália", "Grande Prémio de Abu Dhabi"],
+    es: ["Gran Premio de Australia", "Gran Premio de Abu Dabi"],
+    de: ["Großer Preis von Australien", "Großer Preis von Abu Dhabi"],
+  };
+
+  await conServer(async (baseUrl) => {
+    for (const [lingua, [primo, ultimo]] of Object.entries(attesi)) {
+      const risposta = await fetch(
+        `${baseUrl}/api/v1/stagione?lingua=${lingua}`,
+      );
+      const corpo = await risposta.json();
+      const gare = [...corpo.passati, ...corpo.prossimi].sort(
+        (a, b) => a.round - b.round,
+      );
+
+      assert.equal(corpo.lingua, lingua);
+      assert.equal(gare.length, 23);
+      assert.equal(gare[0].nome, primo);
+      assert.equal(gare.at(-1).nome, ultimo);
+      assert.equal(risposta.headers.get("content-language"), lingua);
+      if (lingua !== "it") {
+        assert.notEqual(
+          corpo.fonte.modifiche,
+          "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato.",
+        );
+      }
+    }
   });
 });
 
@@ -133,7 +169,13 @@ test("l'API v1 espone e seleziona le sei lingue", async () => {
     const corpoFrancese = await francese.json();
     assert.equal(francese.status, 200);
     assert.equal(corpoFrancese.lingua, "fr");
+    assert.equal(corpoFrancese.lingueSupportate[1].nome, "Anglais");
     assert.equal(francese.headers.get("content-language"), "fr");
+
+    const lingueTedesche = await fetch(`${baseUrl}/api/v1/lingue?lingua=de`);
+    const corpoLingueTedesche = await lingueTedesche.json();
+    assert.equal(corpoLingueTedesche.lingue[0].nome, "Italienisch");
+    assert.equal(corpoLingueTedesche.lingue[5].nome, "Deutsch");
   });
 });
 
@@ -166,7 +208,7 @@ test("specifica OpenAPI e documentazione Swagger sono pubbliche", async () => {
     const corpo = await specifica.json();
     assert.equal(specifica.status, 200);
     assert.equal(corpo.openapi, "3.1.0");
-    assert.equal(corpo.info.version, "1.15.0");
+    assert.equal(corpo.info.version, "1.16.0");
     assert.ok(corpo.paths["/lingue"]);
     assert.ok(corpo.paths["/gare/attuale"]);
     assert.ok(corpo.paths["/previsioni/piloti"]);

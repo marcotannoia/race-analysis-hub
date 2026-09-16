@@ -2169,10 +2169,10 @@ def main() -> None:
     dati.setdefault("metadati", {})["localizzazione"] = {
         "linguaPredefinita": "it",
         "lingueSupportate": list(LINGUE),
-        "servizio": "Azure Translator",
-        "pianoGenerazione": "F0",
+        "servizio": "Cataloghi locali versionati",
+        "pianoGenerazione": "offline",
         "portoghese": "pt-PT",
-        "metodo": "Traduzione amministrativa con memoria, glossario F1 e controlli automatici",
+        "metodo": "Traduzione locale ed editoriale con glossario F1 e controlli automatici",
     }
 
     salva()

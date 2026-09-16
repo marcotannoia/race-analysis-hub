@@ -44,6 +44,13 @@ const CAMPI_LOCALIZZABILI = {
 };
 
 const { verificaProfiliTecnici } = require("../i18n/verificaProfiliTecnici");
+const { NOMI_GP_2026 } = require("../i18n/calendario");
+const {
+  elencoLingueLocalizzato,
+  messaggioErrore,
+  testiApi,
+} = require("../i18n/lingue");
+const { localizzaModificheF1db } = require("../i18n/andamento");
 const errori = verificaProfiliTecnici();
 let campiVerificati = 0;
 let stringheVerificate = 0;
@@ -179,9 +186,95 @@ segnala(
     JSON.stringify(LINGUE),
   "Metadati delle lingue mancanti o incompleti",
 );
+
+const CODICI_ERRORE = [
+  "METODO_NON_CONSENTITO",
+  "ENDPOINT_NON_TROVATO",
+  "GARA_ATTUALE_NON_DISPONIBILE",
+  "PILOTA_NON_TROVATO",
+  "SCUDERIA_NON_TROVATA",
+  "CONFRONTO_IDENTICO",
+  "GARA_NON_ACCESSIBILE",
+  "ANALISI_NON_TROVATA",
+  "LINGUA_NON_SUPPORTATA",
+  "PARAMETRO_QUERY_NON_VALIDO",
+  "IDENTIFICATORE_NON_VALIDO",
+  "RICHIESTA_NON_VALIDA",
+  "ERRORE_INTERNO",
+  "LIMITE_RICHIESTE_SUPERATO",
+  "VERSIONE_API_OBSOLETA",
+];
+const VALORI_ERRORE = {
+  lingua: "xx",
+  parametri: "pagina",
+  parametro: "slug",
+};
+for (const lingua of LINGUE) {
+  const elencoLingue = elencoLingueLocalizzato(lingua);
+  segnala(elencoLingue.length === 6, `Elenco lingue ${lingua}: voci mancanti`);
+  for (const voce of elencoLingue) {
+    campiVerificati += 1;
+    stringheVerificate += 1;
+    segnala(Boolean(voce.nome?.trim()), `Elenco lingue ${lingua}.${voce.codice}: nome vuoto`);
+  }
+  const nomiCalendario = NOMI_GP_2026[lingua];
+  segnala(
+    Array.isArray(nomiCalendario) && nomiCalendario.length === 23,
+    `Calendario ${lingua}: devono essere presenti 23 nomi localizzati`,
+  );
+  for (const [indice, nome] of (nomiCalendario || []).entries()) {
+    campiVerificati += 1;
+    stringheVerificate += 1;
+    segnala(Boolean(nome?.trim()), `Calendario ${lingua}, round ${indice + 1}: nome vuoto`);
+    if (lingua !== "it") {
+      segnala(
+        nome !== NOMI_GP_2026.it[indice],
+        `Calendario ${lingua}, round ${indice + 1}: nome rimasto in italiano`,
+      );
+    }
+  }
+
+  const testi = testiApi(lingua);
+  for (const [campo, testo] of Object.entries(testi)) {
+    campiVerificati += 1;
+    stringheVerificate += 1;
+    segnala(Boolean(testo?.trim()), `Testo API ${lingua}.${campo}: valore vuoto`);
+    if (lingua !== "it") {
+      segnala(
+        testo !== testiApi("it")[campo],
+        `Testo API ${lingua}.${campo}: valore rimasto in italiano`,
+      );
+    }
+  }
+
+  for (const codice of CODICI_ERRORE) {
+    const messaggio = messaggioErrore(codice, lingua, VALORI_ERRORE);
+    campiVerificati += 1;
+    stringheVerificate += 1;
+    segnala(Boolean(messaggio?.trim()), `Errore ${lingua}.${codice}: messaggio vuoto`);
+    if (lingua !== "it") {
+      segnala(
+        messaggio !== messaggioErrore(codice, "it", VALORI_ERRORE),
+        `Errore ${lingua}.${codice}: messaggio rimasto in italiano`,
+      );
+    }
+  }
+
+  const modifiche = localizzaModificheF1db(
+    dati.metadati.f1db.trasformazioni,
+    lingua,
+  );
+  segnala(Boolean(modifiche?.trim()), `Attribuzione F1DB ${lingua}: testo vuoto`);
+  if (lingua !== "it") {
+    segnala(
+      modifiche !== dati.metadati.f1db.trasformazioni,
+      `Attribuzione F1DB ${lingua}: testo rimasto in italiano`,
+    );
+  }
+}
 segnala(
-  dati.metadati?.localizzazione?.servizio === "Azure Translator" &&
-    dati.metadati?.localizzazione?.pianoGenerazione === "F0" &&
+  dati.metadati?.localizzazione?.servizio === "Cataloghi locali versionati" &&
+    dati.metadati?.localizzazione?.pianoGenerazione === "offline" &&
     dati.metadati?.localizzazione?.portoghese === "pt-PT",
   "Metadati del servizio di traduzione mancanti o incoerenti",
 );

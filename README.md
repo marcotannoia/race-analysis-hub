@@ -13,7 +13,7 @@ The frontend is built with React and Vite, the API with Node.js and Express,
 and MongoDB provides data persistence. The public APIs are anonymous,
 read-only, and documented with Swagger.
 
-The current project and API version is `1.15.0`.
+The current project and API version is `1.16.0`.
 
 The final section of the landing page presents a driver prediction ranking for
 the current Grand Prix only. The model combines 2026 results, form across the
@@ -80,12 +80,12 @@ changing the season-long associations stored in the catalogue.
 during the season, while the home response, analyses, and prediction contain
 the 22 drivers entered for the event.
 
-Initial translations are generated with Azure Translator F0 through an
-administrative script, stored in the database, and verified before release.
-User requests only select previously stored text: Azure is not called at
-runtime and is not exposed through the public API or frontend. Translation
-memory processes only new or modified text without requiring a rigid
-catalogue. The procedure, security constraints, and customisation rules are
+Translations are versioned locally with the application and database seed.
+Runtime requests never contact a translation provider. Release checks verify
+the exact structure of every API and interface catalogue, all 23 calendar race
+names, error messages, technical labels, sporting codes, numbers and proper
+names in all six languages. Azure remains an optional legacy helper only; it is
+not required for maintenance or publication. The offline procedure is
 documented in [`LOCALIZZAZIONE.md`](LOCALIZZAZIONE.md).
 
 ## Driver identity data
