@@ -467,7 +467,7 @@ function AnalisiCircuito({
           <span>{numeroAggiornamenti}</span>
           <div>
             <p>{t.quadroTecnico}</p>
-            <h2>{t.aggiornamentiArrivo}</h2>
+            <h2>{t.aggiornamentiTecnici}</h2>
           </div>
         </div>
         <AggiornamentiWidget testo={analisi.aggiornamentiInArrivo} t={t} />

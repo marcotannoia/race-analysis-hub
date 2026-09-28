@@ -3,8 +3,8 @@
     "stagione": 2026,
     "versione": "profilo-tecnico-v2",
     "metodo": "Stime editoriali 0-100 delle singole capacita, non misure telemetriche o probabilita. Revisione prudente per dimensione: sviluppi installati e riscontri in pista; nessun bonus automatico per annunci, punti, incidenti o penalita. Valori invariati quando manca evidenza specifica. Accuratezza predittiva non ancora validata fuori campione.",
-    "aggiornatoIl": "2026-09-15T00:00:00Z",
-    "riferimento": "Profili riesaminati dopo i risultati di Monza e Madrid. I valori restano invariati in assenza di nuove misure comparabili; il modello usa separatamente i risultati dei circuiti simili e gli aggiornamenti specifici di Baku, evitando il doppio conteggio."
+    "aggiornatoIl": "2026-09-28T00:00:00Z",
+    "riferimento": "Riesame degli sviluppi documentati fino a Baku per tutte le 11 scuderie. Componenti e aree mirate sono descritti nelle analisi del GP del Bahrain a Sepang; capacità numeriche invariate perché le fonti non isolano guadagni per dimensione. Risultati recenti e circuiti simili sono già fattori separati della previsione."
   },
   "dimensioni": [
     "efficienzaAerodinamica",
@@ -37,10 +37,12 @@
         "https://racer.com/2026/07/31/2026-formula-1-mid-season-report-card",
         "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
         "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
-        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+        "https://www.formula1.com/en/latest/article/mercedes-target-madring-gains-as-every-teams-upgrades-are-revealed.3LbXlbZXmsVrfsR2np3NpK",
+        "https://www.formula1.com/en/latest/article/mclaren-and-williams-eye-baku-boost-as-every-teams-upgrades-are-revealed.6jn3A8jrkObKhTxR0djUGr"
       ],
       "revisione": {
-        "nota": "Confermati i valori: riferimento complessivo, senza bonus per un aggiornamento annunciato.",
+        "nota": "Madrid: profilo anteriore per flusso più aderente; ala posteriore specifica della pista. Baku: nessun nuovo pezzo. Valori invariati senza guadagni dimensionali isolati.",
         "confidenza": "media",
         "dimensioniModificate": []
       }
@@ -63,14 +65,17 @@
         "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
         "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
         "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
-        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+        "https://www.fia.com/news/fia-announces-aduo-results-following-first-and-second-review-periods-2026",
+        "https://www.formula1.com/en/latest/article/leclerc-targets-very-special-monza-weekend-with-more-power-from-new-ferrari-engine.5R0ZYizMM9sHZ2raSfLnRX",
+        "https://www.formula1.com/en/latest/article/mercedes-target-madring-gains-as-every-teams-upgrades-are-revealed.3LbXlbZXmsVrfsR2np3NpK",
+        "https://www.formula1.com/en/latest/article/mclaren-and-williams-eye-baku-boost-as-every-teams-upgrades-are-revealed.6jn3A8jrkObKhTxR0djUGr",
+        "https://www.formula1.com/en/latest/article/we-were-quite-far-off-leclerc-urges-ferrari-to-bring-upgrades-to-close-the-gap-after-baku.6zFmpztQcYlGBeNtCK6CF9"
       ],
       "revisione": {
-        "nota": "Fondo e diffusore rivisti: +1 alla stabilita come ipotesi prudente di maggiore robustezza dei flussi; frenata invariata, non misurata direttamente.",
+        "nota": "ADUO della power unit già montato a Monza, con più potenza dichiarata ma senza misura pubblica del guadagno; a Madrid carenatura della sospensione posteriore. Valori invariati per evitare doppio conteggio.",
         "confidenza": "media",
-        "dimensioniModificate": [
-          "stabilitaAssetto"
-        ]
+        "dimensioniModificate": []
       }
     },
     "mclaren": {
@@ -91,16 +96,14 @@
         "https://www.autosport.com/f1/news/why-mclaren-has-struggled-to-get-the-most-of-mercedes-f1-engine/10845524/",
         "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
         "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
-        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+        "https://www.formula1.com/en/latest/article/mclaren-and-williams-eye-baku-boost-as-every-teams-upgrades-are-revealed.6jn3A8jrkObKhTxR0djUGr",
+        "https://www.formula1.com/en/latest/article/mercedes-target-madring-gains-as-every-teams-upgrades-are-revealed.3LbXlbZXmsVrfsR2np3NpK"
       ],
       "revisione": {
-        "nota": "Ala e carrozzeria aggiornate, vittorie Ungheria/Olanda: lieve revisione aero e curve; nessun incremento automatico di frenata dal solo raffreddamento freni.",
+        "nota": "Baku: fondo, diffusore, carrozzeria e sospensione per flusso e carico; Straight Mode per minore resistenza. Aperture di raffreddamento specifiche di Baku. Valori invariati senza misura separabile.",
         "confidenza": "media",
-        "dimensioniModificate": [
-          "efficienzaAerodinamica",
-          "curvaMedia",
-          "curvaVeloce"
-        ]
+        "dimensioniModificate": []
       }
     },
     "red_bull": {
@@ -121,14 +124,14 @@
         "https://www.raceteq.com/en/articles/2026/06/f1-how-ferrari-mclaren-mercedes-red-bull-changed-in-miami-and-montreal",
         "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
         "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
-        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+        "https://www.formula1.com/en/latest/article/mclaren-and-williams-eye-baku-boost-as-every-teams-upgrades-are-revealed.6jn3A8jrkObKhTxR0djUGr",
+        "https://www.formula1.com/en/latest/article/mercedes-target-madring-gains-as-every-teams-upgrades-are-revealed.3LbXlbZXmsVrfsR2np3NpK"
       ],
       "revisione": {
-        "nota": "Feeling migliore a Monza: recupero limitato della stabilita, senza cancellare la sensibilita del pacchetto.",
+        "nota": "Baku: fondo e sidepod per carico e stabilità del flusso; specchi e halo per flusso a valle. Valori invariati senza misura separabile.",
         "confidenza": "media",
-        "dimensioniModificate": [
-          "stabilitaAssetto"
-        ]
+        "dimensioniModificate": []
       }
     },
     "rb": {
@@ -149,15 +152,14 @@
         "https://www.formula1.com/en/latest/article/alpine-in-development-war-with-racing-bulls-nielsen.1zD1DyYRcpezBRBxjSjOBG",
         "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
         "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
-        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+        "https://www.formula1.com/en/latest/article/mclaren-and-williams-eye-baku-boost-as-every-teams-upgrades-are-revealed.6jn3A8jrkObKhTxR0djUGr",
+        "https://www.formula1.com/en/latest/article/mercedes-target-madring-gains-as-every-teams-upgrades-are-revealed.3LbXlbZXmsVrfsR2np3NpK"
       ],
       "revisione": {
-        "nota": "Continuita in Q3 e piattaforma nelle curve medio-veloci: piccoli incrementi mirati.",
+        "nota": "Baku: ala, condotto freno e sospensione anteriori per alimentare meglio il fondo. Valori invariati senza misura separabile.",
         "confidenza": "media",
-        "dimensioniModificate": [
-          "curvaMedia",
-          "curvaVeloce"
-        ]
+        "dimensioniModificate": []
       }
     },
     "alpine": {
@@ -178,16 +180,15 @@
         "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
         "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
         "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
-        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+        "https://www.formula1.com/en/latest/article/mercedes-target-madring-gains-as-every-teams-upgrades-are-revealed.3LbXlbZXmsVrfsR2np3NpK",
+        "https://www.formula1.com/en/latest/article/mclaren-and-williams-eye-baku-boost-as-every-teams-upgrades-are-revealed.6jn3A8jrkObKhTxR0djUGr",
+        "https://www.formula1.com/en/latest/article/what-the-teams-said-friday-in-italy-2026.75eADEoXwTvtF00hB6LMsR"
       ],
       "revisione": {
-        "nota": "Pacchetto esteso a entrambe le vetture a Monza: efficienza rivista con prudenza, senza generalizzare la pole a tutti i circuiti.",
+        "nota": "Pacchetto Zandvoort esteso a Colapinto a Monza; a Madrid floor board per distribuzione di pressione. Baku: nessun nuovo pezzo. Valori invariati.",
         "confidenza": "media",
-        "dimensioniModificate": [
-          "efficienzaAerodinamica",
-          "curvaMedia",
-          "curvaVeloce"
-        ]
+        "dimensioniModificate": []
       }
     },
     "haas": {
@@ -208,15 +209,16 @@
         "https://www.the-race.com/formula-1/every-2026-f1-team-big-weakness/",
         "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
         "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
-        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+        "https://www.formula1.com/en/latest/article/why-both-haas-drivers-are-getting-monza-aero-upgrades-but-only-bearman-has-a-new-pu.6eilNMbkgEegAsA1fsy6iu",
+        "https://www.formula1.com/en/latest/article/mercedes-target-madring-gains-as-every-teams-upgrades-are-revealed.3LbXlbZXmsVrfsR2np3NpK",
+        "https://www.formula1.com/en/latest/article/mclaren-and-williams-eye-baku-boost-as-every-teams-upgrades-are-revealed.6jn3A8jrkObKhTxR0djUGr",
+        "https://www.formula1.com/en/latest/article/night-and-day-difference-bearman-praises-haas-upgrades-after-encouraging-italian-grand-prix-friday-performance.1MZMIAYiNXvNEHBlP5Mbra"
       ],
       "revisione": {
-        "nota": "Piu carico in curva, ma compromesso sui rettilinei e problemi di consistenza: crescono solo curve medie/veloci.",
+        "nota": "Monza: telaio e aerodinamica aggiornati su entrambe le vetture; power unit Ferrari ADUO confermata allora solo per Bearman. Valori invariati perché il vantaggio non è isolabile e la specifica Ocon non è confermata.",
         "confidenza": "bassa",
-        "dimensioniModificate": [
-          "curvaMedia",
-          "curvaVeloce"
-        ]
+        "dimensioniModificate": []
       }
     },
     "audi": {
@@ -237,10 +239,13 @@
         "https://www.the-race.com/formula-1/every-2026-f1-team-big-weakness/",
         "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
         "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
-        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+        "https://www.formula1.com/en/latest/article/mclaren-and-williams-eye-baku-boost-as-every-teams-upgrades-are-revealed.6jn3A8jrkObKhTxR0djUGr",
+        "https://www.formula1.com/en/latest/article/the-package-is-delivering-as-expected-audi-reflect-on-new-upgrade-package-after-practice-in-azerbaijan.5U8qcauiyASv8Je72XQF3c",
+        "https://www.fia.com/news/fia-announces-aduo-results-following-first-and-second-review-periods-2026"
       ],
       "revisione": {
-        "nota": "Confermati: recente continuita competitiva non dimostra da sola guadagni separabili nelle dieci dimensioni.",
+        "nota": "Baku: 14 modifiche aerodinamiche; prime prove in linea con le attese, ma vantaggio in gara non isolato. Idoneità ADUO distinta da installazione del motore. Valori invariati.",
         "confidenza": "media",
         "dimensioniModificate": []
       }
@@ -263,10 +268,13 @@
         "https://www.motorsportmagazine.com/articles/single-seaters/f1/what-went-wrong-at-williams-and-can-it-salvage-its-2026-f1-season/",
         "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
         "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
-        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+        "https://www.formula1.com/en/latest/article/mclaren-and-williams-eye-baku-boost-as-every-teams-upgrades-are-revealed.6jn3A8jrkObKhTxR0djUGr",
+        "https://www.formula1.com/en/latest/article/mercedes-target-madring-gains-as-every-teams-upgrades-are-revealed.3LbXlbZXmsVrfsR2np3NpK",
+        "https://www.formula1.com/en/latest/article/sainz-hit-with-five-place-grid-penalty-for-azerbaijan-gp-after-yellow-flag-breach-in-qualifying.1gS7cC7mRmvBvIrJGRH6Bb"
       ],
       "revisione": {
-        "nota": "Confermati: persistono limiti nelle curve; nessun credito anticipato al pacchetto Baku.",
+        "nota": "Pacchetto Baku montato: fondo, coda, condotti freno e sospensione posteriore per prestazione del sottoscocca e carico. Nessun credito anticipato: guadagno isolato non pubblicato.",
         "confidenza": "media",
         "dimensioniModificate": []
       }
@@ -289,15 +297,15 @@
         "https://www.formula1.com/en/latest/article/the-state-of-play-at-aston-martin-after-three-rounds-of-the-2026-season.3OIUIgiMal6dG90xZbUqS4",
         "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
         "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
-        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+        "https://www.formula1.com/en/latest/article/how-hungary-showed-aston-martin-is-back-racing-after-upgrades-work.2FxnUtTxAbc3dARczm3lfW",
+        "https://www.formula1.com/en/latest/article/mercedes-target-madring-gains-as-every-teams-upgrades-are-revealed.3LbXlbZXmsVrfsR2np3NpK",
+        "https://www.formula1.com/en/latest/article/mclaren-and-williams-eye-baku-boost-as-every-teams-upgrades-are-revealed.6jn3A8jrkObKhTxR0djUGr"
       ],
       "revisione": {
-        "nota": "Honda ancora limitata in potenza e guidabilita: riduzione prudente di deployment e trazione, mantenendo il recupero del telaio.",
+        "nota": "Vettura B-spec già introdotta in Ungheria e power unit Honda aggiornata; Madrid e Baku senza nuovi componenti. Valori invariati dopo il riesame.",
         "confidenza": "bassa",
-        "dimensioniModificate": [
-          "potenzaDeployment",
-          "trazione"
-        ]
+        "dimensioniModificate": []
       }
     },
     "cadillac": {
@@ -318,10 +326,12 @@
         "https://www.formula1.com/en/latest/article/the-state-of-play-at-cadillac-after-three-races-of-the-2026-season.1exa0SK5ZiGPYuFHDxL86d",
         "https://www.formula1.com/en/latest/article/mclaren-and-ferrari-lead-development-charge-as-every-upgrade-for-dutch-grand-prix-revealed.7HfMGggTffSH6eS3lF6Wgu",
         "https://www.formula1.com/en/latest/article/what-the-teams-said-qualifying-in-italy-2026.5lH9hjhYdtN3xqlAu25I2D",
-        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result"
+        "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
+        "https://www.formula1.com/en/latest/article/mercedes-target-madring-gains-as-every-teams-upgrades-are-revealed.3LbXlbZXmsVrfsR2np3NpK",
+        "https://www.formula1.com/en/latest/article/mclaren-and-williams-eye-baku-boost-as-every-teams-upgrades-are-revealed.6jn3A8jrkObKhTxR0djUGr"
       ],
       "revisione": {
-        "nota": "Confermati: un weekend piu pulito non basta per rivalutare carico, gomme o frenata.",
+        "nota": "Madrid: ala posteriore e diffusore per carico/stabilità. Baku: condotti freno, sospensione e diffusore per raffreddamento e carico. Valori invariati senza misura separabile.",
         "confidenza": "bassa",
         "dimensioniModificate": []
       }
