@@ -73,6 +73,7 @@ test("la stagione espone calendario e risultati completi fino a Baku", async () 
     assert.equal(baku.round, 15);
     assert.equal(baku.qualifiche[0].codice, "RUS");
     assert.equal(baku.gara[0].codice, "RUS");
+    assert.equal(corpo.prossimi[0].nome, "Gran Premio del Bahrein in Malesia");
     assert.equal(corpo.prossimi[0].circuito, "Sepang International Circuit");
     assert.equal(corpo.fonte.versione, "v2026.15.1");
   });
