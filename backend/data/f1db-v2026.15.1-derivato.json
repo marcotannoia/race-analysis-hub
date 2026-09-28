@@ -1,13 +1,13 @@
 {
   "metadati": {
     "fonte": "F1DB",
-    "versione": "v2026.14.0",
-    "pubblicatoIl": "2026-09-13T17:19:19.000Z",
+    "versione": "v2026.15.1",
+    "pubblicatoIl": "2026-09-27T09:57:43.000Z",
     "derivatoIl": "2026-09-15",
-    "releaseUrl": "https://github.com/f1db/f1db/releases/tag/v2026.14.0",
+    "releaseUrl": "https://github.com/f1db/f1db/releases/tag/v2026.15.1",
     "archivio": "f1db-json-splitted.zip",
-    "archivioUrl": "https://github.com/f1db/f1db/releases/download/v2026.14.0/f1db-json-splitted.zip",
-    "archivioSha256": "96d144f6e57405717b78a0a385d5e1e0416c3674b581f3b24d78d473dc897279",
+    "archivioUrl": "https://github.com/f1db/f1db/releases/download/v2026.15.1/f1db-json-splitted.zip",
+    "archivioSha256": "79f5c1df8c6f58ed6e2b50c9d7a7cd73b4eb9ec9678ed60d0349390e12758049",
     "licenza": "CC BY 4.0",
     "licenzaUrl": "https://creativecommons.org/licenses/by/4.0/",
     "trasformazioni": "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato."
@@ -18,7 +18,7 @@
         "slug": "antonelli",
         "classifica2026": {
           "posizione": 1,
-          "punti": 292,
+          "punti": 302,
           "vittorie": 8
         }
       },
@@ -26,7 +26,7 @@
         "slug": "hamilton",
         "classifica2026": {
           "posizione": 3,
-          "punti": 191,
+          "punti": 199,
           "vittorie": 1
         }
       },
@@ -34,15 +34,15 @@
         "slug": "russell",
         "classifica2026": {
           "posizione": 2,
-          "punti": 211,
-          "vittorie": 2
+          "punti": 236,
+          "vittorie": 3
         }
       },
       {
         "slug": "leclerc",
         "classifica2026": {
           "posizione": 5,
-          "punti": 167,
+          "punti": 179,
           "vittorie": 1
         }
       },
@@ -58,7 +58,7 @@
         "slug": "max_verstappen",
         "classifica2026": {
           "posizione": 6,
-          "punti": 145,
+          "punti": 163,
           "vittorie": 0
         }
       },
@@ -74,7 +74,7 @@
         "slug": "hadjar",
         "classifica2026": {
           "posizione": 8,
-          "punti": 71,
+          "punti": 86,
           "vittorie": 0
         }
       },
@@ -106,7 +106,7 @@
         "slug": "arvid_lindblad",
         "classifica2026": {
           "posizione": 11,
-          "punti": 31,
+          "punti": 37,
           "vittorie": 0
         }
       },
@@ -122,7 +122,7 @@
         "slug": "bearman",
         "classifica2026": {
           "posizione": 13,
-          "punti": 18,
+          "punti": 20,
           "vittorie": 0
         }
       },
@@ -137,15 +137,15 @@
       {
         "slug": "sainz",
         "classifica2026": {
-          "posizione": 16,
-          "punti": 6,
+          "posizione": 17,
+          "punti": 7,
           "vittorie": 0
         }
       },
       {
         "slug": "albon",
         "classifica2026": {
-          "posizione": 17,
+          "posizione": 18,
           "punti": 5,
           "vittorie": 0
         }
@@ -153,8 +153,8 @@
       {
         "slug": "ocon",
         "classifica2026": {
-          "posizione": 18,
-          "punti": 3,
+          "posizione": 16,
+          "punti": 7,
           "vittorie": 0
         }
       },
@@ -204,15 +204,15 @@
         "slug": "mercedes",
         "classifica2026": {
           "posizione": 1,
-          "punti": 503,
-          "vittorie": 10
+          "punti": 538,
+          "vittorie": 11
         }
       },
       {
         "slug": "ferrari",
         "classifica2026": {
           "posizione": 2,
-          "punti": 358,
+          "punti": 378,
           "vittorie": 2
         }
       },
@@ -228,7 +228,7 @@
         "slug": "red_bull",
         "classifica2026": {
           "posizione": 4,
-          "punti": 230,
+          "punti": 263,
           "vittorie": 0
         }
       },
@@ -236,7 +236,7 @@
         "slug": "rb",
         "classifica2026": {
           "posizione": 5,
-          "punti": 77,
+          "punti": 83,
           "vittorie": 0
         }
       },
@@ -252,7 +252,7 @@
         "slug": "haas",
         "classifica2026": {
           "posizione": 7,
-          "punti": 21,
+          "punti": 27,
           "vittorie": 0
         }
       },
@@ -268,7 +268,7 @@
         "slug": "williams",
         "classifica2026": {
           "posizione": 9,
-          "punti": 11,
+          "punti": 12,
           "vittorie": 0
         }
       },
@@ -3610,18 +3610,249 @@
             }
           }
         }
+      },
+      {
+        "raceId": 1164,
+        "round": 15,
+        "data": "2026-09-26",
+        "grandPrixId": "azerbaijan",
+        "circuitoId": "baku",
+        "etichetta": "Baku",
+        "piloti": {
+          "antonelli": {
+            "codice": "ANT",
+            "gara": 5,
+            "qualifica": 16
+          },
+          "hamilton": {
+            "codice": "HAM",
+            "gara": 6,
+            "qualifica": 6
+          },
+          "russell": {
+            "codice": "RUS",
+            "gara": 1,
+            "qualifica": 1
+          },
+          "leclerc": {
+            "codice": "LEC",
+            "gara": 4,
+            "qualifica": 2
+          },
+          "norris": {
+            "codice": "NOR",
+            "gara": null,
+            "qualifica": 5
+          },
+          "max_verstappen": {
+            "codice": "VER",
+            "gara": 2,
+            "qualifica": 8
+          },
+          "piastri": {
+            "codice": "PIA",
+            "gara": 13,
+            "qualifica": 3
+          },
+          "hadjar": {
+            "codice": "HAD",
+            "gara": 3,
+            "qualifica": 4
+          },
+          "lawson": {
+            "codice": "LAW",
+            "gara": 12,
+            "qualifica": 12
+          },
+          "tsunoda": {
+            "codice": "TSU",
+            "gara": null,
+            "qualifica": null
+          },
+          "gasly": {
+            "codice": "GAS",
+            "gara": null,
+            "qualifica": 7
+          },
+          "arvid_lindblad": {
+            "codice": "LIN",
+            "gara": 7,
+            "qualifica": 15
+          },
+          "colapinto": {
+            "codice": "COL",
+            "gara": null,
+            "qualifica": 10
+          },
+          "bearman": {
+            "codice": "BEA",
+            "gara": 9,
+            "qualifica": 11
+          },
+          "bortoleto": {
+            "codice": "BOR",
+            "gara": 15,
+            "qualifica": 17
+          },
+          "sainz": {
+            "codice": "SAI",
+            "gara": 10,
+            "qualifica": 9
+          },
+          "albon": {
+            "codice": "ALB",
+            "gara": null,
+            "qualifica": 13
+          },
+          "ocon": {
+            "codice": "OCO",
+            "gara": 8,
+            "qualifica": 14
+          },
+          "hulkenberg": {
+            "codice": "HUL",
+            "gara": 11,
+            "qualifica": 18
+          },
+          "alonso": {
+            "codice": "ALO",
+            "gara": null,
+            "qualifica": 19
+          },
+          "stroll": {
+            "codice": "STR",
+            "gara": null,
+            "qualifica": 21
+          },
+          "bottas": {
+            "codice": "BOT",
+            "gara": 16,
+            "qualifica": 22
+          },
+          "perez": {
+            "codice": "PER",
+            "gara": 14,
+            "qualifica": 20
+          }
+        },
+        "scuderie": {
+          "mercedes": {
+            "gara": {
+              "RUS": 1,
+              "ANT": 5
+            },
+            "qualifica": {
+              "RUS": 1,
+              "ANT": 16
+            }
+          },
+          "ferrari": {
+            "gara": {
+              "LEC": 4,
+              "HAM": 6
+            },
+            "qualifica": {
+              "LEC": 2,
+              "HAM": 6
+            }
+          },
+          "mclaren": {
+            "gara": {
+              "PIA": 13,
+              "NOR": null
+            },
+            "qualifica": {
+              "PIA": 3,
+              "NOR": 5
+            }
+          },
+          "red_bull": {
+            "gara": {
+              "VER": 2,
+              "HAD": 3
+            },
+            "qualifica": {
+              "VER": 8,
+              "HAD": 4
+            }
+          },
+          "rb": {
+            "gara": {
+              "LIN": 7,
+              "LAW": 12
+            },
+            "qualifica": {
+              "LIN": 15,
+              "LAW": 12
+            }
+          },
+          "alpine": {
+            "gara": {
+              "COL": null,
+              "GAS": null
+            },
+            "qualifica": {
+              "COL": 10,
+              "GAS": 7
+            }
+          },
+          "haas": {
+            "gara": {
+              "OCO": 8,
+              "BEA": 9
+            },
+            "qualifica": {
+              "OCO": 14,
+              "BEA": 11
+            }
+          },
+          "audi": {
+            "gara": {
+              "HUL": 11,
+              "BOR": 15
+            },
+            "qualifica": {
+              "HUL": 18,
+              "BOR": 17
+            }
+          },
+          "williams": {
+            "gara": {
+              "SAI": 10,
+              "ALB": null
+            },
+            "qualifica": {
+              "SAI": 9,
+              "ALB": 13
+            }
+          },
+          "aston_martin": {
+            "gara": {
+              "ALO": null,
+              "STR": null
+            },
+            "qualifica": {
+              "ALO": 19,
+              "STR": 21
+            }
+          },
+          "cadillac": {
+            "gara": {
+              "PER": 14,
+              "BOT": 16
+            },
+            "qualifica": {
+              "PER": 20,
+              "BOT": 22
+            }
+          }
+        }
       }
     ]
   },
   "calendario2026": {
     "stagione": 2026,
     "prossimi": [
-      {
-        "round": 15,
-        "data": "2026-09-26",
-        "nome": "Azerbaijan Grand Prix",
-        "circuito": "Baku City Circuit"
-      },
       {
         "round": 16,
         "data": "2026-10-04",
@@ -8380,7 +8611,7 @@
             "posizione": "DNF",
             "pilota": "Lance Strulovitch",
             "codice": "STR",
-            "tempo": "Accident",
+            "tempo": "Brakes",
             "punti": null
           },
           {
@@ -8388,6 +8619,346 @@
             "pilota": "Lewis Carl Davidson Hamilton",
             "codice": "HAM",
             "tempo": "Brakes",
+            "punti": null
+          }
+        ]
+      },
+      {
+        "round": 15,
+        "data": "2026-09-26",
+        "nome": "Azerbaijan Grand Prix",
+        "circuito": "Baku City Circuit",
+        "qualifiche": [
+          {
+            "posizione": "1",
+            "pilota": "George William Russell",
+            "codice": "RUS",
+            "q1": "1:43.615",
+            "q2": "1:43.462",
+            "q3": "1:42.526"
+          },
+          {
+            "posizione": "2",
+            "pilota": "Charles Marc Hervé Perceval Leclerc",
+            "codice": "LEC",
+            "q1": "1:44.360",
+            "q2": "1:43.780",
+            "q3": "1:43.363"
+          },
+          {
+            "posizione": "3",
+            "pilota": "Oscar Jack Piastri",
+            "codice": "PIA",
+            "q1": "1:45.014",
+            "q2": "1:43.814",
+            "q3": "1:43.364"
+          },
+          {
+            "posizione": "4",
+            "pilota": "Isack Alexandre Hadjar",
+            "codice": "HAD",
+            "q1": "1:44.161",
+            "q2": "1:43.880",
+            "q3": "1:43.500"
+          },
+          {
+            "posizione": "5",
+            "pilota": "Lando Norris",
+            "codice": "NOR",
+            "q1": "1:44.571",
+            "q2": "1:44.020",
+            "q3": "1:43.672"
+          },
+          {
+            "posizione": "6",
+            "pilota": "Lewis Carl Davidson Hamilton",
+            "codice": "HAM",
+            "q1": "1:44.260",
+            "q2": "1:44.037",
+            "q3": "1:43.858"
+          },
+          {
+            "posizione": "7",
+            "pilota": "Pierre Jean-Jacques Gasly",
+            "codice": "GAS",
+            "q1": "1:44.489",
+            "q2": "1:44.106",
+            "q3": "1:44.047"
+          },
+          {
+            "posizione": "8",
+            "pilota": "Max Emilian Verstappen",
+            "codice": "VER",
+            "q1": "1:44.041",
+            "q2": "1:43.706",
+            "q3": "1:44.081"
+          },
+          {
+            "posizione": "9",
+            "pilota": "Carlos Sainz Vázquez de Castro",
+            "codice": "SAI",
+            "q1": "1:45.104",
+            "q2": "1:44.629",
+            "q3": "1:44.566"
+          },
+          {
+            "posizione": "10",
+            "pilota": "Franco Alejandro Colapinto",
+            "codice": "COL",
+            "q1": "1:45.106",
+            "q2": "1:44.683",
+            "q3": "1:44.963"
+          },
+          {
+            "posizione": "11",
+            "pilota": "Oliver James Bearman",
+            "codice": "BEA",
+            "q1": "1:45.228",
+            "q2": "1:44.775",
+            "q3": null
+          },
+          {
+            "posizione": "12",
+            "pilota": "Liam Jared Lawson",
+            "codice": "LAW",
+            "q1": "1:45.535",
+            "q2": "1:44.860",
+            "q3": null
+          },
+          {
+            "posizione": "13",
+            "pilota": "Alexander Philippe Albon Ansusinha",
+            "codice": "ALB",
+            "q1": "1:45.031",
+            "q2": "1:45.001",
+            "q3": null
+          },
+          {
+            "posizione": "14",
+            "pilota": "Esteban José Jean-Pierre Ocon-Khelfane",
+            "codice": "OCO",
+            "q1": "1:45.039",
+            "q2": "1:45.016",
+            "q3": null
+          },
+          {
+            "posizione": "15",
+            "pilota": "Arvid Anand Olof Lindblad",
+            "codice": "LIN",
+            "q1": "1:45.381",
+            "q2": "1:45.106",
+            "q3": null
+          },
+          {
+            "posizione": "16",
+            "pilota": "Andrea Kimi Antonelli",
+            "codice": "ANT",
+            "q1": "1:45.504",
+            "q2": null,
+            "q3": null
+          },
+          {
+            "posizione": "17",
+            "pilota": "Gabriel Lourenzo Bortoleto Oliveira",
+            "codice": "BOR",
+            "q1": "1:45.799",
+            "q2": null,
+            "q3": null
+          },
+          {
+            "posizione": "18",
+            "pilota": "Nicolas Hülkenberg",
+            "codice": "HUL",
+            "q1": "1:45.920",
+            "q2": null,
+            "q3": null
+          },
+          {
+            "posizione": "19",
+            "pilota": "Fernando Alonso Díaz",
+            "codice": "ALO",
+            "q1": "1:46.593",
+            "q2": null,
+            "q3": null
+          },
+          {
+            "posizione": "20",
+            "pilota": "Sergio Michel Pérez Mendoza",
+            "codice": "PER",
+            "q1": "1:46.658",
+            "q2": null,
+            "q3": null
+          },
+          {
+            "posizione": "21",
+            "pilota": "Lance Strulovitch",
+            "codice": "STR",
+            "q1": "1:47.337",
+            "q2": null,
+            "q3": null
+          },
+          {
+            "posizione": "22",
+            "pilota": "Valtteri Viktor Bottas",
+            "codice": "BOT",
+            "q1": "1:48.290",
+            "q2": null,
+            "q3": null
+          }
+        ],
+        "gara": [
+          {
+            "posizione": "1",
+            "pilota": "George William Russell",
+            "codice": "RUS",
+            "tempo": "1:38:02.143",
+            "punti": 25
+          },
+          {
+            "posizione": "2",
+            "pilota": "Max Emilian Verstappen",
+            "codice": "VER",
+            "tempo": "1:38:02.339",
+            "punti": 18
+          },
+          {
+            "posizione": "3",
+            "pilota": "Isack Alexandre Hadjar",
+            "codice": "HAD",
+            "tempo": "1:38:12.847",
+            "punti": 15
+          },
+          {
+            "posizione": "4",
+            "pilota": "Charles Marc Hervé Perceval Leclerc",
+            "codice": "LEC",
+            "tempo": "1:38:16.279",
+            "punti": 12
+          },
+          {
+            "posizione": "5",
+            "pilota": "Andrea Kimi Antonelli",
+            "codice": "ANT",
+            "tempo": "1:38:16.655",
+            "punti": 10
+          },
+          {
+            "posizione": "6",
+            "pilota": "Lewis Carl Davidson Hamilton",
+            "codice": "HAM",
+            "tempo": "1:38:24.525",
+            "punti": 8
+          },
+          {
+            "posizione": "7",
+            "pilota": "Arvid Anand Olof Lindblad",
+            "codice": "LIN",
+            "tempo": "1:38:33.302",
+            "punti": 6
+          },
+          {
+            "posizione": "8",
+            "pilota": "Esteban José Jean-Pierre Ocon-Khelfane",
+            "codice": "OCO",
+            "tempo": "1:38:33.332",
+            "punti": 4
+          },
+          {
+            "posizione": "9",
+            "pilota": "Oliver James Bearman",
+            "codice": "BEA",
+            "tempo": "1:38:34.072",
+            "punti": 2
+          },
+          {
+            "posizione": "10",
+            "pilota": "Carlos Sainz Vázquez de Castro",
+            "codice": "SAI",
+            "tempo": "1:38:34.559",
+            "punti": 1
+          },
+          {
+            "posizione": "11",
+            "pilota": "Nicolas Hülkenberg",
+            "codice": "HUL",
+            "tempo": "1:38:35.374",
+            "punti": null
+          },
+          {
+            "posizione": "12",
+            "pilota": "Liam Jared Lawson",
+            "codice": "LAW",
+            "tempo": "1:38:36.156",
+            "punti": null
+          },
+          {
+            "posizione": "13",
+            "pilota": "Oscar Jack Piastri",
+            "codice": "PIA",
+            "tempo": "1:38:38.544",
+            "punti": null
+          },
+          {
+            "posizione": "14",
+            "pilota": "Sergio Michel Pérez Mendoza",
+            "codice": "PER",
+            "tempo": "1:38:43.543",
+            "punti": null
+          },
+          {
+            "posizione": "15",
+            "pilota": "Gabriel Lourenzo Bortoleto Oliveira",
+            "codice": "BOR",
+            "tempo": "1:38:46.373",
+            "punti": null
+          },
+          {
+            "posizione": "16",
+            "pilota": "Valtteri Viktor Bottas",
+            "codice": "BOT",
+            "tempo": "Accident",
+            "punti": null
+          },
+          {
+            "posizione": "DNF",
+            "pilota": "Franco Alejandro Colapinto",
+            "codice": "COL",
+            "tempo": "Collision damage",
+            "punti": null
+          },
+          {
+            "posizione": "DNF",
+            "pilota": "Pierre Jean-Jacques Gasly",
+            "codice": "GAS",
+            "tempo": "Collision",
+            "punti": null
+          },
+          {
+            "posizione": "DNF",
+            "pilota": "Lando Norris",
+            "codice": "NOR",
+            "tempo": "Collision",
+            "punti": null
+          },
+          {
+            "posizione": "DNF",
+            "pilota": "Alexander Philippe Albon Ansusinha",
+            "codice": "ALB",
+            "tempo": "Accident",
+            "punti": null
+          },
+          {
+            "posizione": "DNF",
+            "pilota": "Fernando Alonso Díaz",
+            "codice": "ALO",
+            "tempo": "Water pressure",
+            "punti": null
+          },
+          {
+            "posizione": "DNF",
+            "pilota": "Lance Strulovitch",
+            "codice": "STR",
+            "tempo": "Water pressure",
             "punti": null
           }
         ]

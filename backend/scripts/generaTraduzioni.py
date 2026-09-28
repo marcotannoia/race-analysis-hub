@@ -635,10 +635,10 @@ TRADUZIONI_GARE_ESATTE = {
         "fr": "Grand Prix d'Azerbaïdjan", "pt": "Grande Prémio do Azerbaijão",
         "es": "Gran Premio de Azerbaiyán", "de": "Großer Preis von Aserbaidschan",
     },
-    "Gran Premio del Bahrein": {
-        "it": "Gran Premio del Bahrein", "en": "Bahrain Grand Prix",
-        "fr": "Grand Prix de Bahreïn", "pt": "Grande Prémio do Barém",
-        "es": "Gran Premio de Baréin", "de": "Großer Preis von Bahrain",
+    "Gran Premio del Bahrein in Malesia": {
+        "it": "Gran Premio del Bahrein in Malesia", "en": "Bahrain Grand Prix in Malaysia",
+        "fr": "Grand Prix de Bahreïn en Malaisie", "pt": "Grande Prémio do Barém na Malásia",
+        "es": "Gran Premio de Baréin en Malasia", "de": "Großer Preis von Bahrain in Malaysia",
     },
     "Gran Premio di Singapore": {
         "it": "Gran Premio di Singapore", "en": "Singapore Grand Prix",

@@ -43,10 +43,10 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
     assert.equal(corpo.documentazione, "/api/docs");
     assert.deepEqual(corpo.attribuzioneDati, {
       nome: "F1DB",
-      url: "https://github.com/f1db/f1db/releases/tag/v2026.14.0",
+      url: "https://github.com/f1db/f1db/releases/tag/v2026.15.1",
       licenza: "CC BY 4.0",
       licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
-      versione: "v2026.14.0",
+      versione: "v2026.15.1",
       modifiche:
         "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato.",
     });
@@ -56,20 +56,25 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
   });
 });
 
-test("la stagione espone calendario e risultati completi fino a Madrid", async () => {
+test("la stagione espone calendario e risultati completi fino a Baku", async () => {
   await conServer(async (baseUrl) => {
     const risposta = await fetch(`${baseUrl}/api/v1/stagione?lingua=it`);
     const corpo = await risposta.json();
     assert.equal(risposta.status, 200);
     assert.equal(corpo.lingua, "it");
     assert.equal(corpo.stagione, 2026);
-    assert.equal(corpo.passati.length, 14);
-    assert.equal(corpo.prossimi.length, 9);
-    const madrid = corpo.passati.at(-1);
+    assert.equal(corpo.passati.length, 15);
+    assert.equal(corpo.prossimi.length, 8);
+    const madrid = corpo.passati.at(-2);
     assert.equal(madrid.round, 14);
     assert.equal(madrid.qualifiche[0].codice, "NOR");
     assert.equal(madrid.gara[0].codice, "ANT");
-    assert.equal(corpo.fonte.versione, "v2026.14.0");
+    const baku = corpo.passati.at(-1);
+    assert.equal(baku.round, 15);
+    assert.equal(baku.qualifiche[0].codice, "RUS");
+    assert.equal(baku.gara[0].codice, "RUS");
+    assert.equal(corpo.prossimi[0].circuito, "Sepang International Circuit");
+    assert.equal(corpo.fonte.versione, "v2026.15.1");
   });
 });
 

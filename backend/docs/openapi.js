@@ -76,7 +76,7 @@ const documentoOpenApi = {
       "consente esclusivamente GET, HEAD e OPTIONS. Le analisi editoriali sono " +
       "pubblicate soltanto per il Gran Premio attuale; gare future e relative " +
       "analisi non vengono esposte. Classifiche e risultati quantitativi provengono " +
-      "da uno snapshot locale derivato da F1DB v2026.14.0 (CC BY 4.0), senza " +
+      "da uno snapshot locale derivato da F1DB v2026.15.1 (CC BY 4.0), senza " +
       "chiamate esterne a runtime, e sono visualizzati con Chart.js. " +
       "Le risposte pubbliche possono essere copiate, mostrate e adattate nel software " +
       "del riutilizzatore, anche per uso commerciale, secondo la CC BY 4.0. " +
@@ -1347,7 +1347,7 @@ const documentoOpenApi = {
             type: "string",
             format: "uri",
             example:
-              "https://github.com/f1db/f1db/releases/tag/v2026.14.0",
+              "https://github.com/f1db/f1db/releases/tag/v2026.15.1",
           },
           licenza: { type: "string", example: "CC BY 4.0" },
           licenzaUrl: {
@@ -1355,7 +1355,7 @@ const documentoOpenApi = {
             format: "uri",
             example: "https://creativecommons.org/licenses/by/4.0/",
           },
-          versione: { type: "string", example: "v2026.14.0" },
+          versione: { type: "string", example: "v2026.15.1" },
           modifiche: {
             type: "string",
             description:

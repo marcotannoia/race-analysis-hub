@@ -196,7 +196,7 @@ in [`LICENSE.md`](LICENSE.md) and [`NOTICE.md`](NOTICE.md).
 
 The 2026 standings, 2023–2025 race and qualifying results, and 2026 quantitative
 charts are derived from
-[F1DB v2026.14.0](https://github.com/f1db/f1db/releases/tag/v2026.14.0),
+[F1DB v2026.15.1](https://github.com/f1db/f1db/releases/tag/v2026.15.1),
 distributed under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Race Analysis Hub
 filters and normalises the data. Editorial content is original to the project

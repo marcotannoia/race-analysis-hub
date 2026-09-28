@@ -1,0 +1,527 @@
+{
+  "pronto": true,
+  "stagione": 2026,
+  "garaConclusaSlug": "azerbaigian-baku",
+  "conclusaIl": "2026-09-26T12:54:00.000Z",
+  "condizioniGara": "asciutto",
+  "fonteIndicatori": "https://www.formula1.com/en/latest/article/what-the-teams-said-race-day-in-azerbaijan-2026.7FI05LpHsKH1PaUiI8SyVF",
+  "risultatiPiloti": [
+    {
+      "pilotaSlug": "russell",
+      "posizioneGara": "P1",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "P1 a Baku, 51 giri; 25 punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "max_verstappen",
+      "posizioneGara": "P2",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "P2 a Baku, 51 giri; 18 punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "hadjar",
+      "posizioneGara": "P3",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "P3 a Baku, 51 giri; 15 punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "leclerc",
+      "posizioneGara": "P4",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "P4 a Baku, 51 giri; 12 punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "antonelli",
+      "posizioneGara": "P5",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "P5 a Baku, 51 giri; 10 punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "hamilton",
+      "posizioneGara": "P6",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "P6 a Baku, 51 giri; 8 punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "arvid_lindblad",
+      "posizioneGara": "P7",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "P7 a Baku, 51 giri; 6 punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "non_fatale"
+    },
+    {
+      "pilotaSlug": "ocon",
+      "posizioneGara": "P8",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "P8 a Baku, 51 giri; 4 punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "bearman",
+      "posizioneGara": "P9",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "P9 a Baku, 51 giri; 2 punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "sainz",
+      "posizioneGara": "P10",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "P10 a Baku, 51 giri; 1 punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "hulkenberg",
+      "posizioneGara": "P11",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "P11 a Baku, 51 giri; null punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "lawson",
+      "posizioneGara": "P12",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "P12 a Baku, 51 giri; null punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "piastri",
+      "posizioneGara": "P13",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "P13 a Baku, 51 giri; null punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "non_fatale"
+    },
+    {
+      "pilotaSlug": "perez",
+      "posizioneGara": "P14",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "P14 a Baku, 51 giri; null punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "bortoleto",
+      "posizioneGara": "P15",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "P15 a Baku, 51 giri; null punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "",
+      "errorePilota": "non_fatale"
+    },
+    {
+      "pilotaSlug": "bottas",
+      "posizioneGara": "P16",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "P16 a Baku, 49 giri; null punti.",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "Incidente dopo 49 giri.",
+      "errorePilota": "fatale"
+    },
+    {
+      "pilotaSlug": "colapinto",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Ritiro dopo 36 giri a Baku (Danni da collisione).",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "Danni da collisione dopo 36 giri.",
+      "errorePilota": "fatale"
+    },
+    {
+      "pilotaSlug": "gasly",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Ritiro dopo 35 giri a Baku (Collisione).",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "Collisione dopo 35 giri.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "norris",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Ritiro dopo 35 giri a Baku (Collisione).",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "Collisione dopo 35 giri.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "albon",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "Ritiro dopo 29 giri a Baku (Incidente).",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "Incidente dopo 29 giri.",
+      "errorePilota": "fatale"
+    },
+    {
+      "pilotaSlug": "alonso",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "Ritiro dopo 20 giri a Baku (Problema di pressione dell’acqua).",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "Problema di pressione dell’acqua dopo 20 giri.",
+      "errorePilota": "nessuno"
+    },
+    {
+      "pilotaSlug": "stroll",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "Ritiro dopo 7 giri a Baku (Problema di pressione dell’acqua).",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": "Problema di pressione dell’acqua dopo 7 giri.",
+      "errorePilota": "nessuno"
+    }
+  ],
+  "risultatiScuderie": [
+    {
+      "scuderiaSlug": "mercedes",
+      "notaRisultato": "",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "ferrari",
+      "notaRisultato": "",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "mclaren",
+      "notaRisultato": "",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "red_bull",
+      "notaRisultato": "",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "rb",
+      "notaRisultato": "",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "alpine",
+      "notaRisultato": "",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "haas",
+      "notaRisultato": "",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "audi",
+      "notaRisultato": "",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "williams",
+      "notaRisultato": "",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "aston_martin",
+      "notaRisultato": "",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "cadillac",
+      "notaRisultato": "",
+      "passoGara": "",
+      "gestioneGomme": "",
+      "affidabilita": ""
+    }
+  ],
+  "classificaPiloti": [
+    {
+      "pilotaSlug": "antonelli",
+      "posizione": 1,
+      "punti": 302,
+      "vittorie": 8
+    },
+    {
+      "pilotaSlug": "hamilton",
+      "posizione": 3,
+      "punti": 199,
+      "vittorie": 1
+    },
+    {
+      "pilotaSlug": "russell",
+      "posizione": 2,
+      "punti": 236,
+      "vittorie": 3
+    },
+    {
+      "pilotaSlug": "leclerc",
+      "posizione": 5,
+      "punti": 179,
+      "vittorie": 1
+    },
+    {
+      "pilotaSlug": "norris",
+      "posizione": 4,
+      "punti": 186,
+      "vittorie": 2
+    },
+    {
+      "pilotaSlug": "max_verstappen",
+      "posizione": 6,
+      "punti": 163,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "piastri",
+      "posizione": 7,
+      "punti": 120,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "hadjar",
+      "posizione": 8,
+      "punti": 86,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "lawson",
+      "posizione": 9,
+      "punti": 59,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "tsunoda",
+      "posizione": 20,
+      "punti": 1,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "gasly",
+      "posizione": 10,
+      "punti": 41,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "arvid_lindblad",
+      "posizione": 11,
+      "punti": 37,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "colapinto",
+      "posizione": 12,
+      "punti": 27,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bearman",
+      "posizione": 13,
+      "punti": 20,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bortoleto",
+      "posizione": 14,
+      "punti": 10,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "sainz",
+      "posizione": 17,
+      "punti": 7,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "albon",
+      "posizione": 18,
+      "punti": 5,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "ocon",
+      "posizione": 16,
+      "punti": 7,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "hulkenberg",
+      "posizione": 15,
+      "punti": 7,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "alonso",
+      "posizione": 19,
+      "punti": 3,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "stroll",
+      "posizione": 21,
+      "punti": 0,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bottas",
+      "posizione": 22,
+      "punti": 0,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "perez",
+      "posizione": 23,
+      "punti": 0,
+      "vittorie": 0
+    }
+  ],
+  "classificaScuderie": [
+    {
+      "scuderiaSlug": "mercedes",
+      "posizione": 1,
+      "punti": 538,
+      "vittorie": 11
+    },
+    {
+      "scuderiaSlug": "ferrari",
+      "posizione": 2,
+      "punti": 378,
+      "vittorie": 2
+    },
+    {
+      "scuderiaSlug": "mclaren",
+      "posizione": 3,
+      "punti": 306,
+      "vittorie": 2
+    },
+    {
+      "scuderiaSlug": "red_bull",
+      "posizione": 4,
+      "punti": 263,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "rb",
+      "posizione": 5,
+      "punti": 83,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "alpine",
+      "posizione": 6,
+      "punti": 68,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "haas",
+      "posizione": 7,
+      "punti": 27,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "audi",
+      "posizione": 8,
+      "punti": 17,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "williams",
+      "posizione": 9,
+      "punti": 12,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "aston_martin",
+      "posizione": 10,
+      "punti": 3,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "cadillac",
+      "posizione": 11,
+      "punti": 0,
+      "vittorie": 0
+    }
+  ],
+  "statoClassificazione": "provvisoria",
+  "fonti": [
+    "https://www.formula1.com/en/results/2026/races/1295/azerbaijann/race-result",
+    "https://www.formula1.com/en/results/2026/races/1295/azerbaijann/qualifying",
+    "https://www.formula1.com/en/results/2026/drivers",
+    "https://www.formula1.com/en/results/2026/team",
+    "https://www.formula1.com/en/latest/article/what-the-teams-said-race-day-in-azerbaijan-2026.7FI05LpHsKH1PaUiI8SyVF",
+    "https://www.formula1.com/en/latest/article/colapinto-hit-with-five-place-grid-penalty-for-bahrain-gp-in-malaysia-after-baku-collision.3gWVfzDMMr5hReiwTt1fPD",
+    "https://github.com/f1db/f1db/releases/tag/v2026.15.1"
+  ]
+}

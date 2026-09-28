@@ -87,9 +87,9 @@ Technical updates derive instead from the editorial analysis of the new tender.
 For Madrid 2026, the post-race archive uses Formula 1 results and standings plus
 FIA timing and race-control documents. At publication time the FIA race
 classification was still provisional; the archive records this explicitly.
-The quantitative chart snapshot is F1DB `v2026.14.0` and includes Madrid. The
-versioned Madrid archive remains the auditable source used to replay the
-post-race editorial transition and any fields not supplied by F1DB.
+The quantitative chart snapshot is F1DB `v2026.15.1` and includes Baku. The
+versioned Madrid and Baku archives replay the post-race editorial transitions
+and fields not supplied by F1DB.
 
 Before publishing, check in particular
 `aggiornamentiInArrivo`: A package that is only announced or not relevant is not
