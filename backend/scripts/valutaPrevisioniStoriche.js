@@ -3,7 +3,7 @@ const path = require("node:path");
 const { createHash } = require("node:crypto");
 const { caricaFonti } = require("./lib/caricaFontiSemantiche");
 const { PESI_SEMANTICI, VERSIONE, FONTE, media, round, ordinaSemantico, metricheOrdine } = require("../services/overallSemantici");
-const { creaClassificaPrevisionale, PESI } = require("../services/classificaPrevisionale");
+const { creaClassificaEditoriale: creaClassificaPrevisionale, PESI } = require("../services/classificaPrevisionale");
 const { normalizzaTestiAnnuali } = require("../utils/normalizzaNotaBene");
 
 function valuta(cartella) {

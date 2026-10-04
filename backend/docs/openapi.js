@@ -1,3 +1,4 @@
+const calibrazione = require("../data/calibrazione-pesi-2026-10-05.json");
 const { version: versioneApi } = require("../package.json");
 
 const intestazioneRequestId = {
@@ -33,12 +34,10 @@ const esempioPesiPrevisionali = [
   ["andamento2026", "Andamento 2026", 5],
   ["passoGaraRecente", "Andamento pilota negli ultimi 3 GP", 8],
   ["andamentoScuderiaRecente", "Andamento scuderia negli ultimi 3 GP", 2],
-  ["meteoEsperienzaPilota", "Esperienza del pilota sul bagnato", 8],
-  ["meteoScuderia", "Storico sul bagnato della coppia piloti", 2],
-].map(([chiave, nome, pesoPercentuale]) => ({
+].map(([chiave, nome]) => ({
   chiave,
   nome,
-  pesoPercentuale,
+  pesoPercentuale: calibrazione.pesi[chiave] || 0,
 }));
 
 const esempioFattoriPrevisionali = esempioPesiPrevisionali.map((peso) => ({
@@ -1960,9 +1959,9 @@ const documentoOpenApi = {
           fattori: {
             type: "array",
             minItems: 8,
-            maxItems: 11,
+            maxItems: 9,
             description:
-              "Otto fattori senza previsione meteo, dieci quando disponibile. L'esperienza del pilota sul bagnato pesa quattro volte il contesto della coppia piloti. Una penalità di griglia confermata, anche acquisita da una decisione FIA, riduce l'indice base fino al 35%, senza mai aumentarlo. Gli aggiornamenti tecnici restano neutri finché manca una misura calibrata del beneficio.",
+              "Otto fattori ordinari per compatibilità; peso zero per fattori non utilizzati. Il candidato calibrato è adottato solo se migliora sia il confronto progressivo sia il controllo cronologico fisso; altrimenti è utilizzato il riferimento mondiale. Meteo e aggiornamenti non alterano il punteggio. Penalità confermate riducono l’indice fino al 35%.",
             items: { $ref: "#/components/schemas/FattorePrevisionale" },
             example: esempioFattoriPrevisionali,
           },
@@ -1995,7 +1994,17 @@ const documentoOpenApi = {
           },
           modello: {
             type: "string",
-            const: "statistico-editoriale-v4.1",
+            const: calibrazione.versione,
+          },
+          calibrazione: {
+            type: "object",
+            properties: {
+              stato: { type: "string", enum: ["riferimento_mondiale", "calibrato_retrospettivo"] },
+              combinazioniEsaminate: { type: "integer", minimum: 1 },
+              ultimoRoundTraining: { type: "integer", minimum: 1 },
+              fonteMondiale: { type: "string", enum: ["database", "snapshot_anteriore_al_gp"] },
+              candidataPromossa: { type: "boolean" },
+            },
           },
           meteo: {
             oneOf: [
@@ -2019,13 +2028,13 @@ const documentoOpenApi = {
             type: "array",
             maxItems: 2,
             description:
-              "GP già disputati selezionati confrontando le dieci richieste tecniche del circuito; i risultati reali di pilota e scuderia alimentano il fattore dedicato.",
+              "Campo mantenuto per compatibilità; vuoto nel modello calibrato perché le similarità tecniche non hanno snapshot pre-gara verificati.",
             items: { $ref: "#/components/schemas/CircuitoSimilePrevisionale" },
           },
           pesi: {
             type: "array",
             minItems: 8,
-            maxItems: 10,
+            maxItems: 8,
             items: { $ref: "#/components/schemas/PesoPrevisionale" },
             example: esempioPesiPrevisionali,
           },

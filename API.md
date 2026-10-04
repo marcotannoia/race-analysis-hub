@@ -161,18 +161,33 @@ Public responses are reusable under the conditions described in
 
 The FIA live report is no longer shown on the website and in the updated app. The `aggiornamentiLive` field of the home page is kept for compatibility but always returns `null`, even with historical documents in the database. The server no longer starts the FIA automatic monitor. Historical data is not deleted; the technical profiles and their sources remain. This removal does not constitute a verification of the rights on the other sources.
 
-### Forecast model — revised September 15, 2026
+### Forecast model — revised October 5, 2026
 
-The forecast factor `compatibilitaVetturaCircuito` uses the same average of the ten 0–100 capacities, weighted on the demands of the track, shown in the `profiloTecnico.compatibilita` of the circuit. Its weight is 42% before any penalty. If the team or circuit profile is missing, the previous calculation based on ranking and editorial label is maintained.
+The current model is `risultati-calibrati-v1`. Endpoint paths and the eight ordinary
+factor keys remain unchanged. Factors not used in the selected method have zero
+weight; the active championship reference assigns 100% to `andamento2026`.
+Scores use championship order normalized among participants, not points or win
+probabilities. Missing observations receive the model's neutral prior.
 
-Capabilities are editorial estimates, not telemetry measurements. Method, date and rationale are in `backend/data/profili-tecnici-2026.json`; summary is in `backend/data/revisione-overall-2026-09-06.md`. The review incorporates information from the Monza weekend and does not constitute a backtest of the pre-race prediction. The increased accuracy must be verified on subsequent races.
+The candidate calibration searches all integer-percent combinations of recent
+driver results, qualifying, team results, circuit history and championship order.
+The optimum over sixteen completed GP is 14/47/19/7/13%. It is unpromoted because
+weights frozen before the final four GP did not beat the championship reference.
+The optional `calibrazione` object contains `stato`, `combinazioniEsaminate`,
+`ultimoRoundTraining`, `fonteMondiale` and `candidataPromossa`.
 
-The eight ordinary weights are: compatibility 42%, results on the two most similar completed circuits 28%, relevant updates 10%, driver performance in the last three GPs 8%, 2026 driver performance 5%, qualifying 3%, personal history 2%, and team performance in the last three GPs 2%. Compatibility and similar-circuit evidence therefore account for 70% of the ordinary score, or 80% together with relevant upgrades. The correction for confirmed penalties remains separate and reproportions the ordinary weights.
+All historical features have an exclusive round cutoff. Outlier exclusions are
+based uniformly on documented retirement/disqualification/DNS status, never on
+prediction residuals. Filtered metrics condition on regular outcomes and cannot
+be presented as complete-race prediction accuracy.
 
-Circuit similarity is calculated over all ten technical dimensions. For each dimension, the absolute distance is weighted by the current Grand Prix requirement. The API exposes the selected events and their similarity percentages in `circuitiSimili`; the selected events depend on the current circuit and snapshot. Race and qualifying results from those events are combined at driver and team level. A driver who did not participate is not scored as a retirement.
+A confirmed grid penalty multiplies the base score by `0.65 + 0.35 * value/100`;
+ordinary factors are rescaled and the penalty contribution uses the base index.
+Weather, technical compatibility and upgrades have no ranking weight without
+verified pre-race histories. `circuitiSimili` remains present and empty. Optional
+weather context does not change scores. Technical profiles remain editorial
+context and are not validated telemetry.
 
-The team performance averages the evaluations of the results of its cars in each of the last three GPs of the snapshot, with time weights 1, 2 and 3. A retirement is worth 15/100; a GP without team data is worth 40/100. The team associations of the historic event, including substitutes, are used.
-
-The upgrade bonus requires an explicitly mentioned technical characteristic and a circuit request of at least 85/100; negative phrases and generic descriptions do not give a bonus. The threshold is an editorial rule, not a statistically optimized parameter. In the absence of a match, the value is neutral (50/100).
+[Full report and per-weekend weights](docs/revisione-database-2026-10-05/CALIBRAZIONE.md).
 
 The site and native app do not display methodology, weights, contributions, or factor details. API fields remain available to clients: this change affects presentation and does not make the model private.

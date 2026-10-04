@@ -11,6 +11,7 @@ const { normalizzaTestiAnnuali, normalizzaNotaBene } = require("../utils/normali
 const { normalizzaTraduzioniAnalisi } = require("../utils/normalizzaTraduzioni");
 const dati = creaDatiEffettivi(require("../data/dati-iniziali.json"));
 const backtest = require("../data/backtest-semantico-2026-10-05.json");
+const calibrazione = require("../data/calibrazione-pesi-2026-10-05.json");
 const models = Object.fromEntries(["Pilota", "Scuderia", "Gara", "AnalisiGara", "AnalisiScuderia", "MetodoPrevisionale"]
   .map((n) => [n, require(`../models/${n}`)]));
 
@@ -46,7 +47,8 @@ async function main() {
   const directoryBackup = process.argv.find((s) => s.startsWith("--backup="))?.slice(9);
   if (!directoryBackup) throw new Error("Specificare --backup=/cartella/privata");
   fs.mkdirSync(directoryBackup, { recursive: true, mode: 0o700 });
-  const reportPath = path.join(__dirname, "../../docs/verifica-gp-2026-10-04/migrazione-database-2026-10-05.json");
+  const reportPath = process.argv.find((s) => s.startsWith("--report="))?.slice(9) ||
+    path.join(__dirname, "../../docs/verifica-gp-2026-10-04/migrazione-database-2026-10-05.json");
   await collega();
   const letti = {};
   for (const [nome, Modello] of Object.entries(models)) letti[nome] = await Modello.find().lean();
@@ -93,13 +95,15 @@ async function main() {
   }
   const metodo = { versione: backtest.versione, stato: "sperimentale_non_promosso", pesi: backtest.pesi,
     protocollo: backtest.protocollo, backtest, fonti: [backtest.fonte] };
+  const metodi = [metodo, { versione: calibrazione.versione, stato: calibrazione.stato, pesi: calibrazione.pesi,
+    protocollo: calibrazione.protocollo, backtest: calibrazione, fonti: [calibrazione.fonte] }];
   const report = {
     generatoAlleUTC: new Date().toISOString(), database: mongoose.connection.name,
     modalita: applica ? "applicazione" : "anteprima", backup: backupFile,
     documenti: pianificate.length,
     perCollezione: pianificate.reduce((m, x) => (m[x.nome] = (m[x.nome] || 0) + 1, m), {}),
     modifiche: pianificate.map((x) => ({ modello: x.nome, chiave: x.chiave, campi: Object.keys(x.set) })),
-    nuovoMetodo: metodo.versione, stato: "preparato",
+    nuovoMetodo: metodo.versione, metodi: metodi.map((m) => m.versione), stato: "preparato",
   };
   if (applica) {
     const sessione = await mongoose.startSession();
@@ -114,7 +118,7 @@ async function main() {
           } })), { session: sessione });
           if (result.matchedCount !== elenco.length) throw new Error(`Conflitto concorrente: ${nome}; transazione annullata`);
         }
-        await models.MetodoPrevisionale.updateOne({ versione: metodo.versione }, { $set: metodo },
+        for (const m of metodi) await models.MetodoPrevisionale.updateOne({ versione: m.versione }, { $set: m },
           { upsert: true, runValidators: true, session: sessione });
       });
     } finally { await sessione.endSession(); }
@@ -126,8 +130,10 @@ async function main() {
         for (const [k, v] of Object.entries(e.campi)) if (!uguali(letto?.[k], v)) differenze.push(`${nome}/${e.chiave}/${k}`);
       }
     }
-    const lettoMetodo = await models.MetodoPrevisionale.findOne({ versione: metodo.versione }).lean();
-    for (const [k, v] of Object.entries(metodo)) if (!uguali(lettoMetodo?.[k], v)) differenze.push(`MetodoPrevisionale/${k}`);
+    for (const m of metodi) {
+      const lettoMetodo = await models.MetodoPrevisionale.findOne({ versione: m.versione }).lean();
+      for (const [k, v] of Object.entries(m)) if (!uguali(lettoMetodo?.[k], v)) differenze.push(`MetodoPrevisionale/${m.versione}/${k}`);
+    }
     report.differenzeDopo = differenze;
     report.stato = differenze.length ? "verifica_fallita" : "applicato_e_verificato";
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + "\n");

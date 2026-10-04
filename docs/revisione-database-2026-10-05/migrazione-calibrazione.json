@@ -1,0 +1,103 @@
+{
+  "generatoAlleUTC": "2026-10-04T23:07:08.203Z",
+  "database": "f1_stats",
+  "modalita": "applicazione",
+  "backup": "/tmp/f1-stats-calibrazione-2026-10-05/atlas-prima-1791155227979.json",
+  "documenti": 12,
+  "perCollezione": {
+    "Gara": 12
+  },
+  "modifiche": [
+    {
+      "modello": "Gara",
+      "chiave": "olanda-zandvoort",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "italia-monza",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "spagna-madring",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "azerbaigian-baku",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "bahrein-sepang",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "singapore-marina-bay",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "usa-austin",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "messico-citta-del-messico",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "brasile-interlagos",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "usa-las-vegas",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "qatar-lusail",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "abu-dhabi-yas-marina",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    }
+  ],
+  "nuovoMetodo": "risultati-semantici-v1",
+  "metodi": [
+    "risultati-semantici-v1",
+    "risultati-calibrati-v1"
+  ],
+  "stato": "applicato_e_verificato",
+  "differenzeDopo": []
+}

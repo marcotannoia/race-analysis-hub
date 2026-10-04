@@ -522,7 +522,7 @@ function creaFattori(valutazioni, testi, penalita, pesi, indiceBase = 0) {
   return fattori;
 }
 
-function creaClassificaPrevisionale({
+function creaClassificaEditoriale({
   gara,
   piloti,
   scuderie,
@@ -729,7 +729,8 @@ module.exports = {
   PESI,
   PESO_PENALITA,
   calcolaSimilaritaCircuiti,
-  creaClassificaPrevisionale,
+  creaClassificaEditoriale,
+  creaClassificaPrevisionale: (args) => require("./classificaCalibrata").creaClassificaCalibrata(args),
   selezionaCircuitiSimili,
   valutaAggiornamento,
   valutaAndamentoScuderia,

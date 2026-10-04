@@ -126,5 +126,5 @@ function metricheOrdine(previsione, reale) {
 
 module.exports = {
   PESI_SEMANTICI, VERSIONE, FONTE, media, regolare, round, indicePosizione,
-  descriviCampione, campoNonMisurato, completamento, trend, ordinaSemantico, metricheOrdine,
+  descriviCampione, attenua, campoNonMisurato, completamento, trend, ordinaSemantico, metricheOrdine,
 };

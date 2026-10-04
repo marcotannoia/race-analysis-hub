@@ -220,44 +220,39 @@ individual incidents and penalties.
 
 ## Driver prediction ranking
 
-The favourites index ranges from 0 to 100 and is included in the home response
-to avoid a second request. The dedicated `GET /api/v1/previsioni/piloti`
-endpoint remains available, including the factor breakdown intended for API
-clients. The website and native app display only the ranking, index, and
-confidence. The standard weights are:
+The comparison index ranges from 0 to 100 and is included in the home response.
+The dedicated `GET /api/v1/previsioni/piloti` endpoint retains its eight ordinary
+factor fields, plus an optional confirmed-penalty factor. It is not a win probability.
 
-| Factor | Weight |
+The `risultati-calibrati-v1` model searches all **4,598,126** nonnegative integer
+weight combinations summing to 100 across five reconstructible factors. Each
+historical scenario uses only preceding results. Calibration excludes documented
+retirements, DNS and disqualifications uniformly; complete-order metrics are
+also reported. Per-weekend optima describe the past and are not future predictions.
+
+| Candidate factor | Best weight on all 16 completed GP |
 |---|---:|
-| Car–circuit compatibility | 42% |
-| Results on the two most similar completed circuits | 28% |
-| Technical upgrades relevant to circuit requirements | 10% |
-| Driver form across the last three Grands Prix | 8% |
-| Driver's 2026 form | 5% |
-| 2026 qualifying performance | 3% |
-| Driver's historical performance | 2% |
-| Team form across the last three Grands Prix | 2% |
+| Driver results over the preceding three GP | 14% |
+| Qualifying over the preceding three GP | 47% |
+| Team results over the preceding three GP | 19% |
+| Previous three years on the circuit | 7% |
+| Previous championship order | 13% |
 
-When a grid penalty is confirmed, it may account for up to 35% of the final
-index, with the eight standard factors proportionally rescaled across the
-remaining 65%.
+The candidate improves the retrospective regular-outcome error but fails the
+fixed chronological holdout. It remains unpromoted. The active forecast uses
+the championship reference: **100% andamento2026**, with other ordinary weights
+zero. Missing championship observations use the neutral model prior 50. For
+future/current events the ranking reads current database standings; historical
+scenarios use standings strictly before the target GP. `calibrazione` exposes
+selection status and training coverage. Confidence remains low.
 
-Car–circuit compatibility is the weighted average of the team's ten technical
-capabilities against the circuit's requirements. If either technical profile
-is missing, the service falls back to the previous editorial calculation.
+Confirmed penalties reduce the base index multiplicatively, up to 35%; they
+never improve it. Technical demands, upgrades and weather remain available as
+context, with no numeric bonus in this model without verified pre-race histories.
 
-The similar-circuit factor selects the two completed 2026 events with the
-smallest weighted distance from the current circuit across the same ten
-technical dimensions. It combines race and qualifying evidence for both the
-driver and team, while an absent driver is not treated as a retirement.
-
-Technical upgrades do not automatically receive a positive score. A bonus
-requires an explicitly relevant characteristic matched to a circuit
-requirement rated at least 85/100. A reliability-only change, generic
-description, or unmatched upgrade receives a neutral value.
-
-The ranking is a statistical-editorial prediction and is subject to error. It
-is not a guaranteed result and may change after practice sessions, weather
-updates, penalties, FIA specifications, or new technical information.
+See the [complete calibration report](docs/revisione-database-2026-10-05/CALIBRAZIONE.md)
+and all sixteen weekend dossiers for weights, exclusions and results. No native
+app release is required for these server calculations.
 
 ## Data maintained manually
 

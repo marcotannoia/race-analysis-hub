@@ -1,5 +1,17 @@
 # Changelog
 
+## Forecast calibration — 2026-10-05 (API contract 1.16.0)
+
+- Search all 4,598,126 integer-percent combinations on sixteen completed GP;
+  store per-weekend optima, global fit, documented exclusions, progressive tests
+  and a fixed chronological holdout.
+- Preserve the optimized candidate as unpromoted after the failed holdout;
+  select the championship reference for the active forecast.
+- Retain endpoint paths and eight ordinary factor keys, with zero weight for
+  unsupported factors; preserve monotonic penalties and six-language output.
+- Store calibration and both forecast variants on Atlas; native JSON decoding
+  remains compatible without a new app binary.
+
 ## 1.16.0 — 2026-09-16
 
 ### Complete six-language contract

@@ -11,6 +11,7 @@ const Gara = require("../models/Gara");
 const AnalisiGara = require("../models/AnalisiGara");
 const AnalisiScuderia = require("../models/AnalisiScuderia");
 const MetodoPrevisionale = require("../models/MetodoPrevisionale");
+const calibrazione = require("../data/calibrazione-pesi-2026-10-05.json");
 const backtestSemantico = require("../data/backtest-semantico-2026-10-05.json");
 const datiBase = require("../data/dati-iniziali.json");
 const { creaDatiEffettivi } = require("../utils/datiEffettivi");
@@ -289,6 +290,11 @@ async function verificaDatabase() {
     console.log(`${metodoAllineato ? "OK" : "ERRORE"} metodo semantico e backtest: ${backtestSemantico.versione}`);
     if (!metodoAllineato) { process.exitCode = 1; return; }
 
+    const metodoCalibrato = await MetodoPrevisionale.findOne({ versione: calibrazione.versione }).lean();
+    const calibratoAllineato = metodoCalibrato?.stato === calibrazione.stato &&
+      uguali(metodoCalibrato.pesi, calibrazione.pesi) && uguali(metodoCalibrato.backtest, calibrazione);
+    console.log(`${calibratoAllineato ? "OK" : "ERRORE"} calibrazione 16 GP: ${calibrazione.versione}`);
+    if (!calibratoAllineato) { process.exitCode = 1; return; }
     console.log("Database verificato correttamente.");
   } catch (errore) {
     console.error("Verifica fallita:", errore.message);

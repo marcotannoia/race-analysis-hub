@@ -4,7 +4,7 @@ const {
   PESI,
   PESO_PENALITA,
   calcolaSimilaritaCircuiti,
-  creaClassificaPrevisionale,
+  creaClassificaEditoriale: creaClassificaPrevisionale,
   selezionaCircuitiSimili,
   valutaAggiornamento,
   valutaAndamentoScuderia,

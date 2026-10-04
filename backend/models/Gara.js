@@ -29,6 +29,7 @@ const garaSchema = new mongoose.Schema(
     confidenza: { type: String, required: true },
     overallSemantici: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
     previsioneSemantica: { type: mongoose.Schema.Types.Mixed, default: null },
+    previsioneCalibrata: { type: mongoose.Schema.Types.Mixed, default: null },
     traduzioni: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
     fonti: [{ type: String, trim: true }],
   },
