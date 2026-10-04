@@ -36,6 +36,7 @@ const pilotaSchema = new mongoose.Schema(
       required: true,
     },
     classifica2026: { type: classificaSchema, required: true },
+    overallSemantici: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
     traduzioni: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
   },
   {

@@ -10,9 +10,9 @@ const {
 
 test("la percentuale sul bagnato usa le prestazioni positive nelle gare con pioggia", () => {
   const hamilton = indicatoriPilota("hamilton");
-  assert.equal(hamilton.bravuraBagnatoPercentuale, 71.4);
-  assert.equal(hamilton.gareConPioggiaPositive, 35);
-  assert.equal(hamilton.gareConPioggiaDisputate, 49);
+  assert.equal(hamilton.bravuraBagnatoPercentuale, 72);
+  assert.equal(hamilton.gareConPioggiaPositive, 36);
+  assert.equal(hamilton.gareConPioggiaDisputate, 50);
   assert.equal(hamilton.erroriPilotaPercentuale, 3.8);
   assert.equal(hamilton.erroriFataliPercentuale, 1.3);
 });
@@ -21,9 +21,9 @@ test("Leclerc non viene valutato soltanto in base alle vittorie sul bagnato", ()
   const leclerc = indicatoriPilota("leclerc");
 
   assert.equal(statistiche.piloti.leclerc.vittorieConPioggia, 0);
-  assert.equal(leclerc.gareConPioggiaPositive, 12);
-  assert.equal(leclerc.gareConPioggiaDisputate, 20);
-  assert.equal(leclerc.bravuraBagnatoPercentuale, 60);
+  assert.equal(leclerc.gareConPioggiaPositive, 13);
+  assert.equal(leclerc.gareConPioggiaDisputate, 21);
+  assert.equal(leclerc.bravuraBagnatoPercentuale, 61.9);
 });
 
 test("gli errori fatali sono rapportati a tutte le gare e non agli errori", () => {
@@ -52,9 +52,9 @@ test("l'indicatore scuderia è un aggregato ponderato dei piloti attuali", () =>
   ]);
   const indicatori = presentaIndicatori(aggregato);
 
-  assert.equal(indicatori.bravuraBagnatoPercentuale, 68.1);
-  assert.equal(indicatori.gareConPioggiaPositive, 47);
-  assert.equal(indicatori.gareConPioggiaDisputate, 69);
+  assert.equal(indicatori.bravuraBagnatoPercentuale, 69);
+  assert.equal(indicatori.gareConPioggiaPositive, 49);
+  assert.equal(indicatori.gareConPioggiaDisputate, 71);
   assert.ok(indicatori.erroriFataliPercentuale <= indicatori.erroriPilotaPercentuale);
 });
 

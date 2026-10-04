@@ -10,6 +10,8 @@ const Scuderia = require("../models/Scuderia");
 const Gara = require("../models/Gara");
 const AnalisiGara = require("../models/AnalisiGara");
 const AnalisiScuderia = require("../models/AnalisiScuderia");
+const MetodoPrevisionale = require("../models/MetodoPrevisionale");
+const backtestSemantico = require("../data/backtest-semantico-2026-10-05.json");
 const datiBase = require("../data/dati-iniziali.json");
 const { creaDatiEffettivi } = require("../utils/datiEffettivi");
 const datiSorgente = creaDatiEffettivi(datiBase);
@@ -108,6 +110,7 @@ async function verificaCorrispondenzaSorgente() {
           nazionalitaIso3: documento.nazionalitaIso3,
           scuderiaSlug: documento.scuderia.slug,
           classifica2026: documento.classifica2026,
+          overallSemantici: documento.overallSemantici || {},
           traduzioni: documento.traduzioni || {},
         }
       : null;
@@ -145,6 +148,7 @@ async function verificaCorrispondenzaSorgente() {
       traduzioni: normalizzaTraduzioniAnalisi(sorgente.traduzioni),
       fonti: sorgente.fonti,
       storicoEdizioni: sorgente.storicoEdizioni || [],
+      overallSemantici: sorgente.overallSemantici || {},
     };
 
     if (!documento || !uguali(confrontaCampi(documento, atteso), atteso)) {
@@ -168,6 +172,7 @@ async function verificaCorrispondenzaSorgente() {
       traduzioni: normalizzaTraduzioniAnalisi(sorgente.traduzioni),
       fonti: sorgente.fonti,
       storicoEdizioni: sorgente.storicoEdizioni || [],
+      overallSemantici: sorgente.overallSemantici || {},
     };
 
     if (!documento || !uguali(confrontaCampi(documento, atteso), atteso)) {
@@ -277,6 +282,12 @@ async function verificaDatabase() {
       process.exitCode = 1;
       return;
     }
+
+    const metodo = await MetodoPrevisionale.findOne({ versione: backtestSemantico.versione }).lean();
+    const metodoAllineato = metodo?.stato === "sperimentale_non_promosso" &&
+      uguali(metodo.pesi, backtestSemantico.pesi) && uguali(metodo.backtest, backtestSemantico);
+    console.log(`${metodoAllineato ? "OK" : "ERRORE"} metodo semantico e backtest: ${backtestSemantico.versione}`);
+    if (!metodoAllineato) { process.exitCode = 1; return; }
 
     console.log("Database verificato correttamente.");
   } catch (errore) {

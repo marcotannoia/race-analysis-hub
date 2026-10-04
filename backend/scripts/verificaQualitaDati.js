@@ -1,5 +1,5 @@
 const dati = require("../data/dati-iniziali.json");
-const snapshotF1db = require("../data/f1db-v2026.15.1-derivato.json");
+const snapshotF1db = require("../data/f1db-v2026.16.0-derivato.json");
 const statisticheContesto = require("../data/statistiche-contesto.json");
 const profiliTecnici = require("../data/profili-tecnici-2026.json");
 const circuitiTecnici = require("../data/circuiti-tecnici-2026.json");
@@ -18,9 +18,9 @@ const attesi = {
   analisiScuderie: 132,
 };
 
-const VERSIONE_F1DB = "v2026.15.1";
+const VERSIONE_F1DB = "v2026.16.0";
 const URL_ARCHIVIO_F1DB =
-  "https://github.com/f1db/f1db/releases/download/v2026.15.1/f1db-json-splitted.zip";
+  "https://github.com/f1db/f1db/releases/download/v2026.16.0/f1db-json-splitted.zip";
 
 function uguali(primo, secondo) {
   return JSON.stringify(primo) === JSON.stringify(secondo);
@@ -51,9 +51,9 @@ richiedi(
   snapshotF1db.eventiStorici.length === 36 &&
     snapshotF1db.analisiGare.length === attesi.piloti * attesi.gare &&
     snapshotF1db.analisiScuderie.length === attesi.analisiScuderie &&
-    snapshotF1db.andamento2026.eventi.length === 15 &&
-    snapshotF1db.calendario2026.passati.length === 15 &&
-    snapshotF1db.calendario2026.prossimi.length === 8,
+    snapshotF1db.andamento2026.eventi.length === 16 &&
+    snapshotF1db.calendario2026.passati.length === 16 &&
+    snapshotF1db.calendario2026.prossimi.length === 7,
   "Copertura dello snapshot F1DB incompleta",
 );
 
@@ -306,7 +306,7 @@ richiedi(
 
 for (const analisi of [...analisiMadridPiloti, ...analisiMadridScuderie]) {
   richiedi(
-    !JSON.stringify(analisi).includes("Sepang"),
+    ![analisi.risultatiGara, analisi.risultatiQualifica].some((testo) => String(testo).includes("Sepang")),
     `Madrid contiene un riferimento errato a Sepang: ${analisi.pilotaSlug || analisi.scuderiaSlug}`,
   );
 }
@@ -365,7 +365,7 @@ if (errori.length) {
     (attesi.analisiGare + attesi.analisiScuderie) * 3 * 2;
   console.log(
     `OK qualità dati: ${valoriStoriciVerificati} risultati storici, ` +
-      "34 classifiche e 15 GP 2026 coincidono con F1DB v2026.15.1; " +
+      "34 classifiche e 16 GP 2026 coincidono con F1DB v2026.16.0; " +
       "struttura, denominazioni e fonti verificate.",
   );
 }

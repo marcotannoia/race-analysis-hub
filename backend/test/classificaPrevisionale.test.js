@@ -10,6 +10,7 @@ const {
   valutaAndamentoScuderia,
   valutaCompatibilitaVettura,
   valutaPenalita,
+  valutaPenalitaFia,
   valutaRisultatiCircuitiSimili,
 } = require("../services/classificaPrevisionale");
 
@@ -19,13 +20,14 @@ test("i pesi previsionali sommano a cento e prioritizzano il fit con il circuito
     100,
   );
   assert.deepEqual(PESI, {
-    compatibilitaVetturaCircuito: 42, risultatiCircuitiSimili: 28,
+    compatibilitaVetturaCircuito: 34, risultatiCircuitiSimili: 26,
     qualifica2026: 3, storicoPersonale: 2, aggiornamentiTecnici: 10,
     andamento2026: 5, passoGaraRecente: 8, andamentoScuderiaRecente: 2,
+    meteoEsperienzaPilota: 8, meteoScuderia: 2,
   });
   assert.equal(
     PESI.compatibilitaVetturaCircuito + PESI.risultatiCircuitiSimili,
-    70,
+    60,
   );
 });
 
@@ -104,6 +106,17 @@ test("il fondo griglia non diventa una penalità lieve quando manca il numero di
   assert.deepEqual(valutaPenalita("Penalità confermata: 3 posizioni in griglia."), { posizioni: 3, valore: 70 });
 });
 
+test("somma le penalità FIA confermate per vettura senza contare quelle altrui", () => {
+  const decisioni = [
+    { numeroVettura: 41, posizioni: 10, partenzaPitLane: false },
+    { numeroVettura: 41, posizioni: 5, partenzaPitLane: false },
+    { numeroVettura: 44, posizioni: 3, partenzaPitLane: false },
+  ];
+  assert.deepEqual(valutaPenalitaFia(decisioni, "41"), { posizioni: 15, valore: 0 });
+  assert.deepEqual(valutaPenalitaFia(decisioni, "44"), { posizioni: 3, valore: 70 });
+  assert.equal(valutaPenalitaFia(decisioni, "1"), null);
+});
+
 test("una buona affinità con la pista non nasconde una scuderia debole", () => {
   const compatibilita = valutaCompatibilitaVettura(10, 92);
 
@@ -138,12 +151,12 @@ test("gli aggiornamenti contano solo se reali e pertinenti al circuito", () => {
   );
 
   assert.equal(assente.valore, 50);
-  assert.ok(annunciato.valore > assente.valore);
-  assert.ok(confermato.valore > annunciato.valore);
-  assert.ok(inefficace.valore < assente.valore);
+  assert.equal(annunciato.valore, 50);
+  assert.equal(confermato.valore, 50);
+  assert.equal(inefficace.valore, 50);
   assert.equal(solaAffidabilita.valore, assente.valore);
   assert.match(solaAffidabilita.stato, /affidabilità/i);
-  assert.ok(ampio.valore > mirato.valore);
+  assert.equal(ampio.valore, mirato.valore);
   assert.equal(quasiCertoMaNonUfficiale.valore, assente.valore);
   assert.equal(quasiCertoMaNonUfficiale.evidenza, 0);
 });
@@ -251,9 +264,17 @@ test("crea una classifica spiegabile per il solo Gran Premio corrente", () => {
   );
   assert.equal(risultato.classifica[0].scuderia.colore, "#112233");
   assert.equal(risultato.classifica[0].fattori.length, 8);
-  assert.equal(risultato.modello, "statistico-editoriale-v3");
+  assert.equal(risultato.modello, "statistico-editoriale-v4.1");
   assert.equal("avvertenza" in risultato, false);
   assert.equal("aggiornatoIl" in risultato, false);
+  const evento1 = { round: 1, ...snapshot.andamento2026.eventi[0] };
+  const baseArgs = { gara: { slug: "gara-corrente", ordineCalendario: 2 }, piloti, scuderie,
+    analisiPiloti, analisiScuderie };
+  const prima = creaClassificaPrevisionale({ ...baseArgs, snapshot: { andamento2026: { eventi: [evento1] } } });
+  const contaminato = creaClassificaPrevisionale({ ...baseArgs, snapshot: { andamento2026: { eventi: [
+    { round: 3, piloti: { "pilota-a": { gara: 22, qualifica: 22 } } }, evento1,
+    { round: 2, piloti: { "pilota-a": { gara: 22, qualifica: 22 } } }] } } });
+  assert.deepEqual(contaminato, prima);
 });
 
 test("usa lo schieramento della gara e ignora i piloti senza analisi corrente", () => {
@@ -374,6 +395,13 @@ test("la classifica applica i pesi condizionali al pilota penalizzato", () => {
       penalita: "Penalità confermata: arretramento di almeno 10 posizioni sulla griglia.",
     }],
   }).classifica[0];
+  const conDecisioneFia = creaClassificaPrevisionale({
+    ...parametri,
+    analisiPiloti: [{ ...baseAnalisi, penalita: "Nessuna penalità confermata." }],
+    datiLiveFia: { penalitaGriglia: [
+      { numeroVettura: 1, posizioni: 10, partenzaPitLane: false },
+    ] },
+  }).classifica[0];
 
   assert.equal(conPenalita.fattori.length, 9);
   assert.equal(
@@ -383,18 +411,38 @@ test("la classifica applica i pesi condizionali al pilota penalizzato", () => {
   assert.equal(conPenalita.fattori.at(-1).pesoPercentuale, 35);
   assert.equal(conPenalita.fattori.at(-1).valutazione, 0);
   assert.equal(conPenalita.indice, Math.round((senzaPenalita.indice * 0.65) * 10) / 10);
+  assert.equal(conDecisioneFia.indice, conPenalita.indice);
+  const argsStorico = { ...parametri, analisiPiloti: [{ ...baseAnalisi,
+    posizioniStoriche: { 2025: "P20" },
+    overallSemantici: { campi: { risultatiGara: { campione: 0, overall: null } } } }] };
+  const storico = creaClassificaPrevisionale(argsStorico).classifica[0].fattori.find(f => f.chiave === "storicoPersonale");
+  assert.equal(storico.valutazione, 50);
+  for (const punti of [0, 100]) {
+    const args = { ...parametri, piloti: [{ ...pilota, classifica2026: { posizione: 22, punti, vittorie: 0 } }] };
+    const base = creaClassificaPrevisionale({ ...args, analisiPiloti: [baseAnalisi] }).classifica[0];
+    let precedente = base.indice;
+    for (const posizioni of [1, 3, 5, 10, 20]) {
+      const risultato = creaClassificaPrevisionale({ ...args, analisiPiloti: [{ ...baseAnalisi,
+        penalita: `Penalità confermata: ${posizioni} posizioni in griglia.` }] }).classifica[0];
+      assert.ok(risultato.indice <= precedente, `${posizioni}: una penalità non migliora l'indice`);
+      const atteso = Math.round(base.indice * (0.65 + 0.35 * Math.max(0, 100 - posizioni * 10) / 100) * 10) / 10;
+      assert.ok(Math.abs(risultato.indice - atteso) <= 0.1);
+      assert.ok(Math.abs(risultato.fattori.reduce((s, f) => s + f.contributo, 0) - risultato.indice) <= 0.3);
+      precedente = risultato.indice;
+    }
+  }
 });
 
 test("gli aggiornamenti generici o estranei alle richieste non danno bonus", () => {
   const testo = "La squadra ha confermato per il circuito un intervento direttamente utile nelle curve lente.";
   assert.equal(valutaAggiornamento(testo, "it", { curvaLenta: 50 }).valore, 50);
-  assert.ok(valutaAggiornamento(testo, "it", { curvaLenta: 100 }).valore > 50);
+  assert.equal(valutaAggiornamento(testo, "it", { curvaLenta: 100 }).valore, 50);
   assert.equal(valutaAggiornamento(testo).valore, 50);
   assert.equal(valutaAggiornamento("La squadra ha confermato per il circuito un ampio pacchetto.", "it", { curvaLenta: 100 }).valore, 50);
   assert.equal(valutaAggiornamento("Il nuovo fondo non migliora la trazione.", "it", { trazione: 100 }).valore, 50);
 });
 
-test("il vantaggio editoriale e la disponibilità del singolo pilota prevalgono sul testo di scuderia", () => {
+test("un punteggio editoriale non certifica il beneficio prestazionale degli aggiornamenti", () => {
   const pilota = {
     aggiornamentiInArrivo:
       "Aggiornamento confermato per il circuito e direttamente utile in frenata.",
@@ -409,16 +457,26 @@ test("il vantaggio editoriale e la disponibilità del singolo pilota prevalgono 
     "confermato",
   );
 
-  assert.equal(valutazione.valore, 72);
+  assert.equal(valutazione.valore, 50);
   assert.match(valutazione.stato, /confermato/i);
+  const indisponibile = valutaAggiornamento(pilota.aggiornamentiInArrivo, "it", { frenata: 92 }, 72, "nessunPacchetto");
+  assert.equal(indisponibile.valore, 50);
+  assert.match(indisponibile.stato, /Nessun pacchetto/i);
 });
 
 test("la forma scuderia usa le due vetture storiche e soltanto gli ultimi tre GP", () => {
   const evento = (gara) => ({ scuderie: { team: { gara } }, piloti: {} });
   const ultimi = [evento({ A: 1, B: 1 }), evento({ A: 12, B: 12 }), evento({ SOSTITUTO: null, B: null })];
-  // P1=100, P12=50, ritiri=15; pesi temporali 1,2,3.
-  assert.equal(valutaAndamentoScuderia(ultimi, "team"), 245 / 6);
-  assert.equal(valutaAndamentoScuderia([evento({ A: 22, B: 22 }), ...ultimi], "team"), 245 / 6);
-  assert.equal(valutaAndamentoScuderia([], "team"), 40);
-  assert.equal(valutaAndamentoScuderia([{}], "team"), 40);
+  // P1=100, P12=50; risultati mancanti esclusi, pesi temporali 1,2.
+  assert.equal(valutaAndamentoScuderia(ultimi, "team"), 200 / 3);
+  assert.equal(valutaAndamentoScuderia([evento({ A: 22, B: 22 }), ...ultimi], "team"), 200 / 3);
+  assert.equal(valutaAndamentoScuderia([], "team"), 50);
+  assert.equal(valutaAndamentoScuderia([{}], "team"), 50);
+});
+
+
+test("il ritiro classificato non diventa rendimento regolare della scuderia", () => {
+  const evento = { scuderie: { team: { gara: { A: 20, B: 1 }, garaRegolare: { A: false, B: true } } } };
+  assert.equal(valutaAndamentoScuderia([evento], "team"), 100);
+  assert.equal(valutaAndamentoScuderia([{ scuderie: { team: { gara: { A: null } } } }], "team"), 50);
 });

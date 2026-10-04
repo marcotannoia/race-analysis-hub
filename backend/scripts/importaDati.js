@@ -102,6 +102,7 @@ async function importaDati({ collega = true, disconnetti = true } = {}) {
       nazionalitaIso3: pilota.nazionalitaIso3,
       scuderia: scuderiaPerSlug.get(pilota.scuderiaSlug)._id,
       classifica2026: pilota.classifica2026,
+      overallSemantici: pilota.overallSemantici || {},
       traduzioni: pilota.traduzioni || {},
     }));
 
@@ -147,6 +148,7 @@ async function importaDati({ collega = true, disconnetti = true } = {}) {
         traduzioni: normalizzaTraduzioniAnalisi(analisi.traduzioni),
         fonti: analisi.fonti,
         storicoEdizioni: analisi.storicoEdizioni || [],
+        overallSemantici: analisi.overallSemantici || {},
       };
 
       return {
@@ -188,6 +190,7 @@ async function importaDati({ collega = true, disconnetti = true } = {}) {
               traduzioni: normalizzaTraduzioniAnalisi(analisi.traduzioni),
               fonti: analisi.fonti,
               storicoEdizioni: analisi.storicoEdizioni || [],
+              overallSemantici: analisi.overallSemantici || {},
             },
           },
           upsert: true,

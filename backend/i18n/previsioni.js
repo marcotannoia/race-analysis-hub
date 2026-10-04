@@ -13,6 +13,8 @@ const TESTI_PREVISIONI = Object.freeze({
       gestioneGomme: "Gestione gomme",
       affidabilitaERischi: "Affidabilità e rischi",
       penalita: "Penalità in griglia",
+      meteoEsperienzaPilota: "Esperienza del pilota sul bagnato",
+      meteoScuderia: "Storico sul bagnato della coppia piloti",
     },
     stati: {
       nessunaInformazione: "Nessuna informazione",
@@ -57,6 +59,8 @@ const TESTI_PREVISIONI = Object.freeze({
       gestioneGomme: "Tyre management",
       affidabilitaERischi: "Reliability and risks",
       penalita: "Grid penalty",
+      meteoEsperienzaPilota: "Driver experience in wet conditions",
+      meteoScuderia: "Wet-condition record of the driver pairing",
     },
     stati: {
       nessunaInformazione: "No information available",
@@ -101,6 +105,8 @@ const TESTI_PREVISIONI = Object.freeze({
       gestioneGomme: "Gestion des pneus",
       affidabilitaERischi: "Fiabilité et risques",
       penalita: "Pénalité sur la grille",
+      meteoEsperienzaPilota: "Expérience du pilote sur piste mouillée",
+      meteoScuderia: "Historique sur piste mouillée du duo de pilotes",
     },
     stati: {
       nessunaInformazione: "Aucune information disponible",
@@ -145,6 +151,8 @@ const TESTI_PREVISIONI = Object.freeze({
       gestioneGomme: "Gestão dos pneus",
       affidabilitaERischi: "Fiabilidade e riscos",
       penalita: "Penalização na grelha",
+      meteoEsperienzaPilota: "Experiência do piloto em pista molhada",
+      meteoScuderia: "Histórico em pista molhada da dupla de pilotos",
     },
     stati: {
       nessunaInformazione: "Nenhuma informação disponível",
@@ -189,6 +197,8 @@ const TESTI_PREVISIONI = Object.freeze({
       gestioneGomme: "Gestión de neumáticos",
       affidabilitaERischi: "Fiabilidad y riesgos",
       penalita: "Penalización en parrilla",
+      meteoEsperienzaPilota: "Experiencia del piloto en mojado",
+      meteoScuderia: "Historial en mojado de la pareja de pilotos",
     },
     stati: {
       nessunaInformazione: "No hay información disponible",
@@ -233,6 +243,8 @@ const TESTI_PREVISIONI = Object.freeze({
       gestioneGomme: "Reifenmanagement",
       affidabilitaERischi: "Zuverlässigkeit und Risiken",
       penalita: "Startplatzstrafe",
+      meteoEsperienzaPilota: "Erfahrung des Fahrers bei Nässe",
+      meteoScuderia: "Nassbilanz des Fahrerduos",
     },
     stati: {
       nessunaInformazione: "Keine Informationen verfügbar",

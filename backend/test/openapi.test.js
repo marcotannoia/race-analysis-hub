@@ -264,7 +264,7 @@ test("gli esempi Swagger della previsione sono matematicamente coerenti", () => 
     pesi.reduce((totale, peso) => totale + peso.pesoPercentuale, 0),
     100,
   );
-  assert.equal(fattori.length, 8);
+  assert.equal(fattori.length, 10);
   assert.equal(
     fattori.reduce((totale, fattore) => totale + fattore.contributo, 0),
     posizione.indice.example,

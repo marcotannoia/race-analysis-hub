@@ -1,0 +1,14 @@
+{
+  "versione": "v2026.16.0",
+  "releaseUrl": "https://github.com/f1db/f1db/releases/tag/v2026.16.0",
+  "archivioSha256": "5bfcde5546bd16ec58a86a87c5d1e4c4150c2ec680480ea5cc487cb6223ea45f",
+  "hashFile": {
+    "races": "aa83168621423290783ee46f8be8245aff4ead3f64b40d4673837e446053d92f",
+    "races-race-results": "cd92092856cf752aec7bf944e19469574b850787a3101e10603a317884f1935f",
+    "races-qualifying-results": "4e20eadf64f0bc7a2527009db48a266abf033a3acdc77564d8d36133a9632890",
+    "races-driver-standings": "cd2aa96297c918ab8ada8d3fc3aa76c9e930bb9471400d6db6e036ca95b3cfeb",
+    "races-constructor-standings": "1f07fd95b9dc2ad3391a2b7292473871832a8010d5dce7a16f62790e859ffa9a",
+    "drivers": "f760b5c8e2ac38bab754e19bdc5dedc907df04d88f96a3e8896a48ee16bbd0f6",
+    "constructors": "9650dc28012ff943b23ed2a0a81fe340cf6545bccd3db42783f757a43b94201a"
+  }
+}

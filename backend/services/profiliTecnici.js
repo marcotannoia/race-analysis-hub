@@ -28,6 +28,9 @@ function creaProfiloScuderia(scuderiaSlug, lingua = "it") {
 }
 
 function calcolaIndice(capacita, richieste) {
+  if (!circuiti.dimensioni.every((dimensione) =>
+    Number.isFinite(capacita?.[dimensione]) && capacita[dimensione] >= 0 && capacita[dimensione] <= 100 &&
+    Number.isFinite(richieste?.[dimensione]) && richieste[dimensione] >= 0 && richieste[dimensione] <= 100)) return null;
   const totalePesi = circuiti.dimensioni.reduce(
     (totale, dimensione) => totale + richieste[dimensione],
     0,
@@ -38,7 +41,7 @@ function calcolaIndice(capacita, richieste) {
     0,
   );
 
-  return Math.round(totalePonderato / totalePesi);
+  return totalePesi > 0 ? Math.round(totalePonderato / totalePesi) : null;
 }
 
 function creaCompatibilita(scuderia, profilo, richieste) {
@@ -74,7 +77,7 @@ function creaProfiloCircuito(garaSlug, scuderie, datiLiveFia = null, lingua = "i
         ? creaCompatibilita(scuderia, profilo, circuito.richieste)
         : null;
     })
-    .filter(Boolean)
+    .filter((voce) => voce && Number.isFinite(voce.indice))
     .sort((prima, seconda) => seconda.indice - prima.indice);
 
   const documentoCircuito = datiLiveFia?.circuito?.documentoUrl

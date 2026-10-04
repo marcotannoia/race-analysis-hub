@@ -1,18 +1,28 @@
-const snapshotF1db = require("../data/f1db-v2026.15.1-derivato.json");
+const snapshotF1db = require("../data/f1db-v2026.16.0-derivato.json");
 const { testiPrevisione } = require("../i18n/previsioni");
 const { valoreLocalizzato } = require("../i18n/lingue");
 const { creaProfiloCircuito } = require("./profiliTecnici");
 const circuitiTecnici = require("../data/circuiti-tecnici-2026.json");
+const statisticheContesto = require("../data/statistiche-contesto.json");
 
 const PESI = Object.freeze({
-  compatibilitaVetturaCircuito: 42,
-  risultatiCircuitiSimili: 28,
+  compatibilitaVetturaCircuito: 34,
+  risultatiCircuitiSimili: 26,
   qualifica2026: 3,
   storicoPersonale: 2,
   aggiornamentiTecnici: 10,
   andamento2026: 5,
   passoGaraRecente: 8,
   andamentoScuderiaRecente: 2,
+  meteoEsperienzaPilota: 8,
+  meteoScuderia: 2,
+});
+const PESI_SENZA_METEO = Object.freeze({
+  ...PESI,
+  compatibilitaVetturaCircuito: 42,
+  risultatiCircuitiSimili: 28,
+  meteoEsperienzaPilota: 0,
+  meteoScuderia: 0,
 });
 
 const PESO_PENALITA = 35;
@@ -27,7 +37,25 @@ const NOMI_FATTORI = Object.freeze({
   storicoPersonale: "Storico personale",
   passoGaraRecente: "Andamento pilota negli ultimi 3 GP",
   penalita: "Penalità in griglia",
+  meteoEsperienzaPilota: "Esperienza del pilota sul bagnato",
+  meteoScuderia: "Storico sul bagnato della coppia piloti",
 });
+
+function valutaEsperienzaBagnato(valori) {
+  if (!valori) return 50;
+  const gare = valori.gareConPioggiaDisputate || 0;
+  const positive = valori.gareConPioggiaPositive || 0;
+  return limita(((positive + 3) / (gare + 6)) * 100);
+}
+
+function combinaEsperienzaBagnato(voci) {
+  const note = voci.filter(Boolean);
+  if (!note.length || note.length !== voci.length) return 50;
+  return valutaEsperienzaBagnato({
+    gareConPioggiaDisputate: note.reduce((n, v) => n + v.gareConPioggiaDisputate, 0),
+    gareConPioggiaPositive: note.reduce((n, v) => n + v.gareConPioggiaPositive, 0),
+  });
+}
 
 const GARA_SLUG_PER_GRAND_PRIX_ID = Object.freeze({
   netherlands: "olanda-zandvoort",
@@ -66,13 +94,13 @@ function normalizzaTesto(valore) {
 }
 
 function punteggioPosizione(posizione, totale = 22) {
-  if (!Number.isFinite(posizione) || posizione < 1) return 20;
+  if (!Number.isFinite(posizione) || posizione < 1) return 50;
   return limita(((totale + 1 - posizione) / totale) * 100);
 }
 
 function mediaPesata(valori) {
-  const validi = valori.filter(({ valore }) => Number.isFinite(valore));
-  if (!validi.length) return 40;
+  const validi = valori.filter(({ valore, peso }) => Number.isFinite(valore) && Number.isFinite(peso) && peso > 0);
+  if (!validi.length) return 50;
 
   const pesoTotale = validi.reduce((totale, elemento) => totale + elemento.peso, 0);
   return validi.reduce(
@@ -82,7 +110,7 @@ function mediaPesata(valori) {
 }
 
 function valutaClassifica(classifica, massimoPunti, massimoVittorie, totale) {
-  if (!classifica) return 40;
+  if (!classifica) return 50;
 
   const punti = massimoPunti > 0 ? (classifica.punti / massimoPunti) * 100 : 0;
   const posizione = punteggioPosizione(classifica.posizione, totale);
@@ -93,14 +121,17 @@ function valutaClassifica(classifica, massimoPunti, massimoVittorie, totale) {
 }
 
 function risultatiPilota(eventi, pilotaSlug, tipo) {
-  return eventi.map((evento) => evento.piloti[pilotaSlug]?.[tipo] ?? null);
+  return eventi.map((evento) => {
+    const r = evento.piloti?.[pilotaSlug];
+    return tipo === "gara" && r?.garaRegolare === false ? null : r?.[tipo] ?? null;
+  });
 }
 
 function valutaRisultatiRecenti(risultati, quanti) {
   const recenti = risultati.slice(-quanti);
   return mediaPesata(
     recenti.map((posizione, indice) => ({
-      valore: posizione === null ? 15 : punteggioPosizione(posizione),
+      valore: Number.isFinite(posizione) ? punteggioPosizione(posizione) : null,
       peso: indice + 1,
     })),
   );
@@ -108,11 +139,13 @@ function valutaRisultatiRecenti(risultati, quanti) {
 
 function valutaAndamentoScuderia(eventi, slug) {
   return mediaPesata(eventi.slice(-3).map((evento, indice) => {
-    const posizioni = Object.values(evento.scuderie?.[slug]?.gara || {});
+    const team = evento.scuderie?.[slug];
+    const posizioni = Object.entries(team?.gara || {}).filter(([codice]) =>
+      team?.garaRegolare?.[codice] !== false).map(([, posizione]) => posizione).filter(Number.isFinite);
     return {
       valore: posizioni.length ? mediaPesata(posizioni.map((posizione) => ({
-        valore: posizione === null ? 15 : punteggioPosizione(posizione), peso: 1,
-      }))) : 40,
+        valore: Number.isFinite(posizione) ? punteggioPosizione(posizione) : null, peso: 1,
+      }))) : null,
       peso: indice + 1,
     };
   }));
@@ -190,7 +223,7 @@ function valutaPrestazioneEvento(posizioneGara, posizioneQualifica) {
     ? punteggioPosizione(posizioneQualifica)
     : null;
 
-  if (gara === null) return qualifica ?? 15;
+  if (gara === null) return qualifica;
   if (qualifica === null) return gara;
   return gara * 0.7 + qualifica * 0.3;
 }
@@ -212,10 +245,11 @@ function valutaRisultatiCircuitiSimili(
     const prestazioniScuderia = [...codiciScuderia]
       .map((codice) =>
         valutaPrestazioneEvento(
-          risultatoScuderia?.gara?.[codice],
+          risultatoScuderia?.garaRegolare?.[codice] === false ? null : risultatoScuderia?.gara?.[codice],
           risultatoScuderia?.qualifica?.[codice],
         ),
       )
+      .filter(Number.isFinite)
       .sort((prima, seconda) => seconda - prima);
     const valoreScuderia = prestazioniScuderia.length
       ? prestazioniScuderia.length === 1
@@ -224,7 +258,7 @@ function valutaRisultatiCircuitiSimili(
       : null;
     const valorePilota = haPartecipato
       ? valutaPrestazioneEvento(
-          risultatoPilota?.gara,
+          risultatoPilota?.garaRegolare === false ? null : risultatoPilota?.gara,
           risultatoPilota?.qualifica,
         )
       : null;
@@ -278,6 +312,9 @@ function estraiPosizioni(valori) {
 }
 
 function valutaStorico(analisi) {
+  const verificato = analisi?.overallSemantici?.campi?.risultatiGara;
+  if (verificato) return { campione: verificato.campione,
+    valore: Number.isFinite(verificato.overall) ? verificato.overall : 50 };
   const posizioni = estraiPosizioni(analisi?.posizioniStoriche);
 
   return {
@@ -289,7 +326,7 @@ function valutaStorico(analisi) {
             peso: indice + 1,
           })),
         )
-      : 40,
+      : 50,
   };
 }
 
@@ -328,6 +365,19 @@ function valutaPenalita(testoOriginale) {
   return {
     posizioni,
     valore: fondoGriglia ? 0 : posizioni === null ? 25 : limita(100 - posizioni * 10),
+  };
+}
+
+function valutaPenalitaFia(decisioni, numeroVettura) {
+  const pertinenti = (decisioni || []).filter((voce) =>
+    Number(voce.numeroVettura) === Number(numeroVettura),
+  );
+  if (!pertinenti.length) return null;
+  const posizioni = pertinenti.reduce((totale, voce) => totale + (voce.posizioni || 0), 0);
+  const partenzaPitLane = pertinenti.some((voce) => voce.partenzaPitLane);
+  return {
+    posizioni: posizioni || null,
+    valore: partenzaPitLane ? 0 : limita(100 - posizioni * 10),
   };
 }
 
@@ -416,88 +466,16 @@ function valutaAggiornamentoTesto(testoOriginale, lingua = "it", richieste = {})
     stato = testi.stati.annunciato;
   }
 
-  let pertinenza = 0.45;
-  if (
-    /direttamente (?:util|pertinent)|particolarmente util|specific[oa].*(?:circuito|gran premio)/.test(
-      testo,
-    )
-  ) {
-    pertinenza = 0.9;
-  } else if (/puo essere utile|sarebber[oa].*util|sarebbe utile|utile perche/.test(testo)) {
-    pertinenza = 0.65;
-  }
-
-  let ampiezza = 0.8;
-  if (
-    /ampio pacchetto|pacchetto esteso|pacchetto (?:di|su) (?:cinque|otto)|(?:cinque|otto) (?:aree|interventi)/.test(
-      testo,
-    )
-  ) {
-    ampiezza = 1;
-  } else if (
-    /intervento mirato|aggiornamento circoscritto|modifica circoscritta|un solo componente/.test(
-      testo,
-    )
-  ) {
-    ampiezza = 0.6;
-  }
-
-  const valore = limita(
-    50 + 50 * evidenza * pertinenza * ampiezza,
-    35,
-    90,
-  );
-  return {
-    valore,
-    evidenza,
-    stato,
-    nota:
-      evidenza >= 0.6
-        ? testi.note.evidenzaAlta
-        : testi.note.evidenzaBassa,
-  };
+  return { valore: 50, evidenza, stato, nota: testi.note.nessunVantaggio };
 }
 
-function valutaAggiornamento(
-  testoOriginale,
-  lingua = "it",
-  richieste = {},
-  vantaggioEditoriale = null,
-  statoEditoriale = "",
-) {
-  const valutazione = valutaAggiornamentoTesto(
-    testoOriginale,
-    lingua,
-    richieste,
-  );
-
+function valutaAggiornamento(testoOriginale, lingua = "it", richieste = {}, _vantaggioEditoriale = null, statoEditoriale = "") {
+  const valutazione = valutaAggiornamentoTesto(testoOriginale, lingua, richieste);
   const testi = testiPrevisione(lingua);
-  const statiEditoriali = {
-    confermato: {
-      stato: testi.stati.confermato,
-      nota: testi.note.evidenzaAlta,
-    },
-    giaIntrodotto: {
-      stato: testi.stati.giaIntrodotto,
-      nota: testi.note.evidenzaAlta,
-    },
-    nessunPacchetto: {
-      stato: testi.stati.nessunPacchetto,
-      nota: testi.note.nessunPacchetto,
-    },
-    pocoPertinente: {
-      stato: testi.stati.pocoPertinente,
-      nota: testi.note.pocoPertinente,
-    },
-  };
-
-  return {
-    ...valutazione,
-    ...(statiEditoriali[statoEditoriale] || {}),
-    valore: Number.isFinite(vantaggioEditoriale)
-      ? limita(vantaggioEditoriale)
-      : valutazione.valore,
-  };
+  // La disponibilità per vettura può prevalere sul testo generale della squadra.
+  // Il voto editoriale non misura il beneficio: resta neutro anche se installato.
+  const stato = Object.hasOwn(testi.stati, statoEditoriale) ? testi.stati[statoEditoriale] : valutazione.stato;
+  return { ...valutazione, stato, valore: 50, nota: testi.note.nessunVantaggio };
 }
 
 function livelloConfidenza(gara, storico, etichettaPilota) {
@@ -517,17 +495,17 @@ function creaSintesi(fattori, testi) {
   return testi.sintesi(migliori[0], migliori[1]);
 }
 
-function creaFattori(valutazioni, testi, penalita) {
+function creaFattori(valutazioni, testi, penalita, pesi, indiceBase = 0) {
   const moltiplicatore = penalita ? (100 - PESO_PENALITA) / 100 : 1;
-  const fattori = Object.entries(PESI).map(([chiave, pesoPercentuale]) => {
-    const valutazione = arrotonda(limita(valutazioni[chiave]));
+  const fattori = Object.entries(pesi).filter(([, peso]) => peso > 0).map(([chiave, pesoPercentuale]) => {
+    const valutazione = arrotonda(limita(valutazioni[chiave]), 2);
     const pesoEffettivo = arrotonda(pesoPercentuale * moltiplicatore, 2);
     return {
       chiave,
       nome: testi.fattori[chiave],
       pesoPercentuale: pesoEffettivo,
       valutazione,
-      contributo: arrotonda((valutazione * pesoEffettivo) / 100),
+      contributo: arrotonda((valutazione * pesoEffettivo) / 100, 3),
     };
   });
 
@@ -536,8 +514,8 @@ function creaFattori(valutazioni, testi, penalita) {
       chiave: "penalita",
       nome: testi.fattori.penalita,
       pesoPercentuale: PESO_PENALITA,
-      valutazione: penalita.valore,
-      contributo: arrotonda((penalita.valore * PESO_PENALITA) / 100),
+      valutazione: arrotonda(indiceBase * penalita.valore / 100, 2),
+      contributo: arrotonda(indiceBase * penalita.valore * PESO_PENALITA / 10000, 3),
     });
   }
 
@@ -552,6 +530,8 @@ function creaClassificaPrevisionale({
   analisiScuderie,
   snapshot = snapshotF1db,
   lingua = "it",
+  meteo = null,
+  datiLiveFia = null,
 }) {
   const testi = testiPrevisione(lingua);
   const profiloCircuito = creaProfiloCircuito(gara.slug, scuderie);
@@ -563,7 +543,10 @@ function creaClassificaPrevisionale({
       ({ scuderia, indice }) => [scuderia.slug, indice],
     ),
   );
-  const eventi = snapshot.andamento2026?.eventi || [];
+  // Il servizio è usato anche nelle ricostruzioni: escludi il GP target e i successivi.
+  const eventi = (snapshot.andamento2026?.eventi || []).filter((evento) =>
+    !Number.isFinite(gara.ordineCalendario) || evento.round < gara.ordineCalendario)
+    .slice().sort((a, b) => (a.round || 0) - (b.round || 0));
   const circuitiSimili = selezionaCircuitiSimili(gara.slug, eventi);
   const analisiPilotaPerSlug = new Map(
     analisiPiloti.map((analisi) => [analisi.pilota.slug, analisi]),
@@ -574,6 +557,14 @@ function creaClassificaPrevisionale({
   const pilotiPartecipanti = piloti.filter((pilota) =>
     analisiPilotaPerSlug.has(pilota.slug),
   );
+  const pesi = meteo ? PESI : PESI_SENZA_METEO;
+  const probabilitaPioggia = meteo?.probabilitaPioggiaPercentuale || 0;
+  const pilotiPerScuderia = new Map();
+  for (const analisi of analisiPiloti) {
+    const slug = analisi.scuderia?.slug || analisi.pilota.scuderia?.slug;
+    if (!pilotiPerScuderia.has(slug)) pilotiPerScuderia.set(slug, []);
+    pilotiPerScuderia.get(slug).push(statisticheContesto.piloti[analisi.pilota.slug]);
+  }
   const scuderiaPerSlug = new Map(scuderie.map((scuderia) => [scuderia.slug, scuderia]));
   const massimoPuntiPiloti = Math.max(
     ...pilotiPartecipanti.map((pilota) => pilota.classifica2026.punti),
@@ -600,7 +591,11 @@ function creaClassificaPrevisionale({
     const gare2026 = risultatiPilota(eventi, pilota.slug, "gara");
     const qualifiche2026 = risultatiPilota(eventi, pilota.slug, "qualifica");
     const storico = valutaStorico(analisiPilota);
-    const penalita = valutaPenalita(analisiPilota?.penalita);
+    const penalitaEditoriale = valutaPenalita(analisiPilota?.penalita);
+    const penalitaUfficiale = valutaPenalitaFia(datiLiveFia?.penalitaGriglia, pilota.numero);
+    const penalita = penalitaUfficiale &&
+      (!penalitaEditoriale || penalitaUfficiale.valore <= penalitaEditoriale.valore)
+      ? penalitaUfficiale : penalitaEditoriale;
     const aggiornamento = valutaAggiornamento(
       analisiPilota?.aggiornamentiInArrivo ||
         analisiScuderia?.aggiornamentiInArrivo,
@@ -641,15 +636,18 @@ function creaClassificaPrevisionale({
       andamentoScuderiaRecente: valutaAndamentoScuderia(eventi, scuderiaSlug),
       storicoPersonale: storico.valore,
       passoGaraRecente: valutaRisultatiRecenti(gare2026, 3),
+      meteoEsperienzaPilota: 50 +
+        (valutaEsperienzaBagnato(statisticheContesto.piloti[pilota.slug]) - 50) *
+        probabilitaPioggia / 100,
+      meteoScuderia: 50 +
+        (combinaEsperienzaBagnato(pilotiPerScuderia.get(scuderiaSlug) || []) - 50) *
+        probabilitaPioggia / 100,
     };
-    const fattoriBase = creaFattori(valutazioni, testi, null);
+    const fattoriBase = creaFattori(valutazioni, testi, null, pesi);
+    const indiceBase = fattoriBase.reduce((totale, fattore) => totale + fattore.contributo, 0);
     const fattori = penalita
-      ? creaFattori(valutazioni, testi, penalita)
+      ? creaFattori(valutazioni, testi, penalita, pesi, indiceBase)
       : fattoriBase;
-    const indiceBase = fattoriBase.reduce(
-      (totale, fattore) => totale + fattore.contributo,
-      0,
-    );
     const confidenzaCodice = livelloConfidenza(
       gara,
       storico,
@@ -657,11 +655,11 @@ function creaClassificaPrevisionale({
     );
 
     return {
-      indice: arrotonda(
+      indice: (
         penalita
           ? indiceBase * ((100 - PESO_PENALITA) / 100) +
-              penalita.valore * (PESO_PENALITA / 100)
-          : indiceBase,
+              indiceBase * penalita.valore / 100 * (PESO_PENALITA / 100)
+          : indiceBase
       ),
       pilota: {
         slug: pilota.slug,
@@ -703,7 +701,8 @@ function creaClassificaPrevisionale({
       nome: valoreLocalizzato(gara, "nome", lingua),
       circuito: valoreLocalizzato(gara, "circuito", lingua),
     },
-    modello: "statistico-editoriale-v3",
+    modello: "statistico-editoriale-v4.1",
+    meteo,
     circuitiSimili: circuitiSimili.map(
       ({ slug, nome, round, similaritaPercentuale }) => ({
         slug,
@@ -712,7 +711,7 @@ function creaClassificaPrevisionale({
         similaritaPercentuale,
       }),
     ),
-    pesi: Object.entries(PESI).map(([chiave, pesoPercentuale]) => ({
+    pesi: Object.entries(pesi).filter(([, peso]) => peso > 0).map(([chiave, pesoPercentuale]) => ({
       chiave,
       nome: testi.fattori[chiave],
       pesoPercentuale,
@@ -720,6 +719,7 @@ function creaClassificaPrevisionale({
     classifica: classifica.map((elemento, indice) => ({
       posizione: indice + 1,
       ...elemento,
+      indice: arrotonda(elemento.indice),
     })),
   };
 }
@@ -735,5 +735,6 @@ module.exports = {
   valutaAndamentoScuderia,
   valutaCompatibilitaVettura,
   valutaPenalita,
+  valutaPenalitaFia,
   valutaRisultatiCircuitiSimili,
 };

@@ -5,4 +5,5 @@ module.exports = cachePubblica({
   secondiBrowser: 60,
   secondiCondivisi: ambiente.durataCacheApi,
   massimoVoci: ambiente.massimoVociCacheApi,
+  percorsiDinamici: ["/home", "/previsioni/piloti"],
 });

@@ -56,11 +56,11 @@
     "bahrein-sepang": {
       "fp1At": "2026-10-02T04:30:00.000Z",
       "eventoFia": "Bahrain Grand Prix in Malaysia",
-      "dati": { "lunghezzaKm": 5.543, "giri": 56, "distanzaKm": 310.408, "curve": 15, "direzione": "orario", "tipologia": "permanente", "livelloCarico": "medio-alto", "stressFreni": "medio", "stressGomme": "alto" },
+      "dati": { "lunghezzaKm": 5.543, "giri": 56, "distanzaKm": 310.398, "curve": 15, "direzione": "orario", "tipologia": "permanente", "livelloCarico": "medio-alto", "stressFreni": "medio", "stressGomme": "medio" },
       "caratteristiche": ["Caldo e umidità elevati", "Due lunghi rettilinei separati da un tornante", "Mix di curve lente, medie e veloci"],
       "puntiSorpassoPrincipali": 3,
       "richieste": { "efficienzaAerodinamica": 92, "potenzaDeployment": 90, "curvaLenta": 78, "curvaMedia": 92, "curvaVeloce": 94, "trazione": 84, "frenata": 78, "cordoli": 72, "gestioneGomme": 98, "stabilitaAssetto": 92 },
-      "fonti": ["https://www.sepangcircuit.com/architecture", "https://corp.formula1.com/formula-1-and-fia-confirm-that-malaysia-will-join-the-2026-calendar-as-host-venue-for-the-bahrain-grand-prix/"]
+      "fonti": ["https://www.formula1.com/en/racing/2026/bahrain", "https://press.pirelli.com/tyre-compound-selections-for-baku-sepang-and-singapore/", "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_power_unit_information.pdf", "https://www.sepangcircuit.com/architecture", "https://corp.formula1.com/formula-1-and-fia-confirm-that-malaysia-will-join-the-2026-calendar-as-host-venue-for-the-bahrain-grand-prix/"]
     },
     "singapore-marina-bay": {
       "fp1At": "2026-10-09T08:30:00.000Z",

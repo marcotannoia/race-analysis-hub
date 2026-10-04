@@ -67,3 +67,13 @@ test('il controllo traduzioni rileva caratteristiche assenti o rimaste in italia
   catalogo.en.circuiti['italia-monza'][0] = 'Massima velocità e minimo drag';
   assert.equal(verificaProfiliTecnici(catalogo).length, 2);
 });
+
+
+test("un profilo incompleto o senza pesi non genera NaN o un indice inventato", () => {
+  const { calcolaIndice } = require("../services/profiliTecnici");
+  const { dimensioni } = require("../data/circuiti-tecnici-2026.json");
+  const capacita = Object.fromEntries(dimensioni.map((d) => [d, 50]));
+  assert.equal(calcolaIndice({}, capacita), null);
+  assert.equal(calcolaIndice(capacita, Object.fromEntries(dimensioni.map((d) => [d, 0]))), null);
+  assert.equal(calcolaIndice(capacita, capacita), 50);
+});

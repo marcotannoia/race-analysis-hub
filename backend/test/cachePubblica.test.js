@@ -116,3 +116,33 @@ test("la cache non conserva risposte di errore", async () => {
     assert.equal(elaborazioni, 2);
   });
 });
+
+test("le previsioni usano una cache breve e rileggono i dati aggiornati", async () => {
+  const app = express();
+  let versione = 1;
+  app.use("/api/v1", cachePubblica({
+    secondiBrowser: 60,
+    secondiCondivisi: 300,
+    percorsiDinamici: ["/previsioni/piloti"],
+    secondiBrowserDinamici: 0,
+    secondiCondivisiDinamici: 0.05,
+  }));
+  app.get("/api/v1/previsioni/piloti", (_richiesta, risposta) => risposta.json({ versione }));
+
+  await conServer(app, async (baseUrl) => {
+    const url = `${baseUrl}/api/v1/previsioni/piloti`;
+    const prima = await fetch(url);
+    assert.match(prima.headers.get("cache-control"), /max-age=0, s-maxage=0\.05/);
+    assert.deepEqual(await prima.json(), { versione: 1 });
+
+    versione = 2;
+    const inCache = await fetch(url);
+    assert.equal(inCache.headers.get("x-app-cache"), "HIT");
+    assert.deepEqual(await inCache.json(), { versione: 1 });
+
+    await new Promise((risolvi) => setTimeout(risolvi, 70));
+    const aggiornata = await fetch(url);
+    assert.equal(aggiornata.headers.get("x-app-cache"), "MISS");
+    assert.deepEqual(await aggiornata.json(), { versione: 2 });
+  });
+});

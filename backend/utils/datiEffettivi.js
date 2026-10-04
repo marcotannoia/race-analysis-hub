@@ -15,6 +15,12 @@ function creaEdizione(stagione, risultato) {
     stagione,
     posizioneGara: campoTestuale(risultato.posizioneGara),
     posizioneQualifica: campoTestuale(risultato.posizioneQualifica),
+    statoGara: campoTestuale(risultato.statoGara),
+    causaRitiro: risultato.causaRitiro || null,
+    griglia: risultato.griglia || null,
+    giri: risultato.giri ?? null,
+    faseQualificaRaggiunta: campoTestuale(risultato.faseQualificaRaggiunta),
+    traduzioni: risultato.traduzioni || {},
     notaRisultato: campoTestuale(risultato.notaRisultato),
     passoGara: campoTestuale(risultato.passoGara),
     gomme: campoTestuale(risultato.gestioneGomme),
@@ -96,6 +102,16 @@ function creaRisultatoScuderia(
     affidabilita:
       campoTestuale(dettaglio?.affidabilita) ||
       combinaTestiPiloti(pilotiScuderia, risultatiPerSlug, "affidabilita"),
+    traduzioni: Object.fromEntries(["it", "en", "fr", "pt", "es", "de"].map((lingua) => [
+      lingua,
+      Object.fromEntries(["notaRisultato", "passoGara", "gomme", "affidabilita"].map((campo) => [
+        campo,
+        pilotiScuderia.map((pilota) => {
+          const tradotto = risultatiPerSlug.get(pilota.slug)?.traduzioni?.[lingua]?.[campo];
+          return tradotto ? `${pilota.codice}: ${tradotto}` : "";
+        }).filter(Boolean).join(" "),
+      ])),
+    ])),
   };
 }
 

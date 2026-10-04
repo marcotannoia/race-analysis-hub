@@ -25,14 +25,16 @@ const parametroSlugConfronto = (nome, descrizione, esempio) => ({
 });
 
 const esempioPesiPrevisionali = [
-  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 42],
-  ["risultatiCircuitiSimili", "Risultati su circuiti simili", 28],
+  ["compatibilitaVetturaCircuito", "Compatibilità vettura-circuito", 34],
+  ["risultatiCircuitiSimili", "Risultati su circuiti simili", 26],
   ["qualifica2026", "Qualifica 2026", 3],
   ["storicoPersonale", "Storico personale", 2],
   ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 10],
   ["andamento2026", "Andamento 2026", 5],
   ["passoGaraRecente", "Andamento pilota negli ultimi 3 GP", 8],
   ["andamentoScuderiaRecente", "Andamento scuderia negli ultimi 3 GP", 2],
+  ["meteoEsperienzaPilota", "Esperienza del pilota sul bagnato", 8],
+  ["meteoScuderia", "Storico sul bagnato della coppia piloti", 2],
 ].map(([chiave, nome, pesoPercentuale]) => ({
   chiave,
   nome,
@@ -288,7 +290,10 @@ const documentoOpenApi = {
         tags: ["Previsioni"],
         summary: "Classifica previsionale dei piloti",
         description:
-          "Calcola la previsione spiegabile esclusivamente per il Gran Premio attuale.",
+          "Calcola la previsione spiegabile esclusivamente per il Gran Premio attuale. " +
+          "Rilegge le analisi correnti, la previsione meteo e le penalità di griglia " +
+          "esplicite nei documenti ufficiali FIA acquisiti dal monitor; le risposte " +
+          "sono conservate brevemente in cache.",
         parameters: [parametroLingua],
         responses: {
           200: rispostaJson(
@@ -1955,9 +1960,9 @@ const documentoOpenApi = {
           fattori: {
             type: "array",
             minItems: 8,
-            maxItems: 9,
+            maxItems: 11,
             description:
-              "Otto fattori ordinari; compatibilità tecnica e risultati sui circuiti simili pesano insieme il 70%. Una penalità confermata può incidere fino al 35% e gli altri pesi vengono riproporzionati sul restante 65%.",
+              "Otto fattori senza previsione meteo, dieci quando disponibile. L'esperienza del pilota sul bagnato pesa quattro volte il contesto della coppia piloti. Una penalità di griglia confermata, anche acquisita da una decisione FIA, riduce l'indice base fino al 35%, senza mai aumentarlo. Gli aggiornamenti tecnici restano neutri finché manca una misura calibrata del beneficio.",
             items: { $ref: "#/components/schemas/FattorePrevisionale" },
             example: esempioFattoriPrevisionali,
           },
@@ -1972,6 +1977,7 @@ const documentoOpenApi = {
           "lingua",
           "gara",
           "modello",
+          "meteo",
           "circuitiSimili",
           "pesi",
           "classifica",
@@ -1989,7 +1995,25 @@ const documentoOpenApi = {
           },
           modello: {
             type: "string",
-            const: "statistico-editoriale-v3",
+            const: "statistico-editoriale-v4.1",
+          },
+          meteo: {
+            oneOf: [
+              { type: "null" },
+              {
+                type: "object",
+                required: ["probabilitaPioggiaPercentuale", "intervalloInizio", "intervalloFine", "rilevatoIl", "fonte", "fonteUrl"],
+                properties: {
+                  probabilitaPioggiaPercentuale: { type: "number", minimum: 0, maximum: 100, description: "Massimo delle probabilità orarie nella fascia gara; non probabilità congiunta di pioggia nell’intero evento." },
+                  metodo: { type: "string", const: "massimo_probabilita_oraria" },
+                  intervalloInizio: { type: "string", format: "date-time" },
+                  intervalloFine: { type: "string", format: "date-time" },
+                  rilevatoIl: { type: "string", format: "date-time" },
+                  fonte: { type: "string", example: "Open-Meteo" },
+                  fonteUrl: { type: "string", format: "uri" },
+                },
+              },
+            ],
           },
           circuitiSimili: {
             type: "array",
@@ -2001,7 +2025,7 @@ const documentoOpenApi = {
           pesi: {
             type: "array",
             minItems: 8,
-            maxItems: 8,
+            maxItems: 10,
             items: { $ref: "#/components/schemas/PesoPrevisionale" },
             example: esempioPesiPrevisionali,
           },

@@ -1,0 +1,478 @@
+{
+  "generatoAlleUTC": "2026-10-04T22:41:31.876Z",
+  "database": "f1_stats",
+  "modalita": "applicazione",
+  "backup": "/tmp/f1-stats-db-review-2026-10-04/atlas-prima-1791153691647.json",
+  "documenti": 52,
+  "perCollezione": {
+    "Scuderia": 2,
+    "Pilota": 2,
+    "AnalisiGara": 24,
+    "AnalisiScuderia": 24
+  },
+  "modifiche": [
+    {
+      "modello": "Scuderia",
+      "chiave": "mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "Scuderia",
+      "chiave": "red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "Pilota",
+      "chiave": "russell",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "Pilota",
+      "chiave": "max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|russell",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|max_verstappen",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|mercedes",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|red_bull",
+      "campi": [
+        "affidabilita",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    }
+  ],
+  "nuovoMetodo": "risultati-semantici-v1",
+  "stato": "applicato_e_verificato",
+  "differenzeDopo": []
+}

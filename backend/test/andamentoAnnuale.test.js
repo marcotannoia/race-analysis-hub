@@ -95,3 +95,12 @@ test("non usa lo snapshot per una stagione diversa", () => {
   assert.deepEqual(andamento.gara, []);
   assert.equal(andamento.fonte, null);
 });
+
+
+test("le etichette e le serie vengono ordinate insieme per round", () => {
+  const snapshot = require("../data/f1db-v2026.16.0-derivato.json");
+  const invertito = { ...snapshot, andamento2026: { ...snapshot.andamento2026,
+    eventi: [...snapshot.andamento2026.eventi].reverse() } };
+  assert.deepEqual(creaAndamentoAnnuale({ stagione: 2026, pilotaSlug: "russell", snapshot: invertito }),
+    creaAndamentoAnnuale({ stagione: 2026, pilotaSlug: "russell", snapshot }));
+});

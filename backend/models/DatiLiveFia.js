@@ -21,6 +21,17 @@ const aggiornamentoScuderiaSchema = new mongoose.Schema(
   { _id: false },
 );
 
+const penalitaGrigliaSchema = new mongoose.Schema(
+  {
+    numeroVettura: { type: Number, required: true, min: 1, max: 99 },
+    posizioni: { type: Number, default: null, min: 1, max: 99 },
+    partenzaPitLane: { type: Boolean, required: true },
+    documentoUrl: { type: String, required: true, trim: true },
+    sha256: { type: String, required: true, match: /^[a-f0-9]{64}$/ },
+  },
+  { _id: false },
+);
+
 const datiLiveFiaSchema = new mongoose.Schema(
   {
     garaSlug: { type: String, required: true, unique: true, trim: true },
@@ -52,6 +63,9 @@ const datiLiveFiaSchema = new mongoose.Schema(
       ),
       default: null,
     },
+    decisioniEsaminate: { type: [String], default: [] },
+    penalitaGriglia: { type: [penalitaGrigliaSchema], default: [] },
+    ultimoControlloPenalitaIl: { type: Date, default: null },
     ultimoControlloIl: { type: Date, default: null },
     ultimoErrore: { type: String, default: "", trim: true },
   },

@@ -1,10 +1,10 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const VERSIONE_F1DB = "v2026.15.1";
-const PUBBLICATO_IL = "2026-09-27T09:57:43.000Z";
+const VERSIONE_F1DB = "v2026.16.0";
+const PUBBLICATO_IL = "2026-10-04T12:21:35.000Z";
 const SHA256_ARCHIVIO =
-  "79f5c1df8c6f58ed6e2b50c9d7a7cd73b4eb9ec9678ed60d0349390e12758049";
+  "5bfcde5546bd16ec58a86a87c5d1e4c4150c2ec680480ea5cc487cb6223ea45f";
 const URL_REPOSITORY = "https://github.com/f1db/f1db";
 const URL_RELEASE = `${URL_REPOSITORY}/releases/tag/${VERSIONE_F1DB}`;
 const URL_ARCHIVIO = `${URL_REPOSITORY}/releases/download/${VERSIONE_F1DB}/f1db-json-splitted.zip`;
@@ -430,8 +430,14 @@ function creaSnapshot(percorsoF1db, datiProgetto) {
 
     for (const pilotaProgetto of datiProgetto.piloti) {
       const pilotaId = pilotiF1db[pilotaProgetto.slug];
+      const risultatoGara = indiceGara.get(chiaveRisultato(gara.id, pilotaId));
       pilotiEvento[pilotaProgetto.slug] = {
         codice: pilotaProgetto.codice,
+        presente: Boolean(risultatoGara),
+        garaRegolare: Boolean(risultatoGara && Number.isInteger(risultatoGara.positionNumber) &&
+          !risultatoGara.reasonRetired && !["DSQ", "EX", "DNS", "DNF", "NC"].includes(risultatoGara.positionText)),
+        statoGara: risultatoGara?.positionText ?? null,
+        causaRitiro: risultatoGara?.reasonRetired ?? null,
         gara: posizioneNumerica(indiceGara.get(chiaveRisultato(gara.id, pilotaId))),
         qualifica: posizioneNumerica(
           indiceQualifica.get(chiaveRisultato(gara.id, pilotaId)),
@@ -456,6 +462,11 @@ function creaSnapshot(percorsoF1db, datiProgetto) {
       );
 
       scuderieEvento[scuderiaProgetto.slug] = {
+        garaRegolare: Object.fromEntries([...codici].map((codice) => {
+          const r = risultatiTeam.find((elemento) => pilotiPerId.get(elemento.driverId)?.abbreviation === codice);
+          return [codice, Boolean(r && Number.isInteger(r.positionNumber) && !r.reasonRetired &&
+            !["DSQ", "EX", "DNS", "DNF", "NC"].includes(r.positionText))];
+        })),
         gara: Object.fromEntries(
           [...codici].map((codice) => {
             const risultato = risultatiTeam.find(
@@ -534,7 +545,7 @@ function creaSnapshot(percorsoF1db, datiProgetto) {
       fonte: "F1DB",
       versione: VERSIONE_F1DB,
       pubblicatoIl: PUBBLICATO_IL,
-      derivatoIl: "2026-09-15",
+      derivatoIl: new Date().toISOString().slice(0, 10),
       releaseUrl: URL_RELEASE,
       archivio: "f1db-json-splitted.zip",
       archivioUrl: URL_ARCHIVIO,
@@ -666,9 +677,15 @@ function main() {
   console.log("Classifiche 2026 e risultati storici sincronizzati.");
 }
 
-try {
-  main();
-} catch (errore) {
-  console.error(`Sincronizzazione F1DB fallita: ${errore.message}`);
-  process.exitCode = 1;
+if (require.main === module) {
+  try {
+    main();
+  } catch (errore) {
+    console.error(`Sincronizzazione F1DB fallita: ${errore.message}`);
+    process.exitCode = 1;
+  }
 }
+module.exports = {
+  creaSnapshot, applicaSnapshot, indicizzaRisultati, pilotiF1db,
+  circuitiStorici, scuderieF1db2026, scuderieF1dbStoriche,
+};

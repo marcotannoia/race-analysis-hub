@@ -6,6 +6,7 @@ const AnalisiGara = require("../../models/AnalisiGara");
 const AnalisiScuderia = require("../../models/AnalisiScuderia");
 const DatiLiveFia = require("../../models/DatiLiveFia");
 const trovaGaraAttuale = require("../../services/garaAttuale");
+const { previsioneMeteo } = require("../../services/meteoGp");
 const creaAndamentoAnnuale = require("../../services/andamentoAnnuale");
 const {
   creaClassificaPrevisionale,
@@ -38,7 +39,7 @@ const {
   presentaScuderia,
   presentaScuderiaBreve,
 } = require("../../presenters/apiV1");
-const snapshotF1db = require("../../data/f1db-v2026.15.1-derivato.json");
+const snapshotF1db = require("../../data/f1db-v2026.16.0-derivato.json");
 const gpConclusiDopoF1db = require("../../data/gp-conclusi-dopo-f1db.json");
 const { metadati: metadatiF1db } = snapshotF1db;
 const { version: VERSIONE_API } = require("../../package.json");
@@ -208,6 +209,7 @@ async function home(richiesta, risposta) {
     datiLiveFia,
     totaleGareAnalisi,
     ultimaGaraCalendario,
+    meteo,
   ] = await Promise.all([
       Pilota.find()
         .populate("scuderia", CAMPI_SCUDERIA_BREVE)
@@ -227,6 +229,7 @@ async function home(richiesta, risposta) {
         .sort({ ordineCalendario: -1 })
         .select("ordineCalendario")
         .lean(),
+      previsioneMeteo(garaAttuale.slug),
     ]);
 
   const analisiPerPilota = new Map(
@@ -260,6 +263,8 @@ async function home(richiesta, risposta) {
       analisiPiloti,
       analisiScuderie,
       lingua,
+      meteo,
+      datiLiveFia,
     }),
     metadati: {
       stagione: garaAttuale.stagione,
@@ -277,7 +282,7 @@ async function classificaPrevisionale(richiesta, risposta) {
   const garaAttuale = await richiediGaraAttuale(risposta);
   if (!garaAttuale) return;
 
-  const [piloti, scuderie, analisiPiloti, analisiScuderie] = await Promise.all([
+  const [piloti, scuderie, analisiPiloti, analisiScuderie, datiLiveFia, meteo] = await Promise.all([
     Pilota.find()
       .populate("scuderia", CAMPI_SCUDERIA_BREVE)
       .sort("classifica2026.posizione")
@@ -290,6 +295,8 @@ async function classificaPrevisionale(richiesta, risposta) {
     AnalisiScuderia.find({ gara: garaAttuale._id })
       .populate("scuderia", `${CAMPI_SCUDERIA_BREVE} classifica2026`)
       .lean(),
+    DatiLiveFia.findOne({ garaSlug: garaAttuale.slug }).lean(),
+    previsioneMeteo(garaAttuale.slug),
   ]);
 
   risposta.json(
@@ -300,6 +307,8 @@ async function classificaPrevisionale(richiesta, risposta) {
       analisiPiloti,
       analisiScuderie,
       lingua,
+      meteo,
+      datiLiveFia,
     }),
   );
 }

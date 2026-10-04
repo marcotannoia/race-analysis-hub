@@ -4,6 +4,9 @@ function cachePubblica({
   secondiBrowser = 60,
   secondiCondivisi = 300,
   massimoVoci = 500,
+  percorsiDinamici = [],
+  secondiBrowserDinamici = 15,
+  secondiCondivisiDinamici = 30,
 } = {}) {
   const risposte = new Map();
   const richiesteInCorso = new Map();
@@ -43,7 +46,7 @@ function cachePubblica({
     return voce;
   }
 
-  function salvaRisposta(chiave, corpo) {
+  function salvaRisposta(chiave, corpo, durataSecondi) {
     while (risposte.size >= massimoVoci) {
       const chiaveMenoRecente = risposte.keys().next().value;
       risposte.delete(chiaveMenoRecente);
@@ -55,7 +58,7 @@ function cachePubblica({
     risposte.set(chiave, {
       corpo,
       etag: `W/"${Buffer.byteLength(serializzato).toString(16)}-${hash}"`,
-      scadeIl: Date.now() + secondiCondivisi * 1000,
+      scadeIl: Date.now() + durataSecondi * 1000,
     });
   }
 
@@ -83,10 +86,13 @@ function cachePubblica({
   }
 
   async function configuraCache(richiesta, risposta, next) {
+    const dinamico = percorsiDinamici.includes(richiesta.path);
+    const durataBrowser = dinamico ? secondiBrowserDinamici : secondiBrowser;
+    const durataCondivisa = dinamico ? secondiCondivisiDinamici : secondiCondivisi;
     risposta.set(
       "Cache-Control",
-      `public, max-age=${secondiBrowser}, s-maxage=${secondiCondivisi}, ` +
-        `stale-while-revalidate=${secondiBrowser}`,
+      `public, max-age=${durataBrowser}, s-maxage=${durataCondivisa}, ` +
+        `stale-while-revalidate=${durataBrowser}`,
     );
     risposta.vary("Accept-Encoding");
 
@@ -121,7 +127,7 @@ function cachePubblica({
     const jsonOriginale = risposta.json.bind(risposta);
     risposta.json = function jsonConCache(corpo) {
       if (risposta.statusCode >= 200 && risposta.statusCode < 300) {
-        salvaRisposta(chiave, corpo);
+        salvaRisposta(chiave, corpo, durataCondivisa);
         const voce = leggiRisposta(chiave);
         risposta.set("ETag", voce.etag);
 

@@ -1,0 +1,956 @@
+{
+  "data": "2026-10-05",
+  "archiviPrima": 4,
+  "archiviDopo": 5,
+  "correzioni": [
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "norris",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mclaren"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "antonelli",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mercedes"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "russell",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mercedes"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "hamilton",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "ferrari"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "leclerc",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "ferrari"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "piastri",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mclaren"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "lawson",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "red_bull"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "hulkenberg",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "audi"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "alonso",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "aston_martin"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "gasly",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "alpine"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "tsunoda",
+      "tipo": "partecipante_aggiunto"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "arvid_lindblad",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "rb"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "bortoleto",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "audi"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "colapinto",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "alpine"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "perez",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "cadillac"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "sainz",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "williams"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "albon",
+      "campo": "posizioneGara",
+      "prima": "DNF",
+      "dopo": "P17"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "albon",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "williams"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "bottas",
+      "campo": "posizioneGara",
+      "prima": "NC",
+      "dopo": "DNF"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "bottas",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "cadillac"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "ocon",
+      "campo": "posizioneGara",
+      "prima": "NC",
+      "dopo": "DNF"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "ocon",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "haas"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "stroll",
+      "campo": "posizioneGara",
+      "prima": "NC",
+      "dopo": "DNF"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "stroll",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "aston_martin"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "bearman",
+      "campo": "posizioneGara",
+      "prima": "NC",
+      "dopo": "DNF"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "bearman",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "haas"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "max_verstappen",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "red_bull"
+    },
+    {
+      "archivio": "2026-01-olanda-zandvoort.json",
+      "pilota": "hadjar",
+      "tipo": "non_partecipante_rimosso"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "antonelli",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q2"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "antonelli",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mercedes"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "max_verstappen",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "red_bull"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "norris",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q1"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "norris",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mclaren"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "leclerc",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q5"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "leclerc",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "ferrari"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "russell",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q6"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "russell",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mercedes"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "lawson",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q8"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "lawson",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "red_bull"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "colapinto",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q9"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "colapinto",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "alpine"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "piastri",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q7"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "piastri",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mclaren"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "arvid_lindblad",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q10"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "arvid_lindblad",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "rb"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "hulkenberg",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q11"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "hulkenberg",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "audi"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "ocon",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q13"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "ocon",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "haas"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "gasly",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q14"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "gasly",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "alpine"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "bortoleto",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q12"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "bortoleto",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "audi"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "tsunoda",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q15"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "tsunoda",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "rb"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "albon",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q16"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "albon",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "williams"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "bearman",
+      "campo": "posizioneQualifica",
+      "prima": "NC",
+      "dopo": "—"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "bearman",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "haas"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "alonso",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q18"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "alonso",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "aston_martin"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "bottas",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q20"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "bottas",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "cadillac"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "sainz",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q17"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "sainz",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "williams"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "perez",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q19"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "perez",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "cadillac"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "stroll",
+      "campo": "posizioneQualifica",
+      "prima": "NC",
+      "dopo": "—"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "stroll",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "aston_martin"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "hamilton",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q4"
+    },
+    {
+      "archivio": "2026-03-spagna-madring.json",
+      "pilota": "hamilton",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "ferrari"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "russell",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q1"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "russell",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mercedes"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "max_verstappen",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q8"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "max_verstappen",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "red_bull"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "hadjar",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q4"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "hadjar",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "red_bull"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "leclerc",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q2"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "leclerc",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "ferrari"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "antonelli",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q16"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "antonelli",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mercedes"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "hamilton",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q6"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "hamilton",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "ferrari"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "arvid_lindblad",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q15"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "arvid_lindblad",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "rb"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "ocon",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q14"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "ocon",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "haas"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "bearman",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q11"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "bearman",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "haas"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "sainz",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q9"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "sainz",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "williams"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "hulkenberg",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q18"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "hulkenberg",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "audi"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "lawson",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q12"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "lawson",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "rb"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "piastri",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mclaren"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "perez",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q20"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "perez",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "cadillac"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "bortoleto",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q17"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "bortoleto",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "audi"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "bottas",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q22"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "bottas",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "cadillac"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "colapinto",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q10"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "colapinto",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "alpine"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "gasly",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q7"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "gasly",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "alpine"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "norris",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q5"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "norris",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "mclaren"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "albon",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q13"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "albon",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "williams"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "alonso",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q19"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "alonso",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "aston_martin"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "stroll",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q21"
+    },
+    {
+      "archivio": "2026-04-azerbaigian-baku.json",
+      "pilota": "stroll",
+      "campo": "scuderiaSlug",
+      "prima": null,
+      "dopo": "aston_martin"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "max_verstappen",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q1"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "antonelli",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q4"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "hamilton",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q2"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "leclerc",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q5"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "piastri",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q7"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "lawson",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q11"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "alonso",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q12"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "norris",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q6"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "arvid_lindblad",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q16"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "hulkenberg",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q17"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "stroll",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q14"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "colapinto",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q15"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "bearman",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q18"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "ocon",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q19"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "gasly",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q9"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "sainz",
+      "campo": "posizioneQualifica",
+      "prima": "Q2",
+      "dopo": "Q13"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "bortoleto",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q10"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "perez",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q22"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "russell",
+      "campo": "posizioneGara",
+      "prima": "DNF",
+      "dopo": "P20"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "russell",
+      "campo": "posizioneQualifica",
+      "prima": "Q3",
+      "dopo": "Q8"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "albon",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q20"
+    },
+    {
+      "archivio": "2026-05-bahrein-sepang.json",
+      "pilota": "bottas",
+      "campo": "posizioneQualifica",
+      "prima": "Q1",
+      "dopo": "Q21"
+    }
+  ],
+  "nuovoArchivio": "2026-02-italia-monza.json"
+}

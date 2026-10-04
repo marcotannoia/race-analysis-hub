@@ -7,303 +7,1315 @@
   "fonteIndicatori": "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result",
   "risultatiPiloti": [
     {
+      "pilotaSlug": "norris",
+      "posizioneGara": "P1",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "P1 / Q1; griglia 1; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P1; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "mclaren",
+      "posizioneQualificaNumero": 1,
+      "faseQualificaRaggiunta": "Q3",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "1",
+      "giri": 72,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P1 / Q1; griglia 1; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P1; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P1 / Q1; grid 1; 72 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P1; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P1 / Q1; grille 1; 72 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P1; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P1 / Q1; grelha 1; 72 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P1; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P1 / Q1; parrilla 1; 72 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P1; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P1 / Q1; Startplatz 1; 72 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P1; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
+    },
+    {
       "pilotaSlug": "antonelli",
       "posizioneGara": "P2",
       "posizioneQualifica": "Q3",
-      "notaRisultato": "Secondo dopo avere guidato a lungo; Norris lo ha superato dopo la seconda sosta.",
-      "passoGara": "Passo da vittoria nel primo stint, poi meno aderenza sul secondo treno di dure.",
-      "gestioneGomme": "La seconda sosta anticipata lo ha esposto alle gomme più fresche di Norris.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
-    },
-    {
-      "pilotaSlug": "hamilton",
-      "posizioneGara": "P4",
-      "posizioneQualifica": "Q5",
-      "notaRisultato": "Quarto, a meno di un secondo dal podio dopo il duello finale con Russell e Leclerc.",
-      "passoGara": "Ritmo competitivo, ma la strategia lo ha lasciato a lungo su gomme usate.",
-      "gestioneGomme": "Stint prolungato che lo ha trasformato anche in traffico per la lotta al comando.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
+      "notaRisultato": "P2 / Q3; griglia 3; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P2; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "mercedes",
+      "posizioneQualificaNumero": 3,
+      "faseQualificaRaggiunta": "Q3",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "3",
+      "giri": 72,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P2 / Q3; griglia 3; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P2; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P2 / Q3; grid 3; 72 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P2; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P2 / Q3; grille 3; 72 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P2; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P2 / Q3; grelha 3; 72 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P2; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P2 / Q3; parrilla 3; 72 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P2; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P2 / Q3; Startplatz 3; 72 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P2; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
     },
     {
       "pilotaSlug": "russell",
       "posizioneGara": "P3",
       "posizioneQualifica": "Q2",
-      "notaRisultato": "Terzo dopo una partenza difficile e una difesa efficace nel finale.",
-      "passoGara": "Passo solido ma inferiore ad Antonelli e Norris.",
-      "gestioneGomme": "Ha protetto il podio su gomme dure usate contro le Ferrari su morbide più fresche.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
+      "notaRisultato": "P3 / Q2; griglia 2; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P3; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "mercedes",
+      "posizioneQualificaNumero": 2,
+      "faseQualificaRaggiunta": "Q3",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "2",
+      "giri": 72,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P3 / Q2; griglia 2; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P3; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P3 / Q2; grid 2; 72 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P3; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P3 / Q2; grille 2; 72 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P3; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P3 / Q2; grelha 2; 72 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P3; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P3 / Q2; parrilla 2; 72 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P3; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P3 / Q2; Startplatz 2; 72 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P3; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "hamilton",
+      "posizioneGara": "P4",
+      "posizioneQualifica": "Q5",
+      "notaRisultato": "P4 / Q5; griglia 5; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P4; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "ferrari",
+      "posizioneQualificaNumero": 5,
+      "faseQualificaRaggiunta": "Q3",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "5",
+      "giri": 72,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P4 / Q5; griglia 5; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P4; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P4 / Q5; grid 5; 72 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P4; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P4 / Q5; grille 5; 72 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P4; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P4 / Q5; grelha 5; 72 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P4; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P4 / Q5; parrilla 5; 72 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P4; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P4 / Q5; Startplatz 5; 72 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P4; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
     },
     {
       "pilotaSlug": "leclerc",
       "posizioneGara": "P5",
       "posizioneQualifica": "Q6",
-      "notaRisultato": "Quinto, in scia a Hamilton e Russell nel finale.",
-      "passoGara": "Buon recupero nel secondo stint, senza spazio sufficiente per il podio.",
-      "gestioneGomme": "Le morbide finali hanno permesso di attaccare Russell fino alla bandiera.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
-    },
-    {
-      "pilotaSlug": "norris",
-      "posizioneGara": "P1",
-      "posizioneQualifica": "Q1",
-      "notaRisultato": "Vittoria dalla pole dopo avere recuperato la leadership con strategia e passo.",
-      "passoGara": "Ritmo molto forte sul treno finale di gomme dure.",
-      "gestioneGomme": "La seconda sosta ritardata ha creato un vantaggio decisivo di gomma su Antonelli.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
-    },
-    {
-      "pilotaSlug": "max_verstappen",
-      "posizioneGara": "DNF",
-      "posizioneQualifica": "Q7",
-      "notaRisultato": "Ritiro al primo giro dopo l'impatto alla curva 14 sul tracciato ancora umido.",
-      "passoGara": "Non valutabile: gara terminata al primo giro.",
-      "gestioneGomme": "Non valutabile.",
-      "affidabilita": "Vettura distrutta nell'incidente; il pilota è uscito senza conseguenze.",
-      "errorePilota": "fatale"
+      "notaRisultato": "P5 / Q6; griglia 6; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P5; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "ferrari",
+      "posizioneQualificaNumero": 6,
+      "faseQualificaRaggiunta": "Q3",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "6",
+      "giri": 72,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P5 / Q6; griglia 6; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P5; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P5 / Q6; grid 6; 72 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P5; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P5 / Q6; grille 6; 72 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P5; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P5 / Q6; grelha 6; 72 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P5; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P5 / Q6; parrilla 6; 72 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P5; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P5 / Q6; Startplatz 6; 72 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P5; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
     },
     {
       "pilotaSlug": "piastri",
       "posizioneGara": "P6",
       "posizioneQualifica": "Q4",
-      "notaRisultato": "Sesto dopo una sosta lenta e un finale senza il passo per recuperare.",
-      "passoGara": "Il passo è calato nella seconda metà di gara rispetto ai riferimenti davanti.",
-      "gestioneGomme": "La sosta lenta ha compromesso la posizione iniziale da podio.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
-    },
-    {
-      "pilotaSlug": "hadjar",
-      "posizioneGara": "DNS",
-      "posizioneQualifica": "DNS",
-      "notaRisultato": "Assente per l'intero weekend a causa dell'infortunio al polso riportato durante la pausa estiva.",
-      "passoGara": "Non valutabile.",
-      "gestioneGomme": "Non valutabile.",
-      "affidabilita": "Non ha preso parte al GP; Lawson lo ha sostituito in Red Bull.",
-      "errorePilota": "nessuno"
+      "notaRisultato": "P6 / Q4; griglia 4; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P6; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "mclaren",
+      "posizioneQualificaNumero": 4,
+      "faseQualificaRaggiunta": "Q3",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "4",
+      "giri": 72,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P6 / Q4; griglia 4; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P6; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P6 / Q4; grid 4; 72 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P6; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P6 / Q4; grille 4; 72 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P6; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P6 / Q4; grelha 4; 72 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P6; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P6 / Q4; parrilla 4; 72 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P6; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P6 / Q4; Startplatz 4; 72 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P6; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
     },
     {
       "pilotaSlug": "lawson",
       "posizioneGara": "P7",
       "posizioneQualifica": "Q8",
-      "notaRisultato": "Settimo al rientro temporaneo in Red Bull, miglior risultato possibile dietro i quattro team di vertice.",
-      "passoGara": "Passo regolare e netto riferimento del gruppo centrale.",
-      "gestioneGomme": "Gestione pulita in una gara interrotta e strategica.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
-    },
-    {
-      "pilotaSlug": "gasly",
-      "posizioneGara": "P10",
-      "posizioneQualifica": "Q11",
-      "notaRisultato": "Decimo, ultimo pilota a punti dopo avere chiuso in pressione su Alonso.",
-      "passoGara": "Buon ritmo nel finale, sufficiente per ridurre il distacco da Aston Martin.",
-      "gestioneGomme": "Ha sfruttato bene la fase conclusiva della gara.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
-    },
-    {
-      "pilotaSlug": "arvid_lindblad",
-      "posizioneGara": "P12",
-      "posizioneQualifica": "Q10",
-      "notaRisultato": "Dodicesimo, alle spalle del sostituto Tsunoda nella Racing Bulls gemella.",
-      "passoGara": "Passo da centro gruppo senza opportunità concreta di punti.",
-      "gestioneGomme": "Gara completata con un giro di ritardo.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
-    },
-    {
-      "pilotaSlug": "colapinto",
-      "posizioneGara": "P14",
-      "posizioneQualifica": "Q14",
-      "notaRisultato": "Quattordicesimo e fuori dalla lotta per i punti.",
-      "passoGara": "Passo insufficiente per risalire il centro gruppo.",
-      "gestioneGomme": "Ha chiuso con due giri di ritardo.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
-    },
-    {
-      "pilotaSlug": "bearman",
-      "posizioneGara": "NC",
-      "posizioneQualifica": "Q20",
-      "notaRisultato": "Ritiro durante la procedura di ripartenza dopo la bandiera rossa.",
-      "passoGara": "Non valutabile: gara conclusa dopo due giri.",
-      "gestioneGomme": "Non valutabile.",
-      "affidabilita": "Problema alla vettura durante il giro di formazione della ripartenza.",
-      "errorePilota": "nessuno"
-    },
-    {
-      "pilotaSlug": "bortoleto",
-      "posizioneGara": "P13",
-      "posizioneQualifica": "Q9",
-      "notaRisultato": "Tredicesimo dopo un testacoda al primo giro, senza impatto, sul fondo ancora scivoloso.",
-      "passoGara": "Il testacoda iniziale ha cancellato il vantaggio della partenza in top 10.",
-      "gestioneGomme": "Gara completata con un giro di ritardo.",
-      "affidabilita": "Gara completata dopo avere evitato danni nel testacoda.",
-      "errorePilota": "non_fatale"
-    },
-    {
-      "pilotaSlug": "sainz",
-      "posizioneGara": "P16",
-      "posizioneQualifica": "Q17",
-      "notaRisultato": "Sedicesimo dopo dieci secondi di penalità per il contatto con Albon nel finale.",
-      "passoGara": "Passo insufficiente per entrare stabilmente in zona punti.",
-      "gestioneGomme": "Stint lungo sulle gomme prima della sosta a metà gara.",
-      "affidabilita": "Gara completata, ma il contatto ha compromesso entrambe le Williams.",
-      "errorePilota": "non_fatale"
-    },
-    {
-      "pilotaSlug": "albon",
-      "posizioneGara": "DNF",
-      "posizioneQualifica": "Q16",
-      "notaRisultato": "Ritiro dopo il contatto con Sainz nel finale.",
-      "passoGara": "Era davanti al compagno prima dell'incidente.",
-      "gestioneGomme": "Strategia compromessa dal contatto conclusivo.",
-      "affidabilita": "Vettura ritirata in seguito al contatto con il compagno.",
-      "errorePilota": "nessuno"
-    },
-    {
-      "pilotaSlug": "ocon",
-      "posizioneGara": "NC",
-      "posizioneQualifica": "Q15",
-      "notaRisultato": "Ritiro nel finale; la vettura ferma ha provocato la Virtual Safety Car.",
-      "passoGara": "Passo fuori dalla zona punti prima del ritiro.",
-      "gestioneGomme": "Non ha completato la gara.",
-      "affidabilita": "Problema tecnico nel finale.",
-      "errorePilota": "nessuno"
+      "notaRisultato": "P7 / Q8; griglia 8; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P7; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "red_bull",
+      "posizioneQualificaNumero": 8,
+      "faseQualificaRaggiunta": "Q3",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "8",
+      "giri": 72,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P7 / Q8; griglia 8; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P7; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P7 / Q8; grid 8; 72 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P7; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P7 / Q8; grille 8; 72 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P7; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P7 / Q8; grelha 8; 72 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P7; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P7 / Q8; parrilla 8; 72 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P7; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P7 / Q8; Startplatz 8; 72 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P7; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
     },
     {
       "pilotaSlug": "hulkenberg",
       "posizioneGara": "P8",
       "posizioneQualifica": "Q13",
-      "notaRisultato": "Ottavo dopo essere partito tredicesimo, con quattro punti per Audi.",
-      "passoGara": "Ottimo passo nel gruppo centrale.",
-      "gestioneGomme": "Gestione efficace dopo avere evitato il testacoda di Bortoleto al primo giro.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
+      "notaRisultato": "P8 / Q13; griglia 13; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P8; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "audi",
+      "posizioneQualificaNumero": 13,
+      "faseQualificaRaggiunta": "Q2",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "13",
+      "giri": 71,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P8 / Q13; griglia 13; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P8; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P8 / Q13; grid 13; 71 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P8; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P8 / Q13; grille 13; 71 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P8; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P8 / Q13; grelha 13; 71 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P8; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P8 / Q13; parrilla 13; 71 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P8; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P8 / Q13; Startplatz 13; 71 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P8; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
     },
     {
       "pilotaSlug": "alonso",
       "posizioneGara": "P9",
       "posizioneQualifica": "Q18",
-      "notaRisultato": "Nono con una rimonta costruita su passo, sorpassi e strategia a una sosta.",
-      "passoGara": "Ritmo competitivo nel centro gruppo, soprattutto in aria libera.",
-      "gestioneGomme": "Gestione molto efficace: stint lungo e una sosta per risalire dalla diciottesima casella.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
+      "notaRisultato": "P9 / Q18; griglia 18; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P9; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "aston_martin",
+      "posizioneQualificaNumero": 18,
+      "faseQualificaRaggiunta": "Q1",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "18",
+      "giri": 71,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P9 / Q18; griglia 18; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P9; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P9 / Q18; grid 18; 71 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P9; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P9 / Q18; grille 18; 71 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P9; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P9 / Q18; grelha 18; 71 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P9; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P9 / Q18; parrilla 18; 71 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P9; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P9 / Q18; Startplatz 18; 71 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P9; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
     },
     {
-      "pilotaSlug": "stroll",
-      "posizioneGara": "NC",
-      "posizioneQualifica": "Q19",
-      "notaRisultato": "Ritiro dopo 45 giri.",
-      "passoGara": "Fuori dalla zona punti prima del ritiro.",
-      "gestioneGomme": "Non ha completato la gara.",
-      "affidabilita": "Ritiro tecnico; causa definitiva non ancora indicata nella classifica ufficiale.",
-      "errorePilota": "nessuno"
+      "pilotaSlug": "gasly",
+      "posizioneGara": "P10",
+      "posizioneQualifica": "Q11",
+      "notaRisultato": "P10 / Q11; griglia 11; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P10; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "alpine",
+      "posizioneQualificaNumero": 11,
+      "faseQualificaRaggiunta": "Q2",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "11",
+      "giri": 71,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P10 / Q11; griglia 11; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P10; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P10 / Q11; grid 11; 71 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P10; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P10 / Q11; grille 11; 71 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P10; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P10 / Q11; grelha 11; 71 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P10; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P10 / Q11; parrilla 11; 71 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P10; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P10 / Q11; Startplatz 11; 71 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P10; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
     },
     {
-      "pilotaSlug": "bottas",
-      "posizioneGara": "NC",
-      "posizioneQualifica": "Q21",
-      "notaRisultato": "Ritiro dopo 61 giri.",
-      "passoGara": "Fuori dalla zona punti prima del ritiro.",
-      "gestioneGomme": "Non ha completato la gara.",
-      "affidabilita": "Ritiro tecnico; causa definitiva non ancora indicata nella classifica ufficiale.",
-      "errorePilota": "nessuno"
+      "pilotaSlug": "tsunoda",
+      "scuderiaSlug": "rb",
+      "posizioneGara": "P11",
+      "posizioneQualifica": "Q12",
+      "posizioneQualificaNumero": 12,
+      "faseQualificaRaggiunta": "Q2",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "errorePilota": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "12",
+      "giri": 71,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P11 / Q12; griglia 12; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P11; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P11 / Q12; grid 12; 71 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P11; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P11 / Q12; grille 12; 71 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P11; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P11 / Q12; grelha 12; 71 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P11; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P11 / Q12; parrilla 12; 71 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P11; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P11 / Q12; Startplatz 12; 71 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P11; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      },
+      "notaRisultato": "P11 / Q12; griglia 12; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P11; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+    },
+    {
+      "pilotaSlug": "arvid_lindblad",
+      "posizioneGara": "P12",
+      "posizioneQualifica": "Q10",
+      "notaRisultato": "P12 / Q10; griglia 10; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P12; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "rb",
+      "posizioneQualificaNumero": 10,
+      "faseQualificaRaggiunta": "Q3",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "10",
+      "giri": 71,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P12 / Q10; griglia 10; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P12; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P12 / Q10; grid 10; 71 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P12; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P12 / Q10; grille 10; 71 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P12; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P12 / Q10; grelha 10; 71 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P12; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P12 / Q10; parrilla 10; 71 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P12; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P12 / Q10; Startplatz 10; 71 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P12; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "bortoleto",
+      "posizioneGara": "P13",
+      "posizioneQualifica": "Q9",
+      "notaRisultato": "P13 / Q9; griglia 9; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P13; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "audi",
+      "posizioneQualificaNumero": 9,
+      "faseQualificaRaggiunta": "Q3",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "9",
+      "giri": 71,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P13 / Q9; griglia 9; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P13; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P13 / Q9; grid 9; 71 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P13; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P13 / Q9; grille 9; 71 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P13; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P13 / Q9; grelha 9; 71 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P13; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P13 / Q9; parrilla 9; 71 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P13; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P13 / Q9; Startplatz 9; 71 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P13; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "colapinto",
+      "posizioneGara": "P14",
+      "posizioneQualifica": "Q14",
+      "notaRisultato": "P14 / Q14; griglia 14; 70 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P14; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "alpine",
+      "posizioneQualificaNumero": 14,
+      "faseQualificaRaggiunta": "Q2",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "14",
+      "giri": 70,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P14 / Q14; griglia 14; 70 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P14; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P14 / Q14; grid 14; 70 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P14; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P14 / Q14; grille 14; 70 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P14; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P14 / Q14; grelha 14; 70 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P14; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P14 / Q14; parrilla 14; 70 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P14; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P14 / Q14; Startplatz 14; 70 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P14; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
     },
     {
       "pilotaSlug": "perez",
       "posizioneGara": "P15",
       "posizioneQualifica": "Q22",
-      "notaRisultato": "Quindicesimo dopo essere partito ultimo.",
-      "passoGara": "Passo insufficiente per avvicinare la zona punti.",
-      "gestioneGomme": "Ha completato la gara con due giri di ritardo.",
-      "affidabilita": "Gara completata senza problemi tecnici.",
-      "errorePilota": "nessuno"
+      "notaRisultato": "P15 / Q22; griglia PL; 70 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P15; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "cadillac",
+      "posizioneQualificaNumero": 22,
+      "faseQualificaRaggiunta": "Q1",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "PL",
+      "giri": 70,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P15 / Q22; griglia PL; 70 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P15; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P15 / Q22; grid PL; 70 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P15; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P15 / Q22; grille PL; 70 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P15; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P15 / Q22; grelha PL; 70 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P15; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P15 / Q22; parrilla PL; 70 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P15; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P15 / Q22; Startplatz PL; 70 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P15; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "sainz",
+      "posizioneGara": "P16",
+      "posizioneQualifica": "Q17",
+      "notaRisultato": "P16 / Q17; griglia 17; 70 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P16; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "williams",
+      "posizioneQualificaNumero": 17,
+      "faseQualificaRaggiunta": "Q1",
+      "statoGara": "classificato",
+      "causaRitiro": null,
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "17",
+      "giri": 70,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P16 / Q17; griglia 17; 70 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P16; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P16 / Q17; grid 17; 70 laps. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P16; F1DB reason: —. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P16 / Q17; grille 17; 70 tours. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P16; cause F1DB: —. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P16 / Q17; grelha 17; 70 voltas. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P16; causa F1DB: —. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P16 / Q17; parrilla 17; 70 vueltas. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P16; causa F1DB: —. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P16 / Q17; Startplatz 17; 70 Runden. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P16; F1DB-Ursache: —. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "albon",
+      "posizioneGara": "P17",
+      "posizioneQualifica": "Q16",
+      "notaRisultato": "P17 / Q16; griglia 16; 66 giri; causa F1DB: Collision damage. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "P17; causa F1DB: Collision damage. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "williams",
+      "posizioneQualificaNumero": 16,
+      "faseQualificaRaggiunta": "Q2",
+      "statoGara": "ritirato",
+      "causaRitiro": "Collision damage",
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "16",
+      "giri": 66,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "P17 / Q16; griglia 16; 66 giri; causa F1DB: Collision damage. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "P17; causa F1DB: Collision damage. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "P17 / Q16; grid 16; 66 laps; F1DB reason: Collision damage. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "P17; F1DB reason: Collision damage. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "P17 / Q16; grille 16; 66 tours; cause F1DB: Collision damage. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "P17; cause F1DB: Collision damage. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "P17 / Q16; grelha 16; 66 voltas; causa F1DB: Collision damage. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "P17; causa F1DB: Collision damage. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "P17 / Q16; parrilla 16; 66 vueltas; causa F1DB: Collision damage. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "P17; causa F1DB: Collision damage. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "P17 / Q16; Startplatz 16; 66 Runden; F1DB-Ursache: Collision damage. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "P17; F1DB-Ursache: Collision damage. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "bottas",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q21",
+      "notaRisultato": "DNF / Q21; griglia 21; 61 giri; causa F1DB: Hydraulics. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "DNF; causa F1DB: Hydraulics. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "cadillac",
+      "posizioneQualificaNumero": 21,
+      "faseQualificaRaggiunta": "Q1",
+      "statoGara": "ritirato",
+      "causaRitiro": "Hydraulics",
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "21",
+      "giri": 61,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "DNF / Q21; griglia 21; 61 giri; causa F1DB: Hydraulics. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "DNF; causa F1DB: Hydraulics. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "DNF / Q21; grid 21; 61 laps; F1DB reason: Hydraulics. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "DNF; F1DB reason: Hydraulics. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "DNF / Q21; grille 21; 61 tours; cause F1DB: Hydraulics. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "DNF; cause F1DB: Hydraulics. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "DNF / Q21; grelha 21; 61 voltas; causa F1DB: Hydraulics. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "DNF; causa F1DB: Hydraulics. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "DNF / Q21; parrilla 21; 61 vueltas; causa F1DB: Hydraulics. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "DNF; causa F1DB: Hydraulics. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "DNF / Q21; Startplatz 21; 61 Runden; F1DB-Ursache: Hydraulics. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "DNF; F1DB-Ursache: Hydraulics. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "ocon",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q15",
+      "notaRisultato": "DNF / Q15; griglia 15; 52 giri; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "DNF; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "haas",
+      "posizioneQualificaNumero": 15,
+      "faseQualificaRaggiunta": "Q2",
+      "statoGara": "ritirato",
+      "causaRitiro": "Engine",
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "15",
+      "giri": 52,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "DNF / Q15; griglia 15; 52 giri; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "DNF; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "DNF / Q15; grid 15; 52 laps; F1DB reason: Engine. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "DNF; F1DB reason: Engine. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "DNF / Q15; grille 15; 52 tours; cause F1DB: Engine. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "DNF; cause F1DB: Engine. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "DNF / Q15; grelha 15; 52 voltas; causa F1DB: Engine. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "DNF; causa F1DB: Engine. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "DNF / Q15; parrilla 15; 52 vueltas; causa F1DB: Engine. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "DNF; causa F1DB: Engine. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "DNF / Q15; Startplatz 15; 52 Runden; F1DB-Ursache: Engine. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "DNF; F1DB-Ursache: Engine. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "stroll",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q19",
+      "notaRisultato": "DNF / Q19; griglia 19; 45 giri; causa F1DB: Handling. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "DNF; causa F1DB: Handling. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "aston_martin",
+      "posizioneQualificaNumero": 19,
+      "faseQualificaRaggiunta": "Q1",
+      "statoGara": "ritirato",
+      "causaRitiro": "Handling",
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "19",
+      "giri": 45,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "DNF / Q19; griglia 19; 45 giri; causa F1DB: Handling. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "DNF; causa F1DB: Handling. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "DNF / Q19; grid 19; 45 laps; F1DB reason: Handling. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "DNF; F1DB reason: Handling. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "DNF / Q19; grille 19; 45 tours; cause F1DB: Handling. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "DNF; cause F1DB: Handling. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "DNF / Q19; grelha 19; 45 voltas; causa F1DB: Handling. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "DNF; causa F1DB: Handling. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "DNF / Q19; parrilla 19; 45 vueltas; causa F1DB: Handling. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "DNF; causa F1DB: Handling. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "DNF / Q19; Startplatz 19; 45 Runden; F1DB-Ursache: Handling. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "DNF; F1DB-Ursache: Handling. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "bearman",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q20",
+      "notaRisultato": "DNF / Q20; griglia 20; 2 giri; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "DNF; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "haas",
+      "posizioneQualificaNumero": 20,
+      "faseQualificaRaggiunta": "Q1",
+      "statoGara": "ritirato",
+      "causaRitiro": "Engine",
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "20",
+      "giri": 2,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "DNF / Q20; griglia 20; 2 giri; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "DNF; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "DNF / Q20; grid 20; 2 laps; F1DB reason: Engine. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "DNF; F1DB reason: Engine. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "DNF / Q20; grille 20; 2 tours; cause F1DB: Engine. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "DNF; cause F1DB: Engine. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "DNF / Q20; grelha 20; 2 voltas; causa F1DB: Engine. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "DNF; causa F1DB: Engine. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "DNF / Q20; parrilla 20; 2 vueltas; causa F1DB: Engine. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "DNF; causa F1DB: Engine. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "DNF / Q20; Startplatz 20; 2 Runden; F1DB-Ursache: Engine. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "DNF; F1DB-Ursache: Engine. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "max_verstappen",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q7",
+      "notaRisultato": "DNF / Q7; griglia 7; 0 giri; causa F1DB: Accident. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "DNF; causa F1DB: Accident. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "errorePilota": null,
+      "scuderiaSlug": "red_bull",
+      "posizioneQualificaNumero": 7,
+      "faseQualificaRaggiunta": "Q3",
+      "statoGara": "ritirato",
+      "causaRitiro": "Accident",
+      "verificaErrorePilota": "Attribuzione non verificata: la causa F1DB non stabilisce la responsabilità del pilota.",
+      "griglia": "7",
+      "giri": 0,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "DNF / Q7; griglia 7; 0 giri; causa F1DB: Accident. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+          "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+          "gomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+          "affidabilita": "DNF; causa F1DB: Accident. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
+        },
+        "en": {
+          "notaRisultato": "DNF / Q7; grid 7; 0 laps; F1DB reason: Accident. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents.",
+          "passoGara": "Race pace not measured: comparable laps by compound, tyre age, traffic and neutralisations are missing. The final result does not measure lap speed.",
+          "gomme": "Tyre management not measured: comparable stints and times are missing. Positions gained, stops and the final result do not isolate degradation.",
+          "affidabilita": "DNF; F1DB reason: Accident. Classification and qualifying differ from the starting grid. Retirements and disqualifications do not prove poor pace or degradation; no recorded cause does not rule out other incidents."
+        },
+        "fr": {
+          "notaRisultato": "DNF / Q7; grille 7; 0 tours; cause F1DB: Accident. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents.",
+          "passoGara": "Rythme de course non mesuré : il manque des tours comparables par gomme, âge des pneus, trafic et neutralisations. Le résultat final ne mesure pas la vitesse au tour.",
+          "gomme": "Gestion des pneus non mesurée : relais et temps comparables manquants. Positions gagnées, arrêts et résultat final n'isolent pas la dégradation.",
+          "affidabilita": "DNF; cause F1DB: Accident. Classement et qualifications diffèrent de la grille de départ. Abandons et disqualifications ne prouvent pas un mauvais rythme ou une dégradation; aucune cause enregistrée n'exclut d'autres incidents."
+        },
+        "pt": {
+          "notaRisultato": "DNF / Q7; grelha 7; 0 voltas; causa F1DB: Accident. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes.",
+          "passoGara": "Ritmo de corrida não medido: faltam voltas comparáveis por composto, idade dos pneus, tráfego e neutralizações. O resultado final não mede a velocidade por volta.",
+          "gomme": "Gestão de pneus não medida: faltam stints e tempos comparáveis. Posições ganhas, paragens e resultado final não isolam a degradação.",
+          "affidabilita": "DNF; causa F1DB: Accident. Classificação e qualificação diferem da grelha de partida. Abandonos e desclassificações não demonstram mau ritmo ou degradação; a falta de uma causa registada não exclui outros incidentes."
+        },
+        "es": {
+          "notaRisultato": "DNF / Q7; parrilla 7; 0 vueltas; causa F1DB: Accident. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes.",
+          "passoGara": "Ritmo de carrera no medido: faltan vueltas comparables por compuesto, edad de neumáticos, tráfico y neutralizaciones. El resultado final no mide la velocidad por vuelta.",
+          "gomme": "Gestión de neumáticos no medida: faltan tandas y tiempos comparables. Posiciones ganadas, paradas y resultado final no aíslan la degradación.",
+          "affidabilita": "DNF; causa F1DB: Accident. Clasificación y calificación difieren de la parrilla de salida. Abandonos y descalificaciones no demuestran mal ritmo o degradación; la ausencia de una causa registrada no excluye otros incidentes."
+        },
+        "de": {
+          "notaRisultato": "DNF / Q7; Startplatz 7; 0 Runden; F1DB-Ursache: Accident. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus.",
+          "passoGara": "Renntempo nicht gemessen: vergleichbare Runden nach Mischung, Reifenalter, Verkehr und Neutralisationen fehlen. Das Endergebnis misst keine Rundengeschwindigkeit.",
+          "gomme": "Reifenmanagement nicht gemessen: vergleichbare Stints und Zeiten fehlen. Gewonnene Positionen, Stopps und Endergebnis isolieren den Reifenabbau nicht.",
+          "affidabilita": "DNF; F1DB-Ursache: Accident. Klassifikation und Qualifying unterscheiden sich von der Startaufstellung. Ausfälle und Disqualifikationen beweisen kein schlechtes Tempo oder hohen Abbau; keine erfasste Ursache schließt andere Zwischenfälle nicht aus."
+        }
+      }
     }
   ],
   "risultatiScuderie": [
     {
       "scuderiaSlug": "mercedes",
-      "notaRisultato": "Doppio podio con Antonelli P2 e Russell P3.",
-      "passoGara": "Riferimento nella prima parte, poi battuta dalla McLaren sul passo con gomme dure fresche.",
-      "gestioneGomme": "Strategie differenziate e ordine finale gestito senza perdere il doppio podio.",
-      "affidabilita": "Entrambe le vetture al traguardo."
+      "notaRisultato": "ANT: P2 / Q3; griglia 3; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. RUS: P3 / Q2; griglia 2; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "ANT: P2; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. RUS: P3; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
     },
     {
       "scuderiaSlug": "ferrari",
-      "notaRisultato": "Hamilton P4 e Leclerc P5, entrambi a ridosso del podio.",
-      "passoGara": "Buon passo nel finale, ma senza la velocità necessaria per superare Russell.",
-      "gestioneGomme": "Le morbide finali hanno creato un'occasione non concretizzata.",
-      "affidabilita": "Entrambe le vetture al traguardo."
+      "notaRisultato": "HAM: P4 / Q5; griglia 5; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. LEC: P5 / Q6; griglia 6; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "HAM: P4; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. LEC: P5; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
     },
     {
       "scuderiaSlug": "mclaren",
-      "notaRisultato": "Vittoria di Norris e sesto posto di Piastri.",
-      "passoGara": "Norris è stato il riferimento nel finale; Piastri ha perso terreno dopo una sosta lenta.",
-      "gestioneGomme": "La sosta ritardata di Norris ha deciso la vittoria.",
-      "affidabilita": "Entrambe le vetture al traguardo."
+      "notaRisultato": "NOR: P1 / Q1; griglia 1; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. PIA: P6 / Q4; griglia 4; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "NOR: P1; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. PIA: P6; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
     },
     {
       "scuderiaSlug": "red_bull",
-      "notaRisultato": "Lawson P7 da sostituto; Verstappen ritirato al primo giro.",
-      "passoGara": "Lawson ha guidato il centro gruppo, ma il confronto al vertice è stato interrotto dall'incidente di Verstappen.",
-      "gestioneGomme": "Valutazione limitata dalla bandiera rossa e dal ritiro immediato di Verstappen.",
-      "affidabilita": "Una sola vettura al traguardo; Hadjar era assente per infortunio."
+      "notaRisultato": "LAW: P7 / Q8; griglia 8; 72 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. VER: DNF / Q7; griglia 7; 0 giri; causa F1DB: Accident. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "LAW: P7; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. VER: DNF; causa F1DB: Accident. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
     },
     {
       "scuderiaSlug": "rb",
-      "notaRisultato": "Lindblad P12; Tsunoda P11 da sostituto di Lawson.",
-      "passoGara": "Passo da centro gruppo, appena fuori dai punti.",
-      "gestioneGomme": "Entrambe le vetture presenti al traguardo, con Tsunoda davanti.",
-      "affidabilita": "Nessun ritiro."
+      "notaRisultato": "TSU: P11 / Q12; griglia 12; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. LIN: P12 / Q10; griglia 10; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "TSU: P11; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. LIN: P12; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
     },
     {
       "scuderiaSlug": "alpine",
-      "notaRisultato": "Gasly P10 e Colapinto P14.",
-      "passoGara": "Gasly ha conquistato l'ultimo punto con un buon finale.",
-      "gestioneGomme": "Gasly ha chiuso in pressione su Alonso.",
-      "affidabilita": "Entrambe le vetture al traguardo."
+      "notaRisultato": "GAS: P10 / Q11; griglia 11; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. COL: P14 / Q14; griglia 14; 70 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "GAS: P10; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. COL: P14; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
     },
     {
       "scuderiaSlug": "haas",
-      "notaRisultato": "Doppio ritiro per Bearman e Ocon.",
-      "passoGara": "Passo non valutabile per Bearman e fuori dai punti per Ocon.",
-      "gestioneGomme": "Weekend compromesso dai ritiri.",
-      "affidabilita": "Bearman fermo alla ripartenza; Ocon ritirato nel finale."
+      "notaRisultato": "OCO: DNF / Q15; griglia 15; 52 giri; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. BEA: DNF / Q20; griglia 20; 2 giri; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "OCO: DNF; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. BEA: DNF; causa F1DB: Engine. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
     },
     {
       "scuderiaSlug": "audi",
-      "notaRisultato": "Hulkenberg P8 e Bortoleto P13.",
-      "passoGara": "Hulkenberg è stato tra i migliori del centro gruppo.",
-      "gestioneGomme": "Buona rimonta di Hulkenberg; Bortoleto condizionato dal testacoda iniziale.",
-      "affidabilita": "Entrambe le vetture al traguardo."
+      "notaRisultato": "HUL: P8 / Q13; griglia 13; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. BOR: P13 / Q9; griglia 9; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "HUL: P8; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. BOR: P13; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
     },
     {
       "scuderiaSlug": "williams",
-      "notaRisultato": "Sainz P16 e Albon ritirato dopo il contatto tra compagni.",
-      "passoGara": "Passo insufficiente per la zona punti.",
-      "gestioneGomme": "Il contatto finale ha annullato ogni possibilità residua.",
-      "affidabilita": "Albon ritirato dopo il contatto; Sainz penalizzato di dieci secondi."
+      "notaRisultato": "SAI: P16 / Q17; griglia 17; 70 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. ALB: P17 / Q16; griglia 16; 66 giri; causa F1DB: Collision damage. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "SAI: P16; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. ALB: P17; causa F1DB: Collision damage. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
     },
     {
       "scuderiaSlug": "aston_martin",
-      "notaRisultato": "Alonso P9, Stroll ritirato.",
-      "passoGara": "Alonso competitivo nel centro gruppo con una rimonta dalla Q18.",
-      "gestioneGomme": "La strategia a una sosta di Alonso ha prodotto due punti.",
-      "affidabilita": "Stroll non ha completato la gara."
+      "notaRisultato": "ALO: P9 / Q18; griglia 18; 71 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. STR: DNF / Q19; griglia 19; 45 giri; causa F1DB: Handling. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "ALO: P9; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. STR: DNF; causa F1DB: Handling. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
     },
     {
       "scuderiaSlug": "cadillac",
-      "notaRisultato": "Perez P15, Bottas ritirato.",
-      "passoGara": "Passo lontano dalla zona punti.",
-      "gestioneGomme": "Perez ha completato la gara con due giri di ritardo.",
-      "affidabilita": "Bottas non ha completato la gara."
+      "notaRisultato": "PER: P15 / Q22; griglia PL; 70 giri. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. BOT: DNF / Q21; griglia 21; 61 giri; causa F1DB: Hydraulics. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi.",
+      "passoGara": "Passo gara non misurato: mancano giri comparabili per mescola, età gomme, traffico e neutralizzazioni. Il risultato finale non misura la velocità sul giro.",
+      "gestioneGomme": "Gestione gomme non misurata: mancano stint e tempi comparabili. Posizioni recuperate, soste e risultato finale non isolano il degrado.",
+      "affidabilita": "PER: P15; causa F1DB: —. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi. BOT: DNF; causa F1DB: Hydraulics. Classificazione e qualifica sono distinte dalla griglia. Ritiri e squalifiche non dimostrano scarso passo o degrado; l'assenza di una causa non esclude altri episodi."
     }
   ],
   "classificaPiloti": [
@@ -346,31 +1358,31 @@
     {
       "pilotaSlug": "piastri",
       "posizione": 7,
-      "punti": 104,
+      "punti": 106,
       "vittorie": 0
     },
     {
       "pilotaSlug": "hadjar",
       "posizione": 8,
-      "punti": 68,
+      "punti": 71,
       "vittorie": 0
     },
     {
       "pilotaSlug": "lawson",
       "posizione": 9,
-      "punti": 49,
+      "punti": 51,
       "vittorie": 0
     },
     {
       "pilotaSlug": "gasly",
       "posizione": 10,
-      "punti": 44,
+      "punti": 35,
       "vittorie": 0
     },
     {
       "pilotaSlug": "arvid_lindblad",
       "posizione": 11,
-      "punti": 23,
+      "punti": 25,
       "vittorie": 0
     },
     {
@@ -422,6 +1434,12 @@
       "vittorie": 0
     },
     {
+      "pilotaSlug": "tsunoda",
+      "posizione": 20,
+      "punti": 0,
+      "vittorie": 0
+    },
+    {
       "pilotaSlug": "stroll",
       "posizione": 21,
       "punti": 0,
@@ -456,25 +1474,25 @@
     {
       "scuderiaSlug": "mclaren",
       "posizione": 3,
-      "punti": 263,
+      "punti": 265,
       "vittorie": 2
     },
     {
       "scuderiaSlug": "red_bull",
       "posizione": 4,
-      "punti": 186,
+      "punti": 189,
       "vittorie": 0
     },
     {
       "scuderiaSlug": "rb",
       "posizione": 5,
-      "punti": 66,
+      "punti": 70,
       "vittorie": 0
     },
     {
       "scuderiaSlug": "alpine",
       "posizione": 6,
-      "punti": 63,
+      "punti": 54,
       "vittorie": 0
     },
     {
@@ -507,5 +1525,13 @@
       "punti": 0,
       "vittorie": 0
     }
-  ]
+  ],
+  "fonti": [
+    "https://github.com/f1db/f1db/releases/tag/v2026.16.0"
+  ],
+  "verificaSemantica": {
+    "verificatoIl": "2026-10-05",
+    "fonte": "https://github.com/f1db/f1db/releases/tag/v2026.16.0",
+    "limite": "Posizioni e cause riscontrate su F1DB; fase qualifica separata dalla posizione; nessuna misura di passo o degrado."
+  }
 }

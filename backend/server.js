@@ -7,6 +7,7 @@ dotenv.config({ path: path.join(__dirname, ".env"), quiet: true });
 const app = require("./app");
 const collegaDatabase = require("./config/database");
 const ambiente = require("./config/ambiente");
+const { avviaMonitorPenalitaFia } = require("./services/penalitaFia");
 
 async function avviaServer() {
   try {
@@ -19,6 +20,9 @@ async function avviaServer() {
     server.requestTimeout = 60000;
     server.headersTimeout = 65000;
     server.keepAliveTimeout = 5000;
+
+    const fermaMonitorPenalita = ambiente.monitorFiaAbilitato
+      ? avviaMonitorPenalitaFia() : () => {};
 
 
     server.on("error", (errore) => {
@@ -34,6 +38,7 @@ async function avviaServer() {
       }
 
       chiusuraInCorso = true;
+      fermaMonitorPenalita();
       console.log(`Arresto del server richiesto da ${segnale}`);
 
       const arrestoForzato = setTimeout(() => process.exit(1), 10000);

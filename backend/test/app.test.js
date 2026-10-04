@@ -43,10 +43,10 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
     assert.equal(corpo.documentazione, "/api/docs");
     assert.deepEqual(corpo.attribuzioneDati, {
       nome: "F1DB",
-      url: "https://github.com/f1db/f1db/releases/tag/v2026.15.1",
+      url: "https://github.com/f1db/f1db/releases/tag/v2026.16.0",
       licenza: "CC BY 4.0",
       licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
-      versione: "v2026.15.1",
+      versione: "v2026.16.0",
       modifiche:
         "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato.",
     });
@@ -56,7 +56,7 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
   });
 });
 
-test("la stagione espone anche il GP concluso a Sepang senza una nuova release F1DB", async () => {
+test("la stagione espone Sepang dalla release F1DB aggiornata senza duplicarlo", async () => {
   await conServer(async (baseUrl) => {
     const risposta = await fetch(`${baseUrl}/api/v1/stagione?lingua=it`);
     const corpo = await risposta.json();
@@ -82,7 +82,7 @@ test("la stagione espone anche il GP concluso a Sepang senza una nuova release F
     assert.equal(sepang.qualifiche[0].codice, "VER");
     assert.equal(sepang.gara[0].codice, "VER");
     assert.equal(corpo.prossimi[0].nome, "Gran Premio di Singapore");
-    assert.equal(corpo.fonte.versione, "v2026.15.1");
+    assert.equal(corpo.fonte.versione, "v2026.16.0");
   });
 });
 

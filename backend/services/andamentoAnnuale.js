@@ -1,8 +1,8 @@
-const snapshotF1db = require("../data/f1db-v2026.15.1-derivato.json");
+const snapshotF1db = require("../data/f1db-v2026.16.0-derivato.json");
 
 function creaSeriePilota(eventi, pilotaSlug) {
   const primoRisultato = eventi
-    .map((evento) => evento.piloti[pilotaSlug])
+    .map((evento) => evento.piloti?.[pilotaSlug])
     .find(Boolean);
 
   if (!primoRisultato) return { qualifica: [], gara: [] };
@@ -12,7 +12,7 @@ function creaSeriePilota(eventi, pilotaSlug) {
       {
         nome: primoRisultato.codice,
         valori: eventi.map(
-          (evento) => evento.piloti[pilotaSlug]?.qualifica ?? null,
+          (evento) => evento.piloti?.[pilotaSlug]?.qualifica ?? null,
         ),
       },
     ],
@@ -20,7 +20,7 @@ function creaSeriePilota(eventi, pilotaSlug) {
       {
         nome: primoRisultato.codice,
         valori: eventi.map(
-          (evento) => evento.piloti[pilotaSlug]?.gara ?? null,
+          (evento) => evento.piloti?.[pilotaSlug]?.gara ?? null,
         ),
       },
     ],
@@ -31,8 +31,8 @@ function creaSerieScuderia(eventi, scuderiaSlug) {
   const codici = [
     ...new Set(
       eventi.flatMap((evento) => [
-        ...Object.keys(evento.scuderie[scuderiaSlug]?.gara || {}),
-        ...Object.keys(evento.scuderie[scuderiaSlug]?.qualifica || {}),
+        ...Object.keys(evento.scuderie?.[scuderiaSlug]?.gara || {}),
+        ...Object.keys(evento.scuderie?.[scuderiaSlug]?.qualifica || {}),
       ]),
     ),
   ];
@@ -41,7 +41,7 @@ function creaSerieScuderia(eventi, scuderiaSlug) {
     return codici.map((codice) => ({
       nome: codice,
       valori: eventi.map(
-        (evento) => evento.scuderie[scuderiaSlug]?.[tipo]?.[codice] ?? null,
+        (evento) => evento.scuderie?.[scuderiaSlug]?.[tipo]?.[codice] ?? null,
       ),
     }));
   }
@@ -59,6 +59,7 @@ function creaAndamentoAnnuale({
   snapshot = snapshotF1db,
 }) {
   const andamento = snapshot.andamento2026;
+  const eventi = [...andamento.eventi].sort((a, b) => a.round - b.round);
   const metadati = snapshot.metadati;
 
   if (stagione !== andamento.stagione) {
@@ -72,12 +73,12 @@ function creaAndamentoAnnuale({
   }
 
   const serie = pilotaSlug
-    ? creaSeriePilota(andamento.eventi, pilotaSlug)
-    : creaSerieScuderia(andamento.eventi, scuderiaSlug);
+    ? creaSeriePilota(eventi, pilotaSlug)
+    : creaSerieScuderia(eventi, scuderiaSlug);
 
   return {
     stagione,
-    etichette: andamento.eventi.map((evento) => evento.etichetta),
+    etichette: eventi.map((evento) => evento.etichetta),
     qualifica: serie.qualifica,
     gara: serie.gara,
     fonte: {
