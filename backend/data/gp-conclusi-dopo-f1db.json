@@ -1,0 +1,346 @@
+[
+  {
+    "round": 16,
+    "data": "2026-10-04",
+    "nome": "Bahrain Grand Prix",
+    "circuito": "Sepang International Circuit",
+    "qualifiche": [
+      {
+        "posizione": "1",
+        "pilota": "Max Emilian Verstappen",
+        "codice": "VER",
+        "q1": "1:36.477",
+        "q2": "1:35.696",
+        "q3": "1:35.130"
+      },
+      {
+        "posizione": "2",
+        "pilota": "Lewis Carl Davidson Hamilton",
+        "codice": "HAM",
+        "q1": "1:36.595",
+        "q2": "1:36.032",
+        "q3": "1:35.428"
+      },
+      {
+        "posizione": "3",
+        "pilota": "Isack Alexandre Hadjar",
+        "codice": "HAD",
+        "q1": "1:36.898",
+        "q2": "1:36.192",
+        "q3": "1:35.558"
+      },
+      {
+        "posizione": "4",
+        "pilota": "Andrea Kimi Antonelli",
+        "codice": "ANT",
+        "q1": "1:37.041",
+        "q2": "1:35.959",
+        "q3": "1:35.631"
+      },
+      {
+        "posizione": "5",
+        "pilota": "Charles Marc Hervé Perceval Leclerc",
+        "codice": "LEC",
+        "q1": "1:36.730",
+        "q2": "1:35.970",
+        "q3": "1:35.666"
+      },
+      {
+        "posizione": "6",
+        "pilota": "Lando Norris",
+        "codice": "NOR",
+        "q1": "1:37.092",
+        "q2": "1:36.173",
+        "q3": "1:35.757"
+      },
+      {
+        "posizione": "7",
+        "pilota": "Oscar Jack Piastri",
+        "codice": "PIA",
+        "q1": "1:36.852",
+        "q2": "1:36.020",
+        "q3": "1:35.762"
+      },
+      {
+        "posizione": "8",
+        "pilota": "George William Russell",
+        "codice": "RUS",
+        "q1": "1:37.264",
+        "q2": "1:36.245",
+        "q3": "1:35.871"
+      },
+      {
+        "posizione": "9",
+        "pilota": "Pierre Jean-Jacques Gasly",
+        "codice": "GAS",
+        "q1": "1:37.174",
+        "q2": "1:36.410",
+        "q3": "1:37.210"
+      },
+      {
+        "posizione": "10",
+        "pilota": "Gabriel Lourenzo Bortoleto Oliveira",
+        "codice": "BOR",
+        "q1": "1:37.106",
+        "q2": "1:36.814",
+        "q3": "1:37.673"
+      },
+      {
+        "posizione": "11",
+        "pilota": "Liam Jared Lawson",
+        "codice": "LAW",
+        "q1": "1:37.332",
+        "q2": "1:37.023",
+        "q3": null
+      },
+      {
+        "posizione": "12",
+        "pilota": "Fernando Alonso Díaz",
+        "codice": "ALO",
+        "q1": "1:37.721",
+        "q2": "1:37.220",
+        "q3": null
+      },
+      {
+        "posizione": "13",
+        "pilota": "Carlos Sainz Vázquez de Castro",
+        "codice": "SAI",
+        "q1": "1:37.651",
+        "q2": "1:37.527",
+        "q3": null
+      },
+      {
+        "posizione": "14",
+        "pilota": "Lance Strulovitch",
+        "codice": "STR",
+        "q1": "1:37.729",
+        "q2": "1:37.566",
+        "q3": null
+      },
+      {
+        "posizione": "15",
+        "pilota": "Franco Alejandro Colapinto",
+        "codice": "COL",
+        "q1": "1:37.179",
+        "q2": null,
+        "q3": null
+      },
+      {
+        "posizione": "16",
+        "pilota": "Arvid Anand Olof Lindblad",
+        "codice": "LIN",
+        "q1": "1:37.883",
+        "q2": null,
+        "q3": null
+      },
+      {
+        "posizione": "17",
+        "pilota": "Nicolas Hülkenberg",
+        "codice": "HUL",
+        "q1": "1:37.970",
+        "q2": null,
+        "q3": null
+      },
+      {
+        "posizione": "18",
+        "pilota": "Oliver James Bearman",
+        "codice": "BEA",
+        "q1": "1:37.980",
+        "q2": null,
+        "q3": null
+      },
+      {
+        "posizione": "19",
+        "pilota": "Esteban José Jean-Pierre Ocon-Khelfane",
+        "codice": "OCO",
+        "q1": "1:38.233",
+        "q2": null,
+        "q3": null
+      },
+      {
+        "posizione": "20",
+        "pilota": "Alexander Philippe Albon Ansusinha",
+        "codice": "ALB",
+        "q1": "1:38.600",
+        "q2": null,
+        "q3": null
+      },
+      {
+        "posizione": "21",
+        "pilota": "Valtteri Viktor Bottas",
+        "codice": "BOT",
+        "q1": "1:38.611",
+        "q2": null,
+        "q3": null
+      },
+      {
+        "posizione": "22",
+        "pilota": "Sergio Michel Pérez Mendoza",
+        "codice": "PER",
+        "q1": "1:38.933",
+        "q2": null,
+        "q3": null
+      }
+    ],
+    "gara": [
+      {
+        "posizione": "1",
+        "pilota": "Max Emilian Verstappen",
+        "codice": "VER",
+        "tempo": "1:47:14.808",
+        "punti": 25
+      },
+      {
+        "posizione": "2",
+        "pilota": "Andrea Kimi Antonelli",
+        "codice": "ANT",
+        "tempo": "+2.307s",
+        "punti": 18
+      },
+      {
+        "posizione": "3",
+        "pilota": "Lewis Carl Davidson Hamilton",
+        "codice": "HAM",
+        "tempo": "+4.919s",
+        "punti": 15
+      },
+      {
+        "posizione": "4",
+        "pilota": "Charles Marc Hervé Perceval Leclerc",
+        "codice": "LEC",
+        "tempo": "+7.258s",
+        "punti": 12
+      },
+      {
+        "posizione": "5",
+        "pilota": "Isack Alexandre Hadjar",
+        "codice": "HAD",
+        "tempo": "+8.571s",
+        "punti": 10
+      },
+      {
+        "posizione": "6",
+        "pilota": "Oscar Jack Piastri",
+        "codice": "PIA",
+        "tempo": "+9.454s",
+        "punti": 8
+      },
+      {
+        "posizione": "7",
+        "pilota": "Liam Jared Lawson",
+        "codice": "LAW",
+        "tempo": "+12.753s",
+        "punti": 6
+      },
+      {
+        "posizione": "8",
+        "pilota": "Fernando Alonso Díaz",
+        "codice": "ALO",
+        "tempo": "+13.372s",
+        "punti": 4
+      },
+      {
+        "posizione": "9",
+        "pilota": "Lando Norris",
+        "codice": "NOR",
+        "tempo": "+13.993s",
+        "punti": 2
+      },
+      {
+        "posizione": "10",
+        "pilota": "Arvid Anand Olof Lindblad",
+        "codice": "LIN",
+        "tempo": "+15.928s",
+        "punti": 1
+      },
+      {
+        "posizione": "11",
+        "pilota": "Nicolas Hülkenberg",
+        "codice": "HUL",
+        "tempo": "+17.404s",
+        "punti": null
+      },
+      {
+        "posizione": "12",
+        "pilota": "Lance Strulovitch",
+        "codice": "STR",
+        "tempo": "+18.052s",
+        "punti": null
+      },
+      {
+        "posizione": "13",
+        "pilota": "Franco Alejandro Colapinto",
+        "codice": "COL",
+        "tempo": "+18.997s",
+        "punti": null
+      },
+      {
+        "posizione": "14",
+        "pilota": "Oliver James Bearman",
+        "codice": "BEA",
+        "tempo": "+22.305s",
+        "punti": null
+      },
+      {
+        "posizione": "15",
+        "pilota": "Esteban José Jean-Pierre Ocon-Khelfane",
+        "codice": "OCO",
+        "tempo": "+22.532s",
+        "punti": null
+      },
+      {
+        "posizione": "16",
+        "pilota": "Pierre Jean-Jacques Gasly",
+        "codice": "GAS",
+        "tempo": "+23.315s",
+        "punti": null
+      },
+      {
+        "posizione": "17",
+        "pilota": "Carlos Sainz Vázquez de Castro",
+        "codice": "SAI",
+        "tempo": "+25.431s",
+        "punti": null
+      },
+      {
+        "posizione": "18",
+        "pilota": "Gabriel Lourenzo Bortoleto Oliveira",
+        "codice": "BOR",
+        "tempo": "+28.233s",
+        "punti": null
+      },
+      {
+        "posizione": "19",
+        "pilota": "Sergio Michel Pérez Mendoza",
+        "codice": "PER",
+        "tempo": "+29.310s",
+        "punti": null
+      },
+      {
+        "posizione": "20",
+        "pilota": "George William Russell",
+        "codice": "RUS",
+        "tempo": "DNF",
+        "punti": null
+      },
+      {
+        "posizione": "NC",
+        "pilota": "Alexander Philippe Albon Ansusinha",
+        "codice": "ALB",
+        "tempo": "DNF",
+        "punti": null
+      },
+      {
+        "posizione": "NC",
+        "pilota": "Valtteri Viktor Bottas",
+        "codice": "BOT",
+        "tempo": "DNF",
+        "punti": null
+      }
+    ],
+    "fontiRisultati": [
+      "https://www.fia.com/events/fia-formula-one-world-championship/season-2026/bahrain-grand-prix/session-classifications",
+      "https://www.formula1.com/en/results/2026/races/1308/bahrain/race-result"
+    ]
+  }
+]

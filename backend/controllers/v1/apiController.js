@@ -39,6 +39,7 @@ const {
   presentaScuderiaBreve,
 } = require("../../presenters/apiV1");
 const snapshotF1db = require("../../data/f1db-v2026.15.1-derivato.json");
+const gpConclusiDopoF1db = require("../../data/gp-conclusi-dopo-f1db.json");
 const { metadati: metadatiF1db } = snapshotF1db;
 const { version: VERSIONE_API } = require("../../package.json");
 
@@ -182,8 +183,14 @@ function statoServizio(richiesta, risposta) {
 
 function stagione(richiesta, risposta) {
   const lingua = linguaRichiesta(richiesta);
+  const calendario = snapshotF1db.calendario2026;
+  const roundAggiunti = new Set(gpConclusiDopoF1db.map((gara) => gara.round));
   risposta.json({
-    ...localizzaCalendario(snapshotF1db.calendario2026, lingua),
+    ...localizzaCalendario({
+      ...calendario,
+      prossimi: calendario.prossimi.filter((gara) => !roundAggiunti.has(gara.round)),
+      passati: [...calendario.passati, ...gpConclusiDopoF1db],
+    }, lingua),
     fonte: attribuzioneF1dbLocalizzata(lingua),
   });
 }

@@ -56,25 +56,32 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
   });
 });
 
-test("la stagione espone calendario e risultati completi fino a Baku", async () => {
+test("la stagione espone anche il GP concluso a Sepang senza una nuova release F1DB", async () => {
   await conServer(async (baseUrl) => {
     const risposta = await fetch(`${baseUrl}/api/v1/stagione?lingua=it`);
     const corpo = await risposta.json();
     assert.equal(risposta.status, 200);
     assert.equal(corpo.lingua, "it");
     assert.equal(corpo.stagione, 2026);
-    assert.equal(corpo.passati.length, 15);
-    assert.equal(corpo.prossimi.length, 8);
-    const madrid = corpo.passati.at(-2);
+    assert.equal(corpo.passati.length, 16);
+    assert.equal(corpo.prossimi.length, 7);
+    const madrid = corpo.passati.at(-3);
     assert.equal(madrid.round, 14);
     assert.equal(madrid.qualifiche[0].codice, "NOR");
     assert.equal(madrid.gara[0].codice, "ANT");
-    const baku = corpo.passati.at(-1);
+    const baku = corpo.passati.at(-2);
     assert.equal(baku.round, 15);
     assert.equal(baku.qualifiche[0].codice, "RUS");
     assert.equal(baku.gara[0].codice, "RUS");
-    assert.equal(corpo.prossimi[0].nome, "Gran Premio del Bahrein in Malesia");
-    assert.equal(corpo.prossimi[0].circuito, "Sepang International Circuit");
+    const sepang = corpo.passati.at(-1);
+    assert.equal(sepang.round, 16);
+    assert.equal(sepang.nome, "Gran Premio del Bahrein in Malesia");
+    assert.equal(sepang.circuito, "Sepang International Circuit");
+    assert.equal(sepang.qualifiche.length, 22);
+    assert.equal(sepang.gara.length, 22);
+    assert.equal(sepang.qualifiche[0].codice, "VER");
+    assert.equal(sepang.gara[0].codice, "VER");
+    assert.equal(corpo.prossimi[0].nome, "Gran Premio di Singapore");
     assert.equal(corpo.fonte.versione, "v2026.15.1");
   });
 });
