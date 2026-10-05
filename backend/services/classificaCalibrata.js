@@ -3,6 +3,11 @@ const fs = require("node:fs");
 const path = require("node:path");
 const campioni = require("../data/campioni-previsionali-2026.json");
 const calibrazione = require("../data/calibrazione-pesi-2026-10-05.json");
+const recente = require('../data/valutazione-forma-recente-2026-10-05.json');
+const evidenze = require('../data/evidenze-giri-2023-2026.json');
+const { fattoriRecenti, CHIAVI_RECENTI } = require('./modelloRecente');
+const digestGiri = createHash('sha256').update(fs.readFileSync(path.join(__dirname, '../data/evidenze-giri-2023-2026.json'))).digest('hex');
+if (digestGiri !== recente.sha256Evidenze) throw new Error('Evidenze e modello recente non corrispondono');
 const { indicePosizione } = require("./overallSemantici");
 const { CHIAVI, creaFattori, ordinaFattori } = require("./calibrazionePesi");
 const { testiPrevisione } = require("../i18n/previsioni");
@@ -13,7 +18,7 @@ if (digest !== calibrazione.sha256Campioni) throw new Error("Campioni e calibraz
 const CHIAVI_API = Object.freeze(["compatibilitaVetturaCircuito", "risultatiCircuitiSimili", "qualifica2026", "storicoPersonale", "aggiornamentiTecnici", "andamento2026", "passoGaraRecente", "andamentoScuderiaRecente"]);
 const numerosita = new Map(Object.entries(campioni.numerosita).map(([id, n]) => [Number(id), n]));
 
-function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua = "it", meteo = null, datiLiveFia = null, pesi = calibrazione.pesi }) {
+function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua = "it", meteo = null, datiLiveFia = null, pesi = null }) {
   const testi = testiPrevisione(lingua);
   const gp = campioni.gare.find((g) => g.year === gara.stagione && g.round === gara.ordineCalendario);
   if (!gp) throw new Error(`Scenario previsionale non disponibile: ${gara.slug}`);
@@ -26,8 +31,16 @@ function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua
     if (!driverId || !constructorId || !squadre.has(scuderiaSlug)) throw new Error(`Mapping mancante per ${p.slug}/${scuderiaSlug}`);
     return { driverId, constructorId, pilotaSlug: p.slug, scuderiaSlug };
   });
+  const usaRecente = pesi === null && recente.stato === 'calibrato_retrospettivo';
+  const storico = usaRecente && recente.gp.find(g => g.round === gp.round);
+  if (pesi === null) pesi = usaRecente ? (storico ? Object.fromEntries(CHIAVI_RECENTI.map((k,i)=>[k,storico.pesiProgressivi[i]])) : recente.pesi) : calibrazione.pesi;
+  const metodo = usaRecente ? recente : calibrazione;
   const vettorePesi = CHIAVI.map((k) => pesi[k] || 0);
   const fattoriInput = creaFattori({ ...campioni, gara: gp, partecipanti: presenti, numerosita });
+  if (usaRecente) {
+    const nuovi = new Map(fattoriRecenti({ campioni, evidenze, gara: gp, partecipanti: presenti, parametri: storico?.parametriProgressivi || recente.parametri }).map(p => [p.driverId,p]));
+    for (const p of fattoriInput) for (const [i,k] of CHIAVI_RECENTI.entries()) p.valori[CHIAVI.indexOf(k)] = nuovi.get(p.driverId).valori[i];
+  }
   // Dopo l'ultimo GP archiviato, leggi il mondiale aggiornato su Atlas.
   // Gli scenari storici continuano a usare soltanto la classifica anteriore al target.
   if (gp.round > campioni.ultimoRoundIncluso) {
@@ -41,6 +54,9 @@ function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua
       p.valori[4] = r.noto ? indicePosizione(r.posizione, presenti.length) : 50;
     }
   }
+  const nomiPasso = { it: 'Passo recente da giri filtrati', en: 'Recent pace from filtered laps', fr: 'Rythme récent sur tours filtrés', pt: 'Ritmo recente de voltas filtradas', es: 'Ritmo reciente de vueltas filtradas', de: 'Aktuelles Tempo aus gefilterten Runden' };
+  const nomiTeam = {it:'Forma recente scuderia',en:'Recent team form',fr:'Forme récente de l’équipe',pt:'Forma recente da equipa',es:'Forma reciente del equipo',de:'Aktuelle Teamform'};
+  const nomeFattore = chiave => usaRecente && chiave === 'andamentoScuderiaRecente' ? nomiTeam[lingua] : usaRecente && chiave === 'passoGaraRecente' ? nomiPasso[lingua] : testi.fattori[chiave];
   const ordine = ordinaFattori(fattoriInput, vettorePesi);
   const classifica = ordine.map((p) => {
     const pilota = piloti.find((x) => x.slug === p.pilotaSlug);
@@ -54,11 +70,11 @@ function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua
       const i = CHIAVI.indexOf(chiave);
       const peso = i >= 0 ? vettorePesi[i] : 0;
       const valore = i >= 0 ? p.valori[i] : 50;
-      return { chiave, nome: testi.fattori[chiave], pesoPercentuale: peso * (penalita ? 0.65 : 1),
+      return { chiave, nome: nomeFattore(chiave), pesoPercentuale: peso * (penalita ? 0.65 : 1),
         valutazione: Math.round(valore * 100) / 100,
         contributo: Math.round(valore * peso / 100 * (penalita ? 0.65 : 1) * 1000) / 1000 };
     });
-    const attivi = fattori.filter((f) => f.pesoPercentuale > 0);
+    const attivi = fattori.filter((f) => f.pesoPercentuale > 0).sort((a,b)=>b.pesoPercentuale-a.pesoPercentuale);
     if (penalita) fattori.push({ chiave: "penalita", nome: testi.fattori.penalita, pesoPercentuale: PESO_PENALITA,
       valutazione: Math.round(p.indice * penalita.valore) / 100,
       contributo: Math.round(p.indice * penalita.valore * 0.35 / 100 * 1000) / 1000 });
@@ -68,16 +84,17 @@ function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua
       scuderia: { slug: scuderia.slug, nome: scuderia.nome, abbreviazione: scuderia.abbreviazione, colore: scuderia.colore },
       confidenza: testi.livelli.bassa, confidenzaCodice: "bassa", sintesi: attivi.length > 1 ?
         testi.sintesi(attivi[0].nome, attivi[1].nome) : attivi[0].nome,
-      fattori, aggiornamentiTecnici: { stato: testi.stati.nessunaInformazione, nota: testi.note.nessunVantaggio } };
+      fattori, aggiornamentiTecnici: { stato: testi.stati[analisi.get(p.pilotaSlug)?.statoAggiornamentiTecnici] || testi.stati.nessunaInformazione,
+        nota: valoreLocalizzato(analisi.get(p.pilotaSlug), 'aggiornamentiInArrivo', lingua) || testi.note.nessunVantaggio } };
   }).sort((a, b) => b.indice - a.indice ||
     campioni.mappingPiloti[a.pilota.slug].localeCompare(campioni.mappingPiloti[b.pilota.slug]));
   return { lingua, gara: { slug: gara.slug, nome: valoreLocalizzato(gara, "nome", lingua),
-    circuito: valoreLocalizzato(gara, "circuito", lingua) }, modello: calibrazione.versione, meteo, circuitiSimili: [],
-    pesi: CHIAVI_API.map((chiave) => ({ chiave, nome: testi.fattori[chiave], pesoPercentuale: pesi[chiave] || 0 })),
-    calibrazione: { stato: calibrazione.stato, combinazioniEsaminate: calibrazione.ricerca.combinazioni,
+    circuito: valoreLocalizzato(gara, "circuito", lingua) }, modello: metodo.versione, meteo, circuitiSimili: [],
+    pesi: CHIAVI_API.map((chiave) => ({ chiave, nome: nomeFattore(chiave), pesoPercentuale: pesi[chiave] || 0 })),
+    calibrazione: { stato: metodo.stato, combinazioniEsaminate: metodo.ricerca.combinazioni,
       ultimoRoundTraining: campioni.ultimoRoundIncluso,
       fonteMondiale: gp.round > campioni.ultimoRoundIncluso ? "database" : "snapshot_anteriore_al_gp",
-      candidataPromossa: calibrazione.stato === "calibrato_retrospettivo" },
+      candidataPromossa: metodo.stato === "calibrato_retrospettivo" },
     classifica: classifica.map((p, i) => ({ ...p, indice: Math.round(p.indice * 10) / 10, posizione: i + 1 })) };
 }
 module.exports = { creaClassificaCalibrata };

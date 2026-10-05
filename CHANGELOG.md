@@ -1,5 +1,16 @@
 # Changelog
 
+## Timing evidence and recent-form forecast — 2026-10-05
+
+- Acquire 46 race sessions and replace generic missing-data text in all 396
+  driver/team analyses with filtered timing, stint sequences and explicit projections.
+- Verify five FIA component registers for all eleven teams; preserve unknown
+  per-car installation and lap-time gains rather than infer them.
+- Introduce `forma-recente-v1`, with at least 50% championship weight and
+  rolling three-event calibration. Progressive regular MAE: 2.400 to 2.276;
+  reused final-four diagnostic: 2.282 to 2.197. Complete-order errors also improve.
+- Keep API paths, eight factor keys, penalties and six-language compatibility.
+
 ## Forecast calibration — 2026-10-05 (API contract 1.16.0)
 
 - Search all 4,598,126 integer-percent combinations on sixteen completed GP;

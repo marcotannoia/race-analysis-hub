@@ -1,0 +1,3044 @@
+{
+  "generatoAlleUTC": "2026-10-05T07:29:28.032Z",
+  "database": "f1_stats",
+  "modalita": "applicazione",
+  "backup": "/tmp/f1-evidenze-2026-10-05/atlas/atlas-prima-1791185367693.json",
+  "documenti": 401,
+  "perCollezione": {
+    "Gara": 5,
+    "AnalisiGara": 264,
+    "AnalisiScuderia": 132
+  },
+  "modifiche": [
+    {
+      "modello": "Gara",
+      "chiave": "olanda-zandvoort",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "italia-monza",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "spagna-madring",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "azerbaigian-baku",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "Gara",
+      "chiave": "bahrein-sepang",
+      "campi": [
+        "previsioneCalibrata"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|russell",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|norris",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|tsunoda",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|bearman",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|alonso",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|stroll",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "olanda-zandvoort|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|russell",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|norris",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|tsunoda",
+      "campi": [
+        "gomme",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|bearman",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|alonso",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|stroll",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "italia-monza|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|russell",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|norris",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|tsunoda",
+      "campi": [
+        "gomme",
+        "traduzioni",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|bearman",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|alonso",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|stroll",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "spagna-madring|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|russell",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|norris",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|hadjar",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|bearman",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|alonso",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|stroll",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "azerbaigian-baku|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|russell",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|norris",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|hadjar",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|bearman",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|alonso",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|stroll",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "bahrein-sepang|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|russell",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|norris",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|hadjar",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|bearman",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|alonso",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|stroll",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "singapore-marina-bay|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|russell",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|norris",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|hadjar",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|bearman",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|alonso",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|stroll",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-austin|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|russell",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|norris",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|hadjar",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|bearman",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|alonso",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|stroll",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "messico-citta-del-messico|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|russell",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|norris",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|hadjar",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|bearman",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|alonso",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|stroll",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "brasile-interlagos|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|russell",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|norris",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|hadjar",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|bearman",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|alonso",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|stroll",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "usa-las-vegas|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|russell",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|norris",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|hadjar",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|bearman",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|alonso",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|stroll",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "qatar-lusail|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|antonelli",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|hamilton",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|russell",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|leclerc",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|norris",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|max_verstappen",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|piastri",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|hadjar",
+      "campi": [
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|lawson",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|gasly",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|arvid_lindblad",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|colapinto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|bearman",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|bortoleto",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|sainz",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|albon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|ocon",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|hulkenberg",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|alonso",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|stroll",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|bottas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiGara",
+      "chiave": "abu-dhabi-yas-marina|perez",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|aston_martin",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "olanda-zandvoort|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|aston_martin",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "italia-monza|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|aston_martin",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "spagna-madring|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|aston_martin",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "azerbaigian-baku|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|aston_martin",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "bahrein-sepang|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|aston_martin",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "singapore-marina-bay|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|aston_martin",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-austin|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|aston_martin",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "messico-citta-del-messico|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|aston_martin",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "brasile-interlagos|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|aston_martin",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "usa-las-vegas|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|aston_martin",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "qatar-lusail|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|mercedes",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|ferrari",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|mclaren",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|red_bull",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|rb",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|alpine",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|haas",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|audi",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|williams",
+      "campi": [
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|aston_martin",
+      "campi": [
+        "passoGara",
+        "gomme",
+        "considerazioni",
+        "traduzioni",
+        "fonti",
+        "overallSemantici"
+      ]
+    },
+    {
+      "modello": "AnalisiScuderia",
+      "chiave": "abu-dhabi-yas-marina|cadillac",
+      "campi": [
+        "overallSemantici"
+      ]
+    }
+  ],
+  "nuovoMetodo": "risultati-semantici-v1",
+  "metodi": [
+    "risultati-semantici-v1",
+    "risultati-calibrati-v1",
+    "forma-recente-v1"
+  ],
+  "stato": "applicato_e_verificato",
+  "differenzeDopo": []
+}

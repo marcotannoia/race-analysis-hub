@@ -224,35 +224,35 @@ The comparison index ranges from 0 to 100 and is included in the home response.
 The dedicated `GET /api/v1/previsioni/piloti` endpoint retains its eight ordinary
 factor fields, plus an optional confirmed-penalty factor. It is not a win probability.
 
-The `risultati-calibrati-v1` model searches all **4,598,126** nonnegative integer
-weight combinations summing to 100 across five reconstructible factors. Each
-historical scenario uses only preceding results. Calibration excludes documented
-retirements, DNS and disqualifications uniformly; complete-order metrics are
-also reported. Per-weekend optima describe the past and are not future predictions.
+The active `forma-recente-v1` model keeps at least **50% championship weight**
+and combines filtered-lap pace with exponentially weighted team results.
+The current fitted weights are **15% pace / 35% team form / 50% championship**.
+Parameters and weights are fitted on the three preceding GP; historical API
+scenarios use the parameters preceding that event. Current/future scenarios
+read current database championship order. Confidence remains low.
 
-| Candidate factor | Best weight on all 16 completed GP |
-|---|---:|
-| Driver results over the preceding three GP | 14% |
-| Qualifying over the preceding three GP | 47% |
-| Team results over the preceding three GP | 19% |
-| Previous three years on the circuit | 7% |
-| Previous championship order | 13% |
+The progressive comparison over rounds 4–16 improves regular-outcome MAE from
+**2.400 to 2.276** positions, and complete-order MAE from **3.923 to 3.734**.
+A configuration frozen after round 12 improves the last-four diagnostic from
+**2.282 to 2.197**, and complete order from **3.636 to 3.545**. That diagnostic
+block was already inspected in the previous revision: it is not a new,
+independent holdout or evidence of guaranteed future accuracy.
 
-The candidate improves the retrospective regular-outcome error but fails the
-fixed chronological holdout. It remains unpromoted. The active forecast uses
-the championship reference: **100% andamento2026**, with other ordinary weights
-zero. Missing championship observations use the neutral model prior 50. For
-future/current events the ranking reads current database standings; historical
-scenarios use standings strictly before the target GP. `calibrazione` exposes
-selection status and training coverage. Confidence remains low.
+Timing evidence covers **46 sessions**, including all sixteen completed 2026 GP.
+Pace comparisons filter pits, starts, traffic, rainfall, flags, compounds and
+age. Tyre fields include observed stint sequences and a relative timing slope;
+that slope does not isolate physical wear, fuel or deliberate management.
+Future-GP text contains projections from preceding sessions, with exact cutoffs.
+Five FIA Car Presentation documents cover all eleven teams. Declared components
+are kept separate from per-car installation and unmeasured lap-time gains.
 
 Confirmed penalties reduce the base index multiplicatively, up to 35%; they
-never improve it. Technical demands, upgrades and weather remain available as
-context, with no numeric bonus in this model without verified pre-race histories.
-
-See the [complete calibration report](docs/revisione-database-2026-10-05/CALIBRAZIONE.md)
-and all sixteen weekend dossiers for weights, exclusions and results. No native
-app release is required for these server calculations.
+never improve it. Technical demands, upgrades and weather remain contextual.
+The earlier 4,598,126-combination result fit remains archived and unpromoted.
+See [timing evidence and model verification](docs/revisione-database-2026-10-05/EVIDENZE-E-MODELLO.md)
+and the [earlier calibration](docs/revisione-database-2026-10-05/CALIBRAZIONE.md).
+Endpoint paths and eight ordinary factor keys are preserved; no native app
+binary change is required.
 
 ## Data maintained manually
 

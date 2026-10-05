@@ -1,4 +1,4 @@
-const calibrazione = require("../data/calibrazione-pesi-2026-10-05.json");
+const calibrazione = require("../data/valutazione-forma-recente-2026-10-05.json");
 const { version: versioneApi } = require("../package.json");
 
 const intestazioneRequestId = {
@@ -32,8 +32,8 @@ const esempioPesiPrevisionali = [
   ["storicoPersonale", "Storico personale", 2],
   ["aggiornamentiTecnici", "Aggiornamenti tecnici pertinenti", 10],
   ["andamento2026", "Andamento 2026", 5],
-  ["passoGaraRecente", "Andamento pilota negli ultimi 3 GP", 8],
-  ["andamentoScuderiaRecente", "Andamento scuderia negli ultimi 3 GP", 2],
+  ["passoGaraRecente", "Passo recente da giri filtrati", 8],
+  ["andamentoScuderiaRecente", "Forma recente scuderia", 2],
 ].map(([chiave, nome]) => ({
   chiave,
   nome,
@@ -1961,7 +1961,7 @@ const documentoOpenApi = {
             minItems: 8,
             maxItems: 9,
             description:
-              "Otto fattori ordinari per compatibilità; peso zero per fattori non utilizzati. Il candidato calibrato è adottato solo se migliora sia il confronto progressivo sia il controllo cronologico fisso; altrimenti è utilizzato il riferimento mondiale. Meteo e aggiornamenti non alterano il punteggio. Penalità confermate riducono l’indice fino al 35%.",
+              "Otto fattori ordinari per compatibilità; peso zero per fattori non utilizzati. Forma recente esponenziale e giri filtrati, con mondiale almeno al 50%; calibrazione sui tre GP precedenti. Migliora il confronto progressivo e un blocco diagnostico già esaminato, senza garanzia futura. Meteo e aggiornamenti non alterano il punteggio. Penalità confermate riducono l’indice fino al 35%.",
             items: { $ref: "#/components/schemas/FattorePrevisionale" },
             example: esempioFattoriPrevisionali,
           },

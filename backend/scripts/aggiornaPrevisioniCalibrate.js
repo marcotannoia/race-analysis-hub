@@ -18,12 +18,12 @@ function aggiorna() {
     const candidata = creaClassificaCalibrata({ ...args, pesi: calibrazione.pesiOttimiInteraStagione });
     const compatta = (output) => output.classifica.map((p) => ({ pilota: p.pilota.slug, scuderia: p.scuderia.slug,
       posizione: p.posizione, indice: p.indice, fattori: p.fattori }));
-    g.previsioneCalibrata = { versione: calibrazione.versione, calcolatoIl: calibrazione.calcolatoIl,
-      stato: calibrazione.stato, limiteRoundEsclusivoInput: g.ordineCalendario,
-      roundTrainingPesi: 16, retrospettivo: g.ordineCalendario <= 16,
-      pesi: calibrazione.pesi, pesiCandidata: calibrazione.pesiOttimiInteraStagione,
+    g.previsioneCalibrata = { versione: ufficiale.modello, calcolatoIl: calibrazione.calcolatoIl,
+      stato: ufficiale.calibrazione.stato, limiteRoundEsclusivoInput: g.ordineCalendario,
+      roundTrainingPesi: Math.min(g.ordineCalendario - 1, 16), retrospettivo: g.ordineCalendario <= 16,
+      pesi: Object.fromEntries(ufficiale.pesi.map(p=>[p.chiave,p.pesoPercentuale])), pesiCandidata: calibrazione.pesiOttimiInteraStagione,
       classifica: compatta(ufficiale), candidataNonPromossa: calibrazione.stato === "riferimento_mondiale" ? compatta(candidata) : null,
-      limite: "Selezione del metodo ricostruita dopo round 16; non previsione originale per gli eventi passati. Il candidato ottimizza gli esiti regolari ma non supera il controllo cronologico fisso." };
+      limite: "Selezione del metodo ricostruita dopo round 16; non previsione originale per gli eventi passati. Il modello recente è verificato progressivamente; il blocco diagnostico finale è già stato usato e non è un nuovo test indipendente." };
   }
   fs.writeFileSync(file, JSON.stringify(base, null, 2) + "\n");
   console.log(`Previsioni e candidato calibrato salvati per ${base.gare.length} GP`);

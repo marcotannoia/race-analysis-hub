@@ -163,18 +163,20 @@ The FIA live report is no longer shown on the website and in the updated app. Th
 
 ### Forecast model — revised October 5, 2026
 
-The current model is `risultati-calibrati-v1`. Endpoint paths and the eight ordinary
-factor keys remain unchanged. Factors not used in the selected method have zero
-weight; the active championship reference assigns 100% to `andamento2026`.
-Scores use championship order normalized among participants, not points or win
-probabilities. Missing observations receive the model's neutral prior.
+The current model is `forma-recente-v1`. Endpoint paths and the eight ordinary
+factor keys remain unchanged. The active weights are 15% filtered-lap pace,
+35% exponentially weighted team results and 50% championship order. Historical
+scenarios use weights fitted on the preceding three events; unused fields have
+zero weight. Scores are descriptive indices, not win probabilities. Missing
+observations receive the neutral model prior.
 
-The candidate calibration searches all integer-percent combinations of recent
-driver results, qualifying, team results, circuit history and championship order.
-The optimum over sixteen completed GP is 14/47/19/7/13%. It is unpromoted because
-weights frozen before the final four GP did not beat the championship reference.
-The optional `calibrazione` object contains `stato`, `combinazioniEsaminate`,
-`ultimoRoundTraining`, `fonteMondiale` and `candidataPromossa`.
+Weights retain at least 50% championship reference. The progressive regular
+MAE improves from 2.400 to 2.276 positions; the reused last-four diagnostic
+improves from 2.282 to 2.197. It is not an independent new holdout. Full-order
+errors are published separately. The optional `calibrazione` object contains
+`stato`, `combinazioniEsaminate`, `ultimoRoundTraining`, `fonteMondiale` and
+`candidataPromossa`. Timing and component evidence are documented in
+[the evidence report](docs/revisione-database-2026-10-05/EVIDENZE-E-MODELLO.md).
 
 All historical features have an exclusive round cutoff. Outlier exclusions are
 based uniformly on documented retirement/disqualification/DNS status, never on

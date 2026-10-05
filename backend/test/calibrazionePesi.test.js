@@ -57,7 +57,7 @@ test("la previsione pubblica conserva gli otto campi e usa il metodo selezionato
   const { creaClassificaPrevisionale } = require("../services/classificaPrevisionale");
   const { creaDatiEffettivi } = require("../utils/datiEffettivi");
   const dati = creaDatiEffettivi(require("../data/dati-iniziali.json"));
-  const calibrazione = require("../data/calibrazione-pesi-2026-10-05.json");
+  const calibrazione = require("../data/valutazione-forma-recente-2026-10-05.json");
   const teams = new Map(dati.scuderie.map((s) => [s.slug,s]));
   const piloti = dati.piloti.map((p) => ({ ...p, scuderia: teams.get(p.scuderiaSlug) }));
   const pm = new Map(piloti.map((p) => [p.slug,p]));
@@ -77,7 +77,7 @@ test("la previsione pubblica conserva gli otto campi e usa il metodo selezionato
   }
   const meteo = creaClassificaPrevisionale({ ...args,meteo:{ probabilitaPioggiaPercentuale:100 } });
   assert.deepEqual(meteo.classifica,output.classifica);
-  assert.equal(output.calibrazione.candidataPromossa,false);
+  assert.equal(output.calibrazione.candidataPromossa,true);
   assert.equal(output.calibrazione.fonteMondiale,"database");
   const invertiti = piloti.map((p) => ({ ...p,classifica2026:{ ...p.classifica2026, posizione:24-p.classifica2026.posizione } }));
   assert.notEqual(creaClassificaPrevisionale({ ...args,piloti:invertiti }).classifica[0].pilota.slug,output.classifica[0].pilota.slug);

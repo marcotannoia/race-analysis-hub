@@ -11,6 +11,7 @@ const { normalizzaTestiAnnuali, normalizzaNotaBene } = require("../utils/normali
 const { normalizzaTraduzioniAnalisi } = require("../utils/normalizzaTraduzioni");
 const dati = creaDatiEffettivi(require("../data/dati-iniziali.json"));
 const backtest = require("../data/backtest-semantico-2026-10-05.json");
+const recente = require('../data/valutazione-forma-recente-2026-10-05.json');
 const calibrazione = require("../data/calibrazione-pesi-2026-10-05.json");
 const models = Object.fromEntries(["Pilota", "Scuderia", "Gara", "AnalisiGara", "AnalisiScuderia", "MetodoPrevisionale"]
   .map((n) => [n, require(`../models/${n}`)]));
@@ -96,7 +97,7 @@ async function main() {
   const metodo = { versione: backtest.versione, stato: "sperimentale_non_promosso", pesi: backtest.pesi,
     protocollo: backtest.protocollo, backtest, fonti: [backtest.fonte] };
   const metodi = [metodo, { versione: calibrazione.versione, stato: calibrazione.stato, pesi: calibrazione.pesi,
-    protocollo: calibrazione.protocollo, backtest: calibrazione, fonti: [calibrazione.fonte] }];
+    protocollo: calibrazione.protocollo, backtest: calibrazione, fonti: [calibrazione.fonte] }, { versione: recente.versione, stato: recente.stato, pesi: recente.pesi, protocollo: recente.protocollo, backtest: recente, fonti: [recente.fonte] }];
   const report = {
     generatoAlleUTC: new Date().toISOString(), database: mongoose.connection.name,
     modalita: applica ? "applicazione" : "anteprima", backup: backupFile,

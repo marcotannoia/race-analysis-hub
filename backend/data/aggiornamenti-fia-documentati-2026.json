@@ -1,0 +1,912 @@
+{
+  "versione": "componenti-fia-v1",
+  "documenti": [
+    {
+      "garaSlug": "olanda-zandvoort",
+      "round": 12,
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_car_presentation_submissions.pdf",
+      "sha256": "9c24cee9ec4775e7dd507654b13692500ef9e41e8b1625982a5ab8e2a92100a4",
+      "scuderie": [
+        {
+          "scuderiaSlug": "mclaren",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Rear Wing"
+            },
+            {
+              "numero": 2,
+              "componente": "Coke/Engine Cover"
+            },
+            {
+              "numero": 3,
+              "componente": "Rear Corner"
+            }
+          ],
+          "pagine": [
+            2
+          ]
+        },
+        {
+          "scuderiaSlug": "mercedes",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Corner"
+            }
+          ],
+          "pagine": [
+            4
+          ]
+        },
+        {
+          "scuderiaSlug": "red_bull",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Corner"
+            }
+          ],
+          "pagine": [
+            6
+          ]
+        },
+        {
+          "scuderiaSlug": "ferrari",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Floor Body"
+            },
+            {
+              "numero": 2,
+              "componente": "Floor Board"
+            },
+            {
+              "numero": 3,
+              "componente": "Floor Edge"
+            },
+            {
+              "numero": 4,
+              "componente": "Diffuser"
+            },
+            {
+              "numero": 5,
+              "componente": "Beam Wing"
+            }
+          ],
+          "pagine": [
+            8
+          ]
+        },
+        {
+          "scuderiaSlug": "williams",
+          "componenti": [],
+          "pagine": [
+            10
+          ]
+        },
+        {
+          "scuderiaSlug": "rb",
+          "componenti": [],
+          "pagine": [
+            11
+          ]
+        },
+        {
+          "scuderiaSlug": "aston_martin",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Wing"
+            },
+            {
+              "numero": 2,
+              "componente": "Front Wing Endplate"
+            },
+            {
+              "numero": 3,
+              "componente": "Front Wing"
+            },
+            {
+              "numero": 4,
+              "componente": "Floor Fences"
+            },
+            {
+              "numero": 5,
+              "componente": "Diffuser"
+            }
+          ],
+          "pagine": [
+            12
+          ]
+        },
+        {
+          "scuderiaSlug": "haas",
+          "componenti": [],
+          "pagine": [
+            14
+          ]
+        },
+        {
+          "scuderiaSlug": "audi",
+          "componenti": [],
+          "pagine": [
+            15
+          ]
+        },
+        {
+          "scuderiaSlug": "alpine",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Floor Body"
+            },
+            {
+              "numero": 2,
+              "componente": "Floor Board"
+            },
+            {
+              "numero": 3,
+              "componente": "Floor Edge"
+            },
+            {
+              "numero": 4,
+              "componente": "Diffuser"
+            },
+            {
+              "numero": 5,
+              "componente": "Sidepod/Coke"
+            },
+            {
+              "numero": 6,
+              "componente": "Rear Corner"
+            },
+            {
+              "numero": 7,
+              "componente": "Rear impact structure"
+            },
+            {
+              "numero": 8,
+              "componente": "Rear Wing"
+            }
+          ],
+          "pagine": [
+            16,
+            17
+          ]
+        },
+        {
+          "scuderiaSlug": "cadillac",
+          "componenti": [],
+          "pagine": [
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "garaSlug": "italia-monza",
+      "round": 13,
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_italian_grand_prix_-_car_presentation_submissions.pdf",
+      "sha256": "55541780261498d2f329dae1748df636a871072f26a580dd027de78669442d81",
+      "scuderie": [
+        {
+          "scuderiaSlug": "mclaren",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Rear Wing"
+            },
+            {
+              "numero": 2,
+              "componente": "Floor Furniture"
+            }
+          ],
+          "pagine": [
+            2
+          ]
+        },
+        {
+          "scuderiaSlug": "mercedes",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Rear Wing"
+            },
+            {
+              "numero": 2,
+              "componente": "Front Bodywork"
+            }
+          ],
+          "pagine": [
+            4
+          ]
+        },
+        {
+          "scuderiaSlug": "red_bull",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Rear Corner"
+            },
+            {
+              "numero": 2,
+              "componente": "Floor Body"
+            },
+            {
+              "numero": 3,
+              "componente": "Exhaust Tailpipe"
+            },
+            {
+              "numero": 4,
+              "componente": "Front Wing"
+            }
+          ],
+          "pagine": [
+            6
+          ]
+        },
+        {
+          "scuderiaSlug": "ferrari",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Floor Board"
+            },
+            {
+              "numero": 2,
+              "componente": "Mirror Stay"
+            },
+            {
+              "numero": 3,
+              "componente": "Rear Corner"
+            },
+            {
+              "numero": 4,
+              "componente": "RV Tail"
+            }
+          ],
+          "pagine": [
+            8
+          ]
+        },
+        {
+          "scuderiaSlug": "williams",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Halo"
+            },
+            {
+              "numero": 2,
+              "componente": "Front Wing"
+            },
+            {
+              "numero": 3,
+              "componente": "Floor Body"
+            }
+          ],
+          "pagine": [
+            10
+          ]
+        },
+        {
+          "scuderiaSlug": "rb",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Rear Wing"
+            },
+            {
+              "numero": 2,
+              "componente": "Exhaust Tailpipe"
+            }
+          ],
+          "pagine": [
+            12
+          ]
+        },
+        {
+          "scuderiaSlug": "aston_martin",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Suspension"
+            },
+            {
+              "numero": 2,
+              "componente": "Floor Edge"
+            }
+          ],
+          "pagine": [
+            14
+          ]
+        },
+        {
+          "scuderiaSlug": "haas",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Floor"
+            },
+            {
+              "numero": 2,
+              "componente": "Bodywork"
+            },
+            {
+              "numero": 3,
+              "componente": "Rear Corner"
+            }
+          ],
+          "pagine": [
+            16
+          ]
+        },
+        {
+          "scuderiaSlug": "audi",
+          "componenti": [],
+          "pagine": [
+            18
+          ]
+        },
+        {
+          "scuderiaSlug": "alpine",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Wing Endplate"
+            },
+            {
+              "numero": 2,
+              "componente": "Rear wing"
+            }
+          ],
+          "pagine": [
+            19
+          ]
+        },
+        {
+          "scuderiaSlug": "cadillac",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Forward Floor Board Stay"
+            },
+            {
+              "numero": 2,
+              "componente": "Diffuser Vane"
+            }
+          ],
+          "pagine": [
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "garaSlug": "spagna-madring",
+      "round": 14,
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_spanish_grand_prix_-_car_presentation_submissions.pdf",
+      "sha256": "c92e9191ede7c2bbb5aeabb8b2026f599d3f71fe432bc55311d63cfa1cb6f6a7",
+      "scuderie": [
+        {
+          "scuderiaSlug": "mclaren",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Rear Wing"
+            }
+          ],
+          "pagine": [
+            2
+          ]
+        },
+        {
+          "scuderiaSlug": "mercedes",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Rear Wing"
+            },
+            {
+              "numero": 2,
+              "componente": "Exhaust Tailpipe"
+            },
+            {
+              "numero": 3,
+              "componente": "Front Drum"
+            }
+          ],
+          "pagine": [
+            4
+          ]
+        },
+        {
+          "scuderiaSlug": "red_bull",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Rear Corner"
+            },
+            {
+              "numero": 2,
+              "componente": "Floor Bib"
+            }
+          ],
+          "pagine": [
+            6
+          ]
+        },
+        {
+          "scuderiaSlug": "ferrari",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Rear Suspension"
+            }
+          ],
+          "pagine": [
+            8
+          ]
+        },
+        {
+          "scuderiaSlug": "williams",
+          "componenti": [],
+          "pagine": [
+            10
+          ]
+        },
+        {
+          "scuderiaSlug": "rb",
+          "componenti": [],
+          "pagine": [
+            11
+          ]
+        },
+        {
+          "scuderiaSlug": "aston_martin",
+          "componenti": [],
+          "pagine": [
+            12
+          ]
+        },
+        {
+          "scuderiaSlug": "haas",
+          "componenti": [],
+          "pagine": [
+            13
+          ]
+        },
+        {
+          "scuderiaSlug": "audi",
+          "componenti": [],
+          "pagine": [
+            14
+          ]
+        },
+        {
+          "scuderiaSlug": "alpine",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Floor board"
+            }
+          ],
+          "pagine": [
+            15
+          ]
+        },
+        {
+          "scuderiaSlug": "cadillac",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Rear Wing Flap"
+            },
+            {
+              "numero": 2,
+              "componente": "Diffuser Vane"
+            }
+          ],
+          "pagine": [
+            17
+          ]
+        }
+      ]
+    },
+    {
+      "garaSlug": "azerbaigian-baku",
+      "round": 15,
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_azerbaijan_grand_prix_-_car_presentation_submissions.pdf",
+      "sha256": "1616de8a9a2118873ff2146d08df6a98479e777d4012aa430a40766e563699b2",
+      "scuderie": [
+        {
+          "scuderiaSlug": "mclaren",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Sidepod Inlet"
+            },
+            {
+              "numero": 2,
+              "componente": "Coke/Engine Cover"
+            },
+            {
+              "numero": 3,
+              "componente": "Coke/Engine Cover"
+            },
+            {
+              "numero": 4,
+              "componente": "Cooling Louvres"
+            },
+            {
+              "numero": 5,
+              "componente": "Floor Edge"
+            },
+            {
+              "numero": 6,
+              "componente": "Diffuser"
+            },
+            {
+              "numero": 7,
+              "componente": "Rear Suspension"
+            },
+            {
+              "numero": 8,
+              "componente": "Rear Wing"
+            }
+          ],
+          "pagine": [
+            2,
+            3
+          ]
+        },
+        {
+          "scuderiaSlug": "mercedes",
+          "componenti": [],
+          "pagine": [
+            5
+          ]
+        },
+        {
+          "scuderiaSlug": "red_bull",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Floor Body & Diffuser"
+            },
+            {
+              "numero": 2,
+              "componente": "Sidepod"
+            },
+            {
+              "numero": 3,
+              "componente": "Cooling louvres"
+            },
+            {
+              "numero": 4,
+              "componente": "Mirrors"
+            },
+            {
+              "numero": 5,
+              "componente": "Halo"
+            }
+          ],
+          "pagine": [
+            6
+          ]
+        },
+        {
+          "scuderiaSlug": "ferrari",
+          "componenti": [],
+          "pagine": [
+            8
+          ]
+        },
+        {
+          "scuderiaSlug": "williams",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Floor"
+            },
+            {
+              "numero": 2,
+              "componente": "Tail"
+            },
+            {
+              "numero": 3,
+              "componente": "Front Corner"
+            },
+            {
+              "numero": 4,
+              "componente": "Rear Suspension"
+            },
+            {
+              "numero": 5,
+              "componente": "Rear Corner"
+            }
+          ],
+          "pagine": [
+            9
+          ]
+        },
+        {
+          "scuderiaSlug": "rb",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Wing"
+            },
+            {
+              "numero": 2,
+              "componente": "Front Corner"
+            },
+            {
+              "numero": 3,
+              "componente": "Front Suspension"
+            }
+          ],
+          "pagine": [
+            11
+          ]
+        },
+        {
+          "scuderiaSlug": "aston_martin",
+          "componenti": [],
+          "pagine": [
+            13
+          ]
+        },
+        {
+          "scuderiaSlug": "haas",
+          "componenti": [],
+          "pagine": [
+            14
+          ]
+        },
+        {
+          "scuderiaSlug": "audi",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Wing"
+            },
+            {
+              "numero": 2,
+              "componente": "Front Wing Endplate"
+            },
+            {
+              "numero": 3,
+              "componente": "Nose"
+            },
+            {
+              "numero": 4,
+              "componente": "Front Suspension"
+            },
+            {
+              "numero": 5,
+              "componente": "Floor Body"
+            },
+            {
+              "numero": 6,
+              "componente": "Floor leading edge devices"
+            },
+            {
+              "numero": 7,
+              "componente": "Diffuser"
+            },
+            {
+              "numero": 8,
+              "componente": "Halo"
+            },
+            {
+              "numero": 9,
+              "componente": "Coke/Engine Cover"
+            },
+            {
+              "numero": 10,
+              "componente": "Rear Suspension"
+            },
+            {
+              "numero": 11,
+              "componente": "Rear Corner"
+            },
+            {
+              "numero": 12,
+              "componente": "Beam Wing"
+            },
+            {
+              "numero": 13,
+              "componente": "Rear Wing"
+            },
+            {
+              "numero": 14,
+              "componente": "Rear Wing Endplate"
+            }
+          ],
+          "pagine": [
+            15,
+            16
+          ]
+        },
+        {
+          "scuderiaSlug": "alpine",
+          "componenti": [],
+          "pagine": [
+            18
+          ]
+        },
+        {
+          "scuderiaSlug": "cadillac",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Corner"
+            },
+            {
+              "numero": 2,
+              "componente": "Front Suspension"
+            },
+            {
+              "numero": 3,
+              "componente": "Diffuser"
+            }
+          ],
+          "pagine": [
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "garaSlug": "bahrein-sepang",
+      "round": 16,
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_car_presentation_submissions.pdf",
+      "sha256": "be68005deb6890e760be6fc032dc7026c7a44f8761ad5894a617d855e9218e3c",
+      "scuderie": [
+        {
+          "scuderiaSlug": "mclaren",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Coke/Engine Cover"
+            }
+          ],
+          "pagine": [
+            2
+          ]
+        },
+        {
+          "scuderiaSlug": "mercedes",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Floor Board"
+            },
+            {
+              "numero": 2,
+              "componente": "Floor Leading Edge"
+            },
+            {
+              "numero": 3,
+              "componente": "Floor Corner"
+            },
+            {
+              "numero": 4,
+              "componente": "Floor Body"
+            },
+            {
+              "numero": 5,
+              "componente": "Rear Suspension"
+            },
+            {
+              "numero": 6,
+              "componente": "Rear Corner"
+            },
+            {
+              "numero": 7,
+              "componente": "Rear Bodywork"
+            }
+          ],
+          "pagine": [
+            4
+          ]
+        },
+        {
+          "scuderiaSlug": "red_bull",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Floor Board"
+            }
+          ],
+          "pagine": [
+            6
+          ]
+        },
+        {
+          "scuderiaSlug": "ferrari",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Diffuser"
+            }
+          ],
+          "pagine": [
+            8
+          ]
+        },
+        {
+          "scuderiaSlug": "williams",
+          "componenti": [],
+          "pagine": [
+            10
+          ]
+        },
+        {
+          "scuderiaSlug": "rb",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Wing"
+            },
+            {
+              "numero": 2,
+              "componente": "Rear Wing"
+            }
+          ],
+          "pagine": [
+            11
+          ]
+        },
+        {
+          "scuderiaSlug": "aston_martin",
+          "componenti": [],
+          "pagine": [
+            13
+          ]
+        },
+        {
+          "scuderiaSlug": "haas",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Rear Impact Structure"
+            }
+          ],
+          "pagine": [
+            14
+          ]
+        },
+        {
+          "scuderiaSlug": "audi",
+          "componenti": [],
+          "pagine": [
+            16
+          ]
+        },
+        {
+          "scuderiaSlug": "alpine",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Corner"
+            }
+          ],
+          "pagine": [
+            17
+          ]
+        },
+        {
+          "scuderiaSlug": "cadillac",
+          "componenti": [],
+          "pagine": [
+            19
+          ]
+        }
+      ]
+    }
+  ]
+}
