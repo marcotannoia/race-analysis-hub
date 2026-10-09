@@ -47,6 +47,20 @@ test("estrae i due documenti ufficiali dalla pagina evento FIA", () => {
   assert.equal(documenti[0].pubblicatoIl.toISOString(), "2026-08-21T10:02:00.000Z");
 });
 
+test("estrae i documenti dal nuovo markup FIA di Singapore", () => {
+  const documenti = estraiDocumentiFia(`
+    <li class="document-row key-9">
+      <a href="/system/files/decision-document/2026_singapore_grand_prix_-_car_presentation_submissions.pdf" download target="_blank">
+        <div class="file-type"><div class="pdf"></div></div>
+        <div class="title">\n Doc 9 - Car Presentation Submissions\n </div>
+        <div class="published">Published on <span class="date-display-single">09.10.26 10:08</span> CET</div>
+      </a>
+    </li>`, "https://www.fia.com/documents/event/Singapore%20Grand%20Prix");
+  assert.equal(documenti.length, 1);
+  assert.equal(documenti[0].titolo, "Doc 9 - Car Presentation Submissions");
+  assert.equal(documenti[0].url, "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_car_presentation_submissions.pdf");
+});
+
 test("pubblica il Live soltanto quando tutte le 11 scuderie sono presenti", () => {
   const pagine = SCUDERIE_FIA.map((nome, indice) => ({
     numero: indice + 1,

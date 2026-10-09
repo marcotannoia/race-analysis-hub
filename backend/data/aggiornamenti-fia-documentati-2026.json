@@ -907,6 +907,81 @@
           ]
         }
       ]
+    },
+    {
+      "garaSlug": "singapore-marina-bay",
+      "round": 17,
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_car_presentation_submissions.pdf",
+      "sha256": "caf5c69b36c7f1c4dab9e311199edaf38f995da420a247af809baafa6bff2c30",
+      "scuderie": [
+        {
+          "scuderiaSlug": "mclaren",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Corner"
+            }
+          ]
+        },
+        {
+          "scuderiaSlug": "mercedes",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front Wing"
+            },
+            {
+              "numero": 2,
+              "componente": "Front Wing Endplate"
+            }
+          ]
+        },
+        {
+          "scuderiaSlug": "red_bull",
+          "componenti": [
+            {
+              "numero": 1,
+              "componente": "Front wing"
+            },
+            {
+              "numero": 2,
+              "componente": "Rear Wheel Bodywork"
+            }
+          ]
+        },
+        {
+          "scuderiaSlug": "ferrari",
+          "componenti": []
+        },
+        {
+          "scuderiaSlug": "williams",
+          "componenti": []
+        },
+        {
+          "scuderiaSlug": "rb",
+          "componenti": []
+        },
+        {
+          "scuderiaSlug": "aston_martin",
+          "componenti": []
+        },
+        {
+          "scuderiaSlug": "haas",
+          "componenti": []
+        },
+        {
+          "scuderiaSlug": "audi",
+          "componenti": []
+        },
+        {
+          "scuderiaSlug": "alpine",
+          "componenti": []
+        },
+        {
+          "scuderiaSlug": "cadillac",
+          "componenti": []
+        }
+      ]
     }
   ]
 }

@@ -72,7 +72,8 @@ test("la previsione pubblica conserva gli otto campi e usa il metodo selezionato
   assert.equal(output.pesi.reduce((s,p) => s+p.pesoPercentuale,0),100);
   for (const p of output.classifica) {
     assert.ok(Number.isFinite(p.indice));
-    assert.equal(p.fattori.length,8);
+    assert.equal(p.fattori.filter((f) => f.chiave !== "penalita").length,8);
+    assert.equal(p.fattori.reduce((s,f) => s+f.pesoPercentuale,0),100);
     assert.ok(Math.abs(p.fattori.reduce((s,f) => s+f.contributo,0)-p.indice) <= 0.051);
   }
   const meteo = creaClassificaPrevisionale({ ...args,meteo:{ probabilitaPioggiaPercentuale:100 } });

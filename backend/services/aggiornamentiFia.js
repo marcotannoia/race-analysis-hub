@@ -85,12 +85,12 @@ function dataPubblicazioneFia(valore) {
 function estraiDocumentiFia(html, paginaFia) {
   const documenti = [];
   const espressione =
-    /<a\s+href="([^"]+\.pdf)"[\s\S]{0,1600}?<div\s+class="field-item even">([^<]+)<\/div>[\s\S]{0,800}?date-display-single[^>]*>([^<]+)/gi;
+    /<a\s+href="([^"]+\.pdf)"[\s\S]{0,1600}?<div\s+class="(?:field-item even|title)">([^<]+)<\/div>[\s\S]{0,800}?date-display-single[^>]*>([^<]+)/gi;
 
   for (const corrispondenza of String(html).matchAll(espressione)) {
     documenti.push({
       url: new URL(decodificaHtml(corrispondenza[1]), paginaFia).href,
-      titolo: pulisciTesto(decodificaHtml(corrispondenza[2])),
+      titolo: decodificaHtml(corrispondenza[2]).replace(/\s+/g, " ").trim(),
       pubblicatoIl: dataPubblicazioneFia(corrispondenza[3]),
     });
   }
