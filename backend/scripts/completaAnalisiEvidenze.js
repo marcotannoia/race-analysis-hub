@@ -10,8 +10,8 @@ const { creaDatiEffettivi }=require('../utils/datiEffettivi');
 const { creaClassificaCalibrata }=require('../services/classificaCalibrata');
 const root=path.join(__dirname,'../data');
 const scrivi=(file,x)=>fs.writeFileSync(file,JSON.stringify(x,null,2)+'\n');
-const NOMINE={ 'olanda-zandvoort':'C2/C3/C4','italia-monza':'C3/C4/C5','spagna-madring':'C2/C3/C4','azerbaigian-baku':'C3/C4/C5','bahrein-sepang':'C2/C3/C4','singapore-marina-bay':'C3/C4/C5' };
-const FONTI_NOMINE=['https://press.pirelli.com/tyre-compounds-selected-for-zandvoort-monza-and-madrid/','https://press.pirelli.com/tyre-compound-selections-for-baku-sepang-and-singapore/'];
+const NOMINE={ 'olanda-zandvoort':'C2/C3/C4','italia-monza':'C3/C4/C5','spagna-madring':'C2/C3/C4','azerbaigian-baku':'C3/C4/C5','bahrein-sepang':'C2/C3/C4','singapore-marina-bay':'C3/C4/C5','usa-austin':'C2/C3/C4','messico-citta-del-messico':'C3/C4/C5','brasile-interlagos':'C3/C4/C5' };
+const FONTI_NOMINE=['https://press.pirelli.com/the-compound-selection-for-austin-mexico-city-and-so-paulo/','https://press.pirelli.com/tyre-compounds-selected-for-zandvoort-monza-and-madrid/','https://press.pirelli.com/tyre-compound-selections-for-baku-sepang-and-singapore/'];
 function completa(rawdir) {
  const f=caricaFonti(rawdir),d=JSON.parse(fs.readFileSync(path.join(root,'dati-iniziali.json'))),eff=creaDatiEffettivi(d);
  const tm=new Map(eff.scuderie.map(s=>[s.slug,s])),pm=new Map(eff.piloti.map(p=>[p.slug,{...p,scuderia:tm.get(p.scuderiaSlug)}]));
@@ -66,7 +66,7 @@ function completa(rawdir) {
    for(const tipo of ['passo','gomme'])hist[tipo].push('2026: '+fmt(t.recente,{gp:campioni[tipo].length,dati:testoSessioni(campioni[tipo],tipo,lang)},lang)+' '+t.limite);
    const trad=a.traduzioni[lang];
    trad.passoGara=hist.passo.join('\n');trad.gestioneGomme=hist.gomme.join('\n');
-   trad.andamentoPerAnno=fmt(t.stagione,{round:Math.min(limite-1,16),gara:rp.overall,nr:rp.campione,qualifica:qp.overall,nq:qp.campione,recente:tr.overall,delta:tr.deltaOverall},lang);
+   trad.andamentoPerAnno=fmt(t.stagione,{round:Math.min(limite-1,f.ultimiGp.at(-1).round),gara:rp.overall,nr:rp.campione,qualifica:qp.overall,nq:qp.campione,recente:tr.overall,delta:tr.deltaOverall},lang);
    trad.aggiornamentiInArrivo=fmt(t.registroAggiornamenti,{squadra:tm.get(a.scuderiaSlug).nome,circuito:g.traduzioni[lang].circuito,registro:registro.map(r=>`${r.garaSlug} (${r.round}): ${r.componenti.length?r.componenti.map(c=>c.componente).join(', '):t.nessunAggiornamento}`).join('; ')},lang);
    trad.considerazioniFinali=fmt(t.conclusione,{posizione:teamRank,totale:team?11:22,indice:Math.round(index*10)/10,passo:pace.overall,gomme:tyres.overall},lang);
    // Conserva le posizioni verificabili; aggiunge il contesto del nuovo campione.
@@ -127,7 +127,7 @@ function completa(rawdir) {
   const ss=selezionaEvidenze(evidence,criteria);
   p.overallSemantici.campi.passoGara=aggregaEvidenze(ss,'passo');p.overallSemantici.campi.gestioneGomme=aggregaEvidenze(ss,'gomme');
  }
- d.metadati.evidenzePrestazioni={versione:evidence.versione,fonte:evidence.fonte,sessioni:evidence.sessioni.length,ultimoRoundIncluso:16,analisiAggiornate:count,metodo:evidence.metodo};
+ d.metadati.evidenzePrestazioni={versione:evidence.versione,fonte:evidence.fonte,sessioni:evidence.sessioni.length,ultimoRoundIncluso:f.ultimiGp.at(-1).round,analisiAggiornate:count,metodo:evidence.metodo};
  scrivi(path.join(root,'dati-iniziali.json'),d);console.log('Schede completate:',count,'sessioni:',evidence.sessioni.length);
 }
 if(require.main===module)completa(process.argv[2]);module.exports={completa};

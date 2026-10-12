@@ -6,7 +6,7 @@ const PESI_SEMANTICI = Object.freeze({
   storicoCircuito: 5,
 });
 const VERSIONE = "risultati-semantici-v1";
-const FONTE = "https://github.com/f1db/f1db/releases/tag/v2026.16.0";
+const FONTE = "https://github.com/f1db/f1db/releases/tag/v2026.17.0";
 const round = (x) => Math.round(x * 10) / 10;
 const media = (xs) => xs.length ? xs.reduce((s, x) => s + x, 0) / xs.length : null;
 const ordinaCronologicamente = (righe) => [...righe].sort((a, b) =>

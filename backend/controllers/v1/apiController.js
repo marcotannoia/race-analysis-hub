@@ -39,7 +39,7 @@ const {
   presentaScuderia,
   presentaScuderiaBreve,
 } = require("../../presenters/apiV1");
-const snapshotF1db = require("../../data/f1db-v2026.16.0-derivato.json");
+const snapshotF1db = require("../../data/f1db-v2026.17.0-derivato.json");
 const gpConclusiDopoF1db = require("../../data/gp-conclusi-dopo-f1db.json");
 const { metadati: metadatiF1db } = snapshotF1db;
 const { version: VERSIONE_API } = require("../../package.json");

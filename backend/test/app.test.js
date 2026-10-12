@@ -43,10 +43,10 @@ test("l'indice v1 espone versione, documentazione e header di sicurezza", async 
     assert.equal(corpo.documentazione, "/api/docs");
     assert.deepEqual(corpo.attribuzioneDati, {
       nome: "F1DB",
-      url: "https://github.com/f1db/f1db/releases/tag/v2026.16.0",
+      url: "https://github.com/f1db/f1db/releases/tag/v2026.17.0",
       licenza: "CC BY 4.0",
       licenzaUrl: "https://creativecommons.org/licenses/by/4.0/",
-      versione: "v2026.16.0",
+      versione: "v2026.17.0",
       modifiche:
         "Sottoinsieme filtrato, rinominato e normalizzato da Race Analysis Hub; nessun risultato sportivo è stato stimato.",
     });
@@ -63,17 +63,17 @@ test("la stagione espone Sepang dalla release F1DB aggiornata senza duplicarlo",
     assert.equal(risposta.status, 200);
     assert.equal(corpo.lingua, "it");
     assert.equal(corpo.stagione, 2026);
-    assert.equal(corpo.passati.length, 16);
-    assert.equal(corpo.prossimi.length, 7);
-    const madrid = corpo.passati.at(-3);
+    assert.equal(corpo.passati.length, 17);
+    assert.equal(corpo.prossimi.length, 6);
+    const madrid = corpo.passati.at(-4);
     assert.equal(madrid.round, 14);
     assert.equal(madrid.qualifiche[0].codice, "NOR");
     assert.equal(madrid.gara[0].codice, "ANT");
-    const baku = corpo.passati.at(-2);
+    const baku = corpo.passati.at(-3);
     assert.equal(baku.round, 15);
     assert.equal(baku.qualifiche[0].codice, "RUS");
     assert.equal(baku.gara[0].codice, "RUS");
-    const sepang = corpo.passati.at(-1);
+    const sepang = corpo.passati.at(-2);
     assert.equal(sepang.round, 16);
     assert.equal(sepang.nome, "Gran Premio del Bahrein in Malesia");
     assert.equal(sepang.circuito, "Sepang International Circuit");
@@ -81,8 +81,11 @@ test("la stagione espone Sepang dalla release F1DB aggiornata senza duplicarlo",
     assert.equal(sepang.gara.length, 22);
     assert.equal(sepang.qualifiche[0].codice, "VER");
     assert.equal(sepang.gara[0].codice, "VER");
-    assert.equal(corpo.prossimi[0].nome, "Gran Premio di Singapore");
-    assert.equal(corpo.fonte.versione, "v2026.16.0");
+    assert.equal(corpo.prossimi[0].nome, "Gran Premio degli Stati Uniti");
+    const singapore = corpo.passati.at(-1);
+    assert.equal(singapore.round, 17);
+    assert.deepEqual(singapore.gara.slice(0,3).map(p => p.codice), ["VER", "LEC", "ANT"]);
+    assert.equal(corpo.fonte.versione, "v2026.17.0");
   });
 });
 

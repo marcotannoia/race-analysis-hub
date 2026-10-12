@@ -3,6 +3,7 @@ const path = require("node:path");
 const { creaClassificaCalibrata } = require("../services/classificaCalibrata");
 const { creaDatiEffettivi } = require("../utils/datiEffettivi");
 const calibrazione = require("../data/calibrazione-pesi-2026-10-05.json");
+const ultimoRoundOsservato = require("../data/campioni-previsionali-2026.json").ultimoRoundIncluso;
 function aggiorna() {
   const file = path.join(__dirname, "../data/dati-iniziali.json");
   const base = JSON.parse(fs.readFileSync(file));
@@ -18,9 +19,9 @@ function aggiorna() {
     const candidata = creaClassificaCalibrata({ ...args, pesi: calibrazione.pesiOttimiInteraStagione });
     const compatta = (output) => output.classifica.map((p) => ({ pilota: p.pilota.slug, scuderia: p.scuderia.slug,
       posizione: p.posizione, indice: p.indice, fattori: p.fattori }));
-    g.previsioneCalibrata = { versione: ufficiale.modello, calcolatoIl: calibrazione.calcolatoIl,
+    g.previsioneCalibrata = { versione: ufficiale.modello, calcolatoIl: new Date().toISOString().slice(0, 10),
       stato: ufficiale.calibrazione.stato, limiteRoundEsclusivoInput: g.ordineCalendario,
-      roundTrainingPesi: Math.min(g.ordineCalendario - 1, 16), retrospettivo: g.ordineCalendario <= 16,
+      roundTrainingPesi: Math.min(g.ordineCalendario - 1, ufficiale.calibrazione.ultimoRoundTraining), retrospettivo: g.ordineCalendario <= ultimoRoundOsservato,
       pesi: Object.fromEntries(ufficiale.pesi.map(p=>[p.chiave,p.pesoPercentuale])), pesiCandidata: calibrazione.pesiOttimiInteraStagione,
       classifica: compatta(ufficiale), candidataNonPromossa: calibrazione.stato === "riferimento_mondiale" ? compatta(candidata) : null,
       limite: "Selezione del metodo ricostruita dopo round 16; non previsione originale per gli eventi passati. Il modello recente è verificato progressivamente; il blocco diagnostico finale è già stato usato e non è un nuovo test indipendente." };

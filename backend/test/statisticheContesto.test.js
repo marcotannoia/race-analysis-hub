@@ -13,7 +13,7 @@ test("la percentuale sul bagnato usa le prestazioni positive nelle gare con piog
   assert.equal(hamilton.bravuraBagnatoPercentuale, 72);
   assert.equal(hamilton.gareConPioggiaPositive, 36);
   assert.equal(hamilton.gareConPioggiaDisputate, 50);
-  assert.equal(hamilton.erroriPilotaPercentuale, 3.8);
+  assert.equal(hamilton.erroriPilotaPercentuale, 4);
   assert.equal(hamilton.erroriFataliPercentuale, 1.3);
 });
 

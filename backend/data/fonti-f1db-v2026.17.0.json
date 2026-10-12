@@ -1,0 +1,14 @@
+{
+  "versione": "v2026.17.0",
+  "releaseUrl": "https://github.com/f1db/f1db/releases/tag/v2026.17.0",
+  "archivioSha256": "0f1717eaebae646b7ced9ca96f6be3282c1c1d435d0a9d75f2c00f40feb7d2a8",
+  "hashFile": {
+    "races": "df98ab3a37d5f836405039e7ad4fd50e14673db4943d35f13c0e111023b2e6c0",
+    "races-race-results": "ace27d67ee92b7c3db978e5d6a42c71cc461cbb03ee488714e6ed6a6ed4c5b15",
+    "races-qualifying-results": "7f3f4c2c56075ebe0dc2e7abc2b420f41e77036079f885f0f6a8902e83118bb8",
+    "races-driver-standings": "ffb60462f65e03bf22985d4824e08e7c6eab8e6c0ecaa23591d70e9919a03f72",
+    "races-constructor-standings": "4b6d3a56112fafecf0a786cd7980032d8e63487d4f159d98ade67f8b82937795",
+    "drivers": "21d0f8865d820d83e06efc75d5fdc9516d5c436c3fe5206c5054e01e3a0c3f2a",
+    "constructors": "aadf24573811934dec2a404437622ec9439e22375eb23493243ee232874a561f"
+  }
+}

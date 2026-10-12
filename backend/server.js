@@ -12,6 +12,7 @@ const { avviaMonitorPenalitaFia } = require("./services/penalitaFia");
 async function avviaServer() {
   try {
     await collegaDatabase();
+    await require("./services/aggiornamentoSingaporeConcluso").applicaAggiornamentoSingapore();
 
     const server = app.listen(ambiente.porta, ambiente.host, () => {
       console.log(`Server avviato su ${ambiente.host}:${ambiente.porta}`);

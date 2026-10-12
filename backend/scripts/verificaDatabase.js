@@ -16,7 +16,7 @@ const calibrazione = require("../data/calibrazione-pesi-2026-10-05.json");
 const backtestSemantico = require("../data/backtest-semantico-2026-10-05.json");
 const datiBase = require("../data/dati-iniziali.json");
 const { creaDatiEffettivi } = require("../utils/datiEffettivi");
-const datiSorgente = creaDatiEffettivi(datiBase);
+
 const {
   normalizzaNotaBene,
   normalizzaTestiAnnuali,
@@ -56,9 +56,8 @@ function confrontaCampi(documento, sorgente) {
   );
 }
 
-async function verificaCorrispondenzaSorgente() {
-  const [piloti, scuderie, gare, analisiGare, analisiScuderie] =
-    await Promise.all([
+async function verificaCorrispondenzaSorgente(sessione = null, datiSorgente = creaDatiEffettivi(datiBase)) {
+  const query = [
       Pilota.find().populate("scuderia", "slug").lean(),
       Scuderia.find().lean(),
       Gara.find().lean(),
@@ -71,7 +70,12 @@ async function verificaCorrispondenzaSorgente() {
         .populate("scuderia", "slug")
         .populate("gara", "slug")
         .lean(),
-    ]);
+    ];
+  const documenti = [];
+  if (sessione) {
+    for (const richiesta of query) documenti.push(await richiesta.session(sessione));
+  } else documenti.push(...await Promise.all(query));
+  const [piloti, scuderie, gare, analisiGare, analisiScuderie] = documenti;
 
   const differenze = [];
   const pilotaPerSlug = new Map(piloti.map((pilota) => [pilota.slug, pilota]));
@@ -309,4 +313,5 @@ async function verificaDatabase() {
   }
 }
 
-verificaDatabase();
+if (require.main === module) verificaDatabase();
+module.exports = { verificaCorrispondenzaSorgente };

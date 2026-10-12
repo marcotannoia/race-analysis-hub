@@ -1,4 +1,4 @@
-const snapshotF1db = require("../data/f1db-v2026.16.0-derivato.json");
+const snapshotF1db = require("../data/f1db-v2026.17.0-derivato.json");
 
 function creaSeriePilota(eventi, pilotaSlug) {
   const primoRisultato = eventi

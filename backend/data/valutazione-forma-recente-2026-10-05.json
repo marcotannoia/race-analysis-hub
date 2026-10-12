@@ -107,7 +107,7 @@
       }
     }
   },
-  "sha256Evidenze": "81e7a3795296041d303c6e874df190287c0704cbee785ad4cd7882da5ac3f09c",
+  "sha256Evidenze": "1772cbbef0fe7bafedaa55704f37e23c03058bb2d9ea76f9f405a624cca77b9f",
   "protocollo": {
     "primaGara": "Solo giri e risultati dei GP antecedenti al target. Forma con media esponenziale; mondiale minimo 50%. Finestra mobile di tre GP per scegliere pesi e parametri. Pareggi: mondiale maggiore, emivita minore, prior minore.",
     "limite": "Il blocco 13–16 è già stato esaminato nella revisione precedente: controllo diagnostico riutilizzato, non nuovo test indipendente. Ricerca di famiglie e finestre esplorativa; nessuna promessa di accuratezza futura. Valutazione separata con e senza esclusioni documentate.",
@@ -16210,5 +16210,12 @@
         }
       ]
     }
-  ]
+  ],
+  "aggiornamentoInput": {
+    "verificatoIl": "2026-10-12",
+    "ultimoRoundInput": 17,
+    "ultimoRoundTraining": 16,
+    "sha256EvidenzeTraining": "81e7a3795296041d303c6e874df190287c0704cbee785ad4cd7882da5ac3f09c",
+    "metodo": "Nuovi giri osservati; pesi e parametri del training precedente conservati."
+  }
 }

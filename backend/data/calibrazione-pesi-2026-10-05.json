@@ -12,7 +12,7 @@
     "drivers": "f760b5c8e2ac38bab754e19bdc5dedc907df04d88f96a3e8896a48ee16bbd0f6",
     "constructors": "9650dc28012ff943b23ed2a0a81fe340cf6545bccd3db42783f757a43b94201a"
   },
-  "sha256Campioni": "df82c2890610f77a68359fce2968059031187c719f5addaa0bddef70d29923d6",
+  "sha256Campioni": "f5a5373e26152712bc5750d1183a8f0ea03018d4e1acd926300ab38d29f7298d",
   "ricerca": {
     "passoPercentuale": 1,
     "combinazioni": 4598126,
@@ -45165,5 +45165,12 @@
         }
       ]
     }
-  ]
+  ],
+  "aggiornamentoCorpus": {
+    "fonte": "https://github.com/f1db/f1db/releases/tag/v2026.17.0",
+    "ultimoRoundInput": 17,
+    "ultimoRoundTraining": 16,
+    "sha256CorpusTraining": "df82c2890610f77a68359fce2968059031187c719f5addaa0bddef70d29923d6",
+    "metodo": "Nuovi risultati osservati; pesi e metriche di training conservati senza nuova ottimizzazione."
+  }
 }

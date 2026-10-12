@@ -92,7 +92,7 @@ function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua
     circuito: valoreLocalizzato(gara, "circuito", lingua) }, modello: metodo.versione, meteo, circuitiSimili: [],
     pesi: CHIAVI_API.map((chiave) => ({ chiave, nome: nomeFattore(chiave), pesoPercentuale: pesi[chiave] || 0 })),
     calibrazione: { stato: metodo.stato, combinazioniEsaminate: metodo.ricerca.combinazioni,
-      ultimoRoundTraining: campioni.ultimoRoundIncluso,
+      ultimoRoundTraining: metodo.aggiornamentoInput?.ultimoRoundTraining ?? metodo.aggiornamentoCorpus?.ultimoRoundTraining ?? campioni.ultimoRoundIncluso,
       fonteMondiale: gp.round > campioni.ultimoRoundIncluso ? "database" : "snapshot_anteriore_al_gp",
       candidataPromossa: metodo.stato === "calibrato_retrospettivo" },
     classifica: classifica.map((p, i) => ({ ...p, indice: Math.round(p.indice * 10) / 10, posizione: i + 1 })) };

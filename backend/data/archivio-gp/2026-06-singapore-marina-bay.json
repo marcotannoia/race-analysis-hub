@@ -1,0 +1,1678 @@
+{
+  "pronto": true,
+  "stagione": 2026,
+  "garaConclusaSlug": "singapore-marina-bay",
+  "conclusaIl": "2026-10-11T14:00:00.000Z",
+  "condizioniGara": "asciutto",
+  "fonteIndicatori": "https://www.formula1.com/en/latest/article/verstappen-seals-commanding-singapore-grand-prix-victory-from-leclerc-and-antonelli.49wDzysiVqi5cloGjle40A",
+  "risultatiPiloti": [
+    {
+      "pilotaSlug": "antonelli",
+      "posizioneGara": "P3",
+      "posizioneQualifica": "Q4",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P3; Qualifica Q4; Griglia effettiva 4; 62 giri. Sprint: P4.",
+      "passoGara": "marina-bay (2026, 17): ANT: Delta mediano -0,971% rispetto ai giri confrontabili degli altri piloti: 24 giri, indice relativo 72,2/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: ANT: SOFT, giri 1–23, 23 giri di stint, età iniziale 3. ANT: MEDIUM, giri 24–39, 16 giri di stint, età iniziale 0. ANT: SOFT, giri 40–62, 23 giri di stint, età iniziale 3. Deriva cronometrica relativa 0,002% per giro su 1 stint confrontabili; indice descrittivo 62,5/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "mercedes",
+      "griglia": "4",
+      "giri": 62,
+      "statoGara": "3",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P3; Qualifica Q4; Griglia effettiva 4; 62 giri. Sprint: P4.",
+          "passoGara": "marina-bay (2026, 17): ANT: Delta mediano -0,971% rispetto ai giri confrontabili degli altri piloti: 24 giri, indice relativo 72,2/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: ANT: SOFT, giri 1–23, 23 giri di stint, età iniziale 3. ANT: MEDIUM, giri 24–39, 16 giri di stint, età iniziale 0. ANT: SOFT, giri 40–62, 23 giri di stint, età iniziale 3. Deriva cronometrica relativa 0,002% per giro su 1 stint confrontabili; indice descrittivo 62,5/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P3; Qualifying Q4; Actual grid 4; 62 laps. Sprint: P4.",
+          "passoGara": "marina-bay (2026, 17): ANT: Median delta -0.971% against comparable laps by other drivers: 24 laps, relative index 72.2/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: ANT: SOFT, laps 1–23, 23 stint laps, initial tyre age 3. ANT: MEDIUM, laps 24–39, 16 stint laps, initial tyre age 0. ANT: SOFT, laps 40–62, 23 stint laps, initial tyre age 3. Relative timing drift 0.002% per lap across 1 comparable stints; descriptive index 62.5/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P3; Qualification Q4; Grille effective 4; 62 tours. Sprint: P4.",
+          "passoGara": "marina-bay (2026, 17): ANT: Écart médian -0,971% aux tours comparables des autres pilotes : 24 tours, indice relatif 72,2/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : ANT : SOFT, tours 1–23, 23 tours de relais, âge initial 3. ANT : MEDIUM, tours 24–39, 16 tours de relais, âge initial 0. ANT : SOFT, tours 40–62, 23 tours de relais, âge initial 3. Dérive chronométrique relative 0,002% par tour sur 1 relais comparables; indice descriptif 62,5/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P3; Qualificação Q4; Grelha efetiva 4; 62 voltas. Sprint: P4.",
+          "passoGara": "marina-bay (2026, 17): ANT: Diferença mediana -0,971% face a voltas comparáveis dos outros pilotos: 24 voltas, índice relativo 72,2/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: ANT: SOFT, voltas 1–23, 23 voltas de stint, idade inicial 3. ANT: MEDIUM, voltas 24–39, 16 voltas de stint, idade inicial 0. ANT: SOFT, voltas 40–62, 23 voltas de stint, idade inicial 3. Deriva cronométrica relativa 0,002% por volta em 1 stints comparáveis; índice descritivo 62,5/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P3; Clasificación Q4; Parrilla efectiva 4; 62 vueltas. Sprint: P4.",
+          "passoGara": "marina-bay (2026, 17): ANT: Diferencia mediana -0,971% frente a vueltas comparables de otros pilotos: 24 vueltas, índice relativo 72,2/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: ANT: SOFT, vueltas 1–23, 23 vueltas de tanda, edad inicial 3. ANT: MEDIUM, vueltas 24–39, 16 vueltas de tanda, edad inicial 0. ANT: SOFT, vueltas 40–62, 23 vueltas de tanda, edad inicial 3. Deriva cronométrica relativa 0,002% por vuelta en 1 tandas comparables; índice descriptivo 62,5/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P3; Qualifying Q4; Tatsächliche Startaufstellung 4; 62 Runden. Sprint: P4.",
+          "passoGara": "marina-bay (2026, 17): ANT: Median der Abweichung -0,971% zu vergleichbaren Runden anderer Fahrer: 24 Runden, relativer Index 72,2/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: ANT: SOFT, Runden 1–23, 23 Stint-Runden, anfängliches Reifenalter 3. ANT: MEDIUM, Runden 24–39, 16 Stint-Runden, anfängliches Reifenalter 0. ANT: SOFT, Runden 40–62, 23 Stint-Runden, anfängliches Reifenalter 3. Relative Zeitentwicklung 0,002% pro Runde in 1 vergleichbaren Stints; deskriptiver Index 62,5/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "russell",
+      "posizioneGara": "P9",
+      "posizioneQualifica": "Q6",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P9; Qualifica Q6; Griglia effettiva 19; 62 giri. Sprint: DNF. Penalità FIA definitiva di 60 posizioni (40 + 20) per componenti power unit, applicata a Singapore: partenza dal fondo della griglia.",
+      "passoGara": "marina-bay (2026, 17): RUS: Delta mediano -1,181% rispetto ai giri confrontabili degli altri piloti: 13 giri, indice relativo 83,3/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: RUS: MEDIUM, giri 1–39, 39 giri di stint, età iniziale 0. RUS: SOFT, giri 40–62, 23 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,024% per giro su 1 stint confrontabili; indice descrittivo 50/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "mercedes",
+      "griglia": "19",
+      "giri": 62,
+      "statoGara": "9",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P9; Qualifica Q6; Griglia effettiva 19; 62 giri. Sprint: DNF. Penalità FIA definitiva di 60 posizioni (40 + 20) per componenti power unit, applicata a Singapore: partenza dal fondo della griglia.",
+          "passoGara": "marina-bay (2026, 17): RUS: Delta mediano -1,181% rispetto ai giri confrontabili degli altri piloti: 13 giri, indice relativo 83,3/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: RUS: MEDIUM, giri 1–39, 39 giri di stint, età iniziale 0. RUS: SOFT, giri 40–62, 23 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,024% per giro su 1 stint confrontabili; indice descrittivo 50/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P9; Qualifying Q6; Actual grid 19; 62 laps. Sprint: DNF. Final FIA grid penalty of 60 places (40 + 20) for power unit components, served in Singapore: back-of-grid start.",
+          "passoGara": "marina-bay (2026, 17): RUS: Median delta -1.181% against comparable laps by other drivers: 13 laps, relative index 83.3/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: RUS: MEDIUM, laps 1–39, 39 stint laps, initial tyre age 0. RUS: SOFT, laps 40–62, 23 stint laps, initial tyre age 0. Relative timing drift 0.024% per lap across 1 comparable stints; descriptive index 50/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P9; Qualification Q6; Grille effective 19; 62 tours. Sprint: DNF. Pénalité FIA définitive de 60 places (40 + 20) pour des composants du groupe motopropulseur, purgée à Singapour : départ du fond de grille.",
+          "passoGara": "marina-bay (2026, 17): RUS: Écart médian -1,181% aux tours comparables des autres pilotes : 13 tours, indice relatif 83,3/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : RUS : MEDIUM, tours 1–39, 39 tours de relais, âge initial 0. RUS : SOFT, tours 40–62, 23 tours de relais, âge initial 0. Dérive chronométrique relative 0,024% par tour sur 1 relais comparables; indice descriptif 50/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P9; Qualificação Q6; Grelha efetiva 19; 62 voltas. Sprint: DNF. Penalização FIA definitiva de 60 lugares (40 + 20) por componentes da unidade de potência, cumprida em Singapura: partida do fundo da grelha.",
+          "passoGara": "marina-bay (2026, 17): RUS: Diferença mediana -1,181% face a voltas comparáveis dos outros pilotos: 13 voltas, índice relativo 83,3/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: RUS: MEDIUM, voltas 1–39, 39 voltas de stint, idade inicial 0. RUS: SOFT, voltas 40–62, 23 voltas de stint, idade inicial 0. Deriva cronométrica relativa 0,024% por volta em 1 stints comparáveis; índice descritivo 50/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P9; Clasificación Q6; Parrilla efectiva 19; 62 vueltas. Sprint: DNF. Sanción FIA definitiva de 60 posiciones (40 + 20) por componentes de la unidad de potencia, cumplida en Singapur: salida desde el fondo de la parrilla.",
+          "passoGara": "marina-bay (2026, 17): RUS: Diferencia mediana -1,181% frente a vueltas comparables de otros pilotos: 13 vueltas, índice relativo 83,3/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: RUS: MEDIUM, vueltas 1–39, 39 vueltas de tanda, edad inicial 0. RUS: SOFT, vueltas 40–62, 23 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa 0,024% por vuelta en 1 tandas comparables; índice descriptivo 50/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P9; Qualifying Q6; Tatsächliche Startaufstellung 19; 62 Runden. Sprint: DNF. Endgültige FIA-Strafe von 60 Startplätzen (40 + 20) für Antriebskomponenten, in Singapur verbüßt: Start vom Ende der Startaufstellung.",
+          "passoGara": "marina-bay (2026, 17): RUS: Median der Abweichung -1,181% zu vergleichbaren Runden anderer Fahrer: 13 Runden, relativer Index 83,3/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: RUS: MEDIUM, Runden 1–39, 39 Stint-Runden, anfängliches Reifenalter 0. RUS: SOFT, Runden 40–62, 23 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung 0,024% pro Runde in 1 vergleichbaren Stints; deskriptiver Index 50/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "hamilton",
+      "posizioneGara": "P6",
+      "posizioneQualifica": "Q3",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P6; Qualifica Q3; Griglia effettiva 3; 62 giri. Sprint: P2.",
+      "passoGara": "marina-bay (2026, 17): HAM: Delta mediano -2,45% rispetto ai giri confrontabili degli altri piloti: 11 giri, indice relativo 100/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: HAM: MEDIUM, giri 1–18, 18 giri di stint, età iniziale 0. HAM: SOFT, giri 19–62, 44 giri di stint, età iniziale 3. Deriva cronometrica relativa 0,132% per giro su 1 stint confrontabili; indice descrittivo 0/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "non_fatale",
+      "scuderiaSlug": "ferrari",
+      "griglia": "3",
+      "giri": 62,
+      "statoGara": "6",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P6; Qualifica Q3; Griglia effettiva 3; 62 giri. Sprint: P2.",
+          "passoGara": "marina-bay (2026, 17): HAM: Delta mediano -2,45% rispetto ai giri confrontabili degli altri piloti: 11 giri, indice relativo 100/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: HAM: MEDIUM, giri 1–18, 18 giri di stint, età iniziale 0. HAM: SOFT, giri 19–62, 44 giri di stint, età iniziale 3. Deriva cronometrica relativa 0,132% per giro su 1 stint confrontabili; indice descrittivo 0/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P6; Qualifying Q3; Actual grid 3; 62 laps. Sprint: P2.",
+          "passoGara": "marina-bay (2026, 17): HAM: Median delta -2.45% against comparable laps by other drivers: 11 laps, relative index 100/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: HAM: MEDIUM, laps 1–18, 18 stint laps, initial tyre age 0. HAM: SOFT, laps 19–62, 44 stint laps, initial tyre age 3. Relative timing drift 0.132% per lap across 1 comparable stints; descriptive index 0/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P6; Qualification Q3; Grille effective 3; 62 tours. Sprint: P2.",
+          "passoGara": "marina-bay (2026, 17): HAM: Écart médian -2,45% aux tours comparables des autres pilotes : 11 tours, indice relatif 100/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : HAM : MEDIUM, tours 1–18, 18 tours de relais, âge initial 0. HAM : SOFT, tours 19–62, 44 tours de relais, âge initial 3. Dérive chronométrique relative 0,132% par tour sur 1 relais comparables; indice descriptif 0/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P6; Qualificação Q3; Grelha efetiva 3; 62 voltas. Sprint: P2.",
+          "passoGara": "marina-bay (2026, 17): HAM: Diferença mediana -2,45% face a voltas comparáveis dos outros pilotos: 11 voltas, índice relativo 100/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: HAM: MEDIUM, voltas 1–18, 18 voltas de stint, idade inicial 0. HAM: SOFT, voltas 19–62, 44 voltas de stint, idade inicial 3. Deriva cronométrica relativa 0,132% por volta em 1 stints comparáveis; índice descritivo 0/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P6; Clasificación Q3; Parrilla efectiva 3; 62 vueltas. Sprint: P2.",
+          "passoGara": "marina-bay (2026, 17): HAM: Diferencia mediana -2,45% frente a vueltas comparables de otros pilotos: 11 vueltas, índice relativo 100/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: HAM: MEDIUM, vueltas 1–18, 18 vueltas de tanda, edad inicial 0. HAM: SOFT, vueltas 19–62, 44 vueltas de tanda, edad inicial 3. Deriva cronométrica relativa 0,132% por vuelta en 1 tandas comparables; índice descriptivo 0/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P6; Qualifying Q3; Tatsächliche Startaufstellung 3; 62 Runden. Sprint: P2.",
+          "passoGara": "marina-bay (2026, 17): HAM: Median der Abweichung -2,45% zu vergleichbaren Runden anderer Fahrer: 11 Runden, relativer Index 100/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: HAM: MEDIUM, Runden 1–18, 18 Stint-Runden, anfängliches Reifenalter 0. HAM: SOFT, Runden 19–62, 44 Stint-Runden, anfängliches Reifenalter 3. Relative Zeitentwicklung 0,132% pro Runde in 1 vergleichbaren Stints; deskriptiver Index 0/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "leclerc",
+      "posizioneGara": "P2",
+      "posizioneQualifica": "Q2",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P2; Qualifica Q2; Griglia effettiva 2; 62 giri. Sprint: P3.",
+      "passoGara": "marina-bay (2026, 17): LEC: Delta mediano -1,212% rispetto ai giri confrontabili degli altri piloti: 34 giri, indice relativo 94,4/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: LEC: SOFT, giri 1–24, 24 giri di stint, età iniziale 3. LEC: MEDIUM, giri 25–39, 15 giri di stint, età iniziale 0. LEC: SOFT, giri 40–62, 23 giri di stint, età iniziale 3. Deriva cronometrica relativa 0,08% per giro su 2 stint confrontabili; indice descrittivo 6,2/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "ferrari",
+      "griglia": "2",
+      "giri": 62,
+      "statoGara": "2",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P2; Qualifica Q2; Griglia effettiva 2; 62 giri. Sprint: P3.",
+          "passoGara": "marina-bay (2026, 17): LEC: Delta mediano -1,212% rispetto ai giri confrontabili degli altri piloti: 34 giri, indice relativo 94,4/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: LEC: SOFT, giri 1–24, 24 giri di stint, età iniziale 3. LEC: MEDIUM, giri 25–39, 15 giri di stint, età iniziale 0. LEC: SOFT, giri 40–62, 23 giri di stint, età iniziale 3. Deriva cronometrica relativa 0,08% per giro su 2 stint confrontabili; indice descrittivo 6,2/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P2; Qualifying Q2; Actual grid 2; 62 laps. Sprint: P3.",
+          "passoGara": "marina-bay (2026, 17): LEC: Median delta -1.212% against comparable laps by other drivers: 34 laps, relative index 94.4/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: LEC: SOFT, laps 1–24, 24 stint laps, initial tyre age 3. LEC: MEDIUM, laps 25–39, 15 stint laps, initial tyre age 0. LEC: SOFT, laps 40–62, 23 stint laps, initial tyre age 3. Relative timing drift 0.08% per lap across 2 comparable stints; descriptive index 6.2/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P2; Qualification Q2; Grille effective 2; 62 tours. Sprint: P3.",
+          "passoGara": "marina-bay (2026, 17): LEC: Écart médian -1,212% aux tours comparables des autres pilotes : 34 tours, indice relatif 94,4/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : LEC : SOFT, tours 1–24, 24 tours de relais, âge initial 3. LEC : MEDIUM, tours 25–39, 15 tours de relais, âge initial 0. LEC : SOFT, tours 40–62, 23 tours de relais, âge initial 3. Dérive chronométrique relative 0,08% par tour sur 2 relais comparables; indice descriptif 6,2/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P2; Qualificação Q2; Grelha efetiva 2; 62 voltas. Sprint: P3.",
+          "passoGara": "marina-bay (2026, 17): LEC: Diferença mediana -1,212% face a voltas comparáveis dos outros pilotos: 34 voltas, índice relativo 94,4/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: LEC: SOFT, voltas 1–24, 24 voltas de stint, idade inicial 3. LEC: MEDIUM, voltas 25–39, 15 voltas de stint, idade inicial 0. LEC: SOFT, voltas 40–62, 23 voltas de stint, idade inicial 3. Deriva cronométrica relativa 0,08% por volta em 2 stints comparáveis; índice descritivo 6,2/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P2; Clasificación Q2; Parrilla efectiva 2; 62 vueltas. Sprint: P3.",
+          "passoGara": "marina-bay (2026, 17): LEC: Diferencia mediana -1,212% frente a vueltas comparables de otros pilotos: 34 vueltas, índice relativo 94,4/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: LEC: SOFT, vueltas 1–24, 24 vueltas de tanda, edad inicial 3. LEC: MEDIUM, vueltas 25–39, 15 vueltas de tanda, edad inicial 0. LEC: SOFT, vueltas 40–62, 23 vueltas de tanda, edad inicial 3. Deriva cronométrica relativa 0,08% por vuelta en 2 tandas comparables; índice descriptivo 6,2/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P2; Qualifying Q2; Tatsächliche Startaufstellung 2; 62 Runden. Sprint: P3.",
+          "passoGara": "marina-bay (2026, 17): LEC: Median der Abweichung -1,212% zu vergleichbaren Runden anderer Fahrer: 34 Runden, relativer Index 94,4/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: LEC: SOFT, Runden 1–24, 24 Stint-Runden, anfängliches Reifenalter 3. LEC: MEDIUM, Runden 25–39, 15 Stint-Runden, anfängliches Reifenalter 0. LEC: SOFT, Runden 40–62, 23 Stint-Runden, anfängliches Reifenalter 3. Relative Zeitentwicklung 0,08% pro Runde in 2 vergleichbaren Stints; deskriptiver Index 6,2/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "norris",
+      "posizioneGara": "P4",
+      "posizioneQualifica": "Q5",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P4; Qualifica Q5; Griglia effettiva 5; 62 giri. Sprint: P8.",
+      "passoGara": "marina-bay (2026, 17): NOR: Delta mediano -1,204% rispetto ai giri confrontabili degli altri piloti: 29 giri, indice relativo 88,9/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: NOR: SOFT, giri 1–32, 32 giri di stint, età iniziale 0. NOR: MEDIUM, giri 33–62, 30 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,019% per giro su 1 stint confrontabili; indice descrittivo 81,2/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "mclaren",
+      "griglia": "5",
+      "giri": 62,
+      "statoGara": "4",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P4; Qualifica Q5; Griglia effettiva 5; 62 giri. Sprint: P8.",
+          "passoGara": "marina-bay (2026, 17): NOR: Delta mediano -1,204% rispetto ai giri confrontabili degli altri piloti: 29 giri, indice relativo 88,9/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: NOR: SOFT, giri 1–32, 32 giri di stint, età iniziale 0. NOR: MEDIUM, giri 33–62, 30 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,019% per giro su 1 stint confrontabili; indice descrittivo 81,2/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P4; Qualifying Q5; Actual grid 5; 62 laps. Sprint: P8.",
+          "passoGara": "marina-bay (2026, 17): NOR: Median delta -1.204% against comparable laps by other drivers: 29 laps, relative index 88.9/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: NOR: SOFT, laps 1–32, 32 stint laps, initial tyre age 0. NOR: MEDIUM, laps 33–62, 30 stint laps, initial tyre age 0. Relative timing drift -0.019% per lap across 1 comparable stints; descriptive index 81.2/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P4; Qualification Q5; Grille effective 5; 62 tours. Sprint: P8.",
+          "passoGara": "marina-bay (2026, 17): NOR: Écart médian -1,204% aux tours comparables des autres pilotes : 29 tours, indice relatif 88,9/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : NOR : SOFT, tours 1–32, 32 tours de relais, âge initial 0. NOR : MEDIUM, tours 33–62, 30 tours de relais, âge initial 0. Dérive chronométrique relative -0,019% par tour sur 1 relais comparables; indice descriptif 81,2/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P4; Qualificação Q5; Grelha efetiva 5; 62 voltas. Sprint: P8.",
+          "passoGara": "marina-bay (2026, 17): NOR: Diferença mediana -1,204% face a voltas comparáveis dos outros pilotos: 29 voltas, índice relativo 88,9/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: NOR: SOFT, voltas 1–32, 32 voltas de stint, idade inicial 0. NOR: MEDIUM, voltas 33–62, 30 voltas de stint, idade inicial 0. Deriva cronométrica relativa -0,019% por volta em 1 stints comparáveis; índice descritivo 81,2/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P4; Clasificación Q5; Parrilla efectiva 5; 62 vueltas. Sprint: P8.",
+          "passoGara": "marina-bay (2026, 17): NOR: Diferencia mediana -1,204% frente a vueltas comparables de otros pilotos: 29 vueltas, índice relativo 88,9/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: NOR: SOFT, vueltas 1–32, 32 vueltas de tanda, edad inicial 0. NOR: MEDIUM, vueltas 33–62, 30 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa -0,019% por vuelta en 1 tandas comparables; índice descriptivo 81,2/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P4; Qualifying Q5; Tatsächliche Startaufstellung 5; 62 Runden. Sprint: P8.",
+          "passoGara": "marina-bay (2026, 17): NOR: Median der Abweichung -1,204% zu vergleichbaren Runden anderer Fahrer: 29 Runden, relativer Index 88,9/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: NOR: SOFT, Runden 1–32, 32 Stint-Runden, anfängliches Reifenalter 0. NOR: MEDIUM, Runden 33–62, 30 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung -0,019% pro Runde in 1 vergleichbaren Stints; deskriptiver Index 81,2/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "max_verstappen",
+      "posizioneGara": "P1",
+      "posizioneQualifica": "Q1",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P1; Qualifica Q1; Griglia effettiva 1; 62 giri. Sprint: P1.",
+      "passoGara": "marina-bay (2026, 17): VER: Sessione acquisita: 0 giri confrontabili; campione sotto la soglia per un indice di passo. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: VER: SOFT, giri 1–32, 32 giri di stint, età iniziale 0. VER: MEDIUM, giri 33–62, 30 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "red_bull",
+      "griglia": "1",
+      "giri": 62,
+      "statoGara": "1",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P1; Qualifica Q1; Griglia effettiva 1; 62 giri. Sprint: P1.",
+          "passoGara": "marina-bay (2026, 17): VER: Sessione acquisita: 0 giri confrontabili; campione sotto la soglia per un indice di passo. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: VER: SOFT, giri 1–32, 32 giri di stint, età iniziale 0. VER: MEDIUM, giri 33–62, 30 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P1; Qualifying Q1; Actual grid 1; 62 laps. Sprint: P1.",
+          "passoGara": "marina-bay (2026, 17): VER: Session acquired: 0 comparable laps; sample below the threshold for a pace index. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: VER: SOFT, laps 1–32, 32 stint laps, initial tyre age 0. VER: MEDIUM, laps 33–62, 30 stint laps, initial tyre age 0. Too few filtered stints for a robust slope; length and compound are observed data, not a management rating.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P1; Qualification Q1; Grille effective 1; 62 tours. Sprint: P1.",
+          "passoGara": "marina-bay (2026, 17): VER: Session acquise : 0 tours comparables; échantillon sous le seuil pour un indice de rythme. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : VER : SOFT, tours 1–32, 32 tours de relais, âge initial 0. VER : MEDIUM, tours 33–62, 30 tours de relais, âge initial 0. Trop peu de relais filtrés pour une pente robuste; longueur et gomme observées, pas une note de gestion.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P1; Qualificação Q1; Grelha efetiva 1; 62 voltas. Sprint: P1.",
+          "passoGara": "marina-bay (2026, 17): VER: Sessão adquirida: 0 voltas comparáveis; amostra abaixo do limiar para um índice de ritmo. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: VER: SOFT, voltas 1–32, 32 voltas de stint, idade inicial 0. VER: MEDIUM, voltas 33–62, 30 voltas de stint, idade inicial 0. Poucos stints filtrados para uma inclinação robusta; duração e composto observados, não uma nota de gestão.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P1; Clasificación Q1; Parrilla efectiva 1; 62 vueltas. Sprint: P1.",
+          "passoGara": "marina-bay (2026, 17): VER: Sesión adquirida: 0 vueltas comparables; muestra inferior al umbral para un índice de ritmo. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: VER: SOFT, vueltas 1–32, 32 vueltas de tanda, edad inicial 0. VER: MEDIUM, vueltas 33–62, 30 vueltas de tanda, edad inicial 0. Pocas tandas filtradas para una pendiente robusta; duración y compuesto observados, no una nota de gestión.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P1; Qualifying Q1; Tatsächliche Startaufstellung 1; 62 Runden. Sprint: P1.",
+          "passoGara": "marina-bay (2026, 17): VER: Session erfasst: 0 vergleichbare Runden; Stichprobe unter der Schwelle für einen Tempoindex. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: VER: SOFT, Runden 1–32, 32 Stint-Runden, anfängliches Reifenalter 0. VER: MEDIUM, Runden 33–62, 30 Stint-Runden, anfängliches Reifenalter 0. Zu wenige gefilterte Stints für eine robuste Steigung; Länge und Mischung beobachtet, keine Managementnote.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "piastri",
+      "posizioneGara": "P5",
+      "posizioneQualifica": "Q7",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P5; Qualifica Q7; Griglia effettiva 6; 62 giri. Sprint: P14.",
+      "passoGara": "marina-bay (2026, 17): PIA: Delta mediano -1,158% rispetto ai giri confrontabili degli altri piloti: 33 giri, indice relativo 77,8/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: PIA: SOFT, giri 1–33, 33 giri di stint, età iniziale 0. PIA: MEDIUM, giri 34–41, 8 giri di stint, età iniziale 0. PIA: SOFT, giri 42–62, 21 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,027% per giro su 2 stint confrontabili; indice descrittivo 90,6/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "mclaren",
+      "griglia": "6",
+      "giri": 62,
+      "statoGara": "5",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P5; Qualifica Q7; Griglia effettiva 6; 62 giri. Sprint: P14.",
+          "passoGara": "marina-bay (2026, 17): PIA: Delta mediano -1,158% rispetto ai giri confrontabili degli altri piloti: 33 giri, indice relativo 77,8/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: PIA: SOFT, giri 1–33, 33 giri di stint, età iniziale 0. PIA: MEDIUM, giri 34–41, 8 giri di stint, età iniziale 0. PIA: SOFT, giri 42–62, 21 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,027% per giro su 2 stint confrontabili; indice descrittivo 90,6/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P5; Qualifying Q7; Actual grid 6; 62 laps. Sprint: P14.",
+          "passoGara": "marina-bay (2026, 17): PIA: Median delta -1.158% against comparable laps by other drivers: 33 laps, relative index 77.8/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: PIA: SOFT, laps 1–33, 33 stint laps, initial tyre age 0. PIA: MEDIUM, laps 34–41, 8 stint laps, initial tyre age 0. PIA: SOFT, laps 42–62, 21 stint laps, initial tyre age 0. Relative timing drift -0.027% per lap across 2 comparable stints; descriptive index 90.6/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P5; Qualification Q7; Grille effective 6; 62 tours. Sprint: P14.",
+          "passoGara": "marina-bay (2026, 17): PIA: Écart médian -1,158% aux tours comparables des autres pilotes : 33 tours, indice relatif 77,8/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : PIA : SOFT, tours 1–33, 33 tours de relais, âge initial 0. PIA : MEDIUM, tours 34–41, 8 tours de relais, âge initial 0. PIA : SOFT, tours 42–62, 21 tours de relais, âge initial 0. Dérive chronométrique relative -0,027% par tour sur 2 relais comparables; indice descriptif 90,6/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P5; Qualificação Q7; Grelha efetiva 6; 62 voltas. Sprint: P14.",
+          "passoGara": "marina-bay (2026, 17): PIA: Diferença mediana -1,158% face a voltas comparáveis dos outros pilotos: 33 voltas, índice relativo 77,8/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: PIA: SOFT, voltas 1–33, 33 voltas de stint, idade inicial 0. PIA: MEDIUM, voltas 34–41, 8 voltas de stint, idade inicial 0. PIA: SOFT, voltas 42–62, 21 voltas de stint, idade inicial 0. Deriva cronométrica relativa -0,027% por volta em 2 stints comparáveis; índice descritivo 90,6/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P5; Clasificación Q7; Parrilla efectiva 6; 62 vueltas. Sprint: P14.",
+          "passoGara": "marina-bay (2026, 17): PIA: Diferencia mediana -1,158% frente a vueltas comparables de otros pilotos: 33 vueltas, índice relativo 77,8/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: PIA: SOFT, vueltas 1–33, 33 vueltas de tanda, edad inicial 0. PIA: MEDIUM, vueltas 34–41, 8 vueltas de tanda, edad inicial 0. PIA: SOFT, vueltas 42–62, 21 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa -0,027% por vuelta en 2 tandas comparables; índice descriptivo 90,6/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P5; Qualifying Q7; Tatsächliche Startaufstellung 6; 62 Runden. Sprint: P14.",
+          "passoGara": "marina-bay (2026, 17): PIA: Median der Abweichung -1,158% zu vergleichbaren Runden anderer Fahrer: 33 Runden, relativer Index 77,8/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: PIA: SOFT, Runden 1–33, 33 Stint-Runden, anfängliches Reifenalter 0. PIA: MEDIUM, Runden 34–41, 8 Stint-Runden, anfängliches Reifenalter 0. PIA: SOFT, Runden 42–62, 21 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung -0,027% pro Runde in 2 vergleichbaren Stints; deskriptiver Index 90,6/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "hadjar",
+      "posizioneGara": "P10",
+      "posizioneQualifica": "NC",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P10; Qualifica NC; Griglia effettiva PL; 62 giri. Sprint: DNF. Partenza dalla pit lane imposta dalla FIA a Singapore per modifiche in parc fermé.",
+      "passoGara": "marina-bay (2026, 17): HAD: Delta mediano -0,034% rispetto ai giri confrontabili degli altri piloti: 9 giri, indice relativo 44,4/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: HAD: MEDIUM, giri 1–1, 1 giri di stint, età iniziale 0. HAD: SOFT, giri 2–62, 61 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "red_bull",
+      "griglia": "PL",
+      "giri": 62,
+      "statoGara": "10",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P10; Qualifica NC; Griglia effettiva PL; 62 giri. Sprint: DNF. Partenza dalla pit lane imposta dalla FIA a Singapore per modifiche in parc fermé.",
+          "passoGara": "marina-bay (2026, 17): HAD: Delta mediano -0,034% rispetto ai giri confrontabili degli altri piloti: 9 giri, indice relativo 44,4/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: HAD: MEDIUM, giri 1–1, 1 giri di stint, età iniziale 0. HAD: SOFT, giri 2–62, 61 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P10; Qualifying NC; Actual grid PL; 62 laps. Sprint: DNF. FIA-mandated pit-lane start in Singapore following parc fermé changes.",
+          "passoGara": "marina-bay (2026, 17): HAD: Median delta -0.034% against comparable laps by other drivers: 9 laps, relative index 44.4/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: HAD: MEDIUM, laps 1–1, 1 stint laps, initial tyre age 0. HAD: SOFT, laps 2–62, 61 stint laps, initial tyre age 0. Too few filtered stints for a robust slope; length and compound are observed data, not a management rating.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P10; Qualification NC; Grille effective PL; 62 tours. Sprint: DNF. Départ de la voie des stands imposé par la FIA à Singapour après des modifications sous parc fermé.",
+          "passoGara": "marina-bay (2026, 17): HAD: Écart médian -0,034% aux tours comparables des autres pilotes : 9 tours, indice relatif 44,4/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : HAD : MEDIUM, tours 1–1, 1 tours de relais, âge initial 0. HAD : SOFT, tours 2–62, 61 tours de relais, âge initial 0. Trop peu de relais filtrés pour une pente robuste; longueur et gomme observées, pas une note de gestion.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P10; Qualificação NC; Grelha efetiva PL; 62 voltas. Sprint: DNF. Partida da via das boxes imposta pela FIA em Singapura após alterações em parque fechado.",
+          "passoGara": "marina-bay (2026, 17): HAD: Diferença mediana -0,034% face a voltas comparáveis dos outros pilotos: 9 voltas, índice relativo 44,4/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: HAD: MEDIUM, voltas 1–1, 1 voltas de stint, idade inicial 0. HAD: SOFT, voltas 2–62, 61 voltas de stint, idade inicial 0. Poucos stints filtrados para uma inclinação robusta; duração e composto observados, não uma nota de gestão.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P10; Clasificación NC; Parrilla efectiva PL; 62 vueltas. Sprint: DNF. Salida desde el pit lane impuesta por la FIA en Singapur tras modificaciones en parque cerrado.",
+          "passoGara": "marina-bay (2026, 17): HAD: Diferencia mediana -0,034% frente a vueltas comparables de otros pilotos: 9 vueltas, índice relativo 44,4/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: HAD: MEDIUM, vueltas 1–1, 1 vueltas de tanda, edad inicial 0. HAD: SOFT, vueltas 2–62, 61 vueltas de tanda, edad inicial 0. Pocas tandas filtradas para una pendiente robusta; duración y compuesto observados, no una nota de gestión.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P10; Qualifying NC; Tatsächliche Startaufstellung PL; 62 Runden. Sprint: DNF. Von der FIA vorgeschriebener Start aus der Boxengasse in Singapur nach Änderungen im Parc fermé.",
+          "passoGara": "marina-bay (2026, 17): HAD: Median der Abweichung -0,034% zu vergleichbaren Runden anderer Fahrer: 9 Runden, relativer Index 44,4/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: HAD: MEDIUM, Runden 1–1, 1 Stint-Runden, anfängliches Reifenalter 0. HAD: SOFT, Runden 2–62, 61 Stint-Runden, anfängliches Reifenalter 0. Zu wenige gefilterte Stints für eine robuste Steigung; Länge und Mischung beobachtet, keine Managementnote.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "lawson",
+      "posizioneGara": "P7",
+      "posizioneQualifica": "Q9",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P7; Qualifica Q9; Griglia effettiva 8; 62 giri. Sprint: P5.",
+      "passoGara": "marina-bay (2026, 17): LAW: Delta mediano -0,411% rispetto ai giri confrontabili degli altri piloti: 46 giri, indice relativo 55,6/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: LAW: SOFT, giri 1–31, 31 giri di stint, età iniziale 3. LAW: MEDIUM, giri 32–62, 31 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,002% per giro su 2 stint confrontabili; indice descrittivo 75/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "rb",
+      "griglia": "8",
+      "giri": 62,
+      "statoGara": "7",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P7; Qualifica Q9; Griglia effettiva 8; 62 giri. Sprint: P5.",
+          "passoGara": "marina-bay (2026, 17): LAW: Delta mediano -0,411% rispetto ai giri confrontabili degli altri piloti: 46 giri, indice relativo 55,6/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: LAW: SOFT, giri 1–31, 31 giri di stint, età iniziale 3. LAW: MEDIUM, giri 32–62, 31 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,002% per giro su 2 stint confrontabili; indice descrittivo 75/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P7; Qualifying Q9; Actual grid 8; 62 laps. Sprint: P5.",
+          "passoGara": "marina-bay (2026, 17): LAW: Median delta -0.411% against comparable laps by other drivers: 46 laps, relative index 55.6/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: LAW: SOFT, laps 1–31, 31 stint laps, initial tyre age 3. LAW: MEDIUM, laps 32–62, 31 stint laps, initial tyre age 0. Relative timing drift -0.002% per lap across 2 comparable stints; descriptive index 75/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P7; Qualification Q9; Grille effective 8; 62 tours. Sprint: P5.",
+          "passoGara": "marina-bay (2026, 17): LAW: Écart médian -0,411% aux tours comparables des autres pilotes : 46 tours, indice relatif 55,6/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : LAW : SOFT, tours 1–31, 31 tours de relais, âge initial 3. LAW : MEDIUM, tours 32–62, 31 tours de relais, âge initial 0. Dérive chronométrique relative -0,002% par tour sur 2 relais comparables; indice descriptif 75/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P7; Qualificação Q9; Grelha efetiva 8; 62 voltas. Sprint: P5.",
+          "passoGara": "marina-bay (2026, 17): LAW: Diferença mediana -0,411% face a voltas comparáveis dos outros pilotos: 46 voltas, índice relativo 55,6/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: LAW: SOFT, voltas 1–31, 31 voltas de stint, idade inicial 3. LAW: MEDIUM, voltas 32–62, 31 voltas de stint, idade inicial 0. Deriva cronométrica relativa -0,002% por volta em 2 stints comparáveis; índice descritivo 75/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P7; Clasificación Q9; Parrilla efectiva 8; 62 vueltas. Sprint: P5.",
+          "passoGara": "marina-bay (2026, 17): LAW: Diferencia mediana -0,411% frente a vueltas comparables de otros pilotos: 46 vueltas, índice relativo 55,6/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: LAW: SOFT, vueltas 1–31, 31 vueltas de tanda, edad inicial 3. LAW: MEDIUM, vueltas 32–62, 31 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa -0,002% por vuelta en 2 tandas comparables; índice descriptivo 75/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P7; Qualifying Q9; Tatsächliche Startaufstellung 8; 62 Runden. Sprint: P5.",
+          "passoGara": "marina-bay (2026, 17): LAW: Median der Abweichung -0,411% zu vergleichbaren Runden anderer Fahrer: 46 Runden, relativer Index 55,6/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: LAW: SOFT, Runden 1–31, 31 Stint-Runden, anfängliches Reifenalter 3. LAW: MEDIUM, Runden 32–62, 31 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung -0,002% pro Runde in 2 vergleichbaren Stints; deskriptiver Index 75/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "gasly",
+      "posizioneGara": "P11",
+      "posizioneQualifica": "Q8",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P11; Qualifica Q8; Griglia effettiva 7; 61 giri. Sprint: P9.",
+      "passoGara": "marina-bay (2026, 17): GAS: Delta mediano -0,812% rispetto ai giri confrontabili degli altri piloti: 16 giri, indice relativo 66,7/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: GAS: MEDIUM, giri 1–29, 29 giri di stint, età iniziale 0. GAS: SOFT, giri 30–61, 32 giri di stint, età iniziale 3. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "alpine",
+      "griglia": "7",
+      "giri": 61,
+      "statoGara": "11",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P11; Qualifica Q8; Griglia effettiva 7; 61 giri. Sprint: P9.",
+          "passoGara": "marina-bay (2026, 17): GAS: Delta mediano -0,812% rispetto ai giri confrontabili degli altri piloti: 16 giri, indice relativo 66,7/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: GAS: MEDIUM, giri 1–29, 29 giri di stint, età iniziale 0. GAS: SOFT, giri 30–61, 32 giri di stint, età iniziale 3. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P11; Qualifying Q8; Actual grid 7; 61 laps. Sprint: P9.",
+          "passoGara": "marina-bay (2026, 17): GAS: Median delta -0.812% against comparable laps by other drivers: 16 laps, relative index 66.7/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: GAS: MEDIUM, laps 1–29, 29 stint laps, initial tyre age 0. GAS: SOFT, laps 30–61, 32 stint laps, initial tyre age 3. Too few filtered stints for a robust slope; length and compound are observed data, not a management rating.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P11; Qualification Q8; Grille effective 7; 61 tours. Sprint: P9.",
+          "passoGara": "marina-bay (2026, 17): GAS: Écart médian -0,812% aux tours comparables des autres pilotes : 16 tours, indice relatif 66,7/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : GAS : MEDIUM, tours 1–29, 29 tours de relais, âge initial 0. GAS : SOFT, tours 30–61, 32 tours de relais, âge initial 3. Trop peu de relais filtrés pour une pente robuste; longueur et gomme observées, pas une note de gestion.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P11; Qualificação Q8; Grelha efetiva 7; 61 voltas. Sprint: P9.",
+          "passoGara": "marina-bay (2026, 17): GAS: Diferença mediana -0,812% face a voltas comparáveis dos outros pilotos: 16 voltas, índice relativo 66,7/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: GAS: MEDIUM, voltas 1–29, 29 voltas de stint, idade inicial 0. GAS: SOFT, voltas 30–61, 32 voltas de stint, idade inicial 3. Poucos stints filtrados para uma inclinação robusta; duração e composto observados, não uma nota de gestão.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P11; Clasificación Q8; Parrilla efectiva 7; 61 vueltas. Sprint: P9.",
+          "passoGara": "marina-bay (2026, 17): GAS: Diferencia mediana -0,812% frente a vueltas comparables de otros pilotos: 16 vueltas, índice relativo 66,7/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: GAS: MEDIUM, vueltas 1–29, 29 vueltas de tanda, edad inicial 0. GAS: SOFT, vueltas 30–61, 32 vueltas de tanda, edad inicial 3. Pocas tandas filtradas para una pendiente robusta; duración y compuesto observados, no una nota de gestión.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P11; Qualifying Q8; Tatsächliche Startaufstellung 7; 61 Runden. Sprint: P9.",
+          "passoGara": "marina-bay (2026, 17): GAS: Median der Abweichung -0,812% zu vergleichbaren Runden anderer Fahrer: 16 Runden, relativer Index 66,7/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: GAS: MEDIUM, Runden 1–29, 29 Stint-Runden, anfängliches Reifenalter 0. GAS: SOFT, Runden 30–61, 32 Stint-Runden, anfängliches Reifenalter 3. Zu wenige gefilterte Stints für eine robuste Steigung; Länge und Mischung beobachtet, keine Managementnote.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "arvid_lindblad",
+      "posizioneGara": "P15",
+      "posizioneQualifica": "Q10",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P15; Qualifica Q10; Griglia effettiva 9; 61 giri. Sprint: P13.",
+      "passoGara": "marina-bay (2026, 17): LIN: Delta mediano 0,285% rispetto ai giri confrontabili degli altri piloti: 14 giri, indice relativo 33,3/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: LIN: MEDIUM, giri 1–26, 26 giri di stint, età iniziale 0. LIN: SOFT, giri 27–61, 35 giri di stint, età iniziale 3. Deriva cronometrica relativa -0,027% per giro su 1 stint confrontabili; indice descrittivo 90,6/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "rb",
+      "griglia": "9",
+      "giri": 61,
+      "statoGara": "15",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P15; Qualifica Q10; Griglia effettiva 9; 61 giri. Sprint: P13.",
+          "passoGara": "marina-bay (2026, 17): LIN: Delta mediano 0,285% rispetto ai giri confrontabili degli altri piloti: 14 giri, indice relativo 33,3/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: LIN: MEDIUM, giri 1–26, 26 giri di stint, età iniziale 0. LIN: SOFT, giri 27–61, 35 giri di stint, età iniziale 3. Deriva cronometrica relativa -0,027% per giro su 1 stint confrontabili; indice descrittivo 90,6/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P15; Qualifying Q10; Actual grid 9; 61 laps. Sprint: P13.",
+          "passoGara": "marina-bay (2026, 17): LIN: Median delta 0.285% against comparable laps by other drivers: 14 laps, relative index 33.3/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: LIN: MEDIUM, laps 1–26, 26 stint laps, initial tyre age 0. LIN: SOFT, laps 27–61, 35 stint laps, initial tyre age 3. Relative timing drift -0.027% per lap across 1 comparable stints; descriptive index 90.6/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P15; Qualification Q10; Grille effective 9; 61 tours. Sprint: P13.",
+          "passoGara": "marina-bay (2026, 17): LIN: Écart médian 0,285% aux tours comparables des autres pilotes : 14 tours, indice relatif 33,3/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : LIN : MEDIUM, tours 1–26, 26 tours de relais, âge initial 0. LIN : SOFT, tours 27–61, 35 tours de relais, âge initial 3. Dérive chronométrique relative -0,027% par tour sur 1 relais comparables; indice descriptif 90,6/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P15; Qualificação Q10; Grelha efetiva 9; 61 voltas. Sprint: P13.",
+          "passoGara": "marina-bay (2026, 17): LIN: Diferença mediana 0,285% face a voltas comparáveis dos outros pilotos: 14 voltas, índice relativo 33,3/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: LIN: MEDIUM, voltas 1–26, 26 voltas de stint, idade inicial 0. LIN: SOFT, voltas 27–61, 35 voltas de stint, idade inicial 3. Deriva cronométrica relativa -0,027% por volta em 1 stints comparáveis; índice descritivo 90,6/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P15; Clasificación Q10; Parrilla efectiva 9; 61 vueltas. Sprint: P13.",
+          "passoGara": "marina-bay (2026, 17): LIN: Diferencia mediana 0,285% frente a vueltas comparables de otros pilotos: 14 vueltas, índice relativo 33,3/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: LIN: MEDIUM, vueltas 1–26, 26 vueltas de tanda, edad inicial 0. LIN: SOFT, vueltas 27–61, 35 vueltas de tanda, edad inicial 3. Deriva cronométrica relativa -0,027% por vuelta en 1 tandas comparables; índice descriptivo 90,6/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P15; Qualifying Q10; Tatsächliche Startaufstellung 9; 61 Runden. Sprint: P13.",
+          "passoGara": "marina-bay (2026, 17): LIN: Median der Abweichung 0,285% zu vergleichbaren Runden anderer Fahrer: 14 Runden, relativer Index 33,3/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: LIN: MEDIUM, Runden 1–26, 26 Stint-Runden, anfängliches Reifenalter 0. LIN: SOFT, Runden 27–61, 35 Stint-Runden, anfängliches Reifenalter 3. Relative Zeitentwicklung -0,027% pro Runde in 1 vergleichbaren Stints; deskriptiver Index 90,6/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "colapinto",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q16",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: DNF; Qualifica Q16; Griglia effettiva 15; 29 giri. Sprint: DNF.",
+      "passoGara": "marina-bay (2026, 17): COL: Delta mediano -0,208% rispetto ai giri confrontabili degli altri piloti: 18 giri, indice relativo 50/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: COL: MEDIUM, giri 1–29, 29 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,044% per giro su 1 stint confrontabili; indice descrittivo 25/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Causa di ritiro riportata da F1DB: Transmission.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "alpine",
+      "griglia": "15",
+      "giri": 29,
+      "statoGara": "DNF",
+      "causaRitiro": "Transmission",
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: DNF; Qualifica Q16; Griglia effettiva 15; 29 giri. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): COL: Delta mediano -0,208% rispetto ai giri confrontabili degli altri piloti: 18 giri, indice relativo 50/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: COL: MEDIUM, giri 1–29, 29 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,044% per giro su 1 stint confrontabili; indice descrittivo 25/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Causa di ritiro riportata da F1DB: Transmission."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: DNF; Qualifying Q16; Actual grid 15; 29 laps. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): COL: Median delta -0.208% against comparable laps by other drivers: 18 laps, relative index 50/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: COL: MEDIUM, laps 1–29, 29 stint laps, initial tyre age 0. Relative timing drift 0.044% per lap across 1 comparable stints; descriptive index 25/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Retirement reason reported by F1DB: Transmission."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: DNF; Qualification Q16; Grille effective 15; 29 tours. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): COL: Écart médian -0,208% aux tours comparables des autres pilotes : 18 tours, indice relatif 50/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : COL : MEDIUM, tours 1–29, 29 tours de relais, âge initial 0. Dérive chronométrique relative 0,044% par tour sur 1 relais comparables; indice descriptif 25/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Cause d’abandon indiquée par F1DB: Transmission."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: DNF; Qualificação Q16; Grelha efetiva 15; 29 voltas. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): COL: Diferença mediana -0,208% face a voltas comparáveis dos outros pilotos: 18 voltas, índice relativo 50/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: COL: MEDIUM, voltas 1–29, 29 voltas de stint, idade inicial 0. Deriva cronométrica relativa 0,044% por volta em 1 stints comparáveis; índice descritivo 25/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Causa de abandono indicada pela F1DB: Transmission."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: DNF; Clasificación Q16; Parrilla efectiva 15; 29 vueltas. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): COL: Diferencia mediana -0,208% frente a vueltas comparables de otros pilotos: 18 vueltas, índice relativo 50/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: COL: MEDIUM, vueltas 1–29, 29 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa 0,044% por vuelta en 1 tandas comparables; índice descriptivo 25/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Causa de abandono indicada por F1DB: Transmission."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: DNF; Qualifying Q16; Tatsächliche Startaufstellung 15; 29 Runden. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): COL: Median der Abweichung -0,208% zu vergleichbaren Runden anderer Fahrer: 18 Runden, relativer Index 50/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: COL: MEDIUM, Runden 1–29, 29 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung 0,044% pro Runde in 1 vergleichbaren Stints; deskriptiver Index 25/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Von F1DB angegebener Ausfallgrund: Transmission."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "bearman",
+      "posizioneGara": "P12",
+      "posizioneQualifica": "Q12",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P12; Qualifica Q12; Griglia effettiva 11; 61 giri. Sprint: P6.",
+      "passoGara": "marina-bay (2026, 17): BEA: Delta mediano -0,02% rispetto ai giri confrontabili degli altri piloti: 33 giri, indice relativo 38,9/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: BEA: SOFT, giri 1–33, 33 giri di stint, età iniziale 0. BEA: MEDIUM, giri 34–61, 28 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,009% per giro su 1 stint confrontabili; indice descrittivo 56,2/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "haas",
+      "griglia": "11",
+      "giri": 61,
+      "statoGara": "12",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P12; Qualifica Q12; Griglia effettiva 11; 61 giri. Sprint: P6.",
+          "passoGara": "marina-bay (2026, 17): BEA: Delta mediano -0,02% rispetto ai giri confrontabili degli altri piloti: 33 giri, indice relativo 38,9/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: BEA: SOFT, giri 1–33, 33 giri di stint, età iniziale 0. BEA: MEDIUM, giri 34–61, 28 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,009% per giro su 1 stint confrontabili; indice descrittivo 56,2/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P12; Qualifying Q12; Actual grid 11; 61 laps. Sprint: P6.",
+          "passoGara": "marina-bay (2026, 17): BEA: Median delta -0.02% against comparable laps by other drivers: 33 laps, relative index 38.9/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: BEA: SOFT, laps 1–33, 33 stint laps, initial tyre age 0. BEA: MEDIUM, laps 34–61, 28 stint laps, initial tyre age 0. Relative timing drift 0.009% per lap across 1 comparable stints; descriptive index 56.2/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P12; Qualification Q12; Grille effective 11; 61 tours. Sprint: P6.",
+          "passoGara": "marina-bay (2026, 17): BEA: Écart médian -0,02% aux tours comparables des autres pilotes : 33 tours, indice relatif 38,9/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : BEA : SOFT, tours 1–33, 33 tours de relais, âge initial 0. BEA : MEDIUM, tours 34–61, 28 tours de relais, âge initial 0. Dérive chronométrique relative 0,009% par tour sur 1 relais comparables; indice descriptif 56,2/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P12; Qualificação Q12; Grelha efetiva 11; 61 voltas. Sprint: P6.",
+          "passoGara": "marina-bay (2026, 17): BEA: Diferença mediana -0,02% face a voltas comparáveis dos outros pilotos: 33 voltas, índice relativo 38,9/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: BEA: SOFT, voltas 1–33, 33 voltas de stint, idade inicial 0. BEA: MEDIUM, voltas 34–61, 28 voltas de stint, idade inicial 0. Deriva cronométrica relativa 0,009% por volta em 1 stints comparáveis; índice descritivo 56,2/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P12; Clasificación Q12; Parrilla efectiva 11; 61 vueltas. Sprint: P6.",
+          "passoGara": "marina-bay (2026, 17): BEA: Diferencia mediana -0,02% frente a vueltas comparables de otros pilotos: 33 vueltas, índice relativo 38,9/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: BEA: SOFT, vueltas 1–33, 33 vueltas de tanda, edad inicial 0. BEA: MEDIUM, vueltas 34–61, 28 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa 0,009% por vuelta en 1 tandas comparables; índice descriptivo 56,2/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P12; Qualifying Q12; Tatsächliche Startaufstellung 11; 61 Runden. Sprint: P6.",
+          "passoGara": "marina-bay (2026, 17): BEA: Median der Abweichung -0,02% zu vergleichbaren Runden anderer Fahrer: 33 Runden, relativer Index 38,9/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: BEA: SOFT, Runden 1–33, 33 Stint-Runden, anfängliches Reifenalter 0. BEA: MEDIUM, Runden 34–61, 28 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung 0,009% pro Runde in 1 vergleichbaren Stints; deskriptiver Index 56,2/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "bortoleto",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q15",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: DNF; Qualifica Q15; Griglia effettiva 14; 7 giri. Sprint: DNF.",
+      "passoGara": "marina-bay (2026, 17): BOR: Sessione acquisita: 0 giri confrontabili; campione sotto la soglia per un indice di passo. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: BOR: MEDIUM, giri 1–7, 7 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione.",
+      "affidabilita": "Causa di ritiro riportata da F1DB: Gearbox.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "audi",
+      "griglia": "14",
+      "giri": 7,
+      "statoGara": "DNF",
+      "causaRitiro": "Gearbox",
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: DNF; Qualifica Q15; Griglia effettiva 14; 7 giri. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOR: Sessione acquisita: 0 giri confrontabili; campione sotto la soglia per un indice di passo. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: BOR: MEDIUM, giri 1–7, 7 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione.",
+          "affidabilita": "Causa di ritiro riportata da F1DB: Gearbox."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: DNF; Qualifying Q15; Actual grid 14; 7 laps. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOR: Session acquired: 0 comparable laps; sample below the threshold for a pace index. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: BOR: MEDIUM, laps 1–7, 7 stint laps, initial tyre age 0. Too few filtered stints for a robust slope; length and compound are observed data, not a management rating.",
+          "affidabilita": "Retirement reason reported by F1DB: Gearbox."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: DNF; Qualification Q15; Grille effective 14; 7 tours. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOR: Session acquise : 0 tours comparables; échantillon sous le seuil pour un indice de rythme. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : BOR : MEDIUM, tours 1–7, 7 tours de relais, âge initial 0. Trop peu de relais filtrés pour une pente robuste; longueur et gomme observées, pas une note de gestion.",
+          "affidabilita": "Cause d’abandon indiquée par F1DB: Gearbox."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: DNF; Qualificação Q15; Grelha efetiva 14; 7 voltas. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOR: Sessão adquirida: 0 voltas comparáveis; amostra abaixo do limiar para um índice de ritmo. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: BOR: MEDIUM, voltas 1–7, 7 voltas de stint, idade inicial 0. Poucos stints filtrados para uma inclinação robusta; duração e composto observados, não uma nota de gestão.",
+          "affidabilita": "Causa de abandono indicada pela F1DB: Gearbox."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: DNF; Clasificación Q15; Parrilla efectiva 14; 7 vueltas. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOR: Sesión adquirida: 0 vueltas comparables; muestra inferior al umbral para un índice de ritmo. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: BOR: MEDIUM, vueltas 1–7, 7 vueltas de tanda, edad inicial 0. Pocas tandas filtradas para una pendiente robusta; duración y compuesto observados, no una nota de gestión.",
+          "affidabilita": "Causa de abandono indicada por F1DB: Gearbox."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: DNF; Qualifying Q15; Tatsächliche Startaufstellung 14; 7 Runden. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOR: Session erfasst: 0 vergleichbare Runden; Stichprobe unter der Schwelle für einen Tempoindex. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: BOR: MEDIUM, Runden 1–7, 7 Stint-Runden, anfängliches Reifenalter 0. Zu wenige gefilterte Stints für eine robuste Steigung; Länge und Mischung beobachtet, keine Managementnote.",
+          "affidabilita": "Von F1DB angegebener Ausfallgrund: Gearbox."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "hulkenberg",
+      "posizioneGara": "P8",
+      "posizioneQualifica": "Q11",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P8; Qualifica Q11; Griglia effettiva 10; 62 giri. Sprint: P7.",
+      "passoGara": "marina-bay (2026, 17): HUL: Delta mediano -0,772% rispetto ai giri confrontabili degli altri piloti: 21 giri, indice relativo 61,1/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: HUL: MEDIUM, giri 1–30, 30 giri di stint, età iniziale 0. HUL: SOFT, giri 31–62, 32 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,035% per giro su 1 stint confrontabili; indice descrittivo 37,5/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "audi",
+      "griglia": "10",
+      "giri": 62,
+      "statoGara": "8",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P8; Qualifica Q11; Griglia effettiva 10; 62 giri. Sprint: P7.",
+          "passoGara": "marina-bay (2026, 17): HUL: Delta mediano -0,772% rispetto ai giri confrontabili degli altri piloti: 21 giri, indice relativo 61,1/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: HUL: MEDIUM, giri 1–30, 30 giri di stint, età iniziale 0. HUL: SOFT, giri 31–62, 32 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,035% per giro su 1 stint confrontabili; indice descrittivo 37,5/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P8; Qualifying Q11; Actual grid 10; 62 laps. Sprint: P7.",
+          "passoGara": "marina-bay (2026, 17): HUL: Median delta -0.772% against comparable laps by other drivers: 21 laps, relative index 61.1/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: HUL: MEDIUM, laps 1–30, 30 stint laps, initial tyre age 0. HUL: SOFT, laps 31–62, 32 stint laps, initial tyre age 0. Relative timing drift 0.035% per lap across 1 comparable stints; descriptive index 37.5/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P8; Qualification Q11; Grille effective 10; 62 tours. Sprint: P7.",
+          "passoGara": "marina-bay (2026, 17): HUL: Écart médian -0,772% aux tours comparables des autres pilotes : 21 tours, indice relatif 61,1/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : HUL : MEDIUM, tours 1–30, 30 tours de relais, âge initial 0. HUL : SOFT, tours 31–62, 32 tours de relais, âge initial 0. Dérive chronométrique relative 0,035% par tour sur 1 relais comparables; indice descriptif 37,5/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P8; Qualificação Q11; Grelha efetiva 10; 62 voltas. Sprint: P7.",
+          "passoGara": "marina-bay (2026, 17): HUL: Diferença mediana -0,772% face a voltas comparáveis dos outros pilotos: 21 voltas, índice relativo 61,1/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: HUL: MEDIUM, voltas 1–30, 30 voltas de stint, idade inicial 0. HUL: SOFT, voltas 31–62, 32 voltas de stint, idade inicial 0. Deriva cronométrica relativa 0,035% por volta em 1 stints comparáveis; índice descritivo 37,5/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P8; Clasificación Q11; Parrilla efectiva 10; 62 vueltas. Sprint: P7.",
+          "passoGara": "marina-bay (2026, 17): HUL: Diferencia mediana -0,772% frente a vueltas comparables de otros pilotos: 21 vueltas, índice relativo 61,1/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: HUL: MEDIUM, vueltas 1–30, 30 vueltas de tanda, edad inicial 0. HUL: SOFT, vueltas 31–62, 32 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa 0,035% por vuelta en 1 tandas comparables; índice descriptivo 37,5/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P8; Qualifying Q11; Tatsächliche Startaufstellung 10; 62 Runden. Sprint: P7.",
+          "passoGara": "marina-bay (2026, 17): HUL: Median der Abweichung -0,772% zu vergleichbaren Runden anderer Fahrer: 21 Runden, relativer Index 61,1/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: HUL: MEDIUM, Runden 1–30, 30 Stint-Runden, anfängliches Reifenalter 0. HUL: SOFT, Runden 31–62, 32 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung 0,035% pro Runde in 1 vergleichbaren Stints; deskriptiver Index 37,5/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "ocon",
+      "posizioneGara": "P13",
+      "posizioneQualifica": "Q13",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P13; Qualifica Q13; Griglia effettiva 12; 61 giri. Sprint: P10.",
+      "passoGara": "marina-bay (2026, 17): OCO: Delta mediano 0,464% rispetto ai giri confrontabili degli altri piloti: 42 giri, indice relativo 27,8/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: OCO: SOFT, giri 1–28, 28 giri di stint, età iniziale 0. OCO: MEDIUM, giri 29–61, 33 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,05% per giro su 2 stint confrontabili; indice descrittivo 18,8/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "haas",
+      "griglia": "12",
+      "giri": 61,
+      "statoGara": "13",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P13; Qualifica Q13; Griglia effettiva 12; 61 giri. Sprint: P10.",
+          "passoGara": "marina-bay (2026, 17): OCO: Delta mediano 0,464% rispetto ai giri confrontabili degli altri piloti: 42 giri, indice relativo 27,8/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: OCO: SOFT, giri 1–28, 28 giri di stint, età iniziale 0. OCO: MEDIUM, giri 29–61, 33 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,05% per giro su 2 stint confrontabili; indice descrittivo 18,8/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P13; Qualifying Q13; Actual grid 12; 61 laps. Sprint: P10.",
+          "passoGara": "marina-bay (2026, 17): OCO: Median delta 0.464% against comparable laps by other drivers: 42 laps, relative index 27.8/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: OCO: SOFT, laps 1–28, 28 stint laps, initial tyre age 0. OCO: MEDIUM, laps 29–61, 33 stint laps, initial tyre age 0. Relative timing drift 0.05% per lap across 2 comparable stints; descriptive index 18.8/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P13; Qualification Q13; Grille effective 12; 61 tours. Sprint: P10.",
+          "passoGara": "marina-bay (2026, 17): OCO: Écart médian 0,464% aux tours comparables des autres pilotes : 42 tours, indice relatif 27,8/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : OCO : SOFT, tours 1–28, 28 tours de relais, âge initial 0. OCO : MEDIUM, tours 29–61, 33 tours de relais, âge initial 0. Dérive chronométrique relative 0,05% par tour sur 2 relais comparables; indice descriptif 18,8/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P13; Qualificação Q13; Grelha efetiva 12; 61 voltas. Sprint: P10.",
+          "passoGara": "marina-bay (2026, 17): OCO: Diferença mediana 0,464% face a voltas comparáveis dos outros pilotos: 42 voltas, índice relativo 27,8/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: OCO: SOFT, voltas 1–28, 28 voltas de stint, idade inicial 0. OCO: MEDIUM, voltas 29–61, 33 voltas de stint, idade inicial 0. Deriva cronométrica relativa 0,05% por volta em 2 stints comparáveis; índice descritivo 18,8/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P13; Clasificación Q13; Parrilla efectiva 12; 61 vueltas. Sprint: P10.",
+          "passoGara": "marina-bay (2026, 17): OCO: Diferencia mediana 0,464% frente a vueltas comparables de otros pilotos: 42 vueltas, índice relativo 27,8/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: OCO: SOFT, vueltas 1–28, 28 vueltas de tanda, edad inicial 0. OCO: MEDIUM, vueltas 29–61, 33 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa 0,05% por vuelta en 2 tandas comparables; índice descriptivo 18,8/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P13; Qualifying Q13; Tatsächliche Startaufstellung 12; 61 Runden. Sprint: P10.",
+          "passoGara": "marina-bay (2026, 17): OCO: Median der Abweichung 0,464% zu vergleichbaren Runden anderer Fahrer: 42 Runden, relativer Index 27,8/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: OCO: SOFT, Runden 1–28, 28 Stint-Runden, anfängliches Reifenalter 0. OCO: MEDIUM, Runden 29–61, 33 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung 0,05% pro Runde in 2 vergleichbaren Stints; deskriptiver Index 18,8/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "alonso",
+      "posizioneGara": "P16",
+      "posizioneQualifica": "Q17",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P16; Qualifica Q17; Griglia effettiva PL; 61 giri. Sprint: P11. Partenza dalla pit lane imposta dalla FIA a Singapore per modifiche in parc fermé.",
+      "passoGara": "marina-bay (2026, 17): ALO: Sessione acquisita: 6 giri confrontabili; campione sotto la soglia per un indice di passo. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: ALO: SOFT, giri 1–1, 1 giri di stint, età iniziale 0. ALO: MEDIUM, giri 2–61, 60 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "aston_martin",
+      "griglia": "PL",
+      "giri": 61,
+      "statoGara": "16",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P16; Qualifica Q17; Griglia effettiva PL; 61 giri. Sprint: P11. Partenza dalla pit lane imposta dalla FIA a Singapore per modifiche in parc fermé.",
+          "passoGara": "marina-bay (2026, 17): ALO: Sessione acquisita: 6 giri confrontabili; campione sotto la soglia per un indice di passo. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: ALO: SOFT, giri 1–1, 1 giri di stint, età iniziale 0. ALO: MEDIUM, giri 2–61, 60 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P16; Qualifying Q17; Actual grid PL; 61 laps. Sprint: P11. FIA-mandated pit-lane start in Singapore following parc fermé changes.",
+          "passoGara": "marina-bay (2026, 17): ALO: Session acquired: 6 comparable laps; sample below the threshold for a pace index. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: ALO: SOFT, laps 1–1, 1 stint laps, initial tyre age 0. ALO: MEDIUM, laps 2–61, 60 stint laps, initial tyre age 0. Too few filtered stints for a robust slope; length and compound are observed data, not a management rating.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P16; Qualification Q17; Grille effective PL; 61 tours. Sprint: P11. Départ de la voie des stands imposé par la FIA à Singapour après des modifications sous parc fermé.",
+          "passoGara": "marina-bay (2026, 17): ALO: Session acquise : 6 tours comparables; échantillon sous le seuil pour un indice de rythme. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : ALO : SOFT, tours 1–1, 1 tours de relais, âge initial 0. ALO : MEDIUM, tours 2–61, 60 tours de relais, âge initial 0. Trop peu de relais filtrés pour une pente robuste; longueur et gomme observées, pas une note de gestion.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P16; Qualificação Q17; Grelha efetiva PL; 61 voltas. Sprint: P11. Partida da via das boxes imposta pela FIA em Singapura após alterações em parque fechado.",
+          "passoGara": "marina-bay (2026, 17): ALO: Sessão adquirida: 6 voltas comparáveis; amostra abaixo do limiar para um índice de ritmo. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: ALO: SOFT, voltas 1–1, 1 voltas de stint, idade inicial 0. ALO: MEDIUM, voltas 2–61, 60 voltas de stint, idade inicial 0. Poucos stints filtrados para uma inclinação robusta; duração e composto observados, não uma nota de gestão.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P16; Clasificación Q17; Parrilla efectiva PL; 61 vueltas. Sprint: P11. Salida desde el pit lane impuesta por la FIA en Singapur tras modificaciones en parque cerrado.",
+          "passoGara": "marina-bay (2026, 17): ALO: Sesión adquirida: 6 vueltas comparables; muestra inferior al umbral para un índice de ritmo. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: ALO: SOFT, vueltas 1–1, 1 vueltas de tanda, edad inicial 0. ALO: MEDIUM, vueltas 2–61, 60 vueltas de tanda, edad inicial 0. Pocas tandas filtradas para una pendiente robusta; duración y compuesto observados, no una nota de gestión.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P16; Qualifying Q17; Tatsächliche Startaufstellung PL; 61 Runden. Sprint: P11. Von der FIA vorgeschriebener Start aus der Boxengasse in Singapur nach Änderungen im Parc fermé.",
+          "passoGara": "marina-bay (2026, 17): ALO: Session erfasst: 6 vergleichbare Runden; Stichprobe unter der Schwelle für einen Tempoindex. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: ALO: SOFT, Runden 1–1, 1 Stint-Runden, anfängliches Reifenalter 0. ALO: MEDIUM, Runden 2–61, 60 Stint-Runden, anfängliches Reifenalter 0. Zu wenige gefilterte Stints für eine robuste Steigung; Länge und Mischung beobachtet, keine Managementnote.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "sainz",
+      "posizioneGara": "P14",
+      "posizioneQualifica": "Q14",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P14; Qualifica Q14; Griglia effettiva 13; 61 giri. Sprint: P12.",
+      "passoGara": "marina-bay (2026, 17): SAI: Delta mediano 0,924% rispetto ai giri confrontabili degli altri piloti: 47 giri, indice relativo 22,2/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: SAI: SOFT, giri 1–31, 31 giri di stint, età iniziale 0. SAI: MEDIUM, giri 32–61, 30 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,029% per giro su 2 stint confrontabili; indice descrittivo 43,8/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "williams",
+      "griglia": "13",
+      "giri": 61,
+      "statoGara": "14",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P14; Qualifica Q14; Griglia effettiva 13; 61 giri. Sprint: P12.",
+          "passoGara": "marina-bay (2026, 17): SAI: Delta mediano 0,924% rispetto ai giri confrontabili degli altri piloti: 47 giri, indice relativo 22,2/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: SAI: SOFT, giri 1–31, 31 giri di stint, età iniziale 0. SAI: MEDIUM, giri 32–61, 30 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,029% per giro su 2 stint confrontabili; indice descrittivo 43,8/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P14; Qualifying Q14; Actual grid 13; 61 laps. Sprint: P12.",
+          "passoGara": "marina-bay (2026, 17): SAI: Median delta 0.924% against comparable laps by other drivers: 47 laps, relative index 22.2/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: SAI: SOFT, laps 1–31, 31 stint laps, initial tyre age 0. SAI: MEDIUM, laps 32–61, 30 stint laps, initial tyre age 0. Relative timing drift 0.029% per lap across 2 comparable stints; descriptive index 43.8/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P14; Qualification Q14; Grille effective 13; 61 tours. Sprint: P12.",
+          "passoGara": "marina-bay (2026, 17): SAI: Écart médian 0,924% aux tours comparables des autres pilotes : 47 tours, indice relatif 22,2/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : SAI : SOFT, tours 1–31, 31 tours de relais, âge initial 0. SAI : MEDIUM, tours 32–61, 30 tours de relais, âge initial 0. Dérive chronométrique relative 0,029% par tour sur 2 relais comparables; indice descriptif 43,8/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P14; Qualificação Q14; Grelha efetiva 13; 61 voltas. Sprint: P12.",
+          "passoGara": "marina-bay (2026, 17): SAI: Diferença mediana 0,924% face a voltas comparáveis dos outros pilotos: 47 voltas, índice relativo 22,2/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: SAI: SOFT, voltas 1–31, 31 voltas de stint, idade inicial 0. SAI: MEDIUM, voltas 32–61, 30 voltas de stint, idade inicial 0. Deriva cronométrica relativa 0,029% por volta em 2 stints comparáveis; índice descritivo 43,8/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P14; Clasificación Q14; Parrilla efectiva 13; 61 vueltas. Sprint: P12.",
+          "passoGara": "marina-bay (2026, 17): SAI: Diferencia mediana 0,924% frente a vueltas comparables de otros pilotos: 47 vueltas, índice relativo 22,2/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: SAI: SOFT, vueltas 1–31, 31 vueltas de tanda, edad inicial 0. SAI: MEDIUM, vueltas 32–61, 30 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa 0,029% por vuelta en 2 tandas comparables; índice descriptivo 43,8/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P14; Qualifying Q14; Tatsächliche Startaufstellung 13; 61 Runden. Sprint: P12.",
+          "passoGara": "marina-bay (2026, 17): SAI: Median der Abweichung 0,924% zu vergleichbaren Runden anderer Fahrer: 47 Runden, relativer Index 22,2/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: SAI: SOFT, Runden 1–31, 31 Stint-Runden, anfängliches Reifenalter 0. SAI: MEDIUM, Runden 32–61, 30 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung 0,029% pro Runde in 2 vergleichbaren Stints; deskriptiver Index 43,8/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "albon",
+      "posizioneGara": "P18",
+      "posizioneQualifica": "Q18",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P18; Qualifica Q18; Griglia effettiva 16; 59 giri. Sprint: DNF.",
+      "passoGara": "marina-bay (2026, 17): ALB: Delta mediano 1,588% rispetto ai giri confrontabili degli altri piloti: 25 giri, indice relativo 11,1/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: ALB: MEDIUM, giri 1–22, 22 giri di stint, età iniziale 0. ALB: SOFT, giri 23–37, 15 giri di stint, età iniziale 0. ALB: SOFT, giri 38–59, 22 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,036% per giro su 2 stint confrontabili; indice descrittivo 31,2/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Causa di ritiro riportata da F1DB: Overheating.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "williams",
+      "griglia": "16",
+      "giri": 59,
+      "statoGara": "18",
+      "causaRitiro": "Overheating",
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P18; Qualifica Q18; Griglia effettiva 16; 59 giri. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): ALB: Delta mediano 1,588% rispetto ai giri confrontabili degli altri piloti: 25 giri, indice relativo 11,1/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: ALB: MEDIUM, giri 1–22, 22 giri di stint, età iniziale 0. ALB: SOFT, giri 23–37, 15 giri di stint, età iniziale 0. ALB: SOFT, giri 38–59, 22 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,036% per giro su 2 stint confrontabili; indice descrittivo 31,2/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Causa di ritiro riportata da F1DB: Overheating."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P18; Qualifying Q18; Actual grid 16; 59 laps. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): ALB: Median delta 1.588% against comparable laps by other drivers: 25 laps, relative index 11.1/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: ALB: MEDIUM, laps 1–22, 22 stint laps, initial tyre age 0. ALB: SOFT, laps 23–37, 15 stint laps, initial tyre age 0. ALB: SOFT, laps 38–59, 22 stint laps, initial tyre age 0. Relative timing drift 0.036% per lap across 2 comparable stints; descriptive index 31.2/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Retirement reason reported by F1DB: Overheating."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P18; Qualification Q18; Grille effective 16; 59 tours. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): ALB: Écart médian 1,588% aux tours comparables des autres pilotes : 25 tours, indice relatif 11,1/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : ALB : MEDIUM, tours 1–22, 22 tours de relais, âge initial 0. ALB : SOFT, tours 23–37, 15 tours de relais, âge initial 0. ALB : SOFT, tours 38–59, 22 tours de relais, âge initial 0. Dérive chronométrique relative 0,036% par tour sur 2 relais comparables; indice descriptif 31,2/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Cause d’abandon indiquée par F1DB: Overheating."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P18; Qualificação Q18; Grelha efetiva 16; 59 voltas. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): ALB: Diferença mediana 1,588% face a voltas comparáveis dos outros pilotos: 25 voltas, índice relativo 11,1/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: ALB: MEDIUM, voltas 1–22, 22 voltas de stint, idade inicial 0. ALB: SOFT, voltas 23–37, 15 voltas de stint, idade inicial 0. ALB: SOFT, voltas 38–59, 22 voltas de stint, idade inicial 0. Deriva cronométrica relativa 0,036% por volta em 2 stints comparáveis; índice descritivo 31,2/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Causa de abandono indicada pela F1DB: Overheating."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P18; Clasificación Q18; Parrilla efectiva 16; 59 vueltas. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): ALB: Diferencia mediana 1,588% frente a vueltas comparables de otros pilotos: 25 vueltas, índice relativo 11,1/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: ALB: MEDIUM, vueltas 1–22, 22 vueltas de tanda, edad inicial 0. ALB: SOFT, vueltas 23–37, 15 vueltas de tanda, edad inicial 0. ALB: SOFT, vueltas 38–59, 22 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa 0,036% por vuelta en 2 tandas comparables; índice descriptivo 31,2/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Causa de abandono indicada por F1DB: Overheating."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P18; Qualifying Q18; Tatsächliche Startaufstellung 16; 59 Runden. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): ALB: Median der Abweichung 1,588% zu vergleichbaren Runden anderer Fahrer: 25 Runden, relativer Index 11,1/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: ALB: MEDIUM, Runden 1–22, 22 Stint-Runden, anfängliches Reifenalter 0. ALB: SOFT, Runden 23–37, 15 Stint-Runden, anfängliches Reifenalter 0. ALB: SOFT, Runden 38–59, 22 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung 0,036% pro Runde in 2 vergleichbaren Stints; deskriptiver Index 31,2/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Von F1DB angegebener Ausfallgrund: Overheating."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "stroll",
+      "posizioneGara": "DNF",
+      "posizioneQualifica": "Q19",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: DNF; Qualifica Q19; Griglia effettiva PL; 36 giri. Sprint: DNF. Partenza dalla pit lane imposta dalla FIA a Singapore per modifiche in parc fermé.",
+      "passoGara": "marina-bay (2026, 17): STR: Delta mediano 1,164% rispetto ai giri confrontabili degli altri piloti: 19 giri, indice relativo 16,7/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: STR: SOFT, giri 1–1, 1 giri di stint, età iniziale 0. STR: MEDIUM, giri 2–36, 35 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,039% per giro su 1 stint confrontabili; indice descrittivo 100/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Causa di ritiro riportata da F1DB: Clutch.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "aston_martin",
+      "griglia": "PL",
+      "giri": 36,
+      "statoGara": "DNF",
+      "causaRitiro": "Clutch",
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: DNF; Qualifica Q19; Griglia effettiva PL; 36 giri. Sprint: DNF. Partenza dalla pit lane imposta dalla FIA a Singapore per modifiche in parc fermé.",
+          "passoGara": "marina-bay (2026, 17): STR: Delta mediano 1,164% rispetto ai giri confrontabili degli altri piloti: 19 giri, indice relativo 16,7/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: STR: SOFT, giri 1–1, 1 giri di stint, età iniziale 0. STR: MEDIUM, giri 2–36, 35 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,039% per giro su 1 stint confrontabili; indice descrittivo 100/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Causa di ritiro riportata da F1DB: Clutch."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: DNF; Qualifying Q19; Actual grid PL; 36 laps. Sprint: DNF. FIA-mandated pit-lane start in Singapore following parc fermé changes.",
+          "passoGara": "marina-bay (2026, 17): STR: Median delta 1.164% against comparable laps by other drivers: 19 laps, relative index 16.7/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: STR: SOFT, laps 1–1, 1 stint laps, initial tyre age 0. STR: MEDIUM, laps 2–36, 35 stint laps, initial tyre age 0. Relative timing drift -0.039% per lap across 1 comparable stints; descriptive index 100/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Retirement reason reported by F1DB: Clutch."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: DNF; Qualification Q19; Grille effective PL; 36 tours. Sprint: DNF. Départ de la voie des stands imposé par la FIA à Singapour après des modifications sous parc fermé.",
+          "passoGara": "marina-bay (2026, 17): STR: Écart médian 1,164% aux tours comparables des autres pilotes : 19 tours, indice relatif 16,7/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : STR : SOFT, tours 1–1, 1 tours de relais, âge initial 0. STR : MEDIUM, tours 2–36, 35 tours de relais, âge initial 0. Dérive chronométrique relative -0,039% par tour sur 1 relais comparables; indice descriptif 100/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Cause d’abandon indiquée par F1DB: Clutch."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: DNF; Qualificação Q19; Grelha efetiva PL; 36 voltas. Sprint: DNF. Partida da via das boxes imposta pela FIA em Singapura após alterações em parque fechado.",
+          "passoGara": "marina-bay (2026, 17): STR: Diferença mediana 1,164% face a voltas comparáveis dos outros pilotos: 19 voltas, índice relativo 16,7/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: STR: SOFT, voltas 1–1, 1 voltas de stint, idade inicial 0. STR: MEDIUM, voltas 2–36, 35 voltas de stint, idade inicial 0. Deriva cronométrica relativa -0,039% por volta em 1 stints comparáveis; índice descritivo 100/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Causa de abandono indicada pela F1DB: Clutch."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: DNF; Clasificación Q19; Parrilla efectiva PL; 36 vueltas. Sprint: DNF. Salida desde el pit lane impuesta por la FIA en Singapur tras modificaciones en parque cerrado.",
+          "passoGara": "marina-bay (2026, 17): STR: Diferencia mediana 1,164% frente a vueltas comparables de otros pilotos: 19 vueltas, índice relativo 16,7/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: STR: SOFT, vueltas 1–1, 1 vueltas de tanda, edad inicial 0. STR: MEDIUM, vueltas 2–36, 35 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa -0,039% por vuelta en 1 tandas comparables; índice descriptivo 100/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Causa de abandono indicada por F1DB: Clutch."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: DNF; Qualifying Q19; Tatsächliche Startaufstellung PL; 36 Runden. Sprint: DNF. Von der FIA vorgeschriebener Start aus der Boxengasse in Singapur nach Änderungen im Parc fermé.",
+          "passoGara": "marina-bay (2026, 17): STR: Median der Abweichung 1,164% zu vergleichbaren Runden anderer Fahrer: 19 Runden, relativer Index 16,7/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: STR: SOFT, Runden 1–1, 1 Stint-Runden, anfängliches Reifenalter 0. STR: MEDIUM, Runden 2–36, 35 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung -0,039% pro Runde in 1 vergleichbaren Stints; deskriptiver Index 100/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Von F1DB angegebener Ausfallgrund: Clutch."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "bottas",
+      "posizioneGara": "P19",
+      "posizioneQualifica": "Q21",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P19; Qualifica Q21; Griglia effettiva 18; 59 giri. Sprint: DNF.",
+      "passoGara": "marina-bay (2026, 17): BOT: Delta mediano 2,598% rispetto ai giri confrontabili degli altri piloti: 27 giri, indice relativo 5,6/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: BOT: MEDIUM, giri 1–28, 28 giri di stint, età iniziale 0. BOT: SOFT, giri 29–59, 31 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,068% per giro su 1 stint confrontabili; indice descrittivo 12,5/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "cadillac",
+      "griglia": "18",
+      "giri": 59,
+      "statoGara": "19",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P19; Qualifica Q21; Griglia effettiva 18; 59 giri. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOT: Delta mediano 2,598% rispetto ai giri confrontabili degli altri piloti: 27 giri, indice relativo 5,6/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: BOT: MEDIUM, giri 1–28, 28 giri di stint, età iniziale 0. BOT: SOFT, giri 29–59, 31 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,068% per giro su 1 stint confrontabili; indice descrittivo 12,5/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P19; Qualifying Q21; Actual grid 18; 59 laps. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOT: Median delta 2.598% against comparable laps by other drivers: 27 laps, relative index 5.6/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: BOT: MEDIUM, laps 1–28, 28 stint laps, initial tyre age 0. BOT: SOFT, laps 29–59, 31 stint laps, initial tyre age 0. Relative timing drift 0.068% per lap across 1 comparable stints; descriptive index 12.5/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P19; Qualification Q21; Grille effective 18; 59 tours. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOT: Écart médian 2,598% aux tours comparables des autres pilotes : 27 tours, indice relatif 5,6/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : BOT : MEDIUM, tours 1–28, 28 tours de relais, âge initial 0. BOT : SOFT, tours 29–59, 31 tours de relais, âge initial 0. Dérive chronométrique relative 0,068% par tour sur 1 relais comparables; indice descriptif 12,5/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P19; Qualificação Q21; Grelha efetiva 18; 59 voltas. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOT: Diferença mediana 2,598% face a voltas comparáveis dos outros pilotos: 27 voltas, índice relativo 5,6/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: BOT: MEDIUM, voltas 1–28, 28 voltas de stint, idade inicial 0. BOT: SOFT, voltas 29–59, 31 voltas de stint, idade inicial 0. Deriva cronométrica relativa 0,068% por volta em 1 stints comparáveis; índice descritivo 12,5/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P19; Clasificación Q21; Parrilla efectiva 18; 59 vueltas. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOT: Diferencia mediana 2,598% frente a vueltas comparables de otros pilotos: 27 vueltas, índice relativo 5,6/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: BOT: MEDIUM, vueltas 1–28, 28 vueltas de tanda, edad inicial 0. BOT: SOFT, vueltas 29–59, 31 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa 0,068% por vuelta en 1 tandas comparables; índice descriptivo 12,5/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P19; Qualifying Q21; Tatsächliche Startaufstellung 18; 59 Runden. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): BOT: Median der Abweichung 2,598% zu vergleichbaren Runden anderer Fahrer: 27 Runden, relativer Index 5,6/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: BOT: MEDIUM, Runden 1–28, 28 Stint-Runden, anfängliches Reifenalter 0. BOT: SOFT, Runden 29–59, 31 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung 0,068% pro Runde in 1 vergleichbaren Stints; deskriptiver Index 12,5/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    },
+    {
+      "pilotaSlug": "perez",
+      "posizioneGara": "P17",
+      "posizioneQualifica": "Q20",
+      "notaRisultato": "Singapore 2026, classifica finale FIA: P17; Qualifica Q20; Griglia effettiva 17; 60 giri. Sprint: DNF.",
+      "passoGara": "marina-bay (2026, 17): PER: Delta mediano 2,772% rispetto ai giri confrontabili degli altri piloti: 30 giri, indice relativo 0/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: PER: SOFT, giri 1–21, 21 giri di stint, età iniziale 0. PER: MEDIUM, giri 22–38, 17 giri di stint, età iniziale 0. PER: SOFT, giri 39–60, 22 giri di stint, età iniziale 0. Deriva cronometrica relativa -0% per giro su 2 stint confrontabili; indice descrittivo 68,8/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta.",
+      "errorePilota": "nessuno",
+      "scuderiaSlug": "cadillac",
+      "griglia": "17",
+      "giri": 60,
+      "statoGara": "17",
+      "causaRitiro": null,
+      "traduzioni": {
+        "it": {
+          "notaRisultato": "Singapore 2026, classifica finale FIA: P17; Qualifica Q20; Griglia effettiva 17; 60 giri. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): PER: Delta mediano 2,772% rispetto ai giri confrontabili degli altri piloti: 30 giri, indice relativo 0/100. Un delta negativo indica tempi inferiori al riferimento. ",
+          "gomme": "marina-bay (2026, 17): Sequenza osservata: PER: SOFT, giri 1–21, 21 giri di stint, età iniziale 0. PER: MEDIUM, giri 22–38, 17 giri di stint, età iniziale 0. PER: SOFT, giri 39–60, 22 giri di stint, età iniziale 0. Deriva cronometrica relativa -0% per giro su 2 stint confrontabili; indice descrittivo 68,8/100. Non isola usura, carburante o gestione volontaria.",
+          "affidabilita": "Esito regolare classificato; non dimostra affidabilità meccanica assoluta."
+        },
+        "en": {
+          "notaRisultato": "Singapore 2026, final FIA classification: P17; Qualifying Q20; Actual grid 17; 60 laps. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): PER: Median delta 2.772% against comparable laps by other drivers: 30 laps, relative index 0/100. A negative delta means shorter times than the reference. ",
+          "gomme": "marina-bay (2026, 17): Observed sequence: PER: SOFT, laps 1–21, 21 stint laps, initial tyre age 0. PER: MEDIUM, laps 22–38, 17 stint laps, initial tyre age 0. PER: SOFT, laps 39–60, 22 stint laps, initial tyre age 0. Relative timing drift -0% per lap across 2 comparable stints; descriptive index 68.8/100. Does not isolate wear, fuel or deliberate management.",
+          "affidabilita": "Regular classified outcome; not proof of absolute mechanical reliability."
+        },
+        "fr": {
+          "notaRisultato": "Singapour 2026, classement final FIA: P17; Qualification Q20; Grille effective 17; 60 tours. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): PER: Écart médian 2,772% aux tours comparables des autres pilotes : 30 tours, indice relatif 0/100. Un écart négatif indique des temps inférieurs à la référence. ",
+          "gomme": "marina-bay (2026, 17): Séquence observée : PER : SOFT, tours 1–21, 21 tours de relais, âge initial 0. PER : MEDIUM, tours 22–38, 17 tours de relais, âge initial 0. PER : SOFT, tours 39–60, 22 tours de relais, âge initial 0. Dérive chronométrique relative -0% par tour sur 2 relais comparables; indice descriptif 68,8/100. Usure, carburant et gestion volontaire non isolés.",
+          "affidabilita": "Résultat régulier classé ; ne prouve pas une fiabilité mécanique absolue."
+        },
+        "pt": {
+          "notaRisultato": "Singapura 2026, classificação final FIA: P17; Qualificação Q20; Grelha efetiva 17; 60 voltas. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): PER: Diferença mediana 2,772% face a voltas comparáveis dos outros pilotos: 30 voltas, índice relativo 0/100. Valor negativo indica tempos inferiores à referência. ",
+          "gomme": "marina-bay (2026, 17): Sequência observada: PER: SOFT, voltas 1–21, 21 voltas de stint, idade inicial 0. PER: MEDIUM, voltas 22–38, 17 voltas de stint, idade inicial 0. PER: SOFT, voltas 39–60, 22 voltas de stint, idade inicial 0. Deriva cronométrica relativa -0% por volta em 2 stints comparáveis; índice descritivo 68,8/100. Desgaste, combustível e gestão voluntária não isolados.",
+          "affidabilita": "Resultado regular classificado; não demonstra fiabilidade mecânica absoluta."
+        },
+        "es": {
+          "notaRisultato": "Singapur 2026, clasificación final FIA: P17; Clasificación Q20; Parrilla efectiva 17; 60 vueltas. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): PER: Diferencia mediana 2,772% frente a vueltas comparables de otros pilotos: 30 vueltas, índice relativo 0/100. Un valor negativo indica tiempos inferiores a la referencia. ",
+          "gomme": "marina-bay (2026, 17): Secuencia observada: PER: SOFT, vueltas 1–21, 21 vueltas de tanda, edad inicial 0. PER: MEDIUM, vueltas 22–38, 17 vueltas de tanda, edad inicial 0. PER: SOFT, vueltas 39–60, 22 vueltas de tanda, edad inicial 0. Deriva cronométrica relativa -0% por vuelta en 2 tandas comparables; índice descriptivo 68,8/100. Desgaste, combustible y gestión voluntaria no aislados.",
+          "affidabilita": "Resultado regular clasificado; no demuestra fiabilidad mecánica absoluta."
+        },
+        "de": {
+          "notaRisultato": "Singapur 2026, endgültige FIA-Klassifikation: P17; Qualifying Q20; Tatsächliche Startaufstellung 17; 60 Runden. Sprint: DNF.",
+          "passoGara": "marina-bay (2026, 17): PER: Median der Abweichung 2,772% zu vergleichbaren Runden anderer Fahrer: 30 Runden, relativer Index 0/100. Negativ bedeutet kürzere Zeiten als die Referenz. ",
+          "gomme": "marina-bay (2026, 17): Beobachtete Abfolge: PER: SOFT, Runden 1–21, 21 Stint-Runden, anfängliches Reifenalter 0. PER: MEDIUM, Runden 22–38, 17 Stint-Runden, anfängliches Reifenalter 0. PER: SOFT, Runden 39–60, 22 Stint-Runden, anfängliches Reifenalter 0. Relative Zeitentwicklung -0% pro Runde in 2 vergleichbaren Stints; deskriptiver Index 68,8/100. Verschleiß, Kraftstoff und bewusstes Management nicht isoliert.",
+          "affidabilita": "Reguläres klassifiziertes Ergebnis; kein Nachweis absoluter mechanischer Zuverlässigkeit."
+        }
+      }
+    }
+  ],
+  "risultatiScuderie": [
+    {
+      "scuderiaSlug": "mercedes",
+      "notaRisultato": "",
+      "passoGara": "marina-bay (2026, 17): ANT: Delta mediano -0,971% rispetto ai giri confrontabili degli altri piloti: 24 giri, indice relativo 72,2/100. Un delta negativo indica tempi inferiori al riferimento.  marina-bay (2026, 17): RUS: Delta mediano -1,181% rispetto ai giri confrontabili degli altri piloti: 13 giri, indice relativo 83,3/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: ANT: SOFT, giri 1–23, 23 giri di stint, età iniziale 3. ANT: MEDIUM, giri 24–39, 16 giri di stint, età iniziale 0. ANT: SOFT, giri 40–62, 23 giri di stint, età iniziale 3. Deriva cronometrica relativa 0,002% per giro su 1 stint confrontabili; indice descrittivo 62,5/100. Non isola usura, carburante o gestione volontaria. marina-bay (2026, 17): Sequenza osservata: RUS: MEDIUM, giri 1–39, 39 giri di stint, età iniziale 0. RUS: SOFT, giri 40–62, 23 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,024% per giro su 1 stint confrontabili; indice descrittivo 50/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "ferrari",
+      "notaRisultato": "",
+      "passoGara": "marina-bay (2026, 17): HAM: Delta mediano -2,45% rispetto ai giri confrontabili degli altri piloti: 11 giri, indice relativo 100/100. Un delta negativo indica tempi inferiori al riferimento.  marina-bay (2026, 17): LEC: Delta mediano -1,212% rispetto ai giri confrontabili degli altri piloti: 34 giri, indice relativo 94,4/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: HAM: MEDIUM, giri 1–18, 18 giri di stint, età iniziale 0. HAM: SOFT, giri 19–62, 44 giri di stint, età iniziale 3. Deriva cronometrica relativa 0,132% per giro su 1 stint confrontabili; indice descrittivo 0/100. Non isola usura, carburante o gestione volontaria. marina-bay (2026, 17): Sequenza osservata: LEC: SOFT, giri 1–24, 24 giri di stint, età iniziale 3. LEC: MEDIUM, giri 25–39, 15 giri di stint, età iniziale 0. LEC: SOFT, giri 40–62, 23 giri di stint, età iniziale 3. Deriva cronometrica relativa 0,08% per giro su 2 stint confrontabili; indice descrittivo 6,2/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "mclaren",
+      "notaRisultato": "",
+      "passoGara": "marina-bay (2026, 17): NOR: Delta mediano -1,204% rispetto ai giri confrontabili degli altri piloti: 29 giri, indice relativo 88,9/100. Un delta negativo indica tempi inferiori al riferimento.  marina-bay (2026, 17): PIA: Delta mediano -1,158% rispetto ai giri confrontabili degli altri piloti: 33 giri, indice relativo 77,8/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: NOR: SOFT, giri 1–32, 32 giri di stint, età iniziale 0. NOR: MEDIUM, giri 33–62, 30 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,019% per giro su 1 stint confrontabili; indice descrittivo 81,2/100. Non isola usura, carburante o gestione volontaria. marina-bay (2026, 17): Sequenza osservata: PIA: SOFT, giri 1–33, 33 giri di stint, età iniziale 0. PIA: MEDIUM, giri 34–41, 8 giri di stint, età iniziale 0. PIA: SOFT, giri 42–62, 21 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,027% per giro su 2 stint confrontabili; indice descrittivo 90,6/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "red_bull",
+      "notaRisultato": "",
+      "passoGara": "marina-bay (2026, 17): VER: Sessione acquisita: 0 giri confrontabili; campione sotto la soglia per un indice di passo.  marina-bay (2026, 17): HAD: Delta mediano -0,034% rispetto ai giri confrontabili degli altri piloti: 9 giri, indice relativo 44,4/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: VER: SOFT, giri 1–32, 32 giri di stint, età iniziale 0. VER: MEDIUM, giri 33–62, 30 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione. marina-bay (2026, 17): Sequenza osservata: HAD: MEDIUM, giri 1–1, 1 giri di stint, età iniziale 0. HAD: SOFT, giri 2–62, 61 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione.",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "rb",
+      "notaRisultato": "",
+      "passoGara": "marina-bay (2026, 17): LAW: Delta mediano -0,411% rispetto ai giri confrontabili degli altri piloti: 46 giri, indice relativo 55,6/100. Un delta negativo indica tempi inferiori al riferimento.  marina-bay (2026, 17): LIN: Delta mediano 0,285% rispetto ai giri confrontabili degli altri piloti: 14 giri, indice relativo 33,3/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: LAW: SOFT, giri 1–31, 31 giri di stint, età iniziale 3. LAW: MEDIUM, giri 32–62, 31 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,002% per giro su 2 stint confrontabili; indice descrittivo 75/100. Non isola usura, carburante o gestione volontaria. marina-bay (2026, 17): Sequenza osservata: LIN: MEDIUM, giri 1–26, 26 giri di stint, età iniziale 0. LIN: SOFT, giri 27–61, 35 giri di stint, età iniziale 3. Deriva cronometrica relativa -0,027% per giro su 1 stint confrontabili; indice descrittivo 90,6/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "alpine",
+      "notaRisultato": "",
+      "passoGara": "marina-bay (2026, 17): GAS: Delta mediano -0,812% rispetto ai giri confrontabili degli altri piloti: 16 giri, indice relativo 66,7/100. Un delta negativo indica tempi inferiori al riferimento.  marina-bay (2026, 17): COL: Delta mediano -0,208% rispetto ai giri confrontabili degli altri piloti: 18 giri, indice relativo 50/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: GAS: MEDIUM, giri 1–29, 29 giri di stint, età iniziale 0. GAS: SOFT, giri 30–61, 32 giri di stint, età iniziale 3. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione. marina-bay (2026, 17): Sequenza osservata: COL: MEDIUM, giri 1–29, 29 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,044% per giro su 1 stint confrontabili; indice descrittivo 25/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "haas",
+      "notaRisultato": "",
+      "passoGara": "marina-bay (2026, 17): BEA: Delta mediano -0,02% rispetto ai giri confrontabili degli altri piloti: 33 giri, indice relativo 38,9/100. Un delta negativo indica tempi inferiori al riferimento.  marina-bay (2026, 17): OCO: Delta mediano 0,464% rispetto ai giri confrontabili degli altri piloti: 42 giri, indice relativo 27,8/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: BEA: SOFT, giri 1–33, 33 giri di stint, età iniziale 0. BEA: MEDIUM, giri 34–61, 28 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,009% per giro su 1 stint confrontabili; indice descrittivo 56,2/100. Non isola usura, carburante o gestione volontaria. marina-bay (2026, 17): Sequenza osservata: OCO: SOFT, giri 1–28, 28 giri di stint, età iniziale 0. OCO: MEDIUM, giri 29–61, 33 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,05% per giro su 2 stint confrontabili; indice descrittivo 18,8/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "audi",
+      "notaRisultato": "",
+      "passoGara": "marina-bay (2026, 17): BOR: Sessione acquisita: 0 giri confrontabili; campione sotto la soglia per un indice di passo.  marina-bay (2026, 17): HUL: Delta mediano -0,772% rispetto ai giri confrontabili degli altri piloti: 21 giri, indice relativo 61,1/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: BOR: MEDIUM, giri 1–7, 7 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione. marina-bay (2026, 17): Sequenza osservata: HUL: MEDIUM, giri 1–30, 30 giri di stint, età iniziale 0. HUL: SOFT, giri 31–62, 32 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,035% per giro su 1 stint confrontabili; indice descrittivo 37,5/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "williams",
+      "notaRisultato": "",
+      "passoGara": "marina-bay (2026, 17): SAI: Delta mediano 0,924% rispetto ai giri confrontabili degli altri piloti: 47 giri, indice relativo 22,2/100. Un delta negativo indica tempi inferiori al riferimento.  marina-bay (2026, 17): ALB: Delta mediano 1,588% rispetto ai giri confrontabili degli altri piloti: 25 giri, indice relativo 11,1/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: SAI: SOFT, giri 1–31, 31 giri di stint, età iniziale 0. SAI: MEDIUM, giri 32–61, 30 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,029% per giro su 2 stint confrontabili; indice descrittivo 43,8/100. Non isola usura, carburante o gestione volontaria. marina-bay (2026, 17): Sequenza osservata: ALB: MEDIUM, giri 1–22, 22 giri di stint, età iniziale 0. ALB: SOFT, giri 23–37, 15 giri di stint, età iniziale 0. ALB: SOFT, giri 38–59, 22 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,036% per giro su 2 stint confrontabili; indice descrittivo 31,2/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "aston_martin",
+      "notaRisultato": "",
+      "passoGara": "marina-bay (2026, 17): ALO: Sessione acquisita: 6 giri confrontabili; campione sotto la soglia per un indice di passo.  marina-bay (2026, 17): STR: Delta mediano 1,164% rispetto ai giri confrontabili degli altri piloti: 19 giri, indice relativo 16,7/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: ALO: SOFT, giri 1–1, 1 giri di stint, età iniziale 0. ALO: MEDIUM, giri 2–61, 60 giri di stint, età iniziale 0. Stint filtrati insufficienti per una pendenza robusta; lunghezza e mescola sono dati osservati, non un voto di gestione. marina-bay (2026, 17): Sequenza osservata: STR: SOFT, giri 1–1, 1 giri di stint, età iniziale 0. STR: MEDIUM, giri 2–36, 35 giri di stint, età iniziale 0. Deriva cronometrica relativa -0,039% per giro su 1 stint confrontabili; indice descrittivo 100/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": ""
+    },
+    {
+      "scuderiaSlug": "cadillac",
+      "notaRisultato": "",
+      "passoGara": "marina-bay (2026, 17): BOT: Delta mediano 2,598% rispetto ai giri confrontabili degli altri piloti: 27 giri, indice relativo 5,6/100. Un delta negativo indica tempi inferiori al riferimento.  marina-bay (2026, 17): PER: Delta mediano 2,772% rispetto ai giri confrontabili degli altri piloti: 30 giri, indice relativo 0/100. Un delta negativo indica tempi inferiori al riferimento. ",
+      "gestioneGomme": "marina-bay (2026, 17): Sequenza osservata: BOT: MEDIUM, giri 1–28, 28 giri di stint, età iniziale 0. BOT: SOFT, giri 29–59, 31 giri di stint, età iniziale 0. Deriva cronometrica relativa 0,068% per giro su 1 stint confrontabili; indice descrittivo 12,5/100. Non isola usura, carburante o gestione volontaria. marina-bay (2026, 17): Sequenza osservata: PER: SOFT, giri 1–21, 21 giri di stint, età iniziale 0. PER: MEDIUM, giri 22–38, 17 giri di stint, età iniziale 0. PER: SOFT, giri 39–60, 22 giri di stint, età iniziale 0. Deriva cronometrica relativa -0% per giro su 2 stint confrontabili; indice descrittivo 68,8/100. Non isola usura, carburante o gestione volontaria.",
+      "affidabilita": ""
+    }
+  ],
+  "classificaPiloti": [
+    {
+      "pilotaSlug": "antonelli",
+      "posizione": 1,
+      "punti": 340,
+      "vittorie": 8
+    },
+    {
+      "pilotaSlug": "hamilton",
+      "posizione": 3,
+      "punti": 229,
+      "vittorie": 1
+    },
+    {
+      "pilotaSlug": "russell",
+      "posizione": 2,
+      "punti": 238,
+      "vittorie": 3
+    },
+    {
+      "pilotaSlug": "leclerc",
+      "posizione": 5,
+      "punti": 215,
+      "vittorie": 1
+    },
+    {
+      "pilotaSlug": "norris",
+      "posizione": 6,
+      "punti": 201,
+      "vittorie": 2
+    },
+    {
+      "pilotaSlug": "max_verstappen",
+      "posizione": 4,
+      "punti": 221,
+      "vittorie": 2
+    },
+    {
+      "pilotaSlug": "piastri",
+      "posizione": 7,
+      "punti": 138,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "hadjar",
+      "posizione": 8,
+      "punti": 97,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "lawson",
+      "posizione": 9,
+      "punti": 75,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "tsunoda",
+      "posizione": 20,
+      "punti": 1,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "gasly",
+      "posizione": 10,
+      "punti": 41,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "arvid_lindblad",
+      "posizione": 11,
+      "punti": 38,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "colapinto",
+      "posizione": 12,
+      "punti": 27,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bearman",
+      "posizione": 13,
+      "punti": 23,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bortoleto",
+      "posizione": 15,
+      "punti": 10,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "sainz",
+      "posizione": 18,
+      "punti": 7,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "albon",
+      "posizione": 19,
+      "punti": 5,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "ocon",
+      "posizione": 16,
+      "punti": 7,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "hulkenberg",
+      "posizione": 14,
+      "punti": 13,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "alonso",
+      "posizione": 17,
+      "punti": 7,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "stroll",
+      "posizione": 21,
+      "punti": 0,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "bottas",
+      "posizione": 22,
+      "punti": 0,
+      "vittorie": 0
+    },
+    {
+      "pilotaSlug": "perez",
+      "posizione": 23,
+      "punti": 0,
+      "vittorie": 0
+    }
+  ],
+  "classificaScuderie": [
+    {
+      "scuderiaSlug": "mercedes",
+      "posizione": 1,
+      "punti": 578,
+      "vittorie": 11
+    },
+    {
+      "scuderiaSlug": "ferrari",
+      "posizione": 2,
+      "punti": 444,
+      "vittorie": 2
+    },
+    {
+      "scuderiaSlug": "mclaren",
+      "posizione": 3,
+      "punti": 339,
+      "vittorie": 2
+    },
+    {
+      "scuderiaSlug": "red_bull",
+      "posizione": 4,
+      "punti": 332,
+      "vittorie": 2
+    },
+    {
+      "scuderiaSlug": "rb",
+      "posizione": 5,
+      "punti": 100,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "alpine",
+      "posizione": 6,
+      "punti": 68,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "haas",
+      "posizione": 7,
+      "punti": 30,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "audi",
+      "posizione": 8,
+      "punti": 23,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "williams",
+      "posizione": 9,
+      "punti": 12,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "aston_martin",
+      "posizione": 10,
+      "punti": 7,
+      "vittorie": 0
+    },
+    {
+      "scuderiaSlug": "cadillac",
+      "posizione": 11,
+      "punti": 0,
+      "vittorie": 0
+    }
+  ],
+  "fonti": [
+    "https://www.formula1.com/en/latest/article/verstappen-seals-commanding-singapore-grand-prix-victory-from-leclerc-and-antonelli.49wDzysiVqi5cloGjle40A",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_final_race_classification.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_final_qualifying_classification.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_final_starting_grid.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_final_sprint_classification.pdf",
+    "https://github.com/f1db/f1db/releases/tag/v2026.17.0",
+    "https://api.openf1.org/v1/drivers?session_key=11388",
+    "https://api.openf1.org/v1/laps?session_key=11388",
+    "https://api.openf1.org/v1/stints?session_key=11388",
+    "https://api.openf1.org/v1/pit?session_key=11388",
+    "https://api.openf1.org/v1/race_control?session_key=11388",
+    "https://api.openf1.org/v1/weather?session_key=11388",
+    "https://api.openf1.org/v1/intervals?session_key=11388",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_44_-_alleged_leaving_the_track_and_gaining_an_advantage.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_18_-_failure_to_follow_race_directors_instructions_-_practice_start.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_6_-_pu_elements_and_changes_made_during_parc_ferme.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_18_-_changes_made_during_parc_ferme.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_14_-_pu_element_and_changes_made_during_parc_ferme.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_63_-_additional_changes_to_pu_elements.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_27_-_impeding_of_car_55.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_77_-_causing_a_collision_with_car_23.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_23_-_causing_a_collision_with_car_5.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_81_-_alleged_causing_a_collision_with_car_1.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_1_-_alleged_causing_a_collision_with_car_81.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_41_-_alleged_driving_opposite_direction.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_87_-_failure_to_follow_race_directors_instructions_sc2-sc1_time.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_11_-_causing_a_collision_with_car_18.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_18_-_alleged_causing_a_collision_with_car_11.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_55_-_changes_made_during_parc_ferme.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_3_-_yellow_flag_infringement.pdf",
+    "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_63_-_changes_to_pu_elements.pdf"
+  ],
+  "statoClassificazione": "finale",
+  "verificaGiri": {
+    "versione": "giri-comparabili-v1",
+    "sessionKey": 11388,
+    "limiti": "Carburante, carico, gestione, danni, doppiaggi e temperature non isolati. Traffico verificato solo all’inizio del giro. Indice descrittivo condizionato ai giri selezionati, non potenziale assoluto né previsione certa."
+  },
+  "decisioniFia": {
+    "garaSlug": "singapore-marina-bay",
+    "verificatoIl": "2026-10-12",
+    "stato": "gp_concluso",
+    "decisioni": [
+      {
+        "titolo": "Doc 86 - Decision - Car 44 - Alleged leaving the track and gaining an advantage",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_44_-_alleged_leaving_the_track_and_gaining_an_advantage.pdf",
+        "sha256": "fbbe324fa3f288359ffce04628cecdc0895412a823803e2c0e9525fdc11964a8",
+        "decisione": "No further action.",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 85 - Infringement - Car 18 - Failure to follow Race Director's Instructions - Practice Start",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_18_-_failure_to_follow_race_directors_instructions_-_practice_start.pdf",
+        "sha256": "5d8a74fa84a7e20b362ac1bb498dea5cb59ec45e63c16222c6613a4999f05692",
+        "decisione": "Driver: Warning.",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 83 - Infringement - Car 6 - PU elements and changes made during Parc Ferme",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_6_-_pu_elements_and_changes_made_during_parc_ferme.pdf",
+        "sha256": "63ef9b57ec9b0b2d8a4477a996b4bf3b86784518e9532822a92ff3af3cd4c2c6",
+        "decisione": "Required to start the Race from the pit lane.",
+        "penalitaGriglia": {
+          "numeroVettura": 6,
+          "posizioni": null,
+          "partenzaPitLane": true,
+          "documentoUrl": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_6_-_pu_elements_and_changes_made_during_parc_ferme.pdf"
+        },
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 81 - Infringement - Car 18 - Changes made during Parc Ferme",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_18_-_changes_made_during_parc_ferme.pdf",
+        "sha256": "ce21755a964fe16ccd230e18df019ca6b765a8de92b9f8f379cc67c52be3ff7d",
+        "decisione": "Required to start the Race from the pit lane.",
+        "penalitaGriglia": {
+          "numeroVettura": 18,
+          "posizioni": null,
+          "partenzaPitLane": true,
+          "documentoUrl": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_18_-_changes_made_during_parc_ferme.pdf"
+        },
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 80 - Infringement - Car 14 - PU element and changes made during Parc Ferme",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_14_-_pu_element_and_changes_made_during_parc_ferme.pdf",
+        "sha256": "7f6d852edd6deba9b2ab8b93b19b30044b11e138974df66511e436adc71d1df1",
+        "decisione": "Required to start the Race from the pit lane.",
+        "penalitaGriglia": {
+          "numeroVettura": 14,
+          "posizioni": null,
+          "partenzaPitLane": true,
+          "documentoUrl": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_14_-_pu_element_and_changes_made_during_parc_ferme.pdf"
+        },
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 79 - Infringement - Car 63 - Additional changes to PU elements",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_63_-_additional_changes_to_pu_elements.pdf",
+        "sha256": "b82f306a1c73553b465ef75ad48196bcd9819a48c43f345822555ba1fcd9849e",
+        "decisione": "Drop of 20 grid positions in the next Race in which the driver participates.",
+        "penalitaGriglia": {
+          "numeroVettura": 63,
+          "posizioni": 20,
+          "partenzaPitLane": false,
+          "documentoUrl": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_63_-_additional_changes_to_pu_elements.pdf"
+        },
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 73 - Infringement - Car 27 - Impeding of Car 55",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_27_-_impeding_of_car_55.pdf",
+        "sha256": "a1385ef1be1253ad606f68b433df8ce4ab23eb5956e4cbc1cf79edaca3d9548d",
+        "decisione": "No penalty applied",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 62 - Infringement - Car 77 - Causing a Collision with Car 23",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_77_-_causing_a_collision_with_car_23.pdf",
+        "sha256": "16db96bd70621c6f24f6fbac6ae6670dcb22a652ffe1493dd168443cc88ebea6",
+        "decisione": "No Penalty is applied",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 61 - Infringement - Car 23 - Causing a Collision with Car 5",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_23_-_causing_a_collision_with_car_5.pdf",
+        "sha256": "9c8f4e1f7d6aa2466840e0bd9a8355d43c86d225cfc0fccf99230a572e093535",
+        "decisione": "No Penalty is applied",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 59 - Decision - Car 81 - Alleged causing a collision with car 1",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_81_-_alleged_causing_a_collision_with_car_1.pdf",
+        "sha256": "1d0655c3d3501750ae387a9d7be3ba893168a5cb9c5caffff98e66eabff46f0b",
+        "decisione": "No further action.",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 58 - Decision - Car 1 - Alleged causing a collision with car 81",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_1_-_alleged_causing_a_collision_with_car_81.pdf",
+        "sha256": "070c9c49ac7f6f2496bec5a2e5175ace3f9fba0c212611d73fdb268cb07781b7",
+        "decisione": "No further action.",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 56 - Decision - Car 41 - Alleged driving opposite direction",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_41_-_alleged_driving_opposite_direction.pdf",
+        "sha256": "66bfe25eb50d7a6a84c9e44d1db87238179184ac38a5be1b93cb15ab674db61d",
+        "decisione": "No further action.",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 55 - Decision - Car 87 - Failure to follow Race Director's instructions (SC2-SC1 Time)",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_87_-_failure_to_follow_race_directors_instructions_sc2-sc1_time.pdf",
+        "sha256": "ccdf93f5c8beaf293438a0f64055dd62f5fea2cd1f3a28fde32a1a8179b5e4e1",
+        "decisione": "No further action.",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 54 - Decision - Car 11 - Causing a collision with Car 18",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_11_-_causing_a_collision_with_car_18.pdf",
+        "sha256": "819b6fd0ee65fb3d27363e59c9a06a28048e95e2884036fdc0aa66835bcf0d08",
+        "decisione": "No penalty is applied.",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 53 - Decision - Car 18 - Alleged causing a collision with Car 11",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_18_-_alleged_causing_a_collision_with_car_11.pdf",
+        "sha256": "8d528edb389899beefd03f0165ca45035f25929d1b1c0f904bf185ec9b1bd889",
+        "decisione": "No further action.",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 37 - Infringement - Car 55 - Changes made during Parc Ferme",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_55_-_changes_made_during_parc_ferme.pdf",
+        "sha256": "a1ff32ab87e4127a7c38b5c30af2eaa020f156473cafd46b92fe7688b9627e17",
+        "decisione": "Required to start the Sprint from the pit lane.",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 29 - Infringement - Car 3 - Yellow flag infringement",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_3_-_yellow_flag_infringement.pdf",
+        "sha256": "54de53d975c9da13a058ceacdb269b9f095af1de3d063f21075e5870690098d5",
+        "decisione": "No penalty is applied.",
+        "penalitaGriglia": null,
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      },
+      {
+        "titolo": "Doc 20 - Infringement - Car 63 - Changes to PU elements",
+        "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_63_-_changes_to_pu_elements.pdf",
+        "sha256": "90ff001d409aa1c4c9509e4b490a8e29d0c60b6d4df32fd53b05d86de05d6ccc",
+        "decisione": "Drop of 40 grid positions in the next Race in which the driver participates.",
+        "penalitaGriglia": {
+          "numeroVettura": 63,
+          "posizioni": 40,
+          "partenzaPitLane": false,
+          "documentoUrl": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_63_-_changes_to_pu_elements.pdf"
+        },
+        "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+      }
+    ]
+  }
+}

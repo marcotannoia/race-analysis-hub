@@ -1,0 +1,176 @@
+{
+  "garaSlug": "singapore-marina-bay",
+  "verificatoIl": "2026-10-12",
+  "stato": "gp_concluso",
+  "decisioni": [
+    {
+      "titolo": "Doc 86 - Decision - Car 44 - Alleged leaving the track and gaining an advantage",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_44_-_alleged_leaving_the_track_and_gaining_an_advantage.pdf",
+      "sha256": "fbbe324fa3f288359ffce04628cecdc0895412a823803e2c0e9525fdc11964a8",
+      "decisione": "No further action.",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 85 - Infringement - Car 18 - Failure to follow Race Director's Instructions - Practice Start",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_18_-_failure_to_follow_race_directors_instructions_-_practice_start.pdf",
+      "sha256": "5d8a74fa84a7e20b362ac1bb498dea5cb59ec45e63c16222c6613a4999f05692",
+      "decisione": "Driver: Warning.",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 83 - Infringement - Car 6 - PU elements and changes made during Parc Ferme",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_6_-_pu_elements_and_changes_made_during_parc_ferme.pdf",
+      "sha256": "63ef9b57ec9b0b2d8a4477a996b4bf3b86784518e9532822a92ff3af3cd4c2c6",
+      "decisione": "Required to start the Race from the pit lane.",
+      "penalitaGriglia": {
+        "numeroVettura": 6,
+        "posizioni": null,
+        "partenzaPitLane": true,
+        "documentoUrl": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_6_-_pu_elements_and_changes_made_during_parc_ferme.pdf"
+      },
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 81 - Infringement - Car 18 - Changes made during Parc Ferme",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_18_-_changes_made_during_parc_ferme.pdf",
+      "sha256": "ce21755a964fe16ccd230e18df019ca6b765a8de92b9f8f379cc67c52be3ff7d",
+      "decisione": "Required to start the Race from the pit lane.",
+      "penalitaGriglia": {
+        "numeroVettura": 18,
+        "posizioni": null,
+        "partenzaPitLane": true,
+        "documentoUrl": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_18_-_changes_made_during_parc_ferme.pdf"
+      },
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 80 - Infringement - Car 14 - PU element and changes made during Parc Ferme",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_14_-_pu_element_and_changes_made_during_parc_ferme.pdf",
+      "sha256": "7f6d852edd6deba9b2ab8b93b19b30044b11e138974df66511e436adc71d1df1",
+      "decisione": "Required to start the Race from the pit lane.",
+      "penalitaGriglia": {
+        "numeroVettura": 14,
+        "posizioni": null,
+        "partenzaPitLane": true,
+        "documentoUrl": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_14_-_pu_element_and_changes_made_during_parc_ferme.pdf"
+      },
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 79 - Infringement - Car 63 - Additional changes to PU elements",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_63_-_additional_changes_to_pu_elements.pdf",
+      "sha256": "b82f306a1c73553b465ef75ad48196bcd9819a48c43f345822555ba1fcd9849e",
+      "decisione": "Drop of 20 grid positions in the next Race in which the driver participates.",
+      "penalitaGriglia": {
+        "numeroVettura": 63,
+        "posizioni": 20,
+        "partenzaPitLane": false,
+        "documentoUrl": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_63_-_additional_changes_to_pu_elements.pdf"
+      },
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 73 - Infringement - Car 27 - Impeding of Car 55",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_27_-_impeding_of_car_55.pdf",
+      "sha256": "a1385ef1be1253ad606f68b433df8ce4ab23eb5956e4cbc1cf79edaca3d9548d",
+      "decisione": "No penalty applied",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 62 - Infringement - Car 77 - Causing a Collision with Car 23",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_77_-_causing_a_collision_with_car_23.pdf",
+      "sha256": "16db96bd70621c6f24f6fbac6ae6670dcb22a652ffe1493dd168443cc88ebea6",
+      "decisione": "No Penalty is applied",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 61 - Infringement - Car 23 - Causing a Collision with Car 5",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_23_-_causing_a_collision_with_car_5.pdf",
+      "sha256": "9c8f4e1f7d6aa2466840e0bd9a8355d43c86d225cfc0fccf99230a572e093535",
+      "decisione": "No Penalty is applied",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 59 - Decision - Car 81 - Alleged causing a collision with car 1",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_81_-_alleged_causing_a_collision_with_car_1.pdf",
+      "sha256": "1d0655c3d3501750ae387a9d7be3ba893168a5cb9c5caffff98e66eabff46f0b",
+      "decisione": "No further action.",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 58 - Decision - Car 1 - Alleged causing a collision with car 81",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_1_-_alleged_causing_a_collision_with_car_81.pdf",
+      "sha256": "070c9c49ac7f6f2496bec5a2e5175ace3f9fba0c212611d73fdb268cb07781b7",
+      "decisione": "No further action.",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 56 - Decision - Car 41 - Alleged driving opposite direction",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_41_-_alleged_driving_opposite_direction.pdf",
+      "sha256": "66bfe25eb50d7a6a84c9e44d1db87238179184ac38a5be1b93cb15ab674db61d",
+      "decisione": "No further action.",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 55 - Decision - Car 87 - Failure to follow Race Director's instructions (SC2-SC1 Time)",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_87_-_failure_to_follow_race_directors_instructions_sc2-sc1_time.pdf",
+      "sha256": "ccdf93f5c8beaf293438a0f64055dd62f5fea2cd1f3a28fde32a1a8179b5e4e1",
+      "decisione": "No further action.",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 54 - Decision - Car 11 - Causing a collision with Car 18",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_11_-_causing_a_collision_with_car_18.pdf",
+      "sha256": "819b6fd0ee65fb3d27363e59c9a06a28048e95e2884036fdc0aa66835bcf0d08",
+      "decisione": "No penalty is applied.",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 53 - Decision - Car 18 - Alleged causing a collision with Car 11",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_decision_-_car_18_-_alleged_causing_a_collision_with_car_11.pdf",
+      "sha256": "8d528edb389899beefd03f0165ca45035f25929d1b1c0f904bf185ec9b1bd889",
+      "decisione": "No further action.",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 37 - Infringement - Car 55 - Changes made during Parc Ferme",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_55_-_changes_made_during_parc_ferme.pdf",
+      "sha256": "a1ff32ab87e4127a7c38b5c30af2eaa020f156473cafd46b92fe7688b9627e17",
+      "decisione": "Required to start the Sprint from the pit lane.",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 29 - Infringement - Car 3 - Yellow flag infringement",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_3_-_yellow_flag_infringement.pdf",
+      "sha256": "54de53d975c9da13a058ceacdb269b9f095af1de3d063f21075e5870690098d5",
+      "decisione": "No penalty is applied.",
+      "penalitaGriglia": null,
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    },
+    {
+      "titolo": "Doc 20 - Infringement - Car 63 - Changes to PU elements",
+      "fonte": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_63_-_changes_to_pu_elements.pdf",
+      "sha256": "90ff001d409aa1c4c9509e4b490a8e29d0c60b6d4df32fd53b05d86de05d6ccc",
+      "decisione": "Drop of 40 grid positions in the next Race in which the driver participates.",
+      "penalitaGriglia": {
+        "numeroVettura": 63,
+        "posizioni": 40,
+        "partenzaPitLane": false,
+        "documentoUrl": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_63_-_changes_to_pu_elements.pdf"
+      },
+      "applicazione": "Singapore 2026; non trasferita automaticamente al GP successivo"
+    }
+  ]
+}

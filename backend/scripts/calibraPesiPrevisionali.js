@@ -5,11 +5,10 @@ const { caricaFonti } = require("./lib/caricaFontiSemantiche");
 const { CHIAVI, PESI_INIZIALI, creaScenario, valutaScenario, cercaPesi, aggrega } = require("../services/calibrazionePesi");
 const VERSIONE = "risultati-calibrati-v1";
 
-function calibra(cartella, passo = 1) {
-  const f = caricaFonti(cartella);
+function creaCampioni(f) {
   const circuiti = new Set(f.gare.filter((g) => g.year === 2026).map((g) => g.circuitId));
   const campioni = {
-    versione: VERSIONE, fonte: "https://github.com/f1db/f1db/releases/tag/v2026.16.0", hashFonti: f.hash,
+    versione: VERSIONE, fonte: require("../data/fonti-f1db-v2026.17.0.json").releaseUrl, hashFonti: f.hash,
     ultimoRoundIncluso: f.ultimiGp.at(-1).round,
     gare: f.gare.filter((g) => g.year === 2026),
     risultati: f.risultati.filter((r) => r.year >= 2023 && r.year <= 2026 && circuiti.has(r.circuitId)).map((r) => ({
@@ -27,6 +26,12 @@ function calibra(cartella, passo = 1) {
   function campioneId(id, gare, circuiti) {
     const g = gare.get(id); return g.year >= 2023 && g.year <= 2026 && circuiti.has(g.circuitId);
   }
+  return campioni;
+}
+
+function calibra(cartella, passo = 1) {
+  const f = caricaFonti(cartella);
+  const campioni = creaCampioni(f);
   const args = { ...campioni, numerosita: new Map(Object.entries(campioni.numerosita).map(([id, n]) => [Number(id), n])) };
   const scenari = f.ultimiGp.map((gara) => creaScenario({ ...args, gara,
     partecipanti: campioni.risultati.filter((r) => r.raceId === gara.id).map(({ driverId, constructorId }) => ({ driverId, constructorId })) }));
@@ -98,4 +103,4 @@ function calibra(cartella, passo = 1) {
 if (require.main === module) {
   try { calibra(process.argv[2], Number(process.argv[3] || 1)); } catch (e) { console.error(e.stack); process.exitCode = 1; }
 }
-module.exports = { calibra };
+module.exports = { calibra, creaCampioni };

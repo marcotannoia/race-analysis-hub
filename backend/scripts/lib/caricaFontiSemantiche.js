@@ -2,14 +2,14 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { createHash } = require("node:crypto");
 const mapping = require("../sincronizzaF1db");
-const manifest = require("../../data/fonti-f1db-v2026.16.0.json");
+const manifest = require("../../data/fonti-f1db-v2026.17.0.json");
 
 function caricaFonti(cartella) {
   const hash = {};
   const leggi = (nome) => {
     const contenuto = fs.readFileSync(path.join(cartella, `f1db-${nome}.json`));
     hash[nome] = createHash("sha256").update(contenuto).digest("hex");
-    if (hash[nome] !== manifest.hashFile[nome]) throw new Error(`File F1DB diverso dalla release verificata v2026.16.0: ${nome}`);
+    if (hash[nome] !== manifest.hashFile[nome]) throw new Error(`File F1DB diverso dalla release verificata v2026.17.0: ${nome}`);
     return JSON.parse(contenuto);
   };
   const gare = leggi("races"), garePerId = new Map(gare.map((r) => [r.id, r]));

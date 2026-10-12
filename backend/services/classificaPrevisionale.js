@@ -1,4 +1,4 @@
-const snapshotF1db = require("../data/f1db-v2026.16.0-derivato.json");
+const snapshotF1db = require("../data/f1db-v2026.17.0-derivato.json");
 const { testiPrevisione } = require("../i18n/previsioni");
 const { valoreLocalizzato } = require("../i18n/lingue");
 const { creaProfiloCircuito } = require("./profiliTecnici");

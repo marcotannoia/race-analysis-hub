@@ -1,10 +1,10 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const VERSIONE_F1DB = "v2026.16.0";
-const PUBBLICATO_IL = "2026-10-04T12:21:35.000Z";
+const VERSIONE_F1DB = "v2026.17.0";
+const PUBBLICATO_IL = "2026-10-11T17:18:30.000Z";
 const SHA256_ARCHIVIO =
-  "5bfcde5546bd16ec58a86a87c5d1e4c4150c2ec680480ea5cc487cb6223ea45f";
+  "0f1717eaebae646b7ced9ca96f6be3282c1c1d435d0a9d75f2c00f40feb7d2a8";
 const URL_REPOSITORY = "https://github.com/f1db/f1db";
 const URL_RELEASE = `${URL_REPOSITORY}/releases/tag/${VERSIONE_F1DB}`;
 const URL_ARCHIVIO = `${URL_REPOSITORY}/releases/download/${VERSIONE_F1DB}/f1db-json-splitted.zip`;

@@ -1,6 +1,6 @@
 {
   "versione": "giri-comparabili-v1",
-  "acquisitoIlUTC": "2026-10-05T07:06:39.102121+00:00",
+  "acquisitoIlUTC": "2026-10-12T00:00:00+00:00",
   "fonte": "https://openf1.org/docs/",
   "metodo": {
     "passo": "Mediana del delta % rispetto ad almeno 3 altri piloti nella stessa tornata e mescola, età gomme entro +/-5 giri; >=8 giri per indice. Rango medio inverso nel campione della sessione.",
@@ -54860,6 +54860,1217 @@
             "pendenzaRelativaPercentualePerGiro": null,
             "campione": 0,
             "overall": null
+          },
+          "constructorId": "haas"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11388,
+      "raceId": 1166,
+      "year": 2026,
+      "round": 17,
+      "circuitId": "marina-bay",
+      "data": "2026-10-11",
+      "fonti": {
+        "drivers": {
+          "url": "https://api.openf1.org/v1/drivers?session_key=11388",
+          "sha256": "1b8985237ed4c04f1afccc454e94228c3ed578560041c4a24ca0a379525b1532",
+          "record": 22
+        },
+        "laps": {
+          "url": "https://api.openf1.org/v1/laps?session_key=11388",
+          "sha256": "d811348c4d1628ce01bbe1d7552a3f0b27657906e86bc0902313df7b312ffd8a",
+          "record": 1240
+        },
+        "stints": {
+          "url": "https://api.openf1.org/v1/stints?session_key=11388",
+          "sha256": "1eeb6d2d3f31419aed17bda4a57d5284a60d28d2321760f2a52eb934511af766",
+          "record": 47
+        },
+        "pit": {
+          "url": "https://api.openf1.org/v1/pit?session_key=11388",
+          "sha256": "784bab14dcbfa0850238bc84b8ad04c98885f3a121a9afe03468faad192bbb94",
+          "record": 25
+        },
+        "race_control": {
+          "url": "https://api.openf1.org/v1/race_control?session_key=11388",
+          "sha256": "98f3d422d248fe468c3c2eb78d5ac10eb1df9c0d77af304af2a1f4230c77781f",
+          "record": 155
+        },
+        "weather": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11388",
+          "sha256": "7ff95fde3028e96ad2c47fa34d03959c4dc37aab497999d61363a3e74009ab77",
+          "record": 160
+        },
+        "intervals": {
+          "url": "https://api.openf1.org/v1/intervals?session_key=11388",
+          "sha256": "32a22c8fccae0629326e018e9fe5f6d3432c6f680deb932f487d08b66dacdd64",
+          "record": 28131
+        }
+      },
+      "riepilogo": {
+        "safetyCar": 0,
+        "vsc": 0,
+        "bandiereRosse": 0,
+        "pioggiaRegistrata": false,
+        "temperaturaPistaMin": 0.0,
+        "temperaturaPistaMax": 45.3
+      },
+      "piloti": [
+        {
+          "driverId": "lando-norris",
+          "codice": "NOR",
+          "numero": 1,
+          "teamOpenF1": "McLaren",
+          "giriRegistrati": 62,
+          "giriComparabili": 29,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 23,
+            "traffico_non_verificato": 2,
+            "bandiere_o_neutralizzazione": 2,
+            "riferimento_insufficiente": 1
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -1.204,
+            "tempoMedianoSecondi": 97.278,
+            "campione": 29,
+            "overall": 88.9
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 32,
+                "etaIniziale": 0,
+                "giri": 32
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 33,
+                "giroFine": 62,
+                "etaIniziale": 0,
+                "giri": 30
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 2,
+                "giriComparabili": 22,
+                "pendenzaPercentualePerGiro": -0.019
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.019,
+            "campione": 1,
+            "overall": 81.2
+          },
+          "constructorId": "mclaren"
+        },
+        {
+          "driverId": "max-verstappen",
+          "codice": "VER",
+          "numero": 3,
+          "teamOpenF1": "Red Bull Racing",
+          "giriRegistrati": 62,
+          "giriComparabili": 0,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico_non_verificato": 2,
+            "traffico": 55
+          },
+          "passo": {
+            "deltaMedianoPercentuale": null,
+            "tempoMedianoSecondi": null,
+            "campione": 0,
+            "overall": null
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 32,
+                "etaIniziale": 0,
+                "giri": 32
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 33,
+                "giroFine": 62,
+                "etaIniziale": 0,
+                "giri": 30
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "red-bull"
+        },
+        {
+          "driverId": "gabriel-bortoleto",
+          "codice": "BOR",
+          "numero": 5,
+          "teamOpenF1": "Audi",
+          "giriRegistrati": 8,
+          "giriComparabili": 0,
+          "giriEsclusi": {
+            "partenza_o_pit": 2,
+            "traffico": 5,
+            "tempo_incompleto": 1
+          },
+          "passo": {
+            "deltaMedianoPercentuale": null,
+            "tempoMedianoSecondi": null,
+            "campione": 0,
+            "overall": null
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 7,
+                "etaIniziale": 0,
+                "giri": 7
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "audi"
+        },
+        {
+          "driverId": "isack-hadjar",
+          "codice": "HAD",
+          "numero": 6,
+          "teamOpenF1": "Red Bull Racing",
+          "giriRegistrati": 62,
+          "giriComparabili": 9,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 25,
+            "bandiere_o_neutralizzazione": 2,
+            "riferimento_insufficiente": 21
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.034,
+            "tempoMedianoSecondi": 99.236,
+            "campione": 9,
+            "overall": 44.4
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 1,
+                "etaIniziale": 0,
+                "giri": 1
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 2,
+                "giroFine": 62,
+                "etaIniziale": 0,
+                "giri": 61
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "red-bull"
+        },
+        {
+          "driverId": "pierre-gasly",
+          "codice": "GAS",
+          "numero": 10,
+          "teamOpenF1": "Alpine",
+          "giriRegistrati": 61,
+          "giriComparabili": 16,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 26,
+            "bandiere_o_neutralizzazione": 2,
+            "riferimento_insufficiente": 12
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.812,
+            "tempoMedianoSecondi": 99.226,
+            "campione": 16,
+            "overall": 66.7
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 29,
+                "etaIniziale": 0,
+                "giri": 29
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 30,
+                "giroFine": 61,
+                "etaIniziale": 3,
+                "giri": 32
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "alpine"
+        },
+        {
+          "driverId": "sergio-perez",
+          "codice": "PER",
+          "numero": 11,
+          "teamOpenF1": "Cadillac",
+          "giriRegistrati": 60,
+          "giriComparabili": 30,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 5,
+            "bandiere_o_neutralizzazione": 2,
+            "riferimento_insufficiente": 15
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 2.772,
+            "tempoMedianoSecondi": 100.553,
+            "campione": 30,
+            "overall": 0.0
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 21,
+                "etaIniziale": 0,
+                "giri": 21
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 22,
+                "giroFine": 38,
+                "etaIniziale": 0,
+                "giri": 17
+              },
+              {
+                "numero": 3,
+                "mescola": "SOFT",
+                "giroInizio": 39,
+                "giroFine": 60,
+                "etaIniziale": 0,
+                "giri": 22
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 12,
+                "pendenzaPercentualePerGiro": 0.012
+              },
+              {
+                "stint": 3,
+                "giriComparabili": 18,
+                "pendenzaPercentualePerGiro": -0.013
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.0,
+            "campione": 2,
+            "overall": 68.8
+          },
+          "constructorId": "cadillac"
+        },
+        {
+          "driverId": "kimi-antonelli",
+          "codice": "ANT",
+          "numero": 12,
+          "teamOpenF1": "Mercedes",
+          "giriRegistrati": 62,
+          "giriComparabili": 24,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 17,
+            "traffico_non_verificato": 3,
+            "bandiere_o_neutralizzazione": 2,
+            "riferimento_insufficiente": 8
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.971,
+            "tempoMedianoSecondi": 96.547,
+            "campione": 24,
+            "overall": 72.2
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 23,
+                "etaIniziale": 3,
+                "giri": 23
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 24,
+                "giroFine": 39,
+                "etaIniziale": 0,
+                "giri": 16
+              },
+              {
+                "numero": 3,
+                "mescola": "SOFT",
+                "giroInizio": 40,
+                "giroFine": 62,
+                "etaIniziale": 3,
+                "giri": 23
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 3,
+                "giriComparabili": 16,
+                "pendenzaPercentualePerGiro": 0.002
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.002,
+            "campione": 1,
+            "overall": 62.5
+          },
+          "constructorId": "mercedes"
+        },
+        {
+          "driverId": "fernando-alonso",
+          "codice": "ALO",
+          "numero": 14,
+          "teamOpenF1": "Aston Martin",
+          "giriRegistrati": 61,
+          "giriComparabili": 6,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 18,
+            "traffico_non_verificato": 1,
+            "bandiere_o_neutralizzazione": 4,
+            "riferimento_insufficiente": 27
+          },
+          "passo": {
+            "deltaMedianoPercentuale": null,
+            "tempoMedianoSecondi": 99.872,
+            "campione": 6,
+            "overall": null
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 1,
+                "etaIniziale": 0,
+                "giri": 1
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 2,
+                "giroFine": 61,
+                "etaIniziale": 0,
+                "giri": 60
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "aston-martin"
+        },
+        {
+          "driverId": "charles-leclerc",
+          "codice": "LEC",
+          "numero": 16,
+          "teamOpenF1": "Ferrari",
+          "giriRegistrati": 62,
+          "giriComparabili": 34,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 10,
+            "bandiere_o_neutralizzazione": 2,
+            "riferimento_insufficiente": 8
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -1.212,
+            "tempoMedianoSecondi": 96.804,
+            "campione": 34,
+            "overall": 94.4
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 24,
+                "etaIniziale": 3,
+                "giri": 24
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 25,
+                "giroFine": 39,
+                "etaIniziale": 0,
+                "giri": 15
+              },
+              {
+                "numero": 3,
+                "mescola": "SOFT",
+                "giroInizio": 40,
+                "giroFine": 62,
+                "etaIniziale": 3,
+                "giri": 23
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 11,
+                "pendenzaPercentualePerGiro": 0.105
+              },
+              {
+                "stint": 3,
+                "giriComparabili": 18,
+                "pendenzaPercentualePerGiro": 0.054
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.08,
+            "campione": 2,
+            "overall": 6.2
+          },
+          "constructorId": "ferrari"
+        },
+        {
+          "driverId": "lance-stroll",
+          "codice": "STR",
+          "numero": 18,
+          "teamOpenF1": "Aston Martin",
+          "giriRegistrati": 37,
+          "giriComparabili": 19,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 3,
+            "bandiere_o_neutralizzazione": 2,
+            "tempo_incompleto": 1,
+            "riferimento_insufficiente": 7
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 1.164,
+            "tempoMedianoSecondi": 100.898,
+            "campione": 19,
+            "overall": 16.7
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 1,
+                "etaIniziale": 0,
+                "giri": 1
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 2,
+                "giroFine": 36,
+                "etaIniziale": 0,
+                "giri": 35
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 2,
+                "giriComparabili": 19,
+                "pendenzaPercentualePerGiro": -0.039
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.039,
+            "campione": 1,
+            "overall": 100.0
+          },
+          "constructorId": "aston-martin"
+        },
+        {
+          "driverId": "alexander-albon",
+          "codice": "ALB",
+          "numero": 23,
+          "teamOpenF1": "Williams",
+          "giriRegistrati": 60,
+          "giriComparabili": 25,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 13,
+            "bandiere_o_neutralizzazione": 2,
+            "tempo_incompleto": 1,
+            "riferimento_insufficiente": 11
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 1.588,
+            "tempoMedianoSecondi": 99.99,
+            "campione": 25,
+            "overall": 11.1
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 22,
+                "etaIniziale": 0,
+                "giri": 22
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 23,
+                "giroFine": 37,
+                "etaIniziale": 0,
+                "giri": 15
+              },
+              {
+                "numero": 3,
+                "mescola": "SOFT",
+                "giroInizio": 38,
+                "giroFine": 59,
+                "etaIniziale": 0,
+                "giri": 22
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 12,
+                "pendenzaPercentualePerGiro": 0.079
+              },
+              {
+                "stint": 3,
+                "giriComparabili": 13,
+                "pendenzaPercentualePerGiro": -0.006
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.036,
+            "campione": 2,
+            "overall": 31.2
+          },
+          "constructorId": "williams"
+        },
+        {
+          "driverId": "nico-hulkenberg",
+          "codice": "HUL",
+          "numero": 27,
+          "teamOpenF1": "Audi",
+          "giriRegistrati": 62,
+          "giriComparabili": 21,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 17,
+            "bandiere_o_neutralizzazione": 1,
+            "riferimento_insufficiente": 18
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.772,
+            "tempoMedianoSecondi": 99.377,
+            "campione": 21,
+            "overall": 61.1
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 30,
+                "etaIniziale": 0,
+                "giri": 30
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 31,
+                "giroFine": 62,
+                "etaIniziale": 0,
+                "giri": 32
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 21,
+                "pendenzaPercentualePerGiro": 0.035
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.035,
+            "campione": 1,
+            "overall": 37.5
+          },
+          "constructorId": "audi"
+        },
+        {
+          "driverId": "liam-lawson",
+          "codice": "LAW",
+          "numero": 30,
+          "teamOpenF1": "Racing Bulls",
+          "giriRegistrati": 62,
+          "giriComparabili": 46,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 1,
+            "bandiere_o_neutralizzazione": 2,
+            "traffico_non_verificato": 1,
+            "riferimento_insufficiente": 7
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.411,
+            "tempoMedianoSecondi": 98.004,
+            "campione": 46,
+            "overall": 55.6
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 31,
+                "etaIniziale": 3,
+                "giri": 31
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 32,
+                "giroFine": 62,
+                "etaIniziale": 0,
+                "giri": 31
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 21,
+                "pendenzaPercentualePerGiro": 0.062
+              },
+              {
+                "stint": 2,
+                "giriComparabili": 25,
+                "pendenzaPercentualePerGiro": -0.065
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.002,
+            "campione": 2,
+            "overall": 75.0
+          },
+          "constructorId": "racing-bulls"
+        },
+        {
+          "driverId": "esteban-ocon",
+          "codice": "OCO",
+          "numero": 31,
+          "teamOpenF1": "Haas F1 Team",
+          "giriRegistrati": 61,
+          "giriComparabili": 42,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 6,
+            "traffico_non_verificato": 2,
+            "bandiere_o_neutralizzazione": 4,
+            "riferimento_insufficiente": 2
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 0.464,
+            "tempoMedianoSecondi": 99.0,
+            "campione": 42,
+            "overall": 27.8
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 28,
+                "etaIniziale": 0,
+                "giri": 28
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 29,
+                "giroFine": 61,
+                "etaIniziale": 0,
+                "giri": 33
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 17,
+                "pendenzaPercentualePerGiro": 0.085
+              },
+              {
+                "stint": 2,
+                "giriComparabili": 25,
+                "pendenzaPercentualePerGiro": 0.014
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.05,
+            "campione": 2,
+            "overall": 18.8
+          },
+          "constructorId": "haas"
+        },
+        {
+          "driverId": "arvid-lindblad",
+          "codice": "LIN",
+          "numero": 41,
+          "teamOpenF1": "Racing Bulls",
+          "giriRegistrati": 61,
+          "giriComparabili": 14,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 20,
+            "bandiere_o_neutralizzazione": 1,
+            "riferimento_insufficiente": 21
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 0.285,
+            "tempoMedianoSecondi": 100.172,
+            "campione": 14,
+            "overall": 33.3
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 26,
+                "etaIniziale": 0,
+                "giri": 26
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 27,
+                "giroFine": 61,
+                "etaIniziale": 3,
+                "giri": 35
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 14,
+                "pendenzaPercentualePerGiro": -0.027
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.027,
+            "campione": 1,
+            "overall": 90.6
+          },
+          "constructorId": "racing-bulls"
+        },
+        {
+          "driverId": "franco-colapinto",
+          "codice": "COL",
+          "numero": 43,
+          "teamOpenF1": "Alpine",
+          "giriRegistrati": 30,
+          "giriComparabili": 18,
+          "giriEsclusi": {
+            "partenza_o_pit": 2,
+            "traffico": 8,
+            "tempo_incompleto": 1,
+            "riferimento_insufficiente": 1
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.208,
+            "tempoMedianoSecondi": 99.833,
+            "campione": 18,
+            "overall": 50.0
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 29,
+                "etaIniziale": 0,
+                "giri": 29
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 18,
+                "pendenzaPercentualePerGiro": 0.044
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.044,
+            "campione": 1,
+            "overall": 25.0
+          },
+          "constructorId": "alpine"
+        },
+        {
+          "driverId": "lewis-hamilton",
+          "codice": "HAM",
+          "numero": 44,
+          "teamOpenF1": "Ferrari",
+          "giriRegistrati": 62,
+          "giriComparabili": 11,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 15,
+            "bandiere_o_neutralizzazione": 2,
+            "riferimento_insufficiente": 29
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -2.45,
+            "tempoMedianoSecondi": 98.185,
+            "campione": 11,
+            "overall": 100.0
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 18,
+                "etaIniziale": 0,
+                "giri": 18
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 19,
+                "giroFine": 62,
+                "etaIniziale": 3,
+                "giri": 44
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 11,
+                "pendenzaPercentualePerGiro": 0.132
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.132,
+            "campione": 1,
+            "overall": 0.0
+          },
+          "constructorId": "ferrari"
+        },
+        {
+          "driverId": "carlos-sainz-jr",
+          "codice": "SAI",
+          "numero": 55,
+          "teamOpenF1": "Williams",
+          "giriRegistrati": 61,
+          "giriComparabili": 47,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 4,
+            "bandiere_o_neutralizzazione": 1,
+            "riferimento_insufficiente": 4
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 0.924,
+            "tempoMedianoSecondi": 99.761,
+            "campione": 47,
+            "overall": 22.2
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 31,
+                "etaIniziale": 0,
+                "giri": 31
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 32,
+                "giroFine": 61,
+                "etaIniziale": 0,
+                "giri": 30
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 22,
+                "pendenzaPercentualePerGiro": 0.047
+              },
+              {
+                "stint": 2,
+                "giriComparabili": 25,
+                "pendenzaPercentualePerGiro": 0.01
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.029,
+            "campione": 2,
+            "overall": 43.8
+          },
+          "constructorId": "williams"
+        },
+        {
+          "driverId": "george-russell",
+          "codice": "RUS",
+          "numero": 63,
+          "teamOpenF1": "Mercedes",
+          "giriRegistrati": 62,
+          "giriComparabili": 13,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 40,
+            "riferimento_insufficiente": 4
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -1.181,
+            "tempoMedianoSecondi": 98.747,
+            "campione": 13,
+            "overall": 83.3
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 39,
+                "etaIniziale": 0,
+                "giri": 39
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 40,
+                "giroFine": 62,
+                "etaIniziale": 0,
+                "giri": 23
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 10,
+                "pendenzaPercentualePerGiro": 0.024
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.024,
+            "campione": 1,
+            "overall": 50.0
+          },
+          "constructorId": "mercedes"
+        },
+        {
+          "driverId": "valtteri-bottas",
+          "codice": "BOT",
+          "numero": 77,
+          "teamOpenF1": "Cadillac",
+          "giriRegistrati": 59,
+          "giriComparabili": 27,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 2,
+            "traffico_non_verificato": 2,
+            "bandiere_o_neutralizzazione": 2,
+            "riferimento_insufficiente": 21
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 2.598,
+            "tempoMedianoSecondi": 102.23,
+            "campione": 27,
+            "overall": 5.6
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 28,
+                "etaIniziale": 0,
+                "giri": 28
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 29,
+                "giroFine": 59,
+                "etaIniziale": 0,
+                "giri": 31
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 19,
+                "pendenzaPercentualePerGiro": 0.068
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.068,
+            "campione": 1,
+            "overall": 12.5
+          },
+          "constructorId": "cadillac"
+        },
+        {
+          "driverId": "oscar-piastri",
+          "codice": "PIA",
+          "numero": 81,
+          "teamOpenF1": "McLaren",
+          "giriRegistrati": 62,
+          "giriComparabili": 33,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 14,
+            "bandiere_o_neutralizzazione": 4,
+            "riferimento_insufficiente": 3
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -1.158,
+            "tempoMedianoSecondi": 96.784,
+            "campione": 33,
+            "overall": 77.8
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 33,
+                "etaIniziale": 0,
+                "giri": 33
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 34,
+                "giroFine": 41,
+                "etaIniziale": 0,
+                "giri": 8
+              },
+              {
+                "numero": 3,
+                "mescola": "SOFT",
+                "giroInizio": 42,
+                "giroFine": 62,
+                "etaIniziale": 0,
+                "giri": 21
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 14,
+                "pendenzaPercentualePerGiro": -0.053
+              },
+              {
+                "stint": 3,
+                "giriComparabili": 16,
+                "pendenzaPercentualePerGiro": -0.001
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.027,
+            "campione": 2,
+            "overall": 90.6
+          },
+          "constructorId": "mclaren"
+        },
+        {
+          "driverId": "oliver-bearman",
+          "codice": "BEA",
+          "numero": 87,
+          "teamOpenF1": "Haas F1 Team",
+          "giriRegistrati": 61,
+          "giriComparabili": 33,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 16,
+            "bandiere_o_neutralizzazione": 4,
+            "riferimento_insufficiente": 3
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.02,
+            "tempoMedianoSecondi": 98.14,
+            "campione": 33,
+            "overall": 38.9
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 33,
+                "etaIniziale": 0,
+                "giri": 33
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 34,
+                "giroFine": 61,
+                "etaIniziale": 0,
+                "giri": 28
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 2,
+                "giriComparabili": 25,
+                "pendenzaPercentualePerGiro": 0.009
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.009,
+            "campione": 1,
+            "overall": 56.2
           },
           "constructorId": "haas"
         }

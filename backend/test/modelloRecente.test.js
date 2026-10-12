@@ -17,8 +17,8 @@ test('le classifiche salvate sono riproducibili con il modello pubblico e i para
   assert.ok(row.pesiProgressivi[3]>=50);}
 });
 test('copertura sessioni, identità e qualità degli indicatori sono coerenti',()=>{
- assert.equal(evidenze.sessioni.length,46);
- assert.equal(evidenze.sessioni.filter(s=>s.year===2026).length,16);
+ assert.equal(evidenze.sessioni.length,47);
+ assert.equal(evidenze.sessioni.filter(s=>s.year===2026).length,17);
  for(const s of evidenze.sessioni){assert.equal(new Set(s.piloti.map(p=>p.driverId)).size,s.piloti.length);
   for(const p of s.piloti){assert.ok(p.driverId&&p.constructorId);for(const k of ['passo','gomme'])if(p[k].overall!==null)assert.ok(Number.isFinite(p[k].overall)&&p[k].overall>=0&&p[k].overall<=100);
    if(p.passo.overall!==null)assert.ok(p.passo.campione>=8);for(const st of p.gomme.stintComparabili)assert.ok(st.giriComparabili>=10);}}

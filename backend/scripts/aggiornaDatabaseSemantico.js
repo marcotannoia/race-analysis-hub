@@ -7,8 +7,6 @@ const dotenv = require("dotenv");
 dotenv.config({ path: path.join(__dirname, "../.env"), quiet: true });
 const collega = require("../config/database");
 const { creaDatiEffettivi } = require("../utils/datiEffettivi");
-const { normalizzaTestiAnnuali, normalizzaNotaBene } = require("../utils/normalizzaNotaBene");
-const { normalizzaTraduzioniAnalisi } = require("../utils/normalizzaTraduzioni");
 const dati = creaDatiEffettivi(require("../data/dati-iniziali.json"));
 const backtest = require("../data/backtest-semantico-2026-10-05.json");
 const recente = require('../data/valutazione-forma-recente-2026-10-05.json');
@@ -16,32 +14,8 @@ const calibrazione = require("../data/calibrazione-pesi-2026-10-05.json");
 const models = Object.fromEntries(["Pilota", "Scuderia", "Gara", "AnalisiGara", "AnalisiScuderia", "MetodoPrevisionale"]
   .map((n) => [n, require(`../models/${n}`)]));
 
-function canon(v) {
-  if (v instanceof Date) return v.toISOString();
-  if (v instanceof mongoose.Types.ObjectId) return v.toString();
-  if (Array.isArray(v)) return v.map(canon);
-  if (v && typeof v === "object") return Object.fromEntries(Object.keys(v).sort().map((k) => [k, canon(v[k])]));
-  return v;
-}
+const { canon, documentoAnalisi } = require("../utils/documentiMigrazione");
 const uguali = (a, b) => JSON.stringify(canon(a)) === JSON.stringify(canon(b));
-
-function documentoAnalisi(a, refs, team) {
-  const doc = {
-    gara: refs.gare.get(a.garaSlug)._id, scuderia: refs.scuderie.get(a.scuderiaSlug)._id,
-    posizioniStoriche: normalizzaTestiAnnuali(a.risultatiGara),
-    spiegazionePosizioni: normalizzaNotaBene(a.notaBene),
-    qualificheStoriche: normalizzaTestiAnnuali(a.risultatiQualifica),
-    andamentoPerAnno: normalizzaTestiAnnuali(a.andamentoPerAnno || ""),
-    passoGara: normalizzaTestiAnnuali(a.passoGara), gomme: normalizzaTestiAnnuali(a.gestioneGomme),
-    considerazioni: a.considerazioniFinali, affidabilita: a.affidabilita || "",
-    aggiornamentiInArrivo: a.aggiornamentiInArrivo || "", traduzioni: normalizzaTraduzioniAnalisi(a.traduzioni),
-    fonti: a.fonti, storicoEdizioni: a.storicoEdizioni || [], overallSemantici: a.overallSemantici,
-  };
-  if (!team) Object.assign(doc, { pilota: refs.piloti.get(a.pilotaSlug)._id, penalita: a.penalita || "",
-    vantaggioAggiornamentiTecnici: a.vantaggioAggiornamentiTecnici ?? 50,
-    statoAggiornamentiTecnici: a.statoAggiornamentiTecnici || "" });
-  return doc;
-}
 
 async function main() {
   const applica = process.argv.includes("--applica");
