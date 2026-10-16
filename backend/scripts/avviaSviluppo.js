@@ -6,6 +6,18 @@ const { MongoMemoryServer } = require("mongodb-memory-server");
 dotenv.config({ path: path.join(__dirname, "../.env"), quiet: true });
 
 async function avviaSviluppo() {
+  if (process.env.DATA_PROVIDER === 'postgres') {
+    const collegaDatabase = require('../config/database');
+    const app = require('../app');
+    const ambiente = require('../config/ambiente');
+    await collegaDatabase();
+    const server = app.listen(ambiente.porta, ambiente.host, () =>
+      console.log(`Backend PostgreSQL locale su http://${ambiente.host}:${ambiente.porta}`));
+    const arresta = async () => { server.close(); await collegaDatabase.chiudiDatabase(); process.exit(0); };
+    process.on('SIGTERM', arresta);
+    process.on('SIGINT', arresta);
+    return;
+  }
   let mongoLocale;
   let serverHttp;
 

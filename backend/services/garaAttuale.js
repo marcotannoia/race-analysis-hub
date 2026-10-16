@@ -1,4 +1,4 @@
-const Gara = require("../models/Gara");
+const { Gara } = require("../repositories/modelli");
 
 async function trovaGaraAttuale() {
   const garaAttuale = await Gara.findOne({ stato: "attuale" })

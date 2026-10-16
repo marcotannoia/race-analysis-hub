@@ -1417,6 +1417,39 @@ main {
   position: relative;
 }
 
+.overall-performance {
+  padding: 18px 24px;
+  border: 1px solid var(--bordo);
+  border-radius: 12px;
+}
+
+.overall-valore {
+  margin: 10px 0 0;
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.overall-valore span {
+  margin-left: 5px;
+  color: #b7b7b7;
+  font-size: 0.36em;
+  font-weight: 500;
+}
+
+.overall-fonti {
+  margin-top: 14px;
+  color: #b7b7b7;
+  font-size: 0.82rem;
+}
+
+.overall-fonti summary { cursor: pointer; }
+.overall-fonti ul { padding-left: 18px; }
+.overall-fonti li { margin-top: 5px; overflow-wrap: anywhere; }
+.overall-fonti a { color: #d8d8d8; }
+
 .ramo-performance + .ramo-performance::before {
   position: absolute;
   top: -24px;

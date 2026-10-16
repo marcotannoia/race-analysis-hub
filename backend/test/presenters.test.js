@@ -130,12 +130,20 @@ test("l'analisi raggruppa le prestazioni senza perdere i contenuti", () => {
     aggiornamentiInArrivo: "",
     storicoEdizioni: [],
     fonti: ["https://example.com"],
+    overallSemantici: { campi: {
+      passoGara: { overall: 84.5, campione: 12, fonti: ["https://api.openf1.org/v1/laps?session_key=1"] },
+      gestioneGomme: { overall: 91, campione: 0, fonti: [] },
+    } },
   });
 
   assert.deepEqual(analisi.prestazioni, {
     passoGara: "2025: Competitivo",
     gestioneGomme: "2025: Buona gestione",
     affidabilita: "Alta",
+  });
+  assert.deepEqual(analisi.overall, {
+    passoGara: { valore: 84.5, campione: 12, fonti: ["https://api.openf1.org/v1/laps?session_key=1"] },
+    gestioneGomme: null,
   });
   assert.equal(analisi.risultatiGara, "2025: P3");
   assert.equal(analisi.notaBene, "2025: Nota");

@@ -10,7 +10,9 @@ The read-only API, Swagger documentation, support page, and privacy policy
 remain available at their existing URLs.
 
 The frontend is built with React and Vite, the API with Node.js and Express,
-and MongoDB provides data persistence. The public APIs are anonymous,
+and Supabase PostgreSQL provides data persistence. The relational schema,
+data provenance and migration notes are documented in
+[MIGRAZIONE_SUPABASE.md](MIGRAZIONE_SUPABASE.md). The public APIs are anonymous,
 read-only, and documented with Swagger.
 
 The current project and API version is `1.16.0`.
@@ -67,7 +69,7 @@ defaults to `it`; an unsupported code returns HTTP `400` with
 `GET /api/v1/home` includes the race, drivers, teams, and prediction ranking,
 allowing an external landing page or feature to load all bootstrap data with a
 single request. Public responses use a shared five-minute cache and coalesce
-simultaneous requests to reduce load on Render and MongoDB Atlas. Clients with
+simultaneous requests to reduce load on Render and Supabase PostgreSQL. Clients with
 their own cache should store the `ETag` header and revalidate with
 `If-None-Match`. If the data has not changed, the API returns `304` without
 transferring the JSON again. The complete strategy is documented in
@@ -162,16 +164,11 @@ npm --prefix frontend run dev
 The backend runs at `http://localhost:5002` and the frontend at
 `http://localhost:5173`.
 
-During development, `npm --prefix backend run dev` automatically creates a
-temporary in-memory MongoDB instance and imports
-`backend/data/dati-iniziali.json`. This makes the preview use the exact API data
-and translations from the local checkout without reading from or writing to
-Atlas. The required MongoDB binary is downloaded and cached on first use, then
-reused on subsequent runs.
-
-`npm --prefix backend start` preserves production behaviour and requires
-`MONGO_URL`. The `seed` command writes to the configured database and must not
-be used for a standard local preview.
+With `DATA_PROVIDER=postgres` and `SUPABASE_DB_URL` configured,
+`npm --prefix backend run dev` and `npm --prefix backend start` use Supabase.
+Without that provider setting, the development command retains its temporary
+in-memory MongoDB preview of the local seed. The `seed` command is legacy and
+cannot overwrite PostgreSQL.
 
 ## Reusing the API
 
@@ -300,7 +297,7 @@ API in all six supported languages. The
 `backend/i18n/profiliTecnici.json` catalogue covers all 12 circuits currently
 included, while Italian remains in the original technical catalogues.
 `npm run verify-translations` checks these texts in addition to the translations
-of documents stored in MongoDB. Technical codes remain stable and are
+of editorial documents stored in PostgreSQL. Technical codes remain stable and are
 translated through client-side dictionaries. Releasing these translations
 requires a backend deployment but no new database seed. See [API.md](API.md)
 for details about the language-specific contract and caching behaviour.

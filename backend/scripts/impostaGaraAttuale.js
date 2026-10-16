@@ -1,11 +1,11 @@
 const path = require("path");
-const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
 dotenv.config({ path: path.join(__dirname, "../.env"), quiet: true });
 
 const collegaDatabase = require("../config/database");
-const Gara = require("../models/Gara");
+const { Gara } = require("../repositories/modelli");
+const { invalidate } = require("../repositories/postgresCompat");
 
 const FORMATO_SLUG = /^[a-z0-9]+(?:[-_][a-z0-9]+)*$/;
 
@@ -30,7 +30,25 @@ async function impostaGaraAttuale() {
     throw new Error("Una gara conclusa non puo essere ripubblicata come attuale");
   }
 
-  await Gara.bulkWrite([
+  if (collegaDatabase.usaPostgres()) {
+    const client = await collegaDatabase.getPool().connect();
+    try {
+      await client.query('begin');
+      await client.query(`update catalog.grand_prix set state='futura',updated_at=now()
+        where state='attuale' and slug<>$1`, [slug]);
+      const changed = await client.query(`update catalog.grand_prix set state='attuale',
+        concluded_at=null,updated_at=now() where slug=$1 and state<>'conclusa' returning id`, [slug]);
+      if (changed.rowCount !== 1) throw new Error('Gara non aggiornabile');
+      await client.query(`update editorial.source_document set payload=jsonb_set(payload,'{stato}','"futura"'::jsonb)
+        where collection_name='gare' and payload->>'stato' in ('attuale','prossima') and payload->>'slug'<>$1`, [slug]);
+      await client.query(`update editorial.source_document set payload=jsonb_set(jsonb_set(payload,'{stato}',
+        '"attuale"'::jsonb),'{conclusaIl}','null'::jsonb)
+        where collection_name='gare' and payload->>'slug'=$1`, [slug]);
+      await client.query(process.argv.includes('--dry-run') ? 'rollback' : 'commit');
+      invalidate('Gara');
+    } catch (error) { await client.query('rollback'); throw error; }
+    finally { client.release(); }
+  } else await Gara.bulkWrite([
     {
       updateMany: {
         filter: {
@@ -52,7 +70,7 @@ async function impostaGaraAttuale() {
     },
   ]);
 
-  console.log(`Gran Premio attuale impostato: ${slug}`);
+  console.log(`${process.argv.includes('--dry-run') ? 'Verificato' : 'Gran Premio attuale impostato'}: ${slug}`);
 }
 
 impostaGaraAttuale()
@@ -60,4 +78,4 @@ impostaGaraAttuale()
     console.error(`Aggiornamento fallito: ${errore.message}`);
     process.exitCode = 1;
   })
-  .finally(() => mongoose.disconnect());
+  .finally(() => collegaDatabase.chiudiDatabase());

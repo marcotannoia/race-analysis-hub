@@ -1,5 +1,5 @@
 const { createHash } = require("crypto");
-const DatiLiveFia = require("../models/DatiLiveFia");
+const { DatiLiveFia } = require("../repositories/modelli");
 const trovaGaraAttuale = require("./garaAttuale");
 const cacheApiV1 = require("../middleware/cacheApiV1");
 const { configurazioneEvento } = require("./profiliTecnici");

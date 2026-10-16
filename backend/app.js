@@ -4,7 +4,7 @@ const { randomUUID } = require("crypto");
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
-const mongoose = require("mongoose");
+const { databaseDisponibile } = require("./config/database");
 const { rateLimit } = require("express-rate-limit");
 const swaggerUi = require("swagger-ui-express");
 const apiV1Routes = require("./routes/v1/apiRoutes");
@@ -104,13 +104,13 @@ app.use(
   }),
 );
 
-app.get("/api/health", (richiesta, risposta) => {
-  const databaseConnesso = mongoose.connection.readyState === 1;
+app.get("/api/health", async (richiesta, risposta) => {
+  const connesso = await databaseDisponibile();
 
   risposta
-    .status(databaseConnesso ? 200 : 503)
+    .status(connesso ? 200 : 503)
     .set("Cache-Control", "no-store")
-    .json({ stato: databaseConnesso ? "ok" : "non disponibile" });
+    .json({ stato: connesso ? "ok" : "non disponibile" });
 });
 
 app.use(

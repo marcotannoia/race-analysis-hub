@@ -80,6 +80,8 @@ function stampaRisultato(nome, risultato) {
 
 async function importaDati({ collega = true, disconnetti = true } = {}) {
   try {
+    if (collegaDatabase.usaPostgres())
+      throw new Error('Il seed Mongo legacy non si applica a PostgreSQL: usare le migrazioni Supabase.');
     if (collega) await collegaDatabase();
 
     const risultatoScuderie = await salvaDocumentiPerSlug(

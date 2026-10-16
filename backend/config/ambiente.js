@@ -40,12 +40,19 @@ function leggiBooleano(valore, valorePredefinito) {
 
 const modalita = process.env.NODE_ENV || "development"
 const produzione = modalita === "production"
+const dataProvider = primaVariabileDisponibile("DATA_PROVIDER") ||
+  (produzione ? "postgres" : "mongo")
+if (!["postgres", "mongo"].includes(dataProvider)) {
+  throw new Error(`DATA_PROVIDER non valido: ${dataProvider}`)
+}
 const valoreFrontend = primaVariabileDisponibile("FRONTEND_URL", "frontend_url")
 
 const ambiente = Object.freeze({
   modalita,
   produzione,
   mongoUrl: primaVariabileDisponibile("MONGO_URL", "mongo_url"),
+  supabaseDbUrl: primaVariabileDisponibile("SUPABASE_DB_URL"),
+  dataProvider,
   nomeDatabase:
     primaVariabileDisponibile("DATABASE_NAME", "nome_database") || "f1_stats",
   porta: leggiIntero(

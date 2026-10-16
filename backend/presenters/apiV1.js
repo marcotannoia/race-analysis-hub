@@ -33,6 +33,14 @@ function presentaFonti(fonti) {
   return (fonti || []).map(normalizzaUrlHttps).filter(Boolean);
 }
 
+function presentaOverallVerificato(campo) {
+  if (!campo || typeof campo.overall !== "number" ||
+      !Number.isInteger(campo.campione) || campo.campione <= 0) return null;
+  const fonti = presentaFonti(Array.isArray(campo.fonti) ? campo.fonti : []).sort();
+  if (fonti.length === 0) return null;
+  return { valore: campo.overall, campione: campo.campione, fonti };
+}
+
 function presentaClassifica(classifica) {
   if (!classifica) return null;
 
@@ -194,6 +202,10 @@ function presentaAnalisiBase(analisi, lingua = "it") {
       passoGara: serializzaTestiAnnuali(passoGaraPerAnno),
       gestioneGomme: serializzaTestiAnnuali(gestioneGommePerAnno),
       affidabilita: contenuti.affidabilita || "",
+    },
+    overall: {
+      passoGara: presentaOverallVerificato(analisi.overallSemantici?.campi?.passoGara),
+      gestioneGomme: presentaOverallVerificato(analisi.overallSemantici?.campi?.gestioneGomme),
     },
     datiPerAnno: {
       risultatiGara: risultatiGaraPerAnno,

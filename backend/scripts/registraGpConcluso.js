@@ -6,11 +6,8 @@ const dotenv = require("dotenv");
 dotenv.config({ path: path.join(__dirname, "../.env"), quiet: true });
 
 const collegaDatabase = require("../config/database");
-const Gara = require("../models/Gara");
-const Pilota = require("../models/Pilota");
-const Scuderia = require("../models/Scuderia");
-const AnalisiGara = require("../models/AnalisiGara");
-const AnalisiScuderia = require("../models/AnalisiScuderia");
+const { Gara, Pilota, Scuderia, AnalisiGara, AnalisiScuderia } = require("../repositories/modelli");
+const { persistPostGp } = require("../repositories/postgresCompat");
 
 const percorsoPredefinito = path.join(
   __dirname,
@@ -567,8 +564,9 @@ function aggiornaStatisticheContesto(
   garaCorrente,
   piloti,
   risultatiPerPilota,
+  statistichePostgres = null,
 ) {
-  const statistiche = leggiJson(percorsoStatisticheContesto);
+  const statistiche = statistichePostgres || leggiJson(percorsoStatisticheContesto);
   const identificatore = `${aggiornamento.stagione}:${garaCorrente.slug}`;
   const applicati = statistiche.metadati.aggiornamentiApplicati || [];
 
@@ -628,7 +626,7 @@ function aggiornaStatisticheContesto(
     statistiche.metadati.fonti.push(aggiornamento.fonteIndicatori);
   }
 
-  scriviJsonAtomico(percorsoStatisticheContesto, statistiche);
+  if (!statistichePostgres) scriviJsonAtomico(percorsoStatisticheContesto, statistiche);
   return true;
 }
 
@@ -846,7 +844,28 @@ async function registraGpConcluso() {
       }
     };
 
-    if (await databaseSupportaTransazioni()) {
+    let statistichePostgres = null;
+    let statisticheAggiornatePostgres = false;
+    if (collegaDatabase.usaPostgres()) {
+      statistichePostgres = await require('../services/statisticheContesto')
+        .leggiStatistichePostgres(collegaDatabase.getPool());
+      statisticheAggiornatePostgres = aggiornaStatisticheContesto(
+        aggiornamento, garaCorrente, pilotiPartecipanti,
+        risultatiPerPilota, statistichePostgres,
+      );
+      await persistPostGp({
+        analysesDriver: analisiPiloti,
+        analysesTeam: analisiScuderie,
+        driverOperations: operazioniPiloti,
+        teamOperations: operazioniScuderie,
+        currentRace: garaCorrente,
+        nextRace: garaSuccessiva,
+        concludedAt: aggiornamento.conclusaIl
+          ? new Date(aggiornamento.conclusaIl) : new Date(),
+        contextStats: statisticheAggiornatePostgres ? statistichePostgres : null,
+        postGpUpdate: aggiornamento,
+      });
+    } else if (await databaseSupportaTransazioni()) {
       const sessione = await mongoose.startSession();
       try {
         await sessione.withTransaction(() => eseguiScritture(sessione));
@@ -857,12 +876,11 @@ async function registraGpConcluso() {
       await eseguiScritture();
     }
 
-    const statisticheAggiornate = aggiornaStatisticheContesto(
-      aggiornamento,
-      garaCorrente,
-      pilotiPartecipanti,
-      risultatiPerPilota,
-    );
+    const statisticheAggiornate = collegaDatabase.usaPostgres()
+      ? statisticheAggiornatePostgres
+      : aggiornaStatisticheContesto(
+        aggiornamento, garaCorrente, pilotiPartecipanti, risultatiPerPilota,
+      );
     const percorsoArchivio = archiviaAggiornamento(
       aggiornamento,
       garaCorrente,
@@ -886,7 +904,7 @@ async function registraGpConcluso() {
     console.error("Aggiornamento fallito:", errore.message);
     process.exitCode = 1;
   } finally {
-    await mongoose.disconnect();
+    await collegaDatabase.chiudiDatabase();
   }
 }
 

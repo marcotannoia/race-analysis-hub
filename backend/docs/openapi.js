@@ -1229,6 +1229,7 @@ const documentoOpenApi = {
           "risultatiQualifica",
           "andamentoPerAnno",
           "prestazioni",
+          "overall",
           "datiPerAnno",
           "considerazioniFinali",
           "aggiornamentiInArrivo",
@@ -1262,6 +1263,15 @@ const documentoOpenApi = {
               "Formato testuale mantenuto per compatibilità. Usare `datiPerAnno.andamento`.",
           },
           prestazioni: { $ref: "#/components/schemas/Prestazioni" },
+          overall: {
+            type: "object",
+            required: ["passoGara", "gestioneGomme"],
+            description: "Indici da dati verificabili. null quando il campione o le fonti non bastano; i testi legacy restano per compatibilità.",
+            properties: {
+              passoGara: { oneOf: [{ $ref: "#/components/schemas/OverallVerificato" }, { type: "null" }] },
+              gestioneGomme: { oneOf: [{ $ref: "#/components/schemas/OverallVerificato" }, { type: "null" }] },
+            },
+          },
           datiPerAnno: { $ref: "#/components/schemas/DatiAnalisiPerAnno" },
           considerazioniFinali: {
             type: "string",
@@ -1283,6 +1293,15 @@ const documentoOpenApi = {
             type: "array",
             items: { type: "string", format: "uri", pattern: "^https://" },
           },
+        },
+      },
+      OverallVerificato: {
+        type: "object",
+        required: ["valore", "campione", "fonti"],
+        properties: {
+          valore: { type: "number", minimum: 0, maximum: 100 },
+          campione: { type: "integer", minimum: 1 },
+          fonti: { type: "array", minItems: 1, items: { type: "string", format: "uri", pattern: "^https://" } },
         },
       },
       AnalisiPilota: {

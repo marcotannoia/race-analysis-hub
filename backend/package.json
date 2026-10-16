@@ -20,7 +20,15 @@
     "verify-docs": "node scripts/verificaDocumentazione.js",
     "verify-translations": "node scripts/verificaTraduzioni.js",
     "translate-data": "python3 scripts/generaTraduzioni.py",
-    "verify-db": "node scripts/verificaDatabase.js"
+    "verify-db": "node scripts/verificaDatabasePostgres.js",
+    "verify-mongo-legacy": "node scripts/verificaDatabase.js",
+    "compare-migration-sources": "node scripts/confrontaSorgentiMigrazione.js",
+    "migrate-mongo-supabase": "node scripts/migraMongoSupabase.js",
+    "archive-mongo-supabase": "node scripts/archiviaRestoMongoSupabase.js",
+    "verify-supabase-parity": "node scripts/verificaParitaSupabase.js",
+    "verify-api-parity": "node scripts/verificaParitaApi.js",
+    "verify-postgres-writes": "node scripts/verificaScritturePostgres.js",
+    "import-context-postgres": "node scripts/importaStatisticheContestoPostgres.js"
   },
   "dependencies": {
     "cors": "^2.8.6",
@@ -30,6 +38,7 @@
     "helmet": "^8.3.0",
     "mongoose": "^9.9.2",
     "pdfjs-dist": "5.4.624",
+    "pg": "8.23.1",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {

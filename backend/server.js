@@ -1,6 +1,5 @@
 const path = require("path");
 const dotenv = require("dotenv");
-const mongoose = require("mongoose");
 
 dotenv.config({ path: path.join(__dirname, ".env"), quiet: true });
 
@@ -46,7 +45,7 @@ async function avviaServer() {
       arrestoForzato.unref();
 
       server.close(async () => {
-        await mongoose.disconnect();
+        await collegaDatabase.chiudiDatabase();
         clearTimeout(arrestoForzato);
         process.exit(0);
       });

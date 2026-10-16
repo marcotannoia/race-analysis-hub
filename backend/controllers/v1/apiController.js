@@ -1,10 +1,5 @@
-const mongoose = require("mongoose");
-const Gara = require("../../models/Gara");
-const Pilota = require("../../models/Pilota");
-const Scuderia = require("../../models/Scuderia");
-const AnalisiGara = require("../../models/AnalisiGara");
-const AnalisiScuderia = require("../../models/AnalisiScuderia");
-const DatiLiveFia = require("../../models/DatiLiveFia");
+const { databaseDisponibile } = require("../../config/database");
+const { Gara, Pilota, Scuderia, AnalisiGara, AnalisiScuderia, DatiLiveFia } = require("../../repositories/modelli");
 const trovaGaraAttuale = require("../../services/garaAttuale");
 const { previsioneMeteo } = require("../../services/meteoGp");
 const creaAndamentoAnnuale = require("../../services/andamentoAnnuale");
@@ -14,6 +9,7 @@ const {
 const {
   indicatoriPilota,
   indicatoriScuderia,
+  aggiornaStatistichePostgresSeNecessario,
 } = require("../../services/statisticheContesto");
 const {
   creaProfiloCircuito,
@@ -168,14 +164,14 @@ function elencaLingue(richiesta, risposta) {
   });
 }
 
-function statoServizio(richiesta, risposta) {
-  const databaseConnesso = mongoose.connection.readyState === 1;
+async function statoServizio(richiesta, risposta) {
+  const connesso = await databaseDisponibile();
 
   risposta
-    .status(databaseConnesso ? 200 : 503)
+    .status(connesso ? 200 : 503)
     .set("Cache-Control", "no-store")
     .json({
-      stato: databaseConnesso ? "ok" : "non_disponibile",
+      stato: connesso ? "ok" : "non_disponibile",
       servizio: "race-analysis-hub-api",
       versione: VERSIONE_API,
       requestId: risposta.locals.requestId,
@@ -328,6 +324,7 @@ async function elencaPiloti(richiesta, risposta) {
 }
 
 async function creaSchedaPilota(pilota, garaAttuale, lingua) {
+  await aggiornaStatistichePostgresSeNecessario();
   const [analisi, andamento] = await Promise.all([
     recuperaAnalisiPilota(pilota._id, garaAttuale._id),
     recuperaAndamentoPilota(pilota, garaAttuale, lingua),
@@ -394,6 +391,7 @@ async function elencaScuderie(richiesta, risposta) {
 }
 
 async function creaSchedaScuderia(scuderia, garaAttuale, lingua) {
+  await aggiornaStatistichePostgresSeNecessario();
   const [analisiPiloti, analisi] = await Promise.all([
     AnalisiGara.find({ gara: garaAttuale._id, scuderia: scuderia._id })
       .populate("pilota", `${CAMPI_PILOTA_BREVE} classifica2026 traduzioni`)

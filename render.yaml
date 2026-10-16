@@ -13,6 +13,8 @@ services:
         value: production
       - key: DATABASE_NAME
         value: f1_stats
+      - key: DATA_PROVIDER
+        value: postgres
       - key: SERVE_FRONTEND
         value: "true"
       - key: TRUST_PROXY
@@ -25,5 +27,5 @@ services:
         value: "500"
       - key: FIA_MONITOR_ENABLED
         value: "true"
-      - key: MONGO_URL
+      - key: SUPABASE_DB_URL
         sync: false

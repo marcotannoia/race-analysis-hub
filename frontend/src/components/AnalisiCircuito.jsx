@@ -158,30 +158,6 @@ function creaAndamentoVisualizzato(analisi, storicoGara, storicoQualifica, noteA
   return creaAndamentoAnnuale(storicoGara, storicoQualifica, noteAnnuali, t)
 }
 
-function creaRighePrestazioneAnnuali(testo, t, edizioni = [], campoEdizione) {
-  const testiPerAnno = leggiTestiAnnuali(testo)
-
-  edizioni.forEach((edizione) => {
-    if (edizione[campoEdizione]) {
-      testiPerAnno.set(
-        edizione.stagione,
-        pulisciProsa(edizione[campoEdizione]),
-      )
-    }
-  })
-
-  return [...testiPerAnno]
-    .sort(([primoAnno], [secondoAnno]) => {
-      if (primoAnno === 'generale') return 1
-      if (secondoAnno === 'generale') return -1
-      return primoAnno - secondoAnno
-    })
-    .map(([anno, contenuto]) => ({
-      etichetta: anno === 'generale' ? t.generale : String(anno),
-      testo: contenuto,
-    }))
-}
-
 function RisultatiStorici({ titolo, righe, t }) {
   return (
     <article className="colonna-risultati">
@@ -306,18 +282,6 @@ function RigheEtichettate({ righe, classe = '' }) {
   )
 }
 
-function ProsaPrestazione({ righe, t }) {
-  const testo = righe
-    .map((riga) => (
-      riga.etichetta === t.generale
-        ? riga.testo
-        : `${riga.etichetta}: ${riga.testo}`
-    ))
-    .join(' ')
-
-  return <p className="prosa-performance">{testo}</p>
-}
-
 function creaPenalitaWidget(testo) {
   const contenuto = pulisciProsa(testo)
   const posizioni = contenuto.match(/\b(\d{1,2})\s+(?:posizion|place|places|lugares|startpl[aä]tz)/i)
@@ -325,6 +289,28 @@ function creaPenalitaWidget(testo) {
     posizioni: posizioni?.[1] || null,
     spiegazione: contenuto,
   }
+}
+
+function OverallPrestazione({ titolo, score, t }) {
+  const valore = score?.valore ?? null
+  return (
+    <article className="ramo-performance overall-performance">
+      <h3 className="titolo-ramo"><span>↳</span>{titolo}</h3>
+      <p className="overall-valore" aria-label={`${titolo}: ${valore ?? '—'} / 100`}>
+        {valore ?? '—'}<span>/100</span>
+      </p>
+      {score && (
+        <details className="overall-fonti">
+          <summary>{t.fontiConsultate} · n={score.campione}</summary>
+          <ul>
+            {score.fonti.map((url) => (
+              <li key={url}><a href={url} target="_blank" rel="noopener noreferrer">{url}</a></li>
+            ))}
+          </ul>
+        </details>
+      )}
+    </article>
+  )
 }
 
 function AnalisiCircuito({
@@ -367,19 +353,6 @@ function AnalisiCircuito({
   const penalitaWidget = analisi.penalita
     ? creaPenalitaWidget(analisi.penalita)
     : null
-  const righeGestioneGomme = creaRighePrestazioneAnnuali(
-    analisi.gestioneGomme,
-    t,
-    analisi.storicoEdizioni,
-    'gestioneGomme',
-  )
-  const righePassoGara = creaRighePrestazioneAnnuali(
-    analisi.passoGara,
-    t,
-    analisi.storicoEdizioni,
-    'passoGara',
-  )
-  const mostraPrestazioni = righeGestioneGomme.length > 0 || righePassoGara.length > 0
   const mostraValutazioneFinale = Boolean(
     valutazioneFinale?.compatibilita || valutazioneFinale?.previsioni?.length,
   )
@@ -421,7 +394,6 @@ function AnalisiCircuito({
         )}
       </section>
 
-      {mostraPrestazioni && (
         <section className="sezione-analisi performance-circuito">
         <div className="intestazione-sezione">
           <span>02</span>
@@ -432,22 +404,10 @@ function AnalisiCircuito({
         </div>
 
         <div className="albero-performance">
-          {righeGestioneGomme.length > 0 && (
-            <article className="ramo-performance">
-              <h3 className="titolo-ramo"><span>↳</span>{t.gestioneGomme}</h3>
-              <ProsaPrestazione righe={righeGestioneGomme} t={t} />
-            </article>
-          )}
-
-          {righePassoGara.length > 0 && (
-            <article className="ramo-performance">
-              <h3 className="titolo-ramo"><span>↳</span>{t.passoGara}</h3>
-              <ProsaPrestazione righe={righePassoGara} t={t} />
-            </article>
-          )}
+          <OverallPrestazione titolo={t.gestioneGomme} score={analisi.overall?.gestioneGomme} t={t} />
+          <OverallPrestazione titolo={t.passoGara} score={analisi.overall?.passoGara} t={t} />
         </div>
       </section>
-      )}
 
       {mostraValutazioneFinale && (
         <section className="sezione-analisi considerazioni-finali">
