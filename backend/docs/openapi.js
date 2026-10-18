@@ -1287,13 +1287,16 @@ const documentoOpenApi = {
           prestazioni: { $ref: "#/components/schemas/Prestazioni" },
           overall: {
             type: "object",
-            required: ["passoGara", "gestioneGomme"],
+            required: Object.keys(require("../services/recapNumerici").DEFINIZIONI),
             description: "Indici da dati verificabili. null quando il campione o le fonti non bastano; i testi legacy restano per compatibilità.",
             properties: {
               passoGara: { oneOf: [{ $ref: "#/components/schemas/OverallVerificato" }, { type: "null" }] },
               gestioneGomme: { oneOf: [{ $ref: "#/components/schemas/OverallVerificato" }, { type: "null" }] },
+              ...Object.fromEntries(Object.keys(require("../services/recapNumerici").DEFINIZIONI).map(k=>[k,{ oneOf: [{ $ref: "#/components/schemas/OverallVerificato" }, { type: "null" }] }])),
             },
           },
+          recapNumerici: { type: "object", description: "Mappa dei campi testuali ai rispettivi indici. I contenuti non quantificabili conservano valore null e motivo.", additionalProperties: { type: "object" } },
+          sintesiNumerica: { $ref: "#/components/schemas/SintesiNumerica" },
           datiPerAnno: { $ref: "#/components/schemas/DatiAnalisiPerAnno" },
           considerazioniFinali: {
             type: "string",
@@ -1315,6 +1318,17 @@ const documentoOpenApi = {
             type: "array",
             items: { type: "string", format: "uri", pattern: "^https://" },
           },
+        },
+      },
+      SintesiNumerica: {
+        type: "object", required: ["valore", "stato", "metodo", "coperturaPercentuale", "metricheIncluse", "metricheMancanti", "fonti"],
+        properties: {
+          valore: { type: ["number", "null"], minimum: 0, maximum: 100 },
+          stato: { type: "string", enum: ["disponibile", "dati_insufficienti"] },
+          metodo: { type: "string" }, coperturaPercentuale: { type: "number", minimum: 0, maximum: 100 },
+          metricheIncluse: { type: "array", items: { type: "string" } },
+          metricheMancanti: { type: "array", items: { type: "string" } },
+          fonti: { type: "array", items: { type: "string", format: "uri" } },
         },
       },
       OverallVerificato: {

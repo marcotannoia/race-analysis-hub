@@ -1,3 +1,4 @@
+const { overallCompleti, creaRecapNumerici } = require('../services/recapNumerici');
 const { valutazioniNumeriche, valutazioniPerAnno } = require("../services/valutazioniNumeriche");
 const {
   normalizzaNotaBene,
@@ -35,7 +36,7 @@ function presentaFonti(fonti) {
 }
 
 function presentaOverallVerificato(campo) {
-  if (!campo || typeof campo.overall !== "number" ||
+  if (!campo || !Number.isFinite(campo.overall) || campo.overall < 0 || campo.overall > 100 ||
       !Number.isInteger(campo.campione) || campo.campione <= 0) return null;
   const fonti = presentaFonti(Array.isArray(campo.fonti) ? campo.fonti : []).sort();
   if (fonti.length === 0) return null;
@@ -206,10 +207,8 @@ function presentaAnalisiBase(analisi, lingua = "it") {
       gestioneGomme: serializzaTestiAnnuali(gestioneGommePerAnno),
       affidabilita: contenuti.affidabilita || "",
     },
-    overall: {
-      passoGara: presentaOverallVerificato(analisi.overallSemantici?.campi?.passoGara),
-      gestioneGomme: presentaOverallVerificato(analisi.overallSemantici?.campi?.gestioneGomme),
-    },
+    overall: overallCompleti(analisi, presentaOverallVerificato),
+    ...creaRecapNumerici(overallCompleti(analisi, presentaOverallVerificato)),
     datiPerAnno: {
       risultatiGara: risultatiGaraPerAnno,
       spiegazioneRisultatiPassati: notaBenePerAnno,

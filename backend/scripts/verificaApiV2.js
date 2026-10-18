@@ -10,6 +10,10 @@ function verificaAnalisi(dati) {
   if (Object.hasOwn(dati,'valutazioni') && Object.hasOwn(dati,'gara')) {
     assert.equal(dati.prestazioni, undefined);
     assert.equal(dati.considerazioniFinali, undefined);
+    assert.deepEqual(Object.keys(dati.overall).sort(),Object.keys(require('../services/recapNumerici').DEFINIZIONI).sort());
+    assert.ok(dati.recapNumerici && dati.sintesiNumerica);
+    assert.ok(dati.sintesiNumerica.coperturaPercentuale>=0 && dati.sintesiNumerica.coperturaPercentuale<=100);
+    assert.ok(dati.sintesiNumerica.valore===null || (dati.sintesiNumerica.valore>=0 && dati.sintesiNumerica.valore<=100));
     for (const v of Object.values(dati.valutazioni))
       assert.ok(v === null || (typeof v === 'number' && v >= 0 && v <= 100));
   }

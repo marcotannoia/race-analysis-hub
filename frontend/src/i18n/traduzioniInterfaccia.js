@@ -8,6 +8,14 @@ export const LINGUE = [
 ]
 
 const it = {
+  rendimento: "Rendimento",
+  completamento: "Completamento gare",
+  storicoGara: "Storico gara",
+  storicoQualifica: "Storico qualifica",
+  sintesiNumerica: "Sintesi numerica",
+  coperturaDati: "Copertura dati",
+  metodoSintesiNumerica: "Media delle metriche disponibili (almeno 4 su 8). Indice descrittivo, non probabilità.",
+
   posizioneAbbreviata: 'POS.',
   homeAria: 'Pagina iniziale di Race Analysis Hub', promoTitolo: 'TUTTI I DATI A PORTATA DI MANO', scaricaAppStore: 'Scarica FantaStats GP sull’App Store', scaricaSu: 'Scarica su', scorriSchermate: 'Scorri alle schermate dell’app', galleriaSchermate: 'Schermate di FantaStats GP', schermataApp: (numero) => `Schermata ${numero} di FantaStats GP`,
   contattiAutore: "Contatti Marco Tannoia", assistenzaApp: "Assistenza FantaStats GP", emailAutore: "Invia una email a Marco Tannoia", linkedinAutore: "Profilo LinkedIn di Marco Tannoia",
@@ -194,6 +202,14 @@ const it = {
 }
 
 const en = {
+  rendimento: "Race performance",
+  completamento: "Race completion",
+  storicoGara: "Race history",
+  storicoQualifica: "Qualifying history",
+  sintesiNumerica: "Numerical summary",
+  coperturaDati: "Data coverage",
+  metodoSintesiNumerica: "Average of available metrics (at least 4 of 8). Descriptive index, not a probability.",
+
   posizioneAbbreviata: 'POS.',
   homeAria: 'Race Analysis Hub home page', promoTitolo: 'ALL THE DATA AT YOUR FINGERTIPS', scaricaAppStore: 'Download FantaStats GP on the App Store', scaricaSu: 'Download on the', scorriSchermate: 'Scroll to the app screenshots', galleriaSchermate: 'FantaStats GP screenshots', schermataApp: (numero) => `FantaStats GP screenshot ${numero}`,
   contattiAutore: "Contact Marco Tannoia", assistenzaApp: "FantaStats GP support", emailAutore: "Email Marco Tannoia", linkedinAutore: "Marco Tannoia’s LinkedIn profile",
@@ -245,6 +261,14 @@ const en = {
 }
 
 const fr = {
+  rendimento: "Performance en course",
+  completamento: "Courses terminées",
+  storicoGara: "Historique en course",
+  storicoQualifica: "Historique en qualifications",
+  sintesiNumerica: "Synthèse numérique",
+  coperturaDati: "Couverture des données",
+  metodoSintesiNumerica: "Moyenne des indicateurs disponibles (au moins 4 sur 8). Indice descriptif, pas une probabilité.",
+
   posizioneAbbreviata: 'POS.',
   homeAria: "Page d'accueil de Race Analysis Hub", promoTitolo: 'TOUTES LES DONNÉES À PORTÉE DE MAIN', scaricaAppStore: "Télécharger FantaStats GP sur l’App Store", scaricaSu: 'Télécharger dans', scorriSchermate: "Faire défiler jusqu’aux captures d’écran de l’application", galleriaSchermate: "Captures d’écran de FantaStats GP", schermataApp: (numero) => `Capture d’écran ${numero} de FantaStats GP`,
   contattiAutore: "Contacter Marco Tannoia", assistenzaApp: "Assistance FantaStats GP", emailAutore: "Envoyer un e-mail à Marco Tannoia", linkedinAutore: "Profil LinkedIn de Marco Tannoia",
@@ -275,6 +299,14 @@ const fr = {
 }
 
 const pt = {
+  rendimento: "Desempenho em corrida",
+  completamento: "Conclusão de corridas",
+  storicoGara: "Histórico de corrida",
+  storicoQualifica: "Histórico de classificação",
+  sintesiNumerica: "Síntese numérica",
+  coperturaDati: "Cobertura dos dados",
+  metodoSintesiNumerica: "Média dos indicadores disponíveis (pelo menos 4 de 8). Índice descritivo, não uma probabilidade.",
+
   posizioneAbbreviata: 'POS.',
   homeAria: 'Página inicial do Race Analysis Hub', promoTitolo: 'TODOS OS DADOS AO SEU ALCANCE', scaricaAppStore: 'Descarregar FantaStats GP na App Store', scaricaSu: 'Descarregar na', scorriSchermate: 'Deslocar para as capturas de ecrã da aplicação', galleriaSchermate: 'Capturas de ecrã do FantaStats GP', schermataApp: (numero) => `Captura de ecrã ${numero} do FantaStats GP`,
   contattiAutore: "Contactar Marco Tannoia", assistenzaApp: "Apoio FantaStats GP", emailAutore: "Enviar um email a Marco Tannoia", linkedinAutore: "Perfil LinkedIn de Marco Tannoia",
@@ -299,6 +331,14 @@ const pt = {
 }
 
 const es = {
+  rendimento: "Rendimiento en carrera",
+  completamento: "Carreras completadas",
+  storicoGara: "Historial de carrera",
+  storicoQualifica: "Historial de clasificación",
+  sintesiNumerica: "Resumen numérico",
+  coperturaDati: "Cobertura de datos",
+  metodoSintesiNumerica: "Media de los indicadores disponibles (al menos 4 de 8). Índice descriptivo, no una probabilidad.",
+
   posizioneAbbreviata: 'POS.',
   homeAria: 'Página de inicio de Race Analysis Hub', promoTitolo: 'TODOS LOS DATOS AL ALCANCE DE TU MANO', scaricaAppStore: 'Descargar FantaStats GP en el App Store', scaricaSu: 'Descargar en el', scorriSchermate: 'Ir a las capturas de pantalla de la aplicación', galleriaSchermate: 'Capturas de pantalla de FantaStats GP', schermataApp: (numero) => `Captura de pantalla ${numero} de FantaStats GP`,
   contattiAutore: "Contactar con Marco Tannoia", assistenzaApp: "Asistencia de FantaStats GP", emailAutore: "Enviar un correo a Marco Tannoia", linkedinAutore: "Perfil de LinkedIn de Marco Tannoia",
@@ -319,6 +359,14 @@ const es = {
 }
 
 const de = {
+  rendimento: "Rennleistung",
+  completamento: "Rennabschlüsse",
+  storicoGara: "Rennhistorie",
+  storicoQualifica: "Qualifying-Historie",
+  sintesiNumerica: "Numerische Zusammenfassung",
+  coperturaDati: "Datenabdeckung",
+  metodoSintesiNumerica: "Mittelwert verfügbarer Kennzahlen (mindestens 4 von 8). Beschreibender Index, keine Wahrscheinlichkeit.",
+
   posizioneAbbreviata: 'POS.',
   homeAria: 'Startseite von Race Analysis Hub', promoTitolo: 'ALLE DATEN AUF EINEN BLICK', scaricaAppStore: 'FantaStats GP im App Store laden', scaricaSu: 'Laden im', scorriSchermate: 'Zu den App-Screenshots scrollen', galleriaSchermate: 'Screenshots von FantaStats GP', schermataApp: (numero) => `Screenshot ${numero} von FantaStats GP`,
   contattiAutore: "Kontakt zu Marco Tannoia", assistenzaApp: "FantaStats GP Support", emailAutore: "E-Mail an Marco Tannoia senden", linkedinAutore: "LinkedIn-Profil von Marco Tannoia",

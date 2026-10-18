@@ -144,6 +144,7 @@ test("l'analisi raggruppa le prestazioni senza perdere i contenuti", () => {
   assert.deepEqual(analisi.overall, {
     passoGara: { valore: 84.5, campione: 12, fonti: ["https://api.openf1.org/v1/laps?session_key=1"] },
     gestioneGomme: null,
+    rendimento: null, qualifica: null, completamento: null, formaRecente: null, storicoGara: null, storicoQualifica: null,
   });
   assert.equal(analisi.risultatiGara, "2025: P3");
   assert.equal(analisi.notaBene, "2025: Nota");

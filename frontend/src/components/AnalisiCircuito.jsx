@@ -193,7 +193,7 @@ function AggiornamentiWidget({ testo, t }) {
 }
 
 function PunteggiSintesi({ analisi, t }) {
-  const campi = [['rendimento', t.gara], ['qualifica', t.qualifica], ['formaRecente', t.forma2026]]
+  const campi = [['passoGara', t.passoGara], ['gestioneGomme', t.gestioneGomme], ['rendimento', t.rendimento], ['qualifica', t.qualifica], ['completamento', t.completamento], ['formaRecente', t.forma2026], ['storicoGara', t.storicoGara], ['storicoQualifica', t.storicoQualifica]]
   return <dl className="punteggi-sintesi">{campi.map(([campo, nome]) => {
     const valore = analisi.valutazioni?.[campo]
     return <div key={campo}>
@@ -334,6 +334,12 @@ function AnalisiCircuito({
             <h2>{t.considerazioniFinali}</h2>
           </div>
         </div>
+        {analisi.sintesiNumerica && <article className="widget-aggiornamento">
+          <span>{t.sintesiNumerica}</span>
+          <p><strong>{Number.isFinite(analisi.sintesiNumerica.valore) ? `${analisi.sintesiNumerica.valore} / 100` : t.datoNonDisponibile}</strong></p>
+          <p>{t.coperturaDati}: {analisi.sintesiNumerica.coperturaPercentuale}%</p>
+          <p>{t.metodoSintesiNumerica}</p>
+        </article>}
         <ValutazioneFinale valutazione={valutazioneFinale} t={t} />
       </section>
       )}

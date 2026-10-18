@@ -20,7 +20,7 @@ documento.components=structuredClone(originale.components);
 documento.components.schemas.Valutazione=valutazione;
 documento.components.schemas.Valutazione.properties.valore={type:['number','null'],minimum:0,maximum:100};
 const base=documento.components.schemas.AnalisiBase;
-const campi=['gara','valutazioni','valutazioniPerAnno','overall','aggiornamentiInArrivo','aggiornamentiTecniciUfficiali','storicoEdizioni','fonti'];
+const campi=['gara','valutazioni','valutazioniPerAnno','overall','recapNumerici','sintesiNumerica','aggiornamentiInArrivo','aggiornamentiTecniciUfficiali','storicoEdizioni','fonti'];
 base.properties=Object.fromEntries(campi.map(k=>[k,base.properties[k]]));
 base.required=campi.filter(c=>c!=='aggiornamentiTecniciUfficiali');
 const storico=documento.components.schemas.StoricoEdizione;

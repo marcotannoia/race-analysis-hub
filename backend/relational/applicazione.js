@@ -44,6 +44,7 @@ function analisiNumerica(analisi) {
   return {
     ...(pilota ? { pilota } : {}), scuderia, gara,
     valutazioni, valutazioniPerAnno, overall, fonti,
+    recapNumerici: analisi.recapNumerici, sintesiNumerica: analisi.sintesiNumerica,
     // Le posizioni sono risultati, non punteggi: conservano l'unità originale.
     storicoEdizioni: [...edizioni.values()].sort((a,b)=>a.stagione-b.stagione),
     penalita: analisi.penalita,
