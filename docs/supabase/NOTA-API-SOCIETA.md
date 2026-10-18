@@ -126,3 +126,8 @@ Esempio: `/api/v2/risultati?anno=2024&gara=usa-austin&pilota=leclerc&sessione=RA
 Questa estensione riutilizza il corpus F1DB v2026.17.0 già verificato; non dichiara
 risultati sportivi nuovi. La verifica del rilascio completo è registrata in
 `VERIFICA-V2-PUBBLICA.json`, separatamente dal primo rilascio sopra riportato.
+
+
+Stato dell'estensione: pubblicata e verificata il 18 ottobre 2026, commit
+applicativo `32687fc`. 41 controlli pubblici superati. La società può iniziare
+l'integrazione v2; la v1 continua a funzionare. Il sito web pubblicato usa già v2.

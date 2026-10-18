@@ -1,0 +1,216 @@
+{
+  "verificatoIl": "2026-10-18T20:46:05.528Z",
+  "baseUrl": "https://f1-stats-5v93.onrender.com",
+  "endpoint": [
+    {
+      "percorso": "/api/v2",
+      "stato": 200,
+      "ms": 239
+    },
+    {
+      "percorso": "/api/v2/health",
+      "stato": 200,
+      "ms": 166
+    },
+    {
+      "percorso": "/api/v2/piloti?limit=5",
+      "stato": 200,
+      "ms": 202
+    },
+    {
+      "percorso": "/api/v2/scuderie?limit=5",
+      "stato": 200,
+      "ms": 86
+    },
+    {
+      "percorso": "/api/v2/gare?limit=5",
+      "stato": 200,
+      "ms": 110
+    },
+    {
+      "percorso": "/api/v2/circuiti?limit=5",
+      "stato": 200,
+      "ms": 100
+    },
+    {
+      "percorso": "/api/v2/iscrizioni?limit=5",
+      "stato": 200,
+      "ms": 107
+    },
+    {
+      "percorso": "/api/v2/risultati?limit=5",
+      "stato": 200,
+      "ms": 208
+    },
+    {
+      "percorso": "/api/v2/metriche?limit=5",
+      "stato": 200,
+      "ms": 88
+    },
+    {
+      "percorso": "/api/v2/valutazioni?limit=5",
+      "stato": 200,
+      "ms": 479
+    },
+    {
+      "percorso": "/api/v2/home",
+      "stato": 200,
+      "ms": 1414
+    },
+    {
+      "percorso": "/api/v2/stagione",
+      "stato": 200,
+      "ms": 85
+    },
+    {
+      "percorso": "/api/v2/lingue",
+      "stato": 200,
+      "ms": 61
+    },
+    {
+      "percorso": "/api/v2/previsioni/piloti",
+      "stato": 200,
+      "ms": 85
+    },
+    {
+      "percorso": "/api/v2/classifiche/piloti",
+      "stato": 200,
+      "ms": 68
+    },
+    {
+      "percorso": "/api/v2/classifiche/scuderie",
+      "stato": 200,
+      "ms": 57
+    },
+    {
+      "percorso": "/api/v2/piloti/leclerc",
+      "stato": 200,
+      "ms": 104
+    },
+    {
+      "percorso": "/api/v2/scuderie/ferrari",
+      "stato": 200,
+      "ms": 66
+    },
+    {
+      "percorso": "/api/v2/gare/attuale",
+      "stato": 200,
+      "ms": 64
+    },
+    {
+      "percorso": "/api/v2/gare/usa-austin/piloti/leclerc/analisi",
+      "stato": 200,
+      "ms": 62
+    },
+    {
+      "percorso": "/api/v2/gare/usa-austin/scuderie/ferrari/analisi",
+      "stato": 200,
+      "ms": 62
+    },
+    {
+      "percorso": "/api/v2/gare/usa-austin",
+      "stato": 200,
+      "ms": 306
+    },
+    {
+      "percorso": "/api/v2/confronti/piloti/leclerc/hamilton",
+      "stato": 200,
+      "ms": 64
+    },
+    {
+      "percorso": "/api/v2/confronti/scuderie/ferrari/mercedes",
+      "stato": 200,
+      "ms": 66
+    },
+    {
+      "percorso": "/api/v2/gare/italia-monza",
+      "stato": 200,
+      "ms": 707
+    },
+    {
+      "percorso": "/api/v2/gare/italia-monza/piloti/leclerc/analisi",
+      "stato": 200,
+      "ms": 69
+    },
+    {
+      "percorso": "/api/v2/gare/italia-monza/scuderie/ferrari/analisi",
+      "stato": 200,
+      "ms": 77
+    },
+    {
+      "percorso": "/api/v2/risultati?anno=2024&gara=usa-austin&pilota=leclerc&sessione=RACE_RESULT",
+      "stato": 200,
+      "ms": 129
+    },
+    {
+      "percorso": "/api/v2/risultati?offset=188100",
+      "stato": 200,
+      "ms": 15141
+    },
+    {
+      "percorso": "/api/v2/valutazioni?gara=usa-austin&pilota=leclerc&metrica=gestioneGomme",
+      "stato": 200,
+      "ms": 107
+    },
+    {
+      "percorso": "/api/v2/piloti/leclerc?lingua=en",
+      "stato": 200,
+      "ms": 86
+    },
+    {
+      "percorso": "/api/v2/valutazioni?limit=101",
+      "stato": 400,
+      "ms": 73
+    },
+    {
+      "percorso": "/api/v2/risultati?foo=1",
+      "stato": 400,
+      "ms": 65
+    },
+    {
+      "percorso": "/api/v2/piloti/leclerc?lingua=xx",
+      "stato": 400,
+      "ms": 79
+    },
+    {
+      "percorso": "/api/v2/inesistente",
+      "stato": 404,
+      "ms": 62
+    },
+    {
+      "percorso": "/api/v1/health",
+      "stato": 200,
+      "ms": 80
+    },
+    {
+      "percorso": "/api/v1/home",
+      "stato": 200,
+      "ms": 93
+    },
+    {
+      "percorso": "/api/v1/piloti/leclerc",
+      "stato": 200,
+      "ms": 67
+    },
+    {
+      "percorso": "/api/v1/scuderie/ferrari",
+      "stato": 200,
+      "ms": 80
+    },
+    {
+      "percorso": "/api/v1/openapi.json",
+      "stato": 200,
+      "ms": 91
+    },
+    {
+      "percorso": "/api/v2/openapi.json",
+      "stato": 200,
+      "ms": 75
+    }
+  ],
+  "commitApplicativo": "32687fc58ae18dc2559fb27286c4fbe6c07671ac",
+  "deployRender": "dep-dbaita8ae00c739r67lg",
+  "testBackend": 110,
+  "buildFrontend": "verificata anche dal checkout pulito del commit pubblicato",
+  "verificaVisiva": "Scheda Leclerc pubblica: risultati storici, gomme 24/100 e passo gara 82.9/100"
+}

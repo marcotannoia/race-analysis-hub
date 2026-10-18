@@ -124,3 +124,16 @@ server pubblico e passare un percorso file per conservare il rapporto JSON.
 
 Il blueprint Render rispecchia il servizio Starter esistente e la variabile
 `DATABASE_CONNECTION`, senza includere il valore del segreto.
+
+
+### Rilascio completo verificato
+
+Commit applicativo `32687fc58ae18dc2559fb27286c4fbe6c07671ac`, deploy Render
+`dep-dbaita8ae00c739r67lg`: Live il 18 ottobre 2026 alle 22:40 Europe/Rome.
+Il contratto pubblico espone 24 percorsi v2, oltre al documento OpenAPI.
+Tutti i 41 controlli pubblici sono passati, inclusi gli errori attesi per query
+errate, gli endpoint dei GP precedenti, le ultime pagine dello storico e la v1.
+110 test backend passati; OpenAPI v1/v2 validati e build frontend riuscita anche
+su un'esportazione pulita del commit. Verificata visivamente la scheda Leclerc
+pubblicata, con storico risultati e punteggi gomme 24/100 e passo gara 82.9/100.
+Rapporto dettagliato: `VERIFICA-V2-PUBBLICA.json`.
