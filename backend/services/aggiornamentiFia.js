@@ -370,7 +370,7 @@ async function preparaDocumento(documento, tipo) {
 
 function finestraAttiva(adesso, fp1At, orePrima) {
   const tempo = adesso.getTime();
-  return tempo >= fp1At.getTime() - orePrima * ORE && tempo <= fp1At.getTime() + 6 * ORE;
+  return tempo >= fp1At.getTime() - orePrima * ORE && tempo <= fp1At.getTime() + 96 * ORE;
 }
 
 async function salvaErrore(garaSlug, errore) {
@@ -411,32 +411,40 @@ async function sincronizzaAggiornamentiFia({ adesso = new Date(), gara } = {}) {
       ultimoErrore: "",
     };
 
-    const documentoCircuito = documenti.find((documento) =>
+    const attivi=documenti.filter(d=>!/recalled|withdrawn/i.test(d.titolo));
+    const documentoCircuito = attivi.find((documento) =>
       /circuit map.*pit lane drawing/i.test(documento.titolo),
     );
     if (
       controllaCircuito &&
       documentoCircuito &&
-      documentoCircuito.url !== esistente?.circuito?.documentoUrl
+      documentoCircuito.url
     ) {
-      aggiornamento.circuito = await preparaDocumento(
+      const candidato = await preparaDocumento(
         documentoCircuito,
         "circuito",
       );
+      if(candidato.sha256!==esistente?.circuito?.sha256 || esistente?.circuito?.ritirato)aggiornamento.circuito=candidato;
     }
 
-    const documentoAggiornamenti = documenti.find((documento) =>
+    const documentoAggiornamenti = attivi.find((documento) =>
       /car presentation submissions/i.test(documento.titolo),
     );
     if (
       controllaAggiornamenti &&
       documentoAggiornamenti &&
-      documentoAggiornamenti.url !== esistente?.aggiornamenti?.documentoUrl
+      documentoAggiornamenti.url
     ) {
-      aggiornamento.aggiornamenti = await preparaDocumento(
+      const candidato = await preparaDocumento(
         documentoAggiornamenti,
         "aggiornamenti",
       );
+      if(candidato.sha256!==esistente?.aggiornamenti?.sha256 || esistente?.aggiornamenti?.ritirato)aggiornamento.aggiornamenti=candidato;
+    }
+    for(const [campo,attivo] of [['circuito',documentoCircuito],['aggiornamenti',documentoAggiornamenti]]){
+      const precedente=esistente?.[campo];
+      if(!attivo && precedente && !precedente.ritirato && documenti.some(d=>d.url===precedente.documentoUrl && /recalled|withdrawn/i.test(d.titolo)))
+        aggiornamento[campo]={...precedente,ritirato:true};
     }
 
     await DatiLiveFia.findOneAndUpdate(
@@ -447,6 +455,11 @@ async function sincronizzaAggiornamentiFia({ adesso = new Date(), gara } = {}) {
 
     if (aggiornamento.circuito || aggiornamento.aggiornamenti) {
       cacheApiV1.svuota();
+    }
+    const tecnico=aggiornamento.aggiornamenti || esistente?.aggiornamenti;
+    if(tecnico && (aggiornamento.aggiornamenti || esistente?.analisiTecnicheSha256!==tecnico.sha256)){
+      await require('./aggiornaAnalisiTecniche').aggiornaAnalisiTecniche(garaAttiva.slug,tecnico);
+      await DatiLiveFia.findOneAndUpdate({garaSlug:garaAttiva.slug},{$set:{analisiTecnicheSha256:tecnico.sha256}},{upsert:true});
     }
 
     return {

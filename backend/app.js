@@ -137,6 +137,13 @@ app.get("/api/v1/openapi.json", (richiesta, risposta) => {
     .json(documentoOpenApi);
 });
 
+app.use('/api',async (req,res,next)=>{
+  try{
+    const db=require('./config/database');
+    if(db.usaPostgres() && db.databaseConnesso())await require('./services/runtimeF1db').caricaRuntime(db.getPool());
+    next();
+  }catch(e){next(e);}
+});
 app.use("/api/v1", apiV1Routes);
 app.use("/api/v2", require("./relational/api").creaRouter());
 

@@ -48,6 +48,7 @@ function analisiNumerica(analisi) {
     storicoEdizioni: [...edizioni.values()].sort((a,b)=>a.stagione-b.stagione),
     penalita: analisi.penalita,
     aggiornamentiInArrivo: analisi.aggiornamentiInArrivo,
+    ...(analisi.aggiornamentiTecniciUfficiali ? {aggiornamentiTecniciUfficiali:analisi.aggiornamentiTecniciUfficiali} : {}),
   };
 }
 

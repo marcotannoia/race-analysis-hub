@@ -204,6 +204,7 @@ async function persistPostGp({ analysesDriver, analysesTeam, driverOperations, t
   const client = await getPool().connect();
   try {
     await client.query('begin');
+    await client.query('select pg_advisory_xact_lock(182026)');
     for (const doc of analysesDriver) await saveDocument('AnalisiGara', doc, client);
     for (const doc of analysesTeam) await saveDocument('AnalisiScuderia', doc, client);
     for (const [model, operations] of [['Pilota',driverOperations],['Scuderia',teamOperations]]) {
@@ -331,11 +332,12 @@ function model(name) {
           await client.query('begin');
           const report = await client.query(`insert into live_fia.report(grand_prix_id,gara_slug,payload,checked_at)
             select id,$1,$2::jsonb,$3 from catalog.grand_prix where slug=$1
-            on conflict(gara_slug) do update set payload=excluded.payload,
-              checked_at=excluded.checked_at,updated_at=now() returning id`,
-            [doc.garaSlug,JSON.stringify(doc),doc.ultimoControlloIl || null]);
+            on conflict(gara_slug) do update set payload=live_fia.report.payload || $4::jsonb,
+              checked_at=coalesce(excluded.checked_at,live_fia.report.checked_at),updated_at=now() returning id,payload`,
+            [doc.garaSlug,JSON.stringify(doc),change.$set?.ultimoControlloIl || null,JSON.stringify(change.$set||{})]);
           if (report.rowCount !== 1) throw new Error(`GP FIA sconosciuto: ${doc.garaSlug}`);
-          if (doc.aggiornamenti?.scuderie) {
+          Object.assign(doc,report.rows[0].payload);
+          if (change.$set?.aggiornamenti?.scuderie) {
             await client.query('delete from live_fia.team_upgrade where report_id=$1', [report.rows[0].id]);
             for (const item of doc.aggiornamenti.scuderie) {
               await client.query(`insert into live_fia.team_upgrade

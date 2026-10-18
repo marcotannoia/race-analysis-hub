@@ -11,6 +11,7 @@ const { avviaMonitorPenalitaFia } = require("./services/penalitaFia");
 async function avviaServer() {
   try {
     await collegaDatabase();
+    if (collegaDatabase.usaPostgres()) await require('./services/runtimeF1db').caricaRuntime(collegaDatabase.getPool(),true);
     if (!collegaDatabase.usaPostgres()) {
       await require("./services/aggiornamentoSingaporeConcluso").applicaAggiornamentoSingapore();
     }
@@ -25,6 +26,9 @@ async function avviaServer() {
 
     const fermaMonitorPenalita = ambiente.monitorFiaAbilitato
       ? avviaMonitorPenalitaFia() : () => {};
+    const fermaMonitorAggiornamenti = ambiente.monitorFiaAbilitato
+      ? require('./services/aggiornamentiFia').avviaMonitorAggiornamentiFia() : () => {};
+    const fermaAggiornamentoGp = require('./services/aggiornamentoAutomaticoGp').avviaAggiornamentoAutomaticoGp();
 
 
     server.on("error", (errore) => {
@@ -41,6 +45,8 @@ async function avviaServer() {
 
       chiusuraInCorso = true;
       fermaMonitorPenalita();
+      fermaMonitorAggiornamenti();
+      fermaAggiornamentoGp();
       console.log(`Arresto del server richiesto da ${segnale}`);
 
       const arrestoForzato = setTimeout(() => process.exit(1), 10000);

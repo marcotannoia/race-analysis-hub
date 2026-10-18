@@ -80,7 +80,7 @@ function creaProfiloCircuito(garaSlug, scuderie, datiLiveFia = null, lingua = "i
     .filter((voce) => voce && Number.isFinite(voce.indice))
     .sort((prima, seconda) => seconda.indice - prima.indice);
 
-  const documentoCircuito = datiLiveFia?.circuito?.documentoUrl
+  const documentoCircuito = datiLiveFia?.circuito?.documentoUrl && !datiLiveFia.circuito.ritirato
     ? {
         documentoUrl: datiLiveFia.circuito.documentoUrl,
         pubblicatoIl: datiLiveFia.circuito.pubblicatoIl || null,
@@ -110,7 +110,7 @@ function creaProfiloCircuito(garaSlug, scuderie, datiLiveFia = null, lingua = "i
 
 function creaAggiornamentiLive(datiLiveFia, scuderie) {
   const documento = datiLiveFia?.aggiornamenti;
-  if (!documento?.documentoUrl || documento.scuderie?.length !== 11) {
+  if (!documento?.documentoUrl || documento.ritirato || documento.scuderie?.length !== 11) {
     return null;
   }
 

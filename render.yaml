@@ -27,5 +27,9 @@ services:
         value: "500"
       - key: FIA_MONITOR_ENABLED
         value: "true"
+      - key: AUTO_GP_ENABLED
+        value: "true"
+      - key: AUTO_GP_INTERVAL_MINUTES
+        value: "30"
       - key: DATABASE_CONNECTION
         sync: false

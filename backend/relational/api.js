@@ -14,8 +14,11 @@ function creaRouter({ readImpl = (tabella, parametri) => require('./letturaCatal
   router.get('/',(req,res)=>res.json({versione:2,scala:{min:0,max:100,mancante:null},
     risorse:Object.keys(require('./risorse')),
     servizi:require('./applicazione').percorsi.map(([p])=>p),
-    fonte:require('../data/f1db-v2026.17.0-derivato.json').metadati,documentazione:'/api/v2/openapi.json'}));
+    fonte:require('../data/f1db-v2026.17.0-derivato.json').metadati,documentazione:'/api/v2/openapi.json',automazione:'/api/v2/automazione'}));
   router.get('/openapi.json',(req,res)=>res.json(require('./openapi')));
+  router.get('/automazione',async(req,res,next)=>{
+    try{res.json(await require('../services/aggiornamentoAutomaticoGp').statoAutomatico());}catch(e){next(e);}
+  });
   router.get('/health',async(req,res,next)=>{
     try { await leggi('f1_importazioni',{select:'id',limit:'1'}).then(rows=>{if(!rows.length)throw new Error('Importazione assente');}); res.json({stato:'ok',database:'supabase'}); }
     catch(e){e.status=503;next(e);}

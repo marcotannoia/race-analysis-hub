@@ -52,6 +52,8 @@ const attribuzioneF1db = {
 function attribuzioneF1dbLocalizzata(lingua) {
   return {
     ...attribuzioneF1db,
+    versione: snapshotF1db.metadati.versione,
+    url: snapshotF1db.metadati.releaseUrl,
     modifiche: localizzaModificheF1db(attribuzioneF1db.modifiche, lingua),
   };
 }

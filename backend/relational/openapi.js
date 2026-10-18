@@ -20,9 +20,9 @@ documento.components=structuredClone(originale.components);
 documento.components.schemas.Valutazione=valutazione;
 documento.components.schemas.Valutazione.properties.valore={type:['number','null'],minimum:0,maximum:100};
 const base=documento.components.schemas.AnalisiBase;
-const campi=['gara','valutazioni','valutazioniPerAnno','overall','aggiornamentiInArrivo','storicoEdizioni','fonti'];
+const campi=['gara','valutazioni','valutazioniPerAnno','overall','aggiornamentiInArrivo','aggiornamentiTecniciUfficiali','storicoEdizioni','fonti'];
 base.properties=Object.fromEntries(campi.map(k=>[k,base.properties[k]]));
-base.required=campi;
+base.required=campi.filter(c=>c!=='aggiornamentiTecniciUfficiali');
 const storico=documento.components.schemas.StoricoEdizione;
 storico.properties=Object.fromEntries(['stagione','posizioneGara','posizioneQualifica'].map(k=>[k,storico.properties[k]]));
 storico.required=['stagione','posizioneGara','posizioneQualifica'];
@@ -35,6 +35,11 @@ for(const [percorso] of require('./applicazione').percorsi){
 }
 documento.paths['/api/v2/health']={get:{operationId:'health_v2',summary:'Verifica accesso al database importato',responses:{200:{description:'Database disponibile'},503:{description:'Database non disponibile'}}}};
 documento.paths['/api/v2']={get:{operationId:'indice_v2',summary:'Risorse e servizi disponibili',responses:{200:{description:'Indice API v2'}}}};
+documento.paths['/api/v2/automazione']={get:{operationId:'automazione_gp_v2',summary:'Stato del controllo automatico post-GP',responses:{
+  200:{description:'Configurazione, ultimo controllo e ultimo aggiornamento',content:{'application/json':{schema:{type:'object',properties:{
+    abilitata:{type:'boolean'},intervalloMinuti:{type:'integer'},stato:{type:'string'},ultimoControlloIl:{type:'string',format:'date-time'},
+    garaAttuale:{type:'string'},ultimoAggiornamentoIl:{type:'string',format:'date-time'},ultimoErrore:{type:['string','null']}}}}}},
+  503:{description:'Database non disponibile'}}}};
 
 delete documento.components.schemas.GaraBreve.properties.stato.const;
 documento.components.schemas.GaraBreve.properties.stato.enum=['conclusa','attuale','futura'];

@@ -7,7 +7,7 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node --max-old-space-size=192 server.js",
     "dev": "nodemon --watch . --ext js,json --ignore .translation-cache/ --exec node scripts/avviaSviluppo.js",
     "seed": "node scripts/importaDati.js",
     "gp": "node scripts/registraGpConcluso.js",
@@ -31,13 +31,15 @@
     "import-context-postgres": "node scripts/importaStatisticheContestoPostgres.js",
     "migrate:supabase": "node scripts/sincronizzaCatalogoSupabase.js",
     "lint:api:v2": "node scripts/verificaOpenApi.js --v2",
-    "verify-api:v2": "node scripts/verificaApiV2.js"
+    "verify-api:v2": "node scripts/verificaApiV2.js",
+    "check:auto-gp": "node --max-old-space-size=192 scripts/controllaAggiornamentoAutomatico.js"
   },
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-rate-limit": "^8.6.2",
+    "fflate": "0.8.2",
     "helmet": "^8.3.0",
     "mongoose": "^9.9.2",
     "pdfjs-dist": "5.4.624",

@@ -98,6 +98,8 @@ const ambiente = Object.freeze({
     primaVariabileDisponibile("FIA_MONITOR_ENABLED"),
     produzione,
   ),
+  aggiornamentoGpAutomatico: leggiBooleano(primaVariabileDisponibile("AUTO_GP_ENABLED"), produzione),
+  intervalloGpMinuti: leggiIntero(primaVariabileDisponibile("AUTO_GP_INTERVAL_MINUTES"),30,5,1440),
 })
 
 module.exports = ambiente

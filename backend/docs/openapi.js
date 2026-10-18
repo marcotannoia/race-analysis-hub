@@ -2331,4 +2331,10 @@ const documentoOpenApi = {
   },
 };
 
+documentoOpenApi.components.schemas.AnalisiBase.properties.aggiornamentiTecniciUfficiali={
+  type:'object',description:'Componenti dichiarati alla FIA per il GP. La presenza del componente non prova un guadagno prestazionale.',
+  properties:{fonte:{type:'string'},stato:{type:'string',enum:['pubblicato','ritirato']},documentoUrl:{type:'string',format:'uri'},sha256:{type:'string'},
+    acquisitoIl:{type:'string',format:'date-time'},nessunAggiornamento:{type:'boolean'},componenti:{type:'array',items:{type:'string'}},
+    vantaggioMisurato:{type:['number','null'],minimum:0,maximum:100}},
+};
 module.exports = documentoOpenApi;

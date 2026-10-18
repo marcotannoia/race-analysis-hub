@@ -131,3 +131,12 @@ risultati sportivi nuovi. La verifica del rilascio completo è registrata in
 Stato dell'estensione: pubblicata e verificata il 18 ottobre 2026, commit
 applicativo `32687fc`. 41 controlli pubblici superati. La società può iniziare
 l'integrazione v2; la v1 continua a funzionare. Il sito web pubblicato usa già v2.
+
+
+## Aggiornamento automatico post-GP
+
+Aggiunto `GET /api/v2/automazione` per controllare stato e ultimo aggiornamento.
+Il cambio GP aggiorna dati e analisi nelle API esistenti senza cambiarne gli URL.
+Le analisi possono aggiungere `aggiornamentiTecniciUfficiali`, con componenti FIA
+e `vantaggioMisurato: null` finché manca una misura verificata.
+Dettagli operativi in `AUTOMAZIONE-GP.md`.

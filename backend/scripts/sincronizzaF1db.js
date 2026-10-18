@@ -232,8 +232,7 @@ function formattaScuderia({
     .join(" / ");
 }
 
-function creaSnapshot(percorsoF1db, datiProgetto) {
-  const carica = (nome) => leggiJson(path.join(percorsoF1db, nome));
+function creaSnapshot(percorsoF1db, datiProgetto, { carica = (nome) => leggiJson(path.join(percorsoF1db, nome)) } = {}) {
   const gare = carica("f1db-races.json");
   const risultatiGara = carica("f1db-races-race-results.json");
   const risultatiQualifica = carica("f1db-races-qualifying-results.json");

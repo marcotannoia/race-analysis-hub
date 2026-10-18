@@ -1,0 +1,31 @@
+{
+  "verificatoIl": "2026-10-18T21:19:35.381Z",
+  "metodo": "Simulazione isolata nella transazione PostgreSQL con rollback obbligatorio",
+  "risultato": {
+    "documenti": 102,
+    "punteggi": 528,
+    "righeSessione": 3375,
+    "da": "singapore-marina-bay",
+    "a": "usa-austin",
+    "dryRun": true,
+    "stagioneCompletata": false
+  },
+  "statoPrima": {
+    "current": "usa-austin",
+    "mark": "2026-10-18 10:41:17.704103+00",
+    "audit": 0
+  },
+  "statoDopo": {
+    "current": "usa-austin",
+    "mark": "2026-10-18 10:41:17.704103+00",
+    "audit": 0
+  },
+  "confrontoFia": {
+    "url": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_final_race_classification.pdf",
+    "titolo": "Doc 90 - Final Race Classification",
+    "pubblicatoIl": "2026-10-11T17:50:00.000Z",
+    "sha256": "a09dc4410abb1ab1a9aadbc807655dc196a7f233a8b5001cf0efa6fd5024871c"
+  },
+  "rollbackVerificato": true,
+  "piccoMemoriaMiB": 392
+}

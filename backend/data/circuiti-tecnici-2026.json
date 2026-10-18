@@ -55,7 +55,7 @@
     },
     "bahrein-sepang": {
       "fp1At": "2026-10-02T04:30:00.000Z",
-      "eventoFia": "Bahrain Grand Prix in Malaysia",
+      "eventoFia": "Bahrain Grand Prix",
       "dati": { "lunghezzaKm": 5.543, "giri": 56, "distanzaKm": 310.398, "curve": 15, "direzione": "orario", "tipologia": "permanente", "livelloCarico": "medio-alto", "stressFreni": "medio", "stressGomme": "medio" },
       "caratteristiche": ["Caldo e umidità elevati", "Due lunghi rettilinei separati da un tornante", "Mix di curve lente, medie e veloci"],
       "puntiSorpassoPrincipali": 3,
@@ -91,7 +91,7 @@
     },
     "brasile-interlagos": {
       "fp1At": "2026-11-06T15:30:00.000Z",
-      "eventoFia": "Brazilian Grand Prix",
+      "eventoFia": "São Paulo Grand Prix",
       "dati": { "lunghezzaKm": 4.309, "giri": 71, "distanzaKm": 305.879, "curve": 15, "direzione": "antiorario", "tipologia": "permanente", "livelloCarico": "medio-alto", "stressFreni": "medio", "stressGomme": "alto" },
       "caratteristiche": ["Saliscendi e curve con camber variabile", "Secondo settore lento e guidato", "Ultima salita percorsa a pieno gas"],
       "puntiSorpassoPrincipali": 2,

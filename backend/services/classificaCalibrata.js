@@ -16,9 +16,10 @@ const { valutaPenalita, valutaPenalitaFia, PESO_PENALITA } = require("./classifi
 const digest = createHash("sha256").update(fs.readFileSync(path.join(__dirname, "../data/campioni-previsionali-2026.json"), 'utf8').replace(/\r\n/g, '\n')).digest("hex");
 if (digest !== calibrazione.sha256Campioni) throw new Error("Campioni e calibrazione non corrispondono");
 const CHIAVI_API = Object.freeze(["compatibilitaVetturaCircuito", "risultatiCircuitiSimili", "qualifica2026", "storicoPersonale", "aggiornamentiTecnici", "andamento2026", "passoGaraRecente", "andamentoScuderiaRecente"]);
-const numerosita = new Map(Object.entries(campioni.numerosita).map(([id, n]) => [Number(id), n]));
 
 function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua = "it", meteo = null, datiLiveFia = null, pesi = null }) {
+  const campioni = require('./runtimeF1db').campioniCorrenti(require('../data/campioni-previsionali-2026.json'));
+  const numerosita = new Map(Object.entries(campioni.numerosita).map(([id,n])=>[Number(id),n]));
   const testi = testiPrevisione(lingua);
   const gp = campioni.gare.find((g) => g.year === gara.stagione && g.round === gara.ordineCalendario);
   if (!gp) throw new Error(`Scenario previsionale non disponibile: ${gara.slug}`);

@@ -97,22 +97,26 @@ async function sincronizzaPenalitaFia({
   const precedenti = await archivio.findOne({ garaSlug: garaAttuale.slug }).lean();
   const urlAttuali = new Set(documenti.map((documento) => documento.url));
   const esaminati = new Set((precedenti?.decisioniEsaminate || []).filter((url) => urlAttuali.has(url)));
-  const penalita = (precedenti?.penalitaGriglia || []).filter((voce) => urlAttuali.has(voce.documentoUrl));
+  const penalita = (precedenti?.penalitaGriglia || []).filter((voce) => urlAttuali.has(voce.documentoUrl) || voce.riportataDa && voce.garaDestinazione===garaAttuale.slug);
+  const hashes={...precedenti?.decisioniSha256};
 
   for (const documento of documenti) {
-    if (esaminati.has(documento.url)) continue;
     const pdf = await scaricaDocumento(documento.url, 25 * 1024 * 1024);
+    const digest=createHash("sha256").update(pdf).digest("hex");
+    if(esaminati.has(documento.url) && hashes[documento.url]===digest)continue;
+    const indice=penalita.findIndex(p=>p.documentoUrl===documento.url);if(indice>=0)penalita.splice(indice,1);
     const pagine = await estraiPagine(pdf);
     const testo = pagine.flatMap((pagina) => pagina.elementi.map((elemento) => elemento.testo)).join(" ");
     const rilevata = estraiPenalitaGriglia(testo, documento.url);
-    if (rilevata) penalita.push({ ...rilevata, sha256: createHash("sha256").update(pdf).digest("hex") });
+    if (rilevata) penalita.push({ ...rilevata, sha256: digest });
+    hashes[documento.url]=digest;
     esaminati.add(documento.url);
   }
 
   const cambiate = JSON.stringify(penalita) !== JSON.stringify(precedenti?.penalitaGriglia || []);
   await archivio.findOneAndUpdate(
     { garaSlug: garaAttuale.slug },
-    { $set: { decisioniEsaminate: [...esaminati], penalitaGriglia: penalita, ultimoControlloPenalitaIl: adesso },
+    { $set: { decisioniEsaminate: [...esaminati], decisioniSha256:hashes, penalitaGriglia: penalita, ultimoControlloPenalitaIl: adesso },
       $setOnInsert: { garaSlug: garaAttuale.slug } },
     { upsert: true },
   );
@@ -135,4 +139,37 @@ function avviaMonitorPenalitaFia() {
   return () => clearInterval(timer);
 }
 
-module.exports = { avviaMonitorPenalitaFia, estraiDecisioniEvento, estraiPenalitaGriglia, sincronizzaPenalitaFia };
+function decisioneRiportabile(documento,documenti,testo){
+ const fine=documenti.filter(d=>/\b(?:provisional|final) race classification\b/i.test(d.titolo)).map(d=>d.pubblicatoIl).filter(Boolean).sort((a,b)=>a-b)[0];
+ return Boolean(fine && documento.pubblicatoIl && documento.pubblicatoIl>=fine &&
+   /\bnext (?:Race|Competition)\b/i.test(testo) && !/\bnext Sprint (?:session|Race)\b/i.test(testo));
+}
+
+async function sincronizzaPenalitaRiportate({adesso=new Date(),gara}={}){
+ const {Gara}=require('../repositories/modelli');
+ const attuale=gara || await trovaGaraAttuale();
+ if(!attuale || !PARTENZE_2026[attuale.slug] || adesso>=new Date(PARTENZE_2026[attuale.slug]))return;
+ const precedenti=await Gara.find({stagione:attuale.stagione,stato:'conclusa'}).sort({ordineCalendario:-1}).lean();
+ const precedente=precedenti[0];if(!precedente)return;
+ const provider=require('./fontiPostGp');
+ const documenti=await provider.documentiEvento(precedente.slug);
+ const nuove=[];
+ for(const doc of documenti.filter(d=>/^Doc \d+ - (?:Infringement|Decision) - Car \d+/i.test(d.titolo))){
+   // Solo decisioni emesse dopo la pubblicazione della prima classifica di gara.
+   if(!decisioneRiportabile(doc,documenti,'next Race'))continue;
+   const pdf=await provider.scarica(doc.url);
+   const pagine=await estraiPaginePdf(pdf);
+   const testo=pagine.flatMap(p=>p.elementi.map(e=>e.testo)).join(' ');
+   if(!decisioneRiportabile(doc,documenti,testo))continue;
+   const p=estraiPenalitaGriglia(testo,doc.url);
+   if(p)nuove.push({...p,riportataDa:precedente.slug,garaDestinazione:attuale.slug,sha256:createHash('sha256').update(pdf).digest('hex')});
+ }
+ const report=await DatiLiveFia.findOne({garaSlug:attuale.slug}).lean();
+ const penalita=[...(report?.penalitaGriglia||[]).filter(p=>!p.riportataDa),...nuove];
+ if(JSON.stringify(penalita)!==JSON.stringify(report?.penalitaGriglia||[])){
+   await DatiLiveFia.findOneAndUpdate({garaSlug:attuale.slug},{$set:{penalitaGriglia:penalita,ultimoControlloRiportateIl:adesso},$setOnInsert:{garaSlug:attuale.slug}},{upsert:true});
+   cacheApiV1.svuota();
+ }
+}
+
+module.exports = { avviaMonitorPenalitaFia, estraiDecisioniEvento, estraiPenalitaGriglia, sincronizzaPenalitaFia, sincronizzaPenalitaRiportate,decisioneRiportabile };

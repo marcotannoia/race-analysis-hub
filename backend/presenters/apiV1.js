@@ -223,6 +223,7 @@ function presentaAnalisiBase(analisi, lingua = "it") {
     },
     considerazioniFinali: contenuti.considerazioni,
     aggiornamentiInArrivo: contenuti.aggiornamentiInArrivo || "",
+    ...(analisi.aggiornamentiTecniciUfficiali ? {aggiornamentiTecniciUfficiali:analisi.aggiornamentiTecniciUfficiali} : {}),
     storicoEdizioni: presentaStoricoEdizioni(
       contenuti.storicoEdizioni || analisi.storicoEdizioni,
       lingua,

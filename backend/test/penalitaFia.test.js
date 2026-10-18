@@ -77,7 +77,7 @@ test("il monitor salva la penalità, evita duplicati e rimuove un documento riti
   assert.equal(downloadPdf, 1);
   assert.equal(svuotamenti, 1);
   assert.equal((await sincronizzaPenalitaFia(opzioni)).stato, "in_attesa");
-  assert.equal(downloadPdf, 1);
+  assert.equal(downloadPdf, 2); // Ricontrolla il digest anche quando l'URL non cambia.
 
   html = `<div class="event-title active">Singapore Grand Prix</div>`;
   assert.equal((await sincronizzaPenalitaFia(opzioni)).stato, "documenti_non_ancora_disponibili");
