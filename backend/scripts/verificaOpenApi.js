@@ -2,7 +2,7 @@ const fs = require("fs");
 const os = require("os");
 const path = require("path");
 const { spawnSync } = require("child_process");
-const documentoOpenApi = require("../docs/openapi");
+const documentoOpenApi = process.argv.includes("--v2") ? require("../relational/openapi") : require("../docs/openapi");
 
 const cartellaTemporanea = fs.mkdtempSync(
   path.join(os.tmpdir(), "race-analysis-hub-openapi-"),

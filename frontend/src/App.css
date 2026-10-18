@@ -2973,3 +2973,18 @@ main {
   .scroll-cue { animation: none; }
   .home-contenuto > section::before { animation: none; }
 }
+
+/* Valutazioni numeriche: anni e scala leggibili anche su schermi piccoli. */
+.punteggi-prestazione { display: grid; gap: 1rem; margin: 1.25rem 0; }
+.punteggio-prestazione { display: grid; grid-template-columns: 4rem minmax(0, 1fr); align-items: baseline; gap: .4rem 1rem; }
+.punteggio-prestazione dt { font-variant-numeric: tabular-nums; opacity: .75; }
+.punteggio-prestazione dd { margin: 0; font-variant-numeric: tabular-nums; }
+.punteggio-prestazione dd strong { font-size: 1.4rem; }
+.punteggio-prestazione dd span { font-size: .85rem; opacity: .7; }
+.punteggio-prestazione meter { grid-column: 2; width: 100%; height: .65rem; accent-color: var(--accento, #e10600); }
+
+.punteggi-sintesi { display: grid; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); gap: 1rem; }
+.punteggi-sintesi dt { font-size: .85rem; opacity: .75; }
+.punteggi-sintesi dd { margin: .5rem 0 0; font-variant-numeric: tabular-nums; }
+.punteggi-sintesi dd strong { font-size: 1.6rem; }
+.punteggi-sintesi dd span { font-size: .85rem; opacity: .7; }

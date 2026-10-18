@@ -1,3 +1,4 @@
+const { valutazioniNumeriche, valutazioniPerAnno } = require("../services/valutazioniNumeriche");
 const {
   normalizzaNotaBene,
   normalizzaTestiAnnuali,
@@ -193,6 +194,8 @@ function presentaAnalisiBase(analisi, lingua = "it") {
   const gestioneGommePerAnno = normalizzaTestiAnnuali(contenuti.gomme);
 
   return {
+    valutazioni: valutazioniNumeriche(analisi),
+    valutazioniPerAnno: valutazioniPerAnno(analisi),
     gara: presentaGaraBreve(analisi.gara, lingua),
     risultatiGara: serializzaTestiAnnuali(risultatiGaraPerAnno),
     notaBene: serializzaTestiAnnuali(notaBenePerAnno),

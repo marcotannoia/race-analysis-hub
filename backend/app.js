@@ -138,6 +138,7 @@ app.get("/api/v1/openapi.json", (richiesta, risposta) => {
 });
 
 app.use("/api/v1", apiV1Routes);
+app.use("/api/v2", require("./relational/api").creaRouter());
 
 app.get("/api", (richiesta, risposta) => {
   risposta.json({

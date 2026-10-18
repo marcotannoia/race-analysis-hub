@@ -10,7 +10,7 @@ function getPool() {
   if (!usaPostgres()) throw new Error("Provider PostgreSQL non attivo");
   if (!pool) {
     if (!ambiente.supabaseDbUrl) throw new Error("SUPABASE_DB_URL non configurata");
-    pool = new Pool({ connectionString: ambiente.supabaseDbUrl, max: 4,
+    pool = new Pool({ ...require("../relational/connessione").configurazione(), max: 4,
       connectionTimeoutMillis: 10000, idleTimeoutMillis: 30000 });
     pool.on("error", (error) => console.error("Pool PostgreSQL:", error.message));
   }

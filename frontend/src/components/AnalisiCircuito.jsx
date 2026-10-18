@@ -81,83 +81,6 @@ function leggiTestiAnnuali(testo) {
   return testi
 }
 
-function creaNoteAnnuali(analisi, anni, t) {
-  const notePerAnno = leggiTestiAnnuali(analisi.notaBene)
-  const storicoEdizioni = analisi.storicoEdizioni || []
-
-  storicoEdizioni.forEach((edizione) => {
-    if (edizione.notaRisultato) {
-      notePerAnno.set(edizione.stagione, pulisciProsa(edizione.notaRisultato))
-    }
-  })
-
-  const nessunEvento = pulisciProsa(t.nessunEvento).toLocaleLowerCase()
-  const notaValida = (testo) => {
-    const contenuto = pulisciProsa(testo)
-    const nessunaAnomalia = /^(?:nessuna anomalia|no marked anomalies|aucune anomalie|sem anomalias|no hay anomalías|keine (?:markanten|auffälligen) anomalien)/i
-    return contenuto
-      && contenuto.toLocaleLowerCase() !== nessunEvento
-      && !nessunaAnomalia.test(contenuto)
-  }
-  const note = anni
-    .filter((anno) => notaValida(notePerAnno.get(anno)))
-    .map((anno) => ({
-      etichetta: String(anno),
-      testo: notePerAnno.get(anno),
-    }))
-
-  if (notaValida(notePerAnno.get('generale'))) {
-    note.push({ etichetta: t.generale, testo: notePerAnno.get('generale') })
-  }
-
-  return note
-}
-
-function creaAndamentoAnnuale(storicoGara, storicoQualifica, noteAnnuali, t) {
-  return noteAnnuali.map((nota) => {
-    if (nota.etichetta === t.generale) return nota
-
-    const anno = Number(nota.etichetta)
-    const gara = storicoGara.find((riga) => riga.anno === anno)
-    const qualifica = storicoQualifica.find((riga) => riga.anno === anno)
-    const posizioneQualifica = qualifica?.posizione || '—'
-    const posizioneGara = gara?.posizione || '—'
-    const andamento = t.andamentoRisultato(posizioneQualifica, posizioneGara)
-
-    return {
-      etichetta: String(anno),
-      testo: `${andamento} ${nota.testo}`.trim(),
-    }
-  })
-}
-
-function creaAndamentoVisualizzato(analisi, storicoGara, storicoQualifica, noteAnnuali, t) {
-  const haPartecipato = storicoGara.some((gara) => {
-    const qualifica = storicoQualifica.find((riga) => riga.anno === gara.anno)
-    return gara.posizione !== t.nonCorso || qualifica?.posizione !== t.nonCorso
-  })
-
-  if (!haPartecipato) return []
-
-  const andamentoPersonalizzato = leggiTestiAnnuali(analisi.andamentoPerAnno)
-
-  if (andamentoPersonalizzato.size) {
-    return [...andamentoPersonalizzato]
-      .filter(([anno]) => {
-        if (anno === 'generale') return true
-        const gara = storicoGara.find((riga) => riga.anno === anno)?.posizione
-        const qualifica = storicoQualifica.find((riga) => riga.anno === anno)?.posizione
-        return gara !== t.nonCorso || qualifica !== t.nonCorso
-      })
-      .map(([anno, testo]) => ({
-        etichetta: anno === 'generale' ? t.generale : String(anno),
-        testo,
-      }))
-  }
-
-  return creaAndamentoAnnuale(storicoGara, storicoQualifica, noteAnnuali, t)
-}
-
 function RisultatiStorici({ titolo, righe, t }) {
   return (
     <article className="colonna-risultati">
@@ -266,20 +189,30 @@ function AggiornamentiWidget({ testo, t }) {
   )
 }
 
-function RigheEtichettate({ righe, classe = '' }) {
-  return (
-    <div className={`righe-etichettate ${classe}`.trim()}>
-      {righe.map((riga, indice) => (
-        <div
-          className="riga-etichettata"
-          key={`${riga.etichetta}-${indice}`}
-        >
-          <span>{riga.etichetta}</span>
-          <p>{riga.testo}</p>
-        </div>
-      ))}
+function PunteggiSintesi({ analisi, t }) {
+  const campi = [['rendimento', t.gara], ['qualifica', t.qualifica], ['formaRecente', t.forma2026]]
+  return <dl className="punteggi-sintesi">{campi.map(([campo, nome]) => {
+    const valore = analisi.valutazioni?.[campo]
+    return <div key={campo}>
+      <dt>{nome}</dt>
+      <dd>{Number.isFinite(valore) ? <><strong>{valore}</strong><span> / 100</span></> : <span>{t.datoNonDisponibile}</span>}</dd>
     </div>
-  )
+  })}</dl>
+}
+
+function PunteggiPrestazione({ analisi, metrica, t }) {
+  const righe = Object.entries(analisi.valutazioniPerAnno || {})
+    .sort(([a], [b]) => Number(a) - Number(b))
+    .map(([anno, valori]) => ({ anno, valore: valori[metrica] }))
+  righe.push({ anno: analisi.gara.stagione, valore: analisi.valutazioni?.[metrica] })
+  return <dl className="punteggi-prestazione">{righe.map(({ anno, valore }) => {
+    const disponibile = Number.isFinite(valore) && valore >= 0 && valore <= 100
+    return <div key={anno} className="punteggio-prestazione">
+      <dt>{anno}</dt>
+      <dd><strong>{disponibile ? valore : '—'}</strong>{disponibile ? <span> / 100</span> : <span> {t.datoNonDisponibile}</span>}</dd>
+      {disponibile && <meter min="0" max="100" value={valore} aria-label={`${anno}: ${valore}/100`} />}
+    </div>
+  })}</dl>
 }
 
 function creaPenalitaWidget(testo) {
@@ -289,28 +222,6 @@ function creaPenalitaWidget(testo) {
     posizioni: posizioni?.[1] || null,
     spiegazione: contenuto,
   }
-}
-
-function OverallPrestazione({ titolo, score, t }) {
-  const valore = score?.valore ?? null
-  return (
-    <article className="ramo-performance overall-performance">
-      <h3 className="titolo-ramo"><span>↳</span>{titolo}</h3>
-      <p className="overall-valore" aria-label={`${titolo}: ${valore ?? '—'} / 100`}>
-        {valore ?? '—'}<span>/100</span>
-      </p>
-      {score && (
-        <details className="overall-fonti">
-          <summary>{t.fontiConsultate} · n={score.campione}</summary>
-          <ul>
-            {score.fonti.map((url) => (
-              <li key={url}><a href={url} target="_blank" rel="noopener noreferrer">{url}</a></li>
-            ))}
-          </ul>
-        </details>
-      )}
-    </article>
-  )
 }
 
 function AnalisiCircuito({
@@ -340,15 +251,6 @@ function AnalisiCircuito({
     'qualifica',
     t,
     analisi.storicoEdizioni,
-  )
-  const anni = [...new Set([...storicoGara, ...storicoQualifica].map((riga) => riga.anno))]
-  const noteAnnuali = creaNoteAnnuali(analisi, anni, t)
-  const andamentoAnnuale = creaAndamentoVisualizzato(
-    analisi,
-    storicoGara,
-    storicoQualifica,
-    noteAnnuali,
-    t,
   )
   const penalitaWidget = analisi.penalita
     ? creaPenalitaWidget(analisi.penalita)
@@ -386,14 +288,13 @@ function AnalisiCircuito({
           <RisultatiStorici titolo={t.qualifica} righe={storicoQualifica} t={t} />
         </div>
 
-        {andamentoAnnuale.length > 0 && (
-          <div className="ramo-analisi">
-            <h3 className="titolo-ramo"><span>↳</span>{t.analisi}</h3>
-            <RigheEtichettate righe={andamentoAnnuale} classe="righe-anni" />
-          </div>
-        )}
+        <div className="ramo-analisi">
+          <h3 className="titolo-ramo"><span>↳</span>{t.analisi}</h3>
+          <PunteggiSintesi analisi={analisi} t={t} />
+        </div>
       </section>
 
+      {(
         <section className="sezione-analisi performance-circuito">
         <div className="intestazione-sezione">
           <span>02</span>
@@ -404,10 +305,22 @@ function AnalisiCircuito({
         </div>
 
         <div className="albero-performance">
-          <OverallPrestazione titolo={t.gestioneGomme} score={analisi.overall?.gestioneGomme} t={t} />
-          <OverallPrestazione titolo={t.passoGara} score={analisi.overall?.passoGara} t={t} />
+          {(
+            <article className="ramo-performance">
+              <h3 className="titolo-ramo"><span>↳</span>{t.gestioneGomme}</h3>
+              <PunteggiPrestazione analisi={analisi} metrica="gestioneGomme" t={t} />
+            </article>
+          )}
+
+          {(
+            <article className="ramo-performance">
+              <h3 className="titolo-ramo"><span>↳</span>{t.passoGara}</h3>
+              <PunteggiPrestazione analisi={analisi} metrica="passoGara" t={t} />
+            </article>
+          )}
         </div>
       </section>
+      )}
 
       {mostraValutazioneFinale && (
         <section className="sezione-analisi considerazioni-finali">

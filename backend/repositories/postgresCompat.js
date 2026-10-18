@@ -105,7 +105,7 @@ async function overlayRatings(model, rows) {
     join catalog.${entity} e on e.id=s.${entity}_id
     join catalog.grand_prix gp on gp.id=s.grand_prix_id
     join ratings.dimension dim on dim.id=s.dimension_id
-    where gp.state='attuale' and dim.slug in ('race_pace','tyre_management')
+    where gp.state='attuale' and dim.slug in ('race_pace','tyre_management','performance','qualifying','completion','annual_trend','race_results','qualifying_results')
     order by e.slug,gp.slug,dim.slug,s.calculated_at desc,s.id desc`);
   const entities = new Map((await load(driver ? 'Pilota' : 'Scuderia'))
     .map((doc)=>[String(doc._id),doc.slug]));
@@ -116,12 +116,19 @@ async function overlayRatings(model, rows) {
     const key = `${entities.get(String(doc[driver ? 'pilota' : 'scuderia']))}|${races.get(String(doc.gara))}`;
     const semantic = doc.overallSemantici || { campi:{} };
     semantic.campi ||= {};
-    for (const [dimension,field] of [['race_pace','passoGara'],['tyre_management','gestioneGomme']]) {
+    const mapping = {
+      race_pace:['campi','passoGara'], tyre_management:['campi','gestioneGomme'],
+      performance:['stagioneCorrente','rendimento'], qualifying:['stagioneCorrente','qualifica'],
+      completion:['stagioneCorrente','completamento'], annual_trend:['campi','andamentoPerAnno'],
+      race_results:['campi','risultatiGara'], qualifying_results:['campi','risultatiQualifica'],
+    };
+    for (const [dimension,[section,field]] of Object.entries(mapping)) {
       const score=scores.get(`${key}|${dimension}`);
-      semantic.campi[field] = score
-        ? { ...(semantic.campi[field] || {}), overall:Number(score.score),
+      semantic[section] ||= {};
+      semantic[section][field] = score
+        ? { ...(semantic[section][field] || {}), overall:score.score === null ? null : Number(score.score),
             campione:score.sample_size,fonti:score.sources }
-        : { ...(semantic.campi[field] || {}),overall:null,campione:0,fonti:[] };
+        : { ...(semantic[section][field] || {}),overall:null,campione:0,fonti:[] };
     }
     return { ...doc,overallSemantici:semantic };
   });

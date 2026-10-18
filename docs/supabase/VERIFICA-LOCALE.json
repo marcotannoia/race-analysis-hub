@@ -1,0 +1,83 @@
+{
+  "checkedAt": "2026-10-18T10:28:36.931Z",
+  "provider": "supabase",
+  "source": "FantaStats Postgres",
+  "endpoints": [
+    {
+      "path": "/api/health",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/health",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/home",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/piloti",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/scuderie",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/gare",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/gare/attuale",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/piloti/leclerc",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/scuderie/ferrari",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/classifiche/piloti",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/classifiche/scuderie",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/confronti/piloti/leclerc/hamilton",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/confronti/scuderie/ferrari/mercedes",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/gare/usa-austin/piloti/leclerc/analisi",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/gare/usa-austin/scuderie/ferrari/analisi",
+      "status": 200
+    },
+    {
+      "path": "/api/v2/health",
+      "status": 200
+    },
+    {
+      "path": "/api/v2/piloti",
+      "status": 200
+    },
+    {
+      "path": "/api/v2/metriche",
+      "status": 200
+    },
+    {
+      "path": "/api/v2/valutazioni?pilota=leclerc&gara=usa-austin&metrica=gestioneGomme",
+      "status": 200
+    }
+  ]
+}

@@ -1220,6 +1220,17 @@ const documentoOpenApi = {
           affidabilita: { type: "string" },
         },
       },
+      PunteggioNumerico: {
+        type: ["number", "null"], minimum: 0, maximum: 100,
+        description: "Indice descrittivo 0–100; null indica dati insufficienti. Zero è un valore misurato, non un dato mancante.",
+      },
+      ValutazioniNumeriche: {
+        type: "object",
+        properties: Object.fromEntries([
+          "passoGara", "gestioneGomme", "rendimento", "qualifica", "completamento",
+          "formaRecente", "storicoGara", "storicoQualifica",
+        ].map(campo => [campo, { $ref: "#/components/schemas/PunteggioNumerico" }])),
+      },
       AnalisiBase: {
         type: "object",
         required: [
@@ -1261,6 +1272,17 @@ const documentoOpenApi = {
             deprecated: true,
             description:
               "Formato testuale mantenuto per compatibilità. Usare `datiPerAnno.andamento`.",
+          },
+          valutazioni: { $ref: "#/components/schemas/ValutazioniNumeriche" },
+          valutazioniPerAnno: {
+            type: "object",
+            additionalProperties: {
+              type: "object",
+              properties: {
+                passoGara: { $ref: "#/components/schemas/PunteggioNumerico" },
+                gestioneGomme: { $ref: "#/components/schemas/PunteggioNumerico" },
+              },
+            },
           },
           prestazioni: { $ref: "#/components/schemas/Prestazioni" },
           overall: {

@@ -51,7 +51,7 @@ const ambiente = Object.freeze({
   modalita,
   produzione,
   mongoUrl: primaVariabileDisponibile("MONGO_URL", "mongo_url"),
-  supabaseDbUrl: primaVariabileDisponibile("SUPABASE_DB_URL"),
+  supabaseDbUrl: primaVariabileDisponibile("SUPABASE_DATABASE_URL", "DATABASE_CONNECTION", "SUPABASE_DB_URL"),
   dataProvider,
   nomeDatabase:
     primaVariabileDisponibile("DATABASE_NAME", "nome_database") || "f1_stats",
