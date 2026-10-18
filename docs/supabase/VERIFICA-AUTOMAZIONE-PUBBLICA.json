@@ -1,0 +1,28 @@
+{
+  "verificatoIl": "2026-10-18T21:36:53.779Z",
+  "baseUrl": "https://f1-stats-5v93.onrender.com",
+  "commitApplicativo": "6ff6e6094224553bcd76e5d5d58fef41bb444cd7",
+  "status": 200,
+  "processoLocaleSpento": true,
+  "automazione": {
+    "stato": "in_attesa_fine_giornata",
+    "dataGara": "2026-10-25",
+    "garaAttuale": "usa-austin",
+    "ultimoErrore": null,
+    "fonteDisponibile": "v2026.17.0",
+    "ultimaVerificaFia": {
+      "url": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_final_race_classification.pdf",
+      "sha256": "a09dc4410abb1ab1a9aadbc807655dc196a7f233a8b5001cf0efa6fd5024871c",
+      "titolo": "Doc 90 - Final Race Classification",
+      "pubblicatoIl": "2026-10-11T17:50:00.000Z"
+    },
+    "ultimoControlloIl": "2026-10-18T21:35:53.805Z",
+    "stagioneCompletata": false,
+    "ultimaFonteApplicata": "v2026.17.0|2026-10-11T17:18:34Z|sha256:0f1717eaebae646b7ced9ca96f6be3282c1c1d435d0a9d75f2c00f40feb7d2a8",
+    "ultimoAggiornamentoIl": "2026-10-18T21:26:48.550Z",
+    "abilitata": true,
+    "intervalloMinuti": 30,
+    "politica": "Fine giornata nel fuso del circuito, risultati F1DB completi e confronto con classifica finale FIA. Nessun risultato o indice mancante viene inventato."
+  },
+  "testBackend": 120
+}
