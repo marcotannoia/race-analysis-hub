@@ -87,3 +87,16 @@ OpenAPI v1/v2 e build frontend validati.
 locale collegato al vero database Supabase. Il deploy Render e la verifica degli
 endpoint sul dominio pubblico vengono registrati separatamente: una verifica
 locale non conferma la pubblicazione.
+
+## Pubblicazione verificata
+
+Deploy Render `dep-dba9vnbncjis73cpavsg` riuscito il 18 ottobre 2026 alle 12:31
+Europe/Rome, commit `d0c825aee973e08a9d0378282841191f4b00feb1`.
+`DATABASE_CONNECTION` è stato salvato come segreto nel servizio `f1_stats`,
+con autorizzazione esplicita dell'utente. Il valore non è incluso nel repository.
+
+La verifica pubblica successiva ha restituito HTTP 200 per tutti i 19 endpoint
+registrati in `VERIFICA-PUBBLICA.json`. `/api/v2/health` conferma Supabase;
+la valutazione gomme di Leclerc ad Austin è stata confrontata con il valore
+Postgres (24/100). Gli URL v1 restano invariati e i campi `overall` precedenti
+sono conservati. Le API v2 sono raggiungibili sullo stesso dominio Render.

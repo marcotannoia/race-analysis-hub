@@ -1,6 +1,7 @@
 # API FantaStats — nota per l'integrazione
 
-Stato al 18 ottobre 2026: modifiche preparate localmente, non ancora pubblicate.
+Stato al 18 ottobre 2026, ore 12:32 Europe/Rome: rilascio pubblicato su Render
+e verificato sul dominio pubblico (commit applicativo `d0c825a`).
 Il database Supabase sincronizzato è `druzzflduoeqfhywkumx`, organizzazione FantaStats.
 
 ## Endpoint attualmente pubblicati
@@ -14,7 +15,7 @@ la compatibilità della nuova connessione e i nuovi punteggi, mantenendo gli URL
 
 ## Campi numerici aggiuntivi nelle risposte v1
 
-Le analisi pilota e scuderia avranno due proprietà aggiuntive:
+Le analisi pilota e scuderia espongono due proprietà aggiuntive:
 
 ```json
 {
@@ -39,10 +40,11 @@ I vecchi campi testuali v1 mantengono i loro tipi per compatibilità. I client p
 passare ai nuovi campi senza ricavare numeri dalla prosa. Non interpretare `null`
 come zero o 50. Non interpretare i punteggi come probabilità o usura fisica della gomma.
 
-## Nuovi endpoint v2 previsti
+## Nuovi endpoint v2 disponibili
 
-La v2 è aggiuntiva e non è ancora pubblicata. L'host definitivo sarà comunicato
-solo dopo il deploy e la verifica HTTP.
+La v2 è aggiuntiva ed è disponibile sullo stesso host:
+`https://f1-stats-5v93.onrender.com`.
+Contratto: `https://f1-stats-5v93.onrender.com/api/v2/openapi.json`.
 
 | Percorso | Utilizzo |
 |---|---|
@@ -68,8 +70,9 @@ Esempio di percorso:
 
 ## Testo breve da comunicare alla società
 
-> Stiamo preparando il passaggio del database a Supabase. Gli endpoint v1 esistenti
-> restano quelli attuali; le analisi aggiungeranno punteggi numerici 0–100 nelle
-> proprietà `valutazioni` e `valutazioniPerAnno`. Le nuove API v2 avranno un formato
-> distinto e paginato. Migrazione e pubblicazione non sono ancora completate:
-> attendere la comunicazione dell'host verificato prima di cambiare l'integrazione.
+> Il database FantaStats è stato sincronizzato su Supabase e il backend aggiornato
+> è in produzione. Gli endpoint v1 restano invariati negli URL e nei campi legacy;
+> le analisi aggiungono punteggi numerici 0–100 in `valutazioni` e
+> `valutazioniPerAnno` (`null` indica dati insufficienti). Sono disponibili anche
+> le API aggiuntive `/api/v2`, sullo stesso host, con risposte paginate e un formato
+> distinto. Documentazione: https://f1-stats-5v93.onrender.com/api/v2/openapi.json.
