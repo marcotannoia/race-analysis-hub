@@ -59,7 +59,7 @@ al posto dei paragrafi su gomme, passo e riepilogo delle prestazioni.
 La v2 è aggiuntiva e legge direttamente i dati relazionali. Risorse:
 `/api/v2/piloti`, `/scuderie`, `/gare`, `/metriche`, `/valutazioni`;
 health `/api/v2/health`, contratto `/api/v2/openapi.json`.
-Gli elenchi usano `{ dati, paginazione }`, con `limit` 1–100 e `offset` 0–100000.
+Gli elenchi usano `{ dati, paginazione }`, con `limit` 1–100 e `offset` 0–1000000.
 Valutazioni: filtri `anno`, `metrica`, `gara`, `pilota`, `scuderia`.
 La v2 espone le valutazioni aggregate per la stagione del GP; i punteggi annuali
 storici disponibili restano nella rappresentazione v1 `valutazioniPerAnno`.
@@ -100,3 +100,27 @@ registrati in `VERIFICA-PUBBLICA.json`. `/api/v2/health` conferma Supabase;
 la valutazione gomme di Leclerc ad Austin è stata confrontata con il valore
 Postgres (24/100). Gli URL v1 restano invariati e i campi `overall` precedenti
 sono conservati. Le API v2 sono raggiungibili sullo stesso dominio Render.
+
+
+## Completamento del codice e del caricamento
+
+La v2 comprende ora tutti i servizi applicativi della v1, con analisi numeriche,
+e aggiunge circuiti, iscrizioni e storico risultati direttamente dal database
+relazionale. Il sito usa i servizi v2 per home, schede e confronti.
+
+Rieseguita la sincronizzazione transazionale: 442 documenti e 3.168 valutazioni
+nel modello `risultati-semantici-v1`. Ogni punteggio e campione viene confrontato
+con il valore atteso prima del commit; le fonti del modello sono sostituite per
+non conservare riferimenti obsoleti. Le altre versioni dei modelli sono preservate.
+
+Verifica database: 1.172 gare F1DB, 188.111 righe di sessione, 23 piloti, 11 scuderie,
+12 GP applicativi, 264 iscrizioni, 264 analisi pilota e 132 analisi scuderia.
+Il corpus non è cambiato rispetto al precedente caricamento verificato.
+
+`npm --prefix backend run verify-db` supporta le stesse variabili di connessione
+del server e verifica TLS con la CA Supabase. `verify-api:v2` controlla tutti i
+nuovi servizi e la compatibilità v1. Impostare `API_BASE_URL` per verificare il
+server pubblico e passare un percorso file per conservare il rapporto JSON.
+
+Il blueprint Render rispecchia il servizio Starter esistente e la variabile
+`DATABASE_CONNECTION`, senza includere il valore del segreto.

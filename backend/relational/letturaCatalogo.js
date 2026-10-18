@@ -7,6 +7,17 @@ async function leggiCatalogo(tabella,p,db=database()){
   f1_scuderie:{from:'catalog.team t',select:"jsonb_build_object('slug',t.slug,'nome',t.name,'abbreviazione',t.abbreviation,'colore',t.colour,'nazionalita',t.nationality)",order:'t.slug',filtri:{}},
   f1_gare:{from:'catalog.grand_prix t join catalog.circuit c on c.id=t.circuit_id',select:"jsonb_build_object('slug',t.slug,'anno',t.season,'circuito_slug',c.slug,'nome',t.name,'round',t.calendar_order,'stato',t.state,'f1_circuiti',jsonb_build_object('nome',t.circuit_name,'paese',t.country_name))",order:'t.season desc,t.calendar_order',filtri:{anno:'t.season',stato:'t.state'}},
   f1_metriche:{from:'ratings.dimension d',select:`jsonb_build_object('codice',${metricCase},'nome',d.name,'unita','0–100')`,where:`${metricCase} is not null`,order:'d.slug',filtri:{}},
+  f1_circuiti:{from:'catalog.circuit t',select:"jsonb_build_object('slug',t.slug,'nome',t.name,'f1db_id',t.f1db_circuit_id)",order:'t.slug',filtri:{}},
+  f1_iscrizioni:{from:'catalog.entry t join catalog.grand_prix g on g.id=t.grand_prix_id join catalog.driver d on d.id=t.driver_id join catalog.team team on team.id=t.team_id',select:"jsonb_build_object('anno',g.season,'gara_slug',g.slug,'pilota_slug',d.slug,'scuderia_slug',team.slug)",order:'g.season,g.calendar_order,d.slug',filtri:{anno:'g.season',gara:'g.slug',pilota:'d.slug',scuderia:'team.slug'}},
+  f1_risultati:{
+    from:'f1db.race_data t join f1db.race r on r.id=t.race_id',
+    select:"jsonb_build_object('gara_id',r.id,'anno',r.year,'round',r.round,'data',r.date,'circuito_id',r.circuit_id,'sessione',t.type,'ordine',t.position_display_order,'posizione',t.position_number,'stato',t.position_text,'pilota_id',t.driver_id,'scuderia_id',t.constructor_id,'dati',to_jsonb(t)-'race_id'-'type'-'driver_id'-'constructor_id')",
+    order:'r.year desc,r.round desc,t.type,t.position_display_order',
+    filtri:{anno:'r.year',sessione:'t.type',
+      gara:n=>`r.circuit_id in (select c.f1db_circuit_id from catalog.grand_prix g join catalog.circuit c on c.id=g.circuit_id where g.slug=$${n})`,
+      pilota:n=>`t.driver_id in (select d.f1db_driver_id from catalog.driver d where d.slug=$${n})`,
+      scuderia:n=>`t.constructor_id in (select s.f1db_constructor_id from catalog.team s where s.slug=$${n})`},
+  },
   f1_importazioni:{from:'editorial.source_document t',select:"jsonb_build_object('id',t.mongo_id)",order:'t.imported_at desc',filtri:{}},
  };
  if(tabella==='f1_valutazioni'){
@@ -19,10 +30,12 @@ async function leggiCatalogo(tabella,p,db=database()){
  for(const[k,v]of Object.entries(p)){
   if(['select','order','limit','offset'].includes(k))continue;
   if(!Object.hasOwn(cfg.filtri,k)||typeof v!=='string'||!v.startsWith('eq.'))throw new Error('Filtro non consentito');
-  values.push(v.slice(3));where.push(`(${cfg.filtri[k]})=$${values.length}`);
+  values.push(v.slice(3));
+  const filtro=cfg.filtri[k];
+  where.push(typeof filtro==='function' ? filtro(values.length) : `(${filtro})=$${values.length}`);
  }
  const limit=Number(p.limit||100),offset=Number(p.offset||0);
- if(!Number.isInteger(limit)||limit<1||limit>100||!Number.isInteger(offset)||offset<0||offset>100000)throw new Error('Paginazione non valida');
+ if(!Number.isInteger(limit)||limit<1||limit>100||!Number.isInteger(offset)||offset<0||offset>1000000)throw new Error('Paginazione non valida');
  values.push(limit,offset);
  const result=await db.query(`select ${cfg.select} as dato from ${cfg.from} ${where.length?'where '+where.join(' and '):''} order by ${cfg.order} limit $${values.length-1} offset $${values.length}`,values);
  return result.rows.map(r=>r.dato);

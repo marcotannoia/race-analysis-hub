@@ -3,8 +3,7 @@ require('dotenv').config({ path: path.join(__dirname, '../.env'), quiet: true })
 const { Pool } = require('pg');
 
 async function main() {
-  if (!process.env.SUPABASE_DB_URL) throw new Error('SUPABASE_DB_URL assente');
-  const pool = new Pool({ connectionString: process.env.SUPABASE_DB_URL, max: 1 });
+  const pool = new Pool({ ...require('../relational/connessione').configurazione(), max: 1 });
   try {
     const result = await pool.query(`select
       (select count(*) from f1db.race) f1db_races,

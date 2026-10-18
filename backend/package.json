@@ -30,7 +30,8 @@
     "verify-postgres-writes": "node scripts/verificaScritturePostgres.js",
     "import-context-postgres": "node scripts/importaStatisticheContestoPostgres.js",
     "migrate:supabase": "node scripts/sincronizzaCatalogoSupabase.js",
-    "lint:api:v2": "node scripts/verificaOpenApi.js --v2"
+    "lint:api:v2": "node scripts/verificaOpenApi.js --v2",
+    "verify-api:v2": "node scripts/verificaApiV2.js"
   },
   "dependencies": {
     "cors": "^2.8.6",

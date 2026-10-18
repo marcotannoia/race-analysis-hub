@@ -3,7 +3,7 @@ services:
     name: f1-stats
     runtime: node
     region: frankfurt
-    plan: free
+    plan: starter
     buildCommand: npm ci --include=dev --prefix frontend && npm run build --prefix frontend && npm ci --omit=dev --prefix backend
     startCommand: npm --prefix backend start
     healthCheckPath: /api/health
@@ -27,5 +27,5 @@ services:
         value: "500"
       - key: FIA_MONITOR_ENABLED
         value: "true"
-      - key: SUPABASE_DB_URL
+      - key: DATABASE_CONNECTION
         sync: false

@@ -1,0 +1,211 @@
+{
+  "verificatoIl": "2026-10-18T10:46:28.547Z",
+  "baseUrl": "http://127.0.0.1:5003",
+  "endpoint": [
+    {
+      "percorso": "/api/v2",
+      "stato": 200,
+      "ms": 18
+    },
+    {
+      "percorso": "/api/v2/health",
+      "stato": 200,
+      "ms": 71
+    },
+    {
+      "percorso": "/api/v2/piloti?limit=5",
+      "stato": 200,
+      "ms": 116
+    },
+    {
+      "percorso": "/api/v2/scuderie?limit=5",
+      "stato": 200,
+      "ms": 60
+    },
+    {
+      "percorso": "/api/v2/gare?limit=5",
+      "stato": 200,
+      "ms": 71
+    },
+    {
+      "percorso": "/api/v2/circuiti?limit=5",
+      "stato": 200,
+      "ms": 62
+    },
+    {
+      "percorso": "/api/v2/iscrizioni?limit=5",
+      "stato": 200,
+      "ms": 67
+    },
+    {
+      "percorso": "/api/v2/risultati?limit=5",
+      "stato": 200,
+      "ms": 163
+    },
+    {
+      "percorso": "/api/v2/metriche?limit=5",
+      "stato": 200,
+      "ms": 61
+    },
+    {
+      "percorso": "/api/v2/valutazioni?limit=5",
+      "stato": 200,
+      "ms": 186
+    },
+    {
+      "percorso": "/api/v2/home",
+      "stato": 200,
+      "ms": 1714
+    },
+    {
+      "percorso": "/api/v2/stagione",
+      "stato": 200,
+      "ms": 2
+    },
+    {
+      "percorso": "/api/v2/lingue",
+      "stato": 200,
+      "ms": 1
+    },
+    {
+      "percorso": "/api/v2/previsioni/piloti",
+      "stato": 200,
+      "ms": 9
+    },
+    {
+      "percorso": "/api/v2/classifiche/piloti",
+      "stato": 200,
+      "ms": 2
+    },
+    {
+      "percorso": "/api/v2/classifiche/scuderie",
+      "stato": 200,
+      "ms": 1
+    },
+    {
+      "percorso": "/api/v2/piloti/leclerc",
+      "stato": 200,
+      "ms": 2
+    },
+    {
+      "percorso": "/api/v2/scuderie/ferrari",
+      "stato": 200,
+      "ms": 2
+    },
+    {
+      "percorso": "/api/v2/gare/attuale",
+      "stato": 200,
+      "ms": 1
+    },
+    {
+      "percorso": "/api/v2/gare/usa-austin/piloti/leclerc/analisi",
+      "stato": 200,
+      "ms": 1
+    },
+    {
+      "percorso": "/api/v2/gare/usa-austin/scuderie/ferrari/analisi",
+      "stato": 200,
+      "ms": 1
+    },
+    {
+      "percorso": "/api/v2/gare/usa-austin",
+      "stato": 200,
+      "ms": 16
+    },
+    {
+      "percorso": "/api/v2/confronti/piloti/leclerc/hamilton",
+      "stato": 200,
+      "ms": 2
+    },
+    {
+      "percorso": "/api/v2/confronti/scuderie/ferrari/mercedes",
+      "stato": 200,
+      "ms": 2
+    },
+    {
+      "percorso": "/api/v2/gare/italia-monza",
+      "stato": 200,
+      "ms": 323
+    },
+    {
+      "percorso": "/api/v2/gare/italia-monza/piloti/leclerc/analisi",
+      "stato": 200,
+      "ms": 2
+    },
+    {
+      "percorso": "/api/v2/gare/italia-monza/scuderie/ferrari/analisi",
+      "stato": 200,
+      "ms": 1
+    },
+    {
+      "percorso": "/api/v2/risultati?anno=2024&gara=usa-austin&pilota=leclerc&sessione=RACE_RESULT",
+      "stato": 200,
+      "ms": 94
+    },
+    {
+      "percorso": "/api/v2/risultati?offset=188100",
+      "stato": 200,
+      "ms": 15274
+    },
+    {
+      "percorso": "/api/v2/valutazioni?gara=usa-austin&pilota=leclerc&metrica=gestioneGomme",
+      "stato": 200,
+      "ms": 77
+    },
+    {
+      "percorso": "/api/v2/piloti/leclerc?lingua=en",
+      "stato": 200,
+      "ms": 4
+    },
+    {
+      "percorso": "/api/v2/valutazioni?limit=101",
+      "stato": 400,
+      "ms": 1
+    },
+    {
+      "percorso": "/api/v2/risultati?foo=1",
+      "stato": 400,
+      "ms": 0
+    },
+    {
+      "percorso": "/api/v2/piloti/leclerc?lingua=xx",
+      "stato": 400,
+      "ms": 1
+    },
+    {
+      "percorso": "/api/v2/inesistente",
+      "stato": 404,
+      "ms": 1
+    },
+    {
+      "percorso": "/api/v1/health",
+      "stato": 200,
+      "ms": 64
+    },
+    {
+      "percorso": "/api/v1/home",
+      "stato": 200,
+      "ms": 27
+    },
+    {
+      "percorso": "/api/v1/piloti/leclerc",
+      "stato": 200,
+      "ms": 7
+    },
+    {
+      "percorso": "/api/v1/scuderie/ferrari",
+      "stato": 200,
+      "ms": 2
+    },
+    {
+      "percorso": "/api/v1/openapi.json",
+      "stato": 200,
+      "ms": 2
+    },
+    {
+      "percorso": "/api/v2/openapi.json",
+      "stato": 200,
+      "ms": 3
+    }
+  ]
+}

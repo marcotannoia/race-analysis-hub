@@ -48,7 +48,9 @@ async function richiesta(percorso, lingua = 'it') {
     const corpo = await rispostaJson(risposta, t.erroreRisposta).catch(
       () => null,
     )
-    throw new Error(corpo?.errore?.messaggio || t.datiNonRecuperabili)
+    const messaggio = corpo?.errore?.messaggio ||
+      (typeof corpo?.errore === 'string' ? corpo.errore : t.datiNonRecuperabili)
+    throw new Error(messaggio)
   }
 
   return rispostaJson(risposta, t.erroreRisposta)
@@ -144,7 +146,7 @@ function creaValutazioneFinale(home, scuderiaSlug, pilotaSlug = null) {
 }
 
 export async function caricaHome(lingua) {
-  const dati = await richiesta('/api/v1/home', lingua)
+  const dati = await richiesta('/api/v2/home', lingua)
 
   return {
     ...dati,
@@ -155,8 +157,8 @@ export async function caricaHome(lingua) {
 
 export async function caricaPilota(slug, lingua) {
   const [dati, home] = await Promise.all([
-    richiesta(`/api/v1/piloti/${encodeURIComponent(slug)}`, lingua),
-    richiesta('/api/v1/home', lingua),
+    richiesta(`/api/v2/piloti/${encodeURIComponent(slug)}`, lingua),
+    richiesta('/api/v2/home', lingua),
   ])
 
   return {
@@ -175,8 +177,8 @@ export async function caricaPilota(slug, lingua) {
 
 export async function caricaScuderia(slug, lingua) {
   const [dati, home] = await Promise.all([
-    richiesta(`/api/v1/scuderie/${encodeURIComponent(slug)}`, lingua),
-    richiesta('/api/v1/home', lingua),
+    richiesta(`/api/v2/scuderie/${encodeURIComponent(slug)}`, lingua),
+    richiesta('/api/v2/home', lingua),
   ])
 
   return {
@@ -213,7 +215,7 @@ function adattaSchedaScuderia(scheda) {
 
 export async function caricaConfrontoPiloti(primoSlug, secondoSlug, lingua) {
   const dati = await richiesta(
-    `/api/v1/confronti/piloti/${encodeURIComponent(primoSlug)}/${encodeURIComponent(secondoSlug)}`,
+    `/api/v2/confronti/piloti/${encodeURIComponent(primoSlug)}/${encodeURIComponent(secondoSlug)}`,
     lingua,
   )
   return { ...dati, elementi: dati.elementi.map(adattaSchedaPilota) }
@@ -221,7 +223,7 @@ export async function caricaConfrontoPiloti(primoSlug, secondoSlug, lingua) {
 
 export async function caricaConfrontoScuderie(primoSlug, secondoSlug, lingua) {
   const dati = await richiesta(
-    `/api/v1/confronti/scuderie/${encodeURIComponent(primoSlug)}/${encodeURIComponent(secondoSlug)}`,
+    `/api/v2/confronti/scuderie/${encodeURIComponent(primoSlug)}/${encodeURIComponent(secondoSlug)}`,
     lingua,
   )
   return { ...dati, elementi: dati.elementi.map(adattaSchedaScuderia) }

@@ -105,7 +105,7 @@ async function overlayRatings(model, rows) {
     join catalog.${entity} e on e.id=s.${entity}_id
     join catalog.grand_prix gp on gp.id=s.grand_prix_id
     join ratings.dimension dim on dim.id=s.dimension_id
-    where gp.state='attuale' and dim.slug in ('race_pace','tyre_management','performance','qualifying','completion','annual_trend','race_results','qualifying_results')
+    where dim.slug in ('race_pace','tyre_management','performance','qualifying','completion','annual_trend','race_results','qualifying_results')
     order by e.slug,gp.slug,dim.slug,s.calculated_at desc,s.id desc`);
   const entities = new Map((await load(driver ? 'Pilota' : 'Scuderia'))
     .map((doc)=>[String(doc._id),doc.slug]));
@@ -134,10 +134,11 @@ async function overlayRatings(model, rows) {
   });
 }
 
-async function load(model) {
+async function load(model, garaId = null) {
   await ensureFresh();
   const now = Date.now();
-  const item = cache.get(model);
+  const cacheKey = garaId ? `${model}:${garaId}` : model;
+  const item = cache.get(cacheKey);
   if (item && item.expires > now) return item.promise;
   const [table, collection] = collections[model];
   const promise = (async () => {
@@ -145,19 +146,21 @@ async function load(model) {
       ? await getPool().query(`select payload from ${table}`)
       : ['AnalisiGara','AnalisiScuderia'].includes(model)
         ? await getPool().query(`select s.payload from ${table} s
-          where s.collection_name=$1 and s.payload->>'gara'=(
+          where s.collection_name=$1 and s.payload->>'gara'=coalesce($2::text,(
             select g.mongo_id from editorial.source_document g
             join catalog.grand_prix gp on gp.slug=g.payload->>'slug'
-            where g.collection_name='gare' and gp.state='attuale' limit 1)`, [collection])
+            where g.collection_name='gare' and gp.state='attuale' limit 1))`, [collection,garaId])
       : await getPool().query(`select payload from ${table} where collection_name=$1`, [collection]);
     const rows = await overlayCatalog(model, result.rows.map((row) => row.payload));
     return overlayRatings(model, rows);
   })();
-  cache.set(model, { promise, expires: now + TTL });
+  cache.set(cacheKey, { promise, expires: now + TTL });
   try { return await promise; }
-  catch (error) { cache.delete(model); throw error; }
+  catch (error) { cache.delete(cacheKey); throw error; }
 }
-function invalidate(...models) { for (const model of models) cache.delete(model); }
+function invalidate(...models) {
+  for (const key of cache.keys()) if(models.some(model=>key===model || key.startsWith(`${model}:`))) cache.delete(key);
+}
 
 async function hydrate(rows, populate) {
   if (!populate.length) return rows;
@@ -276,7 +279,8 @@ class Query {
   select() { return this; }
   lean() { this.plain=true; return this; }
   async execute() {
-    let rows = (await load(this.model)).filter((doc) => matches(doc, this.filter)).map(clone);
+    const garaId = ['AnalisiGara','AnalisiScuderia'].includes(this.model) && typeof this.filter.gara === 'string' ? this.filter.gara : null;
+    let rows = (await load(this.model,garaId)).filter((doc) => matches(doc, this.filter)).map(clone);
     sorted(rows, this.order);
     if (this.mode === 'one') rows = rows.slice(0, 1);
     await hydrate(rows, this.populates);

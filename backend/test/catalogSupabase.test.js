@@ -18,10 +18,30 @@ test('schema Supabase canonico: API numerica, relazioni e privilegi privati',asy
   const scores=await leggiCatalogo('f1_valutazioni',{'f1_analisi.pilota_slug':'eq.leclerc',metrica:'eq.gestioneGomme',anno:'eq.2026'},db);
   assert.equal(scores.length,1);assert.equal(scores[0].valore,24);assert.equal(scores[0].f1_valutazioni_fonti[0].fonte_url,'https://openf1.org/docs/');
   assert.equal((await leggiCatalogo('f1_piloti',{},db))[0].f1_iscrizioni[0].scuderia_slug,'ferrari');
+  assert.equal((await leggiCatalogo('f1_circuiti',{},db))[0].slug,'austin');
+  assert.deepEqual(await leggiCatalogo('f1_iscrizioni',{pilota:'eq.leclerc',gara:'eq.usa-austin'},db),
+    [{anno:2026,gara_slug:'usa-austin',pilota_slug:'leclerc',scuderia_slug:'ferrari'}]);
+  assert.deepEqual(await leggiCatalogo('f1_iscrizioni',{scuderia:'eq.assente'},db),[]);
   await db.exec('update ratings.driver_score set score=null');
   assert.equal((await leggiCatalogo('f1_valutazioni',{},db))[0].valore,null);
   await assert.rejects(db.exec('update ratings.driver_score set score=101'));
   await db.exec('update ratings.driver_score set score=24');
+  await db.exec(`insert into catalog.grand_prix(slug,circuit_id,name,circuit_name,country_name,season,analysis_order,calendar_order,state)
+    values('italia-monza',1,'Italia','Monza','Italia',2026,1,1,'conclusa');
+    insert into catalog.entry values(2,1,1);`);
+  for(const [n,p] of [
+    ['gare',{_id:'000000000000000000000006',slug:'italia-monza'}],
+    ['analisiGare',{_id:'000000000000000000000007',gara:'000000000000000000000006',pilota:'000000000000000000000002',scuderia:'000000000000000000000001'}],
+  ])await db.query('insert into editorial.source_document(collection_name,mongo_id,payload) values($1,$2,$3)',[n,p._id,JSON.stringify(p)]);
+  const config=require('../config/database');const originale=config.getPool;
+  config.getPool=()=>db;
+  try {
+    const repo=require('../repositories/postgresCompat');
+    const storico=await repo.model('AnalisiGara').find({gara:'000000000000000000000006'}).populate('gara').populate('pilota').lean();
+    assert.equal(storico.length,1);assert.equal(storico[0].gara.slug,'italia-monza');assert.equal(storico[0].gara.stato,'conclusa');
+    assert.equal((await repo.load('AnalisiGara')).length,1);
+    assert.equal((await repo.load('AnalisiGara'))[0].gara,'000000000000000000000003');
+  }finally{config.getPool=originale;}
   await db.exec('set role anon');await assert.rejects(db.query('select * from catalog.driver'));await assert.rejects(db.query('select * from editorial.source_document'));await db.exec('reset role');
  }finally{await db.close();}
 });

@@ -86,7 +86,7 @@ app.use(
     legacyHeaders: false,
     skip: (richiesta) =>
       richiesta.method === "OPTIONS" ||
-      ["/health", "/v1/health"].includes(richiesta.path),
+      ["/health", "/v1/health", "/v2/health"].includes(richiesta.path),
     handler(richiesta, risposta) {
       if (richiesta.originalUrl.startsWith("/api/v1")) {
         return inviaErrore(
@@ -143,8 +143,10 @@ app.use("/api/v2", require("./relational/api").creaRouter());
 app.get("/api", (richiesta, risposta) => {
   risposta.json({
     nome: "Race Analysis Hub API",
-    descrizione: "Usare esclusivamente la versione pubblica v1",
-    versioneAttuale: "/api/v1",
+    descrizione: "API pubbliche v1 e v2; la v2 espone analisi numeriche e risorse relazionali",
+    versioneAttuale: "/api/v2",
+    versioniDisponibili: ["/api/v1", "/api/v2"],
+    specificaOpenApiV2: "/api/v2/openapi.json",
     documentazione: "/api/docs",
   });
 });
