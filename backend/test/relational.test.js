@@ -81,3 +81,33 @@ test('servizi v2: lingua, errori, cache e contratto numerico condiviso col clien
     for(const [p] of percorsi)assert.ok(spec.paths['/api/v2'+p.replace(/:([A-Za-z]+)/g,'{$1}')]);
   }finally{await new Promise(r=>server.close(r));}
 });
+
+
+test('le risorse GP applicano il contesto corrente prima della paginazione',async()=>{
+  const {leggiCatalogo}=require('../relational/letturaCatalogo');
+  for(const tabella of ['f1_gare','f1_circuiti','f1_iscrizioni','f1_valutazioni','f1_risultati','f1_piloti']){
+    let sql;
+    await leggiCatalogo(tabella,{limit:'1',offset:'0'},{query:async(q)=>{sql=q;return {rows:[]};}});
+    assert.match(sql,/state='attuale'/,tabella);
+    assert.ok(sql.indexOf("state='attuale'")<sql.indexOf(' limit '),tabella);
+  }
+});
+
+test('gli URL diretti bloccano altri GP e seguono il cambio del GP corrente',async(t)=>{
+  const {Gara}=require('../repositories/modelli');
+  const originale=Gara.findOne;
+  t.after(()=>{Gara.findOne=originale;});
+  let corrente='usa-austin';
+  Gara.findOne=()=>({sort(){return this;},async lean(){return {slug:corrente,stato:'attuale'};}});
+  const controller=require('../relational/analisi');
+  for(const nome of ['dettaglioGara','analisiPilotaPerGara','analisiScuderiaPerGara']){
+    const res={locals:{},set(){return this;},status(code){this.code=code;return this;},json(body){this.body=body;return this;}};
+    await controller[nome]({params:{garaSlug:'messico'}},res);
+    assert.equal(res.code,404);
+    assert.equal(res.body.errore.codice,'GARA_NON_ACCESSIBILE');
+  }
+  corrente='messico';
+  const res={locals:{},set(){return this;},status(code){this.code=code;return this;},json(body){this.body=body;return this;}};
+  await controller.dettaglioGara({params:{garaSlug:'usa-austin'}},res);
+  assert.equal(res.code,404);
+});

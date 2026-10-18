@@ -12,7 +12,7 @@ const percorsoCatalogo = path.join(
   '../src/i18n/traduzioniInterfaccia.js',
 )
 const CODICI_ATTESI = ['it', 'en', 'fr', 'pt', 'es', 'de']
-const VALORI_INVARIANTI = new Set(['DNP', 'F1', 'FIA', 'App Store', 'POS.'])
+const VALORI_INVARIANTI = new Set(['DNP', 'DNS', 'F1', 'FIA', 'App Store', 'POS.'])
 const TRADUZIONI_LEGITTIMAMENTE_IDENTICHE = new Set([
   'fr.indice',
   'pt.circuito',

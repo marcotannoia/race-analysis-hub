@@ -44,7 +44,7 @@ function creaRouter({ readImpl = (tabella, parametri) => require('./letturaCatal
           params[campo]=`eq.${v}`;
         }
         const dati=await leggi(config.tabella,params);
-        res.set('Cache-Control','public, max-age=300').json({dati,paginazione:{limit:Number(params.limit),offset:Number(params.offset)}});
+        res.set('Cache-Control','no-store').json({dati,paginazione:{limit:Number(params.limit),offset:Number(params.offset)}});
       } catch(e){next(e);}
     });
   }

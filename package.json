@@ -19,5 +19,8 @@
     "lint": "npm --prefix frontend run lint",
     "lint:api": "npm --prefix backend run lint:api",
     "test": "npm --prefix backend test"
+  },
+  "dependencies": {
+    "@supabase/server": "^1.9.2"
   }
 }

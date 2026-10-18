@@ -3,7 +3,7 @@ const MAPPA={race_pace:'passoGara',tyre_management:'gestioneGomme',performance:'
 async function leggiCatalogo(tabella,p,db=database()){
  const metricCase=`case d.slug ${Object.entries(MAPPA).map(([a,b])=>`when '${a}' then '${b}'`).join(' ')} end`;
  const q={
-  f1_piloti:{from:'catalog.driver t',select:"jsonb_build_object('slug',t.slug,'nome',t.name,'codice',t.code,'numero',t.car_number,'nazionalita_iso2',t.nationality_iso2,'nazionalita_iso3',t.nationality_iso3,'f1_iscrizioni',coalesce((select jsonb_agg(distinct jsonb_build_object('anno',g.season,'scuderia_slug',team.slug)) from catalog.entry e join catalog.grand_prix g on g.id=e.grand_prix_id join catalog.team team on team.id=e.team_id where e.driver_id=t.id),'[]'::jsonb))",order:'t.slug',filtri:{}},
+  f1_piloti:{from:'catalog.driver t',select:"jsonb_build_object('slug',t.slug,'nome',t.name,'codice',t.code,'numero',t.car_number,'nazionalita_iso2',t.nationality_iso2,'nazionalita_iso3',t.nationality_iso3,'f1_iscrizioni',coalesce((select jsonb_agg(distinct jsonb_build_object('anno',g.season,'scuderia_slug',team.slug)) from catalog.entry e join catalog.grand_prix g on g.id=e.grand_prix_id join catalog.team team on team.id=e.team_id where e.driver_id=t.id and g.state='attuale'),'[]'::jsonb))",order:'t.slug',filtri:{}},
   f1_scuderie:{from:'catalog.team t',select:"jsonb_build_object('slug',t.slug,'nome',t.name,'abbreviazione',t.abbreviation,'colore',t.colour,'nazionalita',t.nationality)",order:'t.slug',filtri:{}},
   f1_gare:{from:'catalog.grand_prix t join catalog.circuit c on c.id=t.circuit_id',select:"jsonb_build_object('slug',t.slug,'anno',t.season,'circuito_slug',c.slug,'nome',t.name,'round',t.calendar_order,'stato',t.state,'f1_circuiti',jsonb_build_object('nome',t.circuit_name,'paese',t.country_name))",order:'t.season desc,t.calendar_order',filtri:{anno:'t.season',stato:'t.state'}},
   f1_metriche:{from:'ratings.dimension d',select:`jsonb_build_object('codice',${metricCase},'nome',d.name,'unita','0–100')`,where:`${metricCase} is not null`,order:'d.slug',filtri:{}},
@@ -26,7 +26,18 @@ async function leggiCatalogo(tabella,p,db=database()){
    q.f1_valutazioni={from:`(${sub('driver')} union all ${sub('team')}) t`,select:"jsonb_build_object('analisi_id',concat(case when t.tipo='driver' then 'pilota' else 'scuderia' end,':',t.entita,':',t.gara),'anno',t.season,'metrica',t.metrica,'valore',t.score,'campione',t.sample_size,'stato',case when t.score is null then 'dati_insufficienti' else 'disponibile' end,'metodo',t.model_version,'ultimo_round_incluso',null,'f1_analisi',jsonb_build_object('gara_slug',t.gara,'pilota_slug',case when t.tipo='driver' then t.entita else null end,'scuderia_slug',t.team,'tipo',case when t.tipo='driver' then 'pilota' else 'scuderia' end),'f1_valutazioni_fonti',t.fonti)",order:'t.tipo,t.entita,t.gara,t.metrica',where:'t.metrica is not null',filtri:{anno:'t.season',metrica:'t.metrica','f1_analisi.gara_slug':'t.gara','f1_analisi.pilota_slug':"case when t.tipo='driver' then t.entita else null end",'f1_analisi.scuderia_slug':'t.team'}};
  }
  const cfg=q[tabella];if(!cfg)throw new Error('Tabella non consentita');
+ // Il contesto pubblico segue sempre lo stato nel database, anche dopo il cambio automatico.
+ const corrente="select id from catalog.grand_prix where state='attuale'";
+ const contesto={
+  f1_gare:`t.id in (${corrente})`,
+  f1_circuiti:`t.id in (select circuit_id from catalog.grand_prix where state='attuale')`,
+  f1_iscrizioni:`g.id in (${corrente})`,
+  f1_valutazioni:`(t.gara,t.season) in (select slug,season from catalog.grand_prix where state='attuale')`,
+  // Le edizioni precedenti del circuito attuale alimentano lo storico delle analisi.
+  f1_risultati:`exists (select 1 from catalog.grand_prix gp join catalog.circuit c on c.id=gp.circuit_id where gp.state='attuale' and c.f1db_circuit_id=r.circuit_id and (r.year<gp.season or (r.year=gp.season and r.round<=gp.calendar_order)))`,
+ };
  const values=[],where=cfg.where?[cfg.where]:[];
+ if(contesto[tabella])where.push(contesto[tabella]);
  for(const[k,v]of Object.entries(p)){
   if(['select','order','limit','offset'].includes(k))continue;
   if(!Object.hasOwn(cfg.filtri,k)||typeof v!=='string'||!v.startsWith('eq.'))throw new Error('Filtro non consentito');

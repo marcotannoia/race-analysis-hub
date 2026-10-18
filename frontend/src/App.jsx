@@ -6,6 +6,7 @@ import ScuderiaPage from './pages/ScuderiaPage.jsx'
 import PaginaNonTrovata from './pages/PaginaNonTrovata.jsx'
 import ConfrontoPage from './pages/ConfrontoPage.jsx'
 import usePercorso from './hooks/usePercorso.js'
+import SelettoreLingua from './components/SelettoreLingua.jsx'
 import { FornitoreLingua } from './i18n/LinguaContext.jsx'
 import { useLingua } from './i18n/contestoLingua.js'
 
@@ -36,6 +37,7 @@ function ContenutoApp() {
       </div>
       <header className="site-header">
         <a href="/" aria-label={t.homeAria}>RACE ANALYSIS HUB</a>
+        <SelettoreLingua />
       </header>
       <main>{pagina}</main>
       <Footer />

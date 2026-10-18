@@ -14,6 +14,9 @@ function normalizzaQualifica(testo) {
 }
 
 function estraiPosizione(contenuto, tipo, t) {
+  const statoNonDisputato = /(?:GP|GRAND PRIX|GRANDE PR[ÉE]MIO|GRAN PREMIO|QUALIFICHE|QUALIFYING|QUALIFICATIONS|QUALIFICAÇÃO|CLASIFICACIÓN) (?:NON DISPUTAT[EO]|NOT HELD|NON DISPUTÉES?|NÃO DISPUTAD[AO]|NO DISPUTAD[AO]|NICHT AUF DIESER STRECKE AUSGETRAGEN)(?: (?:SU QUESTO|AT THIS|SUR CE|NESTE|EN ESTE) CIRCUITO)?/i
+  if (statoNonDisputato.test(contenuto)) return t.nonDisputato
+
   const statoNonCorso = /NON CORSO|DID NOT RACE|N['’]A PAS COURU|NÃO CORREU|NO COMPITIÓ|NICHT (?:IN DER F1 )?ANGETRETEN/i
   if (statoNonCorso.test(contenuto)) return t.nonCorso
 

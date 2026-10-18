@@ -1,7 +1,7 @@
 const risorse=Object.keys(require('./risorse'));
 const originale=require('../docs/openapi');
 module.exports={openapi:'3.1.0',servers:[{url:'/'}],security:[],info:{title:'Race Analysis Hub — API relazionale',version:'2.0.0',license:require('../docs/openapi').info.license,
-  description:'Valutazioni numeriche da 0 a 100; null significa dati insufficienti. Le risposte sono paginate, massimo 100 righe. I punteggi descrittivi non sono probabilità.'},
+  description:'Valutazioni numeriche da 0 a 100; null significa dati insufficienti. Le risorse GP sono limitate al GP attuale; i risultati includono le sue edizioni precedenti. Le risposte sono paginate, massimo 100 righe. I punteggi descrittivi non sono probabilità.'},
   paths:Object.fromEntries(risorse.map(r=>[`/api/v2/${r}`,{get:{operationId:`elenca_${r}_v2`,summary:`Elenco ${r}`,parameters:[
     {name:'limit',in:'query',schema:{type:'integer',minimum:1,maximum:100,default:100}},
     {name:'offset',in:'query',schema:{type:'integer',minimum:0,maximum:1000000,default:0}},
@@ -42,6 +42,6 @@ documento.paths['/api/v2/automazione']={get:{operationId:'automazione_gp_v2',sum
   503:{description:'Database non disponibile'}}}};
 
 delete documento.components.schemas.GaraBreve.properties.stato.const;
-documento.components.schemas.GaraBreve.properties.stato.enum=['conclusa','attuale','futura'];
+documento.components.schemas.GaraBreve.properties.stato.enum=['attuale'];
 for(const p of ['/api/v2/gare/{garaSlug}','/api/v2/gare/{garaSlug}/piloti/{pilotaSlug}/analisi','/api/v2/gare/{garaSlug}/scuderie/{scuderiaSlug}/analisi'])
-  documento.paths[p].get.description='Dati del Gran Premio selezionato tra tutti i GP del catalogo; valutazioni numeriche 0–100 o null. Lo stato del GP è conservato.';
+  documento.paths[p].get.description='Disponibile esclusivamente il Gran Premio attuale; gli altri GP restituiscono 404. Valutazioni numeriche 0–100 o null.';

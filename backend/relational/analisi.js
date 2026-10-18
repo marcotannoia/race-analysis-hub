@@ -16,7 +16,11 @@ function queryAnalisi(modello, filtro) {
 }
 
 async function trovaGara(req, res) {
-  const gara = await Gara.findOne({slug:req.params.garaSlug}).lean();
+  const gara = await require('../services/garaAttuale')();
+  if (gara && gara.slug !== req.params.garaSlug) {
+    inviaErrore(res,404,'GARA_NON_ACCESSIBILE','E disponibile esclusivamente il Gran Premio attuale');
+    return null;
+  }
   if (!gara) inviaErrore(res,404,'GARA_NON_TROVATA','Il Gran Premio richiesto non esiste');
   return gara;
 }

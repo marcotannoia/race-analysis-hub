@@ -1,0 +1,76 @@
+{
+  "verificatoIlUTC": "2026-10-12T12:12:54.836Z",
+  "commit": "04fc9c6a1be7466e2c3c06db36016ec2f5d58198",
+  "fonte": "v2026.17.0",
+  "lingue": [
+    {
+      "lingua": "it",
+      "gp": "usa-austin",
+      "gareConcluse": 17,
+      "prossime": 6,
+      "mondialiPiloti": 23,
+      "mondialiScuderie": 11,
+      "previsioni": 22,
+      "training": 16,
+      "graficoRussell": 17
+    },
+    {
+      "lingua": "en",
+      "gp": "usa-austin",
+      "gareConcluse": 17,
+      "prossime": 6,
+      "mondialiPiloti": 23,
+      "mondialiScuderie": 11,
+      "previsioni": 22,
+      "training": 16,
+      "graficoRussell": 17
+    },
+    {
+      "lingua": "fr",
+      "gp": "usa-austin",
+      "gareConcluse": 17,
+      "prossime": 6,
+      "mondialiPiloti": 23,
+      "mondialiScuderie": 11,
+      "previsioni": 22,
+      "training": 16,
+      "graficoRussell": 17
+    },
+    {
+      "lingua": "pt",
+      "gp": "usa-austin",
+      "gareConcluse": 17,
+      "prossime": 6,
+      "mondialiPiloti": 23,
+      "mondialiScuderie": 11,
+      "previsioni": 22,
+      "training": 16,
+      "graficoRussell": 17
+    },
+    {
+      "lingua": "es",
+      "gp": "usa-austin",
+      "gareConcluse": 17,
+      "prossime": 6,
+      "mondialiPiloti": 23,
+      "mondialiScuderie": 11,
+      "previsioni": 22,
+      "training": 16,
+      "graficoRussell": 17
+    },
+    {
+      "lingua": "de",
+      "gp": "usa-austin",
+      "gareConcluse": 17,
+      "prossime": 6,
+      "mondialiPiloti": 23,
+      "mondialiScuderie": 11,
+      "previsioni": 22,
+      "training": 16,
+      "graficoRussell": 17
+    }
+  ],
+  "schedePubblicheVerificate": 33,
+  "health": "ok",
+  "migrazione": "Avvio del server successivo alla verifica transazionale JSON-Atlas con zero differenze."
+}

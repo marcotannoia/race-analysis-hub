@@ -29,19 +29,19 @@ async function main() {
   }
   await controlla('/api/v2');
   assert.equal((await controlla('/api/v2/health')).database,'supabase');
+  const corrente=await controlla('/api/v2/gare/attuale');
+  esempi.garaSlug=corrente.gara.slug;
   for(const nome of Object.keys(require('../relational/risorse'))){
     const dati=await controlla(`/api/v2/${nome}?limit=5`);
     assert.ok(dati.dati.length>0 && dati.dati.length<=5,nome);
   }
   for(const [p] of percorsi) await controlla('/api/v2'+p.replace(/:([A-Za-z]+)/g,(_,k)=>esempi[k]));
-  await controlla('/api/v2/gare/italia-monza');
-  await controlla('/api/v2/gare/italia-monza/piloti/leclerc/analisi');
-  await controlla('/api/v2/gare/italia-monza/scuderie/ferrari/analisi');
-  const storico=await controlla('/api/v2/risultati?anno=2024&gara=usa-austin&pilota=leclerc&sessione=RACE_RESULT');
-  assert.equal(storico.dati.length,1);assert.equal(storico.dati[0].posizione,1);
-  assert.ok((await controlla('/api/v2/risultati?offset=188100')).dati.length>0);
-  const gomme=await controlla('/api/v2/valutazioni?gara=usa-austin&pilota=leclerc&metrica=gestioneGomme');
-  assert.equal(gomme.dati[0].valore,24);
+  await controlla('/api/v2/gare/non-attuale',404);
+  await controlla('/api/v2/gare/non-attuale/piloti/leclerc/analisi',404);
+  await controlla('/api/v2/gare/non-attuale/scuderie/ferrari/analisi',404);
+  const gare=await controlla('/api/v2/gare');
+  assert.ok(gare.dati.every(g=>g.slug===esempi.garaSlug && g.stato==='attuale'));
+  assert.equal((await controlla('/api/v2/valutazioni?gara=non-attuale')).dati.length,0);
   await controlla('/api/v2/piloti/leclerc?lingua=en');
   for(const p of ['/api/v2/valutazioni?limit=101','/api/v2/risultati?foo=1','/api/v2/piloti/leclerc?lingua=xx']) await controlla(p,400);
   await controlla('/api/v2/inesistente',404);

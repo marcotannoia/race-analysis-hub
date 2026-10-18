@@ -5,7 +5,7 @@ import { useLingua } from '../i18n/contestoLingua.js'
 const NUMERO_RIGHE_INIZIALI = 10
 
 function ClassificaPrevisionale({ previsioni }) {
-  const { t } = useLingua()
+  const { t, lingua } = useLingua()
   const [mostraTutti, setMostraTutti] = useState(false)
 
   if (!previsioni?.classifica?.length) {
@@ -33,6 +33,13 @@ function ClassificaPrevisionale({ previsioni }) {
           <p>
             {t.favoritiPer(previsioni.gara.nome, previsioni.gara.circuito)}
           </p>
+          {previsioni.meteo && (
+            <p>
+              {t.meteoPioggia}: <strong>{previsioni.meteo.probabilitaPioggiaPercentuale}%</strong>
+              {' · '}{t.meteoAggiornato} {new Date(previsioni.meteo.rilevatoIl).toLocaleString(lingua)}
+              {' · '}<a href={previsioni.meteo.fonteUrl} target="_blank" rel="noreferrer">{previsioni.meteo.fonte}</a>
+            </p>
+          )}
         </div>
       </div>
 
