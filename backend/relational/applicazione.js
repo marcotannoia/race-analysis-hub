@@ -4,7 +4,7 @@ const { convalidaLingua } = require('../i18n/lingue');
 const convalidaQuery = require('../middleware/convalidaQuery');
 const convalidaSlug = require('../middleware/convalidaParametriSlug');
 
-// Stessi servizi applicativi e stessa base Postgres, con analisi numeriche v2.
+// Stessi servizi e dati della v1, con indici numerici aggiuntivi nella v2.
 const percorsi = [
   ['/home', 'home'],
   ['/stagione', 'stagione'],
@@ -39,9 +39,11 @@ function analisiNumerica(analisi) {
     posizioneGara: posizioneStorica(annuali.risultatiGara?.[anno]),
     posizioneQualifica: posizioneStorica(annuali.risultatiQualifica?.[anno]),
   });
-  for (const { stagione, posizioneGara, posizioneQualifica } of analisi.storicoEdizioni || [])
-    edizioni.set(stagione, { stagione, posizioneGara, posizioneQualifica });
+  for (const edizione of analisi.storicoEdizioni || [])
+    edizioni.set(edizione.stagione, { ...edizione });
   return {
+    // Conserva anche i contenuti editoriali localizzati già disponibili nella v1.
+    ...analisi,
     ...(pilota ? { pilota } : {}), scuderia, gara,
     valutazioni, valutazioniPerAnno, overall, fonti,
     recapNumerici: analisi.recapNumerici, sintesiNumerica: analisi.sintesiNumerica,

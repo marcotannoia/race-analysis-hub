@@ -8,8 +8,8 @@ const esempi = {pilotaSlug:'leclerc',scuderiaSlug:'ferrari',garaSlug:'usa-austin
 function verificaAnalisi(dati) {
   if (!dati || typeof dati !== 'object') return;
   if (Object.hasOwn(dati,'valutazioni') && Object.hasOwn(dati,'gara')) {
-    assert.equal(dati.prestazioni, undefined);
-    assert.equal(dati.considerazioniFinali, undefined);
+    assert.ok(dati.prestazioni && typeof dati.prestazioni === 'object');
+    assert.equal(typeof dati.considerazioniFinali, 'string');
     assert.deepEqual(Object.keys(dati.overall).sort(),Object.keys(require('../services/recapNumerici').DEFINIZIONI).sort());
     assert.ok(dati.recapNumerici && dati.sintesiNumerica);
     assert.ok(dati.sintesiNumerica.coperturaPercentuale>=0 && dati.sintesiNumerica.coperturaPercentuale<=100);

@@ -13,19 +13,14 @@ module.exports={openapi:'3.1.0',servers:[{url:'/'}],security:[],info:{title:'Rac
     stato:{type:'string'},metodo:{type:'string'},ultimo_round_incluso:{type:['integer','null']},f1_analisi:{type:'object'}
   }}}}};
 
-// I servizi compositi condividono il contratto applicativo, con analisi v2 numeriche.
+// I servizi compositi condividono il contratto applicativo, con testi editoriali e indici numerici v2.
 const documento=module.exports;
 const valutazione=documento.components.schemas.Valutazione;
 documento.components=structuredClone(originale.components);
 documento.components.schemas.Valutazione=valutazione;
 documento.components.schemas.Valutazione.properties.valore={type:['number','null'],minimum:0,maximum:100};
 const base=documento.components.schemas.AnalisiBase;
-const campi=['gara','valutazioni','valutazioniPerAnno','overall','recapNumerici','sintesiNumerica','aggiornamentiInArrivo','aggiornamentiTecniciUfficiali','storicoEdizioni','fonti'];
-base.properties=Object.fromEntries(campi.map(k=>[k,base.properties[k]]));
-base.required=campi.filter(c=>c!=='aggiornamentiTecniciUfficiali');
-const storico=documento.components.schemas.StoricoEdizione;
-storico.properties=Object.fromEntries(['stagione','posizioneGara','posizioneQualifica'].map(k=>[k,storico.properties[k]]));
-storico.required=['stagione','posizioneGara','posizioneQualifica'];
+// Mantiene il contratto editoriale della v1 insieme alle metriche numeriche.
 documento.tags=originale.tags;
 for(const [percorso] of require('./applicazione').percorsi){
   const chiave=percorso.replace(/:([A-Za-z]+)/g,'{$1}');

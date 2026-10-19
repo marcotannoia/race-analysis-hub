@@ -40,20 +40,22 @@ test('DATABASE_CONNECTION è supportato con TLS verificato e precedenza della va
   assert.throws(()=>configurazione({DATABASE_CONNECTION:env.DATABASE_CONNECTION+'?sslmode=disable'}));
 });
 
-test('la v2 elimina la prosa delle prestazioni anche nei confronti e conserva zero e null',()=>{
+test('la v2 conserva i testi della v1 anche nei confronti e mantiene zero e null',()=>{
   const {presentaRisposta}=require('../relational/applicazione');
   const analisi={gara:{slug:'usa-austin'},valutazioni:{passoGara:0,gestioneGomme:null},
     valutazioniPerAnno:{2025:{passoGara:42}},prestazioni:{gestioneGomme:'testo legacy'},
-    considerazioniFinali:'testo legacy',datiPerAnno:{risultatiGara:{2024:'P1 (Ferrari)'},risultatiQualifica:{2024:'Q4 (Ferrari)'}},
+    notaBene:'nota storica',considerazioniFinali:'testo legacy',datiPerAnno:{risultatiGara:{2024:'P1 (Ferrari)'},risultatiQualifica:{2024:'Q4 (Ferrari)'}},
     storicoEdizioni:[],fonti:['https://openf1.org/docs/']};
   const dato=presentaRisposta({elementi:[{analisi}]}).elementi[0].analisi;
   assert.equal(dato.valutazioni.passoGara,0);
   assert.equal(dato.valutazioni.gestioneGomme,null);
-  assert.equal(dato.prestazioni,undefined);
-  assert.equal(dato.considerazioniFinali,undefined);
+  assert.deepEqual(dato.prestazioni,analisi.prestazioni);
+  assert.equal(dato.considerazioniFinali,analisi.considerazioniFinali);
+  assert.equal(dato.notaBene,analisi.notaBene);
+  assert.deepEqual(dato.datiPerAnno,analisi.datiPerAnno);
   assert.deepEqual(dato.storicoEdizioni,[{stagione:2024,posizioneGara:'P1',posizioneQualifica:'Q4'}]);
   assert.equal(analisi.prestazioni.gestioneGomme,'testo legacy');
-  assert.equal(presentaRisposta({analisiPiloti:[analisi]}).analisiPiloti[0].prestazioni,undefined);
+  assert.deepEqual(presentaRisposta({analisiPiloti:[analisi]}).analisiPiloti[0].prestazioni,analisi.prestazioni);
 });
 
 test('servizi v2: lingua, errori, cache e contratto numerico condiviso col client',async()=>{
@@ -63,14 +65,14 @@ test('servizi v2: lingua, errori, cache e contratto numerico condiviso col clien
     chiamate++;
     res.json({lingua:res.locals.lingua,pilota:{slug:req.params.pilotaSlug},analisi:{gara:{slug:'usa-austin'},
       valutazioni:{passoGara:0,gestioneGomme:null},valutazioniPerAnno:{},
-      prestazioni:{passoGara:'non esporre'},storicoEdizioni:[],fonti:[]}});
+      prestazioni:{passoGara:'testo v1 conservato'},storicoEdizioni:[],fonti:[]}});
   }}));
   const server=api.listen(0,'127.0.0.1');await new Promise(r=>server.once('listening',r));
   const base=`http://127.0.0.1:${server.address().port}/api/v2`;
   try{
     const r=await fetch(`${base}/piloti/leclerc?lingua=en`);
     assert.equal(r.status,200);assert.equal(r.headers.get('content-language'),'en');
-    const dati=await r.json();assert.equal(dati.analisi.prestazioni,undefined);
+    const dati=await r.json();assert.deepEqual(dati.analisi.prestazioni,{passoGara:'testo v1 conservato'});
     assert.equal(dati.analisi.valutazioni.passoGara,0);
     const cached=await fetch(`${base}/piloti/leclerc?lingua=en`);
     assert.deepEqual(await cached.json(),dati);assert.equal(chiamate,1);

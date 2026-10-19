@@ -137,3 +137,7 @@ errate, gli endpoint dei GP precedenti, le ultime pagine dello storico e la v1.
 su un'esportazione pulita del commit. Verificata visivamente la scheda Leclerc
 pubblicata, con storico risultati e punteggi gomme 24/100 e passo gara 82.9/100.
 Rapporto dettagliato: `VERIFICA-V2-PUBBLICA.json`.
+
+### Compatibilità dei contenuti editoriali
+
+La v2 conserva anche i testi localizzati della v1: risultati, note, prestazioni, affidabilità, considerazioni finali e dettagli per anno. Le valutazioni numeriche restano campi separati con scala 0–100; `null` indica dati insufficienti. I contenuti provengono dagli stessi documenti già migrati in PostgreSQL, senza duplicare o inventare dati. Le proprietà tecniche del circuito sono condivise fra v1 e v2: quando assenti anche nella sorgente v1, non vengono sostituite con valori presunti.
