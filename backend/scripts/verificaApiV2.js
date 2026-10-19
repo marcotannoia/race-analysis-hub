@@ -9,6 +9,10 @@ function verificaAnalisi(dati) {
   if (!dati || typeof dati !== 'object') return;
   if (Object.hasOwn(dati,'valutazioni') && Object.hasOwn(dati,'gara')) {
     assert.ok(dati.prestazioni && typeof dati.prestazioni === 'object');
+    assert.ok(dati.affidabilita===null || typeof dati.affidabilita==='number');
+    assert.equal(dati.prestazioni.affidabilita,dati.affidabilita);
+    assert.equal(typeof dati.nota_bene,'string');
+    assert.equal(typeof dati.considerazioni_finali,'string');
     assert.equal(typeof dati.considerazioniFinali, 'string');
     assert.deepEqual(Object.keys(dati.overall).sort(),Object.keys(require('../services/recapNumerici').DEFINIZIONI).sort());
     assert.ok(dati.recapNumerici && dati.sintesiNumerica);

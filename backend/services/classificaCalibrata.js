@@ -89,7 +89,9 @@ function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua
         nota: valoreLocalizzato(analisi.get(p.pilotaSlug), 'aggiornamentiInArrivo', lingua) || testi.note.nessunVantaggio } };
   }).sort((a, b) => b.indice - a.indice ||
     campioni.mappingPiloti[a.pilota.slug].localeCompare(campioni.mappingPiloti[b.pilota.slug]));
-  return { lingua, gara: { slug: gara.slug, nome: valoreLocalizzato(gara, "nome", lingua),
+  const dataAggiornamento = gara.previsioneCalibrata?.calcolatoIl || gara.updatedAt || calibrazione.calcolatoIl;
+  return { lingua, aggiornatoIl: new Date(dataAggiornamento).toISOString(),
+    calcolatoIl: new Date(dataAggiornamento).toISOString(), gara: { slug: gara.slug, nome: valoreLocalizzato(gara, "nome", lingua),
     circuito: valoreLocalizzato(gara, "circuito", lingua) }, modello: metodo.versione, meteo, circuitiSimili: [],
     pesi: CHIAVI_API.map((chiave) => ({ chiave, nome: nomeFattore(chiave), pesoPercentuale: pesi[chiave] || 0 })),
     calibrazione: { stato: metodo.stato, combinazioniEsaminate: metodo.ricerca.combinazioni,

@@ -20,7 +20,13 @@ documento.components=structuredClone(originale.components);
 documento.components.schemas.Valutazione=valutazione;
 documento.components.schemas.Valutazione.properties.valore={type:['number','null'],minimum:0,maximum:100};
 const base=documento.components.schemas.AnalisiBase;
-// Mantiene il contratto editoriale della v1 insieme alle metriche numeriche.
+// Testi editoriali preservati, affidabilità meccanica numerica nella v2.
+base.properties.affidabilita = {type:['number','null'],minimum:0,maximum:100};
+base.properties.nota_bene = {type:'string'};
+base.properties.considerazioni_finali = {type:'string'};
+documento.components.schemas.Prestazioni.properties.affidabilita={type:['number','null'],minimum:0,maximum:100};
+documento.components.schemas.ValutazioniNumeriche.properties.affidabilita={type:['number','null'],minimum:0,maximum:100};
+for(const campo of ['aggiornatoIl','calcolatoIl']) documento.components.schemas.ClassificaPrevisionale.properties[campo]={type:'string',format:'date-time'};
 documento.tags=originale.tags;
 for(const [percorso] of require('./applicazione').percorsi){
   const chiave=percorso.replace(/:([A-Za-z]+)/g,'{$1}');

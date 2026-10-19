@@ -195,6 +195,7 @@ function presentaAnalisiBase(analisi, lingua = "it") {
   const gestioneGommePerAnno = normalizzaTestiAnnuali(contenuti.gomme);
 
   return {
+    affidabilitaNumerica: analisi.overallSemantici?.stagioneCorrente?.affidabilita || null,
     valutazioni: valutazioniNumeriche(analisi),
     valutazioniPerAnno: valutazioniPerAnno(analisi),
     gara: presentaGaraBreve(analisi.gara, lingua),

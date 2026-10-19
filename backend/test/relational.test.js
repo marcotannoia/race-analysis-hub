@@ -49,13 +49,13 @@ test('la v2 conserva i testi della v1 anche nei confronti e mantiene zero e null
   const dato=presentaRisposta({elementi:[{analisi}]}).elementi[0].analisi;
   assert.equal(dato.valutazioni.passoGara,0);
   assert.equal(dato.valutazioni.gestioneGomme,null);
-  assert.deepEqual(dato.prestazioni,analisi.prestazioni);
+  assert.deepEqual(dato.prestazioni,{...analisi.prestazioni,affidabilita:null});
   assert.equal(dato.considerazioniFinali,analisi.considerazioniFinali);
   assert.equal(dato.notaBene,analisi.notaBene);
   assert.deepEqual(dato.datiPerAnno,analisi.datiPerAnno);
   assert.deepEqual(dato.storicoEdizioni,[{stagione:2024,posizioneGara:'P1',posizioneQualifica:'Q4'}]);
   assert.equal(analisi.prestazioni.gestioneGomme,'testo legacy');
-  assert.deepEqual(presentaRisposta({analisiPiloti:[analisi]}).analisiPiloti[0].prestazioni,analisi.prestazioni);
+  assert.deepEqual(presentaRisposta({analisiPiloti:[analisi]}).analisiPiloti[0].prestazioni,{...analisi.prestazioni,affidabilita:null});
 });
 
 test('servizi v2: lingua, errori, cache e contratto numerico condiviso col client',async()=>{
@@ -72,7 +72,7 @@ test('servizi v2: lingua, errori, cache e contratto numerico condiviso col clien
   try{
     const r=await fetch(`${base}/piloti/leclerc?lingua=en`);
     assert.equal(r.status,200);assert.equal(r.headers.get('content-language'),'en');
-    const dati=await r.json();assert.deepEqual(dati.analisi.prestazioni,{passoGara:'testo v1 conservato'});
+    const dati=await r.json();assert.deepEqual(dati.analisi.prestazioni,{passoGara:'testo v1 conservato',affidabilita:null});
     assert.equal(dati.analisi.valutazioni.passoGara,0);
     const cached=await fetch(`${base}/piloti/leclerc?lingua=en`);
     assert.deepEqual(await cached.json(),dati);assert.equal(chiamate,1);

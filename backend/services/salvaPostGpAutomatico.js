@@ -73,16 +73,16 @@ async function salvaPostGpAutomatico(client,piano,{fonte,prove,chiaveFonte,sourc
   for(const tipo of ['driver','team']){
     const rows=piano.scores.filter(s=>s.tipo===tipo),json=JSON.stringify(rows);
     const r=await client.query(`insert into ratings.${tipo}_score(${tipo}_id,grand_prix_id,dimension_id,model_version,score,sample_size,confidence,source_release)
-      select e.id,g.id,d.id,'risultati-semantici-v1',x.valore,x.campione,null,$2 from jsonb_to_recordset($1::jsonb) x(slug text,gara text,dimensione text,valore numeric,campione integer)
+      select e.id,g.id,d.id,case when x.dimensione='reliability' then 'affidabilita-meccanica-v1' else 'risultati-semantici-v1' end,x.valore,x.campione,null,$2 from jsonb_to_recordset($1::jsonb) x(slug text,gara text,dimensione text,valore numeric,campione integer)
       join catalog.${tipo} e on e.slug=x.slug join catalog.grand_prix g on g.slug=x.gara join ratings.dimension d on d.slug=x.dimensione
       on conflict(${tipo}_id,grand_prix_id,dimension_id,model_version) do update set score=excluded.score,sample_size=excluded.sample_size,source_release=excluded.source_release,calculated_at=now()`,[json,fonte.versione]);
     if(r.rowCount!==rows.length)throw new Error('Copertura valutazioni incompleta');
     await client.query(`delete from ratings.${tipo}_score_source f using ratings.${tipo}_score s,catalog.${tipo} e,catalog.grand_prix g,ratings.dimension d,
       jsonb_to_recordset($1::jsonb) x(slug text,gara text,dimensione text) where f.score_id=s.id and s.${tipo}_id=e.id and s.grand_prix_id=g.id and s.dimension_id=d.id
-      and e.slug=x.slug and g.slug=x.gara and d.slug=x.dimensione and s.model_version='risultati-semantici-v1'`,[json]);
+      and e.slug=x.slug and g.slug=x.gara and d.slug=x.dimensione and s.model_version=case when x.dimensione='reliability' then 'affidabilita-meccanica-v1' else 'risultati-semantici-v1' end`,[json]);
     await client.query(`insert into ratings.${tipo}_score_source(score_id,url) select s.id,u.url from jsonb_to_recordset($1::jsonb) x(slug text,gara text,dimensione text,fonti jsonb)
       join catalog.${tipo} e on e.slug=x.slug join catalog.grand_prix g on g.slug=x.gara join ratings.dimension d on d.slug=x.dimensione
-      join ratings.${tipo}_score s on s.${tipo}_id=e.id and s.grand_prix_id=g.id and s.dimension_id=d.id and s.model_version='risultati-semantici-v1'
+      join ratings.${tipo}_score s on s.${tipo}_id=e.id and s.grand_prix_id=g.id and s.dimension_id=d.id and s.model_version=case when x.dimensione='reliability' then 'affidabilita-meccanica-v1' else 'risultati-semantici-v1' end
       cross join lateral jsonb_array_elements_text(x.fonti) u(url) on conflict do nothing`,[json]);
   }
   const check=await client.query(`select count(*)::int n from editorial.source_document s join jsonb_to_recordset($1::jsonb) x(collection_name text,mongo_id char(24),payload jsonb)

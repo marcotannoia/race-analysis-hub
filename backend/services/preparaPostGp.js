@@ -108,7 +108,7 @@ function preparaPostGp({fonte,documenti,adesso=new Date(),rettifiche=[]}){
    const rs=risultati.filter(r=>r[campo]===id&&r.year===anno&&r.round<g.ordineCalendario);
    const q=qs.filter(r=>r[campo]===id&&r.year===anno&&r.round<g.ordineCalendario);
    const o=a.overallSemantici ||= {campi:{}};o.campi ||= {};
-   o.stagioneCorrente={rendimento:descriviCampione(rs,'gara',numerosita),qualifica:descriviCampione(q,'qualifica',numerosita),completamento:completamento(rs)};
+   o.stagioneCorrente={rendimento:descriviCampione(rs,'gara',numerosita),qualifica:descriviCampione(q,'qualifica',numerosita),completamento:completamento(rs),affidabilita:require('./affidabilitaMeccanica').affidabilitaMeccanica(rs)};
    o.campi.andamentoPerAnno=trend(rs,numerosita);
    for(const m of [...Object.values(o.stagioneCorrente),o.campi.andamentoPerAnno])m.fonti=[snapshot.metadati.releaseUrl];
    o.ultimoRoundIncluso=rs.length?Math.max(...rs.map(r=>r.round)):null;
@@ -122,7 +122,7 @@ function preparaPostGp({fonte,documenti,adesso=new Date(),rettifiche=[]}){
    }
    aggiungi(n,a);
    const valori=valutazioniNumeriche(a);
-   const campi={passoGara:o.campi.passoGara,gestioneGomme:o.campi.gestioneGomme,rendimento:o.stagioneCorrente.rendimento,
+   const campi={affidabilita:o.stagioneCorrente.affidabilita,passoGara:o.campi.passoGara,gestioneGomme:o.campi.gestioneGomme,rendimento:o.stagioneCorrente.rendimento,
      qualifica:o.stagioneCorrente.qualifica,completamento:o.stagioneCorrente.completamento,formaRecente:o.campi.andamentoPerAnno,
      storicoGara:o.campi.risultatiGara,storicoQualifica:o.campi.risultatiQualifica};
    for(const [dimensione,metrica] of Object.entries(MAPPA))scores.push({tipo,slug:entita.slug,gara:g.slug,dimensione,valore:valori[metrica],

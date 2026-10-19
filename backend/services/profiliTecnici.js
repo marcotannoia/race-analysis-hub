@@ -96,6 +96,7 @@ function creaProfiloCircuito(garaSlug, scuderie, datiLiveFia = null, lingua = "i
     metodo: traduzioni[lingua]?.metodoCircuito ?? circuiti.metadati.metodo,
     fp1At: circuito.fp1At,
     dati: { ...circuito.dati },
+    ...(circuito.provenienzaDati ? {provenienzaDati:circuito.provenienzaDati} : {}),
     caratteristiche: [...(traduzioni[lingua]?.circuiti[garaSlug] ?? circuito.caratteristiche)],
     puntiSorpassoPrincipali: circuito.puntiSorpassoPrincipali,
     richieste: circuiti.dimensioni.map((dimensione) => ({

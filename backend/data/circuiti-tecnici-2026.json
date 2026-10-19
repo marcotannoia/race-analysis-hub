@@ -74,11 +74,55 @@
     "usa-austin": {
       "fp1At": "2026-10-23T17:30:00.000Z",
       "eventoFia": "United States Grand Prix",
-      "dati": { "lunghezzaKm": 5.513, "giri": 56, "distanzaKm": 308.405, "curve": 20, "direzione": "antiorario", "tipologia": "permanente", "livelloCarico": "medio-alto", "stressFreni": "medio", "stressGomme": "alto" },
-      "caratteristiche": ["Esse veloci nel primo settore", "Lungo rettilineo opposto", "Sezione finale lenta e tecnica"],
+      "dati": {
+        "lunghezzaKm": 5.513,
+        "giri": 56,
+        "distanzaKm": 308.405,
+        "curve": 20,
+        "direzione": "antiorario",
+        "tipologia": "permanente",
+        "livelloCarico": "medio-alto",
+        "stressFreni": "medio",
+        "stressGomme": "alto",
+        "rettilineoPrincipaleKm": 1.016,
+        "percentualePienoGas": 60
+      },
+      "caratteristiche": [
+        "Esse veloci nel primo settore",
+        "Lungo rettilineo opposto",
+        "Sezione finale lenta e tecnica"
+      ],
       "puntiSorpassoPrincipali": 3,
-      "richieste": { "efficienzaAerodinamica": 92, "potenzaDeployment": 84, "curvaLenta": 82, "curvaMedia": 90, "curvaVeloce": 96, "trazione": 82, "frenata": 84, "cordoli": 84, "gestioneGomme": 96, "stabilitaAssetto": 94 },
-      "fonti": ["https://www.formula1.com/en/racing/2026/united-states"]
+      "richieste": {
+        "efficienzaAerodinamica": 92,
+        "potenzaDeployment": 84,
+        "curvaLenta": 82,
+        "curvaMedia": 90,
+        "curvaVeloce": 96,
+        "trazione": 82,
+        "frenata": 84,
+        "cordoli": 84,
+        "gestioneGomme": 96,
+        "stabilitaAssetto": 94
+      },
+      "fonti": [
+        "https://www.formula1.com/en/racing/2026/united-states",
+        "https://www.astonmartinf1.com/en-GB/races/2021-united-states-gp",
+        "https://www.haasf1team.com/news/welcome-haastin"
+      ],
+      "provenienzaDati": {
+        "rettilineoPrincipaleKm": {
+          "tratto": "T11–T12, rettilineo opposto",
+          "fonte": "https://www.astonmartinf1.com/en-GB/races/2021-united-states-gp",
+          "anno": 2021
+        },
+        "percentualePienoGas": {
+          "fonte": "https://www.haasf1team.com/news/welcome-haastin",
+          "anno": 2016,
+          "approssimato": true,
+          "nota": "Circa 60% del tempo sul giro; riferimento storico F1, non misura delle vetture 2026."
+        }
+      }
     },
     "messico-citta-del-messico": {
       "fp1At": "2026-10-30T18:30:00.000Z",

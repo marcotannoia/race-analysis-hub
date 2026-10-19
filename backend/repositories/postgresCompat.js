@@ -105,7 +105,7 @@ async function overlayRatings(model, rows) {
     join catalog.${entity} e on e.id=s.${entity}_id
     join catalog.grand_prix gp on gp.id=s.grand_prix_id
     join ratings.dimension dim on dim.id=s.dimension_id
-    where dim.slug in ('race_pace','tyre_management','performance','qualifying','completion','annual_trend','race_results','qualifying_results')
+    where dim.slug in ('race_pace','tyre_management','performance','qualifying','completion','annual_trend','race_results','qualifying_results','reliability')
     order by e.slug,gp.slug,dim.slug,s.calculated_at desc,s.id desc`);
   const entities = new Map((await load(driver ? 'Pilota' : 'Scuderia'))
     .map((doc)=>[String(doc._id),doc.slug]));
@@ -119,7 +119,7 @@ async function overlayRatings(model, rows) {
     const mapping = {
       race_pace:['campi','passoGara'], tyre_management:['campi','gestioneGomme'],
       performance:['stagioneCorrente','rendimento'], qualifying:['stagioneCorrente','qualifica'],
-      completion:['stagioneCorrente','completamento'], annual_trend:['campi','andamentoPerAnno'],
+      reliability:['stagioneCorrente','affidabilita'], completion:['stagioneCorrente','completamento'], annual_trend:['campi','andamentoPerAnno'],
       race_results:['campi','risultatiGara'], qualifying_results:['campi','risultatiQualifica'],
     };
     for (const [dimension,[section,field]] of Object.entries(mapping)) {

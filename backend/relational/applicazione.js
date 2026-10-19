@@ -41,12 +41,21 @@ function analisiNumerica(analisi) {
   });
   for (const edizione of analisi.storicoEdizioni || [])
     edizioni.set(edizione.stagione, { ...edizione });
+  const affidabilita = analisi.affidabilitaNumerica?.overall ?? null;
   return {
     // Conserva anche i contenuti editoriali localizzati già disponibili nella v1.
     ...analisi,
     ...(pilota ? { pilota } : {}), scuderia, gara,
-    valutazioni, valutazioniPerAnno, overall, fonti,
-    recapNumerici: analisi.recapNumerici, sintesiNumerica: analisi.sintesiNumerica,
+    valutazioni: {...valutazioni, affidabilita}, valutazioniPerAnno, overall, fonti,
+    affidabilita,
+    prestazioni: {...analisi.prestazioni, affidabilita},
+    nota_bene: analisi.notaBene ?? '',
+    considerazioni_finali: analisi.considerazioniFinali ?? '',
+    recapNumerici: {...analisi.recapNumerici,
+      affidabilita: {...analisi.affidabilitaNumerica, valore:affidabilita},
+      notaBene: {testo:analisi.notaBene ?? '',stato:'testuale'},
+      considerazioniFinali: {testo:analisi.considerazioniFinali ?? '',stato:'testuale'}},
+    sintesiNumerica: analisi.sintesiNumerica,
     // Le posizioni sono risultati, non punteggi: conservano l'unità originale.
     storicoEdizioni: [...edizioni.values()].sort((a,b)=>a.stagione-b.stagione),
     penalita: analisi.penalita,

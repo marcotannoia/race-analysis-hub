@@ -18,6 +18,7 @@ function valutazioniNumeriche(analisi) {
     rendimento: daMetrica(corrente.rendimento),
     qualifica: daMetrica(corrente.qualifica),
     completamento: daMetrica(corrente.completamento),
+    affidabilita: daMetrica(corrente.affidabilita),
     formaRecente: daMetrica(campi.andamentoPerAnno),
     storicoGara: daMetrica(campi.risultatiGara),
     storicoQualifica: daMetrica(campi.risultatiQualifica),

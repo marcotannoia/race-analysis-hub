@@ -141,3 +141,11 @@ Rapporto dettagliato: `VERIFICA-V2-PUBBLICA.json`.
 ### Compatibilità dei contenuti editoriali
 
 La v2 conserva anche i testi localizzati della v1: risultati, note, prestazioni, affidabilità, considerazioni finali e dettagli per anno. Le valutazioni numeriche restano campi separati con scala 0–100; `null` indica dati insufficienti. I contenuti provengono dagli stessi documenti già migrati in PostgreSQL, senza duplicare o inventare dati. Le proprietà tecniche del circuito sono condivise fra v1 e v2: quando assenti anche nella sorgente v1, non vengono sostituite con valori presunti.
+
+### Completamento dei campi v2
+
+`nota_bene` e `considerazioni_finali` sono alias testuali localizzati. `affidabilita`, `prestazioni.affidabilita` e `valutazioni.affidabilita` sono numeri 0–100: quota delle partenze senza guasti tecnici documentati, esclusi DNS ed esiti con causa ignota. Incidenti e collisioni non contano come guasti. Campione, guasti, fonti e metodo sono disponibili in `affidabilitaNumerica`. Il completamento resta una metrica distinta. Il contratto testuale della v1 resta disponibile.
+
+La previsione espone `aggiornatoIl` e `calcolatoIl` dalla data persistita del calcolo, senza sostituirla con l'ora della richiesta. Austin usa 1,016 km per il rettilineo opposto T11–T12 (Aston Martin, 2021) e circa 60% del tempo sul giro a pieno gas (Haas, 2016); provenienza, anno e approssimazione sono espliciti in `circuitoTecnico.provenienzaDati`. Il secondo dato è un riferimento storico, non una misurazione 2026.
+
+`node backend/scripts/completaDatiV2.js` verifica il piano; `--apply` persiste i dati e gli indici in transazione conservando un backup locale privato. Il ciclo automatico post-GP ricalcola anche l'affidabilità dai nuovi risultati.
