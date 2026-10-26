@@ -48,7 +48,9 @@ function analisiNumerica(analisi) {
     ...(pilota ? { pilota } : {}), scuderia, gara,
     valutazioni: {...valutazioni, affidabilita}, valutazioniPerAnno, overall, fonti,
     affidabilita,
-    prestazioni: {...analisi.prestazioni, affidabilita},
+    // Il client pubblicato decodifica questo campo editoriale come String.
+    // Gli indici numerici restano in affidabilita, valutazioni e recapNumerici.
+    prestazioni: {...analisi.prestazioni, affidabilita: typeof analisi.prestazioni?.affidabilita==='string' ? analisi.prestazioni.affidabilita : null},
     nota_bene: analisi.notaBene ?? '',
     considerazioni_finali: analisi.considerazioniFinali ?? '',
     recapNumerici: {...analisi.recapNumerici,

@@ -58,6 +58,15 @@ test('la v2 conserva i testi della v1 anche nei confronti e mantiene zero e null
   assert.deepEqual(presentaRisposta({analisiPiloti:[analisi]}).analisiPiloti[0].prestazioni,{...analisi.prestazioni,affidabilita:null});
 });
 
+test('affidabilità v2: testo compatibile con il decoder nativo e indice numerico separato',()=>{
+  const {presentaRisposta}=require('../relational/applicazione');
+  const a={gara:{slug:'messico-citta-del-messico'},valutazioni:{},fonti:[],prestazioni:{affidabilita:'Evidenze meccaniche verificate'},affidabilitaNumerica:{overall:87.5}};
+  for(const risposta of [presentaRisposta({analisi:a}).analisi,presentaRisposta({elementi:[{analisi:a}]}).elementi[0].analisi]){
+    assert.equal(risposta.prestazioni.affidabilita,'Evidenze meccaniche verificate');
+    assert.equal(risposta.affidabilita,87.5);assert.equal(risposta.valutazioni.affidabilita,87.5);
+  }
+});
+
 test('servizi v2: lingua, errori, cache e contratto numerico condiviso col client',async()=>{
   const {creaRouterApplicazione,percorsi}=require('../relational/applicazione');
   const api=express();let chiamate=0;

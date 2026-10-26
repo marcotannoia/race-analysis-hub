@@ -10,7 +10,8 @@ function verificaAnalisi(dati) {
   if (Object.hasOwn(dati,'valutazioni') && Object.hasOwn(dati,'gara')) {
     assert.ok(dati.prestazioni && typeof dati.prestazioni === 'object');
     assert.ok(dati.affidabilita===null || typeof dati.affidabilita==='number');
-    assert.equal(dati.prestazioni.affidabilita,dati.affidabilita);
+    assert.ok(dati.prestazioni.affidabilita===null || typeof dati.prestazioni.affidabilita==='string');
+    assert.equal(dati.valutazioni.affidabilita,dati.affidabilita);
     assert.equal(typeof dati.nota_bene,'string');
     assert.equal(typeof dati.considerazioni_finali,'string');
     assert.equal(typeof dati.considerazioniFinali, 'string');
