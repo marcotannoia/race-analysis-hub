@@ -193,3 +193,12 @@ context and are not validated telemetry.
 [Full report and per-weekend weights](docs/revisione-database-2026-10-05/CALIBRAZIONE.md).
 
 The site and native app do not display methodology, weights, contributions, or factor details. API fields remain available to clients: this change affects presentation and does not make the model private.
+
+### Native-client compatibility in API v2
+
+`analisi.prestazioni.affidabilita` remains editorial text (`string` or `null`),
+as expected by the published FantaStats GP decoder. The measured mechanical
+reliability index remains numeric in `analisi.affidabilita`,
+`analisi.valutazioni.affidabilita` and `analisi.recapNumerici.affidabilita.valore`.
+Do not replace the editorial field with a number: this prevents existing native
+clients from decoding driver profiles and comparisons.

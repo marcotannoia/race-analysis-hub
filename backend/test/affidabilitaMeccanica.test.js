@@ -11,7 +11,7 @@ test('affidabilità distingue guasti, incidenti, DNS e cause ignote',()=>{
 test('v2 espone affidabilità numerica e conserva note e considerazioni come testi',()=>{
  const {presentaRisposta}=require('../relational/applicazione');
  const r=presentaRisposta({gara:{slug:'usa-austin'},valutazioni:{},prestazioni:{affidabilita:'testo v1'},notaBene:'nota',considerazioniFinali:'considerazioni',affidabilitaNumerica:{overall:75,campione:4}});
- assert.equal(r.affidabilita,75);assert.equal(r.prestazioni.affidabilita,75);assert.equal(r.valutazioni.affidabilita,75);
+ assert.equal(r.affidabilita,75);assert.equal(r.prestazioni.affidabilita,'testo v1');assert.equal(r.valutazioni.affidabilita,75);
  assert.equal(r.nota_bene,'nota');assert.equal(r.considerazioni_finali,'considerazioni');
  assert.equal(r.recapNumerici.affidabilita.valore,75);assert.equal(r.recapNumerici.notaBene.testo,'nota');
 });
