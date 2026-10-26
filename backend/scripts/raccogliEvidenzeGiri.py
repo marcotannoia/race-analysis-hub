@@ -2,11 +2,15 @@
 Uso: python3 backend/scripts/raccogliEvidenzeGiri.py /cartella/cache
 30 richieste/minuto: intervallo prudenziale 2.2 s, retry con backoff.
 """
-import datetime, hashlib, json, pathlib, sys, time, urllib.error, urllib.request
+import argparse, datetime, hashlib, json, pathlib, sys, time, urllib.error, urllib.request
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('cache'); parser.add_argument('cutoff',nargs='?')
+parser.add_argument('--corpus'); parser.add_argument('--round',type=int)
+args=parser.parse_args()
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-CACHE = pathlib.Path(sys.argv[1]); CACHE.mkdir(parents=True, exist_ok=True)
+CACHE = pathlib.Path(args.cache); CACHE.mkdir(parents=True, exist_ok=True)
 NOMI = {'Zandvoort':'zandvoort','Monza':'monza','Madring':'madring','Baku':'baku','Kuala Lumpur':'sepang','Singapore':'marina-bay','Austin':'austin','Mexico City':'mexico-city','Interlagos':'interlagos','Las Vegas':'las-vegas','Lusail':'lusail','Yas Marina Circuit':'yas-marina'}
-base = json.loads((ROOT/'data/campioni-previsionali-2026.json').read_text())
+base = json.loads(pathlib.Path(args.corpus).read_text()) if args.corpus else json.loads((ROOT/'data/campioni-previsionali-2026.json').read_text())
 last = 0
 manifest = []
 def get(endpoint, query, filename):
@@ -26,7 +30,7 @@ def get(endpoint, query, filename):
    time.sleep(10*(attempt+1))
  raise RuntimeError('Acquisizione fallita: '+url)
 sessions,_,_=get('sessions','year>=2023&session_name=Race','sessions.json')
-cutoff=datetime.datetime.fromisoformat(sys.argv[2]) if len(sys.argv)>2 else datetime.datetime.now(datetime.timezone.utc)
+cutoff=datetime.datetime.fromisoformat(args.cutoff) if args.cutoff else datetime.datetime.now(datetime.timezone.utc)
 if cutoff.tzinfo is None:cutoff=cutoff.replace(tzinfo=datetime.timezone.utc)
 selected=[]
 for s in sessions:
@@ -38,6 +42,7 @@ for s in sessions:
   if not gp or gp['round']>base['ultimoRoundIncluso']:continue
   cid=gp['circuitId']
  else: gp=None
+ if args.round is not None and (year!=2026 or not gp or gp['round']!=args.round):continue
  selected.append({**s,'circuitId':cid,'round':gp['round'] if gp else None})
 print('Sessioni selezionate:',len(selected),flush=True)
 for i,s in enumerate(selected):

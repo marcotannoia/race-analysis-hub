@@ -37,6 +37,10 @@ In produzione il controllo parte con il server: `AUTO_GP_ENABLED=true`, interval
 | `npm --prefix backend run check:auto-gp` | Simula il controllo senza applicare aggiornamenti. |
 | `npm --prefix backend run check:auto-gp -- --apply` | Applica l’aggiornamento se le verifiche riescono. |
 
+Revisione approfondita: `npm run review:gp` simula con rollback;
+`npm run review:gp -- --apply` acquisisce i giri mancanti e aggiorna analisi e pattern.
+Richiede Python 3. Procedura completa: [Post-GP](post-gp.md).
+
 Il cambio GP aggiorna il contesto degli endpoint e svuota le cache applicative.
 Lo stato è consultabile in `/api/v2/automazione`. I GP diversi dall’attuale
 non sono accessibili nelle analisi; lo storico riguarda il circuito attuale.

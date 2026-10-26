@@ -19,6 +19,13 @@ function creaRouter({ readImpl = (tabella, parametri) => require('./letturaCatal
   router.get('/automazione',async(req,res,next)=>{
     try{res.json(await require('../services/aggiornamentoAutomaticoGp').statoAutomatico());}catch(e){next(e);}
   });
+  router.get('/revisione-post-gp',async(req,res,next)=>{
+    try{
+      const r=await require('../config/database').getPool().query("select payload->'runtime'->'revisione' revisione from editorial.post_gp_update where payload->'runtime' ? 'revisione' order by applied_at desc limit 1");
+      if(!r.rows[0])return res.status(404).json({errore:'REVISIONE_NON_DISPONIBILE'});
+      res.json(r.rows[0].revisione);
+    }catch(e){next(e);}
+  });
   router.get('/health',async(req,res,next)=>{
     try { await leggi('f1_importazioni',{select:'id',limit:'1'}).then(rows=>{if(!rows.length)throw new Error('Importazione assente');}); res.json({stato:'ok',database:'supabase'}); }
     catch(e){e.status=503;next(e);}

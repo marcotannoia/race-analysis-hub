@@ -4,12 +4,14 @@ let campioniRuntime = null;
 let verificatoIl = 0;
 let versione = null;
 let inCorso;
+let evidenzeRuntime = null;
 
 function applicaRuntime(runtime) {
   if (!runtime?.snapshot || !runtime?.campioni) throw new Error('Snapshot runtime incompleto');
   Object.assign(snapshot.metadati, runtime.snapshot.metadati);
   for (const [k,v] of Object.entries(runtime.snapshot)) if(k !== 'metadati') snapshot[k]=v;
   campioniRuntime=runtime.campioni;
+  evidenzeRuntime=runtime.evidenze || null;
 }
 
 async function caricaRuntime(pool, forza=false) {
@@ -31,4 +33,4 @@ async function caricaRuntime(pool, forza=false) {
   return inCorso;
 }
 
-module.exports={applicaRuntime,caricaRuntime,campioniCorrenti:base=>campioniRuntime || base};
+module.exports={applicaRuntime,caricaRuntime,campioniCorrenti:base=>campioniRuntime || base,evidenzeCorrenti:base=>evidenzeRuntime || base};

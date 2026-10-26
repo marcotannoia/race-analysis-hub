@@ -35,6 +35,7 @@ for(const [percorso] of require('./applicazione').percorsi){
   documento.paths['/api/v2'+chiave]=definizione;
 }
 documento.paths['/api/v2/health']={get:{operationId:'health_v2',summary:'Verifica accesso al database importato',responses:{200:{description:'Database disponibile'},503:{description:'Database non disponibile'}}}};
+documento.paths['/api/v2/revisione-post-gp']={get:{operationId:'revisione_post_gp_v2',summary:'Giri osservati, revisione del modello e pattern esplorativi per i prossimi GP',responses:{200:{description:'Revisione con copertura, fonti, cutoff e limiti',content:{'application/json':{schema:{type:'object'}}}},404:{description:'Revisione non ancora disponibile'},503:{description:'Database non disponibile'}}}};
 documento.paths['/api/v2']={get:{operationId:'indice_v2',summary:'Risorse e servizi disponibili',responses:{200:{description:'Indice API v2'}}}};
 documento.paths['/api/v2/automazione']={get:{operationId:'automazione_gp_v2',summary:'Stato del controllo automatico post-GP',responses:{
   200:{description:'Configurazione, ultimo controllo e ultimo aggiornamento',content:{'application/json':{schema:{type:'object',properties:{

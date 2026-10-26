@@ -82,7 +82,7 @@ def analizza(sessione,raw,ids):
    p[key]['overall']=rnd(100*(len(valid)-1-rank)/(len(valid)-1),1) if len(valid)>1 else None
  return out
 
-def main(cache,rawdir):
+def main(cache,rawdir,destinazione=None):
  cache=pathlib.Path(cache);manifest=json.loads((cache/'manifest.json').read_text());rawdir=pathlib.Path(rawdir)
  rr=json.loads((rawdir/'f1db-races-race-results.json').read_text());gps=json.loads((rawdir/'f1db-races.json').read_text());drivers=json.loads((rawdir/'f1db-drivers.json').read_text());ids={d['abbreviation']:d['id'] for d in drivers if d.get('abbreviation')}
  output={'versione':'giri-comparabili-v1','acquisitoIlUTC':manifest['acquisitoIlUTC'],'fonte':'https://openf1.org/docs/','metodo':{'passo':'Mediana del delta % rispetto ad almeno 3 altri piloti nella stessa tornata e mescola, età gomme entro +/-5 giri; >=8 giri per indice. Rango medio inverso nel campione della sessione.','gomme':'Pendenza Theil-Sen del delta relativo per età, entro stint asciutto con >=10 giri comparabili e ampiezza >=8; mediana delle pendenze. Rango inverso descrittivo, non misura del degrado fisico.','filtri':['prime due tornate','pit in/out e tornate adiacenti','mescole wet/intermediate','pioggia o meteo oltre 120 s','traffico sotto 1.5 s o dato oltre 10 s','yellow +/- margine, SC/VSC/red e 240 s dopo fine','stint/età mancanti o ambigui','meno di 3 confronti','delta assoluto oltre 12%'],'limiti':'Carburante, carico, gestione, danni, doppiaggi e temperature non isolati. Traffico verificato solo all’inizio del giro. Indice descrittivo condizionato ai giri selezionati, non potenziale assoluto né previsione certa.'},'sessioni':[]}
@@ -101,6 +101,6 @@ def main(cache,rawdir):
    if p['driverId'] not in sport:raise ValueError('Pilota/sessione non riscontrato '+str(p))
    p['constructorId']=sport[p['driverId']]
   output['sessioni'].append({'sessionKey':s['session_key'],'raceId':g['id'],'year':s['year'],'round':g['round'],'circuitId':s['circuitId'],'data':g['date'],'fonti':m['file'],'riepilogo':{'safetyCar':sum('SAFETY CAR DEPLOYED' in r['message'] and 'VIRTUAL' not in r['message'] for r in raw['race_control']),'vsc':sum('VIRTUAL SAFETY CAR DEPLOYED' in r['message'] for r in raw['race_control']),'bandiereRosse':sum(r.get('flag')=='RED' for r in raw['race_control']),'pioggiaRegistrata':any(w.get('rainfall') for w in raw['weather']),'temperaturaPistaMin':min((w['track_temperature'] for w in raw['weather'] if isinstance(w.get('track_temperature'),(int,float))),default=None),'temperaturaPistaMax':max((w['track_temperature'] for w in raw['weather'] if isinstance(w.get('track_temperature'),(int,float))),default=None)},'piloti':ps})
- dest=ROOT/'data/evidenze-giri-2023-2026.json';dest.write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n')
+ dest=pathlib.Path(destinazione) if destinazione else ROOT/'data/evidenze-giri-2023-2026.json';dest.write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n')
  print('Sessioni:',len(output['sessioni']),'piloti:',sum(len(s['piloti']) for s in output['sessioni']))
-if __name__=='__main__':main(sys.argv[1],sys.argv[2])
+if __name__=='__main__':main(sys.argv[1],sys.argv[2],sys.argv[3] if len(sys.argv)>3 else None)

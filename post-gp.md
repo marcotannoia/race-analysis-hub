@@ -1,104 +1,176 @@
-# Update after a Grand Prix
+# Procedura completa dopo ogni Gran Premio
 
-Each analysis retains an array `storicoEdizioni`. At the end of the race, this array
-receives a structured record with season, race position and qualifying, note
-on the result, pace, tyres and reliability. If the same update is
-run again, the record for that season is replaced and not duplicated.
+Documento operativo per aggiornare Race Analysis Hub e le API usate da FantaStats GP.
+La richiesta «esegui il post-GP» comprende tutte le fasi qui descritte, inclusa la
+pubblicazione. Non richiede di inventare dati che le fonti non hanno pubblicato.
 
-From the root folder of the project you always use the same command:
+## 1. Risultato atteso
 
-```bash
-npm run gp
+| Area | Operazione | Verifica di completamento |
+| --- | --- | --- |
+| GP concluso | Archiviare risultati di gara, qualifica, prove, eventuali sprint, griglie, giri veloci, pit stop e classifiche disponibili. | Stagione/round e partecipanti corretti; confronto con la classifica finale FIA. |
+| Stagione | Aggiornare il corpus quantitativo e le tabelle della stagione corrente. | Fonte F1DB, checksum e ultimo round registrati nell’audit PostgreSQL. |
+| Analisi | Aggiornare overall, rendimento, qualifica, completamento, affidabilità, passo e gomme dove misurabili. | Punteggi e campioni coerenti tra documenti e tabelle; mancanti a `null`. |
+| GP successivo | Passare al prossimo appuntamento del calendario verificato. | Un solo GP attuale, quello concluso archiviato. |
+| Futuri GP | Aggiornare gli input stagionali e confrontare circuiti, piloti e scuderie. | Solo risultati antecedenti al GP; nessuna posizione futura inventata. |
+| Previsioni | Valutare gli errori sul GP finito e ricalcolare il prossimo con input aggiornati. | Metriche separate per ordine completo e classificati regolari. |
+| App e API | Pubblicare e verificare il servizio effettivamente online. | Contratti v1/v2, sei lingue, GP, anno, qualifiche e punteggi coerenti. |
+
+«Tutti i dati» significa tutti i gruppi accessibili, pertinenti e verificabili:
+non garantisce la disponibilità di telemetria privata, misure fisiche di usura,
+carburante o informazioni non ancora pubblicate. Registrare sempre le lacune.
+
+## 2. Due livelli di esecuzione
+
+**Server, già automatico:** controllo ogni 30 minuti, F1DB stabile, checksum,
+classifica finale FIA, transazione, archiviazione e cambio GP. Non dipende dal Mac.
+Riferimento: [automazione del server](docs/supabase/AUTOMAZIONE-GP.md).
+
+**Revisione approfondita:** il comando `review:gp` acquisisce i giri mancanti della
+stagione da OpenF1, applica i filtri, aggiorna passo/gomme nelle schede e nei
+punteggi, analizza i circuiti simili e salva una revisione persistente nel database.
+Richiede Node, Python 3, dipendenze backend e connessione PostgreSQL configurata.
+Il controllo di questa chat è pianificato ogni sei ore e rimane silenzioso in assenza di novità.
+Non è un servizio Python eseguito da Render. Eseguirlo da questo ambiente, anche
+quando una successiva esecuzione autonoma riprende questa procedura.
+
+La ricerca editoriale sul web resta una fase distinta: nessun comando presente
+sostituisce la lettura e verifica di notizie, documenti tecnici e discussioni.
+
+## 3. Sequenza dei comandi
+
+Dalla radice del repository, con un `backend/.env` già configurato. Non stampare
+credenziali. Non eseguire seed o sincronizzazioni integrali del catalogo: possono
+ripristinare vecchi GP e sovrascrivere modifiche online.
+
+```sh
+# 1. Simulazione con rollback e confronto FIA/F1DB.
+npm --prefix backend run check:auto-gp
+
+# 2. Applicazione del cambio GP, se il server non lo ha già fatto.
+npm --prefix backend run check:auto-gp -- --apply
+
+# 3. Acquisizione, derivazione dei giri e revisione, con rollback.
+npm run review:gp
+
+# 4. Applicazione verificata della revisione al database.
+npm run review:gp -- --apply
+
+# 5. Verifiche della base dati e del codice prima della pubblicazione.
+npm run verify-db
+npm run verify-translations
+npm run verify-data
+npm run verify-docs
+npm test
+python3 -m unittest discover -s backend/test -p '*_test.py'
+npm run lint:api
+npm --prefix backend run lint:api:v2
+npm run lint
+npm run build
 ```
 
-If `backend/data/aggiornamento-gp.json` does not exist, the command generates it for the
-GP currently visible. The race-results section contains only the participants
-linked to that event; the championship section contains every season driver.
-The file also contains all teams and the current rankings. It is therefore necessary to:
+Il comando di revisione usa l’ultima release stabile già importata e validata;
+si arresta se il corpus online appartiene a una release differente. Riutilizza le
+sessioni già presenti; scarica quelle mancanti con cache locale e backoff.
+`POST_GP_OUTPUT=/percorso` cambia la cartella di lavoro, predefinita `output/post-gp`.
+Non pubblicare questa cartella: contiene cache e artefatti intermedi.
 
-1. indicate `condizioniGara` with `asciutto`, `misto` or `bagnato`;
-2. insert an HTTPS URL in `fonteIndicatori` that documents races and incidents;
-3. enter race position and qualifying for all drivers;
-4. fill in `errorePilota` for all with `nessuno`, `non_fatale` or `fatale`;
-5. update the two complete rankings;
-6. add, when available, notes, race pace, tyres and reliability;
-7. set `"pronto": true`;
-8. relaunch `npm run gp`.
+Una correzione della fonte o un hash incoerente richiede una nuova acquisizione
+controllata, non la modifica manuale del checksum. Non riutilizzare cache di una
+sessione che si sa essere stata rettificata senza averla nuovamente verificata.
 
-The script checks that no race participant or ranking element is absent,
-automatically builds team results using each event's actual driver-team links, records history,
-updates the standings, closes the current GP and publishes the next one based on
-to the calendar order. Also update
-`backend/data/statistiche-contesto.json` cumulatively and idempotently: a
-GP already applied cannot increase percentages and counts twice.
+## 4. Acquisizione e qualità
 
-`misto` requires a considerable part of the race on a wet track and a considerable part of the race.
-after the rain has ceased; a few drops with no effect on the
-Race conditions remain `asciutto`. A mistake `fatale` the race ends or
-it definitively compromises the result. The general and fatal percentages
-they both use all departures as the denominator.
+1. Verificare anno, round, circuito, fuso, fine della gara e identità degli iscritti.
+2. Acquisire la release F1DB stabile e confrontare SHA-256 con il manifest ufficiale.
+3. Confrontare numeri vettura, posizioni e punti con la classifica finale FIA.
+4. Importare i gruppi disponibili di tutte le sessioni della stagione: prove,
+   qualifica, griglie, sprint, gara, pit, giri veloci e classifiche.
+5. Per i GP conclusi acquisire piloti, giri, stint, pit, race control, meteo e
+   intervalli OpenF1. Conservare URL, hash, numerosità e session key.
+6. Derivare passo e deriva gomme con i filtri esistenti: partenza, pit, bandiere,
+   SC/VSC, pioggia, traffico, mescola ed età. Riportare esclusioni e campioni.
+7. Aggiornare le traduzioni quantitative nelle sei lingue. Conservare gli storici
+   precedenti e i cutoff delle analisi passate.
+8. Verificare separatamente gli indicatori di errori e bagnato: non sono aggiornati
+   dalla sola classifica. Non presentare i loro campioni precedenti come nuovi.
 
-Before writing to the database, you can perform a full check:
+La deriva dei tempi non misura l’usura fisica. Una classifica finale non dimostra
+un errore del pilota o un guasto. Un componente dichiarato non dimostra un guadagno.
+Le sessioni OpenF1 di prove/qualifica non vengono trattate come passo gara:
+i loro risultati sintetici provengono da F1DB; la derivazione dettagliata attuale
+riguarda le gare. Telemetria vettura e posizione GPS non sono acquisite da questo comando.
 
-```bash
-npm run gp -- --controlla
-```
+## 5. Ricerca estesa per GP concluso e prossimo GP
 
-After the upgrade, the compiled file is retained in
-`backend/data/archivio-gp/`. Store all consulted URLs in the optional `fonti`
-array and state whether the classification is `provvisoria` or `finale` in
-`statoClassificazione`. The command doesn't use external APIs: the contents and
-the results entered remain those verified manually.
+Consultare fonti ufficiali e indipendenti, cercando anche smentite delle ipotesi.
+Non esiste una ricerca letteralmente esaustiva di tutto Internet.
 
-The database seed and `npm run verify-db` replay these archives over
-`backend/data/dati-iniziali.json`. This keeps the F1DB-derived snapshot intact
-while making the current standings, race state and `storicoEdizioni`
-reproducible on a fresh database. Archives older than the current base snapshot
-restore history without rolling the standings backwards.
+| Priorità | Fonti | Uso |
+| --- | --- | --- |
+| 1 | FIA: classifiche, decisioni, race control, Car Presentation, mappe e note del direttore. | Risultati, penalità, revisioni, componenti e vincoli del weekend. |
+| 2 | Formula 1, F1DB, OpenF1, Pirelli, comunicati dei team. | Calendario, risultati, misure, mescole e dichiarazioni attribuite. |
+| 3 | Testate tecniche e cronache indipendenti. | Incrociare strategia, problemi, traffico e contesto. |
+| 4 | Forum, Reddit, discussioni e analisi pubbliche. | Individuare domande e pattern da verificare; mai promuovere una voce a fatto. |
 
-New editorial texts must also be provided and revised in the
-published languages. The administrative procedure, free of charge within the F0 quota and
-is described in
-[`LOCALIZZAZIONE.md`](LOCALIZZAZIONE.md); do not publish a new Italian text
-leaving translations referring to the previous version active.
+Per ogni evidenza registrare URL, pubblicazione, acquisizione, evento, entità,
+asserzione, stato confermato/provvisorio/smentito e riscontro. Conservare riassunti
+originali e riferimenti; non copiare integralmente articoli o aggirare accessi.
+Per il prossimo GP verificare programma e fusi, iscritti, mescole, meteo aggiornato,
+penalità riportate, lavori sul circuito e pacchetti tecnici effettivamente dichiarati.
+Qualifica e risultato rimangono mancanti finché la sessione non è stata disputata.
 
-This procedure does not update the 2026 quantitative charts, which come from the
-local snapshot derived from F1DB. To add new GPs to the charts you need to
-regenerate the snapshot from an F1DB release, run `npm run verify-data`, and
-publish the updated code. Version, license and transformations of the
-snapshots are documented in `NOTICE.md`.
+## 6. Data mining e revisione delle previsioni
 
-APIs don't expose a generic last updated date. To understand if
-a block has changed, you have to compare its payload or its `ETag`,
-not a date shared between quantitative data and editorial content.
+Il rapporto automatico confronta ogni futuro GP con i tre circuiti conclusi più
+simili tra quelli con profilo tecnico. La similarità pesa le differenze nelle dieci
+richieste tecniche del circuito target. È una misura editoriale di somiglianza.
 
-## Effect on the forecast ranking
+Per pilota e scuderia riporta risultati regolari, numero di eventi, posizione media
+e differenza rispetto alla media stagionale. La differenza è un’associazione
+esplorativa: campioni piccoli, ritiri esclusi e forza della vettura possono distorcerla.
+Le osservazioni di due vetture non equivalgono a due GP indipendenti.
 
-The landing page ranking is generated from the backend for the GP marked
-as `attuale`. After `npm run gp` then automatically moves on to the race
-and use the new driver and team rankings. The answer is
-isolated in `GET /api/v1/previsioni/piloti`.
+La revisione ricostruisce il GP appena concluso con pesi congelati e soli input
+anteriori al target. Non la chiamare previsione archiviata prima della gara: usa
+l’elenco effettivo dei partecipanti. Confrontare MAE completa e MAE dei regolari;
+spiegare gli errori usando soltanto evidenze verificabili.
 
-Recent form and 2026 qualification also depend on the F1DB snapshot. As long as
-The snapshot is not regenerated, those factors remain unchanged at the last release
-documented. Track compatibility, tyre management, reliability and
-Technical updates derive instead from the editorial analysis of the new tender.
+Nuovi pesi o nuovi fattori richiedono una valutazione cronologica su più gare,
+un confronto con il modello pubblico e un intervallo mai usato per selezionare
+il candidato. Un miglioramento retrospettivo su una singola gara non basta.
+Il comando aggiorna gli input; **non cambia automaticamente i pesi del modello**.
 
-For Madrid 2026, the post-race archive uses Formula 1 results and standings plus
-FIA timing and race-control documents. At publication time the FIA race
-classification was still provisional; the archive records this explicitly.
-The quantitative chart snapshot is F1DB `v2026.15.1` and includes Baku. The
-versioned Madrid and Baku archives replay the post-race editorial transitions
-and fields not supplied by F1DB.
+## 7. Pubblicazione e controllo online
 
-Before publishing, check in particular
-`aggiornamentiInArrivo`: A package that is only announced or not relevant is not
-must be described as a verified benefit. The forecast reduces or
-Automatically cancel the contribution when the text indicates no
-confirmed components, lack of improvements, or lack of relevance to the circuit.
+Le scritture passano dalla procedura transazionale con lock, controllo delle
+modifiche concorrenti, backup compresso nel client e verifica dei documenti in piccoli blocchi.
+Il backup della revisione è conservato nell’audit con codifica `gzip-base64`;
+lo si decodifica e decomprime prima di qualsiasi ripristino controllato. Non introdurre SQL manuale
+per manipolare risultati o aggirare una verifica fallita.
 
-To voluntarily regenerate the current form:
+Per modifiche al codice: verificare il diff, conservare modifiche estranee,
+committare e pubblicare sul ramo collegato a Render. Attendere la fine del deploy;
+un push riuscito non dimostra che il nuovo codice sia attivo.
+Il solo aggiornamento dati non richiede un nuovo binario App Store. Una modifica
+nativa richiede invece il relativo percorso di build e distribuzione.
 
-```bash
-npm run gp -- --prepara --sovrascrivi
-```
+Controllare il backend e il dominio pubblico:
+
+- [Stato dell’automazione](https://f1-stats-5v93.onrender.com/api/v2/automazione)
+- [Ultima revisione e pattern](https://f1-stats-5v93.onrender.com/api/v2/revisione-post-gp)
+- [GP attuale v2](https://f1-stats-5v93.onrender.com/api/v2/gare/attuale)
+- [Home v1](https://f1-stats-5v93.onrender.com/api/v1/home)
+- [Sito](https://www.race-analysis-hub.it)
+- [Questa procedura online](https://f1-stats-5v93.onrender.com/post-gp.md)
+
+Verificare anche lingua inglese, numeri di partecipanti, anno dello storico,
+qualifica, campioni di passo/gomme, previsioni e assenza di risultati futuri.
+Non dichiarare «tutto aggiornato» se una fonte, il deploy o una verifica è ancora in attesa.
+
+## 8. Rapporto finale di ogni esecuzione
+
+Registrare data e ora, GP concluso e attuale, release e checksum, prove FIA,
+righe importate, sessioni e giri acquisiti, copertura per pilota/scuderia, lacune,
+pattern esplorativi, errori del modello, fonti editoriali, controlli e URL online.
+In caso di attesa, indicare il motivo e riprendere dalla fase incompleta.

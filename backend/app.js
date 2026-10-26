@@ -146,6 +146,7 @@ app.use('/api',async (req,res,next)=>{
 });
 app.use("/api/v1", apiV1Routes);
 app.use("/api/v2", require("./relational/api").creaRouter());
+app.get('/post-gp.md',(_req,res)=>res.type('text/markdown').sendFile(require('node:path').join(__dirname,'../post-gp.md')));
 
 app.get("/api", (richiesta, risposta) => {
   risposta.json({

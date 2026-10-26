@@ -18,6 +18,7 @@ if (digest !== calibrazione.sha256Campioni) throw new Error("Campioni e calibraz
 const CHIAVI_API = Object.freeze(["compatibilitaVetturaCircuito", "risultatiCircuitiSimili", "qualifica2026", "storicoPersonale", "aggiornamentiTecnici", "andamento2026", "passoGaraRecente", "andamentoScuderiaRecente"]);
 
 function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua = "it", meteo = null, datiLiveFia = null, pesi = null }) {
+  const evidenze = require('./runtimeF1db').evidenzeCorrenti(require('../data/evidenze-giri-2023-2026.json'));
   const campioni = require('./runtimeF1db').campioniCorrenti(require('../data/campioni-previsionali-2026.json'));
   const numerosita = new Map(Object.entries(campioni.numerosita).map(([id,n])=>[Number(id),n]));
   const testi = testiPrevisione(lingua);

@@ -1,0 +1,3005 @@
+{
+  "versione": "revisione-post-gp-v1",
+  "generatoIl": "2026-10-26T07:27:17.851Z",
+  "ultimoRound": 18,
+  "circuito": "austin",
+  "fonte": "https://github.com/f1db/f1db/releases/tag/v2026.18.0",
+  "ricercaEditoriale": {
+    "verificatoIl": "2026-10-26",
+    "garaConclusa": "usa-austin",
+    "prossimaGara": "messico-citta-del-messico",
+    "fonti": [
+      {
+        "tipo": "risultati_ufficiali",
+        "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/race-result",
+        "stato": "verificato",
+        "sintesi": "Podio Austin: Antonelli, Leclerc, Verstappen. Il risultato non equivale a una misura del passo a parità di condizioni."
+      },
+      {
+        "tipo": "cronaca_e_dichiarazioni_attribuite",
+        "url": "https://www.formula1.com/en/latest/article/what-the-teams-said-race-day-in-the-united-states-2026.4FopoItrER6KX395f6ZENu",
+        "stato": "verificato_come_resoconto",
+        "sintesi": "Antonelli ha seguito una strategia a una sosta; Ferrari ha usato due soste. Il VSC finale ha interrotto il recupero di Hamilton. Russell ha segnalato difficoltà nel superare Piastri. Questi elementi richiedono di filtrare traffico e neutralizzazioni prima del confronto cronometrico. Le dichiarazioni sui problemi vettura restano attribuite ai team."
+      },
+      {
+        "tipo": "mescole_ufficiali",
+        "url": "https://press.pirelli.com/the-compound-selection-for-austin-mexico-city-and-so-paulo/",
+        "stato": "confermato",
+        "sintesi": "Austin C2/C3/C4; Messico e San Paolo C3/C4/C5. Non trasferire automaticamente l'efficacia della Hard di Austin alle gomme del Messico."
+      },
+      {
+        "tipo": "programma_ufficiale",
+        "url": "https://www.formula1.com/en/latest/article/formula-1-gran-premio-de-la-ciudad-de-mexico-2026.14b3wTWzNNLJ5Wd8cG7HCQ",
+        "stato": "confermato_soggetto_a_revisioni",
+        "sintesi": "Messico: prove il 30 e 31 ottobre; qualifica il 31 ottobre alle 15 locali; gara il 1 novembre alle 14 locali, 20 UTC e 21 in Italia. Programma di 71 giri. Nessun risultato del weekend è ancora disponibile."
+      },
+      {
+        "tipo": "discussione_pubblica",
+        "url": "https://www.reddit.com/r/formula1/comments/1xfemqj/2026_united_states_grand_prix_postrace_discussion/",
+        "stato": "spunti_non_evidenza_quantitativa",
+        "sintesi": "Discussioni su VSC finale, aria libera, strategie e differenze tra compagni. Usate per formulare domande da verificare, senza convertirle in bonus o voti del modello."
+      },
+      {
+        "tipo": "riscontro_indipendente",
+        "url": "https://www.pitpass.com/83916/United-States-Grand-Prix-Result",
+        "stato": "secondario",
+        "sintesi": "Riscontro dell'ordine di arrivo e dei ritiri; per eventuali divergenze prevalgono la classifica finale FIA e le successive rettifiche."
+      }
+    ],
+    "ipotesiDaVerificare": [
+      "Separare il passo in aria libera dalla perdita nel traffico, soprattutto nei confronti tra compagni.",
+      "Confrontare stint sulla stessa mescola ed età senza attribuire a un pilota il beneficio del VSC.",
+      "Verificare le condizioni del Messico e le mescole più morbide prima di trasferire le conclusioni strategiche di Austin."
+    ],
+    "prossimoGp": {
+      "garaUtc": "2026-11-01T20:00:00Z",
+      "qualificaUtc": "2026-10-31T21:00:00Z",
+      "mescole": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "giri": 71,
+      "risultato": null,
+      "qualifica": null,
+      "meteo": "Da aggiornare con le previsioni disponibili a ridosso del weekend.",
+      "aggiornamentiTecnici": "Da acquisire dai documenti FIA del weekend; nessun vantaggio cronometrico dedotto."
+    }
+  },
+  "copertura": {
+    "sessioni": 48,
+    "sessioniStagione": 18,
+    "roundConGiri": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
+  },
+  "garaConclusa": [
+    {
+      "sessionKey": 11396,
+      "raceId": 1167,
+      "year": 2026,
+      "round": 18,
+      "circuitId": "austin",
+      "data": "2026-10-25",
+      "fonti": {
+        "drivers": {
+          "url": "https://api.openf1.org/v1/drivers?session_key=11396",
+          "sha256": "530ab07a9734fdb07fa8aa72d2e789bf57fd2052b93c3ed00e4d138d50790720",
+          "record": 22
+        },
+        "laps": {
+          "url": "https://api.openf1.org/v1/laps?session_key=11396",
+          "sha256": "b3138c700e0ab55e39c6a4e97e67396b51fd87c0da5360848cff92bcfda62b9e",
+          "record": 1166
+        },
+        "stints": {
+          "url": "https://api.openf1.org/v1/stints?session_key=11396",
+          "sha256": "ecd0216f756f930fd9b2380c7827519dc5595b6b835307d7c3f2b05c4025e943",
+          "record": 54
+        },
+        "pit": {
+          "url": "https://api.openf1.org/v1/pit?session_key=11396",
+          "sha256": "73a2b5e154e7ef71af78fda39677af3b013589730e8c54b618e077f54f7c9647",
+          "record": 32
+        },
+        "race_control": {
+          "url": "https://api.openf1.org/v1/race_control?session_key=11396",
+          "sha256": "0282dca5accfca36ce135472e7c070fa0dfd0cc2171db9c36227880a47b7d778",
+          "record": 173
+        },
+        "weather": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11396",
+          "sha256": "6393dd742e536e1fe6f5c762da769f863ee0fbf6469d61b7be8357e5c449a271",
+          "record": 159
+        },
+        "intervals": {
+          "url": "https://api.openf1.org/v1/intervals?session_key=11396",
+          "sha256": "15d12a092e05709a7591f6fb3ac81787ac7749c2d4e966c31d40cb8e32254039",
+          "record": 24227
+        }
+      },
+      "riepilogo": {
+        "safetyCar": 0,
+        "vsc": 0,
+        "bandiereRosse": 0,
+        "pioggiaRegistrata": false,
+        "temperaturaPistaMin": 0,
+        "temperaturaPistaMax": 39.3
+      },
+      "piloti": [
+        {
+          "driverId": "lando-norris",
+          "codice": "NOR",
+          "numero": 1,
+          "teamOpenF1": "McLaren",
+          "giriRegistrati": 56,
+          "giriComparabili": 3,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 9,
+            "traffico_non_verificato": 4,
+            "bandiere_o_neutralizzazione": 5,
+            "riferimento_insufficiente": 30
+          },
+          "passo": {
+            "deltaMedianoPercentuale": null,
+            "tempoMedianoSecondi": 100.114,
+            "campione": 3,
+            "overall": null
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 16,
+                "etaIniziale": 0,
+                "giri": 16
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 17,
+                "giroFine": 56,
+                "etaIniziale": 0,
+                "giri": 40
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "mclaren"
+        },
+        {
+          "driverId": "max-verstappen",
+          "codice": "VER",
+          "numero": 3,
+          "teamOpenF1": "Red Bull Racing",
+          "giriRegistrati": 56,
+          "giriComparabili": 7,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "bandiere_o_neutralizzazione": 6,
+            "traffico": 14,
+            "riferimento_insufficiente": 21
+          },
+          "passo": {
+            "deltaMedianoPercentuale": null,
+            "tempoMedianoSecondi": 101.002,
+            "campione": 7,
+            "overall": null
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 13,
+                "etaIniziale": 0,
+                "giri": 13
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 14,
+                "giroFine": 31,
+                "etaIniziale": 0,
+                "giri": 18
+              },
+              {
+                "numero": 3,
+                "mescola": "MEDIUM",
+                "giroInizio": 32,
+                "giroFine": 56,
+                "etaIniziale": 0,
+                "giri": 25
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "red-bull"
+        },
+        {
+          "driverId": "gabriel-bortoleto",
+          "codice": "BOR",
+          "numero": 5,
+          "teamOpenF1": "Audi",
+          "giriRegistrati": 55,
+          "giriComparabili": 21,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 21,
+            "traffico_non_verificato": 1,
+            "bandiere_o_neutralizzazione": 2,
+            "riferimento_insufficiente": 2
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 0.015,
+            "tempoMedianoSecondi": 102.556,
+            "campione": 21,
+            "overall": 38.5
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 26,
+                "etaIniziale": 0,
+                "giri": 26
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 27,
+                "giroFine": 50,
+                "etaIniziale": 0,
+                "giri": 24
+              },
+              {
+                "numero": 3,
+                "mescola": "SOFT",
+                "giroInizio": 51,
+                "giroFine": 55,
+                "etaIniziale": 0,
+                "giri": 5
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 10,
+                "pendenzaPercentualePerGiro": -0.052
+              },
+              {
+                "stint": 2,
+                "giriComparabili": 11,
+                "pendenzaPercentualePerGiro": 0.016
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.018,
+            "campione": 2,
+            "overall": 66.7
+          },
+          "constructorId": "audi"
+        },
+        {
+          "driverId": "isack-hadjar",
+          "codice": "HAD",
+          "numero": 6,
+          "teamOpenF1": "Red Bull Racing",
+          "giriRegistrati": 56,
+          "giriComparabili": 43,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 4,
+            "bandiere_o_neutralizzazione": 3,
+            "riferimento_insufficiente": 1
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -1.055,
+            "tempoMedianoSecondi": 100.983,
+            "campione": 43,
+            "overall": 84.6
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 25,
+                "etaIniziale": 0,
+                "giri": 25
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 26,
+                "giroFine": 56,
+                "etaIniziale": 0,
+                "giri": 31
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 17,
+                "pendenzaPercentualePerGiro": 0
+              },
+              {
+                "stint": 2,
+                "giriComparabili": 26,
+                "pendenzaPercentualePerGiro": -0.026
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.013,
+            "campione": 2,
+            "overall": 44.4
+          },
+          "constructorId": "red-bull"
+        },
+        {
+          "driverId": "pierre-gasly",
+          "codice": "GAS",
+          "numero": 10,
+          "teamOpenF1": "Alpine",
+          "giriRegistrati": 56,
+          "giriComparabili": 39,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 7,
+            "bandiere_o_neutralizzazione": 4,
+            "riferimento_insufficiente": 1
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.046,
+            "tempoMedianoSecondi": 101.088,
+            "campione": 39,
+            "overall": 46.2
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 24,
+                "etaIniziale": 0,
+                "giri": 24
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 25,
+                "giroFine": 56,
+                "etaIniziale": 0,
+                "giri": 32
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 13,
+                "pendenzaPercentualePerGiro": 0.034
+              },
+              {
+                "stint": 2,
+                "giriComparabili": 26,
+                "pendenzaPercentualePerGiro": -0.002
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.016,
+            "campione": 2,
+            "overall": 11.1
+          },
+          "constructorId": "alpine"
+        },
+        {
+          "driverId": "sergio-perez",
+          "codice": "PER",
+          "numero": 11,
+          "teamOpenF1": "Cadillac",
+          "giriRegistrati": 55,
+          "giriComparabili": 35,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 8,
+            "bandiere_o_neutralizzazione": 5,
+            "riferimento_insufficiente": 2
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 1.643,
+            "tempoMedianoSecondi": 103.876,
+            "campione": 35,
+            "overall": 7.7
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 23,
+                "etaIniziale": 0,
+                "giri": 23
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 24,
+                "giroFine": 55,
+                "etaIniziale": 0,
+                "giri": 32
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 12,
+                "pendenzaPercentualePerGiro": -0.028
+              },
+              {
+                "stint": 2,
+                "giriComparabili": 23,
+                "pendenzaPercentualePerGiro": -0.063
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.045,
+            "campione": 2,
+            "overall": 77.8
+          },
+          "constructorId": "cadillac"
+        },
+        {
+          "driverId": "kimi-antonelli",
+          "codice": "ANT",
+          "numero": 12,
+          "teamOpenF1": "Mercedes",
+          "giriRegistrati": 56,
+          "giriComparabili": 3,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 47,
+            "bandiere_o_neutralizzazione": 1
+          },
+          "passo": {
+            "deltaMedianoPercentuale": null,
+            "tempoMedianoSecondi": 99.823,
+            "campione": 3,
+            "overall": null
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 24,
+                "etaIniziale": 0,
+                "giri": 24
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 25,
+                "giroFine": 56,
+                "etaIniziale": 0,
+                "giri": 32
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "mercedes"
+        },
+        {
+          "driverId": "fernando-alonso",
+          "codice": "ALO",
+          "numero": 14,
+          "teamOpenF1": "Aston Martin",
+          "giriRegistrati": 55,
+          "giriComparabili": 13,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 12,
+            "bandiere_o_neutralizzazione": 3,
+            "riferimento_insufficiente": 19
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.066,
+            "tempoMedianoSecondi": 102.636,
+            "campione": 13,
+            "overall": 61.5
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 28,
+                "etaIniziale": 0,
+                "giri": 28
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 29,
+                "giroFine": 42,
+                "etaIniziale": 0,
+                "giri": 14
+              },
+              {
+                "numero": 3,
+                "mescola": "SOFT",
+                "giroInizio": 43,
+                "giroFine": 55,
+                "etaIniziale": 3,
+                "giri": 13
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 12,
+                "pendenzaPercentualePerGiro": -0.014
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.014,
+            "campione": 1,
+            "overall": 55.6
+          },
+          "constructorId": "aston-martin"
+        },
+        {
+          "driverId": "charles-leclerc",
+          "codice": "LEC",
+          "numero": 16,
+          "teamOpenF1": "Ferrari",
+          "giriRegistrati": 56,
+          "giriComparabili": 7,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 13,
+            "bandiere_o_neutralizzazione": 5,
+            "traffico_non_verificato": 1,
+            "riferimento_insufficiente": 22
+          },
+          "passo": {
+            "deltaMedianoPercentuale": null,
+            "tempoMedianoSecondi": 101.207,
+            "campione": 7,
+            "overall": null
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 15,
+                "etaIniziale": 0,
+                "giri": 15
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 16,
+                "giroFine": 39,
+                "etaIniziale": 0,
+                "giri": 24
+              },
+              {
+                "numero": 3,
+                "mescola": "HARD",
+                "giroInizio": 40,
+                "giroFine": 56,
+                "etaIniziale": 0,
+                "giri": 17
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "ferrari"
+        },
+        {
+          "driverId": "lance-stroll",
+          "codice": "STR",
+          "numero": 18,
+          "teamOpenF1": "Aston Martin",
+          "giriRegistrati": 55,
+          "giriComparabili": 11,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 12,
+            "traffico_non_verificato": 1,
+            "bandiere_o_neutralizzazione": 5,
+            "riferimento_insufficiente": 18
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.202,
+            "tempoMedianoSecondi": 102.402,
+            "campione": 11,
+            "overall": 76.9
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 1,
+                "etaIniziale": 0,
+                "giri": 1
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 2,
+                "giroFine": 41,
+                "etaIniziale": 0,
+                "giri": 40
+              },
+              {
+                "numero": 3,
+                "mescola": "SOFT",
+                "giroInizio": 42,
+                "giroFine": 55,
+                "etaIniziale": 0,
+                "giri": 14
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 2,
+                "giriComparabili": 10,
+                "pendenzaPercentualePerGiro": -0.13
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.13,
+            "campione": 1,
+            "overall": 100
+          },
+          "constructorId": "aston-martin"
+        },
+        {
+          "driverId": "alexander-albon",
+          "codice": "ALB",
+          "numero": 23,
+          "teamOpenF1": "Williams",
+          "giriRegistrati": 55,
+          "giriComparabili": 9,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 10,
+            "bandiere_o_neutralizzazione": 5,
+            "riferimento_insufficiente": 23
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 1.474,
+            "tempoMedianoSecondi": 104.147,
+            "campione": 9,
+            "overall": 15.4
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 16,
+                "etaIniziale": 0,
+                "giri": 16
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 17,
+                "giroFine": 31,
+                "etaIniziale": 0,
+                "giri": 15
+              },
+              {
+                "numero": 3,
+                "mescola": "HARD",
+                "giroInizio": 32,
+                "giroFine": 55,
+                "etaIniziale": 0,
+                "giri": 24
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "williams"
+        },
+        {
+          "driverId": "nico-hulkenberg",
+          "codice": "HUL",
+          "numero": 27,
+          "teamOpenF1": "Audi",
+          "giriRegistrati": 56,
+          "giriComparabili": 24,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 19,
+            "bandiere_o_neutralizzazione": 5,
+            "riferimento_insufficiente": 3
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.069,
+            "tempoMedianoSecondi": 101.024,
+            "campione": 24,
+            "overall": 69.2
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 29,
+                "etaIniziale": 0,
+                "giri": 29
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 30,
+                "giroFine": 56,
+                "etaIniziale": 0,
+                "giri": 27
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 2,
+                "giriComparabili": 18,
+                "pendenzaPercentualePerGiro": -0.002
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.002,
+            "campione": 1,
+            "overall": 22.2
+          },
+          "constructorId": "audi"
+        },
+        {
+          "driverId": "liam-lawson",
+          "codice": "LAW",
+          "numero": 30,
+          "teamOpenF1": "Racing Bulls",
+          "giriRegistrati": 56,
+          "giriComparabili": 44,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "bandiere_o_neutralizzazione": 6,
+            "traffico": 1
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -0.063,
+            "tempoMedianoSecondi": 101.39,
+            "campione": 44,
+            "overall": 53.8
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 25,
+                "etaIniziale": 0,
+                "giri": 25
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 26,
+                "giroFine": 56,
+                "etaIniziale": 0,
+                "giri": 31
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 19,
+                "pendenzaPercentualePerGiro": 0.015
+              },
+              {
+                "stint": 2,
+                "giriComparabili": 25,
+                "pendenzaPercentualePerGiro": -0.02
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.003,
+            "campione": 2,
+            "overall": 33.3
+          },
+          "constructorId": "racing-bulls"
+        },
+        {
+          "driverId": "esteban-ocon",
+          "codice": "OCO",
+          "numero": 31,
+          "teamOpenF1": "Haas F1 Team",
+          "giriRegistrati": 55,
+          "giriComparabili": 31,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 8,
+            "traffico_non_verificato": 3,
+            "bandiere_o_neutralizzazione": 5,
+            "riferimento_insufficiente": 3
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 0.815,
+            "tempoMedianoSecondi": 101.886,
+            "campione": 31,
+            "overall": 23.1
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 21,
+                "etaIniziale": 0,
+                "giri": 21
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 22,
+                "giroFine": 55,
+                "etaIniziale": 0,
+                "giri": 34
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 2,
+                "giriComparabili": 22,
+                "pendenzaPercentualePerGiro": 0.038
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": 0.038,
+            "campione": 1,
+            "overall": 0
+          },
+          "constructorId": "haas"
+        },
+        {
+          "driverId": "arvid-lindblad",
+          "codice": "LIN",
+          "numero": 41,
+          "teamOpenF1": "Racing Bulls",
+          "giriRegistrati": 55,
+          "giriComparabili": 11,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 9,
+            "traffico_non_verificato": 2,
+            "bandiere_o_neutralizzazione": 4,
+            "riferimento_insufficiente": 21
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 0.532,
+            "tempoMedianoSecondi": 103.168,
+            "campione": 11,
+            "overall": 30.8
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 18,
+                "etaIniziale": 0,
+                "giri": 18
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 19,
+                "giroFine": 40,
+                "etaIniziale": 0,
+                "giri": 22
+              },
+              {
+                "numero": 3,
+                "mescola": "SOFT",
+                "giroInizio": 41,
+                "giroFine": 55,
+                "etaIniziale": 3,
+                "giri": 15
+              }
+            ],
+            "stintComparabili": [
+              {
+                "stint": 1,
+                "giriComparabili": 10,
+                "pendenzaPercentualePerGiro": -0.074
+              }
+            ],
+            "pendenzaRelativaPercentualePerGiro": -0.074,
+            "campione": 1,
+            "overall": 88.9
+          },
+          "constructorId": "racing-bulls"
+        },
+        {
+          "driverId": "franco-colapinto",
+          "codice": "COL",
+          "numero": 43,
+          "teamOpenF1": "Alpine",
+          "giriRegistrati": 36,
+          "giriComparabili": 0,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "bandiere_o_neutralizzazione": 3,
+            "traffico": 14,
+            "traffico_non_verificato": 1,
+            "tempo_incompleto": 1,
+            "riferimento_insufficiente": 12
+          },
+          "passo": {
+            "deltaMedianoPercentuale": null,
+            "tempoMedianoSecondi": null,
+            "campione": 0,
+            "overall": null
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "HARD",
+                "giroInizio": 1,
+                "giroFine": 30,
+                "etaIniziale": 0,
+                "giri": 30
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 31,
+                "giroFine": 35,
+                "etaIniziale": 0,
+                "giri": 5
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "alpine"
+        },
+        {
+          "driverId": "lewis-hamilton",
+          "codice": "HAM",
+          "numero": 44,
+          "teamOpenF1": "Ferrari",
+          "giriRegistrati": 56,
+          "giriComparabili": 8,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 7,
+            "bandiere_o_neutralizzazione": 3,
+            "traffico_non_verificato": 1,
+            "riferimento_insufficiente": 29
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -1.289,
+            "tempoMedianoSecondi": 101.381,
+            "campione": 8,
+            "overall": 100
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 14,
+                "etaIniziale": 2,
+                "giri": 14
+              },
+              {
+                "numero": 2,
+                "mescola": "MEDIUM",
+                "giroInizio": 15,
+                "giroFine": 38,
+                "etaIniziale": 0,
+                "giri": 24
+              },
+              {
+                "numero": 3,
+                "mescola": "HARD",
+                "giroInizio": 39,
+                "giroFine": 56,
+                "etaIniziale": 0,
+                "giri": 18
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "ferrari"
+        },
+        {
+          "driverId": "carlos-sainz-jr",
+          "codice": "SAI",
+          "numero": 55,
+          "teamOpenF1": "Williams",
+          "giriRegistrati": 55,
+          "giriComparabili": 12,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 13,
+            "traffico_non_verificato": 2,
+            "bandiere_o_neutralizzazione": 4,
+            "riferimento_insufficiente": 16
+          },
+          "passo": {
+            "deltaMedianoPercentuale": 2.003,
+            "tempoMedianoSecondi": 103.066,
+            "campione": 12,
+            "overall": 0
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 17,
+                "etaIniziale": 0,
+                "giri": 17
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 18,
+                "giroFine": 38,
+                "etaIniziale": 0,
+                "giri": 21
+              },
+              {
+                "numero": 3,
+                "mescola": "SOFT",
+                "giroInizio": 39,
+                "giroFine": 55,
+                "etaIniziale": 0,
+                "giri": 17
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "williams"
+        },
+        {
+          "driverId": "george-russell",
+          "codice": "RUS",
+          "numero": 63,
+          "teamOpenF1": "Mercedes",
+          "giriRegistrati": 56,
+          "giriComparabili": 8,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 24,
+            "bandiere_o_neutralizzazione": 4,
+            "riferimento_insufficiente": 15
+          },
+          "passo": {
+            "deltaMedianoPercentuale": -1.279,
+            "tempoMedianoSecondi": 100.156,
+            "campione": 8,
+            "overall": 92.3
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 22,
+                "etaIniziale": 0,
+                "giri": 22
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 23,
+                "giroFine": 56,
+                "etaIniziale": 0,
+                "giri": 34
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "mercedes"
+        },
+        {
+          "driverId": "valtteri-bottas",
+          "codice": "BOT",
+          "numero": 77,
+          "teamOpenF1": "Cadillac",
+          "giriRegistrati": 49,
+          "giriComparabili": 0,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 4,
+            "bandiere_o_neutralizzazione": 2,
+            "traffico_non_verificato": 1,
+            "tempo_incompleto": 1,
+            "riferimento_insufficiente": 36
+          },
+          "passo": {
+            "deltaMedianoPercentuale": null,
+            "tempoMedianoSecondi": null,
+            "campione": 0,
+            "overall": null
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "HARD",
+                "giroInizio": 1,
+                "giroFine": 29,
+                "etaIniziale": 0,
+                "giri": 29
+              },
+              {
+                "numero": 2,
+                "mescola": "SOFT",
+                "giroInizio": 30,
+                "giroFine": 48,
+                "etaIniziale": 0,
+                "giri": 19
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "cadillac"
+        },
+        {
+          "driverId": "oscar-piastri",
+          "codice": "PIA",
+          "numero": 81,
+          "teamOpenF1": "McLaren",
+          "giriRegistrati": 56,
+          "giriComparabili": 0,
+          "giriEsclusi": {
+            "partenza_o_pit": 5,
+            "traffico": 15,
+            "bandiere_o_neutralizzazione": 5,
+            "traffico_non_verificato": 1,
+            "riferimento_insufficiente": 30
+          },
+          "passo": {
+            "deltaMedianoPercentuale": null,
+            "tempoMedianoSecondi": null,
+            "campione": 0,
+            "overall": null
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "MEDIUM",
+                "giroInizio": 1,
+                "giroFine": 15,
+                "etaIniziale": 0,
+                "giri": 15
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 16,
+                "giroFine": 56,
+                "etaIniziale": 0,
+                "giri": 41
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "mclaren"
+        },
+        {
+          "driverId": "oliver-bearman",
+          "codice": "BEA",
+          "numero": 87,
+          "teamOpenF1": "Haas F1 Team",
+          "giriRegistrati": 25,
+          "giriComparabili": 4,
+          "giriEsclusi": {
+            "partenza_o_pit": 8,
+            "traffico": 7,
+            "bandiere_o_neutralizzazione": 2,
+            "tempo_incompleto": 1,
+            "riferimento_insufficiente": 3
+          },
+          "passo": {
+            "deltaMedianoPercentuale": null,
+            "tempoMedianoSecondi": 103.579,
+            "campione": 4,
+            "overall": null
+          },
+          "gomme": {
+            "stint": [
+              {
+                "numero": 1,
+                "mescola": "SOFT",
+                "giroInizio": 1,
+                "giroFine": 13,
+                "etaIniziale": 0,
+                "giri": 13
+              },
+              {
+                "numero": 2,
+                "mescola": "HARD",
+                "giroInizio": 14,
+                "giroFine": 22,
+                "etaIniziale": 0,
+                "giri": 9
+              },
+              {
+                "numero": 3,
+                "mescola": "MEDIUM",
+                "giroInizio": 23,
+                "giroFine": 24,
+                "etaIniziale": 0,
+                "giri": 2
+              }
+            ],
+            "stintComparabili": [],
+            "pendenzaRelativaPercentualePerGiro": null,
+            "campione": 0,
+            "overall": null
+          },
+          "constructorId": "haas"
+        }
+      ]
+    }
+  ],
+  "verificaModello": {
+    "modello": "forma-recente-v1",
+    "pesi": {
+      "passoGaraRecente": 15,
+      "qualifica2026": 0,
+      "andamentoScuderiaRecente": 35,
+      "andamento2026": 50
+    },
+    "parametri": {
+      "emivitaGP": 4,
+      "osservazioniPrior": 0
+    },
+    "tipo": "ricostruzione_con_modello_congelato_non_previsione_archiviata",
+    "completa": {
+      "piloti": 22,
+      "sommaErroriAssoluti": 48,
+      "erroreAssolutoMedio": 2.182,
+      "spearman": 0.869,
+      "vincitoreCorretto": true,
+      "podioIndovinati": 1,
+      "top10Indovinati": 10
+    },
+    "regolari": {
+      "piloti": 19,
+      "sommaErroriAssoluti": 22,
+      "erroreAssolutoMedio": 1.158,
+      "spearman": 0.94,
+      "vincitoreCorretto": true,
+      "podioIndovinati": 1,
+      "top10Indovinati": 10
+    },
+    "riferimentoSoloMondiale": {
+      "completa": {
+        "piloti": 22,
+        "sommaErroriAssoluti": 52,
+        "erroreAssolutoMedio": 2.364,
+        "spearman": 0.846,
+        "vincitoreCorretto": true,
+        "podioIndovinati": 1,
+        "top10Indovinati": 10
+      },
+      "regolari": {
+        "piloti": 19,
+        "sommaErroriAssoluti": 22,
+        "erroreAssolutoMedio": 1.158,
+        "spearman": 0.94,
+        "vincitoreCorretto": true,
+        "podioIndovinati": 1,
+        "top10Indovinati": 10
+      }
+    },
+    "confronto": [
+      {
+        "driverId": "kimi-antonelli",
+        "prevista": 1,
+        "reale": 1
+      },
+      {
+        "driverId": "george-russell",
+        "prevista": 2,
+        "reale": 8
+      },
+      {
+        "driverId": "lewis-hamilton",
+        "prevista": 3,
+        "reale": 4
+      },
+      {
+        "driverId": "max-verstappen",
+        "prevista": 4,
+        "reale": 3
+      },
+      {
+        "driverId": "charles-leclerc",
+        "prevista": 5,
+        "reale": 2
+      },
+      {
+        "driverId": "lando-norris",
+        "prevista": 6,
+        "reale": 5
+      },
+      {
+        "driverId": "oscar-piastri",
+        "prevista": 7,
+        "reale": 7
+      },
+      {
+        "driverId": "isack-hadjar",
+        "prevista": 8,
+        "reale": 6
+      },
+      {
+        "driverId": "liam-lawson",
+        "prevista": 9,
+        "reale": 9
+      },
+      {
+        "driverId": "pierre-gasly",
+        "prevista": 10,
+        "reale": 10
+      },
+      {
+        "driverId": "arvid-lindblad",
+        "prevista": 11,
+        "reale": 12
+      },
+      {
+        "driverId": "franco-colapinto",
+        "prevista": 12,
+        "reale": 21
+      },
+      {
+        "driverId": "nico-hulkenberg",
+        "prevista": 13,
+        "reale": 11
+      },
+      {
+        "driverId": "gabriel-bortoleto",
+        "prevista": 14,
+        "reale": 13
+      },
+      {
+        "driverId": "oliver-bearman",
+        "prevista": 15,
+        "reale": 22
+      },
+      {
+        "driverId": "esteban-ocon",
+        "prevista": 16,
+        "reale": 14
+      },
+      {
+        "driverId": "fernando-alonso",
+        "prevista": 17,
+        "reale": 16
+      },
+      {
+        "driverId": "carlos-sainz-jr",
+        "prevista": 18,
+        "reale": 18
+      },
+      {
+        "driverId": "alexander-albon",
+        "prevista": 19,
+        "reale": 17
+      },
+      {
+        "driverId": "lance-stroll",
+        "prevista": 20,
+        "reale": 15
+      },
+      {
+        "driverId": "valtteri-bottas",
+        "prevista": 21,
+        "reale": 20
+      },
+      {
+        "driverId": "sergio-perez",
+        "prevista": 22,
+        "reale": 19
+      }
+    ]
+  },
+  "prossimiGp": [
+    {
+      "gara": "messico-citta-del-messico",
+      "round": 19,
+      "ultimoRoundOsservato": 18,
+      "circuitiSimili": [
+        {
+          "gara": "spagna-madring",
+          "round": 14,
+          "circuitId": "madring",
+          "similaritaPercentuale": 95.3
+        },
+        {
+          "gara": "azerbaigian-baku",
+          "round": 15,
+          "circuitId": "baku",
+          "similaritaPercentuale": 90.9
+        },
+        {
+          "gara": "bahrein-sepang",
+          "round": 16,
+          "circuitId": "sepang",
+          "similaritaPercentuale": 90
+        }
+      ],
+      "piloti": [
+        {
+          "id": "lance-stroll",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 12,
+          "vantaggioPosizioniRispettoStagione": 3.17,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "fernando-alonso",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 12.5,
+          "vantaggioPosizioniRispettoStagione": 2.33,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "isack-hadjar",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 4,
+          "vantaggioPosizioniRispettoStagione": 2.23,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "esteban-ocon",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 11.333333333333334,
+          "vantaggioPosizioniRispettoStagione": 1.78,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "max-verstappen",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 1.6666666666666667,
+          "vantaggioPosizioniRispettoStagione": 1.55,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "arvid-lindblad",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 8.666666666666666,
+          "vantaggioPosizioniRispettoStagione": 1.45,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "franco-colapinto",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 10,
+          "vantaggioPosizioniRispettoStagione": 1.27,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "george-russell",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 3,
+          "vantaggioPosizioniRispettoStagione": 1.2,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "carlos-sainz-jr",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 13.5,
+          "vantaggioPosizioniRispettoStagione": 0.37,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "liam-lawson",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 8.333333333333334,
+          "vantaggioPosizioniRispettoStagione": 0.25,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "nico-hulkenberg",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 10.666666666666666,
+          "vantaggioPosizioniRispettoStagione": 0.19,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "kimi-antonelli",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 2.6666666666666665,
+          "vantaggioPosizioniRispettoStagione": -0.08,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "charles-leclerc",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 4,
+          "vantaggioPosizioniRispettoStagione": -0.13,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "alexander-albon",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 15,
+          "vantaggioPosizioniRispettoStagione": -0.2,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "lewis-hamilton",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 4.5,
+          "vantaggioPosizioniRispettoStagione": -0.38,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "sergio-perez",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 16.5,
+          "vantaggioPosizioniRispettoStagione": -0.42,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "valtteri-bottas",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 18,
+          "vantaggioPosizioniRispettoStagione": -0.67,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "oliver-bearman",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 13,
+          "vantaggioPosizioniRispettoStagione": -0.85,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "lando-norris",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 6,
+          "vantaggioPosizioniRispettoStagione": -1.71,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "yuki-tsunoda",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 14,
+          "vantaggioPosizioniRispettoStagione": -2.33,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "oscar-piastri",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 9,
+          "vantaggioPosizioniRispettoStagione": -2.67,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "gabriel-bortoleto",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 15.333333333333334,
+          "vantaggioPosizioniRispettoStagione": -3.46,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "pierre-gasly",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 14,
+          "vantaggioPosizioniRispettoStagione": -4.19,
+          "stato": "campione_insufficiente"
+        }
+      ],
+      "scuderie": [
+        {
+          "id": "aston-martin",
+          "osservazioni": 3,
+          "gare": 2,
+          "posizioneMedia": 12.333333333333334,
+          "vantaggioPosizioniRispettoStagione": 2.61,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "red-bull",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 3.1666666666666665,
+          "vantaggioPosizioniRispettoStagione": 1.93,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "mercedes",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 2.8,
+          "vantaggioPosizioniRispettoStagione": 0.54,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "haas",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 12.166666666666666,
+          "vantaggioPosizioniRispettoStagione": 0.53,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "williams",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 14,
+          "vantaggioPosizioniRispettoStagione": 0.24,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "ferrari",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 4.2,
+          "vantaggioPosizioniRispettoStagione": -0.2,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "racing-bulls",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 9.833333333333334,
+          "vantaggioPosizioniRispettoStagione": -0.25,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "cadillac",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 17,
+          "vantaggioPosizioniRispettoStagione": -0.41,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "alpine",
+          "osservazioni": 4,
+          "gare": 2,
+          "posizioneMedia": 12,
+          "vantaggioPosizioniRispettoStagione": -1.48,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "audi",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 13,
+          "vantaggioPosizioniRispettoStagione": -1.6,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "mclaren",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 7.8,
+          "vantaggioPosizioniRispettoStagione": -2.46,
+          "stato": "associazione_esplorativa"
+        }
+      ]
+    },
+    {
+      "gara": "brasile-interlagos",
+      "round": 20,
+      "ultimoRoundOsservato": 18,
+      "circuitiSimili": [
+        {
+          "gara": "usa-austin",
+          "round": 18,
+          "circuitId": "austin",
+          "similaritaPercentuale": 96
+        },
+        {
+          "gara": "bahrein-sepang",
+          "round": 16,
+          "circuitId": "sepang",
+          "similaritaPercentuale": 95.1
+        },
+        {
+          "gara": "spagna-madring",
+          "round": 14,
+          "circuitId": "madring",
+          "similaritaPercentuale": 93.5
+        }
+      ],
+      "piloti": [
+        {
+          "id": "lance-stroll",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 13.5,
+          "vantaggioPosizioniRispettoStagione": 1.67,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "franco-colapinto",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 10,
+          "vantaggioPosizioniRispettoStagione": 1.27,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "kimi-antonelli",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 1.3333333333333333,
+          "vantaggioPosizioniRispettoStagione": 1.25,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "liam-lawson",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 7.333333333333333,
+          "vantaggioPosizioniRispettoStagione": 1.25,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "max-verstappen",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 2,
+          "vantaggioPosizioniRispettoStagione": 1.21,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "fernando-alonso",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 13.666666666666666,
+          "vantaggioPosizioniRispettoStagione": 1.17,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "isack-hadjar",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 5.5,
+          "vantaggioPosizioniRispettoStagione": 0.73,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "lewis-hamilton",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 3.5,
+          "vantaggioPosizioniRispettoStagione": 0.62,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "charles-leclerc",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 3.3333333333333335,
+          "vantaggioPosizioniRispettoStagione": 0.53,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "nico-hulkenberg",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 10.666666666666666,
+          "vantaggioPosizioniRispettoStagione": 0.19,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "arvid-lindblad",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 10.333333333333334,
+          "vantaggioPosizioniRispettoStagione": -0.22,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "esteban-ocon",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 13.333333333333334,
+          "vantaggioPosizioniRispettoStagione": -0.22,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "valtteri-bottas",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 18,
+          "vantaggioPosizioniRispettoStagione": -0.67,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "oscar-piastri",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 7,
+          "vantaggioPosizioniRispettoStagione": -0.67,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "alexander-albon",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 16,
+          "vantaggioPosizioniRispettoStagione": -1.2,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "lando-norris",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 5.666666666666667,
+          "vantaggioPosizioniRispettoStagione": -1.38,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "george-russell",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 6.5,
+          "vantaggioPosizioniRispettoStagione": -2.3,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "yuki-tsunoda",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 14,
+          "vantaggioPosizioniRispettoStagione": -2.33,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "gabriel-bortoleto",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 14.666666666666666,
+          "vantaggioPosizioniRispettoStagione": -2.79,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "oliver-bearman",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 15,
+          "vantaggioPosizioniRispettoStagione": -2.85,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "pierre-gasly",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 12.666666666666666,
+          "vantaggioPosizioniRispettoStagione": -2.85,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "sergio-perez",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 19,
+          "vantaggioPosizioniRispettoStagione": -2.92,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "carlos-sainz-jr",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 17.5,
+          "vantaggioPosizioniRispettoStagione": -3.63,
+          "stato": "campione_insufficiente"
+        }
+      ],
+      "scuderie": [
+        {
+          "id": "aston-martin",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 13.6,
+          "vantaggioPosizioniRispettoStagione": 1.34,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "red-bull",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 3.8333333333333335,
+          "vantaggioPosizioniRispettoStagione": 1.27,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "ferrari",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 3.4,
+          "vantaggioPosizioniRispettoStagione": 0.6,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "mercedes",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 3.4,
+          "vantaggioPosizioniRispettoStagione": -0.06,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "racing-bulls",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 10.166666666666666,
+          "vantaggioPosizioniRispettoStagione": -0.58,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "mclaren",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 6.333333333333333,
+          "vantaggioPosizioniRispettoStagione": -0.99,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "alpine",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 11.6,
+          "vantaggioPosizioniRispettoStagione": -1.08,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "audi",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 12.666666666666666,
+          "vantaggioPosizioniRispettoStagione": -1.27,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "haas",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 14,
+          "vantaggioPosizioniRispettoStagione": -1.3,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "cadillac",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 18.666666666666668,
+          "vantaggioPosizioniRispettoStagione": -2.08,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "williams",
+          "osservazioni": 4,
+          "gare": 3,
+          "posizioneMedia": 16.75,
+          "vantaggioPosizioniRispettoStagione": -2.51,
+          "stato": "associazione_esplorativa"
+        }
+      ]
+    },
+    {
+      "gara": "usa-las-vegas",
+      "round": 21,
+      "ultimoRoundOsservato": 18,
+      "circuitiSimili": [
+        {
+          "gara": "azerbaigian-baku",
+          "round": 15,
+          "circuitId": "baku",
+          "similaritaPercentuale": 93.9
+        },
+        {
+          "gara": "spagna-madring",
+          "round": 14,
+          "circuitId": "madring",
+          "similaritaPercentuale": 91.1
+        },
+        {
+          "gara": "italia-monza",
+          "round": 13,
+          "circuitId": "monza",
+          "similaritaPercentuale": 90.8
+        }
+      ],
+      "piloti": [
+        {
+          "id": "franco-colapinto",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 8,
+          "vantaggioPosizioniRispettoStagione": 3.27,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "isack-hadjar",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 3,
+          "vantaggioPosizioniRispettoStagione": 3.23,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "carlos-sainz-jr",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 11.5,
+          "vantaggioPosizioniRispettoStagione": 2.37,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "arvid-lindblad",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 8,
+          "vantaggioPosizioniRispettoStagione": 2.12,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "george-russell",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 2.6666666666666665,
+          "vantaggioPosizioniRispettoStagione": 1.53,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "esteban-ocon",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 11.666666666666666,
+          "vantaggioPosizioniRispettoStagione": 1.45,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "max-verstappen",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 2.3333333333333335,
+          "vantaggioPosizioniRispettoStagione": 0.88,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "lando-norris",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 3.5,
+          "vantaggioPosizioniRispettoStagione": 0.79,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "pierre-gasly",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 9.5,
+          "vantaggioPosizioniRispettoStagione": 0.31,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "kimi-antonelli",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 2.3333333333333335,
+          "vantaggioPosizioniRispettoStagione": 0.25,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "sergio-perez",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 16,
+          "vantaggioPosizioniRispettoStagione": 0.08,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "charles-leclerc",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 4,
+          "vantaggioPosizioniRispettoStagione": -0.13,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "nico-hulkenberg",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 11,
+          "vantaggioPosizioniRispettoStagione": -0.14,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "yuki-tsunoda",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 12,
+          "vantaggioPosizioniRispettoStagione": -0.33,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "gabriel-bortoleto",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 13,
+          "vantaggioPosizioniRispettoStagione": -1.12,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "valtteri-bottas",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 18.5,
+          "vantaggioPosizioniRispettoStagione": -1.17,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "oliver-bearman",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 13.333333333333334,
+          "vantaggioPosizioniRispettoStagione": -1.18,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "alexander-albon",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 16,
+          "vantaggioPosizioniRispettoStagione": -1.2,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "lewis-hamilton",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 6,
+          "vantaggioPosizioniRispettoStagione": -1.88,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "liam-lawson",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 10.666666666666666,
+          "vantaggioPosizioniRispettoStagione": -2.08,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "fernando-alonso",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 17,
+          "vantaggioPosizioniRispettoStagione": -2.17,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "oscar-piastri",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 8.666666666666666,
+          "vantaggioPosizioniRispettoStagione": -2.33,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "lance-stroll",
+          "osservazioni": 0,
+          "gare": 0,
+          "posizioneMedia": null,
+          "vantaggioPosizioniRispettoStagione": null,
+          "stato": "campione_insufficiente"
+        }
+      ],
+      "scuderie": [
+        {
+          "id": "alpine",
+          "osservazioni": 4,
+          "gare": 2,
+          "posizioneMedia": 8.75,
+          "vantaggioPosizioniRispettoStagione": 1.77,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "mercedes",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 2.5,
+          "vantaggioPosizioniRispettoStagione": 0.84,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "williams",
+          "osservazioni": 4,
+          "gare": 3,
+          "posizioneMedia": 13.75,
+          "vantaggioPosizioniRispettoStagione": 0.49,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "haas",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 12.5,
+          "vantaggioPosizioniRispettoStagione": 0.2,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "red-bull",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 5,
+          "vantaggioPosizioniRispettoStagione": 0.1,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "racing-bulls",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 10,
+          "vantaggioPosizioniRispettoStagione": -0.41,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "audi",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 12,
+          "vantaggioPosizioniRispettoStagione": -0.6,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "cadillac",
+          "osservazioni": 4,
+          "gare": 3,
+          "posizioneMedia": 17.25,
+          "vantaggioPosizioniRispettoStagione": -0.66,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "ferrari",
+          "osservazioni": 4,
+          "gare": 3,
+          "posizioneMedia": 5,
+          "vantaggioPosizioniRispettoStagione": -1,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "mclaren",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 6.6,
+          "vantaggioPosizioniRispettoStagione": -1.26,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "aston-martin",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 17,
+          "vantaggioPosizioniRispettoStagione": -2.06,
+          "stato": "campione_insufficiente"
+        }
+      ]
+    },
+    {
+      "gara": "qatar-lusail",
+      "round": 22,
+      "ultimoRoundOsservato": 18,
+      "circuitiSimili": [
+        {
+          "gara": "bahrein-sepang",
+          "round": 16,
+          "circuitId": "sepang",
+          "similaritaPercentuale": 91.1
+        },
+        {
+          "gara": "olanda-zandvoort",
+          "round": 12,
+          "circuitId": "zandvoort",
+          "similaritaPercentuale": 90.6
+        },
+        {
+          "gara": "usa-austin",
+          "round": 18,
+          "circuitId": "austin",
+          "similaritaPercentuale": 90.1
+        }
+      ],
+      "piloti": [
+        {
+          "id": "fernando-alonso",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 11,
+          "vantaggioPosizioniRispettoStagione": 3.83,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "lance-stroll",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 13.5,
+          "vantaggioPosizioniRispettoStagione": 1.67,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "max-verstappen",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 2,
+          "vantaggioPosizioniRispettoStagione": 1.21,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "kimi-antonelli",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 1.6666666666666667,
+          "vantaggioPosizioniRispettoStagione": 0.92,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "liam-lawson",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 7.666666666666667,
+          "vantaggioPosizioniRispettoStagione": 0.92,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "nico-hulkenberg",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 10,
+          "vantaggioPosizioniRispettoStagione": 0.86,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "isack-hadjar",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 5.5,
+          "vantaggioPosizioniRispettoStagione": 0.73,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "yuki-tsunoda",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 11,
+          "vantaggioPosizioniRispettoStagione": 0.67,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "lewis-hamilton",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 3.6666666666666665,
+          "vantaggioPosizioniRispettoStagione": 0.45,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "charles-leclerc",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 3.6666666666666665,
+          "vantaggioPosizioniRispettoStagione": 0.2,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "oscar-piastri",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 6.333333333333333,
+          "vantaggioPosizioniRispettoStagione": 0,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "lando-norris",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 5,
+          "vantaggioPosizioniRispettoStagione": -0.71,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "arvid-lindblad",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 11.333333333333334,
+          "vantaggioPosizioniRispettoStagione": -1.22,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "george-russell",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 5.5,
+          "vantaggioPosizioniRispettoStagione": -1.3,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "esteban-ocon",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 14.5,
+          "vantaggioPosizioniRispettoStagione": -1.38,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "sergio-perez",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 17.666666666666668,
+          "vantaggioPosizioniRispettoStagione": -1.59,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "oliver-bearman",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 14,
+          "vantaggioPosizioniRispettoStagione": -1.85,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "pierre-gasly",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 12,
+          "vantaggioPosizioniRispettoStagione": -2.19,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "alexander-albon",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 17,
+          "vantaggioPosizioniRispettoStagione": -2.2,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "franco-colapinto",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 13.5,
+          "vantaggioPosizioniRispettoStagione": -2.23,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "gabriel-bortoleto",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 14.666666666666666,
+          "vantaggioPosizioniRispettoStagione": -2.79,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "carlos-sainz-jr",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 17,
+          "vantaggioPosizioniRispettoStagione": -3.13,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "valtteri-bottas",
+          "osservazioni": 0,
+          "gare": 0,
+          "posizioneMedia": null,
+          "vantaggioPosizioniRispettoStagione": null,
+          "stato": "campione_insufficiente"
+        }
+      ],
+      "scuderie": [
+        {
+          "id": "aston-martin",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 12,
+          "vantaggioPosizioniRispettoStagione": 2.94,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "red-bull",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 4.4,
+          "vantaggioPosizioniRispettoStagione": 0.7,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "ferrari",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 3.6666666666666665,
+          "vantaggioPosizioniRispettoStagione": 0.33,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "mercedes",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 3.2,
+          "vantaggioPosizioniRispettoStagione": 0.14,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "mclaren",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 5.666666666666667,
+          "vantaggioPosizioniRispettoStagione": -0.32,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "racing-bulls",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 10.166666666666666,
+          "vantaggioPosizioniRispettoStagione": -0.58,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "audi",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 12.333333333333334,
+          "vantaggioPosizioniRispettoStagione": -0.93,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "cadillac",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 17.666666666666668,
+          "vantaggioPosizioniRispettoStagione": -1.08,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "haas",
+          "osservazioni": 3,
+          "gare": 2,
+          "posizioneMedia": 14.333333333333334,
+          "vantaggioPosizioniRispettoStagione": -1.63,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "alpine",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 12.6,
+          "vantaggioPosizioniRispettoStagione": -2.08,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "williams",
+          "osservazioni": 4,
+          "gare": 3,
+          "posizioneMedia": 17,
+          "vantaggioPosizioniRispettoStagione": -2.76,
+          "stato": "associazione_esplorativa"
+        }
+      ]
+    },
+    {
+      "gara": "abu-dhabi-yas-marina",
+      "round": 23,
+      "ultimoRoundOsservato": 18,
+      "circuitiSimili": [
+        {
+          "gara": "spagna-madring",
+          "round": 14,
+          "circuitId": "madring",
+          "similaritaPercentuale": 94.8
+        },
+        {
+          "gara": "azerbaigian-baku",
+          "round": 15,
+          "circuitId": "baku",
+          "similaritaPercentuale": 91.5
+        },
+        {
+          "gara": "bahrein-sepang",
+          "round": 16,
+          "circuitId": "sepang",
+          "similaritaPercentuale": 90.1
+        }
+      ],
+      "piloti": [
+        {
+          "id": "lance-stroll",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 12,
+          "vantaggioPosizioniRispettoStagione": 3.17,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "fernando-alonso",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 12.5,
+          "vantaggioPosizioniRispettoStagione": 2.33,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "isack-hadjar",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 4,
+          "vantaggioPosizioniRispettoStagione": 2.23,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "esteban-ocon",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 11.333333333333334,
+          "vantaggioPosizioniRispettoStagione": 1.78,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "max-verstappen",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 1.6666666666666667,
+          "vantaggioPosizioniRispettoStagione": 1.55,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "arvid-lindblad",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 8.666666666666666,
+          "vantaggioPosizioniRispettoStagione": 1.45,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "franco-colapinto",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 10,
+          "vantaggioPosizioniRispettoStagione": 1.27,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "george-russell",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 3,
+          "vantaggioPosizioniRispettoStagione": 1.2,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "carlos-sainz-jr",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 13.5,
+          "vantaggioPosizioniRispettoStagione": 0.37,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "liam-lawson",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 8.333333333333334,
+          "vantaggioPosizioniRispettoStagione": 0.25,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "nico-hulkenberg",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 10.666666666666666,
+          "vantaggioPosizioniRispettoStagione": 0.19,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "kimi-antonelli",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 2.6666666666666665,
+          "vantaggioPosizioniRispettoStagione": -0.08,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "charles-leclerc",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 4,
+          "vantaggioPosizioniRispettoStagione": -0.13,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "alexander-albon",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 15,
+          "vantaggioPosizioniRispettoStagione": -0.2,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "lewis-hamilton",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 4.5,
+          "vantaggioPosizioniRispettoStagione": -0.38,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "sergio-perez",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 16.5,
+          "vantaggioPosizioniRispettoStagione": -0.42,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "valtteri-bottas",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 18,
+          "vantaggioPosizioniRispettoStagione": -0.67,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "oliver-bearman",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 13,
+          "vantaggioPosizioniRispettoStagione": -0.85,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "lando-norris",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 6,
+          "vantaggioPosizioniRispettoStagione": -1.71,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "yuki-tsunoda",
+          "osservazioni": 1,
+          "gare": 1,
+          "posizioneMedia": 14,
+          "vantaggioPosizioniRispettoStagione": -2.33,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "oscar-piastri",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 9,
+          "vantaggioPosizioniRispettoStagione": -2.67,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "gabriel-bortoleto",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 15.333333333333334,
+          "vantaggioPosizioniRispettoStagione": -3.46,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "pierre-gasly",
+          "osservazioni": 2,
+          "gare": 2,
+          "posizioneMedia": 14,
+          "vantaggioPosizioniRispettoStagione": -4.19,
+          "stato": "campione_insufficiente"
+        }
+      ],
+      "scuderie": [
+        {
+          "id": "aston-martin",
+          "osservazioni": 3,
+          "gare": 2,
+          "posizioneMedia": 12.333333333333334,
+          "vantaggioPosizioniRispettoStagione": 2.61,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "red-bull",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 3.1666666666666665,
+          "vantaggioPosizioniRispettoStagione": 1.93,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "mercedes",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 2.8,
+          "vantaggioPosizioniRispettoStagione": 0.54,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "haas",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 12.166666666666666,
+          "vantaggioPosizioniRispettoStagione": 0.53,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "williams",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 14,
+          "vantaggioPosizioniRispettoStagione": 0.24,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "ferrari",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 4.2,
+          "vantaggioPosizioniRispettoStagione": -0.2,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "racing-bulls",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 9.833333333333334,
+          "vantaggioPosizioniRispettoStagione": -0.25,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "cadillac",
+          "osservazioni": 3,
+          "gare": 3,
+          "posizioneMedia": 17,
+          "vantaggioPosizioniRispettoStagione": -0.41,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "alpine",
+          "osservazioni": 4,
+          "gare": 2,
+          "posizioneMedia": 12,
+          "vantaggioPosizioniRispettoStagione": -1.48,
+          "stato": "campione_insufficiente"
+        },
+        {
+          "id": "audi",
+          "osservazioni": 6,
+          "gare": 3,
+          "posizioneMedia": 13,
+          "vantaggioPosizioniRispettoStagione": -1.6,
+          "stato": "associazione_esplorativa"
+        },
+        {
+          "id": "mclaren",
+          "osservazioni": 5,
+          "gare": 3,
+          "posizioneMedia": 7.8,
+          "vantaggioPosizioniRispettoStagione": -2.46,
+          "stato": "associazione_esplorativa"
+        }
+      ]
+    }
+  ],
+  "limiti": [
+    "Associazioni esplorative: similarità da richieste tecniche editoriali, non causalità né probabilità di vittoria.",
+    "Confronto sulle posizioni dei classificati regolari; ritiri esclusi dai pattern e inclusi nella metrica completa.",
+    "Numero osservazioni delle scuderie conta due vetture per GP; il campo gare conta eventi distinti.",
+    "I pesi pubblicati restano congelati. Una singola gara non dimostra un miglioramento del modello.",
+    "La ricostruzione usa i partecipanti effettivi: non equivale a una previsione salvata prima del weekend.",
+    "Nessun risultato futuro, qualifica futura o vantaggio tecnico non misurato viene inventato."
+  ],
+  "proveFia": [
+    {
+      "gara": "usa-austin",
+      "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_final_race_classification.pdf",
+      "titolo": "Doc 57 - Final Race Classification",
+      "pubblicatoIl": "2026-10-26T01:03:00.000Z",
+      "sha256": "0a002be313cb17b2659d6a8f81f4dfc5ba7807fafbdf0568bcc20ada1f58adaa"
+    }
+  ]
+}

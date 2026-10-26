@@ -1,0 +1,60 @@
+{
+  "18": {
+    "verificatoIl": "2026-10-26",
+    "garaConclusa": "usa-austin",
+    "prossimaGara": "messico-citta-del-messico",
+    "fonti": [
+      {
+        "tipo": "risultati_ufficiali",
+        "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/race-result",
+        "stato": "verificato",
+        "sintesi": "Podio Austin: Antonelli, Leclerc, Verstappen. Il risultato non equivale a una misura del passo a parità di condizioni."
+      },
+      {
+        "tipo": "cronaca_e_dichiarazioni_attribuite",
+        "url": "https://www.formula1.com/en/latest/article/what-the-teams-said-race-day-in-the-united-states-2026.4FopoItrER6KX395f6ZENu",
+        "stato": "verificato_come_resoconto",
+        "sintesi": "Antonelli ha seguito una strategia a una sosta; Ferrari ha usato due soste. Il VSC finale ha interrotto il recupero di Hamilton. Russell ha segnalato difficoltà nel superare Piastri. Questi elementi richiedono di filtrare traffico e neutralizzazioni prima del confronto cronometrico. Le dichiarazioni sui problemi vettura restano attribuite ai team."
+      },
+      {
+        "tipo": "mescole_ufficiali",
+        "url": "https://press.pirelli.com/the-compound-selection-for-austin-mexico-city-and-so-paulo/",
+        "stato": "confermato",
+        "sintesi": "Austin C2/C3/C4; Messico e San Paolo C3/C4/C5. Non trasferire automaticamente l'efficacia della Hard di Austin alle gomme del Messico."
+      },
+      {
+        "tipo": "programma_ufficiale",
+        "url": "https://www.formula1.com/en/latest/article/formula-1-gran-premio-de-la-ciudad-de-mexico-2026.14b3wTWzNNLJ5Wd8cG7HCQ",
+        "stato": "confermato_soggetto_a_revisioni",
+        "sintesi": "Messico: prove il 30 e 31 ottobre; qualifica il 31 ottobre alle 15 locali; gara il 1 novembre alle 14 locali, 20 UTC e 21 in Italia. Programma di 71 giri. Nessun risultato del weekend è ancora disponibile."
+      },
+      {
+        "tipo": "discussione_pubblica",
+        "url": "https://www.reddit.com/r/formula1/comments/1xfemqj/2026_united_states_grand_prix_postrace_discussion/",
+        "stato": "spunti_non_evidenza_quantitativa",
+        "sintesi": "Discussioni su VSC finale, aria libera, strategie e differenze tra compagni. Usate per formulare domande da verificare, senza convertirle in bonus o voti del modello."
+      },
+      {
+        "tipo": "riscontro_indipendente",
+        "url": "https://www.pitpass.com/83916/United-States-Grand-Prix-Result",
+        "stato": "secondario",
+        "sintesi": "Riscontro dell'ordine di arrivo e dei ritiri; per eventuali divergenze prevalgono la classifica finale FIA e le successive rettifiche."
+      }
+    ],
+    "ipotesiDaVerificare": [
+      "Separare il passo in aria libera dalla perdita nel traffico, soprattutto nei confronti tra compagni.",
+      "Confrontare stint sulla stessa mescola ed età senza attribuire a un pilota il beneficio del VSC.",
+      "Verificare le condizioni del Messico e le mescole più morbide prima di trasferire le conclusioni strategiche di Austin."
+    ],
+    "prossimoGp": {
+      "garaUtc": "2026-11-01T20:00:00Z",
+      "qualificaUtc": "2026-10-31T21:00:00Z",
+      "mescole": ["C3", "C4", "C5"],
+      "giri": 71,
+      "risultato": null,
+      "qualifica": null,
+      "meteo": "Da aggiornare con le previsioni disponibili a ridosso del weekend.",
+      "aggiornamentiTecnici": "Da acquisire dai documenti FIA del weekend; nessun vantaggio cronometrico dedotto."
+    }
+  }
+}

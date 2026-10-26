@@ -101,6 +101,7 @@ async function controllaAggiornamentoGp({pool=getPool(),adesso=new Date(),dryRun
   status={...status,stato:piano.stagioneCompletata?'calendario_completato':piano.target.slug!==piano.current.slug?'aggiornato':terminata?'in_attesa_risultati':'dati_sincronizzati',ultimoAggiornamentoIl:adesso.toISOString(),
     ultimaFonteApplicata:chiaveFonte,garaAttuale:piano.target.slug,ultimaVerificaFia:prove.at(-1),
     stagioneCompletata:piano.stagioneCompletata,esito,ultimoErrore:null,piccoMemoriaMiB:Math.round(process.resourceUsage().maxRSS/1024)};
+  status.ultimaVerificaFia=prove.find(p=>p.gara===piano.conclusi.at(-1)?.slug)||prove.at(-1);
   if(!dryRun)await salvaStato(client,status);
   return status;
  }catch(e){

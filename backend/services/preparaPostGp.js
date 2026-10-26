@@ -89,7 +89,7 @@ function preparaPostGp({fonte,documenti,adesso=new Date(),rettifiche=[]}){
    if(conclusi.some(c=>c.slug===g.slug)&&g.slug!==target.slug)aggiungi('gare',{...g,stato:'conclusa',conclusaIl:adesso.toISOString()});
    else if(g.slug===target.slug)aggiungi('gare',{...g,stato:'attuale',conclusaIl:null});
  }
- const gareInteressate=new Set([target._id,...conclusi.map(g=>g._id),...gruppi.gare.filter(g=>rettifiche.includes(g.slug)).map(g=>g._id)]);
+ const gareInteressate=new Set([target._id,...conclusi.map(g=>g._id),...gruppi.gare.filter(g=>g.stato==='futura'||rettifiche.includes(g.slug)).map(g=>g._id)]);
  for(const [tipo,n] of [['driver','analisiGare'],['team','analisiScuderie']])for(const original of gruppi[n]){
    if(!gareInteressate.has(original.gara))continue;
    const a=structuredClone(original),g=gruppi.gare.find(g=>g._id===a.gara);
@@ -119,6 +119,11 @@ function preparaPostGp({fonte,documenti,adesso=new Date(),rettifiche=[]}){
      const posizione=(r,p)=>r?Number.isInteger(r.positionNumber)?p+r.positionNumber:r.positionText:'—';
      a.storicoEdizioni=(a.storicoEdizioni||[]).filter(e=>e.stagione!==anno);
      a.storicoEdizioni.push({stagione:anno,posizioneGara:rr.map(r=>posizione(r,'P')).join(' / '),posizioneQualifica:qq.map(r=>posizione(r,'Q')).join(' / ')});
+     const edizione=a.storicoEdizioni.at(-1);
+     for(const [campo,valore] of [['posizioniStoriche',edizione.posizioneGara],['qualificheStoriche',edizione.posizioneQualifica]]){
+       a[campo]={...require('../utils/normalizzaNotaBene').normalizzaTestiAnnuali(a[campo]),[anno]:valore};
+       for(const t of Object.values(a.traduzioni||{}))t[campo]={...require('../utils/normalizzaNotaBene').normalizzaTestiAnnuali(t[campo]),[anno]:valore};
+     }
    }
    aggiungi(n,a);
    const valori=valutazioniNumeriche(a);
@@ -147,6 +152,6 @@ function preparaPostGp({fonte,documenti,adesso=new Date(),rettifiche=[]}){
    ausiliarie[table]={chiave:key,righe:righe.map(r=>Object.fromEntries(Object.entries(r).map(([k,v])=>[snake(k),v])))};
  }
  return {current,target,conclusi,anno,modifiche,scores,sessioni,gare:gare.filter(g=>g.year===anno),
-   runtime:{snapshot,campioni},ausiliarie,ultimoRound,stagioneCompletata:!successiva};
+   runtime:{snapshot,campioni,evidenze:require('./runtimeF1db').evidenzeCorrenti(require('../data/evidenze-giri-2023-2026.json'))},ausiliarie,ultimoRound,stagioneCompletata:!successiva};
 }
 module.exports={preparaPostGp,giornataTerminata,righeSessione,snake,FUSI};
