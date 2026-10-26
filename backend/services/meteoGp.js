@@ -26,7 +26,21 @@ function probabilitaNellaFascia(hourly, inizio, fine) {
 }
 
 async function previsioneMeteo(garaSlug) {
-  const gara = CONFIGURAZIONE_GARE[garaSlug];
+  let gara = CONFIGURAZIONE_GARE[garaSlug];
+  if (!gara && require('../config/database').usaPostgres()) {
+    try {
+      const r = await require('../config/database').getPool().query(`select c.latitude,c.longitude,r.date::text date,r.time::text time
+        from catalog.grand_prix g join catalog.circuit cc on cc.id=g.circuit_id
+        join f1db.circuit c on c.id=cc.f1db_circuit_id join f1db.race r on r.year=g.season and r.round=g.calendar_order
+        where g.slug=$1`, [garaSlug]);
+      const row=r.rows[0];
+      if(row?.date && row.time && row.latitude!=null && row.longitude!=null){
+        const inizio=new Date(`${row.date}T${row.time}Z`);
+        if(Number.isFinite(inizio.getTime()))gara={latitude:Number(row.latitude),longitude:Number(row.longitude),
+          inizio:inizio.toISOString(),fine:new Date(inizio.getTime()+2*3600000).toISOString()};
+      }
+    } catch { return null; }
+  }
   if (!gara) return null;
   const adesso = Date.now();
   const precedente = cache.get(garaSlug);
