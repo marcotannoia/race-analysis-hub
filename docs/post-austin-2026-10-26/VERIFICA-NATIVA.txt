@@ -1,0 +1,3 @@
+PASS live: 22 drivers and 11 teams decode
+PASS live: six home languages, team comparison and season lists
+PASS live native: driver comparison, prediction endpoint, 22 drivers and 8 factors for Mexico 2026

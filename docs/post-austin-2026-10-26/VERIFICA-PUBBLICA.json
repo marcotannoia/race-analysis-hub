@@ -1,0 +1,211 @@
+{
+  "verificatoIl": "2026-10-26T07:47:07.518Z",
+  "baseUrl": "https://www.race-analysis-hub.it",
+  "endpoint": [
+    {
+      "percorso": "/api/v2",
+      "stato": 200,
+      "ms": 147
+    },
+    {
+      "percorso": "/api/v2/health",
+      "stato": 200,
+      "ms": 137
+    },
+    {
+      "percorso": "/api/v2/gare/attuale",
+      "stato": 200,
+      "ms": 57
+    },
+    {
+      "percorso": "/api/v2/piloti?limit=5",
+      "stato": 200,
+      "ms": 191
+    },
+    {
+      "percorso": "/api/v2/scuderie?limit=5",
+      "stato": 200,
+      "ms": 100
+    },
+    {
+      "percorso": "/api/v2/gare?limit=5",
+      "stato": 200,
+      "ms": 109
+    },
+    {
+      "percorso": "/api/v2/circuiti?limit=5",
+      "stato": 200,
+      "ms": 73
+    },
+    {
+      "percorso": "/api/v2/iscrizioni?limit=5",
+      "stato": 200,
+      "ms": 80
+    },
+    {
+      "percorso": "/api/v2/risultati?limit=5",
+      "stato": 200,
+      "ms": 161
+    },
+    {
+      "percorso": "/api/v2/metriche?limit=5",
+      "stato": 200,
+      "ms": 115
+    },
+    {
+      "percorso": "/api/v2/valutazioni?limit=5",
+      "stato": 200,
+      "ms": 136
+    },
+    {
+      "percorso": "/api/v2/home",
+      "stato": 200,
+      "ms": 88
+    },
+    {
+      "percorso": "/api/v2/stagione",
+      "stato": 200,
+      "ms": 91
+    },
+    {
+      "percorso": "/api/v2/lingue",
+      "stato": 200,
+      "ms": 141
+    },
+    {
+      "percorso": "/api/v2/previsioni/piloti",
+      "stato": 200,
+      "ms": 129
+    },
+    {
+      "percorso": "/api/v2/classifiche/piloti",
+      "stato": 200,
+      "ms": 61
+    },
+    {
+      "percorso": "/api/v2/classifiche/scuderie",
+      "stato": 200,
+      "ms": 56
+    },
+    {
+      "percorso": "/api/v2/piloti/leclerc",
+      "stato": 200,
+      "ms": 58
+    },
+    {
+      "percorso": "/api/v2/scuderie/ferrari",
+      "stato": 200,
+      "ms": 62
+    },
+    {
+      "percorso": "/api/v2/gare/attuale",
+      "stato": 200,
+      "ms": 115
+    },
+    {
+      "percorso": "/api/v2/gare/messico-citta-del-messico/piloti/leclerc/analisi",
+      "stato": 200,
+      "ms": 67
+    },
+    {
+      "percorso": "/api/v2/gare/messico-citta-del-messico/scuderie/ferrari/analisi",
+      "stato": 200,
+      "ms": 73
+    },
+    {
+      "percorso": "/api/v2/gare/messico-citta-del-messico",
+      "stato": 200,
+      "ms": 474
+    },
+    {
+      "percorso": "/api/v2/confronti/piloti/leclerc/hamilton",
+      "stato": 200,
+      "ms": 79
+    },
+    {
+      "percorso": "/api/v2/confronti/scuderie/ferrari/mercedes",
+      "stato": 200,
+      "ms": 66
+    },
+    {
+      "percorso": "/api/v2/gare/non-attuale",
+      "stato": 404,
+      "ms": 56
+    },
+    {
+      "percorso": "/api/v2/gare/non-attuale/piloti/leclerc/analisi",
+      "stato": 404,
+      "ms": 54
+    },
+    {
+      "percorso": "/api/v2/gare/non-attuale/scuderie/ferrari/analisi",
+      "stato": 404,
+      "ms": 63
+    },
+    {
+      "percorso": "/api/v2/gare",
+      "stato": 200,
+      "ms": 104
+    },
+    {
+      "percorso": "/api/v2/valutazioni?gara=non-attuale",
+      "stato": 200,
+      "ms": 93
+    },
+    {
+      "percorso": "/api/v2/piloti/leclerc?lingua=en",
+      "stato": 200,
+      "ms": 52
+    },
+    {
+      "percorso": "/api/v2/valutazioni?limit=101",
+      "stato": 400,
+      "ms": 52
+    },
+    {
+      "percorso": "/api/v2/risultati?foo=1",
+      "stato": 400,
+      "ms": 59
+    },
+    {
+      "percorso": "/api/v2/piloti/leclerc?lingua=xx",
+      "stato": 400,
+      "ms": 56
+    },
+    {
+      "percorso": "/api/v2/inesistente",
+      "stato": 404,
+      "ms": 64
+    },
+    {
+      "percorso": "/api/v1/health",
+      "stato": 200,
+      "ms": 146
+    },
+    {
+      "percorso": "/api/v1/home",
+      "stato": 200,
+      "ms": 170
+    },
+    {
+      "percorso": "/api/v1/piloti/leclerc",
+      "stato": 200,
+      "ms": 127
+    },
+    {
+      "percorso": "/api/v1/scuderie/ferrari",
+      "stato": 200,
+      "ms": 123
+    },
+    {
+      "percorso": "/api/v1/openapi.json",
+      "stato": 200,
+      "ms": 107
+    },
+    {
+      "percorso": "/api/v2/openapi.json",
+      "stato": 200,
+      "ms": 74
+    }
+  ]
+}

@@ -166,6 +166,16 @@ Controllare il backend e il dominio pubblico:
 
 Verificare anche lingua inglese, numeri di partecipanti, anno dello storico,
 qualifica, campioni di passo/gomme, previsioni e assenza di risultati futuri.
+Verificare il decoder dell’app pubblicata: un HTTP 200 non dimostra che i dati
+siano leggibili da FantaStats GP. Se disponibile il progetto nativo locale:
+
+```sh
+bash /Users/marcotannoia/Desktop/RaceAnalysisHub/scripts/test.sh --live
+```
+
+`prestazioni.affidabilita` resta testo o `null` per compatibilità; l’indice numerico
+rimane in `affidabilita`, `valutazioni.affidabilita` e nei recap numerici. Controllare
+schede piloti, scuderie, entrambi i confronti e la classifica previsionale di 22 piloti.
 Non dichiarare «tutto aggiornato» se una fonte, il deploy o una verifica è ancora in attesa.
 
 ## 8. Rapporto finale di ogni esecuzione

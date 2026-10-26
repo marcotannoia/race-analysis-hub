@@ -63,7 +63,24 @@ Il registro editoriale versionato è `backend/data/ricerca-post-gp-2026.json`.
 
 ## Verifiche
 
-131 test backend e 5 test Python dei filtri; qualità dati, traduzioni, documentazione,
+132 test backend e 5 test Python dei filtri; qualità dati, traduzioni, documentazione,
 OpenAPI v1/v2, lint frontend e build completati. La qualità dei file base resta riferita
 al seed v2026.17.0; il corpus aggiornato v2026.18.0 è persistito nel database e ricaricato
 a runtime. Le verifiche online finali sono registrate separatamente.
+
+
+## Compatibilità con FantaStats GP
+
+Il controllo con il decoder nativo ha riprodotto un errore di tipo in
+`analisi.prestazioni.affidabilita`: il client attende una stringa, mentre il server
+restituiva un numero. È stato ripristinato il testo in quel campo; gli indici
+meccanici restano numerici nei campi dedicati. Il test pubblico con i modelli
+nativi ora legge tutti i 22 piloti, le 11 scuderie e le sei lingue.
+I dettagli sono in [verifica nativa](VERIFICA-NATIVA.txt) e nei rapporti API.
+Non è stata modificata né distribuita una nuova build App Store.
+
+Il meteo delle prossime gare viene ora configurato da coordinate e orari F1DB nel
+database, superando il precedente supporto limitato a Singapore. La verifica del
+26 ottobre ha restituito una previsione Open-Meteo per la fascia 20–22 UTC del
+1 novembre in Messico. È un massimo orario previsto, non una probabilità combinata
+né una condizione meteo già osservata.

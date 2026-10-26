@@ -1,0 +1,232 @@
+{
+  "verificatoIl": "2026-10-26T07:33:52.729Z",
+  "controlli": [
+    {
+      "url": "https://f1-stats-5v93.onrender.com/api/v2/revisione-post-gp",
+      "status": 200
+    },
+    {
+      "url": "https://f1-stats-5v93.onrender.com/api/v1/home",
+      "status": 200
+    },
+    {
+      "url": "https://f1-stats-5v93.onrender.com/api/v2/piloti/leclerc?lingua=it",
+      "status": 200
+    },
+    {
+      "url": "https://f1-stats-5v93.onrender.com/api/v2/piloti/leclerc?lingua=en",
+      "status": 200
+    },
+    {
+      "url": "https://f1-stats-5v93.onrender.com/api/v2/piloti/leclerc?lingua=fr",
+      "status": 200
+    },
+    {
+      "url": "https://f1-stats-5v93.onrender.com/api/v2/piloti/leclerc?lingua=pt",
+      "status": 200
+    },
+    {
+      "url": "https://f1-stats-5v93.onrender.com/api/v2/piloti/leclerc?lingua=es",
+      "status": 200
+    },
+    {
+      "url": "https://f1-stats-5v93.onrender.com/api/v2/piloti/leclerc?lingua=de",
+      "status": 200
+    },
+    {
+      "url": "https://www.race-analysis-hub.it/api/v1/home",
+      "status": 200
+    }
+  ],
+  "garaAttuale": "messico-citta-del-messico",
+  "copertura": {
+    "sessioni": 48,
+    "roundConGiri": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "sessioniStagione": 18
+  },
+  "verificaModello": {
+    "pesi": {
+      "andamento2026": 50,
+      "qualifica2026": 0,
+      "passoGaraRecente": 15,
+      "andamentoScuderiaRecente": 35
+    },
+    "tipo": "ricostruzione_con_modello_congelato_non_previsione_archiviata",
+    "modello": "forma-recente-v1",
+    "completa": {
+      "piloti": 22,
+      "spearman": 0.869,
+      "podioIndovinati": 1,
+      "top10Indovinati": 10,
+      "vincitoreCorretto": true,
+      "erroreAssolutoMedio": 2.182,
+      "sommaErroriAssoluti": 48
+    },
+    "regolari": {
+      "piloti": 19,
+      "spearman": 0.94,
+      "podioIndovinati": 1,
+      "top10Indovinati": 10,
+      "vincitoreCorretto": true,
+      "erroreAssolutoMedio": 1.158,
+      "sommaErroriAssoluti": 22
+    },
+    "confronto": [
+      {
+        "reale": 1,
+        "driverId": "kimi-antonelli",
+        "prevista": 1
+      },
+      {
+        "reale": 8,
+        "driverId": "george-russell",
+        "prevista": 2
+      },
+      {
+        "reale": 4,
+        "driverId": "lewis-hamilton",
+        "prevista": 3
+      },
+      {
+        "reale": 3,
+        "driverId": "max-verstappen",
+        "prevista": 4
+      },
+      {
+        "reale": 2,
+        "driverId": "charles-leclerc",
+        "prevista": 5
+      },
+      {
+        "reale": 5,
+        "driverId": "lando-norris",
+        "prevista": 6
+      },
+      {
+        "reale": 7,
+        "driverId": "oscar-piastri",
+        "prevista": 7
+      },
+      {
+        "reale": 6,
+        "driverId": "isack-hadjar",
+        "prevista": 8
+      },
+      {
+        "reale": 9,
+        "driverId": "liam-lawson",
+        "prevista": 9
+      },
+      {
+        "reale": 10,
+        "driverId": "pierre-gasly",
+        "prevista": 10
+      },
+      {
+        "reale": 12,
+        "driverId": "arvid-lindblad",
+        "prevista": 11
+      },
+      {
+        "reale": 21,
+        "driverId": "franco-colapinto",
+        "prevista": 12
+      },
+      {
+        "reale": 11,
+        "driverId": "nico-hulkenberg",
+        "prevista": 13
+      },
+      {
+        "reale": 13,
+        "driverId": "gabriel-bortoleto",
+        "prevista": 14
+      },
+      {
+        "reale": 22,
+        "driverId": "oliver-bearman",
+        "prevista": 15
+      },
+      {
+        "reale": 14,
+        "driverId": "esteban-ocon",
+        "prevista": 16
+      },
+      {
+        "reale": 16,
+        "driverId": "fernando-alonso",
+        "prevista": 17
+      },
+      {
+        "reale": 18,
+        "driverId": "carlos-sainz-jr",
+        "prevista": 18
+      },
+      {
+        "reale": 17,
+        "driverId": "alexander-albon",
+        "prevista": 19
+      },
+      {
+        "reale": 15,
+        "driverId": "lance-stroll",
+        "prevista": 20
+      },
+      {
+        "reale": 20,
+        "driverId": "valtteri-bottas",
+        "prevista": 21
+      },
+      {
+        "reale": 19,
+        "driverId": "sergio-perez",
+        "prevista": 22
+      }
+    ],
+    "parametri": {
+      "emivitaGP": 4,
+      "osservazioniPrior": 0
+    },
+    "riferimentoSoloMondiale": {
+      "completa": {
+        "piloti": 22,
+        "spearman": 0.846,
+        "podioIndovinati": 1,
+        "top10Indovinati": 10,
+        "vincitoreCorretto": true,
+        "erroreAssolutoMedio": 2.364,
+        "sommaErroriAssoluti": 52
+      },
+      "regolari": {
+        "piloti": 19,
+        "spearman": 0.94,
+        "podioIndovinati": 1,
+        "top10Indovinati": 10,
+        "vincitoreCorretto": true,
+        "erroreAssolutoMedio": 1.158,
+        "sommaErroriAssoluti": 22
+      }
+    }
+  },
+  "proceduraOnline": 200,
+  "sitoStatus": 200
+}
