@@ -120,7 +120,8 @@ function AdminPage() {
   if (!token) return <Accesso errore={errore} onAccesso={(t) => { salvaToken(t); setToken(t) }} />
 
   const classifica = dati?.classifica
-  const chiavi = classifica?.pesi?.map((p) => p.chiave) || []
+  const pesiAttivi = classifica?.pesi?.filter((p) => p.pesoPercentuale > 0) || []
+  const chiavi = pesiAttivi.map((p) => p.chiave)
   const gara = dati?.garaAttuale
   const prossima = dati?.calendario?.find((g) => g.ordineCalendario > (gara?.ordineCalendario ?? Infinity))
   const auto = dati?.aggiornamentoAutomatico
@@ -177,7 +178,7 @@ function AdminPage() {
       <section className="admin-pannello">
         <h2>Meteo e modello</h2>
         <ScenarioMeteo scenario={classifica?.scenarioMeteo} />
-        <p className="admin-nota">Modello {classifica?.modello || '—'} · pesi base: {classifica?.pesi?.map((p) => `${p.nome} ${p.pesoPercentuale}%`).join(' · ')}</p>
+        <p className="admin-nota">Modello {classifica?.modello || '—'} · pesi base: {pesiAttivi.map((p) => `${p.nome} ${p.pesoPercentuale}%`).join(' · ')}</p>
         {dati?.meteoGare && (
           <p className="admin-nota">Esiti gare 2026 ({dati.meteoGare.aggiornatoIl}): {dati.meteoGare.edizioni.map((e) =>
             `R${e.round} ${e.circuitId}${e.pioggia ? ' 🌧' : ''}`).join(' · ')}</p>
@@ -191,7 +192,7 @@ function AdminPage() {
           <div className="admin-tabella-contenitore">
             <table className="admin-tabella">
               <thead><tr><th>#</th><th>Pilota</th><th>Indice</th>
-                {classifica.pesi.map((p) => <th key={p.chiave}>{p.nome}</th>)}<th>Pen.</th></tr></thead>
+                {pesiAttivi.map((p) => <th key={p.chiave}>{p.nome}</th>)}<th>Pen.</th></tr></thead>
               <tbody>{classifica.classifica.map((r) => <RigaPilota key={r.pilota.slug} riga={r} chiavi={chiavi} />)}</tbody>
             </table>
           </div>

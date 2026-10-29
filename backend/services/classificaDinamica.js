@@ -29,6 +29,8 @@ const PESO_METEO_BAGNATO = 0.5;
 // Il pilota conserva parte della propria esperienza fra regolamenti diversi.
 const DECADIMENTO_ANNO = 0.6;
 
+// Chiavi del contratto precedente: restano con peso zero per i client nativi già pubblicati.
+const CHIAVI_LEGACY = Object.freeze(["risultatiCircuitiSimili", "qualifica2026", "andamento2026", "passoGaraRecente", "andamentoScuderiaRecente"]);
 const nomeFattore = (testi, chiave) => testi.fattori[chiave === "storicoPersonale" ? "storicoPersonaleCircuito" : chiave];
 const arrotonda = (n, cifre = 2) => Math.round(n * 10 ** cifre) / 10 ** cifre;
 
@@ -282,6 +284,8 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
       f.pesoPercentuale = arrotonda(f.pesoPercentuale * quotaBase);
       f.contributo = arrotonda(f.valutazione * f.pesoPercentuale / 100, 3);
     }
+    for (const chiave of CHIAVI_LEGACY) fattori.push({ chiave, nome: nomeFattore(testi, chiave), pesoPercentuale: 0,
+      valutazione: 50, contributo: 0, datiDisponibili: false });
     if (penalita) fattori.push({ chiave: "penalita", nome: testi.fattori.penalita, pesoPercentuale: PESO_PENALITA,
       valutazione: arrotonda(indiceBase * penalita.valore / 100),
       contributo: arrotonda(indiceBase * penalita.valore * PESO_PENALITA / 10000, 3) });
@@ -312,13 +316,18 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
     ({ slug: circuito.slug, circuitId: circuito.circuitId, nome: circuito.nome, round: circuito.round, ...c }))
     .sort((x, y) => y.similaritaPercentuale - x.similaritaPercentuale);
   return {
-    lingua, calcolatoIl: new Date().toISOString(),
+    lingua, aggiornatoIl: new Date().toISOString(), calcolatoIl: new Date().toISOString(),
     gara: { slug: gara.slug, nome: valoreLocalizzato(gara, "nome", lingua), circuito: valoreLocalizzato(gara, "circuito", lingua) },
     modello: "dinamico-similarita-meteo-v1", meteo, scenarioMeteo: ctx.scenario,
-    circuitiSimili: confronti.slice(0, 2).map(({ slug, nome, round, similaritaPercentuale }) => ({ slug, nome, round, similaritaPercentuale })),
-    confrontoCircuiti: { metodo: "similarita-multicriterio-v2", criteri: CRITERI.map(c => ({ chiave: c.chiave, nome: c.nome,
+    circuitiSimili: confronti.filter(c => c.round < gp.round).slice(0, 2),
+    confrontoCircuiti: { metodo: "similarita-multicriterio-v2",
+      pesoInClassificaPercentuale: PESI_DINAMICI.compatibilitaVetturaCircuito + PESI_DINAMICI.compatibilitaPilotaCircuito, criteri: CRITERI.map(c => ({ chiave: c.chiave, nome: c.nome,
       pesoPercentuale: arrotonda(c.pesoPercentuale, 4) })), confronti },
-    pesi: Object.entries(PESI_DINAMICI).map(([chiave, pesoPercentuale]) => ({ chiave, nome: nomeFattore(testi, chiave), pesoPercentuale })),
+    pesi: [...Object.entries(PESI_DINAMICI), ...CHIAVI_LEGACY.map(k => [k, 0])]
+      .map(([chiave, pesoPercentuale]) => ({ chiave, nome: nomeFattore(testi, chiave), pesoPercentuale })),
+    calibrazione: { stato: "riferimento_mondiale", combinazioniEsaminate: 1,
+      ultimoRoundTraining: Math.max(0, ...campioni.gare.filter(g => g.year === gp.year && g.round < gp.round).map(g => g.round)),
+      fonteMondiale: gp.round > campioni.ultimoRoundIncluso ? "database" : "snapshot_anteriore_al_gp", candidataPromossa: false },
     classifica: classifica.map(({ driverId, ...p }, i) => ({ ...p, indice: arrotonda(p.indice, 1), posizione: i + 1 })),
   };
 }
