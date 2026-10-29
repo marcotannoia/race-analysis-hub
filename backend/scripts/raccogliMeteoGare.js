@@ -7,11 +7,11 @@ const API = "https://api.openf1.org/v1";
 const attendi = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function leggi(url) {
-  for (let tentativo = 0; tentativo < 4; tentativo++) {
+  for (let tentativo = 0; tentativo < 6; tentativo++) {
     const risposta = await fetch(url, { signal: AbortSignal.timeout(20000) });
     if (risposta.ok) return risposta.json();
     if (risposta.status !== 429) throw new Error(`OpenF1 HTTP ${risposta.status}: ${url}`);
-    await attendi(2000 * (tentativo + 1));
+    await attendi(5000 * (tentativo + 1));
   }
   throw new Error(`OpenF1 limite richieste: ${url}`);
 }
@@ -35,9 +35,9 @@ async function raccogliMeteoGare(anno, { log = console.log } = {}) {
     if (!gara || Date.parse(gara.date_end) > adesso) continue;
     const qualifica = g.qualifyingDate ? perData("Qualifying", g.qualifyingDate) : null;
     const esitoGara = await pioggiaSessione(gara.session_key);
-    await attendi(400);
+    await attendi(1500);
     const esitoQualifica = qualifica ? await pioggiaSessione(qualifica.session_key) : null;
-    await attendi(400);
+    await attendi(1500);
     if (!esitoGara) continue;
     edizioni.push({ raceId: g.id, anno, round: g.round, circuitId: g.circuitId, pioggia: esitoGara.pioggia,
       pioggiaQualifica: esitoQualifica?.pioggia ?? null, campioniGara: esitoGara.campioni,

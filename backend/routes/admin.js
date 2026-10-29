@@ -104,4 +104,4 @@ function creaRouterAdmin() {
   return router;
 }
 
-module.exports = { creaRouterAdmin, ricaricaMeteoGare, autenticazione };
+module.exports = { creaRouterAdmin, ricaricaMeteoGare, aggiornaMeteoGare, autenticazione };

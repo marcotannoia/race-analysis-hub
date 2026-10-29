@@ -6,616 +6,285 @@
     "storicoPersonale"
   ],
   "aggiornamentiFissi": 8,
-  "gp": 16,
+  "gp": 17,
+  "blocchiScuderiaReali": 0.12885154061624648,
   "attuali": {
     "pesi": [
-      79,
-      2,
+      43,
+      35,
       10,
-      1
+      5
     ],
-    "rho": 0.6653726708074533,
-    "esatti": 38,
-    "podio": 26
+    "rho": 0.660278340585246,
+    "esatti": 50,
+    "podio": 28,
+    "blocchi": 0.17366946778711484
   },
-  "ottimo": {
+  "ottimoGlobale": {
     "pesi": [
       79,
       2,
       10,
       1
     ],
-    "rho": 0.6653726708074533,
-    "esatti": 38,
-    "podio": 26
+    "rho": 0.6765536254027302,
+    "esatti": 41,
+    "podio": 28,
+    "blocchi": 0.43137254901960786,
+    "fuoriCampione": 0.6759699927401791
   },
-  "progressivo": [
-    {
-      "round": 5,
-      "pesi": [
-        90,
-        0,
-        0,
-        2
-      ],
-      "rho": 0.4398644833427442,
-      "esatti": 0,
-      "podio": 1,
-      "attuali": 0.5087521174477696
-    },
-    {
-      "round": 6,
-      "pesi": [
-        80,
-        0,
-        12,
-        0
-      ],
-      "rho": 0.32806324110671936,
-      "esatti": 1,
-      "podio": 2,
-      "attuali": 0.33935629587803506
-    },
-    {
-      "round": 7,
-      "pesi": [
-        80,
-        0,
-        10,
-        2
-      ],
-      "rho": 0.7041219649915302,
-      "esatti": 4,
-      "podio": 2,
-      "attuali": 0.7154150197628458
-    },
-    {
-      "round": 8,
-      "pesi": [
-        78,
-        4,
-        10,
-        0
-      ],
-      "rho": 0.9277244494635799,
-      "esatti": 2,
-      "podio": 2,
-      "attuali": 0.9277244494635799
-    },
-    {
-      "round": 9,
-      "pesi": [
-        78,
-        4,
-        10,
-        0
-      ],
-      "rho": 0.6544325239977413,
-      "esatti": 3,
-      "podio": 2,
-      "attuali": 0.6544325239977413
-    },
-    {
-      "round": 10,
-      "pesi": [
-        78,
-        4,
-        10,
-        0
-      ],
-      "rho": 0.6973461321287409,
-      "esatti": 1,
-      "podio": 1,
-      "attuali": 0.6984754376058724
-    },
-    {
-      "round": 11,
-      "pesi": [
-        78,
-        4,
-        10,
-        0
-      ],
-      "rho": 0.7492941840767928,
-      "esatti": 1,
-      "podio": 1,
-      "attuali": 0.7492941840767928
-    },
-    {
-      "round": 12,
-      "pesi": [
-        78,
-        4,
-        10,
-        0
-      ],
-      "rho": 0.6928289102202145,
-      "esatti": 4,
-      "podio": 3,
-      "attuali": 0.6928289102202145
-    },
-    {
-      "round": 13,
-      "pesi": [
-        80,
-        4,
-        8,
-        0
-      ],
-      "rho": 0.7267080745341614,
-      "esatti": 5,
-      "podio": 2,
-      "attuali": 0.7267080745341614
-    },
-    {
-      "round": 14,
-      "pesi": [
-        80,
-        4,
-        8,
-        0
-      ],
-      "rho": 0.7278373800112931,
-      "esatti": 4,
-      "podio": 1,
-      "attuali": 0.7267080745341614
-    },
-    {
-      "round": 15,
-      "pesi": [
-        80,
-        4,
-        8,
-        0
-      ],
-      "rho": 0.6273291925465838,
-      "esatti": 0,
-      "podio": 1,
-      "attuali": 0.6453980801806889
-    },
-    {
-      "round": 16,
-      "pesi": [
-        80,
-        4,
-        8,
-        0
-      ],
-      "rho": 0.5708639186900056,
-      "esatti": 5,
-      "podio": 1,
-      "attuali": 0.5742518351214003
-    },
-    {
-      "round": 17,
-      "pesi": [
-        80,
-        4,
-        8,
-        0
-      ],
-      "rho": 0.7707509881422925,
-      "esatti": 2,
-      "podio": 2,
-      "attuali": 0.771880293619424
-    }
-  ],
+  "compromesso": {
+    "pesi": [
+      47,
+      18,
+      15,
+      12
+    ],
+    "rho": 0.6583518783007275,
+    "esatti": 48,
+    "podio": 27,
+    "blocchi": 0.20168067226890757,
+    "fuoriCampione": 0.6691134952004517,
+    "attualiFuoriCampione": 0.6719367588932806
+  },
   "perGp": [
     {
       "round": 2,
       "gara": "Formula 1 Heineken Chinese Grand Prix 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.5110107284020328,
-        "esatti": 0,
-        "podio": 2
-      },
-      "attuali": {
-        "rho": 0.5110107284020328,
-        "esatti": 0,
-        "podio": 2
-      },
-      "migliorePossibile": {
-        "pesi": [
-          86,
-          6,
-          0,
-          0
-        ],
-        "rho": 0.5347261434217956,
-        "esatti": 0,
-        "podio": 2
-      }
+      "rhoMassimo": 0.5347261434217956,
+      "combinazioniVicine": 27,
+      "centroide": [
+        85.5,
+        3.5,
+        2,
+        1
+      ],
+      "conCompromesso": 0.4127611518915867,
+      "conAttuali": 0.42970073404856013
     },
     {
       "round": 3,
       "gara": "Formula 1 Aramco Japanese Grand Prix 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.831733483907397,
-        "esatti": 3,
-        "podio": 2
-      },
-      "attuali": {
-        "rho": 0.831733483907397,
-        "esatti": 3,
-        "podio": 2
-      },
-      "migliorePossibile": {
-        "pesi": [
-          80,
-          0,
-          10,
-          2
-        ],
-        "rho": 0.8396386222473179,
-        "esatti": 3,
-        "podio": 2
-      }
+      "rhoMassimo": 0.8396386222473179,
+      "combinazioniVicine": 226,
+      "centroide": [
+        44.4,
+        19.6,
+        27.1,
+        0.8
+      ],
+      "conCompromesso": 0.8023715415019763,
+      "conAttuali": 0.8136645962732919
     },
     {
       "round": 4,
       "gara": "Formula 1 Crypto.com Miami Grand Prix 2026",
-      "bagnato": true,
-      "ottimo": {
-        "rho": 0.5719932241671373,
-        "esatti": 1,
-        "podio": 1
-      },
-      "attuali": {
-        "rho": 0.5719932241671373,
-        "esatti": 1,
-        "podio": 1
-      },
-      "migliorePossibile": {
-        "pesi": [
-          0,
-          0,
-          0,
-          92
-        ],
-        "rho": 0.7368718238283456,
-        "esatti": 3,
-        "podio": 1
-      }
+      "rhoMassimo": 0.7188029361942405,
+      "combinazioniVicine": 40,
+      "centroide": [
+        29.8,
+        0.9,
+        1.5,
+        59.9
+      ],
+      "conCompromesso": 0.5561829474872952,
+      "conAttuali": 0.5742518351214003
     },
     {
       "round": 5,
       "gara": "Formula 1 Lenovo Grand Prix du Canada 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.5087521174477696,
-        "esatti": 2,
-        "podio": 1
-      },
-      "attuali": {
-        "rho": 0.5087521174477696,
-        "esatti": 2,
-        "podio": 1
-      },
-      "migliorePossibile": {
-        "pesi": [
-          0,
-          0,
-          92,
-          0
-        ],
-        "rho": 0.5550536420101637,
-        "esatti": 3,
-        "podio": 1
-      }
+      "rhoMassimo": 0.5550536420101637,
+      "combinazioniVicine": 1180,
+      "centroide": [
+        13.2,
+        8.7,
+        68.2,
+        1.9
+      ],
+      "conCompromesso": 0.4285714285714286,
+      "conAttuali": 0.4161490683229814
     },
     {
       "round": 6,
       "gara": "Formula 1 Louis Vuitton Grand Prix de Monaco 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.33935629587803506,
-        "esatti": 1,
-        "podio": 2
-      },
-      "attuali": {
-        "rho": 0.33935629587803506,
-        "esatti": 1,
-        "podio": 2
-      },
-      "migliorePossibile": {
-        "pesi": [
-          92,
-          0,
-          0,
-          0
-        ],
-        "rho": 0.3562958780350085,
-        "esatti": 1,
-        "podio": 2
-      }
+      "rhoMassimo": 0.3562958780350085,
+      "combinazioniVicine": 1,
+      "centroide": [
+        92,
+        0,
+        0,
+        0
+      ],
+      "conCompromesso": 0.2907961603613778,
+      "conAttuali": 0.28176171654432525
     },
     {
       "round": 7,
       "gara": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.7154150197628458,
-        "esatti": 4,
-        "podio": 2
-      },
-      "attuali": {
-        "rho": 0.7154150197628458,
-        "esatti": 4,
-        "podio": 2
-      },
-      "migliorePossibile": {
-        "pesi": [
-          16,
-          32,
-          20,
-          24
-        ],
-        "rho": 0.8125352907961604,
-        "esatti": 3,
-        "podio": 3
-      }
+      "rhoMassimo": 0.7843026538678712,
+      "combinazioniVicine": 351,
+      "centroide": [
+        30.6,
+        21.1,
+        5.9,
+        34.4
+      ],
+      "conCompromesso": 0.7425183512140034,
+      "conAttuali": 0.7052512704686618
     },
     {
       "round": 8,
       "gara": "Formula 1 Lenovo Austrian Grand Prix 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.9277244494635799,
-        "esatti": 2,
-        "podio": 2
-      },
-      "attuali": {
-        "rho": 0.9277244494635799,
-        "esatti": 2,
-        "podio": 2
-      },
-      "migliorePossibile": {
-        "pesi": [
-          54,
-          6,
-          30,
-          2
-        ],
-        "rho": 0.9401468097120271,
-        "esatti": 2,
-        "podio": 2
-      }
+      "rhoMassimo": 0.9457933370976849,
+      "combinazioniVicine": 6534,
+      "centroide": [
+        53,
+        10.3,
+        11.6,
+        17.1
+      ],
+      "conCompromesso": 0.9333709768492378,
+      "conAttuali": 0.9277244494635799
     },
     {
       "round": 9,
       "gara": "Formula 1 Pirelli British Grand Prix 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.6544325239977413,
-        "esatti": 3,
-        "podio": 2
-      },
-      "attuali": {
-        "rho": 0.6544325239977413,
-        "esatti": 3,
-        "podio": 2
-      },
-      "migliorePossibile": {
-        "pesi": [
-          66,
-          16,
-          10,
-          0
-        ],
-        "rho": 0.6691134952004517,
-        "esatti": 2,
-        "podio": 2
-      }
+      "rhoMassimo": 0.6702428006775834,
+      "combinazioniVicine": 67,
+      "centroide": [
+        74,
+        11.4,
+        6.6,
+        0
+      ],
+      "conCompromesso": 0.5245623941276115,
+      "conAttuali": 0.5279503105590062
     },
     {
       "round": 10,
       "gara": "Formula 1 Moët & Chandon Belgian Grand Prix 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.6984754376058724,
-        "esatti": 1,
-        "podio": 1
-      },
-      "attuali": {
-        "rho": 0.6984754376058724,
-        "esatti": 1,
-        "podio": 1
-      },
-      "migliorePossibile": {
-        "pesi": [
-          92,
-          0,
-          0,
-          0
-        ],
-        "rho": 0.7244494635798984,
-        "esatti": 2,
-        "podio": 1
-      }
+      "rhoMassimo": 0.7244494635798984,
+      "combinazioniVicine": 1,
+      "centroide": [
+        92,
+        0,
+        0,
+        0
+      ],
+      "conCompromesso": 0.6860530773574252,
+      "conAttuali": 0.68944099378882
     },
     {
       "round": 11,
       "gara": "Formula 1 AWS Hungarian Grand Prix 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.7492941840767928,
-        "esatti": 1,
-        "podio": 1
-      },
-      "attuali": {
-        "rho": 0.7492941840767928,
-        "esatti": 1,
-        "podio": 1
-      },
-      "migliorePossibile": {
-        "pesi": [
-          40,
-          26,
-          14,
-          12
-        ],
-        "rho": 0.7944664031620553,
-        "esatti": 3,
-        "podio": 1
-      }
+      "rhoMassimo": 0.7809147374364765,
+      "combinazioniVicine": 3753,
+      "centroide": [
+        31.3,
+        41.9,
+        15.4,
+        3.4
+      ],
+      "conCompromesso": 0.7707509881422925,
+      "conAttuali": 0.7752682100508188
     },
     {
       "round": 12,
       "gara": "Formula 1 Heineken Dutch Grand Prix 2026",
-      "bagnato": true,
-      "ottimo": {
-        "rho": 0.6928289102202145,
-        "esatti": 4,
-        "podio": 3
-      },
-      "attuali": {
-        "rho": 0.6928289102202145,
-        "esatti": 4,
-        "podio": 3
-      },
-      "migliorePossibile": {
-        "pesi": [
-          78,
-          10,
-          4,
-          0
-        ],
-        "rho": 0.7267080745341614,
-        "esatti": 2,
-        "podio": 3
-      }
+      "rhoMassimo": 0.7289666854884247,
+      "combinazioniVicine": 129,
+      "centroide": [
+        84.4,
+        4.5,
+        1.6,
+        1.6
+      ],
+      "conCompromesso": 0.6228119706380576,
+      "conAttuali": 0.6668548842461886
     },
     {
       "round": 13,
       "gara": "Formula 1 Pirelli Gran Premio d'Italia 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.7267080745341614,
-        "esatti": 5,
-        "podio": 2
-      },
-      "attuali": {
-        "rho": 0.7267080745341614,
-        "esatti": 5,
-        "podio": 2
-      },
-      "migliorePossibile": {
-        "pesi": [
-          28,
-          52,
-          8,
-          4
-        ],
-        "rho": 0.7752682100508188,
-        "esatti": 2,
-        "podio": 2
-      }
+      "rhoMassimo": 0.7763975155279503,
+      "combinazioniVicine": 728,
+      "centroide": [
+        30.3,
+        52.4,
+        7.3,
+        2
+      ],
+      "conCompromesso": 0.7402597402597403,
+      "conAttuali": 0.753811405985319
     },
     {
       "round": 14,
       "gara": "Formula 1 TAG Heuer Gran Premio de España 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.7267080745341614,
-        "esatti": 2,
-        "podio": 1
-      },
-      "attuali": {
-        "rho": 0.7267080745341614,
-        "esatti": 2,
-        "podio": 1
-      },
-      "migliorePossibile": {
-        "pesi": [
-          4,
-          10,
-          6,
-          72
-        ],
-        "rho": 0.7786561264822134,
-        "esatti": 5,
-        "podio": 2
-      }
+      "rhoMassimo": 0.7809147374364765,
+      "combinazioniVicine": 15263,
+      "centroide": [
+        28,
+        23.2,
+        18.1,
+        22.7
+      ],
+      "conCompromesso": 0.7684923771880294,
+      "conAttuali": 0.7707509881422925
     },
     {
       "round": 15,
       "gara": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.6453980801806889,
-        "esatti": 1,
-        "podio": 1
-      },
-      "attuali": {
-        "rho": 0.6453980801806889,
-        "esatti": 1,
-        "podio": 1
-      },
-      "migliorePossibile": {
-        "pesi": [
-          24,
-          38,
-          0,
-          30
-        ],
-        "rho": 0.7075098814229249,
-        "esatti": 5,
-        "podio": 2
-      }
+      "rhoMassimo": 0.7120271033314511,
+      "combinazioniVicine": 51,
+      "centroide": [
+        62.9,
+        1.5,
+        1,
+        26.6
+      ],
+      "conCompromesso": 0.6600790513833992,
+      "conAttuali": 0.6386222473178995
     },
     {
       "round": 16,
       "gara": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026",
-      "bagnato": true,
-      "ottimo": {
-        "rho": 0.5742518351214003,
-        "esatti": 6,
-        "podio": 1
-      },
-      "attuali": {
-        "rho": 0.5742518351214003,
-        "esatti": 6,
-        "podio": 1
-      },
-      "migliorePossibile": {
-        "pesi": [
-          0,
-          4,
-          6,
-          82
-        ],
-        "rho": 0.6860530773574252,
-        "esatti": 3,
-        "podio": 1
-      }
+      "rhoMassimo": 0.6679841897233201,
+      "combinazioniVicine": 6515,
+      "centroide": [
+        2.8,
+        8.7,
+        56.6,
+        24
+      ],
+      "conCompromesso": 0.5889328063241106,
+      "conAttuali": 0.5945793337097685
     },
     {
       "round": 17,
       "gara": "Formula 1 Singapore Airlines Singapore Grand Prix 2026",
-      "bagnato": false,
-      "ottimo": {
-        "rho": 0.771880293619424,
-        "esatti": 2,
-        "podio": 2
-      },
-      "attuali": {
-        "rho": 0.771880293619424,
-        "esatti": 2,
-        "podio": 2
-      },
-      "migliorePossibile": {
-        "pesi": [
-          0,
-          62,
-          18,
-          12
-        ],
-        "rho": 0.8735177865612649,
-        "esatti": 4,
-        "podio": 2
-      }
+      "rhoMassimo": 0.8769057029926595,
+      "combinazioniVicine": 846,
+      "centroide": [
+        3.7,
+        62,
+        18.4,
+        7.9
+      ],
+      "conCompromesso": 0.8091473743647657,
+      "conAttuali": 0.8001129305477132
+    },
+    {
+      "round": 18,
+      "gara": "Formula 1 MSC Cruises United States Grand Prix 2026",
+      "rhoMassimo": 0.8915866741953699,
+      "combinazioniVicine": 403,
+      "centroide": [
+        41.6,
+        29.9,
+        19.2,
+        1.3
+      ],
+      "conCompromesso": 0.8543195934500283,
+      "conAttuali": 0.8588368153585545
     }
   ]
 }
