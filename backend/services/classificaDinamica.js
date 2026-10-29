@@ -226,6 +226,85 @@ function valutaAggiornamentoPertinente(testoOriginale, catalogo, corrente, stato
   return { pertinente: true, valore, evidenza: lettura.evidenza, stato, nota: lettura.nota, criteri };
 }
 
+// Aggiornamento non pertinente: il suo peso si ridistribuisce in proporzione sugli altri.
+function componiFattori(valutazioni, aggiornamentoPertinente, testi) {
+  const pesiAttivi = Object.fromEntries(Object.entries(PESI_DINAMICI)
+    .filter(([k]) => k !== "aggiornamentiTecnici" || aggiornamentoPertinente));
+  const moltiplicatore = 100 / Object.values(pesiAttivi).reduce((s, p) => s + p, 0);
+  let indiceBase = 0;
+  const fattori = Object.keys(PESI_DINAMICI).map(chiave => {
+    const peso = (pesiAttivi[chiave] || 0) * moltiplicatore;
+    const valore = valutazioni[chiave] ?? 50;
+    indiceBase += valore * peso / 100;
+    return { chiave, nome: nomeFattore(testi, chiave), pesoPercentuale: arrotonda(peso), valutazione: arrotonda(valore),
+      datiDisponibili: valutazioni[chiave] !== null };
+  });
+  return { fattori, indiceBase };
+}
+
+// Scuderia: ultimi GP/qualifiche con le due vetture (60% la migliore, 40% l'altra).
+function valutaRecentiScuderia(ctx, constructorId, gp, quanti, tipo) {
+  const gare = ctx.campioni.gare.filter(g => g.year === gp.year && g.round < gp.round)
+    .sort((a, b) => a.round - b.round).slice(-quanti);
+  const sorgente = tipo === "gara" ? ctx.campioni.risultati : ctx.campioni.qualifiche || [];
+  const usate = gare.map((g, i) => {
+    const n = tipo === "gara" ? ctx.indici.partecipanti.get(g.id) : ctx.indici.qualificati.get(g.id);
+    const valori = sorgente.filter(x => x.raceId === g.id && x.constructorId === constructorId && (tipo !== "gara" || regolare(x)))
+      .map(x => scala(x.positionNumber, n)).filter(Number.isFinite).sort((a, b) => b - a);
+    const valore = !valori.length ? null : valori.length === 1 ? valori[0] : valori[0] * 0.6 + valori[1] * 0.4;
+    return { valore, peso: i + 1 };
+  });
+  return { valore: media(usate), campione: usate.filter(u => Number.isFinite(u.valore)).length };
+}
+
+function valutaStoricoScuderia(ctx, constructorId, annoTarget) {
+  const usate = ctx.campioni.risultati.filter(r => r.constructorId === constructorId && r.circuitId === ctx.corrente?.circuitId && ctx.precedente(r))
+    .map(r => ({ valore: prestazione(r, ctx.indici), peso: DECADIMENTO_ANNO ** (annoTarget - r.year) }));
+  return { valore: media(usate), campione: usate.filter(u => Number.isFinite(u.valore)).length };
+}
+
+function creaClassificaScuderie({ ctx, gp, campioni, scuderie, classificaPiloti, valutazioniPiloti, analisiTeam, catalogo, testi, lingua }) {
+  return scuderie.map(scuderia => {
+    const constructorId = campioni.mappingScuderie[scuderia.slug];
+    const piloti = classificaPiloti.filter(p => p.scuderia.slug === scuderia.slug);
+    if (!constructorId || !piloti.length) return null;
+    const vettura = valutaVettura(ctx, constructorId, gp.year);
+    // Compatibilità piloti-circuito: media dei due piloti schierati.
+    const valoriPiloti = piloti.map(p => valutazioniPiloti.get(p.pilota.slug)).filter(Number.isFinite);
+    const gare4 = valutaRecentiScuderia(ctx, constructorId, gp, 4, "gara");
+    const qualifiche4 = valutaRecentiScuderia(ctx, constructorId, gp, 4, "qualifica");
+    const storico = valutaStoricoScuderia(ctx, constructorId, gp.year);
+    const analisi = analisiTeam.get(scuderia.slug);
+    const aggiornamento = valutaAggiornamentoPertinente(analisi?.aggiornamentiInArrivo, catalogo, ctx.corrente, "", testi);
+    const { fattori, indiceBase } = componiFattori({
+      compatibilitaVetturaCircuito: vettura.valore,
+      compatibilitaPilotaCircuito: valoriPiloti.length ? valoriPiloti.reduce((s, v) => s + v, 0) / valoriPiloti.length : null,
+      aggiornamentiTecnici: aggiornamento.valore, andamentoUltimi4Gp: gare4.valore,
+      andamentoUltime4Qualifiche: qualifiche4.valore, storicoPersonale: storico.valore,
+    }, aggiornamento.pertinente, testi);
+    for (const f of fattori) f.contributo = arrotonda(f.valutazione * f.pesoPercentuale / 100, 3);
+    const attivi = fattori.filter(f => f.pesoPercentuale > 0).sort((x, y) => y.contributo - x.contributo);
+    const codiceConfidenza = confidenza({ vettura: vettura.campione, pilota: valoriPiloti.length * 5, ultimi: gare4.campione });
+    return { indice: indiceBase, constructorId,
+      scuderia: { slug: scuderia.slug, nome: scuderia.nome, abbreviazione: scuderia.abbreviazione, colore: scuderia.colore },
+      piloti: piloti.map(p => ({ slug: p.pilota.slug, nome: p.pilota.nome, codice: p.pilota.codice, posizione: p.posizione })),
+      confidenza: testi.livelli[codiceConfidenza], confidenzaCodice: codiceConfidenza,
+      sintesi: testi.sintesi(attivi[0].nome, attivi[1].nome),
+      fattori,
+      dettagliFattori: {
+        compatibilitaVetturaCircuito: { campione: vettura.campione, edizioniPiuSimili: vettura.edizioni },
+        compatibilitaPilotaCircuito: { campione: valoriPiloti.length },
+        aggiornamentiTecnici: { pertinente: aggiornamento.pertinente, criteri: aggiornamento.criteri },
+        andamentoUltimi4Gp: { campione: gare4.campione }, andamentoUltime4Qualifiche: { campione: qualifiche4.campione },
+        storicoPersonale: { campione: storico.campione },
+      },
+      aggiornamentiTecnici: { stato: aggiornamento.stato,
+        nota: valoreLocalizzato(analisi, "aggiornamentiInArrivo", lingua) || aggiornamento.nota } };
+  }).filter(Boolean)
+    .sort((x, y) => y.indice - x.indice || x.constructorId.localeCompare(y.constructorId))
+    .map(({ constructorId, ...s }, i) => ({ ...s, indice: arrotonda(s.indice, 1), posizione: i + 1 }));
+}
+
 function confidenza(campioni) {
   const totale = campioni.vettura + campioni.pilota + campioni.ultimi;
   return totale >= 18 ? "alta" : totale >= 8 ? "media" : "bassa";
@@ -242,6 +321,7 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
   const analisiTeam = new Map(analisiScuderie.map(a => [a.scuderia?.slug, a]));
   const squadre = new Map(scuderie.map(s => [s.slug, s]));
 
+  const valutazioniPiloti = new Map();
   const classifica = piloti.filter(p => analisi.has(p.slug)).map(pilota => {
     const a = analisi.get(pilota.slug);
     const scuderiaSlug = a.scuderia?.slug || pilota.scuderia?.slug;
@@ -251,6 +331,7 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
 
     const vettura = valutaVettura(ctx, constructorId, gp.year);
     const pilotaCircuiti = valutaPilotaCircuiti(ctx, driverId, gp.year);
+    valutazioniPiloti.set(pilota.slug, pilotaCircuiti.valore);
     const storico = valutaStoricoCircuito(ctx, driverId, gp.year);
     const gare4 = valutaRecenti(ctx, driverId, gp, 4, "gara");
     const qualifiche4 = valutaRecenti(ctx, driverId, gp, 4, "qualifica");
@@ -263,19 +344,7 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
       aggiornamentiTecnici: aggiornamento.valore, andamentoUltimi4Gp: gare4.valore,
       andamentoUltime4Qualifiche: qualifiche4.valore, storicoPersonale: storico.valore,
     };
-    // Aggiornamento non pertinente: il suo peso si ridistribuisce in proporzione sugli altri.
-    const pesiAttivi = Object.fromEntries(Object.entries(PESI_DINAMICI)
-      .filter(([k]) => k !== "aggiornamentiTecnici" || aggiornamento.pertinente));
-    const totalePesi = Object.values(pesiAttivi).reduce((s, p) => s + p, 0);
-    const moltiplicatore = 100 / totalePesi;
-    let indiceBase = 0;
-    const fattori = Object.keys(PESI_DINAMICI).map(chiave => {
-      const peso = (pesiAttivi[chiave] || 0) * moltiplicatore;
-      const valore = valutazioni[chiave] ?? 50;
-      indiceBase += valore * peso / 100;
-      return { chiave, nome: nomeFattore(testi, chiave), pesoPercentuale: arrotonda(peso), valutazione: arrotonda(valore),
-        datiDisponibili: valutazioni[chiave] !== null };
-    });
+    const { fattori, indiceBase } = componiFattori(valutazioni, aggiornamento.pertinente, testi);
     const editoriale = valutaPenalita(a.penalita);
     const ufficiale = valutaPenalitaFia(datiLiveFia?.penalitaGriglia, pilota.numero);
     const penalita = ufficiale && (!editoriale || ufficiale.valore <= editoriale.valore) ? ufficiale : editoriale;
@@ -312,6 +381,9 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
         nota: valoreLocalizzato(a, "aggiornamentiInArrivo", lingua) || aggiornamento.nota } };
   }).sort((x, y) => y.indice - x.indice || x.driverId.localeCompare(y.driverId));
 
+  const classificaFinale = classifica.map(({ driverId, ...p }, i) => ({ ...p, indice: arrotonda(p.indice, 1), posizione: i + 1 }));
+  const classificaScuderie = creaClassificaScuderie({ ctx, gp, campioni, scuderie, classificaPiloti: classificaFinale,
+    valutazioniPiloti, analisiTeam, catalogo, testi, lingua });
   const confronti = [...ctx.confronti.values()].map(({ circuito, ...c }) =>
     ({ slug: circuito.slug, circuitId: circuito.circuitId, nome: circuito.nome, round: circuito.round, ...c }))
     .sort((x, y) => y.similaritaPercentuale - x.similaritaPercentuale);
@@ -328,7 +400,8 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
     calibrazione: { stato: "riferimento_mondiale", combinazioniEsaminate: 1,
       ultimoRoundTraining: Math.max(0, ...campioni.gare.filter(g => g.year === gp.year && g.round < gp.round).map(g => g.round)),
       fonteMondiale: gp.round > campioni.ultimoRoundIncluso ? "database" : "snapshot_anteriore_al_gp", candidataPromossa: false },
-    classifica: classifica.map(({ driverId, ...p }, i) => ({ ...p, indice: arrotonda(p.indice, 1), posizione: i + 1 })),
+    classifica: classificaFinale,
+    classificaScuderie,
   };
 }
 

@@ -201,6 +201,33 @@ function AdminPage() {
       </section>
 
       <section className="admin-pannello">
+        <h2>Classifica previsionale scuderie</h2>
+        {classifica?.classificaScuderie && (
+          <div className="admin-tabella-contenitore">
+            <table className="admin-tabella">
+              <thead><tr><th>#</th><th>Scuderia</th><th>Indice</th>
+                {pesiAttivi.map((p) => <th key={p.chiave}>{p.nome}</th>)}</tr></thead>
+              <tbody>{classifica.classificaScuderie.map((r) => {
+                const fattori = new Map(r.fattori.map((f) => [f.chiave, f]))
+                return (
+                  <tr key={r.scuderia.slug}>
+                    <td>{r.posizione}</td>
+                    <td><span className="admin-colore" style={{ background: `#${String(r.scuderia.colore || '888').replace('#', '')}` }} />{r.scuderia.nome}
+                      <small>{r.piloti.map((p) => `${p.codice} P${p.posizione}`).join(' · ')}</small></td>
+                    <td className="admin-num"><strong>{r.indice}</strong></td>
+                    {chiavi.map((k) => {
+                      const f = fattori.get(k)
+                      return <td key={k} className="admin-num">{f ? f.valutazione.toFixed(1) : '—'}<small>{f ? `${f.pesoPercentuale}%` : ''}</small></td>
+                    })}
+                  </tr>
+                )
+              })}</tbody>
+            </table>
+          </div>
+        )}
+      </section>
+
+      <section className="admin-pannello">
         <h2>Circuiti più simili a questo GP</h2>
         <div className="admin-tabella-contenitore">
           <table className="admin-tabella">

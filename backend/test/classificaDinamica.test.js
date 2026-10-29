@@ -75,3 +75,16 @@ test("l'esito osservato delle gare 2026 rende dinamica anche la vettura", () => 
   assert.notDeepEqual(vettura(secco), vettura(pioggia));
   assert.notDeepEqual(vettura(pioggia), vettura(senzaEsiti));
 });
+
+test("classifica scuderie con gli stessi campi dinamici", () => {
+  const output = creaClassificaPrevisionale(argomenti());
+  const scuderie = output.classificaScuderie;
+  assert.ok(scuderie.length >= 10);
+  assert.deepEqual(scuderie.map((s) => s.posizione), scuderie.map((_, i) => i + 1));
+  for (const s of scuderie) {
+    assert.deepEqual(s.fattori.map((f) => f.chiave), Object.keys(PESI_DINAMICI));
+    assert.ok(Math.abs(s.fattori.reduce((t, f) => t + f.pesoPercentuale, 0) - 100) < 0.05);
+    assert.ok(Math.abs(s.fattori.reduce((t, f) => t + f.contributo, 0) - s.indice) <= 0.06);
+    assert.ok(s.piloti.length >= 1);
+  }
+});
