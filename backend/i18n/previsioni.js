@@ -1,6 +1,10 @@
 const TESTI_PREVISIONI = Object.freeze({
   it: {
     fattori: {
+      scuderiaCompatibilitaPilotaCircuito: "Compatibilità piloti-circuito",
+      scuderiaAndamentoUltimi4Gp: "Andamento scuderia negli ultimi 4 GP",
+      scuderiaAndamentoUltime4Qualifiche: "Andamento scuderia nelle ultime 4 qualifiche",
+      scuderiaStoricoPersonale: "Storico scuderia sul circuito",
       compatibilitaPilotaCircuito: "Compatibilità pilota-circuito",
       andamentoUltimi4Gp: "Andamento pilota negli ultimi 4 GP",
       andamentoUltime4Qualifiche: "Andamento pilota nelle ultime 4 qualifiche",
@@ -51,6 +55,10 @@ const TESTI_PREVISIONI = Object.freeze({
   },
   en: {
     fattori: {
+      scuderiaCompatibilitaPilotaCircuito: "Drivers-circuit compatibility",
+      scuderiaAndamentoUltimi4Gp: "Team form over the last 4 Grands Prix",
+      scuderiaAndamentoUltime4Qualifiche: "Team form over the last 4 qualifying sessions",
+      scuderiaStoricoPersonale: "Team record at this circuit",
       compatibilitaPilotaCircuito: "Driver-circuit compatibility",
       andamentoUltimi4Gp: "Driver form over the last 4 Grands Prix",
       andamentoUltime4Qualifiche: "Driver form over the last 4 qualifying sessions",
@@ -101,6 +109,10 @@ const TESTI_PREVISIONI = Object.freeze({
   },
   fr: {
     fattori: {
+      scuderiaCompatibilitaPilotaCircuito: "Compatibilité pilotes-circuit",
+      scuderiaAndamentoUltimi4Gp: "Forme de l'écurie sur les 4 derniers GP",
+      scuderiaAndamentoUltime4Qualifiche: "Forme de l'écurie sur les 4 dernières qualifications",
+      scuderiaStoricoPersonale: "Historique de l'écurie sur le circuit",
       compatibilitaPilotaCircuito: "Compatibilité pilote-circuit",
       andamentoUltimi4Gp: "Forme du pilote sur les 4 derniers GP",
       andamentoUltime4Qualifiche: "Forme du pilote sur les 4 dernières qualifications",
@@ -151,6 +163,10 @@ const TESTI_PREVISIONI = Object.freeze({
   },
   pt: {
     fattori: {
+      scuderiaCompatibilitaPilotaCircuito: "Compatibilidade pilotos-circuito",
+      scuderiaAndamentoUltimi4Gp: "Forma da equipa nos últimos 4 GP",
+      scuderiaAndamentoUltime4Qualifiche: "Forma da equipa nas últimas 4 qualificações",
+      scuderiaStoricoPersonale: "Histórico da equipa no circuito",
       compatibilitaPilotaCircuito: "Compatibilidade piloto-circuito",
       andamentoUltimi4Gp: "Forma do piloto nos últimos 4 GP",
       andamentoUltime4Qualifiche: "Forma do piloto nas últimas 4 qualificações",
@@ -201,6 +217,10 @@ const TESTI_PREVISIONI = Object.freeze({
   },
   es: {
     fattori: {
+      scuderiaCompatibilitaPilotaCircuito: "Compatibilidad pilotos-circuito",
+      scuderiaAndamentoUltimi4Gp: "Rendimiento de la escudería en los últimos 4 GP",
+      scuderiaAndamentoUltime4Qualifiche: "Rendimiento de la escudería en las últimas 4 clasificaciones",
+      scuderiaStoricoPersonale: "Historial de la escudería en el circuito",
       compatibilitaPilotaCircuito: "Compatibilidad piloto-circuito",
       andamentoUltimi4Gp: "Rendimiento del piloto en los últimos 4 GP",
       andamentoUltime4Qualifiche: "Rendimiento del piloto en las últimas 4 clasificaciones",
@@ -251,6 +271,10 @@ const TESTI_PREVISIONI = Object.freeze({
   },
   de: {
     fattori: {
+      scuderiaCompatibilitaPilotaCircuito: "Fahrer-Strecken-Kompatibilität",
+      scuderiaAndamentoUltimi4Gp: "Teamform der letzten 4 Grands Prix",
+      scuderiaAndamentoUltime4Qualifiche: "Teamform der letzten 4 Qualifyings",
+      scuderiaStoricoPersonale: "Teambilanz auf der Strecke",
       compatibilitaPilotaCircuito: "Fahrer-Strecken-Kompatibilität",
       andamentoUltimi4Gp: "Fahrerform der letzten 4 Grands Prix",
       andamentoUltime4Qualifiche: "Fahrerform der letzten 4 Qualifyings",

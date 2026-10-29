@@ -282,7 +282,11 @@ function creaClassificaScuderie({ ctx, gp, campioni, scuderie, classificaPiloti,
       aggiornamentiTecnici: aggiornamento.valore, andamentoUltimi4Gp: gare4.valore,
       andamentoUltime4Qualifiche: qualifiche4.valore, storicoPersonale: storico.valore,
     }, aggiornamento.pertinente, testi);
-    for (const f of fattori) f.contributo = arrotonda(f.valutazione * f.pesoPercentuale / 100, 3);
+    for (const f of fattori) {
+      f.contributo = arrotonda(f.valutazione * f.pesoPercentuale / 100, 3);
+      const chiaveScuderia = "scuderia" + f.chiave[0].toUpperCase() + f.chiave.slice(1);
+      if (testi.fattori[chiaveScuderia]) f.nome = testi.fattori[chiaveScuderia];
+    }
     const attivi = fattori.filter(f => f.pesoPercentuale > 0).sort((x, y) => y.contributo - x.contributo);
     const codiceConfidenza = confidenza({ vettura: vettura.campione, pilota: valoriPiloti.length * 5, ultimi: gare4.campione });
     return { indice: indiceBase, constructorId,
