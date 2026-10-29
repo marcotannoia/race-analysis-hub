@@ -1,3 +1,4 @@
+const previsionePubblica = require("../../presenters/previsionePubblica");
 const { databaseDisponibile } = require("../../config/database");
 const { Gara, Pilota, Scuderia, AnalisiGara, AnalisiScuderia, DatiLiveFia } = require("../../repositories/modelli");
 const trovaGaraAttuale = require("../../services/garaAttuale");
@@ -254,7 +255,7 @@ async function home(richiesta, risposta) {
       lingua,
     ),
     aggiornamentiLive: null, // Campo mantenuto per compatibilità; rapporto FIA rimosso.
-    classificaPrevisionale: creaClassificaPrevisionale({
+    classificaPrevisionale: previsionePubblica(creaClassificaPrevisionale({
       gara: garaAttuale,
       piloti: pilotiPartecipanti,
       scuderie,
@@ -263,7 +264,7 @@ async function home(richiesta, risposta) {
       lingua,
       meteo,
       datiLiveFia,
-    }),
+    })),
     metadati: {
       stagione: garaAttuale.stagione,
       totalePiloti: pilotiPartecipanti.length,
@@ -280,7 +281,7 @@ async function classificaPrevisionale(richiesta, risposta) {
   const garaAttuale = await richiediGaraAttuale(risposta);
   if (!garaAttuale) return;
 
-  risposta.json(await costruisciClassificaPrevisionale(garaAttuale, lingua));
+  risposta.json(previsionePubblica(await costruisciClassificaPrevisionale(garaAttuale, lingua)));
 }
 
 async function costruisciClassificaPrevisionale(garaAttuale, lingua) {

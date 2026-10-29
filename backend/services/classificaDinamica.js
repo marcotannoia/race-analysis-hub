@@ -11,13 +11,15 @@ const { testiPrevisione } = require("../i18n/previsioni");
 const { valoreLocalizzato } = require("../i18n/lingue");
 const { valutaPenalita, valutaPenalitaFia, PESO_PENALITA, valutaAggiornamentoTesto } = require("./classificaPrevisionale");
 
-// Pesi richiesti (somma 101): componiFattori li normalizza sempre a 100.
+// Pesi dal backtest sui GP 2026 già disputati (scripts/ottimizzaPesiDinamici.js):
+// massimizzano la correlazione di Spearman media con l'ordine d'arrivo reale.
+// Gli aggiornamenti restano all'8% perché non esiste uno storico GP per GP da cui calibrarli.
 const PESI_DINAMICI = Object.freeze({
-  compatibilitaVetturaCircuito: 43,
-  compatibilitaPilotaCircuito: 35,
+  compatibilitaVetturaCircuito: 79,
+  compatibilitaPilotaCircuito: 2,
   aggiornamentiTecnici: 8,
   andamentoUltimi4Gp: 10,
-  storicoPersonale: 5,
+  storicoPersonale: 1,
 });
 // Il talento sul circuito vale pienamente solo con una vettura competitiva:
 // con vettura a 0 resta il 60% del voto, con vettura a 100 il 100%.
