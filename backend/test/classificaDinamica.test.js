@@ -18,8 +18,8 @@ function argomenti() {
 }
 
 test("pesi base richiesti e somma 100 per ogni pilota", () => {
-  assert.deepEqual({ ...PESI_DINAMICI }, { compatibilitaVetturaCircuito: 42, compatibilitaPilotaCircuito: 25,
-    aggiornamentiTecnici: 8, andamentoUltimi4Gp: 10, andamentoUltime4Qualifiche: 10, storicoPersonale: 5 });
+  assert.deepEqual({ ...PESI_DINAMICI }, { compatibilitaVetturaCircuito: 43, compatibilitaPilotaCircuito: 35,
+    aggiornamentiTecnici: 8, andamentoUltimi4Gp: 10, storicoPersonale: 5 });
   const output = creaClassificaPrevisionale(argomenti());
   assert.equal(output.modello, "dinamico-similarita-meteo-v1");
   assert.equal(output.confrontoCircuiti.criteri.length, 22);
@@ -30,7 +30,7 @@ test("pesi base richiesti e somma 100 per ogni pilota", () => {
     // Aggiornamento non pertinente: peso a zero e gli altri crescono in proporzione.
     if (!p.dettagliFattori.aggiornamentiTecnici.pertinente) {
       assert.equal(agg.pesoPercentuale, 0);
-      assert.equal(p.fattori.find((f) => f.chiave === "compatibilitaVetturaCircuito").pesoPercentuale, 45.65);
+      assert.equal(p.fattori.find((f) => f.chiave === "compatibilitaVetturaCircuito").pesoPercentuale, 46.24);
     }
   }
 });
@@ -86,5 +86,18 @@ test("classifica scuderie con gli stessi campi dinamici", () => {
     assert.ok(Math.abs(s.fattori.reduce((t, f) => t + f.pesoPercentuale, 0) - 100) < 0.05);
     assert.ok(Math.abs(s.fattori.reduce((t, f) => t + f.contributo, 0) - s.indice) <= 0.06);
     assert.ok(s.piloti.length >= 1);
+  }
+});
+
+test("compatibilità pilota-circuito contestualizzata dalla vettura", () => {
+  const output = creaClassificaPrevisionale(argomenti());
+  for (const p of output.classifica) {
+    const d = p.dettagliFattori.compatibilitaPilotaCircuito;
+    const vettura = p.fattori.find((f) => f.chiave === "compatibilitaVetturaCircuito").valutazione;
+    const pilota = p.fattori.find((f) => f.chiave === "compatibilitaPilotaCircuito").valutazione;
+    if (d.valorePuro === null) continue;
+    assert.ok(Math.abs(d.fattoreScuderia - (0.6 + 0.4 * vettura / 100)) < 0.002);
+    assert.ok(Math.abs(pilota - d.valorePuro * d.fattoreScuderia) < 0.1);
+    assert.ok(pilota <= d.valorePuro + 0.01);
   }
 });

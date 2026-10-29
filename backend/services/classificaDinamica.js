@@ -11,14 +11,20 @@ const { testiPrevisione } = require("../i18n/previsioni");
 const { valoreLocalizzato } = require("../i18n/lingue");
 const { valutaPenalita, valutaPenalitaFia, PESO_PENALITA, valutaAggiornamentoTesto } = require("./classificaPrevisionale");
 
+// Pesi richiesti (somma 101): componiFattori li normalizza sempre a 100.
 const PESI_DINAMICI = Object.freeze({
-  compatibilitaVetturaCircuito: 42,
-  compatibilitaPilotaCircuito: 25,
+  compatibilitaVetturaCircuito: 43,
+  compatibilitaPilotaCircuito: 35,
   aggiornamentiTecnici: 8,
   andamentoUltimi4Gp: 10,
-  andamentoUltime4Qualifiche: 10,
   storicoPersonale: 5,
 });
+// Il talento sul circuito vale pienamente solo con una vettura competitiva:
+// con vettura a 0 resta il 60% del voto, con vettura a 100 il 100%.
+const QUOTA_PILOTA_SENZA_VETTURA = 0.6;
+const TOTALE_PESI = Object.values(PESI_DINAMICI).reduce((s, p) => s + p, 0);
+const contestualizzaPilota = (pilota, vettura) => pilota === null ? null
+  : pilota * (QUOTA_PILOTA_SENZA_VETTURA + (1 - QUOTA_PILOTA_SENZA_VETTURA) * (vettura ?? 50) / 100);
 
 // Pioggia "riconosciuta": gara, qualifica o intero weekend almeno a questa probabilità.
 const SOGLIA_PIOGGIA = 50;
@@ -335,7 +341,8 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
 
     const vettura = valutaVettura(ctx, constructorId, gp.year);
     const pilotaCircuiti = valutaPilotaCircuiti(ctx, driverId, gp.year);
-    valutazioniPiloti.set(pilota.slug, pilotaCircuiti.valore);
+    const pilotaContestualizzato = contestualizzaPilota(pilotaCircuiti.valore, vettura.valore);
+    valutazioniPiloti.set(pilota.slug, pilotaContestualizzato);
     const storico = valutaStoricoCircuito(ctx, driverId, gp.year);
     const gare4 = valutaRecenti(ctx, driverId, gp, 4, "gara");
     const qualifiche4 = valutaRecenti(ctx, driverId, gp, 4, "qualifica");
@@ -344,7 +351,7 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
       catalogo, ctx.corrente, a.statoAggiornamentiTecnici, testi);
 
     const valutazioni = {
-      compatibilitaVetturaCircuito: vettura.valore, compatibilitaPilotaCircuito: pilotaCircuiti.valore,
+      compatibilitaVetturaCircuito: vettura.valore, compatibilitaPilotaCircuito: pilotaContestualizzato,
       aggiornamentiTecnici: aggiornamento.valore, andamentoUltimi4Gp: gare4.valore,
       andamentoUltime4Qualifiche: qualifiche4.valore, storicoPersonale: storico.valore,
     };
@@ -376,7 +383,9 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
       fattori,
       dettagliFattori: {
         compatibilitaVetturaCircuito: { campione: vettura.campione, edizioniPiuSimili: vettura.edizioni },
-        compatibilitaPilotaCircuito: { campione: pilotaCircuiti.campione, edizioniPiuSimili: pilotaCircuiti.edizioni },
+        compatibilitaPilotaCircuito: { campione: pilotaCircuiti.campione, edizioniPiuSimili: pilotaCircuiti.edizioni,
+          valorePuro: pilotaCircuiti.valore === null ? null : arrotonda(pilotaCircuiti.valore),
+          fattoreScuderia: arrotonda(QUOTA_PILOTA_SENZA_VETTURA + (1 - QUOTA_PILOTA_SENZA_VETTURA) * (vettura.valore ?? 50) / 100, 3) },
         aggiornamentiTecnici: { pertinente: aggiornamento.pertinente, criteri: aggiornamento.criteri },
         andamentoUltimi4Gp: { campione: gare4.campione }, andamentoUltime4Qualifiche: { campione: qualifiche4.campione },
         storicoPersonale: { campione: storico.campione },
@@ -399,7 +408,7 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
     confrontoCircuiti: { metodo: "similarita-multicriterio-v2",
       pesoInClassificaPercentuale: PESI_DINAMICI.compatibilitaVetturaCircuito + PESI_DINAMICI.compatibilitaPilotaCircuito, criteri: CRITERI.map(c => ({ chiave: c.chiave, nome: c.nome,
       pesoPercentuale: arrotonda(c.pesoPercentuale, 4) })), confronti },
-    pesi: [...Object.entries(PESI_DINAMICI), ...CHIAVI_LEGACY.map(k => [k, 0])]
+    pesi: [...Object.entries(PESI_DINAMICI).map(([k, p]) => [k, arrotonda(p * 100 / TOTALE_PESI)]), ...CHIAVI_LEGACY.map(k => [k, 0])]
       .map(([chiave, pesoPercentuale]) => ({ chiave, nome: nomeFattore(testi, chiave), pesoPercentuale })),
     calibrazione: { stato: "riferimento_mondiale", combinazioniEsaminate: 1,
       ultimoRoundTraining: Math.max(0, ...campioni.gare.filter(g => g.year === gp.year && g.round < gp.round).map(g => g.round)),
