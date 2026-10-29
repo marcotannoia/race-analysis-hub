@@ -25,19 +25,37 @@ function probabilitaNellaFascia(hourly, inizio, fine) {
   return valori.length ? Math.max(...valori) : null;
 }
 
+// Pioggia "per tutto il weekend": il giorno meno piovoso ha comunque questo picco orario.
+function probabilitaWeekend(hourly, inizio, fine) {
+  const giorni = [];
+  for (let giorno = inizio; giorno < fine; giorno += 24 * 3600000) {
+    const valore = probabilitaNellaFascia(hourly, giorno, Math.min(fine, giorno + 24 * 3600000));
+    if (valore !== null) giorni.push(valore);
+  }
+  return giorni.length ? Math.min(...giorni) : null;
+}
+
+const istante = (data, ora) => data && ora ? new Date(`${data}T${String(ora).slice(0, 8)}Z`) : null;
+
 async function previsioneMeteo(garaSlug) {
   let gara = CONFIGURAZIONE_GARE[garaSlug];
   if (!gara && require('../config/database').usaPostgres()) {
     try {
-      const r = await require('../config/database').getPool().query(`select c.latitude,c.longitude,r.date::text date,r.time::text time
+      const r = await require('../config/database').getPool().query(`select c.latitude,c.longitude,r.date::text date,r.time::text time,
+        r.qualifying_date::text qualifying_date,r.qualifying_time::text qualifying_time,
+        r.free_practice_1_date::text fp1_date,r.free_practice_1_time::text fp1_time
         from catalog.grand_prix g join catalog.circuit cc on cc.id=g.circuit_id
         join f1db.circuit c on c.id=cc.f1db_circuit_id join f1db.race r on r.year=g.season and r.round=g.calendar_order
         where g.slug=$1`, [garaSlug]);
       const row=r.rows[0];
       if(row?.date && row.time && row.latitude!=null && row.longitude!=null){
-        const inizio=new Date(`${row.date}T${row.time}Z`);
-        if(Number.isFinite(inizio.getTime()))gara={latitude:Number(row.latitude),longitude:Number(row.longitude),
-          inizio:inizio.toISOString(),fine:new Date(inizio.getTime()+2*3600000).toISOString()};
+        const inizio=istante(row.date,row.time), qualifica=istante(row.qualifying_date,row.qualifying_time),
+          fp1=istante(row.fp1_date,row.fp1_time);
+        if(Number.isFinite(inizio?.getTime()))gara={latitude:Number(row.latitude),longitude:Number(row.longitude),
+          inizio:inizio.toISOString(),fine:new Date(inizio.getTime()+2*3600000).toISOString(),
+          ...(Number.isFinite(qualifica?.getTime()) ? {inizioQualifica:qualifica.toISOString(),
+            fineQualifica:new Date(qualifica.getTime()+3600000).toISOString()} : {}),
+          ...(Number.isFinite(fp1?.getTime()) ? {inizioWeekend:fp1.toISOString()} : {})};
       }
     } catch { return null; }
   }
@@ -66,8 +84,14 @@ async function previsioneMeteo(garaSlug) {
       Date.parse(gara.inizio),
       Date.parse(gara.fine),
     );
+    const probabilitaPioggiaQualificaPercentuale = gara.inizioQualifica
+      ? probabilitaNellaFascia(dati.hourly, Date.parse(gara.inizioQualifica), Date.parse(gara.fineQualifica)) : null;
+    const probabilitaPioggiaWeekendPercentuale = gara.inizioWeekend
+      ? probabilitaWeekend(dati.hourly, Date.parse(gara.inizioWeekend), Date.parse(gara.fine)) : null;
     const valore = probabilitaPioggiaPercentuale === null ? null : {
       probabilitaPioggiaPercentuale,
+      probabilitaPioggiaQualificaPercentuale,
+      probabilitaPioggiaWeekendPercentuale,
       intervalloInizio: gara.inizio,
       intervalloFine: gara.fine,
       rilevatoIl: new Date().toISOString(),
@@ -83,4 +107,4 @@ async function previsioneMeteo(garaSlug) {
   }
 }
 
-module.exports = { previsioneMeteo, probabilitaNellaFascia };
+module.exports = { previsioneMeteo, probabilitaNellaFascia, probabilitaWeekend };

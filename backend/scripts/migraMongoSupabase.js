@@ -152,9 +152,9 @@ async function main() {
       const teamId = maps.team.get(id(doc.scuderia));
       assert(teamId, `Scuderia pilota mancante: ${doc.slug}`);
       const r = await pg.query(`insert into catalog.driver
-        (slug,f1db_driver_id,current_team_id,name,code,car_number,nationality,nationality_iso2,nationality_iso3,created_at,updated_at)
-        values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) returning id`,
-        [doc.slug, fid, teamId, doc.nome, doc.codice, doc.numero, doc.nazionalita,
+        (slug,f1db_driver_id,name,code,car_number,nationality,nationality_iso2,nationality_iso3,created_at,updated_at)
+        values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) returning id`,
+        [doc.slug, fid, doc.nome, doc.codice, doc.numero, doc.nazionalita,
           doc.nazionalitaIso2, doc.nazionalitaIso3, doc.createdAt, doc.updatedAt]);
       maps.driver.set(id(doc._id), r.rows[0].id);
       await insertText(pg, 'driver_text', 'driver_id', r.rows[0].id, flattenText(doc, ['nazionalita']));

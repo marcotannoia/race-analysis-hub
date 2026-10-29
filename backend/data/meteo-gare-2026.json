@@ -1,0 +1,242 @@
+{
+  "anno": 2026,
+  "aggiornatoIl": "2026-10-29",
+  "fonte": "OpenF1 /weather (rainfall)",
+  "metodo": "Bagnata se almeno un campione della sessione ha rainfall=1.",
+  "edizioni": [
+    {
+      "raceId": 1150,
+      "anno": 2026,
+      "round": 1,
+      "circuitId": "melbourne",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 148,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11234",
+        "https://api.openf1.org/v1/weather?session_key=11230"
+      ]
+    },
+    {
+      "raceId": 1151,
+      "anno": 2026,
+      "round": 2,
+      "circuitId": "shanghai",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 152,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11245",
+        "https://api.openf1.org/v1/weather?session_key=11241"
+      ]
+    },
+    {
+      "raceId": 1152,
+      "anno": 2026,
+      "round": 3,
+      "circuitId": "suzuka",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 156,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11253",
+        "https://api.openf1.org/v1/weather?session_key=11249"
+      ]
+    },
+    {
+      "raceId": 1153,
+      "anno": 2026,
+      "round": 4,
+      "circuitId": "miami",
+      "pioggia": true,
+      "pioggiaQualifica": false,
+      "campioniGara": 168,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11280",
+        "https://api.openf1.org/v1/weather?session_key=11276"
+      ]
+    },
+    {
+      "raceId": 1154,
+      "anno": 2026,
+      "round": 5,
+      "circuitId": "montreal",
+      "pioggia": false,
+      "pioggiaQualifica": true,
+      "campioniGara": 160,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11291",
+        "https://api.openf1.org/v1/weather?session_key=11287"
+      ]
+    },
+    {
+      "raceId": 1155,
+      "anno": 2026,
+      "round": 6,
+      "circuitId": "monaco",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 208,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11299",
+        "https://api.openf1.org/v1/weather?session_key=11295"
+      ]
+    },
+    {
+      "raceId": 1156,
+      "anno": 2026,
+      "round": 7,
+      "circuitId": "catalunya",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 150,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11307",
+        "https://api.openf1.org/v1/weather?session_key=11303"
+      ]
+    },
+    {
+      "raceId": 1157,
+      "anno": 2026,
+      "round": 8,
+      "circuitId": "spielberg",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 149,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11315",
+        "https://api.openf1.org/v1/weather?session_key=11311"
+      ]
+    },
+    {
+      "raceId": 1158,
+      "anno": 2026,
+      "round": 9,
+      "circuitId": "silverstone",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 156,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11326",
+        "https://api.openf1.org/v1/weather?session_key=11322"
+      ]
+    },
+    {
+      "raceId": 1159,
+      "anno": 2026,
+      "round": 10,
+      "circuitId": "spa-francorchamps",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 146,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11334",
+        "https://api.openf1.org/v1/weather?session_key=11330"
+      ]
+    },
+    {
+      "raceId": 1160,
+      "anno": 2026,
+      "round": 11,
+      "circuitId": "hungaroring",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 156,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11342",
+        "https://api.openf1.org/v1/weather?session_key=11338"
+      ]
+    },
+    {
+      "raceId": 1161,
+      "anno": 2026,
+      "round": 12,
+      "circuitId": "zandvoort",
+      "pioggia": true,
+      "pioggiaQualifica": true,
+      "campioniGara": 191,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11353",
+        "https://api.openf1.org/v1/weather?session_key=11349"
+      ]
+    },
+    {
+      "raceId": 1162,
+      "anno": 2026,
+      "round": 13,
+      "circuitId": "monza",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 176,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11361",
+        "https://api.openf1.org/v1/weather?session_key=11357"
+      ]
+    },
+    {
+      "raceId": 1163,
+      "anno": 2026,
+      "round": 14,
+      "circuitId": "madring",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 161,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11369",
+        "https://api.openf1.org/v1/weather?session_key=11365"
+      ]
+    },
+    {
+      "raceId": 1164,
+      "anno": 2026,
+      "round": 15,
+      "circuitId": "baku",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 168,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11377",
+        "https://api.openf1.org/v1/weather?session_key=11373"
+      ]
+    },
+    {
+      "raceId": 1165,
+      "anno": 2026,
+      "round": 16,
+      "circuitId": "sepang",
+      "pioggia": true,
+      "pioggiaQualifica": false,
+      "campioniGara": 254,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11731",
+        "https://api.openf1.org/v1/weather?session_key=11730"
+      ]
+    },
+    {
+      "raceId": 1166,
+      "anno": 2026,
+      "round": 17,
+      "circuitId": "marina-bay",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 160,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11388",
+        "https://api.openf1.org/v1/weather?session_key=11384"
+      ]
+    },
+    {
+      "raceId": 1167,
+      "anno": 2026,
+      "round": 18,
+      "circuitId": "austin",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 159,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11396",
+        "https://api.openf1.org/v1/weather?session_key=11392"
+      ]
+    }
+  ]
+}

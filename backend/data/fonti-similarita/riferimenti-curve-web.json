@@ -1,0 +1,191 @@
+{
+  "melbourne": {
+    "fonte": "https://torqlytics.com/circuits/melbourne",
+    "anno": 2026,
+    "direzioni": "RLRLRRLRLRRRLR",
+    "curveOsservate": 14,
+    "gMedia": 2.4833333333333334,
+    "gCampione": 12,
+    "velocitaCurveMedia": 183
+  },
+  "suzuka": {
+    "fonte": "https://torqlytics.com/circuits/suzuka",
+    "anno": 2026,
+    "direzioni": "RRLRLRLRRRLRLLLRLR",
+    "curveOsservate": 18,
+    "gMedia": 3.4769230769230766,
+    "gCampione": 13,
+    "velocitaCurveMedia": 189.55555555555554
+  },
+  "miami": {
+    "fonte": "https://torqlytics.com/circuits/miami",
+    "anno": 2026,
+    "direzioni": "RLRLRLLLRLLRLLLLLLR",
+    "curveOsservate": 19,
+    "gMedia": 2.0444444444444443,
+    "gCampione": 18,
+    "velocitaCurveMedia": 152.57894736842104
+  },
+  "shanghai": {
+    "fonte": "https://torqlytics.com/circuits/shanghai",
+    "anno": 2026,
+    "direzioni": "RRLLRRLRLLLRRRRL",
+    "curveOsservate": 16,
+    "gMedia": 2.7666666666666666,
+    "gCampione": 15,
+    "velocitaCurveMedia": 139
+  },
+  "montreal": {
+    "fonte": "https://torqlytics.com/circuits/montreal",
+    "anno": 2026,
+    "direzioni": "LRRLRLRRLRLRRL",
+    "curveOsservate": 14,
+    "gMedia": 1.830769230769231,
+    "gCampione": 13,
+    "velocitaCurveMedia": 131.71428571428572
+  },
+  "monte-carlo": {
+    "fonte": "https://torqlytics.com/circuits/monte-carlo",
+    "anno": 2026,
+    "direzioni": "RRLRRLRRRLRLLRRLLRR",
+    "curveOsservate": 19,
+    "gMedia": 1.810526315789474,
+    "gCampione": 19,
+    "velocitaCurveMedia": 120.3157894736842
+  },
+  "catalunya": {
+    "fonte": "https://torqlytics.com/circuits/catalunya",
+    "anno": 2026,
+    "direzioni": "RLRRLLLRRLLRRR",
+    "curveOsservate": 14,
+    "gMedia": 3.1,
+    "gCampione": 12,
+    "velocitaCurveMedia": 170
+  },
+  "silverstone": {
+    "fonte": "https://torqlytics.com/circuits/silverstone",
+    "anno": 2026,
+    "direzioni": "RLRLLLRRRRRLRLRLRR",
+    "curveOsservate": 18,
+    "gMedia": 2.733333333333333,
+    "gCampione": 18,
+    "velocitaCurveMedia": 200.22222222222223
+  },
+  "spa-francorchamps": {
+    "fonte": "https://torqlytics.com/circuits/spa-francorchamps",
+    "anno": 2026,
+    "direzioni": "RLRLRLRRLLLRLRRLLRL",
+    "curveOsservate": 19,
+    "gMedia": 2.683333333333334,
+    "gCampione": 18,
+    "velocitaCurveMedia": 204.47368421052633
+  },
+  "hungaroring": {
+    "fonte": "https://torqlytics.com/circuits/hungaroring",
+    "anno": 2026,
+    "direzioni": "RLRLRRLLRLRRLR",
+    "curveOsservate": 14,
+    "gMedia": 2.4615384615384612,
+    "gCampione": 13,
+    "velocitaCurveMedia": 148.5
+  },
+  "zandvoort": {
+    "fonte": "https://torqlytics.com/circuits/zandvoort",
+    "anno": 2026,
+    "direzioni": "RRLRLRRRRLRLRR",
+    "curveOsservate": 14,
+    "gMedia": 2.5928571428571425,
+    "gCampione": 14,
+    "velocitaCurveMedia": 184.28571428571428
+  },
+  "monza": {
+    "fonte": "https://torqlytics.com/circuits/monza",
+    "anno": 2026,
+    "direzioni": "RLRLRRRLRLR",
+    "curveOsservate": 11,
+    "gMedia": 2.6454545454545455,
+    "gCampione": 11,
+    "velocitaCurveMedia": 170.1818181818182
+  },
+  "baku": {
+    "fonte": "https://torqlytics.com/circuits/baku",
+    "anno": 2026,
+    "direzioni": "LLLLLRRLLLRLLLLLRLRR",
+    "curveOsservate": 20,
+    "gMedia": 1.91875,
+    "gCampione": 16,
+    "velocitaCurveMedia": 151.65
+  },
+  "singapore": {
+    "fonte": "https://torqlytics.com/circuits/singapore",
+    "anno": 2026,
+    "direzioni": "LRLLRRLRLLRLLRLRLLL",
+    "curveOsservate": 19,
+    "gMedia": null,
+    "gCampione": 0,
+    "velocitaCurveMedia": null
+  },
+  "austin": {
+    "fonte": "https://torqlytics.com/circuits/austin",
+    "anno": 2026,
+    "direzioni": "LRLRLRLRLLLLRRLRRRLL",
+    "curveOsservate": 20,
+    "gMedia": null,
+    "gCampione": 0,
+    "velocitaCurveMedia": null
+  },
+  "mexico-city": {
+    "fonte": "https://torqlytics.com/circuits/mexico-city",
+    "anno": 2026,
+    "direzioni": "RLRLRRLRLRLRLRRRR",
+    "curveOsservate": 17,
+    "gMedia": null,
+    "gCampione": 0,
+    "velocitaCurveMedia": null
+  },
+  "interlagos": {
+    "fonte": "https://torqlytics.com/circuits/interlagos",
+    "anno": 2026,
+    "direzioni": "LRLLLRRRLRLLLLL",
+    "curveOsservate": 15,
+    "gMedia": null,
+    "gCampione": 0,
+    "velocitaCurveMedia": null
+  },
+  "las-vegas": {
+    "fonte": "https://torqlytics.com/circuits/las-vegas",
+    "anno": 2026,
+    "direzioni": "LLRRRLLRLRLLLLLLL",
+    "curveOsservate": 17,
+    "gMedia": null,
+    "gCampione": 0,
+    "velocitaCurveMedia": null
+  },
+  "yas-marina-circuit": {
+    "fonte": "https://torqlytics.com/circuits/yas-marina-circuit",
+    "anno": 2026,
+    "direzioni": "LLRLRLRLLRRRLLRR",
+    "curveOsservate": 16,
+    "gMedia": null,
+    "gCampione": 0,
+    "velocitaCurveMedia": null
+  },
+  "spielberg": {
+    "fonte": "https://torqlytics.com/circuits/spielberg",
+    "anno": 2026,
+    "direzioni": "RLRRRLLRRR",
+    "curveOsservate": 10,
+    "gMedia": 2.8777777777777778,
+    "gCampione": 9,
+    "velocitaCurveMedia": 187
+  },
+  "losail": {
+    "fonte": "https://torqlytics.com/circuits/losail",
+    "anno": 2026,
+    "direzioni": "RLRRRLRLRLLRRRLR",
+    "curveOsservate": 16,
+    "gMedia": null,
+    "gCampione": 0,
+    "velocitaCurveMedia": null
+  }
+}

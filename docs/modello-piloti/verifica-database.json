@@ -1,0 +1,144 @@
+{
+  "generatoIl": "2026-10-29T10:14:30.704Z",
+  "stato": "completata",
+  "migrazione": "20261029100247_driver_season_and_circuit_history.sql",
+  "risultatiDaImportare": 8875,
+  "piloti": 23,
+  "verifica": {
+    "piloti": 23,
+    "associazioni": 208,
+    "risultati": 8875,
+    "circuiti": 39,
+    "iscrizioni_incomplete": 0,
+    "scuderia_in_anagrafica": 0,
+    "risultatiVerificati": 8875,
+    "risultatiConProfiloCircuito": 7515,
+    "cambiScuderia2025": [
+      {
+        "driver_slug": "lawson",
+        "season": 2025,
+        "constructor_id": "racing-bulls",
+        "gare": 22
+      },
+      {
+        "driver_slug": "lawson",
+        "season": 2025,
+        "constructor_id": "red-bull",
+        "gare": 2
+      },
+      {
+        "driver_slug": "tsunoda",
+        "season": 2025,
+        "constructor_id": "racing-bulls",
+        "gare": 2
+      },
+      {
+        "driver_slug": "tsunoda",
+        "season": 2025,
+        "constructor_id": "red-bull",
+        "gare": 22
+      }
+    ],
+    "permessi": [
+      {
+        "schema": "catalog",
+        "tabella": "driver_circuit_result",
+        "rls": true,
+        "lettura_anon": false,
+        "scrittura_authenticated": false
+      },
+      {
+        "schema": "catalog",
+        "tabella": "season_driver",
+        "rls": true,
+        "lettura_anon": false,
+        "scrittura_authenticated": false
+      }
+    ]
+  },
+  "backup": "/Users/marcotannoia/f1_stats/output/backup-piloti/prima-migrazione-1793268863899.json",
+  "verificatoDopoCommitIl": "2026-10-29T10:17:22.035Z",
+  "periodo": {
+    "dal": "2001-03-04",
+    "al": "2026-10-25"
+  },
+  "sessioni": [
+    {
+      "session_type": "QUALIFYING_RESULT",
+      "n": 3944
+    },
+    {
+      "session_type": "RACE_RESULT",
+      "n": 3954
+    },
+    {
+      "session_type": "SPRINT_QUALIFYING_RESULT",
+      "n": 446
+    },
+    {
+      "session_type": "SPRINT_RACE_RESULT",
+      "n": 531
+    }
+  ],
+  "vista": {
+    "reloptions": [
+      "security_invoker=true"
+    ]
+  },
+  "esempioLeclercMonza": [
+    {
+      "anno": 2026,
+      "scuderia": "ferrari",
+      "posizione": null,
+      "profiloCircuito": "monza"
+    },
+    {
+      "anno": 2025,
+      "scuderia": "ferrari",
+      "posizione": 4,
+      "profiloCircuito": "monza"
+    },
+    {
+      "anno": 2024,
+      "scuderia": "ferrari",
+      "posizione": 1,
+      "profiloCircuito": "monza"
+    },
+    {
+      "anno": 2023,
+      "scuderia": "ferrari",
+      "posizione": 4,
+      "profiloCircuito": "monza"
+    },
+    {
+      "anno": 2022,
+      "scuderia": "ferrari",
+      "posizione": 2,
+      "profiloCircuito": "monza"
+    },
+    {
+      "anno": 2021,
+      "scuderia": "ferrari",
+      "posizione": 4,
+      "profiloCircuito": "monza"
+    },
+    {
+      "anno": 2020,
+      "scuderia": "ferrari",
+      "posizione": null,
+      "profiloCircuito": "monza"
+    },
+    {
+      "anno": 2019,
+      "scuderia": "ferrari",
+      "posizione": 1,
+      "profiloCircuito": "monza"
+    },
+    {
+      "anno": 2018,
+      "scuderia": "sauber",
+      "posizione": 11,
+      "profiloCircuito": "monza"
+    }
+  ]
+}

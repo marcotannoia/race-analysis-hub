@@ -22,6 +22,8 @@ function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua
   const campioni = require('./runtimeF1db').campioniCorrenti(require('../data/campioni-previsionali-2026.json'));
   const numerosita = new Map(Object.entries(campioni.numerosita).map(([id,n])=>[Number(id),n]));
   const testi = testiPrevisione(lingua);
+  const confrontiCircuiti = gara.stagione === 2026
+    ? require("./similaritaCircuiti").confrontaCalendario(gara.slug) : [];
   const gp = campioni.gare.find((g) => g.year === gara.stagione && g.round === gara.ordineCalendario);
   if (!gp) throw new Error(`Scenario previsionale non disponibile: ${gara.slug}`);
   const analisi = new Map(analisiPiloti.map((a) => [a.pilota.slug, a]));
@@ -59,6 +61,8 @@ function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua
   const nomiPasso = { it: 'Passo recente da giri filtrati', en: 'Recent pace from filtered laps', fr: 'Rythme récent sur tours filtrés', pt: 'Ritmo recente de voltas filtradas', es: 'Ritmo reciente de vueltas filtradas', de: 'Aktuelles Tempo aus gefilterten Runden' };
   const nomiTeam = {it:'Forma recente scuderia',en:'Recent team form',fr:'Forme récente de l’équipe',pt:'Forma recente da equipa',es:'Forma reciente del equipo',de:'Aktuelle Teamform'};
   const nomeFattore = chiave => usaRecente && chiave === 'andamentoScuderiaRecente' ? nomiTeam[lingua] : usaRecente && chiave === 'passoGaraRecente' ? nomiPasso[lingua] : testi.fattori[chiave];
+  const circuitiSimili = confrontiCircuiti.filter(c => c.utilizzabileInPrevisione && c.round < gp.round).slice(0, 2);
+  const {valutaRisultatiSimili} = require('./similaritaCircuiti');
   const ordine = ordinaFattori(fattoriInput, vettorePesi);
   const classifica = ordine.map((p) => {
     const pilota = piloti.find((x) => x.slug === p.pilotaSlug);
@@ -71,7 +75,9 @@ function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua
     const fattori = CHIAVI_API.map((chiave) => {
       const i = CHIAVI.indexOf(chiave);
       const peso = i >= 0 ? vettorePesi[i] : 0;
-      const valore = i >= 0 ? p.valori[i] : 50;
+      const valore = chiave === 'risultatiCircuitiSimili'
+        ? (valutaRisultatiSimili(circuitiSimili, campioni.risultati, p.driverId, gp.round, gp.year).valore ?? 50)
+        : i >= 0 ? p.valori[i] : 50;
       return { chiave, nome: nomeFattore(chiave), pesoPercentuale: peso * (penalita ? 0.65 : 1),
         valutazione: Math.round(valore * 100) / 100,
         contributo: Math.round(valore * peso / 100 * (penalita ? 0.65 : 1) * 1000) / 1000 };
@@ -93,7 +99,9 @@ function creaClassificaCalibrata({ gara, piloti, scuderie, analisiPiloti, lingua
   const dataAggiornamento = gara.previsioneCalibrata?.calcolatoIl || gara.updatedAt || calibrazione.calcolatoIl;
   return { lingua, aggiornatoIl: new Date(dataAggiornamento).toISOString(),
     calcolatoIl: new Date(dataAggiornamento).toISOString(), gara: { slug: gara.slug, nome: valoreLocalizzato(gara, "nome", lingua),
-    circuito: valoreLocalizzato(gara, "circuito", lingua) }, modello: metodo.versione, meteo, circuitiSimili: [],
+    circuito: valoreLocalizzato(gara, "circuito", lingua) }, modello: metodo.versione, meteo,
+    circuitiSimili,
+    confrontoCircuiti: { metodo: "similarita-multicriterio-v2", pesoInClassificaPercentuale: 0, confronti: confrontiCircuiti },
     pesi: CHIAVI_API.map((chiave) => ({ chiave, nome: nomeFattore(chiave), pesoPercentuale: pesi[chiave] || 0 })),
     calibrazione: { stato: metodo.stato, combinazioniEsaminate: metodo.ricerca.combinazioni,
       ultimoRoundTraining: metodo.aggiornamentoInput?.ultimoRoundTraining ?? metodo.aggiornamentoCorpus?.ultimoRoundTraining ?? campioni.ultimoRoundIncluso,

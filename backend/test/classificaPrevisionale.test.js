@@ -31,7 +31,7 @@ test("i pesi previsionali sommano a cento e prioritizzano il fit con il circuito
   );
 });
 
-test("la similarità tecnica confronta tutte le dimensioni e seleziona i GP più vicini", () => {
+test("la selezione usa i nuovi criteri completi e mantiene leggibile la similarità legacy", () => {
   assert.equal(
     calcolaSimilaritaCircuiti(
       { efficienzaAerodinamica: 100, frenata: 100 },
@@ -53,10 +53,8 @@ test("la similarità tecnica confronta tutte le dimensioni e seleziona i GP più
     { grandPrixId: "spain", etichetta: "Madring", round: 14 },
   ]);
 
-  assert.deepEqual(
-    simili.map(({ slug }) => slug),
-    ["italia-monza", "spagna-madring"],
-  );
+  assert.equal(simili.length, 2);
+  assert.ok(simili.every(c => c.campiConfrontati === 22 && c.utilizzabileInPrevisione));
   assert.ok(simili[0].similaritaPercentuale >= simili[1].similaritaPercentuale);
 });
 

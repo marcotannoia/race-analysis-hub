@@ -179,33 +179,17 @@ function calcolaSimilaritaCircuiti(richiesteCorrenti, richiesteConfronto) {
 }
 
 function selezionaCircuitiSimili(garaSlug, eventi, limite = NUMERO_CIRCUITI_SIMILI) {
-  const richiesteCorrenti = circuitiTecnici.circuiti[garaSlug]?.richieste;
-  if (!richiesteCorrenti) return [];
-
-  return eventi
-    .map((evento) => {
-      const slug = GARA_SLUG_PER_GRAND_PRIX_ID[evento.grandPrixId];
-      const richieste = circuitiTecnici.circuiti[slug]?.richieste;
-      if (!slug || slug === garaSlug || !richieste) return null;
-
-      return {
-        evento,
-        slug,
-        nome: evento.etichetta,
-        round: evento.round,
-        similaritaPercentuale: calcolaSimilaritaCircuiti(
-          richiesteCorrenti,
-          richieste,
-        ),
-      };
-    })
-    .filter(Boolean)
-    .sort(
-      (primo, secondo) =>
-        secondo.similaritaPercentuale - primo.similaritaPercentuale ||
-        secondo.round - primo.round,
-    )
-    .slice(0, limite);
+  const catalogo = require('../data/similarita-circuiti-2026.json');
+  const { confrontaCircuiti } = require('./similaritaCircuiti');
+  const corrente = catalogo.circuiti[garaSlug];
+  if (!corrente) return [];
+  return eventi.map(evento => {
+    const confronto = Object.values(catalogo.circuiti).find(c => c.grandPrixId === evento.grandPrixId);
+    if (!confronto || confronto.slug === garaSlug) return null;
+    const risultato = confrontaCircuiti(corrente, confronto);
+    if (!risultato.utilizzabileInPrevisione) return null;
+    return { evento, slug: confronto.slug, nome: evento.etichetta, round: evento.round, ...risultato };
+  }).filter(Boolean).sort((a,b) => b.similaritaPercentuale-a.similaritaPercentuale || b.round-a.round).slice(0, limite);
 }
 
 function pilotaHaPartecipato(evento, codicePilota) {
@@ -730,9 +714,10 @@ module.exports = {
   PESO_PENALITA,
   calcolaSimilaritaCircuiti,
   creaClassificaEditoriale,
-  creaClassificaPrevisionale: (args) => require("./classificaCalibrata").creaClassificaCalibrata(args),
+  creaClassificaPrevisionale: (args) => require("./classificaDinamica").creaClassificaDinamica(args),
   selezionaCircuitiSimili,
   valutaAggiornamento,
+  valutaAggiornamentoTesto,
   valutaAndamentoScuderia,
   valutaCompatibilitaVettura,
   valutaPenalita,

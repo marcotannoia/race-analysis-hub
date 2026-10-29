@@ -1,6 +1,10 @@
 const TESTI_PREVISIONI = Object.freeze({
   it: {
     fattori: {
+      compatibilitaPilotaCircuito: "Compatibilità pilota-circuito",
+      andamentoUltimi4Gp: "Andamento pilota negli ultimi 4 GP",
+      andamentoUltime4Qualifiche: "Andamento pilota nelle ultime 4 qualifiche",
+      storicoPersonaleCircuito: "Storico personale sul circuito",
       andamento2026: "Andamento 2026",
       compatibilitaVetturaCircuito: "Compatibilità vettura-circuito",
       risultatiCircuitiSimili: "Risultati su circuiti simili",
@@ -47,6 +51,10 @@ const TESTI_PREVISIONI = Object.freeze({
   },
   en: {
     fattori: {
+      compatibilitaPilotaCircuito: "Driver-circuit compatibility",
+      andamentoUltimi4Gp: "Driver form over the last 4 Grands Prix",
+      andamentoUltime4Qualifiche: "Driver form over the last 4 qualifying sessions",
+      storicoPersonaleCircuito: "Personal record at this circuit",
       andamento2026: "2026 driver performance",
       compatibilitaVetturaCircuito: "Car-circuit compatibility",
       risultatiCircuitiSimili: "Results on similar circuits",
@@ -93,6 +101,10 @@ const TESTI_PREVISIONI = Object.freeze({
   },
   fr: {
     fattori: {
+      compatibilitaPilotaCircuito: "Compatibilité pilote-circuit",
+      andamentoUltimi4Gp: "Forme du pilote sur les 4 derniers GP",
+      andamentoUltime4Qualifiche: "Forme du pilote sur les 4 dernières qualifications",
+      storicoPersonaleCircuito: "Historique personnel sur le circuit",
       andamento2026: "Performance du pilote en 2026",
       compatibilitaVetturaCircuito: "Compatibilité voiture-circuit",
       risultatiCircuitiSimili: "Résultats sur des circuits similaires",
@@ -139,6 +151,10 @@ const TESTI_PREVISIONI = Object.freeze({
   },
   pt: {
     fattori: {
+      compatibilitaPilotaCircuito: "Compatibilidade piloto-circuito",
+      andamentoUltimi4Gp: "Forma do piloto nos últimos 4 GP",
+      andamentoUltime4Qualifiche: "Forma do piloto nas últimas 4 qualificações",
+      storicoPersonaleCircuito: "Histórico pessoal no circuito",
       andamento2026: "Desempenho do piloto em 2026",
       compatibilitaVetturaCircuito: "Compatibilidade carro-circuito",
       risultatiCircuitiSimili: "Resultados em circuitos semelhantes",
@@ -185,6 +201,10 @@ const TESTI_PREVISIONI = Object.freeze({
   },
   es: {
     fattori: {
+      compatibilitaPilotaCircuito: "Compatibilidad piloto-circuito",
+      andamentoUltimi4Gp: "Rendimiento del piloto en los últimos 4 GP",
+      andamentoUltime4Qualifiche: "Rendimiento del piloto en las últimas 4 clasificaciones",
+      storicoPersonaleCircuito: "Historial personal en el circuito",
       andamento2026: "Rendimiento del piloto en 2026",
       compatibilitaVetturaCircuito: "Compatibilidad coche-circuito",
       risultatiCircuitiSimili: "Resultados en circuitos similares",
@@ -231,6 +251,10 @@ const TESTI_PREVISIONI = Object.freeze({
   },
   de: {
     fattori: {
+      compatibilitaPilotaCircuito: "Fahrer-Strecken-Kompatibilität",
+      andamentoUltimi4Gp: "Fahrerform der letzten 4 Grands Prix",
+      andamentoUltime4Qualifiche: "Fahrerform der letzten 4 Qualifyings",
+      storicoPersonaleCircuito: "Persönliche Bilanz auf der Strecke",
       andamento2026: "Fahrerleistung 2026",
       compatibilitaVetturaCircuito: "Fahrzeug-Strecken-Kompatibilität",
       risultatiCircuitiSimili: "Ergebnisse auf ähnlichen Strecken",

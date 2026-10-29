@@ -1980,6 +1980,28 @@ const documentoOpenApi = {
           },
         },
       },
+      SomiglianzaMulticriterio: {
+        type: "object",
+        required: ["slug", "similaritaPercentuale", "similaritaParzialePercentuale", "coperturaPercentuale", "utilizzabileInPrevisione", "dettagli"],
+        properties: {
+          slug: { type: "string" },
+          similaritaPercentuale: { type: ["number", "null"], minimum: 0, maximum: 100, description: "Media completa; null se manca anche uno dei 22 criteri." },
+          similaritaParzialePercentuale: { type: ["number", "null"], minimum: 0, maximum: 100 },
+          coperturaPercentuale: { type: "number", minimum: 0, maximum: 100 },
+          utilizzabileInPrevisione: { type: "boolean" },
+          intervalloPercentuale: { type: "object", properties: { minimo: { type: "number" }, massimo: { type: "number" } } },
+          dettagli: { type: "array", minItems: 22, maxItems: 22, items: {
+            type: "object", properties: {
+              chiave: { type: "string" }, nome: { type: "string" }, unita: { type: "string" },
+              pesoPercentuale: { type: "number" },
+              similaritaPercentuale: { type: ["number", "null"], minimum: 0, maximum: 100 },
+              fontiPrimo: { type: "array", items: { type: "string", format: "uri" } },
+              fontiSecondo: { type: "array", items: { type: "string", format: "uri" } },
+              stato: { type: "string" },
+            },
+          } },
+        },
+      },
       PosizionePrevisionale: {
         type: "object",
         required: [
@@ -2083,8 +2105,17 @@ const documentoOpenApi = {
             type: "array",
             maxItems: 2,
             description:
-              "Campo mantenuto per compatibilità; vuoto nel modello calibrato perché le similarità tecniche non hanno snapshot pre-gara verificati.",
+              "Fino a due circuiti precedenti con tutti i 22 criteri confrontabili. Vuoto quando la raccolta è incompleta; non vengono promosse medie parziali.",
             items: { $ref: "#/components/schemas/CircuitoSimilePrevisionale" },
+          },
+          confrontoCircuiti: {
+            type: "object",
+            description: "Confronto dei 22 criteri con le altre sedi del calendario 2026; medie parziali esplicitamente separate. Nessun peso aggiunto al modello calibrato.",
+            properties: {
+              metodo: { type: "string" },
+              pesoInClassificaPercentuale: { type: "number", enum: [0] },
+              confronti: { type: "array", maxItems: 22, items: { $ref: "#/components/schemas/SomiglianzaMulticriterio" } },
+            },
           },
           pesi: {
             type: "array",

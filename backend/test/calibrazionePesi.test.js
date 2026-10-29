@@ -53,8 +53,8 @@ test("i pesi progressivi non dipendono da una gara ancora da prevedere", () => {
   assert.equal(CHIAVI.length,5);
 });
 
-test("la previsione pubblica conserva gli otto campi e usa il metodo selezionato dal backtest", () => {
-  const { creaClassificaPrevisionale } = require("../services/classificaPrevisionale");
+test("la classifica calibrata conserva gli otto campi e usa il metodo selezionato dal backtest", () => {
+  const { creaClassificaCalibrata: creaClassificaPrevisionale } = require("../services/classificaCalibrata");
   const { creaDatiEffettivi } = require("../utils/datiEffettivi");
   const dati = creaDatiEffettivi(require("../data/dati-iniziali.json"));
   const calibrazione = require("../data/valutazione-forma-recente-2026-10-05.json");

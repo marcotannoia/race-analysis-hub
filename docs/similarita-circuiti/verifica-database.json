@@ -1,0 +1,40 @@
+{
+  "verificatoIl": "2026-10-29T09:54:54.005Z",
+  "stato": "importato_e_verificato_dopo_commit",
+  "datasetSha256": "84770bc5cbfa41bd53796d865fde4d0a02e52b8460272c1ed45a5d9251cf7085",
+  "verifica": {
+    "profili": 23,
+    "confronti": 253,
+    "campi": 506,
+    "dettagliConfronti": 5566
+  },
+  "roundTripIdentico": true,
+  "permessi": [
+    {
+      "schema": "catalog",
+      "tabella": "circuit_similarity_profile",
+      "rls": true,
+      "lettura_anon": false,
+      "scrittura_authenticated": false
+    },
+    {
+      "schema": "ratings",
+      "tabella": "circuit_similarity",
+      "rls": true,
+      "lettura_anon": false,
+      "scrittura_authenticated": false
+    }
+  ],
+  "migrazione": [
+    {
+      "version": "20261029095008",
+      "name": "circuit_similarity_profiles"
+    }
+  ],
+  "confronti": {
+    "confronti": 253,
+    "dettagli": 5566,
+    "minimo": 61.6853,
+    "massimo": 93.9847
+  }
+}

@@ -59,8 +59,8 @@ app.use((richiesta, risposta, next) => {
   next();
 });
 
-app.use(
-  cors({
+// L'area admin ha CORS proprio (metodi POST e header Authorization).
+const corsPubblico = cors({
     origin: "*",
     credentials: false,
     methods: ["GET", "HEAD", "OPTIONS"],
@@ -74,8 +74,8 @@ app.use(
       "X-Request-ID",
     ],
     maxAge: 86400,
-  }),
-);
+  });
+app.use((req, res, next) => req.path.startsWith("/api/admin") ? next() : corsPubblico(req, res, next));
 
 app.use(
   "/api",
@@ -144,6 +144,8 @@ app.use('/api',async (req,res,next)=>{
     next();
   }catch(e){next(e);}
 });
+app.use("/api/admin", cors({ origin: ambiente.produzione ? false : true, methods: ["GET", "POST"],
+  allowedHeaders: ["Authorization", "Content-Type"] }), require("./routes/admin").creaRouterAdmin());
 app.use("/api/v1", apiV1Routes);
 app.use("/api/v2", require("./relational/api").creaRouter());
 app.get('/post-gp.md',(_req,res)=>res.type('text/markdown').sendFile(require('node:path').join(__dirname,'../post-gp.md')));

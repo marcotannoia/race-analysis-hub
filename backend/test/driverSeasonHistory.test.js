@@ -1,0 +1,50 @@
+const test=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');
+const{PGlite}=require('@electric-sql/pglite');
+const{leggiStoricoPilotaCircuito}=require('../services/storicoPilotaCircuito');
+
+test('identità senza scuderia, trasferimento e ritorno nello stesso anno, storico e aggiornamenti automatici',async()=>{
+ const db=new PGlite();try{
+  await db.exec(`create role anon;create role authenticated;create schema f1db;create schema catalog;
+   create table f1db.constructor(id varchar(100) primary key,name text);
+   create table f1db.circuit(id varchar(100) primary key,name text);
+   create table catalog.team(id bigint generated always as identity primary key,f1db_constructor_id varchar(100) unique,name text);
+   create table catalog.driver(id bigint generated always as identity primary key,slug text unique,f1db_driver_id varchar(100) unique,name text,current_team_id bigint references catalog.team(id));
+   create table catalog.grand_prix(id bigint primary key,season integer,state text);
+   create table catalog.entry(grand_prix_id bigint references catalog.grand_prix(id),driver_id bigint references catalog.driver(id),team_id bigint references catalog.team(id),primary key(grand_prix_id,driver_id));
+   create table f1db.race(id integer primary key,year integer,round integer,date date,circuit_id varchar(100) references f1db.circuit(id),circuit_layout_id text);
+   create table f1db.race_data(race_id integer references f1db.race(id),type varchar(50),position_display_order integer,driver_id varchar(100),constructor_id varchar(100),position_number integer,position_text varchar(4),race_points numeric,race_laps integer,race_time_millis integer,qualifying_time_millis integer,race_reason_retired text,primary key(race_id,type,position_display_order));
+   create table catalog.circuit_similarity_profile(circuit_id text,season integer,snapshot_date date,methodology_version text,downforce_level text);
+   insert into f1db.constructor values('a','Team A'),('b','Team B');
+   insert into f1db.circuit values('monza','Monza'),('suzuka','Suzuka');
+   insert into catalog.team(f1db_constructor_id,name) values('a','Team A'),('b','Team B');
+   insert into catalog.driver(slug,f1db_driver_id,name,current_team_id) values('pilota','driver-a','Pilota',2),('rivale','driver-b','Rivale',2);
+   insert into catalog.grand_prix values(1,2025,'conclusa'),(2,2025,'attuale');
+   insert into catalog.entry values(1,1,1),(2,1,2);
+   insert into f1db.race values(1,2025,1,'2025-01-01','monza','monza-1'),(2,2025,2,'2025-02-01','monza','monza-1'),(3,2025,3,'2025-03-01','suzuka','suzuka-1');
+   insert into f1db.race_data values(1,'RACE_RESULT',1,'driver-a','a',1,'1',25,50,1000,null,null),(2,'RACE_RESULT',1,'driver-a','b',2,'2',18,50,2000,null,null),(2,'RACE_RESULT',2,'driver-b','b',1,'1',25,50,1000,null,null);
+   insert into catalog.circuit_similarity_profile values('monza',2026,'2026-10-29','similarita-multicriterio-v2','basso');`);
+  const dir=path.join(__dirname,'../../supabase/migrations');const file=fs.readdirSync(dir).find(f=>f.endsWith('_driver_season_and_circuit_history.sql'));
+  await db.exec(fs.readFileSync(path.join(dir,file),'utf8'));
+  assert.equal((await db.query("select count(*)::int n from information_schema.columns where table_schema='catalog' and table_name='driver' and column_name='current_team_id'")).rows[0].n,0);
+  assert.equal((await db.query('select count(*)::int n from catalog.season_driver where driver_id=1 and season=2025')).rows[0].n,2);
+  const rows=await leggiStoricoPilotaCircuito({pilotaSlug:'pilota',circuitoId:'monza'},db);
+  assert.deepEqual(rows.map(r=>r.constructor_id),['b','a']);assert.equal(rows[0].profile.downforce_level,'basso');
+  const prima=await leggiStoricoPilotaCircuito({pilotaSlug:'pilota',circuitoId:'monza',primaDel:'2025-02-01'},db);
+  assert.equal(prima.length,1);assert.equal(prima[0].constructor_id,'a');assert.equal(prima[0].profile,null);
+  await db.exec("insert into f1db.race_data values(3,'RACE_RESULT',1,'driver-a','a',3,'3',15,50,3000,null,null)");
+  assert.equal((await db.query('select count(*)::int n from catalog.season_driver where driver_id=1')).rows[0].n,2);
+  assert.equal((await leggiStoricoPilotaCircuito({pilotaSlug:'pilota'},db)).length,3);
+  await db.exec('update catalog.entry set team_id=1 where grand_prix_id=2');
+  assert.equal((await db.query('select constructor_id from catalog.driver_circuit_history where race_id=2 and driver_slug=\'pilota\'')).rows[0].constructor_id,'b');
+  await assert.rejects(db.exec('update catalog.season_driver set team_id=2 where driver_id=1 and constructor_id=\'a\''),/immutabile/);
+  const rivale=(await db.query('select id from catalog.season_driver where driver_id=2')).rows[0].id;
+  await assert.rejects(db.query('update catalog.driver_circuit_result set season_driver_id=$1 where race_id=1',[rivale]),/non corrispondono/);
+  await assert.rejects(db.exec("update catalog.driver_circuit_result set circuit_id='suzuka' where race_id=1"));
+  await db.exec("update f1db.race_data set position_number=4,position_text='4' where race_id=1");
+  assert.equal((await db.query('select position_number from catalog.driver_circuit_history where race_id=1')).rows[0].position_number,4);
+  await db.exec("delete from f1db.race_data where race_id=3");
+  assert.equal((await db.query('select count(*)::int n from catalog.driver_circuit_result where race_id=3')).rows[0].n,0);
+  assert.equal((await db.query('select catalog.refresh_driver_circuit_history() n')).rows[0].n,0);
+  await db.exec('set role anon');await assert.rejects(db.query('select * from catalog.season_driver'));await db.exec('reset role');
+ }finally{await db.close();}
+});

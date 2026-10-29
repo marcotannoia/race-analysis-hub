@@ -228,3 +228,18 @@ export async function caricaConfrontoScuderie(primoSlug, secondoSlug, lingua) {
   )
   return { ...dati, elementi: dati.elementi.map(adattaSchedaScuderia) }
 }
+
+// Area admin: token conservato solo nella sessione del browser.
+export async function richiestaAdmin(percorso, token, { metodo = 'GET', corpo } = {}) {
+  const risposta = await fetch(`${API_URL}/api/admin${percorso}`, {
+    method: metodo,
+    credentials: 'omit',
+    cache: 'no-store',
+    headers: { Accept: 'application/json', Authorization: `Bearer ${token}`,
+      ...(corpo ? { 'Content-Type': 'application/json' } : {}) },
+    body: corpo ? JSON.stringify(corpo) : undefined,
+  })
+  const dati = await risposta.json().catch(() => null)
+  if (!risposta.ok) throw new Error(dati?.messaggio || dati?.errore?.messaggio || `Errore ${risposta.status}`)
+  return dati
+}

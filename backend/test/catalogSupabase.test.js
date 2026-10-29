@@ -4,7 +4,7 @@ test('schema Supabase canonico: API numerica, relazioni e privilegi privati',asy
   await db.exec('create role anon;create role authenticated;');
   for(const f of fs.readdirSync(path.join(__dirname,'../../supabase/migrations')).filter(f=>f.endsWith('.sql')).sort())await db.exec(fs.readFileSync(path.join(__dirname,'../../supabase/migrations',f),'utf8'));
   await db.exec(`insert into catalog.team(slug,name,standings_name,abbreviation,colour,nationality) values('ferrari','Ferrari','Ferrari','FER','#FF0000','Italiana');
-   insert into catalog.driver(slug,current_team_id,name,code,car_number,nationality,nationality_iso2,nationality_iso3) values('leclerc',1,'Charles Leclerc','LEC','16','Monegasca','MC','MCO');
+   insert into catalog.driver(slug,name,code,car_number,nationality,nationality_iso2,nationality_iso3) values('leclerc','Charles Leclerc','LEC','16','Monegasca','MC','MCO');
    insert into catalog.circuit(slug,name) values('austin','Austin');
    insert into catalog.grand_prix(slug,circuit_id,name,circuit_name,country_name,season,analysis_order,calendar_order,state) values('usa-austin',1,'USA','Austin','USA',2026,7,18,'attuale');
    insert into catalog.entry values(1,1,1);

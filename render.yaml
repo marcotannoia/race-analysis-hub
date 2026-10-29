@@ -33,3 +33,5 @@ services:
         value: "30"
       - key: DATABASE_CONNECTION
         sync: false
+      - key: ADMIN_TOKEN
+        sync: false

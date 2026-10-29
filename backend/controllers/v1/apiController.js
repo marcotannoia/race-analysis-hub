@@ -280,6 +280,10 @@ async function classificaPrevisionale(richiesta, risposta) {
   const garaAttuale = await richiediGaraAttuale(risposta);
   if (!garaAttuale) return;
 
+  risposta.json(await costruisciClassificaPrevisionale(garaAttuale, lingua));
+}
+
+async function costruisciClassificaPrevisionale(garaAttuale, lingua) {
   const [piloti, scuderie, analisiPiloti, analisiScuderie, datiLiveFia, meteo] = await Promise.all([
     Pilota.find()
       .populate("scuderia", CAMPI_SCUDERIA_BREVE)
@@ -297,8 +301,7 @@ async function classificaPrevisionale(richiesta, risposta) {
     previsioneMeteo(garaAttuale.slug),
   ]);
 
-  risposta.json(
-    creaClassificaPrevisionale({
+  return creaClassificaPrevisionale({
       gara: garaAttuale,
       piloti,
       scuderie,
@@ -307,8 +310,7 @@ async function classificaPrevisionale(richiesta, risposta) {
       lingua,
       meteo,
       datiLiveFia,
-    }),
-  );
+    });
 }
 
 async function elencaPiloti(richiesta, risposta) {
@@ -773,6 +775,7 @@ module.exports = {
   analisiPilotaPerGara,
   analisiScuderiaPerGara,
   classificaPrevisionale,
+  costruisciClassificaPrevisionale,
   classificaPiloti,
   classificaScuderie,
   confrontoPiloti,
