@@ -18,8 +18,8 @@ function argomenti() {
 }
 
 test("pesi base richiesti e somma 100 per ogni pilota", () => {
-  assert.deepEqual({ ...PESI_DINAMICI }, { compatibilitaVetturaCircuito: 79, compatibilitaPilotaCircuito: 2,
-    aggiornamentiTecnici: 8, andamentoUltimi4Gp: 10, storicoPersonale: 1 });
+  assert.deepEqual({ ...PESI_DINAMICI }, { compatibilitaVetturaCircuito: 43, compatibilitaPilotaCircuito: 35,
+    aggiornamentiTecnici: 8, andamentoUltimi4Gp: 10, storicoPersonale: 5 });
   const output = creaClassificaPrevisionale(argomenti());
   assert.equal(output.modello, "dinamico-similarita-meteo-v1");
   assert.equal(output.confrontoCircuiti.criteri.length, 22);
@@ -30,7 +30,7 @@ test("pesi base richiesti e somma 100 per ogni pilota", () => {
     // Aggiornamento non pertinente: peso a zero e gli altri crescono in proporzione.
     if (!p.dettagliFattori.aggiornamentiTecnici.pertinente) {
       assert.equal(agg.pesoPercentuale, 0);
-      assert.equal(p.fattori.find((f) => f.chiave === "compatibilitaVetturaCircuito").pesoPercentuale, 85.87);
+      assert.equal(p.fattori.find((f) => f.chiave === "compatibilitaVetturaCircuito").pesoPercentuale, 46.24);
     }
   }
 });
