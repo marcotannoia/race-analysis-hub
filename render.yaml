@@ -35,3 +35,5 @@ services:
         sync: false
       - key: ADMIN_TOKEN
         sync: false
+      - key: ADMIN_PW
+        sync: false

@@ -710,6 +710,7 @@ function creaClassificaEditoriale({
 
 module.exports = {
   NOMI_FATTORI,
+  valutaEsperienzaBagnato,
   PESI,
   PESO_PENALITA,
   calcolaSimilaritaCircuiti,

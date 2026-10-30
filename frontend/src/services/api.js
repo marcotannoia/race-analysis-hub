@@ -243,3 +243,30 @@ export async function richiestaAdmin(percorso, token, { metodo = 'GET', corpo } 
   if (!risposta.ok) throw new Error(dati?.messaggio || dati?.errore?.messaggio || `Errore ${risposta.status}`)
   return dati
 }
+
+export function caricaPrevisioniDashboard(lingua) {
+  return richiesta('/api/v1/previsioni/piloti', lingua)
+}
+
+async function richiestaDashboard(percorso, { metodo = 'GET', corpo } = {}) {
+  const risposta = await fetch(`${API_URL}/api/dashboard${percorso}`, {
+    method: metodo,
+    credentials: 'include',
+    cache: 'no-store',
+    headers: { Accept: 'application/json', ...(corpo ? { 'Content-Type': 'application/json' } : {}) },
+    body: corpo ? JSON.stringify(corpo) : undefined,
+  })
+  const dati = await risposta.json().catch(() => null)
+  if (!risposta.ok) {
+    const errore = new Error(dati?.messaggio || `Errore ${risposta.status}`)
+    errore.stato = risposta.status
+    throw errore
+  }
+  return dati
+}
+
+export const verificaSessioneDashboard = () => richiestaDashboard('/sessione')
+export const accediDashboard = (utente, password) =>
+  richiestaDashboard('/accesso', { metodo: 'POST', corpo: { utente, password } })
+export const esciDashboard = () => richiestaDashboard('/uscita', { metodo: 'POST' })
+export const aggiornaMeteoDashboard = () => richiestaDashboard('/meteo')

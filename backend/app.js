@@ -146,6 +146,8 @@ app.use('/api',async (req,res,next)=>{
 });
 app.use("/api/admin", cors({ origin: ambiente.produzione ? false : true, methods: ["GET", "POST"],
   allowedHeaders: ["Authorization", "Content-Type"] }), require("./routes/admin").creaRouterAdmin());
+app.use("/api/dashboard", cors({ origin: ambiente.produzione ? false : true, methods: ["GET", "POST"],
+  credentials: true, allowedHeaders: ["Content-Type"] }), require("./routes/dashboard").creaRouterDashboard());
 app.use("/api/v1", apiV1Routes);
 app.use("/api/v2", require("./relational/api").creaRouter());
 app.get('/post-gp.md',(_req,res)=>res.type('text/markdown').sendFile(require('node:path').join(__dirname,'../post-gp.md')));

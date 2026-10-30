@@ -37,7 +37,7 @@ function probabilitaWeekend(hourly, inizio, fine) {
 
 const istante = (data, ora) => data && ora ? new Date(`${data}T${String(ora).slice(0, 8)}Z`) : null;
 
-async function previsioneMeteo(garaSlug) {
+async function previsioneMeteo(garaSlug, { forza = false } = {}) {
   let gara = CONFIGURAZIONE_GARE[garaSlug];
   if (!gara && require('../config/database').usaPostgres()) {
     try {
@@ -62,7 +62,7 @@ async function previsioneMeteo(garaSlug) {
   if (!gara) return null;
   const adesso = Date.now();
   const precedente = cache.get(garaSlug);
-  if (precedente && adesso - precedente.caricatoIl < DURATA_CACHE) {
+  if (!forza && precedente && adesso - precedente.caricatoIl < DURATA_CACHE) {
     return precedente.valore;
   }
 
