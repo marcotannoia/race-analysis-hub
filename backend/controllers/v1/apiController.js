@@ -327,11 +327,39 @@ async function elencaPiloti(richiesta, risposta) {
   });
 }
 
+// Previsione condivisa da schede e confronti; scade presto e cambia con le modifiche della dashboard.
+const memoriaPrevisioni = new Map();
+async function classificaPrevisionaleMemorizzata(garaAttuale, lingua) {
+  const versione = require("../../services/modificheDashboard").modificheCorrenti(garaAttuale.slug).aggiornatoIl;
+  const chiave = `${garaAttuale.slug}|${lingua}|${versione}`;
+  const voce = memoriaPrevisioni.get(chiave);
+  if (voce && Date.now() - voce.creataIl < 60000) return voce.valore;
+  const valore = costruisciClassificaPrevisionale(garaAttuale, lingua);
+  memoriaPrevisioni.clear();
+  memoriaPrevisioni.set(chiave, { creataIl: Date.now(), valore });
+  valore.catch(() => memoriaPrevisioni.delete(chiave));
+  return valore;
+}
+
+function previsionePilota(previsioni, slug) {
+  const voce = previsioni?.classifica?.find((elemento) => elemento.pilota.slug === slug);
+  if (!voce) return null;
+  return {
+    posizione: voce.posizione,
+    totalePiloti: previsioni.classifica.length,
+    indice: voce.indice,
+    confidenza: voce.confidenza,
+    confidenzaCodice: voce.confidenzaCodice,
+    modificheDashboard: voce.modificheDashboard || null,
+  };
+}
+
 async function creaSchedaPilota(pilota, garaAttuale, lingua) {
   await aggiornaStatistichePostgresSeNecessario();
-  const [analisi, andamento] = await Promise.all([
+  const [analisi, andamento, previsioni] = await Promise.all([
     recuperaAnalisiPilota(pilota._id, garaAttuale._id),
     recuperaAndamentoPilota(pilota, garaAttuale, lingua),
+    classificaPrevisionaleMemorizzata(garaAttuale, lingua).catch(() => null),
   ]);
 
   const pilotaNelGp = analisi?.scuderia
@@ -343,6 +371,7 @@ async function creaSchedaPilota(pilota, garaAttuale, lingua) {
     indicatori: indicatoriPilota(pilota.slug),
     analisi: presentaAnalisiPilota(analisi, lingua),
     andamentoStagioneCorrente: andamento,
+    previsione: previsionePilota(previsioni, pilota.slug),
   };
 }
 

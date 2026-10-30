@@ -715,7 +715,8 @@ module.exports = {
   PESO_PENALITA,
   calcolaSimilaritaCircuiti,
   creaClassificaEditoriale,
-  creaClassificaPrevisionale: (args) => require("./classificaDinamica").creaClassificaDinamica(args),
+  creaClassificaPrevisionale: (args) => require("./modificheDashboard")
+    .applicaModifiche(require("./classificaDinamica").creaClassificaDinamica(args)),
   selezionaCircuitiSimili,
   valutaAggiornamento,
   valutaAggiornamentoTesto,

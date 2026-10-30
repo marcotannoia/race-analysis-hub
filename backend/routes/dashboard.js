@@ -74,6 +74,26 @@ function accedi(req, res) {
   res.json({ autenticato: true });
 }
 
+async function previsioni(req, res) {
+  const trovaGaraAttuale = require("../services/garaAttuale");
+  const { costruisciClassificaPrevisionale } = require("../controllers/v1/apiController");
+  const { modificheCorrenti } = require("../services/modificheDashboard");
+  const garaAttuale = await trovaGaraAttuale();
+  if (!garaAttuale) return res.status(404).json({ messaggio: "Nessun GP attuale" });
+  res.json({
+    previsioni: await costruisciClassificaPrevisionale(garaAttuale, "it"),
+    modifiche: modificheCorrenti(garaAttuale.slug),
+  });
+}
+
+async function salva(req, res) {
+  const trovaGaraAttuale = require("../services/garaAttuale");
+  const garaAttuale = await trovaGaraAttuale();
+  if (!garaAttuale) return res.status(404).json({ messaggio: "Nessun GP attuale" });
+  await require("../services/modificheDashboard").salvaModifiche(garaAttuale.slug, req.body);
+  return previsioni(req, res);
+}
+
 async function meteo(req, res) {
   const { previsioneMeteo } = require("../services/meteoGp");
   const { valutaEsperienzaBagnato } = require("../services/classificaPrevisionale");
@@ -81,9 +101,12 @@ async function meteo(req, res) {
   const statistiche = require("../data/statistiche-contesto.json").piloti;
   const garaAttuale = await trovaGaraAttuale();
   if (!garaAttuale) return res.status(404).json({ messaggio: "Nessun GP attuale" });
+  const meteoAggiornato = await previsioneMeteo(garaAttuale.slug, { forza: true });
+  // Il nuovo meteo entra subito nelle previsioni pubbliche.
+  require("../middleware/cacheApiV1").svuota?.();
   res.json({
     gara: { slug: garaAttuale.slug },
-    meteo: await previsioneMeteo(garaAttuale.slug, { forza: true }),
+    meteo: meteoAggiornato,
     bagnatoPiloti: Object.fromEntries(Object.entries(statistiche).map(([slug, valori]) => [slug, {
       valutazione: Math.round(valutaEsperienzaBagnato(valori) * 10) / 10,
       gareConPioggiaDisputate: valori?.gareConPioggiaDisputate || 0,
@@ -95,11 +118,13 @@ async function meteo(req, res) {
 function creaRouterDashboard() {
   const router = express.Router();
   router.use((req, res, next) => { res.set("Cache-Control", "no-store"); next(); });
-  router.use(express.json({ limit: "2kb" }));
+  router.use(express.json({ limit: "16kb" }));
   router.post("/accesso", limiteAccessi, accedi);
   router.post("/uscita", (req, res) => { res.clearCookie(COOKIE, opzioniCookie()); res.json({ autenticato: false }); });
   router.get("/sessione", richiediSessione, (req, res) => res.json({ autenticato: true }));
   router.get("/meteo", richiediSessione, gestisciFunzioneAsincrona(meteo));
+  router.get("/previsioni", richiediSessione, gestisciFunzioneAsincrona(previsioni));
+  router.post("/modifiche", richiediSessione, gestisciFunzioneAsincrona(salva));
   return router;
 }
 

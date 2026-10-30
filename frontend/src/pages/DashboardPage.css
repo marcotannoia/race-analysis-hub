@@ -70,3 +70,4 @@
 .dashboard-accesso label { display: flex; flex-direction: column; gap: 6px; color: var(--testo-secondario); }
 .dashboard-accesso input { padding: 10px 12px; color: var(--testo); background: var(--nero); border: 1px solid var(--bordo-evidente); border-radius: 8px; font: inherit; }
 .dashboard-accesso input:focus { outline: 2px solid var(--rosso); outline-offset: 1px; }
+.dashboard-salvataggio { color: #4ade80; font-weight: 500; }

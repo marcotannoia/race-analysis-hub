@@ -244,10 +244,6 @@ export async function richiestaAdmin(percorso, token, { metodo = 'GET', corpo } 
   return dati
 }
 
-export function caricaPrevisioniDashboard(lingua) {
-  return richiesta('/api/v1/previsioni/piloti', lingua)
-}
-
 async function richiestaDashboard(percorso, { metodo = 'GET', corpo } = {}) {
   const risposta = await fetch(`${API_URL}/api/dashboard${percorso}`, {
     method: metodo,
@@ -270,3 +266,6 @@ export const accediDashboard = (utente, password) =>
   richiestaDashboard('/accesso', { metodo: 'POST', corpo: { utente, password } })
 export const esciDashboard = () => richiestaDashboard('/uscita', { metodo: 'POST' })
 export const aggiornaMeteoDashboard = () => richiestaDashboard('/meteo')
+export const caricaPrevisioniDashboard = () => richiestaDashboard('/previsioni')
+export const salvaModificheDashboard = (modifiche) =>
+  richiestaDashboard('/modifiche', { metodo: 'POST', corpo: modifiche })

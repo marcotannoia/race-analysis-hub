@@ -13,6 +13,7 @@ async function avviaServer() {
     await collegaDatabase();
     if (collegaDatabase.usaPostgres()) await require('./services/runtimeF1db').caricaRuntime(collegaDatabase.getPool(),true);
     await require('./routes/admin').ricaricaMeteoGare().catch((e) => console.error('Meteo gare non ricaricato:', e.message));
+    await require('./services/modificheDashboard').ricaricaModifiche().catch((e) => console.error('Modifiche dashboard non ricaricate:', e.message));
     if (!collegaDatabase.usaPostgres()) {
       await require("./services/aggiornamentoSingaporeConcluso").applicaAggiornamentoSingapore();
     }
