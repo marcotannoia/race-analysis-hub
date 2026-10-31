@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import {
   accediDashboard,
   aggiornaMeteoDashboard,
@@ -21,9 +21,10 @@ function Dashboard({ onSessioneScaduta, onEsci }) {
   const [errore, setErrore] = useState('')
   const [aggiornamento, setAggiornamento] = useState(false)
   const [salvataggio, setSalvataggio] = useState('')
+  const [inSalvataggio, setInSalvataggio] = useState(false)
+  const [daPubblicare, setDaPubblicare] = useState(false)
   const [trascinato, setTrascinato] = useState(null)
   const [sopra, setSopra] = useState(null)
-  const timerSalvataggio = useRef(null)
 
   const gestisciErrore = useCallback((e) => {
     if (e.stato === 401) onSessioneScaduta()
@@ -39,22 +40,23 @@ function Dashboard({ onSessioneScaduta, onEsci }) {
     caricaPrevisioniDashboard().then(applicaRisposta).catch(gestisciErrore)
   }, [applicaRisposta, gestisciErrore])
 
-  useEffect(() => () => window.clearTimeout(timerSalvataggio.current), [])
-
-  // Salva sul server; i campi numerici attendono una breve pausa nella digitazione.
-  function salva(nuove, attesa = 0) {
+  // Pubblica sul server e ricarica la classifica ricalcolata.
+  async function salva(nuove) {
     setModifiche(nuove)
+    setInSalvataggio(true)
     setSalvataggio('In salvataggio…')
-    window.clearTimeout(timerSalvataggio.current)
-    timerSalvataggio.current = window.setTimeout(() => {
-      salvaModificheDashboard(nuove)
-        .then((dati) => {
-          setPrevisioni(dati.previsioni)
-          setSalvataggio(`Pubblicato alle ${new Date().toLocaleTimeString(lingua)}`)
-          setErrore('')
-        })
-        .catch((e) => { setSalvataggio(''); gestisciErrore(e) })
-    }, attesa)
+    try {
+      const dati = await salvaModificheDashboard(nuove)
+      applicaRisposta(dati)
+      setDaPubblicare(false)
+      setSalvataggio(`Classifica aggiornata alle ${new Date().toLocaleTimeString(lingua)}`)
+      setErrore('')
+    } catch (e) {
+      setSalvataggio('')
+      gestisciErrore(e)
+    } finally {
+      setInSalvataggio(false)
+    }
   }
 
   async function aggiornaMeteo() {
@@ -88,8 +90,11 @@ function Dashboard({ onSessioneScaduta, onEsci }) {
   }
 
   function impostaPenalita(slug, campo, valore) {
+    // Resta in bozza finché non si preme AGGIORNA CLASSIFICA.
     const voce = { ...modifiche.penalita[slug], [campo]: valore }
-    salva({ ...modifiche, penalita: { ...modifiche.penalita, [slug]: voce } }, campo === 'dalFondo' ? 0 : 600)
+    setModifiche({ ...modifiche, penalita: { ...modifiche.penalita, [slug]: voce } })
+    setDaPubblicare(true)
+    setSalvataggio('')
   }
 
   if (errore && !previsioni) return <section className="dashboard"><p className="dashboard-errore">{errore}</p></section>
@@ -132,12 +137,19 @@ function Dashboard({ onSessioneScaduta, onEsci }) {
 
       <div className="dashboard-strumenti">
         <p>
-          Trascina i piloti per cambiare posizione. Ogni modifica viene pubblicata su sito e API.
+          Trascina i piloti per cambiare posizione. Inserisci le penalità e premi AGGIORNA CLASSIFICA per pubblicarle su sito e API.
           {salvataggio && <strong className="dashboard-salvataggio"> {salvataggio}</strong>}
         </p>
-        <button type="button" onClick={() => salva({ ...modifiche, manuale: {} })}>Annulla spostamenti</button>
-        <button type="button" onClick={() => salva({ ...modifiche, penalita: {} })}>Azzera penalità</button>
+        <button type="button" onClick={() => salva({ ...modifiche, manuale: {} })} disabled={inSalvataggio}>Annulla spostamenti</button>
+        <button type="button" onClick={() => salva({ ...modifiche, penalita: {} })} disabled={inSalvataggio}>Azzera penalità</button>
         <button type="button" onClick={onEsci}>Esci</button>
+      </div>
+
+      <div className={`dashboard-pubblica ${daPubblicare ? 'in-attesa' : ''}`}>
+        <span>{daPubblicare ? 'Penalità modificate: la classifica non è ancora aggiornata.' : 'Classifica allineata alle penalità inserite.'}</span>
+        <button type="button" className="pulsante-aggiorna" onClick={() => salva(modifiche)} disabled={inSalvataggio}>
+          {inSalvataggio ? 'Aggiorno…' : 'AGGIORNA CLASSIFICA'}
+        </button>
       </div>
 
       <ol className="dashboard-classifica">

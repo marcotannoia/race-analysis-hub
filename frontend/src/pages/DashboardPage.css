@@ -71,3 +71,6 @@
 .dashboard-accesso input { padding: 10px 12px; color: var(--testo); background: var(--nero); border: 1px solid var(--bordo-evidente); border-radius: 8px; font: inherit; }
 .dashboard-accesso input:focus { outline: 2px solid var(--rosso); outline-offset: 1px; }
 .dashboard-salvataggio { color: #4ade80; font-weight: 500; }
+.dashboard-pubblica { position: sticky; top: 0; z-index: 3; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; padding: 12px 14px; background: var(--pannello); border: 1px solid var(--bordo); border-radius: 12px; color: var(--testo-secondario); }
+.dashboard-pubblica.in-attesa { color: var(--testo); border-color: #f5b301; box-shadow: 0 0 20px rgb(245 179 1 / 20%); }
+@media (max-width: 760px) { .dashboard-pubblica .pulsante-aggiorna { width: 100%; } }
