@@ -20,6 +20,7 @@ const percorsoSnapshot = path.join(
 );
 
 const pilotiF1db = {
+  ...require('../data/mapping-piloti-supplementari.json'),
   antonelli: "kimi-antonelli",
   hamilton: "lewis-hamilton",
   russell: "george-russell",

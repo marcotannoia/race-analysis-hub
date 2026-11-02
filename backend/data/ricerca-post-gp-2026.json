@@ -49,12 +49,66 @@
     "prossimoGp": {
       "garaUtc": "2026-11-01T20:00:00Z",
       "qualificaUtc": "2026-10-31T21:00:00Z",
-      "mescole": ["C3", "C4", "C5"],
+      "mescole": [
+        "C3",
+        "C4",
+        "C5"
+      ],
       "giri": 71,
       "risultato": null,
       "qualifica": null,
       "meteo": "Da aggiornare con le previsioni disponibili a ridosso del weekend.",
       "aggiornamentiTecnici": "Da acquisire dai documenti FIA del weekend; nessun vantaggio cronometrico dedotto."
+    }
+  },
+  "19": {
+    "verificatoIl": "2026-11-02",
+    "garaConclusa": "messico-citta-del-messico",
+    "prossimaGara": "brasile-interlagos",
+    "fonti": [
+      {
+        "tipo": "risultati_ufficiali",
+        "url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_final_race_classification.pdf",
+        "stato": "verificato_confronto_FIA_F1DB",
+        "sintesi": "Classifica finale confrontata per numero vettura, posizione e punti con F1DB v2026.19.0."
+      },
+      {
+        "tipo": "partecipazione_ufficiale",
+        "url": "https://www.haasf1team.com/news/team-statement-driver-update",
+        "stato": "confermato_per_il_solo_Messico",
+        "sintesi": "Hirakawa sostituisce Ocon dal sabato per il resto del weekend del Messico. Il comunicato non conferma la sostituzione per i GP successivi."
+      },
+      {
+        "tipo": "mescole_ufficiali",
+        "url": "https://press.pirelli.com/the-compound-selection-for-austin-mexico-city-and-so-paulo/",
+        "stato": "confermato",
+        "sintesi": "San Paolo: C3/C4/C5. La nomina non dimostra degrado o vantaggi cronometrico misurati."
+      },
+      {
+        "tipo": "programma_ufficiale",
+        "url": "https://www.formula1.com/en/racing/2026/brazil",
+        "stato": "confermato_soggetto_a_revisioni",
+        "sintesi": "Weekend 6–8 novembre: prove venerdì e sabato, qualifica sabato, gara domenica. Nessun risultato futuro disponibile."
+      }
+    ],
+    "ipotesiDaVerificare": [
+      "La sostituzione del pilota Haas non autorizza a trasferire lo storico personale di Ocon a Hirakawa.",
+      "Confrontare giri e stint dopo i filtri di traffico, bandiere e mescola.",
+      "Meteo, iscritti e aggiornamenti tecnici del Brasile restano soggetti a nuove pubblicazioni."
+    ],
+    "prossimoGp": {
+      "garaUtc": "2026-11-08T17:00:00Z",
+      "qualificaUtc": "2026-11-07T18:00:00Z",
+      "mescole": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "giri": 71,
+      "risultato": null,
+      "qualifica": null,
+      "meteo": "Previsione dinamica Open-Meteo; aggiornamento via endpoint del GP attuale.",
+      "aggiornamentiTecnici": "Acquisizione dai documenti FIA quando pubblicati; nessun vantaggio cronometrico dedotto."
     }
   }
 }

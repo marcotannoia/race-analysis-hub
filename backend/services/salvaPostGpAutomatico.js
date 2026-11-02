@@ -46,6 +46,11 @@ async function salvaPostGpAutomatico(client,piano,{fonte,prove,chiaveFonte,sourc
         then editorial.post_gp_update.payload->'auditManualePrecedente' else editorial.post_gp_update.payload end),applied_at=now()`,
     [JSON.stringify(chiaviDocumenti),ids,piano.anno,last.slug]);
   await inserisciRecord(client,'f1db.race',piano.gare.map(r=>Object.fromEntries(Object.entries(r).map(([k,v])=>[snake(k),v]))),['id']);
+  // Le prove possono includere esordienti non ancora presenti nell'anagrafica.
+  // Aggiunge solo gli identificativi mancanti dalla stessa release verificata.
+  const noti=new Set((await client.query('select id from f1db.driver')).rows.map(d=>d.id));
+  const nuoviPiloti=(piano.anagrafichePiloti||[]).filter(d=>!noti.has(d.id));
+  await inserisciRecord(client,'f1db.driver',nuoviPiloti,['id']);
   // Sostituisce ciascuna sessione completa: una rettifica può rimuovere o riordinare righe.
   const sessioni=[...new Map(piano.sessioni.map(r=>[`${r.race_id}|${r.type}`,{race_id:r.race_id,type:r.type}])).values()];
   await client.query(`delete from f1db.race_data t using jsonb_to_recordset($1::jsonb) x(race_id integer,type text) where t.race_id=x.race_id and t.type=x.type`,[JSON.stringify(sessioni)]);
@@ -88,7 +93,7 @@ async function salvaPostGpAutomatico(client,piano,{fonte,prove,chiaveFonte,sourc
   const check=await client.query(`select count(*)::int n from editorial.source_document s join jsonb_to_recordset($1::jsonb) x(collection_name text,mongo_id char(24),payload jsonb)
     using(collection_name,mongo_id) where s.payload=x.payload`,[JSON.stringify(piano.modifiche)]);
   if(check.rows[0].n!==piano.modifiche.length)throw new Error('Verifica finale documenti fallita');
-  const audit={tipo:'automatico-f1db-fia-v1',fonte:fonte.versione,chiaveFonte,sha256:fonte.sha256,prove,
+  const audit={tipo:'automatico-f1db-fia-v1',fonte:fonte.versione,chiaveFonte,sha256:fonte.sha256,prove,nuoviPilotiF1db:nuoviPiloti.map(d=>d.id),
     garaPrecedente:piano.current.slug,garaSuccessiva:piano.target.slug,stagioneCompletata:piano.stagioneCompletata,
     runtime:piano.runtime,
     limiti:['Indici di pioggia/errori e misure di passo/gomme non sono inventati quando manca nuova evidenza verificata.']};

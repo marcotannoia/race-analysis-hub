@@ -59,7 +59,10 @@ function preparaPostGp({fonte,documenti,adesso=new Date(),rettifiche=[]}){
  const target=successiva || current;
  if(!conclusi.length && raw.some(r=>r.year===anno&&r.round>=current.ordineCalendario))throw new Error('Attendere la fine della giornata locale della gara');
  const idPiloti=new Map(gruppi.piloti.map(p=>[p.slug,p._id])),idTeam=new Map(gruppi.scuderie.map(t=>[t.slug,t._id]));
- const baseCampioni=require('../data/campioni-previsionali-2026.json');
+ const baseCampioni={...require('../data/campioni-previsionali-2026.json'),mappingPiloti:{
+   ...require('../data/campioni-previsionali-2026.json').mappingPiloti,
+   ...require('../data/mapping-piloti-supplementari.json'),
+ }};
  const pilotaByF1=new Map(Object.entries(baseCampioni.mappingPiloti).map(([slug,id])=>[id,slug]));
  const teamByF1=new Map(Object.entries(baseCampioni.mappingScuderie).map(([slug,id])=>[id,slug]));
  for(const g of conclusi){
@@ -122,7 +125,7 @@ function preparaPostGp({fonte,documenti,adesso=new Date(),rettifiche=[]}){
      const edizione=a.storicoEdizioni.at(-1);
      for(const [campo,valore] of [['posizioniStoriche',edizione.posizioneGara],['qualificheStoriche',edizione.posizioneQualifica]]){
        a[campo]={...require('../utils/normalizzaNotaBene').normalizzaTestiAnnuali(a[campo]),[anno]:valore};
-       for(const t of Object.values(a.traduzioni||{}))t[campo]={...require('../utils/normalizzaNotaBene').normalizzaTestiAnnuali(t[campo]),[anno]:valore};
+       for(const t of Object.values(a.traduzioni||{}))t[campo]={...require('../utils/normalizzaNotaBene').normalizzaTestiAnnuali(t[campo] ?? ''),[anno]:valore};
      }
    }
    aggiungi(n,a);
@@ -151,7 +154,10 @@ function preparaPostGp({fonte,documenti,adesso=new Date(),rettifiche=[]}){
    if(!righe.length)throw new Error('Classifiche F1DB ausiliarie incomplete');
    ausiliarie[table]={chiave:key,righe:righe.map(r=>Object.fromEntries(Object.entries(r).map(([k,v])=>[snake(k),v])))};
  }
- return {current,target,conclusi,anno,modifiche,scores,sessioni,gare:gare.filter(g=>g.year===anno),
+ const partecipantiSessioni=new Set(sessioni.map(r=>r.driver_id));
+ const anagrafichePiloti=fonte.carica('f1db-drivers.json').filter(d=>partecipantiSessioni.has(d.id))
+   .map(d=>Object.fromEntries(Object.entries(d).map(([k,v])=>[snake(k),v])));
+ return {current,target,conclusi,anno,modifiche,scores,sessioni,anagrafichePiloti,gare:gare.filter(g=>g.year===anno),
    runtime:{snapshot,campioni,evidenze:require('./runtimeF1db').evidenzeCorrenti(require('../data/evidenze-giri-2023-2026.json'))},ausiliarie,ultimoRound,stagioneCompletata:!successiva};
 }
 module.exports={preparaPostGp,giornataTerminata,righeSessione,snake,FUSI};
