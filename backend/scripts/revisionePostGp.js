@@ -14,6 +14,8 @@ async function main(){
  const dir=path.resolve(process.env.POST_GP_OUTPUT || path.join(__dirname,'../../output/post-gp'));
  fs.mkdirSync(dir,{recursive:true});
  await db();const pool=db.getPool();let client;
+ await require('../routes/admin').ricaricaMeteoGare();
+ await require('../services/modificheDashboard').ricaricaModifiche();
  try{
    const release=await fonti.ultimaRelease(),fonte=await fonti.acquisisciRelease(release,2026);
    const audit=(await pool.query("select payload,applied_at::text versione from editorial.post_gp_update where payload ? 'runtime' order by applied_at desc limit 1")).rows[0];
@@ -58,14 +60,17 @@ async function main(){
      }
    }
    piano.runtime={...runtime,evidenze,revisione:report};
-   const {creaClassificaCalibrata}=require('../services/classificaCalibrata');
+   const {creaClassificaPrevisionale}=require('../services/classificaPrevisionale');
    require('../services/runtimeF1db').applicaRuntime(piano.runtime);
    const teamDocs=documents.filter(d=>d.collection_name==='scuderie').map(d=>d.payload);
    const driverDocs=documents.filter(d=>d.collection_name==='piloti').map(d=>d.payload);
    for(const g of gare.filter(g=>g.stato!=='conclusa')){
      const rows=piano.modifiche.filter(d=>d.collection_name==='analisiGare'&&d.payload.gara===g._id);
      const analisiPiloti=rows.map(d=>({...d.payload,pilota:driverDocs.find(p=>p._id===d.payload.pilota),scuderia:teamDocs.find(t=>t._id===d.payload.scuderia)}));
-     const classifica=creaClassificaCalibrata({gara:g,piloti:driverDocs,scuderie:teamDocs,analisiPiloti}).classifica;
+     const analisiScuderie=piano.modifiche.filter(d=>d.collection_name==='analisiScuderie'&&d.payload.gara===g._id)
+       .map(d=>({...d.payload,scuderia:teamDocs.find(t=>t._id===d.payload.scuderia)}));
+     const meteo=await require('../services/meteoGp').previsioneMeteo(g.slug);
+     const classifica=creaClassificaPrevisionale({gara:g,piloti:driverDocs,scuderie:teamDocs,analisiPiloti,analisiScuderie,meteo}).classifica;
      const squadre=teamDocs.map(t=>({slug:t.slug,righe:classifica.filter(p=>p.scuderia.slug===t.slug)})).filter(t=>t.righe.length)
        .map(t=>({...t,indice:t.righe.reduce((s,p)=>s+p.indice,0)/t.righe.length})).sort((a,b)=>b.indice-a.indice||a.slug.localeCompare(b.slug));
      let overview=piano.modifiche.find(d=>d.collection_name==='gare'&&d.payload._id===g._id);
