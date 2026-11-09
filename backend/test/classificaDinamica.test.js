@@ -101,3 +101,14 @@ test("compatibilità pilota-circuito contestualizzata dalla vettura", () => {
     assert.ok(pilota <= d.valorePuro + 0.01);
   }
 });
+
+test("Ocon esce dalla previsione 2026 dopo San Paolo senza rimuovere Bearman", () => {
+  const args = argomenti();
+  const prima = creaClassificaPrevisionale(args).classifica;
+  assert.ok(prima.some(riga => riga.pilota.slug === "ocon"));
+  const gara = { ...args.gara, slug: "usa-las-vegas", ordineCalendario: 21 };
+  const dopo = creaClassificaPrevisionale({ ...args, gara }).classifica;
+  assert.ok(dopo.some(riga => riga.pilota.slug === "bearman"));
+  assert.ok(dopo.every(riga => riga.pilota.slug !== "ocon"));
+  assert.equal(dopo.length, prima.length - 1);
+});

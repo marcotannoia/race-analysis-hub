@@ -110,5 +110,91 @@
       "meteo": "Previsione dinamica Open-Meteo; aggiornamento via endpoint del GP attuale.",
       "aggiornamentiTecnici": "Acquisizione dai documenti FIA quando pubblicati; nessun vantaggio cronometrico dedotto."
     }
+  },
+  "20": {
+    "verificatoIl": "2026-11-09",
+    "garaConclusa": "brasile-interlagos",
+    "prossimaGara": "usa-las-vegas",
+    "fonti": [
+      {
+        "tipo": "risultati_ufficiali",
+        "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_final_race_classification.pdf",
+        "stato": "verificato_confronto_FIA_F1DB",
+        "pubblicatoIl": "2026-11-08",
+        "sintesi": "Doc 81. Norris precede Verstappen e Hadjar. Câmara, vettura 51 Haas, è 20º. Stroll DNF e Bottas DNS. Penalità di cinque secondi per le vetture 12, 16 e 87."
+      },
+      {
+        "tipo": "partecipazione_ufficiale",
+        "url": "https://haasf1team.com/news/team-statement-driver-update-0",
+        "stato": "confermato_per_San_Paolo",
+        "pubblicatoIl": "2026-11-04",
+        "sintesi": "Haas annuncia l’uscita di Ocon dalla formazione 2026 e l’esordio di Câmara a San Paolo. L’iscrizione per Las Vegas è da confermare."
+      },
+      {
+        "tipo": "cronaca_ufficiale",
+        "url": "https://www.formula1.com/en/latest/article/norris-beats-verstappen-in-wet-sao-paulo-gp-thriller-as-mercedes-win-constructors-championship.7JN7MXLZf5lk5l0C3gfKGI.7JN7MXLZf5lk5l0C3gfKGI",
+        "stato": "confermato",
+        "pubblicatoIl": "2026-11-08",
+        "sintesi": "Verstappen rimonta dalla 21ª posizione e Mercedes conquista il titolo costruttori."
+      },
+      {
+        "tipo": "analisi_gomme_ufficiale",
+        "url": "https://press.pirelli.com/from-pole-to-victory-norris-triumphs-in-so-paulo-on-intermediates/",
+        "stato": "confermato",
+        "pubblicatoIl": "2026-11-08",
+        "sintesi": "La gara inizia sul bagnato. L’asciugatura permette le slick, poi torna la pioggia. Norris chiude su intermedie."
+      },
+      {
+        "tipo": "dichiarazioni_team",
+        "url": "https://www.haasf1team.com/news/sao-paulo-grand-prix-race-recap-4",
+        "stato": "dichiarazione_attribuita",
+        "pubblicatoIl": "2026-11-08",
+        "sintesi": "Haas descrive le scelte di gomme e le condizioni affrontate da Bearman e Câmara."
+      },
+      {
+        "tipo": "stampa_indipendente",
+        "url": "https://grandepremio.com/en/f1/antonelli-keeps-fifth-at-sao-paulo-gp-after-five-second-unsafe-release-penalty/",
+        "stato": "riscontro_doc_81",
+        "pubblicatoIl": "2026-11-08",
+        "sintesi": "Antonelli mantiene il quinto posto dopo la penalità."
+      },
+      {
+        "tipo": "forum",
+        "url": "https://www.lemmy.ml/post/55069990?scrollToComments=true",
+        "stato": "spunti_non_verificati",
+        "pubblicatoIl": "2026-11-08",
+        "sintesi": "Discussione da usare per formulare domande su crossover gomme e condizioni variabili."
+      },
+      {
+        "tipo": "programma_ufficiale",
+        "url": "https://www.formula1.com/en/racing/2026/las-vegas",
+        "stato": "confermato_soggetto_a_revisioni",
+        "pubblicatoIl": null,
+        "sintesi": "Las Vegas, 19–21 novembre locali. Qualifica venerdì alle 20:00 PST e gara sabato alle 20:00 PST."
+      },
+      {
+        "tipo": "stampa_indipendente",
+        "url": "https://ge.globo.com/motor/formula-1/noticia/2026/11/03/rafael-camara-sera-titular-da-haas-nos-gps-de-sao-paulo-e-las-vegas.ghtml",
+        "stato": "da_confermare_per_Las_Vegas",
+        "pubblicatoIl": "2026-11-03",
+        "sintesi": "GE riporta Câmara anche a Las Vegas. Il comunicato Haas consultato conferma soltanto San Paolo."
+      }
+    ],
+    "ipotesiDaVerificare": [
+      "Separare la rimonta dalla prestazione sul passo e dagli effetti del cambio mescola.",
+      "Non trasferire i dati di Ocon o Hirakawa a Câmara.",
+      "Valutare Las Vegas separatamente per rettilinei lunghi, temperature e riscaldamento gomme."
+    ],
+    "prossimoGp": {
+      "garaUtc": "2026-11-22T04:00:00Z",
+      "qualificaUtc": "2026-11-21T04:00:00Z",
+      "mescole": null,
+      "giri": 50,
+      "risultato": null,
+      "qualifica": null,
+      "meteo": "Previsione per le sessioni da verificare in prossimità del weekend.",
+      "aggiornamentiTecnici": "In attesa dei documenti FIA.",
+      "iscritti": "Haas ha escluso Ocon per il resto della stagione. Il secondo posto Haas resta da confermare per Las Vegas; la previsione mostra i 21 piloti presenti nel catalogo del GP dopo l’esclusione."
+    }
   }
 }

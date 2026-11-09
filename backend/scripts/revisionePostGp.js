@@ -87,8 +87,14 @@ async function main(){
        const team=d.collection_name==='analisiScuderie';
        const entita=refs.get(`${team?'scuderie':'piloti'}|${d.payload[team?'scuderia':'pilota']}`);
        const r=team?squadre.find(t=>t.slug===entita.slug):classifica.find(p=>p.pilota.slug===entita.slug);
-       const posizione=team?squadre.indexOf(r)+1:r.posizione,totale=team?squadre.length:classifica.length;
        const o=d.payload.overallSemantici;
+       if(!r){
+         o.campi.considerazioniFinali={overall:null,posizione:null,stato:'fuori_previsione',probabilita:false};
+         d.payload.considerazioni='';
+         for(const traduzione of Object.values(d.payload.traduzioni))traduzione.considerazioni='';
+         continue;
+       }
+       const posizione=team?squadre.indexOf(r)+1:r.posizione,totale=team?squadre.length:classifica.length;
        o.campi.considerazioniFinali={overall:Math.round(r.indice*10)/10,posizione,stato:'stima_da_modello_attivo',probabilita:false};
        for(const [lang,t] of Object.entries(require('./lib/testiEvidenze'))){
          const values={posizione,totale,indice:o.campi.considerazioniFinali.overall,passo:o.campi.passoGara.overall,gomme:o.campi.gestioneGomme.overall};

@@ -332,7 +332,12 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
   const squadre = new Map(scuderie.map(s => [s.slug, s]));
 
   const valutazioniPiloti = new Map();
-  const classifica = piloti.filter(p => analisi.has(p.slug)).map(pilota => {
+  // Haas ha confermato l'uscita di Ocon per il resto del 2026.
+  // https://haasf1team.com/news/team-statement-driver-update-0
+  const dopoSanPaolo2026 = gp.year === 2026 && gp.round > 20;
+  const partecipanti = piloti.filter(p =>
+    analisi.has(p.slug) && !(dopoSanPaolo2026 && p.slug === "ocon"));
+  const classifica = partecipanti.map(pilota => {
     const a = analisi.get(pilota.slug);
     const scuderiaSlug = a.scuderia?.slug || pilota.scuderia?.slug;
     const scuderia = squadre.get(scuderiaSlug);
