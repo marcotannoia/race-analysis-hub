@@ -170,36 +170,31 @@ Public responses are reusable under the conditions described in
 
 The FIA live report is no longer shown on the website and in the updated app. The `aggiornamentiLive` field of the home page is kept for compatibility but always returns `null`, even with historical documents in the database. The server no longer starts the FIA automatic monitor. Historical data is not deleted; the technical profiles and their sources remain. This removal does not constitute a verification of the rights on the other sources.
 
-### Forecast model — revised October 5, 2026
+### Forecast model — revised November 12, 2026
 
-The current model is `forma-recente-v1`. Endpoint paths and the eight ordinary
-factor keys remain unchanged. The active weights are 15% filtered-lap pace,
-35% exponentially weighted team results and 50% championship order. Historical
-scenarios use weights fitted on the preceding three events; unused fields have
-zero weight. Scores are descriptive indices, not win probabilities. Missing
-observations receive the neutral model prior.
+The active model is `dinamico-similarita-meteo-v2`. Endpoint paths and existing
+factor keys are unchanged; legacy keys stay in `fattori` with zero weight. Weights:
+car–circuit compatibility 43, driver–circuit compatibility 35, relevant technical
+upgrades 8 (redistributed when not relevant), driver form over the last four GPs 10,
+personal circuit history 5, normalised to 100.
 
-Weights retain at least 50% championship reference. The progressive regular
-MAE improves from 2.400 to 2.276 positions; the reused last-four diagnostic
-improves from 2.282 to 2.197. It is not an independent new holdout. Full-order
-errors are published separately. The optional `calibrazione` object contains
-`stato`, `combinazioniEsaminate`, `ultimoRoundTraining`, `fonteMondiale` and
-`candidataPromossa`. Timing and component evidence are documented in
-[the evidence report](docs/revisione-database-2026-10-05/EVIDENZE-E-MODELLO.md).
+Version 2 measures the driver as the margin over team-mates in the same race and
+applies it to the current car; seasons before 2026 count 15% per year. Car results
+are weighted by recency (half-life of four GPs) and circuit history is drawn
+towards the driver estimate when editions are few.
 
-All historical features have an exclusive round cutoff. Outlier exclusions are
-based uniformly on documented retirement/disqualification/DNS status, never on
-prediction residuals. Filtered metrics condition on regular outcomes and cannot
-be presented as complete-race prediction accuracy.
+The response contains `fase` (`pre_qualifica` or `post_qualifica`) and `qualifica`
+(`disponibile`, `fonte`, `aggiornatoIl`, `pesoPercentuale`). After qualifying, the
+`qualificaGp` factor weighs 50% and the other factors are scaled proportionally;
+the team ranking uses `scuderiaQualificaGp`. Reconstructed backtest on rounds 2–20:
+Spearman 0.686 before qualifying and 0.718 after it; winners 3/19 and 12/19.
+Scores are descriptive indices, not win probabilities.
 
 A confirmed grid penalty multiplies the base score by `0.65 + 0.35 * value/100`;
 ordinary factors are rescaled and the penalty contribution uses the base index.
-Weather, technical compatibility and upgrades have no ranking weight without
-verified pre-race histories. `circuitiSimili` remains present and empty. Optional
-weather context does not change scores. Technical profiles remain editorial
-context and are not validated telemetry.
+The private dashboard may add penalties and manual moves to every public forecast.
 
-[Full report and per-weekend weights](docs/revisione-database-2026-10-05/CALIBRAZIONE.md).
+[Overall v2 review and backtest](docs/modello-piloti/REVISIONE-OVERALL-V2.md).
 
 The site and native app do not display methodology, weights, contributions, or factor details. API fields remain available to clients: this change affects presentation and does not make the model private.
 

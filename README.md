@@ -20,11 +20,12 @@ read-only, and documented with Swagger.
 The current project and API version is `1.16.0`.
 
 The final section of the landing page presents a driver prediction ranking for
-the current Grand Prix only. The model combines 2026 results, form across the
-last three Grands Prix, circuit compatibility, confirmed technical upgrades,
-and editorial information already stored in the project. Updates that are not
-yet official but are supported by concrete evidence are marked as provisional
-and receive no prediction bonus until they are confirmed.
+the current Grand Prix only. Before qualifying, the model combines the current
+car's results on similar 2026 circuits, the driver's margin over team-mates,
+recent form, personal circuit history and relevant confirmed technical upgrades.
+After qualifying, the Grand Prix qualifying order is added with a 50% weight.
+Updates that are not yet official but are supported by concrete evidence are
+marked as provisional and receive no prediction bonus until they are confirmed.
 
 The home page uses each Grand Prix's position in the official season calendar,
 which is separate from the internal order in which analyses are published.
@@ -220,38 +221,46 @@ individual incidents and penalties.
 ## Driver prediction ranking
 
 The comparison index ranges from 0 to 100 and is included in the home response.
-The dedicated `GET /api/v1/previsioni/piloti` endpoint retains its eight ordinary
-factor fields, plus an optional confirmed-penalty factor. It is not a win probability.
+`GET /api/v1/previsioni/piloti` returns the full ranking, including the driver and
+team rankings, the active model (`dinamico-similarita-meteo-v2`) and the phase
+(`fase`). It is not a win probability.
 
-The active `forma-recente-v1` model keeps at least **50% championship weight**
-and combines filtered-lap pace with exponentially weighted team results.
-The current fitted weights are **15% pace / 35% team form / 50% championship**.
-Parameters and weights are fitted on the three preceding GP; historical API
-scenarios use the parameters preceding that event. Current/future scenarios
-read current database championship order. Confidence remains low.
+| Factor | Weight | Calculation |
+|---|---:|---|
+| Car–circuit compatibility | 43 | 2026 results of the team on circuits similar to the target, weighted by similarity and by recency (half-life of four GPs); forecast weather changes the similarity of wet and dry editions |
+| Driver–circuit compatibility | 35 | Current car value plus the driver's average margin over team-mates in the same races; seasons before 2026 count 15% per year, small samples stay close to the car value |
+| Relevant technical upgrades | 8 | Only when a confirmed upgrade matches the circuit demands; otherwise its weight is redistributed |
+| Driver form, last four GPs | 10 | Regular race results, later races weighted more |
+| Personal circuit history | 5 | Past editions on the same circuit, drawn towards the driver estimate when editions are few |
 
-The progressive comparison over rounds 4–16 improves regular-outcome MAE from
-**2.400 to 2.276** positions, and complete-order MAE from **3.923 to 3.734**.
-A configuration frozen after round 12 improves the last-four diagnostic from
-**2.282 to 2.197**, and complete order from **3.636 to 3.545**. That diagnostic
-block was already inspected in the previous revision: it is not a new,
-independent holdout or evidence of guaranteed future accuracy.
+Weights sum to 101 and are always normalised to 100. Legacy factor keys remain in
+the response with zero weight for published native clients. Confirmed penalties
+multiply the index by `0.65 + 0.35 * value/100`; the private dashboard can add
+penalties and manual moves.
 
-Timing evidence covers **46 sessions**, including all sixteen completed 2026 GP.
-Pace comparisons filter pits, starts, traffic, rainfall, flags, compounds and
-age. Tyre fields include observed stint sequences and a relative timing slope;
-that slope does not isolate physical wear, fuel or deliberate management.
-Future-GP text contains projections from preceding sessions, with exact cutoffs.
-Five FIA Car Presentation documents cover all eleven teams. Declared components
-are kept separate from per-car installation and unmeasured lap-time gains.
+**Saturday update.** `GET /api/v1/gare/attuale/qualifica` exposes the qualifying
+classification of the current GP once available. The server fetches it from
+OpenF1 every ten minutes after the session; the dashboard can force the fetch or
+enter the order manually. The forecast then switches from `pre_qualifica` to
+`post_qualifica`: qualifying weighs 50% and the other factors are scaled down.
 
-Confirmed penalties reduce the base index multiplicatively, up to 35%; they
-never improve it. Technical demands, upgrades and weather remain contextual.
-The earlier 4,598,126-combination result fit remains archived and unpromoted.
-See [timing evidence and model verification](docs/revisione-database-2026-10-05/EVIDENZE-E-MODELLO.md)
-and the [earlier calibration](docs/revisione-database-2026-10-05/CALIBRAZIONE.md).
-Endpoint paths and eight ordinary factor keys are preserved; no native app
-binary change is required.
+**Accuracy.** Reconstructed backtest on 2026 rounds 2–20, using only data
+preceding each GP:
+
+| Metric | Previous model | Pre-qualifying v2 | With qualifying (Saturday) |
+|---|---:|---:|---:|
+| Spearman, complete order | 0.678 | 0.686 | 0.718 |
+| Mean error, regular finishers (positions) | 2.19 | 2.04 | 1.95 |
+| Winners | 2/19 | 3/19 | 12/19 |
+
+Alternative weights, practice-session times and long runs, reliability penalties
+and recent points did not improve out-of-sample accuracy and were not adopted.
+Details: [overall v2 review](docs/modello-piloti/REVISIONE-OVERALL-V2.md).
+
+**Analysis scores.** Race pace uses the whole season, weighted by recency and
+comparable laps; tyre management and circuit history are drawn towards neutral
+or seasonal values when samples are small, so a single race no longer produces
+0 or 100.
 
 ## Data maintained manually
 

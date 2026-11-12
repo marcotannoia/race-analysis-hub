@@ -52,6 +52,17 @@ componenti e `vantaggioMisurato: null`: una dichiarazione non dimostra un guadag
 prestazionale. Al cambio GP si eliminano le precedenti annotazioni non verificate
 sulle penalità e sugli aggiornamenti della nuova scheda.
 
+## Qualifica del sabato
+
+Con `AUTO_GP_ENABLED=true` il server controlla ogni 10 minuti, dalla fine prevista
+della qualifica (orario F1DB più 75 minuti) alla partenza della gara, la classifica
+OpenF1 `/session_result` della sessione `Qualifying` del giorno previsto. Servono
+almeno dieci piloti e tutti i numeri vettura presenti nel catalogo; altrimenti non
+salva nulla e riprova. Lo stato è in `editorial.automation_state` (`qualifica_gp`),
+viene ricaricato all'avvio e svuota la cache pubblica a ogni modifica. Un ordine
+inserito dalla dashboard non viene sovrascritto senza `forza`. La previsione passa
+a `post_qualifica` con la qualifica al 50%.
+
 ## Persistenza e controlli
 
 Un lock PostgreSQL impedisce esecuzioni sovrapposte tra istanze. La transazione

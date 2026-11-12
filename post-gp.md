@@ -141,6 +141,23 @@ un confronto con il modello pubblico e un intervallo mai usato per selezionare
 il candidato. Un miglioramento retrospettivo su una singola gara non basta.
 Il comando aggiorna gli input; **non cambia automaticamente i pesi del modello**.
 
+Misurare il modello con `node backend/scripts/backtestModelloDinamico.js` (runtime
+online, solo dati anteriori a ogni GP; riferimenti mondiale e qualifica del GP).
+Dopo una modifica ai calcoli degli overall, `node backend/scripts/ricalcolaOverallV2.js`
+ricalcola tutti i GP del database con rollback; `--apply` scrive con backup, solo
+dopo il deploy del codice corrispondente. Esiti e segnali già scartati:
+[revisione overall v2](docs/modello-piloti/REVISIONE-OVERALL-V2.md).
+
+### Sabato: qualifica e previsione aggiornata
+
+Dopo la qualifica il server acquisisce da OpenF1 la classifica (ogni 10 minuti fino
+alla partenza della gara) e la previsione passa a `post_qualifica`. Controllare
+[la qualifica pubblicata](https://f1-stats-5v93.onrender.com/api/v1/gare/attuale/qualifica):
+`disponibile: true`, fonte e numero di piloti. Se OpenF1 è in ritardo o un numero
+vettura non è nel catalogo, la dashboard può forzare l'acquisizione o inserire
+l'ordine ufficiale FIA (`POST /api/dashboard/qualifica`). Al cambio GP la qualifica
+precedente smette di valere da sola, perché è legata allo slug del GP.
+
 ## 7. Pubblicazione e controllo online
 
 Le scritture passano dalla procedura transazionale con lock, controllo delle
@@ -160,6 +177,7 @@ Controllare il backend e il dominio pubblico:
 - [Stato dell’automazione](https://f1-stats-5v93.onrender.com/api/v2/automazione)
 - [Ultima revisione e pattern](https://f1-stats-5v93.onrender.com/api/v2/revisione-post-gp)
 - [GP attuale v2](https://f1-stats-5v93.onrender.com/api/v2/gare/attuale)
+- [Qualifica del GP attuale](https://f1-stats-5v93.onrender.com/api/v1/gare/attuale/qualifica)
 - [Home v1](https://f1-stats-5v93.onrender.com/api/v1/home)
 - [Sito](https://www.race-analysis-hub.it)
 - [Questa procedura online](https://f1-stats-5v93.onrender.com/post-gp.md)

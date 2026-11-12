@@ -1,5 +1,23 @@
 # Changelog
 
+## Forecast model v2, overall v2 and Saturday qualifying — 2026-11-12 (API contract 1.16.0)
+
+- Introduce `dinamico-similarita-meteo-v2`: the driver factor is the margin over
+  team-mates applied to the current car (pre-2026 seasons at 15% per year), car
+  results weighted by recency (half-life four GPs), circuit history shrunk towards
+  the driver estimate. User weights 43/35/8/10/5 unchanged. Backtest rounds 2–20:
+  regular-finisher error 2.19 → 2.04, Spearman 0.678 → 0.686, podium 33 → 38/57.
+- Recompute race pace, tyre management and circuit-history scores for all twelve
+  database GPs (401 analyses, 1,588 scores): no 0/100 values from single races.
+- Add `GET /api/v1/gare/attuale/qualifica` and its v2 counterpart, automatic
+  OpenF1 qualifying ingestion and manual dashboard/admin entry. After qualifying the
+  forecast exposes `fase: "post_qualifica"` with a 50% `qualificaGp` factor
+  (backtest winners 3 → 12/19, Spearman 0.718).
+- Evaluate and reject new weights, practice times, practice long runs, reliability
+  penalties and recent points: none improved out-of-sample accuracy.
+- Add `backtestModelloDinamico.js` and `ricalcolaOverallV2.js`; correct the OpenAPI
+  `modello` field, which still declared the October model.
+
 ## Timing evidence and recent-form forecast — 2026-10-05
 
 - Acquire 46 race sessions and replace generic missing-data text in all 396

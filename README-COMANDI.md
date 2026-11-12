@@ -41,6 +41,12 @@ Overall v2: `node backend/scripts/backtestModelloDinamico.js` misura il modello 
 disputati; `node backend/scripts/ricalcolaOverallV2.js` ricalcola gli overall di tutti i GP
 (simulazione, `--apply` per scrivere). Dettagli: [revisione v2](docs/modello-piloti/REVISIONE-OVERALL-V2.md).
 
+Qualifica del sabato: acquisita da OpenF1 in automatico. Per forzarla o inserirla
+a mano usare la dashboard oppure, con il token admin:
+`curl -X POST -H "Authorization: Bearer $ADMIN_TOKEN" -H "Content-Type: application/json" -d '{}' https://f1-stats-5v93.onrender.com/api/admin/qualifica`
+(`{"forza":true}`, `{"ordine":["norris","russell",...]}` o `{"cancella":true}`).
+Stato pubblico: `/api/v1/gare/attuale/qualifica`.
+
 Sostituzione editoriale provvisoria Ocon → Hirakawa nei tre GP rimanenti:
 `node backend/scripts/configuraHirakawaFuturi.js` verifica con rollback; `--apply`
 applica con backup delle partecipazioni. Conserva le gare concluse e usa soltanto

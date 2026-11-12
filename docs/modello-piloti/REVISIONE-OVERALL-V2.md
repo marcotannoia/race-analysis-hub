@@ -58,8 +58,57 @@ node backend/scripts/ricalcolaOverallV2.js --apply         # scrittura transazio
 
 La simulazione del 12 novembre ([report](ricalcolo-overall-v2-simulazione.json)) aggiorna
 401 schede e 1.588 punteggi su 12 GP; nessun valore 0/100 residuo su passo, gomme e storico.
-Il ricalcolo va applicato insieme alla pubblicazione del backend: il database e l'API
-devono usare lo stesso modello. Dettaglio per GP: [backtest-v2-2026.json](backtest-v2-2026.json).
+Dettaglio per GP: [backtest-v2-2026.json](backtest-v2-2026.json).
+
+**Stato:** pubblicato il 12 novembre 2026. Codice v2 su Render; ricalcolo applicato al
+database alle 17:34 UTC (401 schede, 1.588 punteggi) con backup locale in
+`output/overall-v2/` e copia in `editorial.post_gp_update.payload.reviewBackup`.
+
+## Previsione del sabato: qualifica del GP
+
+`GET /api/v1/gare/attuale/qualifica` (anche v2) espone la classifica di qualifica del GP
+attuale: posizione, tempi Q1/Q2/Q3, esito e fonte. Il server la legge da OpenF1
+(`/session_result`, numero vettura → pilota del catalogo) ogni 10 minuti tra la fine
+prevista della qualifica e la partenza della gara. La qualifica di San Paolo letta da
+OpenF1 coincide con quella F1DB. In riserva:
+
+- `POST /api/dashboard/qualifica` (sessione della dashboard) o `POST /api/admin/qualifica`
+  (token admin) con `{}` per acquisire da OpenF1, `{"forza":true}` per sovrascrivere un
+  inserimento manuale, `{"ordine":[slug,...]}` per l'ordine manuale, `{"cancella":true}`
+  per tornare alla previsione pre-qualifica.
+- Lo stato è in `editorial.automation_state` (`qualifica_gp`) e vale solo per il GP su cui
+  è impostato; un ordine manuale non viene sovrascritto da OpenF1 senza `forza`.
+
+Con la qualifica disponibile la previsione passa a `fase: "post_qualifica"`: il fattore
+`qualificaGp` pesa il 50% e gli altri si riducono in proporzione (scuderie:
+`scuderiaQualificaGp`, 60% vettura migliore e 40% l'altra). Penalità FIA e modifiche
+della dashboard restano attive.
+
+| Round 2–20 | Pre-qualifica v2 | Con qualifica 50% | Solo qualifica |
+|---|---:|---:|---:|
+| Spearman, completa | 0,686 | **0,718** | 0,703 |
+| Errore medio, completa | 3,49 | **3,28** | 3,34 |
+| Errore medio, regolari | 2,04 | **1,95** | 2,04 |
+| Vincitori | 3/19 | **12/19** | 13/19 |
+| Piloti del podio | 32/57 | **35/57** | 33/57 |
+
+## Segnali valutati e non adottati
+
+| Segnale | Esito | Decisione |
+|---|---|---|
+| Nuovi pesi dei fattori esistenti (ricerca esaustiva, anche con forma in qualifica) | Fuori campione peggiori di 43/35/8/10/5: walk-forward round 7–20 errore regolari 1,90 → 2,03; leave-one-out 2,04 → 2,06 | Pesi invariati |
+| Classifica tempi delle libere (FP1/FP2/FP3, sprint), OpenF1 | Nessun guadagno stabile; oltre il 10% peggiora | Non adottato |
+| Passo long run delle libere (stint ≥ 5 giri, per mescola) | Da solo Spearman 0,40; mescolato peggiora | Non adottato |
+| Penalità per i ritiri della scuderia | Errore regolari 2,04 → 2,10–2,15 | Non adottato |
+| Punti delle ultime 3 gare al 10% | In-sample vincitori 3 → 7; round 7–20 solo 3 → 4 con errore peggiore; in walk-forward 2/14 | Non adottato |
+| Similarità fra circuiti più selettiva | Peggiora | Non adottato |
+
+Prima della qualifica il margine è piccolo: il modello (Spearman 0,686) è già vicino a
+quello che darebbe la sola qualifica (0,703). L'errore residuo dipende soprattutto da
+ritiri (20% dei piloti, 36% dell'errore) ed episodi di gara. Senza carburante e programmi
+dei team, i tempi pubblici delle libere non aggiungono informazione affidabile.
+Per misurare l'accuratezza reale servirebbe archiviare la previsione pubblicata prima
+di ogni GP: i valori qui sono ricostruzioni.
 
 ## Partecipazioni dopo San Paolo
 
