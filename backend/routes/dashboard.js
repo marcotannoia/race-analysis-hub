@@ -83,6 +83,7 @@ async function previsioni(req, res) {
   res.json({
     previsioni: await costruisciClassificaPrevisionale(garaAttuale, "it"),
     modifiche: modificheCorrenti(garaAttuale.slug),
+    qualifica: require("../services/qualificaGp").qualificaCorrente(garaAttuale.slug),
   });
 }
 
@@ -125,6 +126,7 @@ function creaRouterDashboard() {
   router.get("/meteo", richiediSessione, gestisciFunzioneAsincrona(meteo));
   router.get("/previsioni", richiediSessione, gestisciFunzioneAsincrona(previsioni));
   router.post("/modifiche", richiediSessione, gestisciFunzioneAsincrona(salva));
+  router.post("/qualifica", richiediSessione, gestisciFunzioneAsincrona(require("./admin").qualifica));
   return router;
 }
 

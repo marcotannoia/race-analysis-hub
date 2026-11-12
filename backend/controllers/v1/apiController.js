@@ -16,6 +16,7 @@ const {
   creaProfiloScuderia,
 } = require("../../services/profiliTecnici");
 const { inviaErrore } = require("../../utils/rispostaApi");
+const { qualificaCorrente } = require("../../services/qualificaGp");
 const { localizzaCalendario } = require("../../i18n/calendario");
 const { localizzaModificheF1db } = require("../../i18n/andamento");
 const {
@@ -263,6 +264,7 @@ async function home(richiesta, risposta) {
       lingua,
       meteo,
       datiLiveFia,
+      qualifica: qualificaCorrente(garaAttuale.slug),
     }),
     metadati: {
       stagione: garaAttuale.stagione,
@@ -310,7 +312,32 @@ async function costruisciClassificaPrevisionale(garaAttuale, lingua) {
       lingua,
       meteo,
       datiLiveFia,
+      qualifica: qualificaCorrente(garaAttuale.slug),
     });
+}
+
+// Classifica di qualifica del GP attuale; vuota finché la sessione non è conclusa.
+async function qualificaGaraAttuale(richiesta, risposta) {
+  const lingua = linguaRichiesta(richiesta);
+  const garaAttuale = await richiediGaraAttuale(risposta);
+  if (!garaAttuale) return;
+  const qualifica = qualificaCorrente(garaAttuale.slug);
+  const piloti = qualifica ? await Pilota.find().populate("scuderia", CAMPI_SCUDERIA_BREVE).lean() : [];
+  const perSlug = new Map(piloti.map((p) => [p.slug, p]));
+  risposta.json({
+    lingua,
+    garaAttuale: presentaGaraBreve(garaAttuale, lingua),
+    disponibile: Boolean(qualifica?.classifica?.length),
+    fonte: qualifica?.fonte ?? null,
+    sessioneOpenF1: qualifica?.sessionKey ?? null,
+    aggiornatoIl: qualifica?.aggiornatoIl ?? null,
+    classifica: (qualifica?.classifica || []).map((r) => {
+      const pilota = perSlug.get(r.pilotaSlug);
+      return { posizione: r.posizione, esito: r.esito, tempi: r.tempi,
+        pilota: pilota ? presentaPilotaBreve(pilota, lingua) : { slug: r.pilotaSlug },
+        scuderia: pilota?.scuderia ? presentaScuderiaBreve(pilota.scuderia, lingua) : null };
+    }),
+  });
 }
 
 async function elencaPiloti(richiesta, risposta) {
@@ -330,7 +357,7 @@ async function elencaPiloti(richiesta, risposta) {
 // Previsione condivisa da schede e confronti; scade presto e cambia con le modifiche della dashboard.
 const memoriaPrevisioni = new Map();
 async function classificaPrevisionaleMemorizzata(garaAttuale, lingua) {
-  const versione = require("../../services/modificheDashboard").modificheCorrenti(garaAttuale.slug).aggiornatoIl;
+  const versione = `${require("../../services/modificheDashboard").modificheCorrenti(garaAttuale.slug).aggiornatoIl}|${qualificaCorrente(garaAttuale.slug)?.aggiornatoIl ?? ""}`;
   const chiave = `${garaAttuale.slug}|${lingua}|${versione}`;
   const voce = memoriaPrevisioni.get(chiave);
   if (voce && Date.now() - voce.creataIl < 60000) return voce.valore;
@@ -804,6 +831,7 @@ module.exports = {
   analisiPilotaPerGara,
   analisiScuderiaPerGara,
   classificaPrevisionale,
+  qualificaGaraAttuale,
   costruisciClassificaPrevisionale,
   classificaPiloti,
   classificaScuderie,

@@ -14,6 +14,7 @@ async function avviaServer() {
     if (collegaDatabase.usaPostgres()) await require('./services/runtimeF1db').caricaRuntime(collegaDatabase.getPool(),true);
     await require('./routes/admin').ricaricaMeteoGare().catch((e) => console.error('Meteo gare non ricaricato:', e.message));
     await require('./services/modificheDashboard').ricaricaModifiche().catch((e) => console.error('Modifiche dashboard non ricaricate:', e.message));
+    await require('./services/qualificaGp').ricaricaQualifica().catch((e) => console.error('Qualifica non ricaricata:', e.message));
     if (!collegaDatabase.usaPostgres()) {
       await require("./services/aggiornamentoSingaporeConcluso").applicaAggiornamentoSingapore();
     }
@@ -31,6 +32,7 @@ async function avviaServer() {
     const fermaMonitorAggiornamenti = ambiente.monitorFiaAbilitato
       ? require('./services/aggiornamentiFia').avviaMonitorAggiornamentiFia() : () => {};
     const fermaAggiornamentoGp = require('./services/aggiornamentoAutomaticoGp').avviaAggiornamentoAutomaticoGp();
+    const fermaAggiornamentoQualifica = require('./services/qualificaGp').avviaAggiornamentoQualifica();
 
 
     server.on("error", (errore) => {
@@ -49,6 +51,7 @@ async function avviaServer() {
       fermaMonitorPenalita();
       fermaMonitorAggiornamenti();
       fermaAggiornamentoGp();
+      fermaAggiornamentoQualifica();
       console.log(`Arresto del server richiesto da ${segnale}`);
 
       const arrestoForzato = setTimeout(() => process.exit(1), 10000);

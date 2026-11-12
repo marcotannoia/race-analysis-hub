@@ -94,11 +94,20 @@ conditional requests to acknowledge an unchanged payload.
 | `GET` | `/api/v1/scuderie/{scuderiaSlug}` | Team Profile, Drivers, Gauges & Analysis |
 | `GET` | `/api/v1/gare` | List limited to the current GP only |
 | `GET` | `/api/v1/gare/attuale` | Full data of the current GP |
+| `GET` | `/api/v1/gare/attuale/qualifica` | Qualifying classification of the current GP, once available |
 | `GET` | `/api/v1/gare/{garaSlug}` | Current GP with all driver and team analysis |
 | `GET` | `/api/v1/classifiche/piloti` | 2026 Drivers' Standings |
 | `GET` | `/api/v1/classifiche/scuderie` | Team standings 2026 |
 | `GET` | `/api/v1/gare/{garaSlug}/piloti/{pilotaSlug}/analisi` | Single driver analysis of the current GP |
 | `GET` | `/api/v1/gare/{garaSlug}/scuderie/{scuderiaSlug}/analisi` | Single team analysis of the current GP |
+
+After qualifying, `/previsioni/piloti` (and the forecast in `/home`) switches from
+`fase: "pre_qualifica"` to `fase: "post_qualifica"`: the GP qualifying position weighs 50%
+and the other factors are scaled proportionally. The `qualifica` object reports source
+(`openf1` or `manuale`) and update time. Qualifying is fetched from OpenF1 every 10
+minutes after the session; the dashboard can force the fetch or enter the order manually
+(`POST /api/dashboard/qualifica`, or `POST /api/admin/qualifica` with the admin token:
+`{}` or `{"forza":true}`, `{"ordine":[slug,...]}`, `{"cancella":true}`).
 
 All endpoints accept only the optional query
 `?lingua=it|en|fr|pt|es|de`. Portuguese uses the European variant `pt-PT`,

@@ -470,6 +470,21 @@ const documentoOpenApi = {
         },
       },
     },
+    "/gare/attuale/qualifica": {
+      get: {
+        operationId: "recuperaQualificaGaraAttuale",
+        tags: ["Gare"],
+        summary: "Classifica di qualifica del Gran Premio attuale",
+        description:
+          "Disponibile dopo la qualifica (fonte OpenF1 o inserimento manuale verificato). Finché non è disponibile, disponibile=false e classifica vuota. Quando è disponibile, /previsioni/piloti passa alla fase post_qualifica.",
+        parameters: [parametroLingua],
+        responses: {
+          200: rispostaJson("Classifica di qualifica del GP attuale", "#/components/schemas/QualificaGp"),
+          404: { $ref: "#/components/responses/RisorsaNonTrovata" },
+          ...risposteComuni,
+        },
+      },
+    },
     "/gare/{garaSlug}": {
       get: {
         operationId: "recuperaDettaglioGara",
@@ -2047,6 +2062,39 @@ const documentoOpenApi = {
           },
         },
       },
+      QualificaGp: {
+        type: "object",
+        required: ["lingua", "garaAttuale", "disponibile", "fonte", "aggiornatoIl", "classifica"],
+        properties: {
+          lingua: { $ref: "#/components/schemas/CodiceLingua" },
+          garaAttuale: { $ref: "#/components/schemas/GaraBreve" },
+          disponibile: { type: "boolean" },
+          fonte: { type: ["string", "null"], enum: ["openf1", "manuale", null] },
+          sessioneOpenF1: { type: ["integer", "null"] },
+          aggiornatoIl: { type: ["string", "null"], format: "date-time" },
+          classifica: {
+            type: "array",
+            items: {
+              type: "object",
+              required: ["posizione", "pilota"],
+              properties: {
+                posizione: { type: "integer", minimum: 1 },
+                esito: { type: ["string", "null"], enum: ["DNF", "DNS", "DSQ", null] },
+                tempi: {
+                  type: "object",
+                  properties: {
+                    q1: { type: ["number", "null"] },
+                    q2: { type: ["number", "null"] },
+                    q3: { type: ["number", "null"] },
+                  },
+                },
+                pilota: { $ref: "#/components/schemas/PilotaBreve" },
+                scuderia: { oneOf: [{ $ref: "#/components/schemas/ScuderiaBreve" }, { type: "null" }] },
+              },
+            },
+          },
+        },
+      },
       ClassificaPrevisionale: {
         type: "object",
         required: [
@@ -2071,7 +2119,22 @@ const documentoOpenApi = {
           },
           modello: {
             type: "string",
-            const: calibrazione.versione,
+            example: "dinamico-similarita-meteo-v2",
+          },
+          fase: {
+            type: "string",
+            enum: ["pre_qualifica", "post_qualifica"],
+            description: "pre_qualifica: solo dati anteriori al weekend; post_qualifica: include la qualifica del GP.",
+          },
+          qualifica: {
+            type: "object",
+            required: ["disponibile", "fonte", "aggiornatoIl", "pesoPercentuale"],
+            properties: {
+              disponibile: { type: "boolean" },
+              fonte: { type: ["string", "null"], enum: ["openf1", "manuale", null] },
+              aggiornatoIl: { type: ["string", "null"], format: "date-time" },
+              pesoPercentuale: { type: "number", minimum: 0, maximum: 100, example: 50 },
+            },
           },
           calibrazione: {
             type: "object",

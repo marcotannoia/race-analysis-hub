@@ -94,6 +94,29 @@ async function meteo(req, res) {
   res.json({ edizioni: dati.edizioni.length, aggiornatoIl: dati.aggiornatoIl });
 }
 
+// Qualifica del GP attuale. Corpo: {} o {forza:true} per OpenF1, {ordine:[slug...]} per
+// l'inserimento manuale, {cancella:true} per tornare alla previsione pre-qualifica.
+async function qualifica(req, res) {
+  const servizio = require("../services/qualificaGp");
+  const { garaAttuale, piloti } = await servizio.iscrittiGaraAttuale();
+  if (!garaAttuale) return res.status(404).json({ messaggio: "Nessun GP attuale" });
+  const corpo = req.body || {};
+  try {
+    if (corpo.cancella === true) {
+      await servizio.cancella(garaAttuale);
+      return res.json({ gara: garaAttuale.slug, qualifica: null });
+    }
+    if (corpo.ordine !== undefined) {
+      const salvata = await servizio.impostaManuale(garaAttuale, piloti, corpo.ordine);
+      return res.json({ gara: garaAttuale.slug, aggiornato: true, qualifica: salvata });
+    }
+    const esito = await servizio.aggiornaDaOpenF1(garaAttuale, piloti, { forza: corpo.forza === true });
+    return res.json({ gara: garaAttuale.slug, ...esito });
+  } catch (e) {
+    return res.status(422).json({ messaggio: e.message });
+  }
+}
+
 function creaRouterAdmin() {
   const router = express.Router();
   router.use(express.json({ limit: "10kb" }));
@@ -101,7 +124,8 @@ function creaRouterAdmin() {
   router.get("/stato", gestisciFunzioneAsincrona(stato));
   router.post("/prossimo-gp", gestisciFunzioneAsincrona(prossimoGp));
   router.post("/meteo-gare", gestisciFunzioneAsincrona(meteo));
+  router.post("/qualifica", gestisciFunzioneAsincrona(qualifica));
   return router;
 }
 
-module.exports = { creaRouterAdmin, ricaricaMeteoGare, aggiornaMeteoGare, autenticazione };
+module.exports = { creaRouterAdmin, ricaricaMeteoGare, aggiornaMeteoGare, autenticazione, qualifica };

@@ -15,6 +15,7 @@ const percorsi = [
   ['/piloti/:pilotaSlug', 'dettaglioPilota'],
   ['/scuderie/:scuderiaSlug', 'dettaglioScuderia'],
   ['/gare/attuale', 'garaAttuale'],
+  ['/gare/attuale/qualifica', 'qualificaGaraAttuale'],
   ['/gare/:garaSlug/piloti/:pilotaSlug/analisi', 'analisiPilotaPerGara'],
   ['/gare/:garaSlug/scuderie/:scuderiaSlug/analisi', 'analisiScuderiaPerGara'],
   ['/gare/:garaSlug', 'dettaglioGara'],

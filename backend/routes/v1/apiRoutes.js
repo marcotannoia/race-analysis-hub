@@ -87,6 +87,11 @@ router.get(
   gestisciFunzioneAsincrona(controller.garaAttuale),
 );
 router.get(
+  "/gare/attuale/qualifica",
+  senzaQuery,
+  gestisciFunzioneAsincrona(controller.qualificaGaraAttuale),
+);
+router.get(
   "/gare/:garaSlug/piloti/:pilotaSlug/analisi",
   convalidaParametriSlug("garaSlug", "pilotaSlug"),
   senzaQuery,
