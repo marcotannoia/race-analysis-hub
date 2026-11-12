@@ -112,7 +112,7 @@
     }
   },
   "20": {
-    "verificatoIl": "2026-11-09",
+    "verificatoIl": "2026-11-12",
     "garaConclusa": "brasile-interlagos",
     "prossimaGara": "usa-las-vegas",
     "fonti": [
@@ -132,7 +132,7 @@
       },
       {
         "tipo": "cronaca_ufficiale",
-        "url": "https://www.formula1.com/en/latest/article/norris-beats-verstappen-in-wet-sao-paulo-gp-thriller-as-mercedes-win-constructors-championship.7JN7MXLZf5lk5l0C3gfKGI.7JN7MXLZf5lk5l0C3gfKGI",
+        "url": "https://www.formula1.com/en/latest/article/norris-beats-verstappen-in-wet-sao-paulo-gp-thriller-as-mercedes-win-constructors-championship.7JN7MXLZf5lk5l0C3gfKGI",
         "stato": "confermato",
         "pubblicatoIl": "2026-11-08",
         "sintesi": "Verstappen rimonta dalla 21ª posizione e Mercedes conquista il titolo costruttori."
@@ -178,6 +178,14 @@
         "stato": "da_confermare_per_Las_Vegas",
         "pubblicatoIl": "2026-11-03",
         "sintesi": "GE riporta Câmara anche a Las Vegas. Il comunicato Haas consultato conferma soltanto San Paolo."
+      },
+      {
+        "tipo": "dichiarazioni_pilota_e_team",
+        "url": "https://www.formula1.com/en/latest/article/camara-experiences-every-condition-going-in-tricky-haas-debut.40TC0zRX2AaMmtJ50RsCYH",
+        "stato": "dichiarazione_attribuita",
+        "pubblicatoIl": "2026-11-10",
+        "acquisitoIl": "2026-11-12",
+        "sintesi": "Câmara e Komatsu descrivono errori e condizioni difficili al debutto. Il resoconto conferma il 20º posto a San Paolo; non conferma l’iscrizione a Las Vegas e non quantifica l’effetto degli errori sul passo."
       }
     ],
     "ipotesiDaVerificare": [

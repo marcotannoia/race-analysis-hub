@@ -1,6 +1,6 @@
 {
   "anno": 2026,
-  "aggiornatoIl": "2026-10-29",
+  "aggiornatoIl": "2026-11-12",
   "fonte": "OpenF1 /weather (rainfall)",
   "metodo": "Bagnata se almeno un campione della sessione ha rainfall=1.",
   "edizioni": [
@@ -236,6 +236,32 @@
       "fonti": [
         "https://api.openf1.org/v1/weather?session_key=11396",
         "https://api.openf1.org/v1/weather?session_key=11392"
+      ]
+    },
+    {
+      "raceId": 1168,
+      "anno": 2026,
+      "round": 19,
+      "circuitId": "mexico-city",
+      "pioggia": false,
+      "pioggiaQualifica": false,
+      "campioniGara": 205,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11404",
+        "https://api.openf1.org/v1/weather?session_key=11400"
+      ]
+    },
+    {
+      "raceId": 1169,
+      "anno": 2026,
+      "round": 20,
+      "circuitId": "interlagos",
+      "pioggia": true,
+      "pioggiaQualifica": true,
+      "campioniGara": 160,
+      "fonti": [
+        "https://api.openf1.org/v1/weather?session_key=11412",
+        "https://api.openf1.org/v1/weather?session_key=11408"
       ]
     }
   ]
