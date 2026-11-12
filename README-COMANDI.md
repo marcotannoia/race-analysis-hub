@@ -37,6 +37,15 @@ In produzione il controllo parte con il server: `AUTO_GP_ENABLED=true`, interval
 | `npm --prefix backend run check:auto-gp` | Simula il controllo senza applicare aggiornamenti. |
 | `npm --prefix backend run check:auto-gp -- --apply` | Applica l’aggiornamento se le verifiche riescono. |
 
+Overall v2: `node backend/scripts/backtestModelloDinamico.js` misura il modello sui GP
+disputati; `node backend/scripts/ricalcolaOverallV2.js` ricalcola gli overall di tutti i GP
+(simulazione, `--apply` per scrivere). Dettagli: [revisione v2](docs/modello-piloti/REVISIONE-OVERALL-V2.md).
+
+Sostituzione editoriale provvisoria Ocon → Hirakawa nei tre GP rimanenti:
+`node backend/scripts/configuraHirakawaFuturi.js` verifica con rollback; `--apply`
+applica con backup delle partecipazioni. Conserva le gare concluse e usa soltanto
+i dati personali di Hirakawa. Non costituisce conferma dell'iscrizione FIA.
+
 Revisione approfondita: `npm run review:gp` simula con rollback;
 `npm run review:gp -- --apply` acquisisce i giri mancanti e aggiorna analisi e pattern.
 Richiede Python 3. Procedura completa: [Post-GP](post-gp.md).

@@ -21,7 +21,7 @@ test("pesi base richiesti e somma 100 per ogni pilota", () => {
   assert.deepEqual({ ...PESI_DINAMICI }, { compatibilitaVetturaCircuito: 43, compatibilitaPilotaCircuito: 35,
     aggiornamentiTecnici: 8, andamentoUltimi4Gp: 10, storicoPersonale: 5 });
   const output = creaClassificaPrevisionale(argomenti());
-  assert.equal(output.modello, "dinamico-similarita-meteo-v1");
+  assert.equal(output.modello, "dinamico-similarita-meteo-v2");
   assert.equal(output.confrontoCircuiti.criteri.length, 22);
   for (const p of output.classifica) {
     assert.ok(Math.abs(p.fattori.reduce((s, f) => s + f.pesoPercentuale, 0) - 100) < 0.05);
@@ -89,16 +89,24 @@ test("classifica scuderie con gli stessi campi dinamici", () => {
   }
 });
 
-test("compatibilità pilota-circuito contestualizzata dalla vettura", () => {
+test("compatibilità pilota-circuito: vettura attuale più scarto dal compagno", () => {
   const output = creaClassificaPrevisionale(argomenti());
   for (const p of output.classifica) {
     const d = p.dettagliFattori.compatibilitaPilotaCircuito;
     const vettura = p.fattori.find((f) => f.chiave === "compatibilitaVetturaCircuito").valutazione;
     const pilota = p.fattori.find((f) => f.chiave === "compatibilitaPilotaCircuito").valutazione;
-    if (d.valorePuro === null) continue;
-    assert.ok(Math.abs(d.fattoreScuderia - (0.6 + 0.4 * vettura / 100)) < 0.002);
-    assert.ok(Math.abs(pilota - d.valorePuro * d.fattoreScuderia) < 0.1);
-    assert.ok(pilota <= d.valorePuro + 0.01);
+    if (d.baseVettura === null) continue;
+    assert.ok(Math.abs(d.baseVettura - vettura) < 0.01);
+    assert.ok(Math.abs(pilota - Math.max(0, Math.min(100, d.baseVettura + d.scartoCompagno))) < 0.02);
+  }
+});
+
+test("lo storico sul circuito con poche edizioni resta vicino alla stima del pilota", () => {
+  const output = creaClassificaPrevisionale(argomenti());
+  for (const p of output.classifica) {
+    const storico = p.fattori.find((f) => f.chiave === "storicoPersonale");
+    if (!storico.datiDisponibili) continue;
+    assert.ok(storico.valutazione >= 0 && storico.valutazione <= 100);
   }
 });
 

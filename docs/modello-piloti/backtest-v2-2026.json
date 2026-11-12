@@ -1,0 +1,1450 @@
+{
+  "modello": "dinamico-similarita-meteo-v2",
+  "anno": 2026,
+  "ultimoRound": 20,
+  "sintesi": {
+    "modello": {
+      "completa": {
+        "gp": 19,
+        "spearman": 0.686,
+        "erroreMedio": 3.488,
+        "vincitori": 3,
+        "podio": 32,
+        "top10": 148
+      },
+      "regolari": {
+        "gp": 19,
+        "spearman": 0.838,
+        "erroreMedio": 2.037,
+        "vincitori": 4,
+        "podio": 38,
+        "top10": 160
+      }
+    },
+    "mondiale": {
+      "completa": {
+        "gp": 19,
+        "spearman": 0.655,
+        "erroreMedio": 3.785,
+        "vincitori": 7,
+        "podio": 28,
+        "top10": 146
+      },
+      "regolari": {
+        "gp": 19,
+        "spearman": 0.801,
+        "erroreMedio": 2.368,
+        "vincitori": 8,
+        "podio": 32,
+        "top10": 161
+      }
+    },
+    "tettoQualificaGp": {
+      "completa": {
+        "gp": 19,
+        "spearman": 0.703,
+        "erroreMedio": 3.335,
+        "vincitori": 13,
+        "podio": 33,
+        "top10": 145
+      },
+      "regolari": {
+        "gp": 19,
+        "spearman": 0.826,
+        "erroreMedio": 2.044,
+        "vincitori": 14,
+        "podio": 36,
+        "top10": 158
+      }
+    }
+  },
+  "righe": [
+    {
+      "round": 2,
+      "circuito": "cina-shanghai",
+      "modello": {
+        "completa": {
+          "spearman": 0.4545454545454546,
+          "erroreMedio": 5.363636363636363,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 6
+        },
+        "regolari": {
+          "spearman": 0.775,
+          "erroreMedio": 2.2666666666666666,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 7
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "max-verstappen",
+          "charles-leclerc",
+          "lewis-hamilton"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.46809712027103334,
+          "erroreMedio": 5.181818181818182,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 6
+        },
+        "regolari": {
+          "spearman": 0.7642857142857142,
+          "erroreMedio": 2.2666666666666666,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "charles-leclerc",
+          "lewis-hamilton",
+          "lando-norris"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.5697346132128741,
+          "erroreMedio": 4.181818181818182,
+          "vincitore": 1,
+          "podio": 3,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.8785714285714286,
+          "erroreMedio": 1.4666666666666666,
+          "vincitore": 1,
+          "podio": 3,
+          "top10": 8
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "lewis-hamilton",
+          "charles-leclerc",
+          "oscar-piastri"
+        ]
+      }
+    },
+    {
+      "round": 3,
+      "circuito": "giappone-suzuka",
+      "modello": {
+        "completa": {
+          "spearman": 0.8159232072275551,
+          "erroreMedio": 2.909090909090909,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.8992481203007519,
+          "erroreMedio": 2.3,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "charles-leclerc",
+          "lewis-hamilton",
+          "max-verstappen"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.7052512704686618,
+          "erroreMedio": 2.909090909090909,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.843609022556391,
+          "erroreMedio": 2.4,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "charles-leclerc",
+          "lewis-hamilton",
+          "oliver-bearman"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.922077922077922,
+          "erroreMedio": 2,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.9157894736842105,
+          "erroreMedio": 1.8,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 7
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "oscar-piastri",
+          "charles-leclerc",
+          "lando-norris"
+        ]
+      }
+    },
+    {
+      "round": 4,
+      "circuito": "usa-miami",
+      "modello": {
+        "completa": {
+          "spearman": 0.5708639186900056,
+          "erroreMedio": 4.7272727272727275,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.8431372549019608,
+          "erroreMedio": 2.5555555555555554,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 8
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "charles-leclerc",
+          "lewis-hamilton",
+          "oscar-piastri"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.5945793337097685,
+          "erroreMedio": 4.636363636363637,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.8183694530443757,
+          "erroreMedio": 2.6666666666666665,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 7
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "charles-leclerc",
+          "lewis-hamilton",
+          "lando-norris"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.7108977978543196,
+          "erroreMedio": 3.4545454545454546,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.8802889576883385,
+          "erroreMedio": 2,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "max-verstappen",
+          "charles-leclerc",
+          "lando-norris",
+          "george-russell"
+        ]
+      }
+    },
+    {
+      "round": 5,
+      "circuito": "canada-montreal",
+      "modello": {
+        "completa": {
+          "spearman": 0.4850367024280068,
+          "erroreMedio": 4.636363636363637,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.7941176470588236,
+          "erroreMedio": 2,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 9
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "lando-norris",
+          "oscar-piastri",
+          "charles-leclerc"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.4963297571993224,
+          "erroreMedio": 4.818181818181818,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.8205882352941176,
+          "erroreMedio": 2.125,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "charles-leclerc",
+          "lando-norris",
+          "lewis-hamilton"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.40372670807453415,
+          "erroreMedio": 5.2727272727272725,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 6
+        },
+        "regolari": {
+          "spearman": 0.788235294117647,
+          "erroreMedio": 2,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 7
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "lando-norris",
+          "oscar-piastri",
+          "lewis-hamilton"
+        ]
+      }
+    },
+    {
+      "round": 6,
+      "circuito": "monaco-montecarlo",
+      "modello": {
+        "completa": {
+          "spearman": 0.2569169960474308,
+          "erroreMedio": 6.181818181818182,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 5
+        },
+        "regolari": {
+          "spearman": 0.5464285714285715,
+          "erroreMedio": 2.933333333333333,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 7
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "lando-norris",
+          "charles-leclerc",
+          "max-verstappen"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.21626199887069453,
+          "erroreMedio": 6.545454545454546,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 5
+        },
+        "regolari": {
+          "spearman": 0.5785714285714285,
+          "erroreMedio": 2.8,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 7
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "charles-leclerc",
+          "lewis-hamilton",
+          "lando-norris"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.3721061547148503,
+          "erroreMedio": 5.090909090909091,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 6
+        },
+        "regolari": {
+          "spearman": 0.6964285714285714,
+          "erroreMedio": 2.4,
+          "vincitore": 1,
+          "podio": 3,
+          "top10": 7
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "max-verstappen",
+          "lewis-hamilton",
+          "charles-leclerc",
+          "isack-hadjar"
+        ]
+      }
+    },
+    {
+      "round": 7,
+      "circuito": "spagna-barcellona",
+      "modello": {
+        "completa": {
+          "spearman": 0.6826651609260305,
+          "erroreMedio": 3.3636363636363638,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.9736263736263736,
+          "erroreMedio": 0.5714285714285714,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 10
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "charles-leclerc",
+          "max-verstappen",
+          "lewis-hamilton"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.691699604743083,
+          "erroreMedio": 3.4545454545454546,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.9648351648351648,
+          "erroreMedio": 0.8571428571428571,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 10
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "lewis-hamilton",
+          "george-russell",
+          "charles-leclerc",
+          "oscar-piastri"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.7413890457368718,
+          "erroreMedio": 3.090909090909091,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.9428571428571428,
+          "erroreMedio": 0.8571428571428571,
+          "vincitore": 0,
+          "podio": 3,
+          "top10": 9
+        },
+        "primi5": [
+          "george-russell",
+          "lewis-hamilton",
+          "kimi-antonelli",
+          "lando-norris",
+          "max-verstappen"
+        ]
+      }
+    },
+    {
+      "round": 8,
+      "circuito": "austria-spielberg",
+      "modello": {
+        "completa": {
+          "spearman": 0.9424054206662902,
+          "erroreMedio": 1.9090909090909092,
+          "vincitore": 0,
+          "podio": 3,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.9318885448916409,
+          "erroreMedio": 1.5555555555555556,
+          "vincitore": 0,
+          "podio": 3,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "max-verstappen",
+          "lewis-hamilton",
+          "lando-norris"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.8577075098814229,
+          "erroreMedio": 2.8181818181818183,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.8080495356037152,
+          "erroreMedio": 2.888888888888889,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "lewis-hamilton",
+          "george-russell",
+          "charles-leclerc",
+          "lando-norris"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.9367588932806324,
+          "erroreMedio": 1.8181818181818181,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 10
+        },
+        "regolari": {
+          "spearman": 0.9215686274509804,
+          "erroreMedio": 1.4444444444444444,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 10
+        },
+        "primi5": [
+          "george-russell",
+          "charles-leclerc",
+          "lewis-hamilton",
+          "kimi-antonelli",
+          "max-verstappen"
+        ]
+      }
+    },
+    {
+      "round": 9,
+      "circuito": "gran-bretagna-silverstone",
+      "modello": {
+        "completa": {
+          "spearman": 0.5561829474872952,
+          "erroreMedio": 4.454545454545454,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.7614035087719299,
+          "erroreMedio": 2.526315789473684,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "max-verstappen",
+          "lewis-hamilton",
+          "lando-norris"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.5923207227555054,
+          "erroreMedio": 4.2727272727272725,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.6491228070175439,
+          "erroreMedio": 3.1578947368421053,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 7
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "lewis-hamilton",
+          "oscar-piastri",
+          "lando-norris"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.6013551665725578,
+          "erroreMedio": 4.181818181818182,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.724561403508772,
+          "erroreMedio": 2.526315789473684,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "charles-leclerc",
+          "lewis-hamilton",
+          "george-russell",
+          "isack-hadjar"
+        ]
+      }
+    },
+    {
+      "round": 10,
+      "circuito": "belgio-spa",
+      "modello": {
+        "completa": {
+          "spearman": 0.6871823828345567,
+          "erroreMedio": 2.8181818181818183,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.9298245614035088,
+          "erroreMedio": 1.4736842105263157,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "george-russell",
+          "lewis-hamilton",
+          "charles-leclerc",
+          "max-verstappen",
+          "kimi-antonelli"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.6950875211744777,
+          "erroreMedio": 2.8181818181818183,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.8964912280701754,
+          "erroreMedio": 2,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "lewis-hamilton",
+          "charles-leclerc",
+          "lando-norris"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.769621682665161,
+          "erroreMedio": 2.4545454545454546,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.956140350877193,
+          "erroreMedio": 1.1578947368421053,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "max-verstappen",
+          "lando-norris",
+          "george-russell",
+          "charles-leclerc"
+        ]
+      }
+    },
+    {
+      "round": 11,
+      "circuito": "ungheria-hungaroring",
+      "modello": {
+        "completa": {
+          "spearman": 0.7831733483907397,
+          "erroreMedio": 2.727272727272727,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.856140350877193,
+          "erroreMedio": 2.1052631578947367,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 9
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "max-verstappen",
+          "charles-leclerc",
+          "lewis-hamilton"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.6939582156973461,
+          "erroreMedio": 3.6363636363636362,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.7491228070175439,
+          "erroreMedio": 3.0526315789473686,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "lewis-hamilton",
+          "george-russell",
+          "charles-leclerc",
+          "lando-norris"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.805759457933371,
+          "erroreMedio": 2.3636363636363638,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.9157894736842105,
+          "erroreMedio": 1.7894736842105263,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 10
+        },
+        "primi5": [
+          "lando-norris",
+          "lewis-hamilton",
+          "charles-leclerc",
+          "kimi-antonelli",
+          "oscar-piastri"
+        ]
+      }
+    },
+    {
+      "round": 12,
+      "circuito": "olanda-zandvoort",
+      "modello": {
+        "completa": {
+          "spearman": 0.6668548842461886,
+          "erroreMedio": 3.090909090909091,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.888235294117647,
+          "erroreMedio": 1.5,
+          "vincitore": 0,
+          "podio": 3,
+          "top10": 9
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "max-verstappen",
+          "lando-norris",
+          "charles-leclerc"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.5957086391869,
+          "erroreMedio": 3.909090909090909,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.7852941176470588,
+          "erroreMedio": 2.375,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "lewis-hamilton",
+          "george-russell",
+          "charles-leclerc",
+          "lando-norris"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.7515527950310559,
+          "erroreMedio": 2.8181818181818183,
+          "vincitore": 1,
+          "podio": 3,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.8529411764705882,
+          "erroreMedio": 1.75,
+          "vincitore": 1,
+          "podio": 3,
+          "top10": 8
+        },
+        "primi5": [
+          "lando-norris",
+          "george-russell",
+          "kimi-antonelli",
+          "oscar-piastri",
+          "lewis-hamilton"
+        ]
+      }
+    },
+    {
+      "round": 13,
+      "circuito": "italia-monza",
+      "modello": {
+        "completa": {
+          "spearman": 0.7673630717108978,
+          "erroreMedio": 2.5454545454545454,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.9192982456140351,
+          "erroreMedio": 1.4736842105263157,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "lando-norris",
+          "max-verstappen",
+          "charles-leclerc"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.7221908526256353,
+          "erroreMedio": 3,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.8771929824561404,
+          "erroreMedio": 1.7894736842105263,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "lewis-hamilton",
+          "lando-norris",
+          "charles-leclerc"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.7108977978543196,
+          "erroreMedio": 2.8181818181818183,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.8666666666666667,
+          "erroreMedio": 2.1052631578947367,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 9
+        },
+        "primi5": [
+          "pierre-gasly",
+          "george-russell",
+          "oscar-piastri",
+          "charles-leclerc",
+          "lewis-hamilton"
+        ]
+      }
+    },
+    {
+      "round": 14,
+      "circuito": "spagna-madring",
+      "modello": {
+        "completa": {
+          "spearman": 0.7639751552795031,
+          "erroreMedio": 2.6363636363636362,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.890608875128999,
+          "erroreMedio": 1.6666666666666667,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "lando-norris",
+          "charles-leclerc",
+          "max-verstappen"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.6928289102202145,
+          "erroreMedio": 3.1818181818181817,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.8864809081527347,
+          "erroreMedio": 1.8888888888888888,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "lewis-hamilton",
+          "lando-norris",
+          "charles-leclerc"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.7741389045736872,
+          "erroreMedio": 2.272727272727273,
+          "vincitore": 0,
+          "podio": 3,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.9752321981424149,
+          "erroreMedio": 0.8888888888888888,
+          "vincitore": 0,
+          "podio": 3,
+          "top10": 10
+        },
+        "primi5": [
+          "lando-norris",
+          "kimi-antonelli",
+          "max-verstappen",
+          "lewis-hamilton",
+          "charles-leclerc"
+        ]
+      }
+    },
+    {
+      "round": 15,
+      "circuito": "azerbaigian-baku",
+      "modello": {
+        "completa": {
+          "spearman": 0.6307171089779786,
+          "erroreMedio": 4.181818181818182,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.7142857142857143,
+          "erroreMedio": 2.6666666666666665,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 7
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "max-verstappen",
+          "lando-norris",
+          "charles-leclerc"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.5945793337097685,
+          "erroreMedio": 4.7272727272727275,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 6
+        },
+        "regolari": {
+          "spearman": 0.6714285714285715,
+          "erroreMedio": 2.933333333333333,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 8
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "lewis-hamilton",
+          "lando-norris",
+          "charles-leclerc"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.4850367024280068,
+          "erroreMedio": 5,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 6
+        },
+        "regolari": {
+          "spearman": 0.6,
+          "erroreMedio": 2.933333333333333,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 8
+        },
+        "primi5": [
+          "george-russell",
+          "charles-leclerc",
+          "oscar-piastri",
+          "isack-hadjar",
+          "lando-norris"
+        ]
+      }
+    },
+    {
+      "round": 16,
+      "circuito": "bahrein-sepang",
+      "modello": {
+        "completa": {
+          "spearman": 0.5968379446640316,
+          "erroreMedio": 3.6363636363636362,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.7491228070175439,
+          "erroreMedio": 2.736842105263158,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 9
+        },
+        "primi5": [
+          "george-russell",
+          "kimi-antonelli",
+          "lando-norris",
+          "max-verstappen",
+          "charles-leclerc"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.6239412761151892,
+          "erroreMedio": 3.6363636363636362,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.7649122807017543,
+          "erroreMedio": 2.6315789473684212,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "lewis-hamilton",
+          "lando-norris",
+          "charles-leclerc"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.7470355731225297,
+          "erroreMedio": 3.5454545454545454,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.756140350877193,
+          "erroreMedio": 2.9473684210526314,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "max-verstappen",
+          "lewis-hamilton",
+          "isack-hadjar",
+          "kimi-antonelli",
+          "charles-leclerc"
+        ]
+      }
+    },
+    {
+      "round": 17,
+      "circuito": "singapore-marina-bay",
+      "modello": {
+        "completa": {
+          "spearman": 0.7967250141163185,
+          "erroreMedio": 3.1818181818181817,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.8431372549019608,
+          "erroreMedio": 2,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 9
+        },
+        "primi5": [
+          "max-verstappen",
+          "george-russell",
+          "kimi-antonelli",
+          "charles-leclerc",
+          "lewis-hamilton"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.7899491812535291,
+          "erroreMedio": 3.272727272727273,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.8410732714138287,
+          "erroreMedio": 2.3333333333333335,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "lewis-hamilton",
+          "charles-leclerc",
+          "lando-norris"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.8283455674760023,
+          "erroreMedio": 2.4545454545454546,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.8575851393188855,
+          "erroreMedio": 1.8888888888888888,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "max-verstappen",
+          "charles-leclerc",
+          "lewis-hamilton",
+          "kimi-antonelli",
+          "lando-norris"
+        ]
+      }
+    },
+    {
+      "round": 18,
+      "circuito": "usa-austin",
+      "modello": {
+        "completa": {
+          "spearman": 0.8915866741953699,
+          "erroreMedio": 2.1818181818181817,
+          "vincitore": 0,
+          "podio": 3,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.956140350877193,
+          "erroreMedio": 1.1578947368421053,
+          "vincitore": 0,
+          "podio": 3,
+          "top10": 9
+        },
+        "primi5": [
+          "max-verstappen",
+          "kimi-antonelli",
+          "charles-leclerc",
+          "george-russell",
+          "lewis-hamilton"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.8464144551101073,
+          "erroreMedio": 2.3636363636363638,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 10
+        },
+        "regolari": {
+          "spearman": 0.9403508771929825,
+          "erroreMedio": 1.1578947368421053,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 10
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "lewis-hamilton",
+          "max-verstappen",
+          "charles-leclerc"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.9085262563523433,
+          "erroreMedio": 2.090909090909091,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.9578947368421052,
+          "erroreMedio": 1.263157894736842,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "max-verstappen",
+          "isack-hadjar",
+          "charles-leclerc",
+          "lewis-hamilton"
+        ]
+      }
+    },
+    {
+      "round": 19,
+      "circuito": "messico-citta-del-messico",
+      "modello": {
+        "completa": {
+          "spearman": 0.8012422360248448,
+          "erroreMedio": 3.272727272727273,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.7745098039215687,
+          "erroreMedio": 2.7058823529411766,
+          "vincitore": 1,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "max-verstappen",
+          "kimi-antonelli",
+          "charles-leclerc",
+          "lewis-hamilton",
+          "george-russell"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.6905702992659515,
+          "erroreMedio": 4,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "regolari": {
+          "spearman": 0.7107843137254901,
+          "erroreMedio": 3.0588235294117645,
+          "vincitore": 0,
+          "podio": 2,
+          "top10": 8
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "george-russell",
+          "lewis-hamilton",
+          "max-verstappen",
+          "charles-leclerc"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.6318464144551101,
+          "erroreMedio": 4.2727272727272725,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.6053921568627452,
+          "erroreMedio": 3.411764705882353,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 7
+        },
+        "primi5": [
+          "lewis-hamilton",
+          "george-russell",
+          "charles-leclerc",
+          "max-verstappen",
+          "kimi-antonelli"
+        ]
+      }
+    },
+    {
+      "round": 20,
+      "circuito": "brasile-interlagos",
+      "modello": {
+        "completa": {
+          "spearman": 0.8904573687182383,
+          "erroreMedio": 2.4545454545454546,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.8676691729323308,
+          "erroreMedio": 2.5,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 9
+        },
+        "primi5": [
+          "max-verstappen",
+          "kimi-antonelli",
+          "charles-leclerc",
+          "lewis-hamilton",
+          "george-russell"
+        ]
+      },
+      "mondiale": {
+        "completa": {
+          "spearman": 0.8712591756070017,
+          "erroreMedio": 2.727272727272727,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 9
+        },
+        "regolari": {
+          "spearman": 0.843609022556391,
+          "erroreMedio": 2.6,
+          "vincitore": 0,
+          "podio": 1,
+          "top10": 9
+        },
+        "primi5": [
+          "kimi-antonelli",
+          "max-verstappen",
+          "lewis-hamilton",
+          "george-russell",
+          "charles-leclerc"
+        ]
+      },
+      "tettoQualificaGp": {
+        "completa": {
+          "spearman": 0.6781479390175043,
+          "erroreMedio": 4.181818181818182,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 7
+        },
+        "regolari": {
+          "spearman": 0.5984962406015037,
+          "erroreMedio": 4.2,
+          "vincitore": 1,
+          "podio": 1,
+          "top10": 7
+        },
+        "primi5": [
+          "lando-norris",
+          "george-russell",
+          "kimi-antonelli",
+          "charles-leclerc",
+          "liam-lawson"
+        ]
+      }
+    }
+  ]
+}

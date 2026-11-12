@@ -1,0 +1,66 @@
+{
+  "versione": "overall-v2",
+  "generatoIl": "2026-11-12T17:10:25.674Z",
+  "gp": 12,
+  "documenti": 401,
+  "variazioni": {
+    "race_pace": {
+      "punteggi": 398,
+      "modificati": 378,
+      "variazioneMediaAssoluta": 8.53,
+      "valoriEstremi0o100": {
+        "prima": 11,
+        "dopo": 0
+      },
+      "nulli": {
+        "prima": 18,
+        "dopo": 3
+      }
+    },
+    "tyre_management": {
+      "punteggi": 398,
+      "modificati": 370,
+      "variazioneMediaAssoluta": 14.54,
+      "valoriEstremi0o100": {
+        "prima": 23,
+        "dopo": 0
+      },
+      "nulli": {
+        "prima": 28,
+        "dopo": 5
+      }
+    },
+    "race_results": {
+      "punteggi": 396,
+      "modificati": 302,
+      "variazioneMediaAssoluta": 8.69,
+      "valoriEstremi0o100": {
+        "prima": 3,
+        "dopo": 0
+      },
+      "nulli": {
+        "prima": 91,
+        "dopo": 91
+      }
+    },
+    "qualifying_results": {
+      "punteggi": 396,
+      "modificati": 307,
+      "variazioneMediaAssoluta": 9.3,
+      "valoriEstremi0o100": {
+        "prima": 0,
+        "dopo": 0
+      },
+      "nulli": {
+        "prima": 88,
+        "dopo": 88
+      }
+    }
+  },
+  "esito": {
+    "documenti": 401,
+    "punteggi": 1588,
+    "dryRun": true,
+    "backupCompressoBytes": 5383928
+  }
+}

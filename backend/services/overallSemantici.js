@@ -72,6 +72,35 @@ function attenua(campo) {
   return campo.overall === null ? 50 : (campo.overall * campo.campione + 50 * 2) / (campo.campione + 2);
 }
 
+// Storico sul circuito v2: una o due edizioni non bastano a stimare un pilota, perciò
+// l'indice osservato viene attirato verso il valore della stagione corrente con tre
+// osservazioni convenzionali. Sui GP 2026 conclusi la correlazione con l'esito del GP
+// sale da 0,41 a 0,77 (gara) e da 0,54 a 0,81 (qualifica). Idempotente: riparte sempre
+// da overallOsservato.
+const PRIOR_STORICO_CIRCUITO = 3;
+const NOTA_ATTENUAZIONE = `Attenuato verso l'indice della stagione corrente con ${PRIOR_STORICO_CIRCUITO} osservazioni convenzionali.`;
+function attenuaStorico(storico, stagione) {
+  if (!storico || typeof storico !== "object") return storico;
+  const osservato = storico.overallOsservato !== undefined ? storico.overallOsservato : storico.overall ?? null;
+  const n = Number.isInteger(storico.campione) ? storico.campione : 0;
+  const metodoOriginale = String(storico.metodo || "").replace(NOTA_ATTENUAZIONE, "").trim();
+  const base = { ...storico, overallOsservato: osservato, ...(storico.metodo !== undefined && { metodo: metodoOriginale }) };
+  delete base.attenuazione;
+  if (osservato === null || !n || !Number.isFinite(stagione?.overall)) return { ...base, overall: osservato };
+  return { ...base, overall: round((osservato * n + stagione.overall * PRIOR_STORICO_CIRCUITO) / (n + PRIOR_STORICO_CIRCUITO)),
+    attenuazione: { versione: "storico-attenuato-v2", osservazioniConvenzionali: PRIOR_STORICO_CIRCUITO, valoreStagione: stagione.overall },
+    metodo: `${metodoOriginale} ${NOTA_ATTENUAZIONE}`.trim() };
+}
+
+function attenuaStoriciAnalisi(analisi) {
+  const o = analisi?.overallSemantici;
+  if (!o?.campi) return analisi;
+  const st = o.stagioneCorrente || {};
+  if (o.campi.risultatiGara) o.campi.risultatiGara = attenuaStorico(o.campi.risultatiGara, st.rendimento);
+  if (o.campi.risultatiQualifica) o.campi.risultatiQualifica = attenuaStorico(o.campi.risultatiQualifica, st.qualifica);
+  return analisi;
+}
+
 function ordinaSemantico({ gara, partecipanti, risultati, qualifiche, numerosita }) {
   const passati = ordinaCronologicamente(risultati.filter((r) => r.year === gara.year && r.round < gara.round));
   const ultimeGare = [...new Set(passati.map((r) => r.raceId))].slice(-3);
@@ -127,4 +156,5 @@ function metricheOrdine(previsione, reale) {
 module.exports = {
   PESI_SEMANTICI, VERSIONE, FONTE, media, regolare, round, indicePosizione,
   descriviCampione, attenua, campoNonMisurato, completamento, trend, ordinaSemantico, metricheOrdine,
+  PRIOR_STORICO_CIRCUITO, attenuaStorico, attenuaStoriciAnalisi,
 };

@@ -1,5 +1,5 @@
 const {creaSnapshot,circuitiStorici}=require('../scripts/sincronizzaF1db');
-const {descriviCampione,completamento,trend}=require('./overallSemantici');
+const {descriviCampione,completamento,trend,attenuaStoriciAnalisi}=require('./overallSemantici');
 const {valutazioniNumeriche}=require('./valutazioniNumeriche');
 const {MAPPA}=require('../relational/letturaCatalogo');
 
@@ -113,6 +113,7 @@ function preparaPostGp({fonte,documenti,adesso=new Date(),rettifiche=[]}){
    const o=a.overallSemantici ||= {campi:{}};o.campi ||= {};
    o.stagioneCorrente={rendimento:descriviCampione(rs,'gara',numerosita),qualifica:descriviCampione(q,'qualifica',numerosita),completamento:completamento(rs),affidabilita:require('./affidabilitaMeccanica').affidabilitaMeccanica(rs)};
    o.campi.andamentoPerAnno=trend(rs,numerosita);
+   attenuaStoriciAnalisi(a);
    for(const m of [...Object.values(o.stagioneCorrente),o.campi.andamentoPerAnno])m.fonti=[snapshot.metadati.releaseUrl];
    o.ultimoRoundIncluso=rs.length?Math.max(...rs.map(r=>r.round)):null;
    const gpConcluso=conclusi.find(c=>c._id===g._id) || rettifiche.includes(g.slug);

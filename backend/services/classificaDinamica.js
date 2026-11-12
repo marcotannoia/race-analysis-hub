@@ -19,12 +19,7 @@ const PESI_DINAMICI = Object.freeze({
   andamentoUltimi4Gp: 10,
   storicoPersonale: 5,
 });
-// Il talento sul circuito vale pienamente solo con una vettura competitiva:
-// con vettura a 0 resta il 60% del voto, con vettura a 100 il 100%.
-const QUOTA_PILOTA_SENZA_VETTURA = 0.6;
 const TOTALE_PESI = Object.values(PESI_DINAMICI).reduce((s, p) => s + p, 0);
-const contestualizzaPilota = (pilota, vettura) => pilota === null ? null
-  : pilota * (QUOTA_PILOTA_SENZA_VETTURA + (1 - QUOTA_PILOTA_SENZA_VETTURA) * (vettura ?? 50) / 100);
 
 // Pioggia "riconosciuta": gara, qualifica o intero weekend almeno a questa probabilità.
 const SOGLIA_PIOGGIA = 50;
@@ -32,8 +27,19 @@ const SOGLIA_PIOGGIA = 50;
 // tempo asciutto, metà della somiglianza quando la pioggia è riconosciuta.
 const PESO_METEO_ASCIUTTO = 1 / (CRITERI.length + 1);
 const PESO_METEO_BAGNATO = 0.5;
-// Il pilota conserva parte della propria esperienza fra regolamenti diversi.
+// Storico sul circuito: peso per anno di distanza.
 const DECADIMENTO_ANNO = 0.6;
+// Calibrazione v2, backtest 2026 round 2-20 (scripts/backtestModelloDinamico.js).
+// Il 2026 è un regolamento nuovo: lo scarto dal compagno degli anni precedenti
+// conta poco (2025 al 15% di una gara 2026), così un rookie che migliora non resta
+// ancorato alla stagione d'esordio.
+const DECADIMENTO_ANNO_PILOTA = 0.15;
+// La vettura evolve durante la stagione: una gara di 4 GP fa pesa la metà.
+const EMIVITA_VETTURA_GP = 4;
+// Osservazioni convenzionali che attirano campioni piccoli verso il valore atteso:
+// scarto dal compagno verso 0, storico sul circuito verso la stima del pilota.
+const PRIOR_SCARTO_COMPAGNO = 3;
+const PRIOR_STORICO_CIRCUITO = 3;
 
 // Chiavi del contratto precedente: restano con peso zero per i client nativi già pubblicati.
 const CHIAVI_LEGACY = Object.freeze(["risultatiCircuitiSimili", "qualifica2026", "andamento2026", "passoGaraRecente", "andamentoScuderiaRecente"]);
@@ -79,6 +85,9 @@ function indiciCampioni(campioni) {
 
 const scala = (pos, n) => Number.isInteger(pos) && n > 1 ? Math.max(0, 100 * (n - pos) / (n - 1)) : null;
 
+const pesoRecenza = (gp, e) => e.year === gp.year ? 2 ** (-(gp.round - 1 - e.round) / EMIVITA_VETTURA_GP) : 1;
+const limita = (v) => Math.max(0, Math.min(100, v));
+
 // Prestazione di un pilota in un'edizione: 70% gara (se regolare), 30% qualifica.
 function prestazione(r, indici) {
   const gara = r && regolare(r) ? scala(r.positionNumber, indici.partecipanti.get(r.raceId)) : null;
@@ -86,6 +95,15 @@ function prestazione(r, indici) {
   const qualifica = q ? scala(q.positionNumber, indici.qualificati.get(q.raceId)) : null;
   if (gara === null) return qualifica;
   return qualifica === null ? gara : gara * 0.7 + qualifica * 0.3;
+}
+
+// Scarto rispetto al compagno nella stessa gara: separa il pilota dalla vettura.
+function deltaCompagno(r, ctx) {
+  const proprio = prestazione(r, ctx.indici);
+  const compagni = (ctx.perGara.get(r.raceId) || []).filter(x => x.constructorId === r.constructorId && x.driverId !== r.driverId)
+    .map(x => prestazione(x, ctx.indici)).filter(Number.isFinite);
+  if (!Number.isFinite(proprio) || !compagni.length) return null;
+  return proprio - compagni.reduce((s, v) => s + v, 0) / compagni.length;
 }
 
 function media(campioni) {
@@ -122,7 +140,9 @@ function creaContesto({ gara, gp, campioni, catalogo, meteo, meteoGare }) {
       concordanzaMeteoPercentuale: concordanza,
       similaritaPercentuale: confronto ? arrotonda(similaritaEdizione(confronto.similaritaPercentuale, concordanza, scenario)) : null });
   }
-  return { corrente, scenario, confronti, edizioni, precedente, indici: indiciCampioni(campioni), campioni };
+  const perGara = new Map();
+  for (const r of campioni.risultati) { if (!perGara.has(r.raceId)) perGara.set(r.raceId, []); perGara.get(r.raceId).push(r); }
+  return { corrente, scenario, confronti, edizioni, precedente, indici: indiciCampioni(campioni), campioni, gp, perGara };
 }
 
 function sintesiEdizioni(usate) {
@@ -133,7 +153,8 @@ function sintesiEdizioni(usate) {
     similaritaPercentuale: u.edizione.similaritaPercentuale, valutazione: arrotonda(u.valore) }));
 }
 
-// Vettura: solo edizioni 2026 (regolamento corrente), media delle due vetture della scuderia.
+// Vettura: solo edizioni 2026 (regolamento corrente), media delle due vetture della scuderia,
+// con le gare più recenti più pesanti.
 function valutaVettura(ctx, constructorId, annoTarget) {
   const usate = [];
   for (const e of ctx.edizioni.values()) {
@@ -142,28 +163,37 @@ function valutaVettura(ctx, constructorId, annoTarget) {
       .map(r => prestazione(r, ctx.indici)).filter(Number.isFinite).sort((a, b) => b - a);
     if (!valori.length) continue;
     const valore = valori.length === 1 ? valori[0] : valori[0] * 0.6 + valori[1] * 0.4;
-    usate.push({ edizione: e, valore, peso: (e.similaritaPercentuale / 100) ** 2 });
+    usate.push({ edizione: e, valore, peso: (e.similaritaPercentuale / 100) ** 2 * pesoRecenza(ctx.gp, e) });
   }
   return { valore: media(usate), campione: usate.length, edizioni: sintesiEdizioni(usate) };
 }
 
-// Pilota: tutte le edizioni su circuiti diversi dal target, più recenti più pesanti.
-function valutaPilotaCircuiti(ctx, driverId, annoTarget) {
+// Pilota: scarto medio dal compagno sulle edizioni di circuiti simili, applicato alla
+// vettura attuale. Separa il pilota dalla macchina che guidava negli anni precedenti;
+// un campione piccolo resta vicino al valore della vettura.
+function valutaPilotaCircuiti(ctx, driverId, annoTarget, vettura) {
   const usate = [];
   for (const r of ctx.campioni.risultati) {
     const e = ctx.edizioni.get(r.raceId);
     if (r.driverId !== driverId || !e || e.similaritaPercentuale === null) continue;
-    const valore = prestazione(r, ctx.indici);
+    const valore = deltaCompagno(r, ctx);
     if (!Number.isFinite(valore)) continue;
-    usate.push({ edizione: e, valore, peso: (e.similaritaPercentuale / 100) ** 2 * DECADIMENTO_ANNO ** (annoTarget - e.year) });
+    usate.push({ edizione: e, valore, peso: (e.similaritaPercentuale / 100) ** 2 * DECADIMENTO_ANNO_PILOTA ** (annoTarget - e.year) });
   }
-  return { valore: media(usate), campione: usate.length, edizioni: sintesiEdizioni(usate) };
+  const peso = usate.reduce((s, u) => s + u.peso, 0);
+  const scarto = usate.reduce((s, u) => s + u.valore * u.peso, 0) / (peso + PRIOR_SCARTO_COMPAGNO);
+  return { valore: vettura === null ? null : limita(vettura + scarto), scarto, campione: usate.length, edizioni: sintesiEdizioni(usate) };
 }
 
-function valutaStoricoCircuito(ctx, driverId, annoTarget) {
+// Storico sul circuito, attratto verso la stima del pilota quando le edizioni sono poche.
+function valutaStoricoCircuito(ctx, driverId, annoTarget, atteso) {
   const usate = ctx.campioni.risultati.filter(r => r.driverId === driverId && r.circuitId === ctx.corrente?.circuitId && ctx.precedente(r))
-    .map(r => ({ valore: prestazione(r, ctx.indici), peso: DECADIMENTO_ANNO ** (annoTarget - r.year) }));
-  return { valore: media(usate), campione: usate.filter(u => Number.isFinite(u.valore)).length };
+    .map(r => ({ valore: prestazione(r, ctx.indici), peso: DECADIMENTO_ANNO ** (annoTarget - r.year) }))
+    .filter(u => Number.isFinite(u.valore));
+  const osservato = media(usate);
+  if (osservato === null || atteso === null) return { valore: osservato, campione: usate.length };
+  const peso = usate.reduce((s, u) => s + u.peso, 0);
+  return { valore: (osservato * peso + atteso * PRIOR_STORICO_CIRCUITO) / (peso + PRIOR_STORICO_CIRCUITO), campione: usate.length };
 }
 
 function valutaRecenti(ctx, driverId, gp, quanti, tipo) {
@@ -345,10 +375,9 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
     if (!driverId || !constructorId || !scuderia) throw new Error(`Mapping mancante per ${pilota.slug}/${scuderiaSlug}`);
 
     const vettura = valutaVettura(ctx, constructorId, gp.year);
-    const pilotaCircuiti = valutaPilotaCircuiti(ctx, driverId, gp.year);
-    const pilotaContestualizzato = contestualizzaPilota(pilotaCircuiti.valore, vettura.valore);
-    valutazioniPiloti.set(pilota.slug, pilotaContestualizzato);
-    const storico = valutaStoricoCircuito(ctx, driverId, gp.year);
+    const pilotaCircuiti = valutaPilotaCircuiti(ctx, driverId, gp.year, vettura.valore);
+    valutazioniPiloti.set(pilota.slug, pilotaCircuiti.valore);
+    const storico = valutaStoricoCircuito(ctx, driverId, gp.year, pilotaCircuiti.valore);
     const gare4 = valutaRecenti(ctx, driverId, gp, 4, "gara");
     const qualifiche4 = valutaRecenti(ctx, driverId, gp, 4, "qualifica");
     const aggiornamento = valutaAggiornamentoPertinente(
@@ -356,7 +385,7 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
       catalogo, ctx.corrente, a.statoAggiornamentiTecnici, testi);
 
     const valutazioni = {
-      compatibilitaVetturaCircuito: vettura.valore, compatibilitaPilotaCircuito: pilotaContestualizzato,
+      compatibilitaVetturaCircuito: vettura.valore, compatibilitaPilotaCircuito: pilotaCircuiti.valore,
       aggiornamentiTecnici: aggiornamento.valore, andamentoUltimi4Gp: gare4.valore,
       andamentoUltime4Qualifiche: qualifiche4.valore, storicoPersonale: storico.valore,
     };
@@ -389,8 +418,7 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
       dettagliFattori: {
         compatibilitaVetturaCircuito: { campione: vettura.campione, edizioniPiuSimili: vettura.edizioni },
         compatibilitaPilotaCircuito: { campione: pilotaCircuiti.campione, edizioniPiuSimili: pilotaCircuiti.edizioni,
-          valorePuro: pilotaCircuiti.valore === null ? null : arrotonda(pilotaCircuiti.valore),
-          fattoreScuderia: arrotonda(QUOTA_PILOTA_SENZA_VETTURA + (1 - QUOTA_PILOTA_SENZA_VETTURA) * (vettura.valore ?? 50) / 100, 3) },
+          scartoCompagno: arrotonda(pilotaCircuiti.scarto), baseVettura: vettura.valore === null ? null : arrotonda(vettura.valore) },
         aggiornamentiTecnici: { pertinente: aggiornamento.pertinente, criteri: aggiornamento.criteri },
         andamentoUltimi4Gp: { campione: gare4.campione }, andamentoUltime4Qualifiche: { campione: qualifiche4.campione },
         storicoPersonale: { campione: storico.campione },
@@ -408,7 +436,7 @@ function creaClassificaDinamica({ gara, piloti, scuderie, analisiPiloti, analisi
   return {
     lingua, aggiornatoIl: new Date().toISOString(), calcolatoIl: new Date().toISOString(),
     gara: { slug: gara.slug, nome: valoreLocalizzato(gara, "nome", lingua), circuito: valoreLocalizzato(gara, "circuito", lingua) },
-    modello: "dinamico-similarita-meteo-v1", meteo, scenarioMeteo: ctx.scenario,
+    modello: "dinamico-similarita-meteo-v2", meteo, scenarioMeteo: ctx.scenario,
     circuitiSimili: confronti.filter(c => c.round < gp.round).slice(0, 2),
     confrontoCircuiti: { metodo: "similarita-multicriterio-v2",
       pesoInClassificaPercentuale: PESI_DINAMICI.compatibilitaVetturaCircuito + PESI_DINAMICI.compatibilitaPilotaCircuito, criteri: CRITERI.map(c => ({ chiave: c.chiave, nome: c.nome,

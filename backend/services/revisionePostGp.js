@@ -1,6 +1,6 @@
 const {fattoriRecenti,ordinaRecenti}=require('./modelloRecente');
 const {metricheOrdine,regolare}=require('./overallSemantici');
-const {selezionaEvidenze,aggregaEvidenze}=require('./evidenzePrestazioni');
+const {selezionaEvidenze,stimaEvidenze}=require('./evidenzePrestazioni');
 const {circuitiStorici}=require('../scripts/sincronizzaF1db');
 const tecnici=require('../data/circuiti-tecnici-2026.json');
 
@@ -61,7 +61,7 @@ function aggiornaPasso(analisi,gara,campioni,evidenze,entita,team){
  const recenti=stagione.slice(-3);
  const o=analisi.overallSemantici ||= {campi:{}};o.campi ||= {};
  for(const [campo,tipo] of [['passoGara','passo'],['gestioneGomme','gomme']]){
-   const metrica=aggregaEvidenze(recenti,tipo);
+   const metrica=stimaEvidenze(stagione,tipo,gara.ordineCalendario);
    o.campi[campo]={...metrica,limiteRoundEsclusivo:gara.ordineCalendario};
  }
  o.evidenzeGiri={...(o.evidenzeGiri||{}),versione:evidenze.versione,recenti:recenti.map(s=>({sessionKey:s.sessionKey,round:s.round,circuitId:s.circuitId,driverIds:s.piloti.map(p=>p.driverId)})),limiti:evidenze.metodo.limiti};
